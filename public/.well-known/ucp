@@ -1,0 +1,65 @@
+{
+  "ucp": "1.0",
+  "protocol_version": "1.0",
+  "spec": "https://ucp.dev/specification/overview/",
+  "schema": "https://ucp.dev/schema/v1.json",
+  "site": "https://DOMAIN.com",
+  "name": "The Buggy Shop",
+  "description": "Australia's Premier Golf Buggy for Sale & Luxury All-Terrain Cart Specialists",
+  "services": [
+    {
+      "id": "product-catalog",
+      "type": "catalog",
+      "url": "https://DOMAIN.com/shop/",
+      "description": "Full Australian electric buggy catalog"
+    },
+    {
+      "id": "mcp-server",
+      "type": "mcp",
+      "url": "https://DOMAIN.com/api/mcp",
+      "description": "MCP Streamable HTTP server for AI agents"
+    },
+    {
+      "id": "order",
+      "type": "commerce",
+      "url": "https://wa.me/61480811308",
+      "description": "Place orders or request custom freight quotes via WhatsApp"
+    },
+    {
+      "id": "compare",
+      "type": "b2b",
+      "url": "https://DOMAIN.com/compare/",
+      "description": "Technical comparison matrix"
+    }
+  ],
+  "capabilities": [
+    "browse",
+    "search",
+    "inquiry",
+    "compare",
+    "finance",
+    "content",
+    "mcp"
+  ],
+  "endpoints": {
+    "mcp": "https://DOMAIN.com/api/mcp",
+    "catalog": "https://DOMAIN.com/shop/",
+    "contact": "https://DOMAIN.com/contact/",
+    "agent_skills": "https://DOMAIN.com/.well-known/agent-skills/index.json",
+    "mcp_server_card": "https://DOMAIN.com/.well-known/mcp/server-card.json",
+    "api_catalog": "https://DOMAIN.com/.well-known/api-catalog",
+    "llms_txt": "https://DOMAIN.com/llms.txt"
+  },
+  "currency": "AUD",
+  "payment_methods": [
+    "bank-transfer",
+    "pay-id",
+    "crypto-BTC",
+    "crypto-USDT"
+  ],
+  "legal": {
+    "age_restriction": "none",
+    "product_type": "electric-all-terrain-utility-vehicles",
+    "compliance": "Turnkey Australian state road compliance lighting pre-fitted"
+  }
+}

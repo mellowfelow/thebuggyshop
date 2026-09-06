@@ -1,0 +1,120 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/server-card/v1.json",
+  "serverInfo": {
+    "name": "The Buggy Shop",
+    "version": "1.0.0",
+    "description": "Australia's Premier Golf Buggy for Sale & Luxury All-Terrain Cart Specialists",
+    "homepage": "https://DOMAIN.com",
+    "contact": {
+      "email": "sales@thebuggyshop.com.au",
+      "whatsapp": "+61 480 811 308"
+    }
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://DOMAIN.com/api/mcp"
+  },
+  "capabilities": {
+    "tools": [
+      {
+        "name": "search_products",
+        "description": "Search Australian luxury all-terrain & utility buggies by keyword, category, or maximum price in AUD",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string"
+            },
+            "category": {
+              "type": "string"
+            },
+            "max_price": {
+              "type": "number"
+            }
+          }
+        }
+      },
+      {
+        "name": "get_product",
+        "description": "Get full engineering specifications, LiFePO4 battery details, payload, and pricing for a specific buggy model by slug",
+        "inputSchema": {
+          "type": "object",
+          "required": [
+            "slug"
+          ],
+          "properties": {
+            "slug": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      {
+        "name": "list_categories",
+        "description": "List all buggy vehicle categories (Estate Cruisers, Farm Utility, Outback Adventure)",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "get_policies",
+        "description": "Get Australian nationwide tail-lift shipping fees, 5-year LiFePO4 warranty, and 10% crypto discount rules",
+        "inputSchema": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "create_order_draft",
+        "description": "Create a prefilled WhatsApp or order form URL. Human completes transaction — never captures payment directly.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "items": {
+              "type": "array"
+            },
+            "notes": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    ],
+    "resources": [
+      {
+        "name": "product-catalog",
+        "description": "Full Australian electric buggy catalog",
+        "uri": "https://DOMAIN.com/shop/"
+      },
+      {
+        "name": "compare",
+        "description": "Product comparison matrix",
+        "uri": "https://DOMAIN.com/compare/"
+      },
+      {
+        "name": "blog",
+        "description": "Educational guides and road compliance rules",
+        "uri": "https://DOMAIN.com/blog/"
+      }
+    ],
+    "commerce": {
+      "ordering": "human-assisted-whatsapp-or-form",
+      "payment": [
+        "bank-transfer",
+        "pay-id",
+        "crypto-BTC",
+        "crypto-USDT"
+      ],
+      "currency": "AUD",
+      "minimumOrder": 0,
+      "flatShipping": 495,
+      "cryptoDiscountPercent": 10
+    }
+  },
+  "legal": {
+    "ageRestriction": "none",
+    "productType": "electric-all-terrain-utility-vehicles",
+    "compliance": "Turnkey QLD/NSW/VIC conditional road compliance lighting and pre-filled registration paperwork."
+  }
+}

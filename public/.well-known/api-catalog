@@ -1,0 +1,53 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://DOMAIN.com/",
+      "https://www.iana.org/assignments/link-relations/service-doc": [
+        {
+          "href": "https://DOMAIN.com/about/"
+        }
+      ],
+      "title": "The Buggy Shop — Australia's Premier Golf Buggy for Sale & Luxury All-Terrain Cart Specialists"
+    },
+    {
+      "anchor": "https://DOMAIN.com/shop/",
+      "type": "text/html",
+      "title": "The Buggy Shop Product Catalog"
+    },
+    {
+      "anchor": "https://DOMAIN.com/compare/",
+      "type": "text/html",
+      "title": "The Buggy Shop Compare Matrix"
+    },
+    {
+      "anchor": "https://DOMAIN.com/finance/",
+      "type": "text/html",
+      "title": "The Buggy Shop Finance Calculator"
+    },
+    {
+      "anchor": "https://DOMAIN.com/api/products",
+      "type": "application/json",
+      "title": "The Buggy Shop Products API"
+    },
+    {
+      "anchor": "https://DOMAIN.com/api/categories",
+      "type": "application/json",
+      "title": "The Buggy Shop Categories API"
+    },
+    {
+      "anchor": "https://DOMAIN.com/api/search",
+      "type": "application/json",
+      "title": "The Buggy Shop Search API"
+    },
+    {
+      "anchor": "https://DOMAIN.com/api/mcp",
+      "type": "application/json",
+      "https://www.iana.org/assignments/link-relations/service-desc": [
+        {
+          "href": "https://DOMAIN.com/.well-known/mcp/server-card.json"
+        }
+      ],
+      "title": "The Buggy Shop MCP Server"
+    }
+  ]
+}

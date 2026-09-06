@@ -1,0 +1,6 @@
+{
+  "name": "The Buggy Shop",
+  "description": "Australia's premier destination for luxury golf buggies for sale, remote control golf buggies, push buggies, and golf buggy accessories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
