@@ -253,10 +253,10 @@ export default function CartDrawer({ isOpen, onClose, cart, updateQuantity, remo
                 <button
                   type="button"
                   onClick={handleWhatsAppCheckout}
-                  className="w-full py-3.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-[#071810] font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer active:scale-[0.98]"
+                  className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#C5A265] to-[#D4B27C] hover:from-[#D4B27C] hover:to-[#E5CCA0] text-[#0E2A1E] font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer active:scale-[0.98] border border-[#C5A265]"
                   id="cart-whatsapp-checkout-btn"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <MessageCircle className="w-4 h-4 text-[#0E2A1E]" />
                   <span>Submit Order via WhatsApp</span>
                 </button>
 

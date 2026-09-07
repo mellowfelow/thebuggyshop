@@ -17,9 +17,10 @@ import {
   Navigation,
   Check
 } from 'lucide-react';
-import { SITE, BRAND, CONTACT, CATEGORIES, PRODUCTS, POSTS, SHOP } from '@/src/config/site';
+import { SITE, BRAND, CONTACT, CATEGORIES, PRODUCTS, POSTS, SHOP, REVIEW_STATS } from '@/src/config/site';
 import JsonLd from '@/src/components/JsonLd';
 import HomeClientProducts from './HomeClientProducts';
+import ReviewsCarousel from '@/src/components/ReviewsCarousel';
 
 export const metadata = {
   title: 'Golf Buggy for Sale Australia | Luxury, Remote & Off Road Buggies',
@@ -79,6 +80,13 @@ export default function HomePage() {
         "brand": {
           "@type": "Brand",
           "name": SITE.name
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": REVIEW_STATS.averageRating.toString(),
+          "reviewCount": REVIEW_STATS.totalReviews.toString(),
+          "bestRating": "5",
+          "worstRating": "1"
         },
         "makesOffer": {
           "@type": "AggregateOffer",
@@ -527,7 +535,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 8: LATEST BUYER'S GUIDES - BEAUTIFIED CARDS */}
+      {/* SECTION 8: VERIFIED AUSTRALIAN REVIEWS SLIDING CAROUSEL (TRUSTPILOT GRADE) */}
+      <ReviewsCarousel />
+
+      {/* SECTION 9: LATEST BUYER'S GUIDES - BEAUTIFIED CARDS */}
       <section className="bg-gradient-to-b from-[#EBF0EC] to-[#E3EAE5] py-16 border-y border-[#D5DFD9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">

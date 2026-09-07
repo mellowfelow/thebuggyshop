@@ -129,7 +129,7 @@ ${BRAND.description}
 - **Phone / WhatsApp**: ${CONTACT.phone} (${CONTACT.operatingHours})
 - **Currency**: ${SITE.currency} (All prices include 10% Australian GST)
 - **Nationwide Freight**: Flat-rate hydraulic tail-lift delivery to property gates and regional depots across Australia ($${SHOP.shippingFee} AUD).
-- **Payment Methods**: Direct Bank Wire, PayID, Bitcoin (BTC), and Tether (USDT) with an instant ${SHOP.cryptoDiscount}% discount.
+- **Payment Methods**: Direct Bank Wire, Australian PayID, and Crypto (Bitcoin BTC / Tether USDT with an instant ${SHOP.cryptoDiscount}% discount).
 - **Warranty**: 5-Year Domestic LiFePO4 Lithium Battery Replacement Warranty + 3-Year Chassis & Powertrain Warranty.
 - **Road Compliance**: Pre-fitted state-compliant lighting, dual mirrors, horn, beacons, and pre-filled conditional registration paperwork for QLD TMR, Transport for NSW, and VicRoads.
 

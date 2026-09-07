@@ -94,6 +94,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/#customer-reviews-section" className="hover:text-[#C5A265] transition-colors font-semibold flex items-center gap-1 text-[#C5A265]">
+                  <span>★ 4.6/5.0 Verified Reviews (43)</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/about/" className="hover:text-[#C5A265] transition-colors">
                   Australian Heritage (Est. 2004)
                 </Link>
@@ -125,10 +130,10 @@ export default function Footer() {
               <div className="p-3 rounded-xl bg-[#0E2A1E] border border-[#C5A265]/20 space-y-1">
                 <div className="font-bold text-white flex items-center gap-1.5">
                   <Sparkles className="w-3.5 h-3.5 text-[#C5A265]" />
-                  <span>10% Crypto / PayID Rebate</span>
+                  <span>10% Crypto Rebate (BTC / USDT)</span>
                 </div>
                 <p className="text-[11px] text-[#A6BCB0]">
-                  Instant Bitcoin (BTC), USDT, PayID, and bank wire settlement discount applied on invoice drafts.
+                  Instant Bitcoin (BTC) and Tether (USDT) settlement discount automatically applied on order drafts. PayID and Wire accepted.
                 </p>
               </div>
             </div>

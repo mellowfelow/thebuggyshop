@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { SITE, BRAND, CONTACT, PRODUCTS } from '@/src/config/site';
+import { SITE, BRAND, CONTACT, PRODUCTS, REVIEW_STATS } from '@/src/config/site';
 import JsonLd from '@/src/components/JsonLd';
 import { 
   ShieldCheck, 
@@ -13,7 +13,8 @@ import {
   Phone, 
   ArrowRight, 
   FileCheck2, 
-  Sparkles 
+  Sparkles,
+  Star
 } from 'lucide-react';
 
 export const metadata = {
@@ -177,6 +178,28 @@ export default function AboutPage() {
                 <strong className="text-white block font-bold">Freight Reach:</strong>
                 <span>All States & Territories (Hydraulic Tail-Lift)</span>
               </div>
+            </div>
+
+            {/* Verified Customer Score Widget */}
+            <div className="p-3.5 rounded-2xl bg-[#071810] border border-[#C5A265]/40 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-white text-xs">Customer Satisfaction</span>
+                <span className="text-[#C5A265] font-black text-xs">★ {REVIEW_STATS.averageRating} / 5.0</span>
+              </div>
+              <div className="flex items-center gap-1">
+                {[1, 2, 3, 4, 5].map((s) => (
+                  <div key={s} className="w-5 h-5 rounded-xs bg-[#00B67A] flex items-center justify-center">
+                    <Star className="w-3 h-3 text-white fill-white" />
+                  </div>
+                ))}
+                <span className="text-[11px] text-[#A6BCB0] ml-1">({REVIEW_STATS.totalReviews} Verified Reviews)</span>
+              </div>
+              <Link 
+                href="/#customer-reviews-section" 
+                className="text-[11px] text-[#C5A265] hover:underline font-bold block pt-1"
+              >
+                View Customer Reviews Carousel →
+              </Link>
             </div>
           </div>
 
