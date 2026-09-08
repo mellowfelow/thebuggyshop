@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useSyncExternalStore, useCallback } from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
 import AnnouncementBar from './AnnouncementBar';
@@ -18,65 +18,131 @@ export function useStore() {
   return context;
 }
 
+// External store synchronization for localStorage
+const cartListeners = new Set();
+const compareListeners = new Set();
+
+function emitCartChange() {
+  for (const listener of cartListeners) {
+    listener();
+  }
+}
+
+function emitCompareChange() {
+  for (const listener of compareListeners) {
+    listener();
+  }
+}
+
+function subscribeCart(callback) {
+  cartListeners.add(callback);
+  const onStorage = (e) => {
+    if (e.key === (SITE.cartKey || 'mm-cart')) emitCartChange();
+  };
+  if (typeof window !== 'undefined') {
+    window.addEventListener('storage', onStorage);
+  }
+  return () => {
+    cartListeners.delete(callback);
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('storage', onStorage);
+    }
+  };
+}
+
+function subscribeCompare(callback) {
+  compareListeners.add(callback);
+  const onStorage = (e) => {
+    if (e.key === 'buggy-compare') emitCompareChange();
+  };
+  if (typeof window !== 'undefined') {
+    window.addEventListener('storage', onStorage);
+  }
+  return () => {
+    compareListeners.delete(callback);
+    if (typeof window !== 'undefined') {
+      window.removeEventListener('storage', onStorage);
+    }
+  };
+}
+
+let cachedCartRaw = null;
+let cachedCartParsed = [];
+
+function getCartSnapshot() {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem(SITE.cartKey || 'mm-cart') || '[]';
+    if (raw !== cachedCartRaw) {
+      cachedCartRaw = raw;
+      cachedCartParsed = JSON.parse(raw);
+    }
+    return cachedCartParsed;
+  } catch {
+    return [];
+  }
+}
+
+const emptyArray = [];
+function getServerSnapshot() {
+  return emptyArray;
+}
+
+let cachedCompareRaw = null;
+let cachedCompareParsed = [];
+
+function getCompareSnapshot() {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw = localStorage.getItem('buggy-compare') || '[]';
+    if (raw !== cachedCompareRaw) {
+      cachedCompareRaw = raw;
+      cachedCompareParsed = JSON.parse(raw);
+    }
+    return cachedCompareParsed;
+  } catch {
+    return [];
+  }
+}
+
 export default function ClientStoreProvider({ children }) {
-  const [cart, setCart] = useState(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const saved = localStorage.getItem(SITE.cartKey || 'mm-cart');
-        if (saved) return JSON.parse(saved);
-      } catch (e) {
-        console.error('Failed to load cart:', e);
-      }
-    }
-    return [];
-  });
-
-  const [comparedProducts, setComparedProducts] = useState(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const saved = localStorage.getItem('buggy-compare');
-        if (saved) return JSON.parse(saved);
-      } catch (e) {
-        console.error('Failed to load compare list:', e);
-      }
-    }
-    return [];
-  });
-
+  const cart = useSyncExternalStore(subscribeCart, getCartSnapshot, getServerSnapshot);
+  const comparedProducts = useSyncExternalStore(subscribeCompare, getCompareSnapshot, getServerSnapshot);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  // Save cart to localStorage
-  useEffect(() => {
+  const saveCartToStorage = useCallback((newCart) => {
     if (typeof window !== 'undefined') {
       try {
-        localStorage.setItem(SITE.cartKey || 'mm-cart', JSON.stringify(cart));
+        localStorage.setItem(SITE.cartKey || 'mm-cart', JSON.stringify(newCart));
+        emitCartChange();
       } catch (e) {
         console.error('Failed to save cart:', e);
       }
     }
-  }, [cart]);
+  }, []);
 
-  // Save compare list
-  useEffect(() => {
+  const saveCompareToStorage = useCallback((newCompare) => {
     if (typeof window !== 'undefined') {
       try {
-        localStorage.setItem('buggy-compare', JSON.stringify(comparedProducts));
+        localStorage.setItem('buggy-compare', JSON.stringify(newCompare));
+        emitCompareChange();
       } catch (e) {
         console.error('Failed to save compare list:', e);
       }
     }
-  }, [comparedProducts]);
+  }, []);
 
-  const addToCart = (product, quantity = 1) => {
-    setCart((prev) => {
-      const existing = prev.find((item) => item.slug === product.slug);
-      if (existing) {
-        return prev.map((item) =>
-          item.slug === product.slug ? { ...item, quantity: item.quantity + quantity } : item
-        );
-      }
-      return [
-        ...prev,
+  const addToCart = useCallback((product, quantity = 1) => {
+    const currentCart = getCartSnapshot();
+    const existing = currentCart.find((item) => item.slug === product.slug);
+    let updatedCart;
+    if (existing) {
+      updatedCart = currentCart.map((item) =>
+        item.slug === product.slug ? { ...item, quantity: item.quantity + quantity } : item
+      );
+    } else {
+      updatedCart = [
+        ...currentCart,
         {
           slug: product.slug,
           name: product.name,
@@ -86,41 +152,45 @@ export default function ClientStoreProvider({ children }) {
           quantity,
         },
       ];
-    });
+    }
+    saveCartToStorage(updatedCart);
     setIsCartOpen(true);
-  };
+  }, [saveCartToStorage]);
 
-  const updateQuantity = (slug, newQty) => {
+  const updateQuantity = useCallback((slug, newQty) => {
+    const currentCart = getCartSnapshot();
     if (newQty <= 0) {
-      removeFromCart(slug);
+      const updated = currentCart.filter((item) => item.slug !== slug);
+      saveCartToStorage(updated);
       return;
     }
-    setCart((prev) =>
-      prev.map((item) => (item.slug === slug ? { ...item, quantity: newQty } : item))
-    );
-  };
+    const updated = currentCart.map((item) => (item.slug === slug ? { ...item, quantity: newQty } : item));
+    saveCartToStorage(updated);
+  }, [saveCartToStorage]);
 
-  const removeFromCart = (slug) => {
-    setCart((prev) => prev.filter((item) => item.slug !== slug));
-  };
+  const removeFromCart = useCallback((slug) => {
+    const currentCart = getCartSnapshot();
+    const updated = currentCart.filter((item) => item.slug !== slug);
+    saveCartToStorage(updated);
+  }, [saveCartToStorage]);
 
-  const clearCart = () => {
-    setCart([]);
-  };
+  const clearCart = useCallback(() => {
+    saveCartToStorage([]);
+  }, [saveCartToStorage]);
 
-  const toggleCompare = (product) => {
-    setComparedProducts((prev) => {
-      const exists = prev.some((p) => p.slug === product.slug);
-      if (exists) {
-        return prev.filter((p) => p.slug !== product.slug);
-      }
-      if (prev.length >= 4) {
-        alert('You can compare up to 4 buggy models simultaneously.');
-        return prev;
-      }
-      return [...prev, product];
-    });
-  };
+  const toggleCompare = useCallback((product) => {
+    const currentCompare = getCompareSnapshot();
+    const exists = currentCompare.some((p) => p.slug === product.slug);
+    if (exists) {
+      const updated = currentCompare.filter((p) => p.slug !== product.slug);
+      saveCompareToStorage(updated);
+      return;
+    }
+    if (currentCompare.length >= 4) {
+      return;
+    }
+    saveCompareToStorage([...currentCompare, product]);
+  }, [saveCompareToStorage]);
 
   const totalCartCount = cart.reduce((total, item) => total + item.quantity, 0);
 

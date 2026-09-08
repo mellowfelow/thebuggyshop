@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server';
-import { PRODUCTS, SITE } from '@/src/config/site';
+import { SITE } from '@/src/config/site';
+import { PRODUCTS } from '@/src/config/products';
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const category = searchParams.get('category');
+  const brand = searchParams.get('brand');
   const q = searchParams.get('q');
   const limit = searchParams.get('limit');
 
@@ -13,12 +15,17 @@ export async function GET(request) {
     results = results.filter((p) => p.category === category);
   }
 
+  if (brand) {
+    results = results.filter((p) => p.brand === brand);
+  }
+
   if (q) {
     const cleanQ = q.toLowerCase();
     results = results.filter(
       (p) =>
         p.name.toLowerCase().includes(cleanQ) ||
-        p.shortDescription.toLowerCase().includes(cleanQ)
+        p.shortDescription.toLowerCase().includes(cleanQ) ||
+        (p.brandName && p.brandName.toLowerCase().includes(cleanQ))
     );
   }
 

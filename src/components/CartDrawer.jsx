@@ -13,6 +13,7 @@ export default function CartDrawer({ isOpen, onClose, cart, updateQuantity, remo
   if (!isOpen) return null;
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const meetsMinOrder = SHOP.minOrder <= 0 || subtotal >= SHOP.minOrder;
   const isCrypto = selectedPayment === 'crypto';
   const cryptoDiscountAmount = isCrypto ? subtotal * (SHOP.cryptoDiscount / 100) : 0;
   const shipping = subtotal > 0 ? SHOP.shippingFee : 0;
@@ -248,16 +249,34 @@ export default function CartDrawer({ isOpen, onClose, cart, updateQuantity, remo
                 </div>
               </div>
 
+              {/* Minimum Order Warning */}
+              {!meetsMinOrder && (
+                <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-amber-900 text-xs flex items-start gap-2">
+                  <span className="text-sm">⚠️</span>
+                  <div>
+                    <span className="font-bold">Minimum Order: ${SHOP.minOrder} AUD</span>
+                    <p className="text-[11px] text-amber-800 mt-0.5">
+                      Please add ${(SHOP.minOrder - subtotal).toLocaleString('en-AU')} AUD more to fulfill the minimum order threshold.
+                    </p>
+                  </div>
+                </div>
+              )}
+
               {/* Checkout Triggers */}
               <div className="space-y-2 pt-1">
                 <button
                   type="button"
-                  onClick={handleWhatsAppCheckout}
-                  className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#C5A265] to-[#D4B27C] hover:from-[#D4B27C] hover:to-[#E5CCA0] text-[#0E2A1E] font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md cursor-pointer active:scale-[0.98] border border-[#C5A265]"
+                  onClick={meetsMinOrder ? handleWhatsAppCheckout : undefined}
+                  disabled={!meetsMinOrder}
+                  className={`w-full py-3.5 px-4 rounded-xl font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md ${
+                    meetsMinOrder
+                      ? 'bg-gradient-to-r from-[#C5A265] to-[#D4B27C] hover:from-[#D4B27C] hover:to-[#E5CCA0] text-[#0E2A1E] cursor-pointer active:scale-[0.98] border border-[#C5A265]'
+                      : 'bg-stone-300 text-stone-500 cursor-not-allowed border border-stone-300'
+                  }`}
                   id="cart-whatsapp-checkout-btn"
                 >
-                  <MessageCircle className="w-4 h-4 text-[#0E2A1E]" />
-                  <span>Submit Order via WhatsApp</span>
+                  <MessageCircle className="w-4 h-4" />
+                  <span>{meetsMinOrder ? 'Submit Order via WhatsApp' : `Min Order $${SHOP.minOrder} AUD Required`}</span>
                 </button>
 
                 <Link

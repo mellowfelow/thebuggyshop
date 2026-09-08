@@ -82,12 +82,14 @@ export default function ReviewsCarousel() {
 
   // Touch swipe support - leads smoothly to the next or previous review
   const handleTouchStart = (e) => {
+    if (!e.targetTouches || e.targetTouches.length === 0) return;
     setTouchEndX(null);
     setTouchStartX(e.targetTouches[0].clientX);
     setTouchStartY(e.targetTouches[0].clientY);
   };
 
   const handleTouchMove = (e) => {
+    if (!e.targetTouches || e.targetTouches.length === 0) return;
     setTouchEndX(e.targetTouches[0].clientX);
   };
 

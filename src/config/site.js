@@ -46,7 +46,7 @@ export const CONTACT = {
 }
 
 export const SHOP = {
-  minOrder: 0,
+  minOrder: 250, // Minimum order threshold in AUD
   freeShippingThreshold: 0,
   shippingFee: 495, // Flat-rate hydraulic tail-lift delivery to property gates nationwide
   cryptoDiscount: 10, // 10% discount for BTC / USDT payments

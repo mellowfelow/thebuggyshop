@@ -14,19 +14,24 @@ import {
   ShieldCheck, 
   Truck, 
   ChevronDown,
-  Calculator
+  Award
 } from 'lucide-react';
-import { SITE, CONTACT, CATEGORIES, ENTITY } from '@/src/config/site';
+import { SITE, CONTACT, ENTITY } from '@/src/config/site';
+import { getRootCategories } from '@/src/config/categories';
+import { BRANDS } from '@/src/config/brands';
 import Logo from '@/src/components/Logo';
 
 export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [shopDropdownOpen, setShopDropdownOpen] = useState(false);
+  const [brandsDropdownOpen, setBrandsDropdownOpen] = useState(false);
   const pathname = usePathname();
+  const rootCategories = getRootCategories();
 
   const closeMenus = () => {
     setMobileMenuOpen(false);
     setShopDropdownOpen(false);
+    setBrandsDropdownOpen(false);
   };
 
   return (
@@ -63,15 +68,14 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
         </div>
       </div>
 
-      {/* Main Navigation Bar */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
-        {/* Brand Logo with Luxury Emblem */}
-        <Link href="/" className="flex items-center group" id="nav-brand-logo" onClick={closeMenus}>
-          <Logo variant="dark" showTagline={true} />
-        </Link>
+      {/* Main Nav Container */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between gap-4">
+        {/* Brand Logo */}
+        <Logo onClick={closeMenus} />
 
-        {/* Desktop Menu */}
-        <nav className="hidden lg:flex items-center space-x-7" aria-label="Main Navigation">
+        {/* Desktop Navigation Links */}
+        <nav className="hidden lg:flex items-center space-x-6" aria-label="Main Navigation">
+          {/* Shop Categories Mega Dropdown */}
           <div 
             className="relative"
             onMouseEnter={() => setShopDropdownOpen(true)}
@@ -84,37 +88,92 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
               }`}
               id="nav-shop-link"
             >
-              <span>BUGGIES & CARTS</span>
+              <span>SHOP</span>
               <ChevronDown className={`w-3.5 h-3.5 transition-transform ${shopDropdownOpen ? 'rotate-180' : ''}`} />
             </Link>
 
-            {/* Mega Dropdown */}
             {shopDropdownOpen && (
-              <div className="absolute top-full left-0 w-84 bg-[#0A2016] border border-[#C5A265]/30 rounded-2xl shadow-2xl p-3.5 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                <div className="text-[10px] font-black text-[#C5A265] uppercase tracking-widest px-3 py-1.5 border-b border-[#183B2B]">
-                  Golf & All-Terrain Categories
+              <div className="absolute top-full left-0 w-96 bg-[#0A2016] border border-[#C5A265]/30 rounded-2xl shadow-2xl p-4 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                <div className="text-[10px] font-black text-[#C5A265] uppercase tracking-widest px-2 py-1 border-b border-[#183B2B] flex items-center justify-between">
+                  <span>Golf & All-Terrain Categories</span>
+                  <span className="text-[9px] text-[#A6BCB0]">35 Specialist Sectors</span>
                 </div>
                 <div className="mt-2 space-y-1">
-                  {CATEGORIES.map(cat => (
+                  {rootCategories.map(cat => (
                     <Link
                       key={cat.slug}
                       href={`/shop/${cat.slug}/`}
-                      className="block px-3 py-2.5 rounded-xl hover:bg-[#133726] text-slate-100 hover:text-[#C5A265] transition-colors"
+                      className="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-[#133726] text-slate-100 hover:text-[#C5A265] transition-colors"
                       onClick={closeMenus}
                     >
-                      <div className="font-bold text-xs">{cat.name}</div>
-                      <div className="text-[11px] text-[#A6BCB0] line-clamp-1 mt-0.5">{cat.description}</div>
+                      <span className="font-bold text-xs">{cat.navLabel}</span>
+                      <span className="text-[10px] text-[#A6BCB0] opacity-70">Browse →</span>
                     </Link>
                   ))}
-                  <div className="border-t border-[#183B2B] pt-2 mt-1">
+                  <div className="border-t border-[#183B2B] pt-2.5 mt-2 flex items-center justify-between px-2">
                     <Link
                       href="/shop/"
-                      className="block px-3 py-1.5 text-xs text-[#C5A265] hover:underline font-bold"
+                      className="text-xs text-[#C5A265] hover:underline font-bold"
                       onClick={closeMenus}
                     >
-                      View All Golf Buggies for Sale →
+                      View All 35 Categories →
+                    </Link>
+                    <Link
+                      href="/compare/"
+                      className="text-xs text-[#A6BCB0] hover:text-white"
+                      onClick={closeMenus}
+                    >
+                      Compare Specs
                     </Link>
                   </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Brands Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setBrandsDropdownOpen(true)}
+            onMouseLeave={() => setBrandsDropdownOpen(false)}
+          >
+            <Link 
+              href="/brands/" 
+              className={`flex items-center gap-1 text-xs font-bold uppercase tracking-wider py-2 transition-colors ${
+                pathname.startsWith('/brands') ? 'text-[#C5A265]' : 'text-slate-100 hover:text-[#C5A265]'
+              }`}
+              id="nav-brands-link"
+            >
+              <Award className="w-3.5 h-3.5 text-[#C5A265]" />
+              <span>BRANDS</span>
+              <ChevronDown className={`w-3.5 h-3.5 transition-transform ${brandsDropdownOpen ? 'rotate-180' : ''}`} />
+            </Link>
+
+            {brandsDropdownOpen && (
+              <div className="absolute top-full left-0 w-80 bg-[#0A2016] border border-[#C5A265]/30 rounded-2xl shadow-2xl p-3.5 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                <div className="text-[10px] font-black text-[#C5A265] uppercase tracking-widest px-2 py-1 border-b border-[#183B2B]">
+                  Featured Manufacturers
+                </div>
+                <div className="mt-2 grid grid-cols-2 gap-1">
+                  {BRANDS.map(b => (
+                    <Link
+                      key={b.slug}
+                      href={`/brands/${b.slug}/`}
+                      className="px-2.5 py-1.5 rounded-lg hover:bg-[#133726] text-slate-200 hover:text-[#C5A265] text-xs font-medium transition-colors"
+                      onClick={closeMenus}
+                    >
+                      {b.name}
+                    </Link>
+                  ))}
+                </div>
+                <div className="border-t border-[#183B2B] pt-2 mt-2 px-2">
+                  <Link
+                    href="/brands/"
+                    className="block text-xs text-[#C5A265] hover:underline font-bold"
+                    onClick={closeMenus}
+                  >
+                    All 27 Partner Brands →
+                  </Link>
                 </div>
               </div>
             )}
@@ -134,17 +193,6 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
                 {compareCount}
               </span>
             )}
-          </Link>
-
-          <Link 
-            href="/finance/" 
-            className={`flex items-center gap-1 text-xs font-bold uppercase tracking-wider transition-colors ${
-              pathname === '/finance/' ? 'text-[#C5A265]' : 'text-slate-100 hover:text-[#C5A265]'
-            }`}
-            id="nav-finance-link"
-          >
-            <Calculator className="w-3.5 h-3.5 text-[#C5A265]" />
-            <span>FINANCE</span>
           </Link>
 
           <Link 
@@ -266,17 +314,25 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
               🏌️ ALL GOLF BUGGIES & CARTS FOR SALE
             </Link>
             <div className="pl-3 space-y-2 text-xs">
-              {CATEGORIES.map(cat => (
+              {rootCategories.map(cat => (
                 <Link
                   key={cat.slug}
                   href={`/shop/${cat.slug}/`}
                   onClick={closeMenus}
                   className="block text-[#D3DFD8] hover:text-[#C5A265] py-1"
                 >
-                  • {cat.name}
+                  • {cat.navLabel}
                 </Link>
               ))}
             </div>
+
+            <Link
+              href="/brands/"
+              onClick={closeMenus}
+              className="block font-bold text-xs uppercase tracking-wider text-white hover:text-[#C5A265] py-2.5 border-b border-[#183B2B]"
+            >
+              🏆 GOLF BUGGY BRANDS (MGI, MOTOCADDY, CLUB CAR)
+            </Link>
 
             <Link
               href="/compare/"
@@ -289,14 +345,6 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
                   {compareCount} Selected
                 </span>
               )}
-            </Link>
-
-            <Link
-              href="/finance/"
-              onClick={closeMenus}
-              className="block font-bold text-xs uppercase tracking-wider text-white hover:text-[#C5A265] py-2.5 border-b border-[#183B2B]"
-            >
-              📊 COMMERCIAL FINANCE CALCULATOR
             </Link>
 
             <Link

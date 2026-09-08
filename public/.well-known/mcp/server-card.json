@@ -107,7 +107,7 @@
         "crypto-USDT"
       ],
       "currency": "AUD",
-      "minimumOrder": 0,
+      "minimumOrder": 250,
       "flatShipping": 495,
       "cryptoDiscountPercent": 10
     }

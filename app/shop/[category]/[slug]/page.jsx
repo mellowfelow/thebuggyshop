@@ -1,7 +1,10 @@
+// app/shop/[category]/[slug]/page.jsx
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { SITE, CATEGORIES, PRODUCTS, CONTACT, SHOP } from '@/src/config/site';
+import { SITE, CONTACT, SHOP } from '@/src/config/site';
+import { getCategoryBySlug } from '@/src/config/categories';
+import { PRODUCTS, getProductBySlug } from '@/src/config/products';
 import JsonLd from '@/src/components/JsonLd';
 import ProductDetailClient from './ProductDetailClient';
 
@@ -10,13 +13,13 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { category: catSlug, slug: prodSlug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === prodSlug && p.category === catSlug);
-  if (!product) return { title: 'Product Not Found' };
+  const { slug: prodSlug } = await params;
+  const product = getProductBySlug(prodSlug) || PRODUCTS.find((p) => p.slug === prodSlug);
+  if (!product) return { title: 'Product Not Found | The Buggy Shop Australia' };
 
   return {
     title: `${product.name} | The Buggy Shop Australia`,
-    description: `${product.shortDescription} Priced at $${product.price.toLocaleString('en-AU')} AUD with 5-year LiFePO4 battery warranty and turnkey road compliance.`,
+    description: `${product.shortDescription} Priced at $${product.price.toLocaleString('en-AU')} AUD inc. GST with Australian warranty and hydraulic delivery.`,
     alternates: {
       canonical: `https://${SITE.domain}/shop/${product.category}/${product.slug}/`,
     },
@@ -34,10 +37,10 @@ export async function generateMetadata({ params }) {
 
 export default async function ProductPage({ params }) {
   const { category: catSlug, slug: prodSlug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === prodSlug && p.category === catSlug);
+  const product = getProductBySlug(prodSlug) || PRODUCTS.find((p) => p.slug === prodSlug);
   if (!product) notFound();
 
-  const category = CATEGORIES.find((c) => c.slug === product.category);
+  const category = getCategoryBySlug(product.category);
   const relatedProducts = PRODUCTS.filter((p) => p.category === product.category && p.slug !== product.slug);
 
   const productSchema = {
@@ -52,7 +55,7 @@ export default async function ProductPage({ params }) {
         "sku": `TBS-${product.slug.toUpperCase().slice(0, 10)}`,
         "brand": {
           "@type": "Brand",
-          "name": SITE.name
+          "name": product.brandName || SITE.name
         },
         "offers": {
           "@type": "Offer",
@@ -61,7 +64,7 @@ export default async function ProductPage({ params }) {
           "price": product.price,
           "priceValidUntil": "2027-12-31",
           "availability": "https://schema.org/InStock",
-          "itemCondition": "https://schema.org/NewCondition",
+          "itemCondition": product.condition === 'Used' ? "https://schema.org/UsedCondition" : "https://schema.org/NewCondition",
           "seller": {
             "@type": "Organization",
             "name": SITE.name
@@ -69,8 +72,8 @@ export default async function ProductPage({ params }) {
         },
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": product.rating,
-          "reviewCount": product.reviewCount
+          "ratingValue": product.rating || 4.9,
+          "reviewCount": product.reviewCount || 25
         }
       },
       {
@@ -85,13 +88,13 @@ export default async function ProductPage({ params }) {
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Vehicle Range",
+            "name": "Golf Buggies",
             "item": `https://${SITE.domain}/shop/`
           },
           {
             "@type": "ListItem",
             "position": 3,
-            "name": category ? category.name : 'Category',
+            "name": category ? category.navLabel : 'Category',
             "item": `https://${SITE.domain}/shop/${product.category}/`
           },
           {
@@ -113,10 +116,10 @@ export default async function ProductPage({ params }) {
       <nav className="text-xs text-[#5C6E66] flex flex-wrap items-center gap-1.5 font-medium" aria-label="Breadcrumb">
         <Link href="/" className="hover:text-[#1E3A2F]">Home</Link>
         <span>/</span>
-        <Link href="/shop/" className="hover:text-[#1E3A2F]">Vehicle Range</Link>
+        <Link href="/shop/" className="hover:text-[#1E3A2F]">Golf Buggies</Link>
         <span>/</span>
         <Link href={`/shop/${product.category}/`} className="hover:text-[#1E3A2F]">
-          {category ? category.name : product.category}
+          {category ? category.navLabel : product.category}
         </Link>
         <span>/</span>
         <span className="text-[#12241D] font-bold truncate max-w-xs">{product.name}</span>

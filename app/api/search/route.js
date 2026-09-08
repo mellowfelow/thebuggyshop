@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
-import { PRODUCTS, POSTS, CATEGORIES, SITE } from '@/src/config/site';
+import { POSTS, SITE } from '@/src/config/site';
+import { PRODUCTS } from '@/src/config/products';
+import { CATEGORY_TREE } from '@/src/config/categories';
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
@@ -13,6 +15,7 @@ export async function GET(request) {
       (p) =>
         p.name.toLowerCase().includes(q) ||
         p.shortDescription.toLowerCase().includes(q) ||
+        (p.brandName && p.brandName.toLowerCase().includes(q)) ||
         p.category.toLowerCase().includes(q)
     );
 

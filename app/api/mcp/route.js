@@ -1,27 +1,30 @@
 import { NextResponse } from 'next/server';
-import { SITE, PRODUCTS, CATEGORIES, SHOP, CONTACT } from '@/src/config/site';
+import { SITE, SHOP, CONTACT } from '@/src/config/site';
+import { PRODUCTS } from '@/src/config/products';
+import { CATEGORY_TREE } from '@/src/config/categories';
 
 const TOOLS_DEFINITIONS = [
   {
     name: 'search_products',
-    description: 'Search The Buggy Shop products by keyword, category, or maximum price.',
+    description: 'Search The Buggy Shop products by keyword, category, brand, or maximum price.',
     inputSchema: {
       type: 'object',
       properties: {
-        query: { type: 'string', description: 'Search term (e.g. 72V, 4x4, lithium)' },
-        category: { type: 'string', description: 'Category slug (e.g. estate-cruisers, farm-utility-4x4)' },
+        query: { type: 'string', description: 'Search term (e.g. MGI, lithium, remote, 4-seat)' },
+        category: { type: 'string', description: 'Category slug (e.g. electric-golf-buggies, remote-control-golf-buggies)' },
+        brand: { type: 'string', description: 'Brand slug (e.g. mgi, motocaddy, club-car)' },
         max_price: { type: 'number', description: 'Maximum price in AUD' },
       },
     },
   },
   {
     name: 'get_product',
-    description: 'Get full technical details, battery specs, and road-legal compliance for a buggy by slug.',
+    description: 'Get full technical details, key specs, battery details, and compliance for a buggy by slug.',
     inputSchema: {
       type: 'object',
       required: ['slug'],
       properties: {
-        slug: { type: 'string', description: 'The product slug (e.g. grand-tourer-4-seat-estate-cruiser)' },
+        slug: { type: 'string', description: 'The product slug (e.g. mgi-zip-navigator-at-remote-electric-golf-buggy)' },
       },
     },
   },
@@ -108,7 +111,7 @@ export async function POST(request) {
       );
     }
 
-    // 2. tools/list
+    // 2. Tools List
     if (method === 'tools/list') {
       return NextResponse.json(
         {
@@ -122,7 +125,7 @@ export async function POST(request) {
       );
     }
 
-    // 3. tools/call
+    // 3. Tools Call
     if (method === 'tools/call') {
       const { name, arguments: args = {} } = params;
 
@@ -134,11 +137,15 @@ export async function POST(request) {
             (p) =>
               p.name.toLowerCase().includes(q) ||
               p.shortDescription.toLowerCase().includes(q) ||
+              (p.brandName && p.brandName.toLowerCase().includes(q)) ||
               p.category.toLowerCase().includes(q)
           );
         }
         if (args.category) {
           results = results.filter((p) => p.category === args.category);
+        }
+        if (args.brand) {
+          results = results.filter((p) => p.brand === args.brand);
         }
         if (args.max_price) {
           results = results.filter((p) => p.price <= Number(args.max_price));
@@ -159,6 +166,7 @@ export async function POST(request) {
                       price: p.price,
                       currency: SITE.currency,
                       category: p.category,
+                      brand: p.brandName,
                       shortDescription: p.shortDescription,
                       url: `https://${SITE.domain}/shop/${p.category}/${p.slug}/`,
                     })),
@@ -212,10 +220,10 @@ export async function POST(request) {
       }
 
       if (name === 'list_categories') {
-        const cats = CATEGORIES.map((c) => ({
+        const cats = CATEGORY_TREE.map((c) => ({
           slug: c.slug,
-          name: c.name,
-          description: c.description,
+          name: c.navLabel,
+          pageTitle: c.pageTitle,
           productCount: PRODUCTS.filter((p) => p.category === c.slug).length,
           url: `https://${SITE.domain}/shop/${c.slug}/`,
         }));
@@ -225,7 +233,12 @@ export async function POST(request) {
             jsonrpc: '2.0',
             id,
             result: {
-              content: [{ type: 'text', text: JSON.stringify(cats, null, 2) }],
+              content: [
+                {
+                  type: 'text',
+                  text: JSON.stringify(cats, null, 2),
+                },
+              ],
             },
           },
           { headers }
@@ -235,12 +248,19 @@ export async function POST(request) {
       if (name === 'get_policies') {
         const policies = {
           currency: SITE.currency,
+          pricesIncludeGst: true,
           minimumOrder: SHOP.minOrder,
-          shipping: 'Flat-rate hydraulic tail-lift gate delivery to property gates nationwide across Australia.',
-          batteryWarranty: '5-Year transferable domestic LiFePO4 replacement guarantee with mobile technical dispatch.',
-          roadCompliance: 'Turnkey conditional registration compliance for QLD (TMR), NSW (Transport for NSW), and VIC (VicRoads).',
-          cryptoDiscount: `${SHOP.cryptoDiscount}% instant rebate on Bitcoin (BTC) and Tether (USDT) settlements.`,
-          paymentMethods: SHOP.paymentMethods,
+          shipping: {
+            flatFee: SHOP.shippingFee,
+            freeThreshold: SHOP.freeShippingThreshold,
+            method: 'Australia-wide hydraulic tail-lift direct freight to course or property',
+          },
+          cryptoDiscount: {
+            percentage: SHOP.cryptoDiscount,
+            description: '10% instant rebate on Bitcoin (BTC) or Tether (USDT) / PayID bank wire settlement',
+          },
+          warranty: 'Australian warranty with factory parts backup from our Queensland workshop',
+          ordering: 'Human-assisted checkout. Drafts prepared by agent and finalized with Queensland Sales Desk.',
         };
 
         return NextResponse.json(
@@ -248,7 +268,12 @@ export async function POST(request) {
             jsonrpc: '2.0',
             id,
             result: {
-              content: [{ type: 'text', text: JSON.stringify(policies, null, 2) }],
+              content: [
+                {
+                  type: 'text',
+                  text: JSON.stringify(policies, null, 2),
+                },
+              ],
             },
           },
           { headers }
@@ -257,17 +282,41 @@ export async function POST(request) {
 
       if (name === 'create_order_draft') {
         const items = args.items || [];
-        let total = 0;
-        const lineItems = items.map((it) => {
-          const prod = PRODUCTS.find((p) => p.slug === it.slug) || { name: it.slug, price: 0 };
-          const qty = it.quantity || 1;
-          const lineTotal = prod.price * qty;
-          total += lineTotal;
-          return `${qty}x ${prod.name} ($${lineTotal.toLocaleString('en-AU')} AUD)`;
-        });
+        const populatedItems = [];
+        let subtotal = 0;
 
-        const waText = `G'day! I would like to confirm an order draft for:\n${lineItems.join('\n')}\nTotal: $${total.toLocaleString('en-AU')} AUD${args.notes ? `\nNotes: ${args.notes}` : ''}`;
-        const waUrl = `https://wa.me/${CONTACT.whatsapp.replace('+', '')}?text=${encodeURIComponent(waText)}`;
+        for (const item of items) {
+          const product = PRODUCTS.find((p) => p.slug === item.slug);
+          if (product) {
+            const qty = item.quantity || 1;
+            const lineTotal = product.price * qty;
+            subtotal += lineTotal;
+            populatedItems.push({
+              slug: product.slug,
+              name: product.name,
+              price: product.price,
+              quantity: qty,
+              lineTotal,
+            });
+          }
+        }
+
+        const cryptoDiscountAmount = subtotal * (SHOP.cryptoDiscount / 100);
+        const totalAfterCrypto = subtotal - cryptoDiscountAmount;
+
+        const summaryText = populatedItems
+          .map((i) => `• ${i.quantity}x ${i.name} ($${i.price.toLocaleString('en-AU')} AUD)`)
+          .join('\n');
+
+        const message = `Hello The Buggy Shop! I would like to order:\n\n${summaryText}\n\nSubtotal: $${subtotal.toLocaleString(
+          'en-AU'
+        )} AUD\nEstimated with 10% Crypto Rebate: $${totalAfterCrypto.toLocaleString('en-AU')} AUD\n${
+          args.notes ? `\nNotes: ${args.notes}` : ''
+        }`;
+
+        const whatsappUrl = `https://wa.me/${CONTACT.whatsapp.replace('+', '')}?text=${encodeURIComponent(
+          message
+        )}`;
 
         return NextResponse.json(
           {
@@ -279,11 +328,18 @@ export async function POST(request) {
                   type: 'text',
                   text: JSON.stringify(
                     {
-                      orderDraftTotal: total,
+                      status: 'draft_created',
                       currency: SITE.currency,
-                      cryptoDiscountTotal: Math.round(total * (1 - SHOP.cryptoDiscount / 100)),
-                      whatsAppOrderUrl: waUrl,
-                      status: 'draft_prepared_human_settlement_required',
+                      items: populatedItems,
+                      subtotal,
+                      cryptoDiscount: {
+                        discountPercent: SHOP.cryptoDiscount,
+                        discountAmount: cryptoDiscountAmount,
+                        totalWithCrypto: totalAfterCrypto,
+                      },
+                      notes: args.notes || null,
+                      whatsappOrderUrl: whatsappUrl,
+                      instruction: 'Click the whatsappOrderUrl to review and submit with Queensland sales team.',
                     },
                     null,
                     2
@@ -306,22 +362,23 @@ export async function POST(request) {
       );
     }
 
+    // Unknown JSON-RPC method
     return NextResponse.json(
       {
         jsonrpc: '2.0',
         id,
-        error: { code: -32600, message: `Method "${method}" not supported.` },
+        error: { code: -32601, message: `Method "${method}" not implemented.` },
       },
       { headers }
     );
-  } catch (err) {
+  } catch (error) {
     return NextResponse.json(
       {
         jsonrpc: '2.0',
         id: null,
-        error: { code: -32700, message: 'Parse error', data: err.message },
+        error: { code: -32700, message: 'Parse error or invalid request payload.' },
       },
-      { status: 400, headers }
+      { headers }
     );
   }
 }
