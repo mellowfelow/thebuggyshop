@@ -6,7 +6,7 @@ import { CATEGORY_TREE, getRootCategories } from '@/src/config/categories';
 import { PRODUCTS } from '@/src/config/products';
 import JsonLd from '@/src/components/JsonLd';
 import ShopClient from './ShopClient';
-import { ShieldCheck, Truck, Sparkles } from 'lucide-react';
+import { ShieldCheck, Truck, Sparkles, Scale, Calculator } from 'lucide-react';
 
 export const metadata = {
   title: 'Golf Buggy for Sale Australia | Electric, Remote, Push & Golf Carts',
@@ -52,38 +52,40 @@ export default function ShopPage() {
 
       {/* Header & Quick Category Shortcuts */}
       <div className="space-y-6">
-        <nav className="text-xs text-[#4A5D53] flex items-center gap-1.5 font-medium" aria-label="Breadcrumb">
-          <Link href="/" className="hover:text-[#0E2A1E]">Home</Link>
+        <nav className="text-xs text-slate-500 flex items-center gap-1.5 font-medium" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
           <span>/</span>
-          <span className="text-[#0E2A1E] font-bold">Golf Buggies for Sale</span>
+          <span className="text-slate-900 font-bold">Golf Buggies for Sale</span>
         </nav>
 
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-[#DDE4DF] pb-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-slate-200 pb-8">
           <div className="space-y-3 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#123123] text-[#C5A265] text-xs font-black uppercase tracking-wider border border-[#C5A265]/30">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 text-[#C5A880] text-xs font-black uppercase tracking-wider border border-[#C5A880]/30 shadow-xs">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Full Australian Range · Pricing Inc. GST</span>
+              <span>Full Australian Fleet · Pricing Inc. GST</span>
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0E2A1E] tracking-tight font-serif">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-serif">
               Golf Buggy for Sale Australia
             </h1>
-            <p className="text-sm sm:text-base text-[#4A5D53] leading-relaxed">
-              Explore our complete Australian range of remote-control motorized buggies, lightweight 3-wheel push buggies, 2-seat to 6-seat luxury estate carts, and heavy-duty 4x4 off-road UTVs. Flat-rate hydraulic tail-lift delivery across Australia.
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              Explore our complete Australian fleet of remote-control motorized buggies, lightweight 3-wheel push buggies, 2-seat to 6-seat luxury estate carts, and heavy-duty 4x4 off-road UTVs. Flat-rate hydraulic tail-lift delivery across Australia.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-3">
             <Link
               href="/compare/"
-              className="py-3 px-5 rounded-2xl bg-[#0E2A1E] text-[#C5A265] font-black text-xs uppercase tracking-wider hover:bg-[#163E2D] transition-colors border border-[#C5A265]/30 shadow-sm"
+              className="py-3 px-5 rounded-xl bg-slate-900 text-[#C5A880] font-black text-xs uppercase tracking-wider hover:bg-slate-800 transition-all border border-slate-700 shadow-sm flex items-center gap-2"
             >
-              Specs Matrix →
+              <Scale className="w-3.5 h-3.5" />
+              <span>Specs Matrix &rarr;</span>
             </Link>
             <Link
               href="/finance/"
-              className="py-3 px-5 rounded-2xl bg-white text-[#0E2A1E] font-black text-xs uppercase tracking-wider hover:bg-[#F0F5F2] transition-colors border border-[#CAD5CE] shadow-2xs"
+              className="py-3 px-5 rounded-xl bg-white text-slate-900 font-black text-xs uppercase tracking-wider hover:bg-slate-50 transition-all border border-slate-300 shadow-xs flex items-center gap-2"
             >
-              Finance Calculator
+              <Calculator className="w-3.5 h-3.5 text-[#C5A880]" />
+              <span>Finance Calculator</span>
             </Link>
           </div>
         </div>
@@ -94,12 +96,12 @@ export default function ShopPage() {
             <Link
               key={cat.slug}
               href={`/shop/${cat.slug}/`}
-              className="p-3.5 rounded-2xl bg-white hover:bg-[#F3F7F4] border border-[#D5DFD9] text-center group transition-all shadow-2xs"
+              className="p-3.5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-[#C5A880] text-center group transition-all shadow-xs"
             >
-              <div className="text-xs font-black text-[#0E2A1E] group-hover:text-[#8A7045] transition-colors">
+              <div className="text-xs font-black text-slate-900 group-hover:text-[#8A7045] transition-colors">
                 {cat.navLabel}
               </div>
-              <div className="text-[10px] text-[#6B7E74] mt-1 line-clamp-1">
+              <div className="text-[10px] text-slate-500 mt-1 line-clamp-1">
                 {cat.targetKeywords?.[0] || 'Explore Range'}
               </div>
             </Link>

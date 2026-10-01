@@ -1,6 +1,9 @@
 User-agent: *
+Disallow: /admin/
+Disallow: /order/
 Disallow: /thank-you-contact/
 Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 Sitemap: https://DOMAIN.com/sitemap.xml
 
 Content-Signal: search=yes, ai-input=yes, ai-train=no

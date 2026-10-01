@@ -257,7 +257,7 @@ export async function POST(request) {
           },
           cryptoDiscount: {
             percentage: SHOP.cryptoDiscount,
-            description: '10% instant rebate on Bitcoin (BTC) or Tether (USDT) / PayID bank wire settlement',
+            description: '10% instant rebate on Bitcoin (BTC) or Tether (USDT) cryptocurrency settlement. Standard pricing on PayID and direct bank wire.',
           },
           warranty: 'Australian warranty with factory parts backup from our Queensland workshop',
           ordering: 'Human-assisted checkout. Drafts prepared by agent and finalized with Queensland Sales Desk.',

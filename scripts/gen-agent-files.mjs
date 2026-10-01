@@ -1,5 +1,5 @@
 // scripts/gen-agent-files.mjs
-// Generates all domain-bearing and agent-ready files from src/config/site.js
+// Generates all domain-bearing and agent-ready files from src/config/site.js per WebForge v11.1
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -59,15 +59,18 @@ const vercelConfig = {
     { "source": "/auth.md", "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }, { "key": "Access-Control-Allow-Origin", "value": "*" }] },
     { "source": "/llms.txt", "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }, { "key": "Access-Control-Allow-Origin", "value": "*" }] },
     { "source": "/:path*.md", "headers": [{ "key": "Content-Type", "value": "text/markdown; charset=utf-8" }] },
-    { "source": "/api/:path*", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }, { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" }, { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Accept, Mcp-Session-Id" }] }
+    { "source": "/api/:path*", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }, { "key": "Access-Control-Allow-Methods", "value": "GET, POST, OPTIONS" }, { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Accept, Mcp-Session-Id, x-admin-passcode" }] }
   ]
 };
 fs.writeFileSync(path.join(rootDir, 'vercel.json'), JSON.stringify(vercelConfig, null, 2));
 
-// 2. public/robots.txt
+// 2. public/robots.txt (Disallows admin, order, and thank-you pages per WebForge v11.1)
 const robotsTxt = `User-agent: *
+Disallow: /admin/
+Disallow: /order/
 Disallow: /thank-you-contact/
 Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 Sitemap: ${baseUrl}/sitemap.xml
 
 Content-Signal: search=yes, ai-input=yes, ai-train=no
@@ -190,7 +193,7 @@ No authentication required. All catalog, specification, and educational resource
 
 ## Ordering
 Human-in-the-loop required. Agents may browse catalog items, perform comparison queries, and prepare order drafts via the MCP server.
-Orders are completed securely by a human customer via WhatsApp dispatch (+61 480 811 308) or the official order request form.
+Orders are completed securely by a human customer via WhatsApp dispatch (${CONTACT.phoneDisplay}) or the official order request form.
 `;
 fs.writeFileSync(path.join(publicDir, 'auth.md'), authMd);
 
@@ -467,7 +470,8 @@ const webmcpJs = `(function () {
         description: "Initiate a WhatsApp order for delivery across Australia. Human completes transaction.",
         inputSchema: { type: "object", properties: { message: { type: "string" } } },
         execute: async ({ message }) => {
-          const url = message ? \`https://wa.me/${CONTACT.whatsapp.replace('+', '')}?text=\${encodeURIComponent(message)}\` : \`https://wa.me/${CONTACT.whatsapp.replace('+', '')}\`;
+          const greeting = "Hi ${SITE.name}, ";
+          const url = \`https://wa.me/${CONTACT.whatsapp.replace('+', '')}?text=\${encodeURIComponent(greeting + (message || ''))}\`;
           window.open(url, '_blank');
           return { url };
         }

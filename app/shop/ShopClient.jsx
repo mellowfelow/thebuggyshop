@@ -74,7 +74,7 @@ export default function ShopClient({
   const handleClearFilters = () => {
     setActiveFilters({
       power: [],
-      brand: [],
+      brand: currentBrand?.slug ? [currentBrand.slug] : [],
       wheels: [],
       seats: [],
       condition: [],
@@ -82,193 +82,128 @@ export default function ShopClient({
       batteryRange: [],
       weight: []
     });
-    setSearchQuery('');
     setCustomMinPrice('');
     setCustomMaxPrice('');
-    setSelectedCategory('all');
+    setSearchQuery('');
   };
 
-  const removeSpecificFilter = (facetKey, value) => {
-    setActiveFilters(prev => ({
-      ...prev,
-      [facetKey]: (prev[facetKey] || []).filter(v => v !== value)
-    }));
-  };
-
-  // Extract raw facets list for the filter component
-  const facets = useMemo(() => {
-    const power = new Set();
-    const brand = new Set();
-    const wheels = new Set();
-    const seats = new Set();
-    const condition = new Set();
-    const batteryRange = new Set();
-
-    initialProducts.forEach(p => {
-      if (p.power) power.add(p.power);
-      if (p.brand) brand.add(p.brand);
-      if (p.wheels) wheels.add(p.wheels);
-      if (p.seats) seats.add(p.seats);
-      if (p.condition) condition.add(p.condition);
-      if (p.specs?.batteryRange) batteryRange.add(p.specs.batteryRange);
-    });
-
-    return {
-      power: Array.from(power),
-      brand: Array.from(brand),
-      wheels: Array.from(wheels),
-      seats: Array.from(seats),
-      condition: Array.from(condition),
-      batteryRange: Array.from(batteryRange)
-    };
-  }, [initialProducts]);
-
-  // Compute live facet counts based on current category and search query
-  const facetCounts = useMemo(() => {
-    // Base candidate pool respecting category and search query
-    let base = [...initialProducts];
-    if (selectedCategory !== 'all') {
-      base = base.filter(p => 
-        p.category === selectedCategory || 
-        p.categoryPath?.includes(selectedCategory)
-      );
-    }
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase().trim();
-      base = base.filter(p => 
-        p.name?.toLowerCase().includes(q) ||
-        p.brand?.toLowerCase().includes(q) ||
-        p.shortDescription?.toLowerCase().includes(q) ||
-        p.primaryKeyword?.toLowerCase().includes(q)
-      );
-    }
-
-    const counts = {
-      power: {},
-      brand: {},
-      wheels: {},
-      seats: {},
-      condition: {},
-      priceRange: {
-        'under-1000': 0,
-        '1000-2500': 0,
-        '2500-10000': 0,
-        'over-10000': 0
-      },
-      batteryRange: {}
-    };
-
-    base.forEach(p => {
-      if (p.power) counts.power[p.power] = (counts.power[p.power] || 0) + 1;
-      if (p.brand) counts.brand[p.brand] = (counts.brand[p.brand] || 0) + 1;
-      if (p.wheels) counts.wheels[p.wheels] = (counts.wheels[p.wheels] || 0) + 1;
-      if (p.seats) counts.seats[p.seats] = (counts.seats[p.seats] || 0) + 1;
-      if (p.condition) counts.condition[p.condition] = (counts.condition[p.condition] || 0) + 1;
-      
-      const bRange = p.specs?.batteryRange || (p.power === 'Remote control' ? '36 hole' : '27 hole');
-      counts.batteryRange[bRange] = (counts.batteryRange[bRange] || 0) + 1;
-
-      if (p.price < 1000) counts.priceRange['under-1000']++;
-      else if (p.price <= 2500) counts.priceRange['1000-2500']++;
-      else if (p.price <= 10000) counts.priceRange['2500-10000']++;
-      else counts.priceRange['over-10000']++;
-    });
-
-    return counts;
-  }, [initialProducts, selectedCategory, searchQuery]);
-
-  // Filter products based on all active criteria
+  // 1. Build Multi-facet dynamic catalogue filter
   const filtered = useMemo(() => {
-    let result = [...initialProducts];
+    return initialProducts.filter(product => {
+      // Category match
+      if (selectedCategory !== 'all') {
+        const catObj = categories.find(c => c.slug === selectedCategory);
+        if (catObj && catObj.subcategories) {
+          const validSlugs = [catObj.slug, ...catObj.subcategories.map(s => s.slug)];
+          if (!validSlugs.includes(product.category)) return false;
+        } else {
+          if (product.category !== selectedCategory) return false;
+        }
+      }
 
-    // 1. Category filter
-    if (selectedCategory !== 'all') {
-      result = result.filter(p => 
-        p.category === selectedCategory || 
-        p.categoryPath?.includes(selectedCategory)
-      );
-    }
+      // Keyword Search
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase().trim();
+        const matchName = product.name?.toLowerCase().includes(q);
+        const matchDesc = product.description?.toLowerCase().includes(q);
+        const matchBrand = product.brand?.toLowerCase().includes(q);
+        const matchCategory = product.category?.toLowerCase().includes(q);
+        const matchKeywords = product.keywords?.some(k => k.toLowerCase().includes(q));
+        if (!matchName && !matchDesc && !matchBrand && !matchCategory && !matchKeywords) {
+          return false;
+        }
+      }
 
-    // 2. Keyword Search
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase().trim();
-      result = result.filter(p => 
-        p.name?.toLowerCase().includes(q) ||
-        p.brand?.toLowerCase().includes(q) ||
-        p.shortDescription?.toLowerCase().includes(q) ||
-        p.primaryKeyword?.toLowerCase().includes(q) ||
-        p.category?.toLowerCase().includes(q)
-      );
-    }
+      // Power Type Facet
+      if (activeFilters.power?.length > 0) {
+        if (!activeFilters.power.includes(product.power)) return false;
+      }
 
-    // 3. Power filter
-    if (activeFilters.power?.length > 0) {
-      result = result.filter(p => activeFilters.power.includes(p.power));
-    }
+      // Brand Facet
+      if (activeFilters.brand?.length > 0) {
+        const productBrandSlug = (product.brand || '').toLowerCase().replace(/\s+/g, '-');
+        if (!activeFilters.brand.includes(productBrandSlug) && !activeFilters.brand.includes(product.brand)) {
+          return false;
+        }
+      }
 
-    // 4. Brand filter
-    if (activeFilters.brand?.length > 0) {
-      result = result.filter(p => activeFilters.brand.includes(p.brand));
-    }
+      // Wheels Facet
+      if (activeFilters.wheels?.length > 0) {
+        if (!activeFilters.wheels.includes(product.wheels)) return false;
+      }
 
-    // 5. Wheels filter
-    if (activeFilters.wheels?.length > 0) {
-      result = result.filter(p => activeFilters.wheels.includes(p.wheels));
-    }
+      // Seats Facet
+      if (activeFilters.seats?.length > 0) {
+        if (!activeFilters.seats.includes(product.seats)) return false;
+      }
 
-    // 6. Seats filter
-    if (activeFilters.seats?.length > 0) {
-      result = result.filter(p => activeFilters.seats.includes(p.seats));
-    }
+      // Condition Facet
+      if (activeFilters.condition?.length > 0) {
+        if (!activeFilters.condition.includes(product.condition)) return false;
+      }
 
-    // 7. Condition filter
-    if (activeFilters.condition?.length > 0) {
-      result = result.filter(p => activeFilters.condition.includes(p.condition));
-    }
-
-    // 8. Preset Price Ranges
-    if (activeFilters.priceRange?.length > 0) {
-      result = result.filter(p => {
-        return activeFilters.priceRange.some(range => {
-          if (range === 'under-1000') return p.price < 1000;
-          if (range === '1000-2500') return p.price >= 1000 && p.price <= 2500;
-          if (range === '2500-10000') return p.price > 2500 && p.price <= 10000;
-          if (range === 'over-10000') return p.price > 10000;
-          return true;
+      // Battery Range Facet
+      if (activeFilters.batteryRange?.length > 0) {
+        const rangeStr = product.specs?.range || '';
+        const rangeNum = parseInt(rangeStr.replace(/\D/g, ''), 10) || 0;
+        const matchesAnyRange = activeFilters.batteryRange.some(bKey => {
+          if (bKey === 'under-30km') return rangeNum > 0 && rangeNum < 30;
+          if (bKey === '30-60km') return rangeNum >= 30 && rangeNum <= 60;
+          if (bKey === '60km-plus') return rangeNum > 60;
+          return false;
         });
-      });
-    }
+        if (!matchesAnyRange) return false;
+      }
 
-    // 9. Custom Min / Max Price
-    if (customMinPrice !== '' && !isNaN(Number(customMinPrice))) {
-      result = result.filter(p => p.price >= Number(customMinPrice));
-    }
-    if (customMaxPrice !== '' && !isNaN(Number(customMaxPrice))) {
-      result = result.filter(p => p.price <= Number(customMaxPrice));
-    }
+      // Weight Facet
+      if (activeFilters.weight?.length > 0) {
+        const weightStr = product.specs?.weight || '';
+        const weightNum = parseFloat(weightStr.replace(/[^0-9.]/g, '')) || 0;
+        const matchesAnyWeight = activeFilters.weight.some(wKey => {
+          if (wKey === 'under-15kg') return weightNum > 0 && weightNum < 15;
+          if (wKey === '15-35kg') return weightNum >= 15 && weightNum <= 35;
+          if (wKey === 'heavy-over-35kg') return weightNum > 35;
+          return false;
+        });
+        if (!matchesAnyWeight) return false;
+      }
 
-    // 10. Battery Range
-    if (activeFilters.batteryRange?.length > 0) {
-      result = result.filter(p => {
-        const b = p.specs?.batteryRange || (p.power === 'Remote control' ? '36 hole' : '27 hole');
-        return activeFilters.batteryRange.includes(b);
-      });
-    }
+      // Preset Price Range Facet
+      if (activeFilters.priceRange?.length > 0) {
+        const p = product.price || 0;
+        const matchesAnyPriceTier = activeFilters.priceRange.some(tier => {
+          if (tier === 'under-1000') return p < 1000;
+          if (tier === '1000-2500') return p >= 1000 && p <= 2500;
+          if (tier === '2500-5000') return p > 2500 && p <= 5000;
+          if (tier === '5000-10000') return p > 5000 && p <= 10000;
+          if (tier === 'over-10000') return p > 10000;
+          return false;
+        });
+        if (!matchesAnyPriceTier) return false;
+      }
 
-    // Sort results
-    if (sortBy === 'price-asc') {
-      result.sort((a, b) => a.price - b.price);
-    } else if (sortBy === 'price-desc') {
-      result.sort((a, b) => b.price - a.price);
-    } else if (sortBy === 'rating') {
-      result.sort((a, b) => (b.rating || 5) - (a.rating || 5));
-    } else if (sortBy === 'name-asc') {
-      result.sort((a, b) => a.name.localeCompare(b.name));
-    }
+      // Custom Exact Price Inputs
+      if (customMinPrice !== '' && !isNaN(customMinPrice)) {
+        if (product.price < Number(customMinPrice)) return false;
+      }
+      if (customMaxPrice !== '' && !isNaN(customMaxPrice)) {
+        if (product.price > Number(customMaxPrice)) return false;
+      }
 
-    return result;
+      return true;
+    }).sort((a, b) => {
+      if (sortBy === 'price-asc') return a.price - b.price;
+      if (sortBy === 'price-desc') return b.price - a.price;
+      if (sortBy === 'rating') return (b.rating || 4.8) - (a.rating || 4.8);
+      if (sortBy === 'name-asc') return a.name.localeCompare(b.name);
+      // 'featured' default: prioritize featured items then price
+      if (a.featured && !b.featured) return -1;
+      if (!a.featured && b.featured) return 1;
+      return a.price - b.price;
+    });
   }, [
     initialProducts, 
+    categories, 
     selectedCategory, 
     searchQuery, 
     activeFilters, 
@@ -277,138 +212,224 @@ export default function ShopClient({
     sortBy
   ]);
 
-  // Active filter items list for tag pill rendering
-  const activeFilterList = [];
-  Object.entries(activeFilters).forEach(([key, values]) => {
-    if (Array.isArray(values)) {
-      values.forEach(val => activeFilterList.push({ key, value: val }));
-    }
-  });
+  // Compute facet item counts dynamically
+  const facetCounts = useMemo(() => {
+    const counts = {};
+    initialProducts.forEach(p => {
+      // power
+      if (p.power) counts[`power:${p.power}`] = (counts[`power:${p.power}`] || 0) + 1;
+      // brand
+      if (p.brand) {
+        const bSlug = p.brand.toLowerCase().replace(/\s+/g, '-');
+        counts[`brand:${bSlug}`] = (counts[`brand:${bSlug}`] || 0) + 1;
+      }
+      // wheels
+      if (p.wheels) counts[`wheels:${p.wheels}`] = (counts[`wheels:${p.wheels}`] || 0) + 1;
+      // seats
+      if (p.seats) counts[`seats:${p.seats}`] = (counts[`seats:${p.seats}`] || 0) + 1;
+      // condition
+      if (p.condition) counts[`condition:${p.condition}`] = (counts[`condition:${p.condition}`] || 0) + 1;
+    });
+    return counts;
+  }, [initialProducts]);
 
-  const categoryPills = [
-    { slug: 'all', label: 'All Equipment', icon: '⛳' },
-    { slug: 'remote-control-buggies', label: 'Remote Control', icon: '🎮' },
-    { slug: 'follow-buggies', label: 'GPS Follow', icon: '🤖' },
-    { slug: 'electric-golf-buggies', label: 'Walk-Behind Electric', icon: '⚡' },
-    { slug: 'push-pull-buggies', label: 'Push Buggies', icon: '🚶' },
-    { slug: 'golf-carts', label: 'Golf Carts & Commercial', icon: '🚗' },
-    { slug: 'off-road-buggies', label: 'Farm & Dune UTVs', icon: '🚜' },
-    { slug: 'parts-accessories', label: 'Batteries & Parts', icon: '🔋' }
+  // Facet configuration definition
+  const facets = [
+    {
+      key: 'power',
+      label: 'Propulsion & Drive System',
+      options: [
+        { label: 'Remote Control Motored', value: 'Remote control' },
+        { label: 'Electric Motorized Trolley', value: 'Electric' },
+        { label: 'Non-Motorized Push Buggy', value: 'Manual' },
+        { label: 'Gas / Petrol Powered Cart', value: 'Petrol' },
+      ]
+    },
+    {
+      key: 'brand',
+      label: 'Manufacturer & Brand',
+      options: [
+        { label: 'MGI Golf Australia', value: 'mgi' },
+        { label: 'Motocaddy', value: 'motocaddy' },
+        { label: 'Clicgear', value: 'clicgear' },
+        { label: 'Club Car', value: 'club-car' },
+        { label: 'EZGO', value: 'ezgo' },
+        { label: 'Yamaha Golf-Car', value: 'yamaha' },
+        { label: 'Concourse Golf', value: 'concourse' },
+        { label: 'Hill Billy Buggies', value: 'hill-billy' },
+        { label: 'Axglo Sports', value: 'axglo' },
+      ]
+    },
+    {
+      key: 'wheels',
+      label: 'Chassis & Wheel Geometry',
+      options: [
+        { label: '3-Wheel Lightweight Push', value: '3-wheel' },
+        { label: '4-Wheel Heavy Stability Platform', value: '4-wheel' },
+      ]
+    },
+    {
+      key: 'seats',
+      label: 'Passenger Capacity',
+      options: [
+        { label: 'Walking Follow / Remote (0-Seat)', value: '0' },
+        { label: '2-Seater Executive Golf Cart', value: '2' },
+        { label: '4-Seater Forward/Rear Resort', value: '4' },
+        { label: '6-Seater Hospitality Shuttle', value: '6' },
+      ]
+    },
+    {
+      key: 'condition',
+      label: 'Vehicle Lifecycle Condition',
+      options: [
+        { label: 'Brand New (Full 5-Yr Battery Warranty)', value: 'Brand New' },
+        { label: 'Certified Pre-Owned & Inspected', value: 'Certified Pre-Owned' },
+      ]
+    },
+    {
+      key: 'priceRange',
+      label: 'Price Range (AUD Inc. GST)',
+      options: [
+        { label: 'Under $1,000 AUD', value: 'under-1000' },
+        { label: '$1,000 – $2,500 AUD', value: '1000-2500' },
+        { label: '$2,500 – $5,000 AUD', value: '2500-5000' },
+        { label: '$5,000 – $10,000 AUD', value: '5000-10000' },
+        { label: '$10,000+ Luxury & Carts', value: 'over-10000' },
+      ]
+    },
+    {
+      key: 'batteryRange',
+      label: 'Single-Charge Endurance',
+      options: [
+        { label: '18 Holes (~15-25 km)', value: 'under-30km' },
+        { label: '36 Holes (~35-60 km)', value: '30-60km' },
+        { label: 'Extended Estate (60-100 km)', value: '60km-plus' },
+      ]
+    },
+    {
+      key: 'weight',
+      label: 'Chassis Tare Weight',
+      options: [
+        { label: 'Ultra-Lightweight (<15 kg)', value: 'under-15kg' },
+        { label: 'Standard Motorized (15–35 kg)', value: '15-35kg' },
+        { label: 'Ride-On Golf Cart (>35 kg)', value: 'heavy-over-35kg' },
+      ]
+    }
   ];
+
+  // Active filter pills calculation
+  const activeFilterPills = useMemo(() => {
+    const pills = [];
+    Object.entries(activeFilters).forEach(([key, values]) => {
+      const facetObj = facets.find(f => f.key === key);
+      values.forEach(val => {
+        const optionObj = facetObj?.options?.find(o => o.value === val);
+        pills.push({
+          facetKey: key,
+          value: val,
+          label: optionObj?.label || val,
+          categoryLabel: facetObj?.label || key
+        });
+      });
+    });
+    if (customMinPrice || customMaxPrice) {
+      pills.push({
+        facetKey: 'customPrice',
+        value: 'custom',
+        label: `$${customMinPrice || 0} - $${customMaxPrice || '∞'}`
+      });
+    }
+    return pills;
+  }, [activeFilters, customMinPrice, customMaxPrice]);
 
   return (
     <div className="space-y-6">
-      {/* 1. Quick Category Navigation Tabs */}
-      <div className="overflow-x-auto pb-2 custom-scrollbar">
-        <div className="flex items-center gap-2 min-w-max">
-          {categoryPills.map(cat => {
-            const isSelected = selectedCategory === cat.slug;
-            return (
-              <button
-                key={cat.slug}
-                type="button"
-                onClick={() => setSelectedCategory(cat.slug)}
-                className={`flex items-center gap-2 px-3.5 py-2 rounded-2xl text-xs font-black transition-all cursor-pointer border select-none ${
-                  isSelected
-                    ? 'bg-[#0E2A1E] text-[#C5A265] border-[#0E2A1E] shadow-sm'
-                    : 'bg-white text-[#2A4D3B] border-[#D5DFD9] hover:bg-[#EDF3EF] hover:text-[#0E2A1E]'
-                }`}
-              >
-                <span>{cat.icon}</span>
-                <span>{cat.label}</span>
-                {cat.slug !== 'all' && (
-                  <span className={`text-[10px] px-1.5 py-0.5 rounded-full ${
-                    isSelected ? 'bg-[#19402F] text-[#C5A265]' : 'bg-[#EBF1ED] text-[#4A5D53]'
-                  }`}>
-                    {initialProducts.filter(p => p.category === cat.slug || p.categoryPath?.includes(cat.slug)).length}
-                  </span>
-                )}
-              </button>
-            );
-          })}
-        </div>
+      {/* 1. Category Pill Header Bar */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        <button
+          type="button"
+          onClick={() => setSelectedCategory('all')}
+          className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+            selectedCategory === 'all'
+              ? 'bg-slate-900 text-[#C5A880] border border-[#C5A880]/50 shadow-sm'
+              : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+          }`}
+        >
+          All Golf Buggies ({initialProducts.length})
+        </button>
+
+        {categories.map((cat) => (
+          <button
+            key={cat.slug}
+            type="button"
+            onClick={() => setSelectedCategory(cat.slug)}
+            className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer ${
+              selectedCategory === cat.slug
+                ? 'bg-slate-900 text-[#C5A880] border border-[#C5A880]/50 shadow-sm'
+                : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+            }`}
+          >
+            {cat.name}
+          </button>
+        ))}
       </div>
 
-      {/* 2. Top Control Bar: Active Summary, View Toggle, Sort */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 p-4 sm:p-5 bg-gradient-to-b from-[#FCFDFB] to-[#F1F6F3] rounded-3xl border border-[#D5DFD9] shadow-xs">
-        {/* Results Counter & Active Filter Pills */}
-        <div className="flex items-center flex-wrap gap-2">
-          <div className="flex items-center gap-2 bg-[#0E2A1E] text-[#C5A265] text-xs font-black px-3.5 py-2 rounded-xl shadow-2xs">
-            <LayoutGrid className="w-3.5 h-3.5" />
-            <span>{filtered.length} {filtered.length === 1 ? 'Vehicle' : 'Vehicles'}</span>
-          </div>
+      {/* 2. Search, Stats, Sort Bar */}
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-white p-4 rounded-3xl border border-slate-200 shadow-xs">
+        {/* Results Counter & Active Query */}
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-xs font-bold text-slate-900">
+            Showing <strong className="text-[#8A7045] font-black">{filtered.length}</strong> of {initialProducts.length} Vehicles
+          </span>
 
-          {selectedCategory !== 'all' && (
-            <button
-              type="button"
-              onClick={() => setSelectedCategory('all')}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs bg-[#0E2A1E] text-white font-bold hover:bg-[#163E2D] shadow-2xs transition-colors cursor-pointer"
-            >
-              <span>Category: {selectedCategory.replace(/-/g, ' ')}</span>
-              <X className="w-3 h-3 text-[#C5A265]" />
-            </button>
-          )}
+          {activeFilterPills.length > 0 && (
+            <div className="flex flex-wrap items-center gap-1.5 ml-2">
+              {activeFilterPills.map((pill, idx) => (
+                <span
+                  key={idx}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-900 text-[#C5A880] text-[11px] font-bold border border-[#C5A880]/30 shadow-xs"
+                >
+                  <span>{pill.label}</span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (pill.facetKey === 'customPrice') {
+                        setCustomMinPrice('');
+                        setCustomMaxPrice('');
+                      } else {
+                        handleFilterChange(pill.facetKey, pill.value);
+                      }
+                    }}
+                    className="hover:text-white transition-colors cursor-pointer"
+                  >
+                    <X className="w-3 h-3" />
+                  </button>
+                </span>
+              ))}
 
-          {searchQuery && (
-            <button
-              type="button"
-              onClick={() => setSearchQuery('')}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs bg-[#FFF9ED] text-[#8A7045] border border-[#E5CCA0] font-bold hover:bg-[#F4EADA] shadow-2xs transition-colors cursor-pointer"
-            >
-              <span>Search: &ldquo;{searchQuery}&rdquo;</span>
-              <X className="w-3 h-3 text-[#0E2A1E]" />
-            </button>
-          )}
-
-          {(customMinPrice || customMaxPrice) && (
-            <button
-              type="button"
-              onClick={() => {
-                setCustomMinPrice('');
-                setCustomMaxPrice('');
-              }}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs bg-white text-[#0E2A1E] border border-[#CAD5CE] font-bold hover:bg-[#F3F7F4] shadow-2xs transition-colors cursor-pointer"
-            >
-              <span>Budget: ${customMinPrice || '0'} – ${customMaxPrice || '∞'} AUD</span>
-              <X className="w-3 h-3 text-[#8A7045]" />
-            </button>
-          )}
-
-          {activeFilterList.map(({ key, value }) => (
-            <button
-              key={`${key}-${value}`}
-              type="button"
-              onClick={() => removeSpecificFilter(key, value)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs bg-white text-[#0E2A1E] border border-[#CAD5CE] font-bold hover:bg-[#F3F7F4] shadow-2xs transition-colors cursor-pointer"
-            >
-              <span className="capitalize">{key}: {value}</span>
-              <X className="w-3 h-3 text-[#8A7045]" />
-            </button>
-          ))}
-
-          {(activeFilterList.length > 0 || selectedCategory !== 'all' || searchQuery || customMinPrice || customMaxPrice) && (
-            <button
-              type="button"
-              onClick={handleClearFilters}
-              className="inline-flex items-center gap-1 text-xs text-[#8A7045] hover:text-[#0E2A1E] font-extrabold px-2.5 py-1.5 rounded-xl hover:bg-[#EDF3EF] cursor-pointer transition-colors"
-            >
-              <RotateCcw className="w-3 h-3" />
-              <span>Reset Filters</span>
-            </button>
+              <button
+                type="button"
+                onClick={handleClearFilters}
+                className="text-[11px] font-bold text-rose-600 hover:underline ml-1 cursor-pointer flex items-center gap-1"
+              >
+                <RotateCcw className="w-3 h-3" />
+                <span>Reset Filters</span>
+              </button>
+            </div>
           )}
         </div>
 
         {/* View Toggle & Sort Controls */}
         <div className="flex items-center gap-3 shrink-0 self-end lg:self-auto">
           {/* Grid / List Mode */}
-          <div className="flex items-center bg-white p-1 rounded-2xl border border-[#CAD5CE] shadow-2xs">
+          <div className="flex items-center bg-white p-1 rounded-2xl border border-slate-200 shadow-xs">
             <button
               type="button"
               onClick={() => setViewMode('grid')}
               className={`p-1.5 rounded-xl transition-all cursor-pointer ${
                 viewMode === 'grid' 
-                  ? 'bg-[#0E2A1E] text-[#C5A265]' 
-                  : 'text-[#4A5D53] hover:text-[#0E2A1E]'
+                  ? 'bg-slate-900 text-[#C5A880]' 
+                  : 'text-slate-500 hover:text-slate-900'
               }`}
               title="Grid View"
               aria-label="Grid View"
@@ -420,8 +441,8 @@ export default function ShopClient({
               onClick={() => setViewMode('list')}
               className={`p-1.5 rounded-xl transition-all cursor-pointer ${
                 viewMode === 'list' 
-                  ? 'bg-[#0E2A1E] text-[#C5A265]' 
-                  : 'text-[#4A5D53] hover:text-[#0E2A1E]'
+                  ? 'bg-slate-900 text-[#C5A880]' 
+                  : 'text-slate-500 hover:text-slate-900'
               }`}
               title="List View"
               aria-label="List View"
@@ -431,13 +452,13 @@ export default function ShopClient({
           </div>
 
           {/* Sort Selector */}
-          <div className="flex items-center gap-2 bg-white px-3.5 py-2 rounded-2xl border border-[#CAD5CE] shadow-2xs">
+          <div className="flex items-center gap-2 bg-white px-3.5 py-2 rounded-2xl border border-slate-200 shadow-xs">
             <ArrowUpDown className="w-4 h-4 text-[#8A7045]" />
-            <span className="text-xs font-bold text-[#4A5D53]">Sort:</span>
+            <span className="text-xs font-bold text-slate-500">Sort:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="text-xs font-bold bg-transparent text-[#0E2A1E] focus:outline-hidden cursor-pointer"
+              className="text-xs font-bold bg-transparent text-slate-900 focus:outline-hidden cursor-pointer"
             >
               <option value="featured">Featured & Best Sellers</option>
               <option value="price-asc">Price: Low to High</option>
@@ -471,12 +492,12 @@ export default function ShopClient({
         {/* Product Cards Display Area */}
         <div className="flex-1 w-full">
           {filtered.length === 0 ? (
-            <div className="text-center py-20 bg-gradient-to-b from-[#FCFDFB] to-[#F1F6F3] rounded-3xl border-2 border-dashed border-[#CAD5CE] p-8 space-y-4">
-              <div className="w-14 h-14 rounded-2xl bg-[#0E2A1E] text-[#C5A265] flex items-center justify-center mx-auto shadow-md">
+            <div className="text-center py-20 bg-gradient-to-b from-white to-slate-50 rounded-3xl border-2 border-dashed border-slate-200 p-8 space-y-4">
+              <div className="w-14 h-14 rounded-2xl bg-slate-900 text-[#C5A880] flex items-center justify-center mx-auto shadow-md">
                 <SlidersHorizontal className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-black text-[#0E2A1E] font-serif">No vehicles matched your exact filter combination</h3>
-              <p className="text-xs text-[#4A5D53] max-w-md mx-auto leading-relaxed">
+              <h3 className="text-xl font-black text-slate-900 font-serif">No vehicles matched your exact filter combination</h3>
+              <p className="text-xs text-slate-500 max-w-md mx-auto leading-relaxed">
                 We couldn&apos;t find buggies matching all active filters. Try clearing specific criteria or expanding your price range.
               </p>
               
@@ -485,7 +506,7 @@ export default function ShopClient({
                   <button
                     type="button"
                     onClick={() => setSearchQuery('')}
-                    className="px-4 py-2 rounded-xl bg-white text-[#0E2A1E] border border-[#CAD5CE] font-bold text-xs hover:bg-[#F0F4F1] cursor-pointer"
+                    className="px-4 py-2 rounded-xl bg-white text-slate-900 border border-slate-200 font-bold text-xs hover:bg-slate-50 cursor-pointer"
                   >
                     Clear Search Query
                   </button>
@@ -494,7 +515,7 @@ export default function ShopClient({
                   <button
                     type="button"
                     onClick={() => handleClearSection('brand')}
-                    className="px-4 py-2 rounded-xl bg-white text-[#0E2A1E] border border-[#CAD5CE] font-bold text-xs hover:bg-[#F0F4F1] cursor-pointer"
+                    className="px-4 py-2 rounded-xl bg-white text-slate-900 border border-slate-200 font-bold text-xs hover:bg-slate-50 cursor-pointer"
                   >
                     Clear Brand Filter
                   </button>
@@ -502,7 +523,7 @@ export default function ShopClient({
                 <button
                   type="button"
                   onClick={handleClearFilters}
-                  className="px-6 py-2.5 rounded-xl bg-[#0E2A1E] text-[#C5A265] font-black text-xs uppercase tracking-wider hover:bg-[#163E2D] shadow-sm transition-colors cursor-pointer"
+                  className="px-6 py-2.5 rounded-xl bg-slate-900 text-[#C5A880] font-black text-xs uppercase tracking-wider hover:bg-slate-800 shadow-sm transition-colors cursor-pointer"
                 >
                   Reset All Filters
                 </button>
@@ -531,11 +552,11 @@ export default function ShopClient({
                 return (
                   <div 
                     key={product.slug}
-                    className="bg-white rounded-3xl p-5 border border-[#D5DFD9] hover:border-[#C5A265] transition-all shadow-2xs hover:shadow-md flex flex-col md:flex-row items-center gap-6 group"
+                    className="bg-white rounded-3xl p-5 border border-slate-200 hover:border-[#C5A880] transition-all shadow-xs hover:shadow-md flex flex-col md:flex-row items-center gap-6 group"
                   >
-                    <div className="w-full md:w-56 shrink-0 aspect-4/3 bg-[#F4F7F5] rounded-2xl flex items-center justify-center p-4 border border-[#E2E8E4] relative overflow-hidden">
+                    <div className="w-full md:w-56 shrink-0 aspect-4/3 bg-slate-50 rounded-2xl flex items-center justify-center p-4 border border-slate-200 relative overflow-hidden">
                       {product.badge && (
-                        <span className="absolute top-2.5 left-2.5 bg-[#0E2A1E] text-[#C5A265] text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md shadow-2xs">
+                        <span className="absolute top-2.5 left-2.5 bg-slate-900 text-[#C5A880] text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md shadow-xs">
                           {product.badge}
                         </span>
                       )}
@@ -545,7 +566,7 @@ export default function ShopClient({
                     </div>
 
                     <div className="flex-1 min-w-0 space-y-2">
-                      <div className="flex items-center gap-2 text-[11px] font-bold text-[#60756B] uppercase tracking-wider">
+                      <div className="flex items-center gap-2 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
                         <span>{product.brand}</span>
                         <span>•</span>
                         <span>{product.power}</span>
@@ -553,39 +574,39 @@ export default function ShopClient({
                         <span>{product.wheels || '4-wheel'}</span>
                       </div>
 
-                      <h3 className="font-serif font-black text-lg text-[#0E2A1E] group-hover:text-[#8A7045] transition-colors truncate">
+                      <h3 className="font-serif font-black text-lg text-slate-900 group-hover:text-[#8A7045] transition-colors truncate">
                         <Link href={`/shop/${product.category}/${product.slug}/`}>
                           {product.name}
                         </Link>
                       </h3>
 
-                      <p className="text-xs text-[#4A5D53] line-clamp-2 leading-relaxed">
+                      <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
                         {product.shortDescription || product.description}
                       </p>
 
                       <div className="flex flex-wrap gap-2 pt-1">
                         {product.specs?.motor && (
-                          <span className="text-[10px] font-bold bg-[#F4F7F5] text-[#2A4D3B] px-2 py-0.5 rounded-md border border-[#E2E8E4]">
+                          <span className="text-[10px] font-bold bg-slate-100 text-slate-800 px-2 py-0.5 rounded-md border border-slate-200">
                             ⚡ {product.specs.motor}
                           </span>
                         )}
                         {product.specs?.battery && (
-                          <span className="text-[10px] font-bold bg-[#F4F7F5] text-[#2A4D3B] px-2 py-0.5 rounded-md border border-[#E2E8E4]">
+                          <span className="text-[10px] font-bold bg-slate-100 text-slate-800 px-2 py-0.5 rounded-md border border-slate-200">
                             🔋 {product.specs.battery}
                           </span>
                         )}
                         {product.specs?.weight && (
-                          <span className="text-[10px] font-bold bg-[#F4F7F5] text-[#2A4D3B] px-2 py-0.5 rounded-md border border-[#E2E8E4]">
+                          <span className="text-[10px] font-bold bg-slate-100 text-slate-800 px-2 py-0.5 rounded-md border border-slate-200">
                             ⚖️ {product.specs.weight}
                           </span>
                         )}
                       </div>
                     </div>
 
-                    <div className="w-full md:w-48 shrink-0 flex flex-col justify-between items-end gap-3 pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-[#E8ECE9] md:pl-6">
+                    <div className="w-full md:w-48 shrink-0 flex flex-col justify-between items-end gap-3 pt-4 md:pt-0 border-t md:border-t-0 md:border-l border-slate-200 md:pl-6">
                       <div className="text-right">
-                        <span className="text-[10px] font-extrabold uppercase tracking-wider text-[#60756B] block">Indicative RRP</span>
-                        <span className="text-xl font-black text-[#0E2A1E] font-serif">
+                        <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500 block">Indicative RRP</span>
+                        <span className="text-xl font-black text-slate-900 font-serif">
                           ${product.price.toLocaleString()} <span className="text-xs font-bold text-[#8A7045]">AUD</span>
                         </span>
                       </div>
@@ -594,7 +615,7 @@ export default function ShopClient({
                         <button
                           type="button"
                           onClick={() => addToCart(product)}
-                          className="w-full py-2.5 rounded-xl bg-[#0E2A1E] text-[#C5A265] text-xs font-black uppercase tracking-wider hover:bg-[#163E2D] transition-colors cursor-pointer shadow-2xs"
+                          className="w-full py-2.5 rounded-xl bg-slate-900 text-[#C5A880] text-xs font-black uppercase tracking-wider hover:bg-slate-800 transition-all cursor-pointer shadow-xs"
                         >
                           Add to Cart
                         </button>
@@ -603,8 +624,8 @@ export default function ShopClient({
                           onClick={() => toggleCompare(product)}
                           className={`w-full py-1.5 rounded-xl text-[11px] font-bold transition-colors cursor-pointer border ${
                             isCompared 
-                              ? 'bg-[#C5A265] text-[#0E2A1E] border-[#C5A265]' 
-                              : 'bg-white text-[#4A5D53] border-[#CAD5CE] hover:bg-[#F4F7F5]'
+                              ? 'bg-[#C5A880] text-slate-950 border-[#C5A880]' 
+                              : 'bg-white text-slate-600 border-slate-300 hover:bg-slate-50'
                           }`}
                         >
                           {isCompared ? '✓ Compared' : '+ Compare'}

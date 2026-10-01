@@ -1,18 +1,28 @@
 // src/components/Logo.jsx
 // Bespoke Australian Luxury Golf & All-Terrain Cart Insignia & Wordmark
-import React from 'react';
+'use client';
 
-export default function Logo({ variant = 'dark', className = '', showTagline = true, iconOnly = false }) {
+import React from 'react';
+import Link from 'next/link';
+
+export default function Logo({ 
+  variant = 'dark', 
+  className = '', 
+  showTagline = true, 
+  iconOnly = false,
+  href = '/',
+  onClick = undefined
+}) {
   const isDark = variant === 'dark'; // dark theme (e.g. for header / dark footer)
 
-  const primaryText = isDark ? '#FFFFFF' : '#0E2A1E';
-  const goldColor = '#C5A265';
-  const subTextColor = isDark ? '#C5A265' : '#8A7045';
-  const emblemBg = isDark ? '#163E2D' : '#0E2A1E';
-  const emblemBorder = '#C5A265';
+  const primaryText = isDark ? '#FFFFFF' : '#0F172A';
+  const goldColor = '#C5A880';
+  const subTextColor = isDark ? '#C5A880' : '#8A7045';
+  const emblemBg = isDark ? '#1E293B' : '#0F172A';
+  const emblemBorder = '#C5A880';
 
-  return (
-    <div className={`flex items-center gap-2.5 sm:gap-3 select-none ${className}`}>
+  const logoContent = (
+    <div className={`flex items-center gap-2.5 sm:gap-3 select-none group cursor-pointer ${className}`}>
       {/* Luxury Cart Crest Emblem */}
       <div className="relative shrink-0 flex items-center justify-center">
         <svg
@@ -21,7 +31,7 @@ export default function Logo({ variant = 'dark', className = '', showTagline = t
           viewBox="0 0 48 48"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-10 h-10 sm:w-11 sm:h-11 drop-shadow-sm transition-transform hover:scale-105 duration-200"
+          className="w-10 h-10 sm:w-11 sm:h-11 drop-shadow-sm transition-transform group-hover:scale-105 duration-200"
           aria-hidden="true"
         >
           {/* Outer Shield / Diamond Frame */}
@@ -77,9 +87,9 @@ export default function Logo({ variant = 'dark', className = '', showTagline = t
             strokeLinejoin="round"
           />
           {/* Front & Rear Wheels */}
-          <circle cx="17.5" cy="33.5" r="3.2" fill={isDark ? '#0A1E15' : '#071610'} stroke={goldColor} strokeWidth="1.5" />
+          <circle cx="17.5" cy="33.5" r="3.2" fill={isDark ? '#0F172A' : '#071610'} stroke={goldColor} strokeWidth="1.5" />
           <circle cx="17.5" cy="33.5" r="1.2" fill={goldColor} />
-          <circle cx="30.5" cy="33.5" r="3.2" fill={isDark ? '#0A1E15' : '#071610'} stroke={goldColor} strokeWidth="1.5" />
+          <circle cx="30.5" cy="33.5" r="3.2" fill={isDark ? '#0F172A' : '#071610'} stroke={goldColor} strokeWidth="1.5" />
           <circle cx="30.5" cy="33.5" r="1.2" fill={goldColor} />
 
           {/* Small Star / Australian Est marker */}
@@ -92,7 +102,7 @@ export default function Logo({ variant = 'dark', className = '', showTagline = t
         <div className="flex flex-col">
           <div className="flex items-center gap-1.5 leading-none">
             <span
-              className="font-black tracking-tight text-base sm:text-lg uppercase font-serif"
+              className="font-black tracking-tight text-base sm:text-lg uppercase font-serif transition-colors group-hover:text-[#C5A880]"
               style={{ color: primaryText, letterSpacing: '0.03em' }}
             >
               The Buggy Shop
@@ -112,4 +122,19 @@ export default function Logo({ variant = 'dark', className = '', showTagline = t
       )}
     </div>
   );
+
+  if (href) {
+    return (
+      <Link 
+        href={href} 
+        onClick={onClick}
+        className="inline-flex items-center focus:outline-hidden rounded-xl"
+        aria-label="The Buggy Shop - Return to Homepage"
+      >
+        {logoContent}
+      </Link>
+    );
+  }
+
+  return logoContent;
 }

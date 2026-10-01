@@ -160,7 +160,7 @@ export default function FinanceCalculatorClient() {
           <div className="bg-gradient-to-br from-[#163E2D] to-[#0E2A1E] text-white rounded-3xl p-6 border border-[#C5A265]/40 shadow-xl space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-xs font-black uppercase tracking-wider text-[#C5A265] flex items-center gap-1.5">
-                <Zap className="w-3.5 h-3.5 text-[#C5A265]" /> Option 2: 10% Crypto / PayID Rebate
+                <Zap className="w-3.5 h-3.5 text-[#C5A265]" /> Option 2: 10% Instant Crypto Rebate
               </span>
               <span className="text-[10px] bg-[#0E2A1E] text-[#C5A265] px-2.5 py-0.5 rounded-full font-bold border border-[#C5A265]/30">
                 Instant Saving

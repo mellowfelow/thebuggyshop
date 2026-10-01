@@ -72,13 +72,15 @@ export default function BlogIndexPage() {
             className="bg-gradient-to-b from-[#FCFDFB] to-[#F1F6F3] rounded-3xl border-2 border-[#D5DFD9] overflow-hidden shadow-[0_4px_20px_-4px_rgba(14,42,30,0.06)] hover:shadow-[0_20px_45px_-8px_rgba(197,162,101,0.35),0_10px_20px_-6px_rgba(14,42,30,0.2)] hover:border-[#C5A265] hover:-translate-y-2 hover:bg-gradient-to-b hover:from-white hover:to-[#FFFDF7] transition-all duration-300 flex flex-col group"
           >
             <div className="product-frame relative overflow-hidden bg-[#F0F3F1] border-b border-[#D5DFD9] group-hover:border-[#E5D2A8] transition-colors">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
-              />
-              <div className="absolute top-4 left-4 bg-[#0E2A1E] text-[#C5A265] text-[10px] font-black uppercase px-3 py-1 rounded-full border border-[#C5A265] tracking-wider shadow-sm">
+              <Link href={`/blog/${post.slug}/`} className="block w-full h-full">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
+                />
+              </Link>
+              <div className="absolute top-4 left-4 bg-[#0E2A1E] text-[#C5A265] text-[10px] font-black uppercase px-3 py-1 rounded-full border border-[#C5A265] tracking-wider shadow-sm pointer-events-none">
                 {post.category}
               </div>
             </div>

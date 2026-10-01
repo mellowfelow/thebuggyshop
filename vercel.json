@@ -192,7 +192,7 @@
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type, Accept, Mcp-Session-Id"
+          "value": "Content-Type, Accept, Mcp-Session-Id, x-admin-passcode"
         }
       ]
     }

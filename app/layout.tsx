@@ -41,6 +41,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: `https://${SITE.domain}/`,
   },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: ['/favicon.svg'],
+    apple: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+  },
   openGraph: {
     type: 'website',
     locale: 'en_AU',
@@ -88,7 +98,10 @@ export default function RootLayout({
     <html lang="en-AU" className="scroll-smooth">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0E2A1E" />
+        <meta name="theme-color" content="#0B111E" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="alternate icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
         <script src="/js/webmcp.js" defer></script>
       </head>
       <body suppressHydrationWarning className="antialiased bg-[#F8F8F5] text-[#0E2A1E]">

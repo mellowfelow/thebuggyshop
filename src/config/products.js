@@ -816,8 +816,155 @@ export const PRODUCTS = [
     ]
   },
 
-  // ==========================================
-  // 9. PARTS & ACCESSORIES
+  {
+    slug: 'relion-insight-48v-30ah-lifepo4-golf-cart-battery',
+    name: 'RELiON InSight 48V 30Ah GC2 Drop-In LiFePO4 Golf Cart Battery',
+    brand: 'relion',
+    brandName: 'RELiON',
+    category: 'batteries-cart-sets',
+    categoryPath: '/golf-buggy-batteries/cart-sets/',
+    price: 1790,
+    condition: 'New',
+    badge: 'Drop-In LiFePO4',
+    featured: false,
+    rating: 5.0,
+    reviewCount: 46,
+    power: 'Electric',
+    wheels: 'N/A',
+    batteryRange: '36 hole',
+    weightCategory: '10–13 kg',
+    weightKg: 15.6,
+    foldSize: 'Standard',
+    seats: '2',
+    primaryKeyword: 'relion insight 48v lifepo4 golf cart battery',
+    shortDescription: 'Scalable GC2 drop-in LiFePO4 battery pack with SuperBMS, dual M8 terminals, parallel capacity expansion, and 4,000+ cycle lifespan.',
+    description: 'The RELiON InSight 48V 30Ah battery is the standard in drop-in lithium replacement for golf carts. Directly replaces 6V, 8V or 12V lead-acid batteries with zero tray modifications. Features an intelligent SuperBMS that manages regenerative braking currents and thermal states, delivering 70% weight savings over flooded lead-acid.',
+    specs: {
+      voltage: '48V Nominal (51.2V Operating)',
+      capacity: '30Ah (1,536 Wh per module, connect up to 4 in parallel for 120Ah / 6.1 kWh)',
+      chemistry: 'LiFePO4 (Lithium Iron Phosphate)',
+      cycleLife: '4,000+ Cycles @ 80% Depth of Discharge',
+      bms: 'Integrated SuperBMS with Over-Voltage, Low-Temp & Active Thermal Management',
+      charging: 'Compatible with Delta-Q, Lester Summit II, and High-Frequency LiFePO4 Profiles',
+      chargeTime: '2.5 to 3.5 Hours Fast Charge',
+      weight: '15.6 kg (Saves 160+ kg over lead-acid bank)',
+      warranty: '7-Year Global Manufacturer Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'roypow-48v-105ah-lithium-golf-cart-conversion-kit',
+    name: 'RoyPow 48V 105Ah LiFePO4 Golf Cart Lithium Conversion Kit & Charger',
+    brand: 'roypow',
+    brandName: 'RoyPow',
+    category: 'batteries-cart-sets',
+    categoryPath: '/golf-buggy-batteries/cart-sets/',
+    price: 3490,
+    condition: 'New',
+    badge: 'Complete 105Ah Kit',
+    featured: true,
+    rating: 5.0,
+    reviewCount: 54,
+    power: 'Electric',
+    wheels: 'N/A',
+    batteryRange: '36 hole',
+    weightCategory: 'Over 13 kg',
+    weightKg: 42.0,
+    foldSize: 'Standard',
+    seats: '2',
+    primaryKeyword: 'roypow 48v 105ah golf cart lithium conversion',
+    shortDescription: 'Turnkey 48V 105Ah LiFePO4 single-pack drop-in battery system with 48V 22A high-speed onboard charger, digital state-of-charge dashboard meter, and 80km range.',
+    description: 'Complete lithium retrofit system for Club Car, EZGO, Yamaha and ECAR carts. Replaces 6 heavy lead-acid batteries with a single lightweight 42kg aluminium-encased LiFePO4 module. Includes an automotive-grade 48V 22A high-frequency charger, digital circular dash gauge, and pre-wired mounting brackets.',
+    specs: {
+      voltage: '48V Nominal (51.2V)',
+      capacity: '105Ah (5.37 kWh Total Energy)',
+      chemistry: 'Grade-A LiFePO4 Prismatic Cells',
+      cycleLife: '3,500+ Deep Cycles to 80% Capacity',
+      range: 'Up to 80 km per charge (54+ Holes of Golf)',
+      chargerIncluded: 'RoyPow 48V 22A High-Frequency Smart Charger (Australian 240V 10A Plug)',
+      chargeTime: '3.5 Hours Full Charge (0 to 100%)',
+      bms: 'Integrated BMS with Bluetooth Diagnostic App & Dashboard SOC Gauge',
+      weight: '42.0 kg Total System Weight',
+      warranty: '5-Year Full Replacement Australian Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'delta-q-ic650-48v-sealed-smart-golf-cart-charger',
+    name: 'Delta-Q IC650 48V 13.5A High-Frequency Smart Golf Cart Charger',
+    brand: 'delta-q',
+    brandName: 'Delta-Q Technologies',
+    category: 'batteries-cart-sets',
+    categoryPath: '/golf-buggy-batteries/cart-sets/',
+    price: 749,
+    condition: 'New',
+    badge: 'IP66 Industrial Charger',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 31,
+    power: 'Electric',
+    wheels: 'N/A',
+    batteryRange: 'N/A',
+    weightCategory: 'Under 10 kg',
+    weightKg: 3.2,
+    foldSize: 'Standard',
+    seats: 'Walk-behind',
+    primaryKeyword: 'delta q ic650 48v golf cart charger australia',
+    shortDescription: 'Commercial IP66 sealed 48V 13.5A smart battery charger with multi-chemistry algorithm profiles (LiFePO4, AGM, Flooded) and USB data logging.',
+    description: 'The industry-standard Delta-Q IC650 high-frequency industrial charger. Die-cast aluminium enclosure with IP66 dust and high-pressure water ingress protection. Capable of charging 48V lead-acid and lithium battery packs with patented temperature-compensated charge algorithms.',
+    specs: {
+      voltage: '48V DC Output (Nominal)',
+      currentOutput: '13.5 Amps Maximum Continuous Current',
+      inputVoltage: '85–270V AC Universal Auto-Ranging (Australian 240V 10A 3-Pin Plug)',
+      efficiency: '>93.5% Peak Energy Conversion Efficiency',
+      ipRating: 'IP66 Sealed Die-Cast Aluminium (Waterproof & Dustproof)',
+      connectors: 'Choice of Club Car 3-Pin, Anderson SB50, or Direct Ring Terminals',
+      protection: 'Over-Voltage, Reverse Polarity, Short-Circuit & Thermal Throttling',
+      warranty: '3-Year Heavy-Duty Commercial Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'mgi-zip-24v-4a-fast-lithium-battery-charger',
+    name: 'MGI Zip Series 24V 4A Smart Lithium Desktop Fast Charger',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'batteries-buggy-lithium',
+    categoryPath: '/golf-buggy-batteries/lithium/',
+    price: 189,
+    condition: 'New',
+    badge: 'Fast Charger 24V',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 65,
+    power: 'Electric',
+    wheels: 'N/A',
+    batteryRange: 'N/A',
+    weightCategory: 'Under 10 kg',
+    weightKg: 0.8,
+    foldSize: 'Standard',
+    seats: 'Walk-behind',
+    primaryKeyword: 'mgi zip 24v lithium charger',
+    shortDescription: 'Genuine MGI 24V 4A high-efficiency desktop smart charger for MGI Zip Navigator, Ai Navigator, Zip X5, X3, and X1 24V Click & Go lithium batteries.',
+    description: 'Genuine MGI smart desktop charger for all MGI 24V Click & Go lithium batteries. Features dual-stage constant current/constant voltage (CC/CV) smart charging with LED charging indicator and auto-cutoff float protection.',
+    specs: {
+      voltage: '24V DC Nominal Output (29.4V Max Float)',
+      currentOutput: '4.0 Amps Rapid Charge',
+      inputVoltage: '100–240V AC 50/60Hz (Australian 3-Pin Standard Plug)',
+      chargeTime: 'Under 4 Hours for 380Wh 36-Hole Battery',
+      indicator: 'Multi-Colour LED Status (Red = Charging, Green = 100% Ready)',
+      warranty: '2-Year Australian Replacement Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
   // ==========================================
   {
     slug: 'mgi-all-terrain-winter-rear-wheel-kit',

@@ -2,17 +2,17 @@
 
 @layer base {
   :root {
-    --primary: #0E2A1E;
-    --primary-hover: #163E2D;
-    --accent: #C5A265;
-    --accent-hover: #D4B27C;
-    --gold: #C5A265;
+    --primary: #0F172A;        /* Deep Obsidian Navy */
+    --primary-hover: #1E293B;  /* Metallic Slate */
+    --accent: #C5A880;         /* Luxury Champagne Gold / Warm Brass */
+    --accent-hover: #D4B27C;   /* Bright Champagne Gold */
+    --gold: #C5A880;
     --gold-hover: #D4B27C;
-    --bg-sand: #F8F8F5;
-    --bg-tint: #F0F3F1;
-    --text-dark: #0E2A1E;
-    --text-muted: #4A5D53;
-    --border-color: #DDE4DF;
+    --bg-sand: #F8F9FA;        /* Crisp Porcelain Linen */
+    --bg-tint: #F1F5F9;        /* Soft Slate Surface */
+    --text-dark: #0B111E;      /* Rich Midnight Charcoal */
+    --text-muted: #64748B;     /* Cool Slate */
+    --border-color: #E2E8F0;   /* Clean Polished Border */
   }
 
   html, body {

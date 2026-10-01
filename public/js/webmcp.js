@@ -30,7 +30,8 @@
         description: "Initiate a WhatsApp order for delivery across Australia. Human completes transaction.",
         inputSchema: { type: "object", properties: { message: { type: "string" } } },
         execute: async ({ message }) => {
-          const url = message ? `https://wa.me/61480811308?text=${encodeURIComponent(message)}` : `https://wa.me/61480811308`;
+          const greeting = "Hi The Buggy Shop, ";
+          const url = `https://wa.me/61480811308?text=${encodeURIComponent(greeting + (message || ''))}`;
           window.open(url, '_blank');
           return { url };
         }

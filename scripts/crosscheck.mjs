@@ -1,15 +1,15 @@
 // scripts/crosscheck.mjs
-// Pre-ship Crosscheck for WebForge v9.1 Vercel target
+// Pre-ship Crosscheck for WebForge v11.1 Vercel target
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE, CONTACT, SHOP, BRAND, CATEGORIES, PRODUCTS, POSTS, COMPLIANCE } from '../src/config/site.js';
+import { SITE, CONTACT, SHOP, BRAND, CATEGORIES, PRODUCTS, POSTS, COMPLIANCE, REPLY, FORMS } from '../src/config/site.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 
-console.log('[crosscheck] Starting WebForge v9.1 pre-ship crosscheck...');
+console.log('[crosscheck] Starting WebForge v11.1 pre-ship crosscheck...');
 
 let errors = [];
 let warnings = [];
@@ -38,6 +38,34 @@ checkFileExists('public/.well-known/acp.json', 'ACP protocol metadata');
 checkFileExists('public/.well-known/ucp', 'UCP protocol metadata');
 checkFileExists('public/js/webmcp.js', 'WebMCP in-browser agent bridge');
 
+// Reply Portal Mandatory System Files
+checkFileExists('lib/mailer.js', 'Mailer singleton (nodemailer)');
+checkFileExists('lib/redis.js', 'Upstash Redis client with 5 env var variants');
+checkFileExists('lib/orderStore.js', 'Redis order store');
+checkFileExists('lib/enquiryStore.js', 'Redis enquiry store');
+checkFileExists('lib/adminAuth.js', 'Admin passcode authentication');
+checkFileExists('lib/order.js', 'Order payment parser and formatter');
+checkFileExists('lib/whatsapp.js', 'WhatsApp messaging helpers');
+checkFileExists('utils/emailTemplates.js', 'Light branded HTML email templates');
+checkFileExists('src/components/CopyField.jsx', 'Tap to copy component');
+checkFileExists('app/admin/page.jsx', 'Reply Portal Admin Hub');
+checkFileExists('app/order/payment-details/page.jsx', 'Public payment details copy page');
+checkFileExists('app/order/confirm-payment/page.jsx', 'Public confirm payment upload page');
+
+// B10: Robots.txt disallows /admin/
+const robotsPath = path.join(rootDir, 'public/robots.txt');
+if (fs.existsSync(robotsPath)) {
+  const robotsContent = fs.readFileSync(robotsPath, 'utf8');
+  if (!robotsContent.includes('Disallow: /admin/')) {
+    errors.push('[B10 FAIL] robots.txt does not disallow /admin/');
+  }
+}
+
+// B11: Web3Forms check
+if (FORMS.provider === 'web3forms' || (typeof FORMS.web3FormsAccessKey !== 'undefined')) {
+  errors.push('[B11 FAIL] Web3Forms is retired in WebForge v11.1. Must use smtp (or opt-in resend).');
+}
+
 // Check UCP specification compliance: "ucp": "1.0" must be present
 const ucpPath = path.join(rootDir, 'public/.well-known/ucp');
 if (fs.existsSync(ucpPath)) {
@@ -60,10 +88,9 @@ if (fs.existsSync(authMdPath)) {
   }
 }
 
-// Check B7: Compliance scan for banned terms across code and public files
+// Check B7: Compliance scan for banned terms
 if (COMPLIANCE.bannedTerms && COMPLIANCE.bannedTerms.length > 0) {
   const banned = COMPLIANCE.bannedTerms.map(t => t.toLowerCase());
-  // Scan all public files
   const publicFiles = ['public/llms.txt', 'public/auth.md', 'public/.well-known/acp.json', 'public/.well-known/mcp/server-card.json'];
   publicFiles.forEach(pf => {
     const p = path.join(rootDir, pf);
@@ -97,18 +124,15 @@ CATEGORIES.forEach(c => {
   }
 });
 
-console.log('\n--- Crosscheck Summary ---');
-console.log(`Errors: ${errors.length}`);
-console.log(`Warnings: ${warnings.length}`);
-
-if (errors.length > 0) {
-  console.error('\nFAILURES:');
-  errors.forEach(e => console.error(` ❌ ${e}`));
-  process.exit(1);
-} else {
-  console.log('\n✅ All pre-ship crosscheck assertions passed successfully!');
+console.log('\n--- WebForge v11.1 Crosscheck Summary ---');
+if (errors.length === 0) {
+  console.log('✅ ALL PRE-SHIP CHECKS PASSED (Zero Blocking Errors).');
   if (warnings.length > 0) {
-    warnings.forEach(w => console.warn(` ⚠️ ${w}`));
+    console.log(`⚠️  ${warnings.length} Warnings:\n - ` + warnings.join('\n - '));
   }
   process.exit(0);
+} else {
+  console.error(`❌ ${errors.length} BLOCKING ERRORS FOUND:`);
+  errors.forEach(e => console.error(`  - ${e}`));
+  process.exit(1);
 }

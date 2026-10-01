@@ -10,6 +10,8 @@ export default function robots() {
           '/thank-you-contact/',
           '/thank-you-order/',
           '/thank-you-wholesale/',
+          '/admin/',
+          '/order/',
         ],
       },
       {

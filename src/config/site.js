@@ -1,5 +1,5 @@
 // src/config/site.js
-// Single Source of Truth for The Buggy Shop (WebForge v9.1)
+// Single Source of Truth for The Buggy Shop (WebForge v11.1)
 
 export const SITE = {
   name: 'The Buggy Shop',
@@ -12,12 +12,12 @@ export const SITE = {
   locale: 'en-AU',                // Australian English BCP-47
   currency: 'AUD',
   target: 'vercel',
-  primaryColor: '#0E2A1E',        // Deep Heritage Racing Forest Green
-  secondaryColor: '#163E2D',      // Rich Hunter Forest
-  goldColor: '#C5A265',           // Warm Champagne Brass / Antique Gold
-  lightGold: '#F5EFE4',           // Soft Champagne Tint
-  darkText: '#111C16',            // Deep Forest Charcoal
-  bgLight: '#F8F8F5',             // Crisp Porcelain Linen
+  primaryColor: '#0F172A',        // Deep Obsidian Navy
+  secondaryColor: '#1E293B',      // Metallic Slate
+  goldColor: '#C5A880',           // Warm Champagne Gold / Burnished Brass
+  lightGold: '#FAF8F5',           // Soft Champagne Tint
+  darkText: '#0B111E',            // Rich Midnight Charcoal
+  bgLight: '#F8F9FA',             // Crisp Porcelain Linen
   gscVerification: 'pending',
   indexNowKey: 'buggy-shop-au-indexnow-key',
   cartKey: 'mm-cart',
@@ -33,7 +33,7 @@ export const ENTITY = {
 }
 
 export const CONTACT = {
-  email: 'sales@thebuggyshop.com.au', // entity encoded where displayed
+  email: 'sales@thebuggyshoppty.com.au', // entity encoded where displayed
   phone: '+61 480 811 308',
   phoneDisplay: '0480 811 308',
   whatsapp: '+61480811308',
@@ -56,10 +56,51 @@ export const SHOP = {
 }
 
 export const FORMS = {
-  provider: 'web3forms',
-  web3formsKey: 'YOUR_WEB3FORMS_ACCESS_KEY',
-  resendFrom: '',
+  provider: 'smtp',               // 'smtp' (default) | 'resend' (opt-in, verified domain only) — Web3Forms retired
+  smtpFrom: 'sales@thebuggyshoppty.com.au', // fallback; SMTP_FROM env var overrides
+  resendFrom: '',                 // only for provider: 'resend'
   turnstileSiteKey: '',
+  destinations: {
+    contact: 'sales@thebuggyshoppty.com.au',
+    order: 'sales@thebuggyshoppty.com.au',
+    wholesale: 'sales@thebuggyshoppty.com.au',
+  },
+}
+
+// Reply Portal single source of truth (WebForge v11.1 Section P)
+export const REPLY = {
+  brand: { primary: '#C5A880', headerDark: '#0B111E' },
+  currency: { code: 'AUD', symbol: '$', locale: 'en-AU' },
+  orderPrefix: 'TBS',
+  headerTagline: 'Australia\'s Premier Golf Buggy & Luxury All-Terrain Cart Specialists',
+  dispatchLine: 'Hydraulic tail-lift freight directly to your property gate or clubhouse nationwide.',
+  channels: { email: 'sales@thebuggyshoppty.com.au', whatsapp: '+61480811308' },
+  paymentMethods: [
+    {
+      id: 'bank-transfer',
+      label: 'Direct Bank Wire (EFT / Osko / PayID)',
+      opening: 'Please find our verified Australian commercial settlement account details below for order {ref} in the amount of {amount}.',
+      closing: 'Kindly include your order reference {ref} on the bank transfer description to ensure instant dispatch allocation.'
+    },
+    {
+      id: 'pay-id',
+      label: 'Australian PayID Instant Transfer',
+      opening: 'Please transfer the order total of {amount} to our registered Australian PayID identifier for order {ref}.',
+      closing: 'PayID transfers settle in real-time under the Australian New Payments Platform (NPP).'
+    },
+    {
+      id: 'crypto-BTC',
+      label: 'Bitcoin (BTC) Settlement (10% Discount Applied)',
+      opening: 'Your 10% crypto discount has been applied. Total settlement amount is {amount}. Please transfer to our designated Bitcoin wallet below:',
+      closing: 'Dispatch processing begins automatically upon 2 network confirmations.'
+    },
+    {
+      id: 'crypto-USDT',
+      label: 'Tether (USDT TRC20 / ERC20) Settlement (10% Discount Applied)',
+      opening: 'Your 10% crypto discount has been applied. Total settlement amount is {amount}. Please transfer to our designated Tether wallet below:',
+      closing: 'Please ensure you select the matching network (TRC20 or ERC20) when sending USDT.'
+    }
+  ],
 }
 
 export const CHAT = {
@@ -88,7 +129,7 @@ export const BRAND = {
     'Over 20 years of Australian cart sales and service heritage (Est. 2004) with certified technicians and Queensland spare parts inventory.',
     'Turnkey conditional road compliance lighting, seatbelts, dual mirrors, horn, and pre-completed state registration paperwork included.',
     '5-Year LiFePO4 lithium battery guarantee with Australian service backup and rapid spare parts dispatch.',
-    '10% Instant crypto discount for Bitcoin (BTC) and Tether (USDT), alongside instant Australian PayID and bank transfers.'
+    '10% Instant crypto discount for Bitcoin (BTC) and Tether (USDT) payments, alongside standard Australian PayID and direct bank wire transfers.'
   ],
   sameAs: [],
   awards: [],
@@ -460,6 +501,111 @@ export const PRODUCTS = [
     images: [
       'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'relion-insight-48v-30ah-lifepo4-golf-cart-battery',
+    name: 'RELiON InSight 48V 30Ah GC2 Drop-In LiFePO4 Golf Cart Battery',
+    price: 1790,
+    category: 'golf-buggy-accessories',
+    badge: 'Drop-In LiFePO4',
+    featured: false,
+    seats: 'Universal Cart Fit',
+    rating: 5.0,
+    reviewCount: 46,
+    shortDescription: 'Scalable GC2 drop-in LiFePO4 battery pack with SuperBMS, dual M8 terminals, parallel capacity expansion, and 4,000+ cycle lifespan.',
+    description: 'The RELiON InSight 48V 30Ah battery is the standard in drop-in lithium replacement for golf carts. Directly replaces 6V, 8V or 12V lead-acid batteries with zero tray modifications. Features an intelligent SuperBMS that manages regenerative braking currents and thermal states, delivering 70% weight savings over flooded lead-acid.',
+    specs: {
+      voltage: '48V Nominal (51.2V Operating)',
+      capacity: '30Ah (1,536 Wh per module, connect up to 4 in parallel for 120Ah / 6.1 kWh)',
+      chemistry: 'LiFePO4 (Lithium Iron Phosphate)',
+      cycleLife: '4,000+ Cycles @ 80% Depth of Discharge',
+      bms: 'Integrated SuperBMS with Over-Voltage, Low-Temp & Active Thermal Management',
+      charging: 'Compatible with Delta-Q, Lester Summit II, and High-Frequency LiFePO4 Profiles',
+      chargingTime: '2.5 to 3.5 Hours Fast Charge',
+      weight: '15.6 kg (Saves 160+ kg over lead-acid bank)',
+      warranty: '7-Year Global Manufacturer Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'roypow-48v-105ah-lithium-golf-cart-conversion-kit',
+    name: 'RoyPow 48V 105Ah LiFePO4 Golf Cart Lithium Conversion Kit & Charger',
+    price: 3490,
+    category: 'golf-buggy-accessories',
+    badge: 'Complete 105Ah Kit',
+    featured: true,
+    seats: 'Universal Cart Fit',
+    rating: 5.0,
+    reviewCount: 54,
+    shortDescription: 'Turnkey 48V 105Ah LiFePO4 single-pack drop-in battery system with 48V 22A high-speed onboard charger, digital state-of-charge dashboard meter, and 80km range.',
+    description: 'Complete lithium retrofit system for Club Car, EZGO, Yamaha and ECAR carts. Replaces 6 heavy lead-acid batteries with a single lightweight 42kg aluminium-encased LiFePO4 module. Includes an automotive-grade 48V 22A high-frequency charger, digital circular dash gauge, and pre-wired mounting brackets.',
+    specs: {
+      voltage: '48V Nominal (51.2V)',
+      capacity: '105Ah (5.37 kWh Total Energy)',
+      chemistry: 'Grade-A LiFePO4 Prismatic Cells',
+      cycleLife: '3,500+ Deep Cycles to 80% Capacity',
+      range: 'Up to 80 km per charge (54+ Holes of Golf)',
+      chargerIncluded: 'RoyPow 48V 22A High-Frequency Smart Charger (Australian 240V 10A Plug)',
+      chargingTime: '3.5 Hours Full Charge (0 to 100%)',
+      bms: 'Integrated BMS with Bluetooth Diagnostic App & Dashboard SOC Gauge',
+      weight: '42.0 kg Total System Weight',
+      warranty: '5-Year Full Replacement Australian Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'delta-q-ic650-48v-sealed-smart-golf-cart-charger',
+    name: 'Delta-Q IC650 48V 13.5A High-Frequency Smart Golf Cart Charger',
+    price: 749,
+    category: 'golf-buggy-accessories',
+    badge: 'IP66 Industrial Charger',
+    featured: false,
+    seats: 'Universal Charger',
+    rating: 4.9,
+    reviewCount: 31,
+    shortDescription: 'Commercial IP66 sealed 48V 13.5A smart battery charger with multi-chemistry algorithm profiles (LiFePO4, AGM, Flooded) and USB data logging.',
+    description: 'The industry-standard Delta-Q IC650 high-frequency industrial charger. Die-cast aluminium enclosure with IP66 dust and high-pressure water ingress protection. Capable of charging 48V lead-acid and lithium battery packs with patented temperature-compensated charge algorithms.',
+    specs: {
+      voltage: '48V DC Output (Nominal)',
+      currentOutput: '13.5 Amps Maximum Continuous Current',
+      inputVoltage: '85–270V AC Universal Auto-Ranging (Australian 240V 10A 3-Pin Plug)',
+      efficiency: '>93.5% Peak Energy Conversion Efficiency',
+      ipRating: 'IP66 Sealed Die-Cast Aluminium (Waterproof & Dustproof)',
+      connectors: 'Choice of Club Car 3-Pin, Anderson SB50, or Direct Ring Terminals',
+      protection: 'Over-Voltage, Reverse Polarity, Short-Circuit & Thermal Throttling',
+      warranty: '3-Year Heavy-Duty Commercial Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'mgi-zip-24v-4a-fast-lithium-battery-charger',
+    name: 'MGI Zip Series 24V 4A Smart Lithium Desktop Fast Charger',
+    price: 189,
+    category: 'golf-buggy-accessories',
+    badge: 'Fast Charger 24V',
+    featured: false,
+    seats: 'MGI Buggy Charger',
+    rating: 4.8,
+    reviewCount: 65,
+    shortDescription: 'Genuine MGI 24V 4A high-efficiency desktop smart charger for MGI Zip Navigator, Ai Navigator, Zip X5, X3, and X1 24V Click & Go lithium batteries.',
+    description: 'Genuine MGI smart desktop charger for all MGI 24V Click & Go lithium batteries. Features dual-stage constant current/constant voltage (CC/CV) smart charging with LED charging indicator and auto-cutoff float protection.',
+    specs: {
+      voltage: '24V DC Nominal Output (29.4V Max Float)',
+      currentOutput: '4.0 Amps Rapid Charge',
+      inputVoltage: '100–240V AC 50/60Hz (Australian 3-Pin Standard Plug)',
+      chargingTime: 'Under 4 Hours for 380Wh 36-Hole Battery',
+      indicator: 'Multi-Colour LED Status (Red = Charging, Green = 100% Ready)',
+      warranty: '2-Year Australian Replacement Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   {

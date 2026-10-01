@@ -30,4 +30,4 @@ No authentication required. All catalog, specification, and educational resource
 
 ## Ordering
 Human-in-the-loop required. Agents may browse catalog items, perform comparison queries, and prepare order drafts via the MCP server.
-Orders are completed securely by a human customer via WhatsApp dispatch (+61 480 811 308) or the official order request form.
+Orders are completed securely by a human customer via WhatsApp dispatch (0480 811 308) or the official order request form.
