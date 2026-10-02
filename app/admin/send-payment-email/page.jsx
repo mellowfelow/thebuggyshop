@@ -25,9 +25,9 @@ function SendPaymentEmailContent() {
   const [sentMessage, setSentMessage] = useState('');
   const [error, setError] = useState('');
 
-  // Default sample bank details for quick fill in Australian context
+  // Default presets for quick fill
   const defaultPresets = {
-    'bank-transfer': `Account Name: TBS NO.2 PTY LTD\nBSB: 064-000\nAccount Number: 1048 2910\nBank: Commonwealth Bank of Australia\nReference: ${orderId || 'TBS-ORDER'}`,
+    'bank-transfer': `Account Name: TBS NO.2 PTY LTD\nBSB: \nAccount Number: \nReference: ${orderId || 'TBS-ORDER'}`,
     'pay-id': `PayID Name: TBS NO.2 PTY LTD\nPayID Type: ABN\nPayID / ABN: 65108218471\nReference: ${orderId || 'TBS-ORDER'}`,
     'crypto-BTC': `Network: Bitcoin (BTC Native)\nDeposit Wallet: bc1q8v7xkd9m2pw4z3rt65nljhqfeyac78g52t\nReference: ${orderId || 'TBS-ORDER'}`,
     'crypto-USDT': `Network: USDT (TRC-20 Tron)\nDeposit Wallet: TYDzsYnNp5k8F3m9QJ2vWxLkE8Rt6PqA1z\nReference: ${orderId || 'TBS-ORDER'}`,

@@ -23,7 +23,6 @@ const HEADER_DARK = REPLY?.brand?.headerDark || '#0B111E';
 function shell({ eyebrow, title, meta, body }) {
   const domain = SITE.domain || 'thebuggyshop.com.au';
   const siteName = SITE.name || 'The Buggy Shop';
-  const faviconUrl = `https://${domain}/favicon.svg`;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -64,7 +63,7 @@ function shell({ eyebrow, title, meta, body }) {
                             ${escapeHtml(siteName)}
                           </div>
                           <div style="color: ${PRIMARY_ACCENT}; font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding-top: 2px;">
-                            ${escapeHtml(ENTITY?.legalName || 'TBS NO.2 PTY LTD')} &bull; EST. 2004
+                            ${escapeHtml(ENTITY?.legalName || 'TBS NO.2 PTY LTD')} (ABN ${escapeHtml(ENTITY?.abn || '65 108 218 471')}) &bull; EST. 2004
                           </div>
                         </td>
                       </tr>
@@ -105,24 +104,30 @@ function shell({ eyebrow, title, meta, body }) {
             </td>
           </tr>
 
-          <!-- Footer Band -->
+          <!-- Complete Verified Business Footer Band -->
           <tr>
-            <td style="padding: 24px 32px; background-color: #F8FAFC; border-top: 1px solid #E2E8F0; text-align: center; color: #64748B; font-size: 12px; line-height: 1.5;">
-              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 8px;">
+            <td style="padding: 24px 32px; background-color: #F8FAFC; border-top: 1px solid #E2E8F0; text-align: center; color: #475569; font-size: 12px; line-height: 1.6;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 10px;">
                 <tr>
                   <td align="center">
                     <span style="display: inline-block; width: 6px; height: 6px; background-color: ${PRIMARY_ACCENT}; border-radius: 50%; margin-right: 6px; vertical-align: middle;"></span>
-                    <strong style="color: #1E293B; font-size: 13px; font-family: Georgia, serif;">${escapeHtml(siteName)}</strong>
-                    <span style="color: #94A3B8; margin: 0 6px;">&bull;</span>
-                    <span style="color: #64748B; font-size: 12px;">${escapeHtml(domain)}</span>
+                    <strong style="color: #0F172A; font-size: 13px; font-family: Georgia, serif;">${escapeHtml(ENTITY?.legalName || 'TBS NO.2 PTY LTD')}</strong>
+                    <span style="color: #64748B; font-size: 12px; margin-left: 4px;">(ABN: ${escapeHtml(ENTITY?.abn || '65 108 218 471')})</span>
                   </td>
                 </tr>
               </table>
-              <p style="margin: 0 0 6px 0; color: #475569;">
-                Queensland Distribution Center &amp; Technical Workshop &bull; Australia-Wide Tail-Lift Freight
+
+              <p style="margin: 0 0 4px 0; color: #334155; font-weight: 600;">
+                Queensland Headquarters &amp; Technical Facility: 42 Industrial Avenue, Molendinar QLD 4214, Australia
+              </p>
+              <p style="margin: 0 0 6px 0; color: #64748B;">
+                Nationwide Hydraulic Tail-Lift Delivery to Clubs, Acreage Estates &amp; Depots Australia-Wide
+              </p>
+              <p style="margin: 0 0 8px 0; color: #64748B;">
+                Direct Sales &amp; Technical Desk: <strong><a href="tel:0480811308" style="color: #0F172A; text-decoration: none;">0480 811 308</a></strong> &bull; Official Email: <strong><a href="mailto:sales@thebuggyshoppty.com.au" style="color: #0F172A; text-decoration: none;">sales@thebuggyshoppty.com.au</a></strong>
               </p>
               <p style="margin: 0; color: #94A3B8; font-size: 11px;">
-                Direct Sales &amp; Quotes: <strong>${escapeHtml(CONTACT.email || 'sales@thebuggyshoppty.com.au')}</strong> &bull; Ph: ${escapeHtml(CONTACT.phoneDisplay || '0480 811 308')}
+                Operating Hours: Monday &ndash; Friday: 8:00 AM &ndash; 5:00 PM AEST | Saturday: 9:00 AM &ndash; 1:00 PM AEST
               </p>
             </td>
           </tr>
@@ -160,7 +165,7 @@ function callout(innerHtml) {
 
 function button(href, text) {
   return `
-  <table border="0" cellpadding="0" cellspacing="0" style="margin: 24px 0 16px 0;">
+  <table border="0" cellpadding="0" cellspacing="0" style="margin: 16px 0;">
     <tr>
       <td align="center" style="border-radius: 8px; background-color: ${HEADER_DARK};">
         <a href="${escapeHtml(href)}" target="_blank" style="display: inline-block; padding: 14px 28px; font-size: 14px; font-weight: 700; color: #FFFFFF; text-decoration: none; border-radius: 8px; letter-spacing: 0.3px; border: 1px solid ${PRIMARY_ACCENT};">
@@ -172,13 +177,15 @@ function button(href, text) {
 }
 
 /**
- * 1. Order Notification Email to Admin Desk
+ * 1. Order Notification Email to Admin Desk (Zoho Mail)
  */
 export function orderNotificationEmail(order) {
   const ref = order.orderNumber || order.id || 'Pending';
   const customer = order.customer || {};
   const items = order.items || [];
   const total = money(order.total || 0);
+  const domain = SITE.domain || 'thebuggyshop.com.au';
+  const paymentMethod = order.paymentMethod || 'Direct Bank Wire / PayID';
 
   const itemsHtml = items.map(item => `
     <tr>
@@ -193,7 +200,7 @@ export function orderNotificationEmail(order) {
 
   const body = `
     <p style="margin-top: 0; font-size: 16px; color: #334155;">
-      A new purchase order draft has been logged via the <strong>${escapeHtml(order.channel || 'web')}</strong> channel.
+      A new sales order has been placed via the <strong>${escapeHtml(order.channel === 'whatsapp' ? 'WhatsApp Checkout' : 'Online Store Checkout')}</strong>.
     </p>
 
     ${callout(`
@@ -203,49 +210,67 @@ export function orderNotificationEmail(order) {
           <td align="right"><span style="font-family: monospace; font-size: 18px; font-weight: 700; color: #0F172A;">${escapeHtml(ref)}</span></td>
         </tr>
         <tr>
-          <td style="padding-top: 8px;"><strong style="color: #0F172A;">Amount Due:</strong></td>
+          <td style="padding-top: 8px;"><strong style="color: #0F172A;">Total Amount Due:</strong></td>
           <td align="right" style="padding-top: 8px;"><strong style="font-size: 18px; color: #0F172A;">${total}</strong></td>
+        </tr>
+        <tr>
+          <td style="padding-top: 8px;"><strong style="color: #64748B; font-size: 13px;">Selected Payment:</strong></td>
+          <td align="right" style="padding-top: 8px;"><span style="color: #0F172A; font-size: 13px; font-weight: 600;">${escapeHtml(paymentMethod)}</span></td>
         </tr>
       </table>
     `)}
 
     <h3 style="font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin: 24px 0 12px 0; color: #334155;">
-      Customer Information
+      Customer Dispatch Information
     </h3>
-    ${field('Full Name', escapeHtml(customer.name || 'N/A'))}
+    ${field('Customer Name', escapeHtml(customer.name || 'N/A'))}
     ${field('Email Address', `<a href="mailto:${escapeHtml(customer.email)}" style="color: #0F172A; text-decoration: underline;">${escapeHtml(customer.email)}</a>`)}
-    ${field('Phone Number', `<a href="tel:${escapeHtml(customer.phone)}" style="color: #0F172A;">${escapeHtml(customer.phone || 'N/A')}</a>`)}
-    ${field('Delivery Destination', `${escapeHtml(customer.address || '')}, ${escapeHtml(customer.state || '')} ${escapeHtml(customer.postcode || '')}`)}
-    ${customer.notes ? field('Special Delivery Notes', escapeHtml(customer.notes)) : ''}
+    ${field('Contact Phone', `<a href="tel:${escapeHtml(customer.phone)}" style="color: #0F172A;">${escapeHtml(customer.phone || 'N/A')}</a>`)}
+    ${field('Delivery Destination', `${escapeHtml(customer.address || '')}${customer.state ? `, ${escapeHtml(customer.state)}` : ''}${customer.postcode ? ` ${escapeHtml(customer.postcode)}` : ''}`)}
+    ${customer.notes ? field('Access / Delivery Notes', escapeHtml(customer.notes)) : ''}
 
     ${divider()}
 
     <h3 style="font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin: 24px 0 12px 0; color: #334155;">
-      Order Items Breakdown
+      Allocated Vehicles &amp; Equipment
     </h3>
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
       ${itemsHtml}
     </table>
 
-    ${button(`https://${SITE.domain}/admin/send-payment-email/?orderId=${escapeHtml(ref)}`, 'Compose Payment Details in Dashboard')}
+    ${divider()}
+
+    <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin: 20px 0 8px 0; color: #334155;">
+      Reply &amp; Payment Dispatch Actions
+    </h3>
+    <p style="font-size: 13px; color: #64748B; margin-bottom: 12px;">
+      Click below to compose and send verified payment details directly to this customer:
+    </p>
+
+    ${button(`https://${domain}/admin/send-payment-email/?orderId=${escapeHtml(ref)}`, 'Compose & Send Payment Details')}
+
+    <p style="font-size: 12px; color: #94A3B8; margin-top: 12px;">
+      Or manage all orders directly at: <a href="https://${domain}/admin/orders/${escapeHtml(ref)}/" target="_blank" style="color: #0F172A; font-weight: 600; text-decoration: underline;">View Order ${escapeHtml(ref)} in Portal</a> &bull; <a href="https://${domain}/admin/" target="_blank" style="color: #0F172A; text-decoration: underline;">Admin Dashboard Hub</a>
+    </p>
   `;
 
   return shell({
     eyebrow: 'New Order Notification',
     title: `Order ${ref} — ${escapeHtml(customer.name || 'Client')}`,
-    meta: `Channel: ${order.channel === 'whatsapp' ? 'WhatsApp Checkout' : 'Online Store Order Form'}`,
+    meta: `Total: ${total} | Channel: ${order.channel === 'whatsapp' ? 'WhatsApp' : 'Online Store'}`,
     body,
   });
 }
 
 /**
- * 2. Customer Confirmation Email (Sent Unconditionally on Web AND WhatsApp Orders)
+ * 2. Customer Confirmation Email with Tailored "What Happens Next"
  */
 export function orderConfirmationEmail(order) {
   const ref = order.orderNumber || order.id || 'Pending';
   const customer = order.customer || {};
   const items = order.items || [];
   const total = money(order.total || 0);
+  const paymentMethod = (order.paymentMethod || '').toLowerCase();
 
   const itemsList = items.map(item => `
     <li style="margin-bottom: 6px; color: #334155;">
@@ -253,13 +278,45 @@ export function orderConfirmationEmail(order) {
     </li>
   `).join('');
 
+  // Dynamic tailoring of What Happens Next based on payment choice
+  let paymentExplanation = '';
+  if (paymentMethod.includes('btc') || paymentMethod.includes('crypto') || paymentMethod.includes('usdt') || paymentMethod.includes('tether')) {
+    paymentExplanation = `
+      <p style="color: #334155; margin-bottom: 10px;">
+        <strong>10% Instant Cryptocurrency Rebate Applied:</strong> You have selected direct cryptocurrency settlement.
+      </p>
+      <p style="color: #334155; margin-bottom: 12px;">
+        Our treasury desk is preparing your dedicated deposit wallet address (<strong>Bitcoin BTC Native</strong> or <strong>Tether USDT TRC-20</strong>) and discounted AUD-to-crypto invoice total. <strong>You will receive an official payment-details email shortly</strong> containing verified deposit addresses.
+      </p>
+    `;
+  } else if (paymentMethod.includes('pay-id') || paymentMethod.includes('payid')) {
+    paymentExplanation = `
+      <p style="color: #334155; margin-bottom: 10px;">
+        <strong>Australian PayID Instant Settlement:</strong> You have selected instant Australian PayID transfer.
+      </p>
+      <p style="color: #334155; margin-bottom: 12px;">
+        Our commercial desk is preparing your registered ABN PayID identifier and exact reference instructions. <strong>You will receive an official payment-details email shortly</strong> with tap-to-copy PayID details. Once settled, your vehicle will enter pre-delivery inspection.
+      </p>
+    `;
+  } else {
+    // Bank Transfer / EFT
+    paymentExplanation = `
+      <p style="color: #334155; margin-bottom: 10px;">
+        <strong>Direct Australian Bank Wire (EFT / Osko):</strong> You have selected standard electronic funds transfer.
+      </p>
+      <p style="color: #334155; margin-bottom: 12px;">
+        Our sales desk is reviewing your order details. <strong>You will receive an official payment-details email shortly</strong> with verified Australian Bank Wire details (BSB and Account Number), and your unique reference number (<strong>${escapeHtml(ref)}</strong>).
+      </p>
+    `;
+  }
+
   const body = `
     <p style="margin-top: 0; font-size: 16px;">
       Dear ${escapeHtml(customer.name || 'Valued Client')},
     </p>
 
     <p style="color: #334155;">
-      Thank you for your order with <strong>${escapeHtml(SITE.name)}</strong>. We have received your purchase allocation and are preparing your delivery schedule from our Queensland facility.
+      Thank you for your order with <strong>${escapeHtml(SITE.name)}</strong>. We have logged your purchase allocation and are preparing your vehicle dispatch schedule from our Queensland facility.
     </p>
 
     ${callout(`
@@ -269,14 +326,18 @@ export function orderConfirmationEmail(order) {
           <td align="right"><span style="font-family: monospace; font-size: 17px; font-weight: 700; color: #0F172A;">${escapeHtml(ref)}</span></td>
         </tr>
         <tr>
-          <td style="padding-top: 8px;"><strong style="color: #0F172A;">Total Amount (Inc. GST):</strong></td>
+          <td style="padding-top: 8px;"><strong style="color: #0F172A;">Total Order Amount:</strong></td>
           <td align="right" style="padding-top: 8px;"><strong style="font-size: 17px; color: #0F172A;">${total}</strong></td>
+        </tr>
+        <tr>
+          <td style="padding-top: 8px;"><strong style="color: #64748B; font-size: 13px;">Selected Payment:</strong></td>
+          <td align="right" style="padding-top: 8px;"><span style="color: #0F172A; font-size: 13px; font-weight: 600;">${escapeHtml(order.paymentMethod || 'Direct Bank Wire / PayID')}</span></td>
         </tr>
       </table>
     `)}
 
     <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin: 20px 0 10px 0; color: #334155;">
-      Allocated Machinery / Equipment
+      Allocated Vehicles &amp; Equipment
     </h3>
     <ul style="padding-left: 20px; margin: 0 0 20px 0;">
       ${itemsList}
@@ -287,16 +348,16 @@ export function orderConfirmationEmail(order) {
     <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin: 20px 0 8px 0; color: #334155;">
       What Happens Next?
     </h3>
-    <p style="color: #334155; margin-bottom: 12px;">
-      Our commercial sales desk is reviewing your order details. <strong>You will receive an official payment-details email shortly</strong> with verified Australian EFT / PayID / Crypto settlement instructions and your dedicated booking reference.
-    </p>
+    
+    ${paymentExplanation}
+
     <p style="color: #64748B; font-size: 13px; margin: 0;">
-      Please keep your order reference <strong>${escapeHtml(ref)}</strong> handy for all correspondence.
+      Please keep your order reference <strong>${escapeHtml(ref)}</strong> handy for all correspondence. If you have any urgent dispatch requirements, feel free to call our direct technical desk at <strong>0480 811 308</strong>.
     </p>
   `;
 
   return shell({
-    eyebrow: 'Order Received & Recorded',
+    eyebrow: 'Order Allocation Confirmed',
     title: 'Thank You for Your Order',
     meta: `Order Reference: ${ref}`,
     body,
@@ -312,6 +373,7 @@ export function paymentDetailsEmail({ order, parsedFields = [], customNotes = ''
   const total = money(order.total || 0);
   const methodId = order.paymentMethodId || 'bank-transfer';
   const methodParts = paymentMethodParts(methodId, total, ref);
+  const domain = SITE.domain || 'thebuggyshop.com.au';
 
   const fieldsHtml = parsedFields.map(f => `
     <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px;">
@@ -347,7 +409,7 @@ export function paymentDetailsEmail({ order, parsedFields = [], customNotes = ''
     `)}
 
     <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin: 24px 0 12px 0; color: #334155;">
-      Verified Payment Details
+      Official Payment Instructions
     </h3>
 
     ${fieldsHtml}
@@ -356,12 +418,12 @@ export function paymentDetailsEmail({ order, parsedFields = [], customNotes = ''
       ${escapeHtml(methodParts.closing)}
     </p>
 
-    ${button(`https://${SITE.domain}/order/payment-details/?id=${escapeHtml(ref)}`, 'View & Tap-to-Copy Payment Details Online')}
+    ${button(`https://${domain}/order/payment-details/?id=${escapeHtml(ref)}`, 'View & Tap-to-Copy Payment Details Online')}
 
     ${divider()}
 
     <h3 style="font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin: 20px 0 10px 0; color: #334155;">
-      Settlement Terms & Dispatch Policy
+      Settlement Terms &amp; Dispatch Policy
     </h3>
     <div style="color: #475569; font-size: 13px;">
       ${paymentTermsHtml(ref)}
@@ -373,16 +435,6 @@ export function paymentDetailsEmail({ order, parsedFields = [], customNotes = ''
         <strong>Special Dispatch Note:</strong> ${escapeHtml(customNotes)}
       </div>
     ` : ''}
-
-    <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-top: 24px;">
-      <tr>
-        <td align="center">
-          <a href="https://${SITE.domain}/order/confirm-payment/?id=${escapeHtml(ref)}" style="color: #0F172A; font-size: 13px; font-weight: 600; text-decoration: underline; margin-right: 16px;">
-            Upload Payment Receipt / Remittance &rarr;
-          </a>
-        </td>
-      </tr>
-    </table>
   `;
 
   return shell({
@@ -399,6 +451,7 @@ export function paymentDetailsEmail({ order, parsedFields = [], customNotes = ''
 export function enquiryNotificationEmail(enquiry) {
   const isWholesale = enquiry.type === 'wholesale';
   const ref = enquiry.id || 'Enquiry';
+  const domain = SITE.domain || 'thebuggyshop.com.au';
 
   const body = `
     <p style="margin-top: 0; font-size: 16px; color: #334155;">
@@ -419,7 +472,7 @@ export function enquiryNotificationEmail(enquiry) {
       ${escapeHtml(enquiry.message)}
     </div>
 
-    ${button(`https://${SITE.domain}/admin/reply-enquiry/?enquiryId=${escapeHtml(ref)}`, 'Reply via Reply Portal Composer')}
+    ${button(`https://${domain}/admin/reply-enquiry/?enquiryId=${escapeHtml(ref)}`, 'Reply via Reply Portal Composer')}
   `;
 
   return shell({

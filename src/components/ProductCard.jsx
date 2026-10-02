@@ -1,9 +1,9 @@
 // src/components/ProductCard.jsx
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { Shield, BatteryCharging, Gauge, ArrowRight, Scale, Check, ShoppingBag, Users } from 'lucide-react';
+import { Shield, BatteryCharging, Gauge, ArrowRight, Scale, Check, ShoppingBag, Users, Plus, Minus } from 'lucide-react';
 import { SHOP } from '@/src/config/site';
 
 export default function ProductCard({ 
@@ -12,8 +12,29 @@ export default function ProductCard({
   onToggleCompare, 
   isCompared = false 
 }) {
+  const [qty, setQty] = useState(1);
   const cryptoPrice = Math.round(product.price * (1 - SHOP.cryptoDiscount / 100));
   const seatingText = product.seats || product.specs?.seating || product.specs?.seat || '2-Passenger Seating';
+
+  const handleDecrease = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setQty((prev) => Math.max(1, prev - 1));
+  };
+
+  const handleIncrease = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setQty((prev) => prev + 1);
+  };
+
+  const handleAdd = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (onAddToCart) {
+      onAddToCart(product, qty);
+    }
+  };
 
   return (
     <div 
@@ -124,25 +145,50 @@ export default function ProductCard({
             </div>
           </div>
 
-          {/* Action Button Row */}
-          <div className="grid grid-cols-2 gap-2 pt-1">
+          {/* Stepper & Action Buttons */}
+          <div className="space-y-2 pt-1">
+            <div className="flex items-center gap-2">
+              {/* Quantity Stepper */}
+              <div className="flex items-center border border-slate-300 rounded-xl bg-slate-50 overflow-hidden shadow-2xs">
+                <button
+                  type="button"
+                  onClick={handleDecrease}
+                  className="px-2.5 py-2 hover:bg-slate-200 text-slate-700 font-bold transition-colors cursor-pointer"
+                  aria-label="Decrease quantity"
+                >
+                  <Minus className="w-3.5 h-3.5" />
+                </button>
+                <span className="px-2 text-xs font-black text-slate-900 min-w-[24px] text-center">{qty}</span>
+                <button
+                  type="button"
+                  onClick={handleIncrease}
+                  className="px-2.5 py-2 hover:bg-slate-200 text-slate-700 font-bold transition-colors cursor-pointer"
+                  aria-label="Increase quantity"
+                >
+                  <Plus className="w-3.5 h-3.5" />
+                </button>
+              </div>
+
+              {/* Add to Order Button */}
+              <button
+                type="button"
+                onClick={handleAdd}
+                className="flex-1 py-2.5 px-3 rounded-xl bg-slate-950 hover:bg-[#C5A880] hover:text-slate-950 text-[#C5A880] text-xs font-black uppercase tracking-wider text-center transition-all shadow-sm border border-[#C5A880]/50 flex items-center justify-center gap-1.5 cursor-pointer active:scale-[0.98]"
+                id={`add-to-cart-${product.slug}`}
+              >
+                <ShoppingBag className="w-3.5 h-3.5" />
+                <span>Add {qty > 1 ? `(${qty}) ` : ''}to Order</span>
+              </button>
+            </div>
+
+            {/* View Specs Link */}
             <Link
               href={`/shop/${product.category}/${product.slug}/`}
-              className="py-2.5 px-3 rounded-xl bg-white hover:bg-slate-900 hover:text-white text-slate-900 text-xs font-bold text-center border border-slate-300 transition-all flex items-center justify-center gap-1.5 shadow-xs"
+              className="w-full py-2 px-3 rounded-xl bg-white hover:bg-slate-100 text-slate-700 hover:text-slate-950 text-xs font-semibold text-center border border-slate-200 transition-all flex items-center justify-center gap-1"
             >
-              <span>Full Specs</span>
+              <span>View Full Engineering Specifications</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
             </Link>
-
-            <button
-              type="button"
-              onClick={() => onAddToCart && onAddToCart(product, 1)}
-              className="py-2.5 px-3 rounded-xl bg-slate-950 hover:bg-[#C5A880] hover:text-slate-950 text-[#C5A880] text-xs font-black uppercase tracking-wider text-center transition-all shadow-sm border border-[#C5A880]/50 flex items-center justify-center gap-1.5 cursor-pointer active:scale-[0.98]"
-              id={`add-to-cart-${product.slug}`}
-            >
-              <ShoppingBag className="w-3.5 h-3.5" />
-              <span>Add to Order</span>
-            </button>
           </div>
         </div>
       </div>

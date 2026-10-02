@@ -4,12 +4,12 @@
 import React, { Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { CheckCircle2, ArrowRight, Mail, Sparkles, MessageSquare, ShieldCheck } from 'lucide-react';
-import { SITE, CONTACT, REPLY } from '@/src/config/site';
+import { CheckCircle2, ArrowRight, Mail, MessageSquare, ShieldCheck, Truck, Phone } from 'lucide-react';
+import { SITE, CONTACT } from '@/src/config/site';
 
 function ThankYouOrderContent() {
   const searchParams = useSearchParams();
-  const ref = searchParams.get('ref') || '';
+  const ref = searchParams.get('orderId') || searchParams.get('ref') || '';
 
   const waGreeting = `Hi ${SITE.name}, I placed an order ${ref ? `(Ref: ${ref})` : ''} and am ready for payment details.`;
 
@@ -22,7 +22,7 @@ function ThankYouOrderContent() {
 
       <div className="space-y-3">
         {ref && (
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-[#C5A880]/40 text-[#C5A880] text-xs font-mono font-bold uppercase">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-900 border border-[#C5A880]/40 text-[#C5A880] text-xs font-mono font-bold uppercase shadow-sm">
             <span>Order Reference:</span>
             <span className="text-white font-black">{ref}</span>
           </div>
@@ -31,7 +31,7 @@ function ThankYouOrderContent() {
           Your Golf Buggy Order Is Registered.
         </h1>
         <p className="text-sm text-slate-600 leading-relaxed max-w-lg mx-auto">
-          We have generated your order file and sent a verification confirmation to your email. Please watch your inbox for your personalised payment details.
+          We have generated your order file and sent an immediate confirmation to your email. Please watch your inbox for your official payment and dispatch instructions.
         </p>
       </div>
 
@@ -45,7 +45,7 @@ function ThankYouOrderContent() {
               Watch for Your Payment-Details Email
             </h2>
             <p className="text-xs text-slate-500">
-              Our dispatch desk is preparing your verified settlement instructions.
+              Our Queensland dispatch desk is preparing your verified settlement instructions.
             </p>
           </div>
         </div>
@@ -53,37 +53,35 @@ function ThankYouOrderContent() {
         <ul className="space-y-3 text-xs text-slate-600">
           <li className="flex items-start gap-3">
             <span className="w-5 h-5 rounded-full bg-slate-100 text-slate-900 font-bold flex items-center justify-center shrink-0 text-[11px]">1</span>
-            <span>Check your email inbox (and spam/promotions folder) for formal payment details from <strong>{SITE.name}</strong>.</span>
+            <span>Check your email inbox (and spam folder) for formal payment details from <strong>{SITE.name}</strong>.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="w-5 h-5 rounded-full bg-slate-100 text-slate-900 font-bold flex items-center justify-center shrink-0 text-[11px]">2</span>
-            <span>Your email will contain verified payment details with convenient 1-tap copy buttons.</span>
+            <span>Your email will contain verified Australian Bank Wire / PayID or Crypto settlement instructions.</span>
           </li>
           <li className="flex items-start gap-3">
             <span className="w-5 h-5 rounded-full bg-slate-100 text-slate-900 font-bold flex items-center justify-center shrink-0 text-[11px]">3</span>
-            <span>Once payment is received, your golf buggy undergoes rigorous pre-delivery inspection before nationwide tail-lift dispatch.</span>
+            <span>Once payment is received, your vehicle undergoes final pre-delivery safety inspection before nationwide tail-lift dispatch.</span>
           </li>
         </ul>
 
         <div className="pt-2 flex flex-col sm:flex-row gap-3">
-          {ref && (
-            <Link
-              href={`/order/payment-details/?id=${ref}`}
-              className="flex-1 py-3 px-4 rounded-xl bg-[#C5A880] hover:bg-[#D4B27C] text-slate-950 font-black text-xs uppercase tracking-wider text-center transition-all shadow-md active:scale-95 flex items-center justify-center gap-2"
-            >
-              <Sparkles className="w-4 h-4" />
-              <span>View &amp; Copy Payment Details</span>
-            </Link>
-          )}
-
           <a
             href={`https://wa.me/${CONTACT.whatsapp.replace('+', '')}?text=${encodeURIComponent(waGreeting)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 py-3 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-[#C5A880] border border-slate-700 font-black text-xs uppercase tracking-wider text-center transition-all flex items-center justify-center gap-2"
+            className="flex-1 py-3 px-4 rounded-xl bg-[#C5A880] hover:bg-[#D4B27C] text-slate-950 font-black text-xs uppercase tracking-wider text-center transition-all shadow-md active:scale-95 flex items-center justify-center gap-2"
           >
-            <MessageSquare className="w-4 h-4 text-[#25D366]" />
-            <span>WhatsApp Support</span>
+            <MessageSquare className="w-4 h-4 text-slate-950" />
+            <span>Chat on WhatsApp</span>
+          </a>
+
+          <a
+            href={`tel:${CONTACT.phone.replace(/\s+/g, '')}`}
+            className="flex-1 py-3 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 font-bold text-xs uppercase tracking-wider text-center transition-all flex items-center justify-center gap-2"
+          >
+            <Phone className="w-4 h-4 text-[#C5A880]" />
+            <span>Call Sales: {CONTACT.phoneDisplay}</span>
           </a>
         </div>
       </div>
@@ -93,7 +91,7 @@ function ThankYouOrderContent() {
           href="/shop/"
           className="inline-flex items-center gap-2 py-3.5 px-8 rounded-xl bg-slate-900 text-[#C5A880] hover:bg-slate-800 font-black text-xs uppercase tracking-wider transition-all border border-slate-700 shadow-md active:scale-95"
         >
-          <span>Continue Browsing Catalog</span>
+          <span>Continue Browsing Fleet</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
@@ -103,7 +101,11 @@ function ThankYouOrderContent() {
 
 export default function ThankYouOrderPage() {
   return (
-    <Suspense fallback={<div className="p-12 text-center text-slate-500 font-sans">Loading confirmation...</div>}>
+    <Suspense fallback={
+      <div className="py-24 text-center text-slate-400 text-sm">
+        Loading order confirmation...
+      </div>
+    }>
       <ThankYouOrderContent />
     </Suspense>
   );

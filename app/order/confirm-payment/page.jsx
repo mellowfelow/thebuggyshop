@@ -123,7 +123,7 @@ function ConfirmPaymentContent() {
               rows={3}
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              placeholder="e.g. Sent from Commonwealth Bank account ending in 4920 under name David Thompson, or crypto transaction hash."
+              placeholder="e.g. Sent from Australian bank account ending in 4920 under name David Thompson, or crypto transaction hash."
               className="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-[#C5A880] focus:border-[#C5A880]"
             />
           </div>
