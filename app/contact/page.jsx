@@ -153,7 +153,7 @@ export default function ContactPage() {
               <div className="font-black text-[#0E2A1E]">Accepted Australian Settlement:</div>
               <div className="flex flex-wrap gap-1.5 pt-1">
                 <span className="px-2.5 py-1 bg-white border border-[#D5DFD9] rounded-lg font-medium text-[#0E2A1E] shadow-2xs">Australian PayID</span>
-                <span className="px-2.5 py-1 bg-white border border-[#D5DFD9] rounded-lg font-medium text-[#0E2A1E] shadow-2xs">Bank Transfer (EFT)</span>
+                <span className="px-2.5 py-1 bg-white border border-[#D5DFD9] rounded-lg font-medium text-[#0E2A1E] shadow-2xs">Direct Bank Transfer (Osko / Fast EFT)</span>
                 <span className="px-2.5 py-1 bg-white border border-[#D5DFD9] rounded-lg font-medium text-[#0E2A1E] shadow-2xs">Commercial Invoice</span>
                 <span className="px-2.5 py-1 bg-[#0E2A1E] text-[#C5A265] border border-[#C5A265]/40 rounded-lg font-bold shadow-2xs">10% Bitcoin / USDT Rebate</span>
               </div>

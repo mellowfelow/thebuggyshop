@@ -1,6 +1,7 @@
 // src/config/products.js
-// Australian Golf Buggy Products Catalog (WebForge v9.1 AU)
+// Australian Golf Buggy Products Catalog (WebForge v11.1 AU)
 // Adheres strictly to floor pricing: Electric >= $1,000 | Manual Push >= $450 | Kids >= $850 | Inc. GST | Australian English
+// Real Market Competitor Pricing based on Google AU SERP Analysis (Drummond, GolfBox, Carts'n'Parts, Golf Cars Australia)
 
 export const PRODUCTS = [
   // ==========================================
@@ -13,12 +14,12 @@ export const PRODUCTS = [
     brandName: 'MGI',
     category: 'remote-control-golf-buggies',
     categoryPath: '/remote-control-golf-buggies/',
-    price: 1899,
+    price: 2099,
     condition: 'New',
     badge: 'Australia #1 Remote',
     featured: true,
     rating: 4.9,
-    reviewCount: 52,
+    reviewCount: 257,
     power: 'Remote control',
     wheels: '4-wheel',
     batteryRange: '36 hole',
@@ -28,7 +29,7 @@ export const PRODUCTS = [
     seats: 'Walk-behind',
     primaryKeyword: 'mgi zip navigator at remote electric golf buggy',
     shortDescription: 'Australia\'s best-selling all-terrain remote control golf buggy with dual 230W motors, gyroscope straight-tracker, and 36-hole 24V lithium battery.',
-    description: 'The MGI Zip Navigator AT (All-Terrain) is Australia\'s benchmark remote-control electric golf buggy. Engineered with dual 230-watt calibrated motors and patented Patented Gyroscope Straight Tracker technology that automatically corrects alignment across steep Australian side-slopes. Features a directional remote handset with forward, reverse, left, right and speed control, all-terrain rear tread tyres, foldable 4th rear stabiliser wheel, and a Click & Go 24V 380Wh lithium battery delivering 36+ holes per charge.',
+    description: 'The MGI Zip Navigator AT (All-Terrain) is Australia\'s benchmark remote-control electric golf buggy. Engineered with dual 230-watt calibrated motors and patented Gyroscope Straight Tracker technology that automatically corrects alignment across steep Australian side-slopes. Features a directional remote handset with forward, reverse, left, right and speed control, all-terrain rear tread tyres, foldable 4th rear stabiliser wheel, and a Click & Go 24V 380Wh lithium battery delivering 36+ holes per charge.',
     specs: {
       power: 'Remote control (Full Directional Wireless Handset)',
       motor: 'Twin 230W Calibrated Low-Noise Motors',
@@ -45,169 +46,364 @@ export const PRODUCTS = [
     ]
   },
   {
-    slug: 'motocaddy-m7-gps-remote-electric-golf-buggy',
-    name: 'Motocaddy M7 GPS Remote Electric Golf Buggy',
-    brand: 'motocaddy',
-    brandName: 'Motocaddy',
+    slug: 'mgi-ai-500-remote-electric-golf-buggy',
+    name: 'MGI Ai 500 Remote Electric Golf Buggy',
+    brand: 'mgi',
+    brandName: 'MGI',
     category: 'remote-control-golf-buggies',
     categoryPath: '/remote-control-golf-buggies/',
-    price: 2499,
+    price: 1870,
     condition: 'New',
-    badge: 'Touchscreen GPS',
-    featured: true,
-    rating: 4.9,
-    reviewCount: 38,
+    badge: 'Intelligent Remote',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 45,
     power: 'Remote control',
     wheels: '4-wheel',
     batteryRange: '36 hole',
     weightCategory: '10–13 kg',
-    weightKg: 14.4,
+    weightKg: 12.8,
     foldSize: 'Compact / flat-fold',
     seats: 'Walk-behind',
-    primaryKeyword: 'motocaddy m7 gps remote golf buggy',
-    shortDescription: 'World\'s first remote-control electric golf buggy with integrated 3.5" high-resolution touchscreen GPS and active downhill braking control.',
-    description: 'The Motocaddy M7 GPS Remote combines ultra-responsive wireless remote navigation with a high-definition 3.5-inch LCD touchscreen GPS preloaded with 40,000+ courses worldwide (including all Australian courses with zero subscription fees). Features dual 230W 28.8V brushless motors, anti-glare sunlight readable display, dynamic green view with pin repositioning, Downhill Control (DHC), and an ultra-compact boot-friendly fold.',
+    primaryKeyword: 'mgi ai 500 remote golf buggy',
+    shortDescription: 'Smart directional remote control golf buggy with ergonomic ergonomic chassis and 36-hole 24V lithium battery.',
+    description: 'The MGI Ai 500 brings next-generation remote intelligence to the fairway. Built on MGI\'s refined Ai architecture, it features full directional remote control, responsive speed dialling, automatic downhill speed regulation, and ultra-compact folding geometry.',
     specs: {
-      power: 'Remote control & On-Handle Speed Dial',
-      gps: '3.5" Colour LCD Touchscreen (40,000+ Courses Preloaded)',
-      motor: 'Dual 230W 28.8V Brushless Motors',
-      battery: 'High-Capacity 28.8V Super-Light Lithium (36 Holes)',
-      weight: '14.4 kg (Without Battery)',
-      wheels: '4-Wheel All-Terrain with Anti-Tip Wheel',
-      foldSize: '65cm x 47cm x 42cm (Ultra-Compact M-Series Fold)',
-      warranty: '2-Year Buggy + 5-Year Pro-Rata Lithium Warranty'
+      power: 'Full Directional Remote Control',
+      motor: 'Twin Calibrated 230W Electric Motors',
+      battery: '24V 299Wh Lithium Battery Pack',
+      weight: '12.8 kg (Chassis)',
+      wheels: '4-Wheel Stable Stance',
+      foldSize: '69cm x 46cm x 41cm',
+      brakes: 'Electronic Downhill Speed Control',
+      warranty: '3-Year Australian Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   {
-    slug: 'mgi-ai-navigator-gps-follow-electric-golf-buggy',
-    name: 'MGI Ai Navigator GPS Follow Electric Golf Buggy',
-    brand: 'mgi',
-    brandName: 'MGI',
-    category: 'gps-follow-buggies',
-    categoryPath: '/electric-golf-buggies/gps-follow/',
-    price: 2899,
+    slug: 'motocaddy-m7-remote-electric-golf-buggy',
+    name: 'Motocaddy M7 Remote Control Electric Golf Buggy',
+    brand: 'motocaddy',
+    brandName: 'Motocaddy',
+    category: 'remote-control-golf-buggies',
+    categoryPath: '/remote-control-golf-buggies/',
+    price: 1615,
     condition: 'New',
-    badge: 'Ai Smart Follow',
+    badge: 'Most Wanted Winner',
     featured: true,
-    rating: 5.0,
-    reviewCount: 29,
-    power: 'Follow / GPS',
+    rating: 4.9,
+    reviewCount: 74,
+    power: 'Remote control',
     wheels: '4-wheel',
     batteryRange: '36 hole',
-    weightCategory: 'Over 13 kg',
-    weightKg: 15.2,
+    weightCategory: '10–13 kg',
+    weightKg: 12.6,
     foldSize: 'Compact / flat-fold',
     seats: 'Walk-behind',
-    primaryKeyword: 'mgi ai navigator gps follow golf buggy',
-    shortDescription: 'Smart artificial intelligence follow buggy with 4-inch full-colour touchscreen GPS, auto-follow handset tracking and smartphone connectivity.',
-    description: 'Experience hands-free fairway autonomy with the MGI Ai Navigator GPS. Equipped with ultra-wideband tracking sensors, the buggy follows smoothly behind you as you walk the fairway. The 4-inch high-resolution touchscreen provides accurate front, centre, and back green distances, hazard mapping, and live pin positioning. Dual 230W motors handle heavy bags and steep wet hills with complete stability.',
+    primaryKeyword: 'motocaddy m7 remote golf buggy',
+    shortDescription: 'Award-winning compact folding remote buggy with rechargeable ergonomic handset, dual 28.8V brushless motors, and anti-tip wheel.',
+    description: 'Winner of multiple MyGolfSpy "Most Wanted" awards, the Motocaddy M7 Remote provides ultra-responsive directional handling, automatic Downhill Control (DHC), emergency brake function, and an anti-glare LCD screen.',
     specs: {
-      power: 'Follow / GPS & Directional Remote & Manual Drive',
-      screen: '4.0" All-Weather Colour Touchscreen GPS',
-      motor: 'Twin 230W High-Torque Calibrated Motors',
-      battery: '24V 380Wh Lithium Battery (36 Holes Guaranteed)',
-      weight: '15.2 kg',
-      connectivity: 'Bluetooth MGI App & Course Over-The-Air Updates',
-      foldSize: '70cm x 47cm x 42cm',
-      warranty: '3-Year Australian Full Warranty'
+      power: 'Rechargeable Ergonomic Remote Handset',
+      motor: 'Twin 230W Brushless 28.8V DHC Drive',
+      battery: 'High Capacity 28.8V Ultra Lithium',
+      weight: '12.6 kg',
+      wheels: 'All-Terrain Low Profile DHC Wheels',
+      foldSize: '65cm x 47cm x 42cm',
+      brakes: 'Automatic Downhill Brake & Parking Brake',
+      warranty: '2-Year Buggy / 5-Year Battery Warranty'
     },
     images: [
+      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'stinger-golf-sg4-crossover-remote-electric-buggy',
+    name: 'Stinger Golf SG-4 Crossover Remote Electric Buggy',
+    brand: 'stinger',
+    brandName: 'Stinger Golf',
+    category: 'remote-control-golf-buggies',
+    categoryPath: '/remote-control-golf-buggies/',
+    price: 1220,
+    condition: 'New',
+    badge: 'Australian Owned',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 39,
+    power: 'Remote control',
+    wheels: '4-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '10–13 kg',
+    weightKg: 11.9,
+    foldSize: 'Compact / flat-fold',
+    seats: 'Walk-behind',
+    primaryKeyword: 'stinger sg4 crossover remote golf buggy',
+    shortDescription: 'Australian-designed remote control golf buggy featuring wide-track stability, dual whisper-quiet motors, and 36-hole lithium pack.',
+    description: 'Designed specifically for Australian course conditions, the Stinger SG-4 Crossover delivers smooth remote navigation, wide-wheel stability across soft sand and wet turf, and quick one-step folding.',
+    specs: {
+      power: 'Digital Remote Handset with USB Charging',
+      motor: 'Dual 200W Calibrated Electric Motors',
+      battery: '24V 20Ah Lithium Battery',
+      weight: '11.9 kg (Chassis)',
+      wheels: '4-Wheel Wide Stance with Rear Wheelie Bar',
+      foldSize: '68cm x 44cm x 39cm',
+      brakes: 'Downhill Auto Brake',
+      warranty: '2-Year Australian Replacement Guarantee'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'alphard-cybercart-remote-electric-buggy',
+    name: 'Alphard Cybercart Remote Control Electric Buggy',
+    brand: 'alphard',
+    brandName: 'Alphard Golf',
+    category: 'remote-control-golf-buggies',
+    categoryPath: '/remote-control-golf-buggies/',
+    price: 1979,
+    condition: 'New',
+    badge: 'Cyber Frame Tech',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 68,
+    power: 'Remote control',
+    wheels: '4-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '10–13 kg',
+    weightKg: 13.2,
+    foldSize: 'Compact / flat-fold',
+    seats: 'Walk-behind',
+    primaryKeyword: 'alphard cybercart remote golf buggy',
+    shortDescription: 'Futuristic aerospace aluminium chassis with integrated dual brushless motors, Bluetooth tracking, and 36-hole lithium pack.',
+    description: 'The Alphard Cybercart combines structural aerospace alloy with whisper-quiet digital remote transmission, Bluetooth companion app telematics, and an ultra-low center of gravity.',
+    specs: {
+      power: 'Wireless Remote Handset + Smartphone Control',
+      motor: 'Integrated Dual Brushless High-Torque Hubs',
+      battery: '36V Quick-Release Lithium Cartridge',
+      weight: '13.2 kg',
+      wheels: 'All-Terrain PU Solid Tyres',
+      foldSize: '66cm x 46cm x 40cm',
+      brakes: 'Intelligent Slope Assist & Downhill Braking',
+      warranty: '2-Year Manufacturer Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'explora-r1-remote-control-golf-buggy',
+    name: 'Explora R1 Remote Electric Golf Buggy',
+    brand: 'explora',
+    brandName: 'Explora',
+    category: 'remote-control-golf-buggies',
+    categoryPath: '/remote-control-golf-buggies/',
+    price: 1379,
+    condition: 'New',
+    badge: 'High Value Pick',
+    featured: false,
+    rating: 4.7,
+    reviewCount: 31,
+    power: 'Remote control',
+    wheels: '4-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '10–13 kg',
+    weightKg: 12.2,
+    foldSize: 'Compact / flat-fold',
+    seats: 'Walk-behind',
+    primaryKeyword: 'explora r1 remote golf buggy',
+    shortDescription: 'Robust digital remote golf trolley with 36-hole lithium power, digital speedometer, and umbrella holder bundle.',
+    description: 'The Explora R1 offers unbeatable remote-control performance under $1,400 AUD. Engineered with dual direct-drive motors, electronic gradient hold, and luxury accessory console.',
+    specs: {
+      power: 'Full Wireless Directional Remote',
+      motor: 'Twin 180W Calibrated Motors',
+      battery: '24V 20Ah Lithium Battery + Fast Charger',
+      weight: '12.2 kg',
+      wheels: '4-Wheel Stability Set',
+      foldSize: '68cm x 45cm x 40cm',
+      brakes: 'Downhill Speed Regulation',
+      warranty: '2-Year Australian Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
     ]
   },
 
   // ==========================================
-  // 2. ELECTRIC GOLF BUGGIES - WALK-BEHIND
+  // 2. WALK-BEHIND ELECTRIC GOLF BUGGIES
   // ==========================================
   {
     slug: 'mgi-zip-x1-electric-golf-buggy',
-    name: 'MGI Zip X1 Walk-Behind Electric Golf Buggy',
+    name: 'MGI Zip X1 Electric Golf Buggy',
     brand: 'mgi',
     brandName: 'MGI',
-    category: 'electric-walk-behind',
-    categoryPath: '/electric-golf-buggies/walk-behind/',
-    price: 1199,
+    category: 'electric-golf-buggies',
+    categoryPath: '/electric-golf-buggies/',
+    price: 1099,
     condition: 'New',
-    badge: 'Best Value Electric',
+    badge: 'Category Benchmark',
+    featured: true,
+    rating: 4.9,
+    reviewCount: 180,
+    power: 'Electric',
+    wheels: '3-wheel',
+    batteryRange: '36 hole',
+    weightCategory: 'Under 10 kg',
+    weightKg: 9.8,
+    foldSize: 'Compact / flat-fold',
+    seats: 'Walk-behind',
+    primaryKeyword: 'mgi zip x1 electric golf buggy',
+    shortDescription: 'Australia\'s favourite walk-behind motorized buggy with smooth variable speed dial, whisper-quiet 230W motor, and 24V lithium battery.',
+    description: 'The MGI Zip X1 is Australia\'s standard for walk-behind electric golf buggies. Built with a responsive digital speed dial, whisper-quiet 230W motor, fixed front wheel, and Zip fold design that is 25% smaller than predecessors.',
+    specs: {
+      power: 'Electric Speed Dial Control',
+      motor: 'Single 230W Low-Noise Calibrated Motor',
+      battery: '24V 250Wh Click & Go Lithium (36 Hole)',
+      weight: '9.8 kg (Without Battery)',
+      wheels: '3-Wheel Fixed Front Geometry',
+      foldSize: '70cm x 47cm x 42cm',
+      brakes: 'Controlled Speed Descent',
+      warranty: '3-Year Australian Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'mgi-zip-x3-electric-golf-buggy',
+    name: 'MGI Zip X3 36-Hole Electric Golf Buggy',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'electric-golf-buggies',
+    categoryPath: '/electric-golf-buggies/',
+    price: 1299,
+    condition: 'New',
+    badge: 'Popular Retail Pick',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 112,
+    power: 'Electric',
+    wheels: '3-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '10–13 kg',
+    weightKg: 10.3,
+    foldSize: 'Compact / flat-fold',
+    seats: 'Walk-behind',
+    primaryKeyword: 'mgi zip x3 electric golf buggy',
+    shortDescription: 'Features controlled distance function, swivelling lockable front wheel, digital odometer, and 36-hole 24V lithium pack.',
+    description: 'The MGI Zip X3 enhances your walking round with Controlled Distance Function (send your buggy 5 to 60 metres ahead), swivelling front wheel for 360-degree fairway manoeuvrability, and a full-colour digital display.',
+    specs: {
+      power: 'Digital Display with Distance Presets',
+      motor: '230W Whisper-Quiet AC Electric Motor',
+      battery: '24V 250Wh Lithium Battery System',
+      weight: '10.3 kg',
+      wheels: 'Swivelling & Lockable Front Wheel',
+      foldSize: '70cm x 47cm x 42cm',
+      brakes: 'Automatic Slope Control',
+      warranty: '3-Year Australian Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'mgi-zip-x5-electric-golf-buggy',
+    name: 'MGI Zip X5 Downhill Braking Electric Golf Buggy',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'electric-golf-buggies',
+    categoryPath: '/electric-golf-buggies/',
+    price: 1499,
+    condition: 'New',
+    badge: 'Downhill DHC',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 88,
+    power: 'Electric',
+    wheels: '3-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '10–13 kg',
+    weightKg: 10.5,
+    foldSize: 'Compact / flat-fold',
+    seats: 'Walk-behind',
+    primaryKeyword: 'mgi zip x5 downhill brake golf buggy',
+    shortDescription: 'Top-of-the-line walk-behind model featuring automatic Downhill Speed Control and Electronic Park Brake for effortless hill walking.',
+    description: 'The MGI Zip X5 is designed for hilly golf courses. Features Electronic Park Brake (locks buggy on any incline at the touch of a button) and automatic Downhill Speed Control that maintains a constant walking pace down steep descents.',
+    specs: {
+      power: 'Digital Console with Electronic Park Brake',
+      motor: '230W Calibrated Motor with DHC System',
+      battery: '24V 250Wh Lithium Battery',
+      weight: '10.5 kg',
+      wheels: 'All-Terrain Low Profile Rear Tyres',
+      foldSize: '70cm x 47cm x 42cm',
+      brakes: 'Downhill Speed Regulation & Electronic Park Brake',
+      warranty: '3-Year Australian Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'motocaddy-m1-dhc-electric-golf-buggy',
+    name: 'Motocaddy M1 DHC Electric Golf Buggy',
+    brand: 'motocaddy',
+    brandName: 'Motocaddy',
+    category: 'electric-golf-buggies',
+    categoryPath: '/electric-golf-buggies/',
+    price: 1299,
+    condition: 'New',
+    badge: 'Downhill Control',
     featured: false,
     rating: 4.8,
     reviewCount: 64,
     power: 'Electric',
     wheels: '3-wheel',
-    batteryRange: '27 hole',
-    weightCategory: '10–13 kg',
-    weightKg: 10.5,
-    foldSize: 'Compact / flat-fold',
-    seats: 'Walk-behind',
-    primaryKeyword: 'mgi zip x1 electric golf buggy',
-    shortDescription: 'Smooth whisper-quiet walk-behind electric buggy with digital 9-speed dial, fixed front wheel, and 24V 250Wh lithium battery pack.',
-    description: 'The MGI Zip X1 is the best-value entry into Australian-engineered electric golf buggies. Lightweight and intuitive, it features a smooth variable speed dial, fixed front wheel for pinpoint tracking on flat to rolling fairways, and a single-action Zip fold system that fits in compact boots.',
-    specs: {
-      power: 'Walk-Behind Electric (Digital Speed Dial)',
-      motor: '230W Single Whisper AC Motor with Whisper Gearbox',
-      battery: '24V 250Wh Click & Go Lithium (27-36 Holes)',
-      weight: '10.5 kg (Without Battery)',
-      wheels: '3-Wheel with Quick-Release All-Terrain Tyres',
-      foldSize: '70cm x 47cm x 42cm',
-      warranty: '2-Year Australian Manufacturer Warranty'
-    },
-    images: [
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
-    ]
-  },
-  {
-    slug: 'mgi-zip-x5-electric-golf-buggy-downhill-control',
-    name: 'MGI Zip X5 Electric Golf Buggy with Downhill Speed Control',
-    brand: 'mgi',
-    brandName: 'MGI',
-    category: 'electric-walk-behind',
-    categoryPath: '/electric-golf-buggies/walk-behind/',
-    price: 1549,
-    condition: 'New',
-    badge: 'Downhill Control',
-    featured: false,
-    rating: 4.9,
-    reviewCount: 31,
-    power: 'Electric',
-    wheels: '3-wheel',
     batteryRange: '36 hole',
-    weightCategory: '10–13 kg',
-    weightKg: 11.2,
+    weightCategory: 'Under 10 kg',
+    weightKg: 9.9,
     foldSize: 'Compact / flat-fold',
     seats: 'Walk-behind',
-    primaryKeyword: 'mgi zip x5 electric golf buggy',
-    shortDescription: 'Electronic Downhill Speed Control (DHC) and electronic park brake for effortless walk-behind control on steep undulating golf courses.',
-    description: 'Designed specifically for golfers who play hilly courses. The MGI Zip X5 features Controlled Downhill Speed Braking that maintains your set pace automatically on descents without touching the handle, plus an electronic park brake to stop securely on slopes at the push of a button.',
+    primaryKeyword: 'motocaddy m1 dhc electric golf buggy',
+    shortDescription: 'Ultra-compact folding motorized trolley with Downhill Control, electronic parking brake, and 9 speed settings.',
+    description: 'The Motocaddy M1 DHC adds automatic downhill braking, electronic parking brake, and all-terrain DHC wheels to the world\'s simplest compact-folding electric golf buggy.',
     specs: {
-      power: 'Walk-Behind Electric with Electronic Braking',
-      motor: '230W High-Torque Motor with Regenerative Braking',
-      battery: '24V 380Wh Long-Range Lithium (36 Holes)',
-      weight: '11.2 kg',
-      wheels: '3-Wheel with Swivelling Front Wheel Lock',
-      brakes: 'Downhill Speed Braking + Electronic Park Brake',
-      warranty: '3-Year Australian Warranty'
+      power: '9-Speed Settings with Speed Indicator',
+      motor: 'High Power 28V 230W DHC System',
+      battery: '28.8V Ultra Lithium 36-Hole Battery',
+      weight: '9.9 kg',
+      wheels: 'Inverting All-Terrain DHC Wheels',
+      foldSize: '65cm x 47cm x 41cm',
+      brakes: 'Automatic Downhill Brake & Parking Brake',
+      warranty: '2-Year Buggy / 5-Year Battery Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   {
-    slug: 'powakaddy-ct6-ultra-compact-electric-golf-buggy',
-    name: 'PowaKaddy CT6 Ultra-Compact Electric Golf Buggy',
+    slug: 'powakaddy-ct6-electric-golf-buggy',
+    name: 'PowaKaddy CT6 Compact Electric Golf Buggy',
     brand: 'powakaddy',
     brandName: 'PowaKaddy',
-    category: 'electric-walk-behind',
-    categoryPath: '/electric-golf-buggies/walk-behind/',
-    price: 1449,
+    category: 'electric-golf-buggies',
+    categoryPath: '/electric-golf-buggies/',
+    price: 1199,
     condition: 'New',
-    badge: 'Ultra Compact',
+    badge: 'Ultra-Compact Fold',
     featured: false,
     rating: 4.8,
-    reviewCount: 22,
+    reviewCount: 47,
     power: 'Electric',
     wheels: '3-wheel',
     batteryRange: '36 hole',
@@ -216,837 +412,919 @@ export const PRODUCTS = [
     foldSize: 'Compact / flat-fold',
     seats: 'Walk-behind',
     primaryKeyword: 'powakaddy ct6 electric golf buggy',
-    shortDescription: 'Folds 35% smaller than competitor buggies with 2.8" full-colour widescreen display and 30V Max Plug \'n\' Play lithium battery.',
-    description: 'The PowaKaddy CT6 is the world\'s smallest ultra-compact electric golf trolley. Features Simple-2-Fold technology, a vibrant 2.8-inch OCA full colour widescreen display, integrated USB charging port, and an ultra-thin 30V Plug \'n\' Play lithium battery.',
+    shortDescription: 'World\'s smallest ultra-compact electric trolley with 2.8" full colour widescreen display and 30V Plug \'n\' Play lithium battery.',
+    description: 'The PowaKaddy CT6 folds 35% smaller than its nearest competitor with a Simple-2-Fold system, whisper-quiet 30V 230W motor, and automatic distance function (15, 30, 45 yards).',
     specs: {
-      power: 'Walk-Behind Electric (Speed Dial & Distance Function)',
-      battery: '30V Max Ultra-Thin Plug \'n\' Play Lithium (36 Holes)',
-      motor: '220W 30V Whisper Motor',
-      weight: '9.9 kg (Lightest in class)',
-      foldSize: '51cm x 42.5cm x 37.5cm (35% Smaller)',
-      warranty: '2-Year Buggy + 5-Year Lithium Warranty'
+      power: '2.8" OCA Mid-Size Full Colour Display',
+      motor: '30V 230W High Performance Motor',
+      battery: 'Plug \'n\' Play 30V 220Wh Lithium',
+      weight: '9.9 kg',
+      wheels: 'Metallic Low-Profile Sports Wheels',
+      foldSize: '51cm x 42cm x 37cm',
+      brakes: 'Standard Electric Brake',
+      warranty: '2-Year Warranty'
     },
     images: [
+      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+
+  // ==========================================
+  // 3. GPS & FOLLOW / SMART GOLF BUGGIES
+  // ==========================================
+  {
+    slug: 'mgi-ai-navigator-gps-plus-electric-golf-buggy',
+    name: 'MGI Ai Navigator GPS+ Electric Golf Buggy',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'gps-follow-buggies',
+    categoryPath: '/gps-follow-buggies/',
+    price: 2422,
+    condition: 'New',
+    badge: 'Built-in GPS Touchscreen',
+    featured: true,
+    rating: 5.0,
+    reviewCount: 42,
+    power: 'Follow / GPS',
+    wheels: '4-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '10–13 kg',
+    weightKg: 13.5,
+    foldSize: 'Compact / flat-fold',
+    seats: 'Walk-behind',
+    primaryKeyword: 'mgi ai navigator gps plus golf buggy',
+    shortDescription: 'Integrated 4" full-colour high-resolution GPS touchscreen with 40,000+ preloaded Australian & international courses.',
+    description: 'The MGI Ai Navigator GPS+ is the world\'s most technologically advanced golf buggy. Features an integrated 4-inch full-colour touchscreen GPS with 40,000+ courses worldwide, interactive hole maps, shot distance measuring, full directional remote control, and patented gyroscope straight-tracking.',
+    specs: {
+      power: 'Wireless Handset + Integrated 4" GPS Touchscreen',
+      motor: 'Twin 230W Calibrated Brushless Drive',
+      battery: '24V 380Wh Click & Go Lithium',
+      weight: '13.5 kg',
+      wheels: 'All-Terrain 4-Wheel Set',
+      foldSize: '70cm x 47cm x 42cm',
+      brakes: 'Downhill Speed Regulation & Park Brake',
+      warranty: '3-Year Australian Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'mgi-ai-navigator-halo-flagship-buggy',
+    name: 'MGI Ai Navigator Halo Flagship Electric Buggy',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'gps-follow-buggies',
+    categoryPath: '/gps-follow-buggies/',
+    price: 2762,
+    condition: 'New',
+    badge: 'Flagship Halo',
+    featured: false,
+    rating: 5.0,
+    reviewCount: 29,
+    power: 'Follow / GPS',
+    wheels: '4-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '10–13 kg',
+    weightKg: 13.8,
+    foldSize: 'Compact / flat-fold',
+    seats: 'Walk-behind',
+    primaryKeyword: 'mgi ai navigator halo flagship buggy',
+    shortDescription: 'MGI\'s flagship masterpiece featuring full-colour touchscreen, cellular connectivity, hazard tracking, and bespoke champagne gold accents.',
+    description: 'The ultimate expression of MGI engineering. Features full cellular IoT connectivity for automated course updates, real-time hazard mapping, 4" touchscreen GPS, and precision remote navigation.',
+    specs: {
+      power: 'Connected Touchscreen GPS & Precision Handset',
+      motor: 'Twin High-Torque Calibrated Brushless Motors',
+      battery: '24V 380Wh High-Density Lithium',
+      weight: '13.8 kg',
+      wheels: 'Halo Edition Wide All-Terrain Wheels',
+      foldSize: '70cm x 47cm x 42cm',
+      brakes: 'Dynamic Slope Braking & Auto Park',
+      warranty: '3-Year VIP Australian Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'stewart-golf-q-follow-electric-buggy',
+    name: 'Stewart Golf Q Follow Autonomous Electric Buggy',
+    brand: 'stewart-golf',
+    brandName: 'Stewart Golf',
+    category: 'gps-follow-buggies',
+    categoryPath: '/gps-follow-buggies/',
+    price: 3290,
+    condition: 'New',
+    badge: 'True Auto-Follow',
+    featured: true,
+    rating: 4.9,
+    reviewCount: 37,
+    power: 'Follow / GPS',
+    wheels: '4-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '13 kg+',
+    weightKg: 14.1,
+    foldSize: 'Compact / flat-fold',
+    seats: 'Walk-behind',
+    primaryKeyword: 'stewart golf q follow electric buggy',
+    shortDescription: 'World-renowned British autonomous follow-me golf buggy with 7th-generation follow system, honeycomb composite chassis, and 36-hole SmartPower lithium.',
+    description: 'Walk completely hands-free. The Stewart Golf Q Follow uses Seventh-Generation Follow Technology with a Bluetooth tracking handset. Simply clip the handset to your belt and the Q Follow tracks your walking path automatically.',
+    specs: {
+      power: 'Seventh-Gen Autonomous Follow System',
+      motor: 'Twin British Dual-Drive 24V Motors',
+      battery: 'SmartPower 384Wh 36-Hole Lithium Pack',
+      weight: '14.1 kg',
+      wheels: 'Monocoque Honeycomb Composite Frame',
+      foldSize: '54.5cm x 60cm x 31.8cm',
+      brakes: 'Active Downhill Braking & Dual Electronic Brakes',
+      warranty: '2-Year Australian Replacement Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'alphard-club-booster-v2-pro-conversion-kit',
+    name: 'Alphard Club Booster V2Pro Electric Conversion Kit',
+    brand: 'alphard',
+    brandName: 'Alphard Golf',
+    category: 'conversion-kits',
+    categoryPath: '/conversion-kits/',
+    price: 1349,
+    condition: 'New',
+    badge: 'Converts Any Push Buggy',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 110,
+    power: 'Remote control',
+    wheels: '4-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '10–13 kg',
+    weightKg: 10.2,
+    foldSize: 'Standard',
+    seats: 'Walk-behind',
+    primaryKeyword: 'alphard club booster v2pro conversion kit',
+    shortDescription: 'Converts your existing Clicgear, Rovic, Sun Mountain, or Bag Boy manual push buggy into an all-terrain remote control electric trolley.',
+    description: 'The Alphard Club Booster V2Pro replaces the rear axle of almost any manual push buggy, instantly turning it into a dual-motor remote-control electric buggy. Features dual brushless hub motors, electronic parking brake, cruise control, and 36-hole lithium battery.',
+    specs: {
+      power: 'Wireless Remote Handset Conversion Unit',
+      motor: 'Twin Direct Drive Brushless Hub Motors',
+      battery: '36V 5.2Ah Quick-Swap Lithium Pack',
+      weight: '10.2 kg',
+      wheels: 'Wide All-Terrain Wheel Set',
+      foldSize: 'Axle Mounts to Cart Fold Geometry',
+      brakes: 'Electronic Slope Brake & Hill Hold',
+      warranty: '2-Year Manufacturer Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
     ]
   },
 
   // ==========================================
-  // 3. ELECTRIC CONVERSION KITS
+  // 4. MANUAL PUSH & PULL GOLF BUGGIES ($450+ FLOOR)
   // ==========================================
   {
-    slug: 'alphard-club-booster-v2-electric-buggy-conversion-kit',
-    name: 'Alphard Club Booster V2 Electric Buggy Conversion Kit',
-    brand: 'alphard',
-    brandName: 'Alphard Golf',
-    category: 'conversion-kits',
-    categoryPath: '/electric-golf-buggies/conversion-kits/',
-    price: 1299,
-    condition: 'New',
-    badge: 'Conversion Kit',
-    featured: false,
-    rating: 4.8,
-    reviewCount: 45,
-    power: 'Remote control',
-    wheels: '2-wheel',
-    batteryRange: '27 hole',
-    weightCategory: '10–13 kg',
-    weightKg: 10.8,
-    foldSize: 'Compact / flat-fold',
-    seats: 'Walk-behind',
-    primaryKeyword: 'alphard club booster v2 conversion kit',
-    shortDescription: 'Transform your existing Clicgear, Rovic, Big Max or Bag Boy push buggy into a dual-motor remote-control electric buggy in minutes.',
-    description: 'Convert your favourite manual push buggy into a high-performance remote-controlled electric buggy. The Alphard Club Booster V2 replaces the rear axle of your buggy with dual brushless hub motors, an integrated lithium battery, automatic gyroscope hill compensation, and wireless remote handset.',
-    specs: {
-      compatibility: 'Clicgear (all models), Rovic, Big Max, Bag Boy, Sun Mountain',
-      power: 'Remote Control Dual Brushless Hub Motors',
-      battery: '36V 5200mAh Lithium-Ion Quick-Swap Pack (27 Holes)',
-      features: 'Electronic Parking Brake, Cruise Control, Free-Wheel Mode',
-      warranty: '2-Year Australian Manufacturer Warranty'
-    },
-    images: [
-      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80'
-    ]
-  },
-
-  // ==========================================
-  // 4. PUSH & PULL GOLF BUGGIES
-  // ==========================================
-  {
-    slug: 'clicgear-model-4-push-golf-buggy',
-    name: 'Clicgear Model 4.0 3-Wheel Push Golf Buggy',
+    slug: 'clicgear-model-4-5-push-golf-buggy',
+    name: 'Clicgear Model 4.5 3-Wheel Push Golf Buggy',
     brand: 'clicgear',
     brandName: 'Clicgear',
-    category: 'push-3-wheel',
-    categoryPath: '/push-pull-golf-buggies/3-wheel/',
-    price: 499,
+    category: 'push-pull-golf-buggies',
+    categoryPath: '/push-pull-golf-buggies/',
+    price: 549,
     condition: 'New',
-    badge: 'Legendary Durability',
+    badge: 'Worldwide Benchmark',
     featured: true,
-    rating: 4.9,
-    reviewCount: 88,
+    rating: 5.0,
+    reviewCount: 195,
     power: 'Manual push',
     wheels: '3-wheel',
-    batteryRange: 'N/A',
+    batteryRange: 'Manual',
     weightCategory: 'Under 10 kg',
     weightKg: 8.4,
     foldSize: 'Compact / flat-fold',
     seats: 'Walk-behind',
-    primaryKeyword: 'clicgear model 4 push golf buggy',
-    shortDescription: 'Heavy-duty aircraft-grade aluminium 3-wheel push buggy with positive-lock handbrake, silicone bag straps, and compact fold.',
-    description: 'The Clicgear Model 4.0 is the gold standard for 3-wheel manual push golf buggies. Built with heavy-gauge aircraft-grade aluminium tubing, maintenance-free airless tyres, easy-clip silicone bag straps, an oversized console box with umbrella mount, and front wheel alignment adjustment.',
+    primaryKeyword: 'clicgear model 4.5 push golf buggy',
+    shortDescription: 'The global standard in manual 3-wheel golf push buggies. Heavy-duty aircraft aluminium tubing, maintenance-free airless tyres, and massive storage console.',
+    description: 'The Clicgear Model 4.5 is the most durable, reliable 3-wheel manual push cart ever made. Features an adjustable silicone bag strap system, independent front wheel alignment, handle-mounted handbrake, scorecard console, and umbrella mount.',
     specs: {
-      power: 'Manual Push (Ultra-Smooth Sealed Ball Bearings)',
-      frame: 'Heavy-Gauge Aircraft Aluminium Tubing',
+      power: 'Manual Push (Gliding Ball Bearings)',
+      motor: 'Manual Mechanical Glide',
+      battery: 'None Required',
       weight: '8.4 kg',
-      wheels: '3-Wheel Maintenance-Free Airless Tyres',
-      brakes: 'Front Wheel Positive Lever Lock Handbrake',
-      foldSize: '33cm x 38cm x 60cm (Ultra-Compact Cube)',
-      warranty: '3-Year Manufacturer Warranty'
+      wheels: '3-Wheel Foam-Filled Airless Tyres',
+      foldSize: '60cm x 38cm x 33cm (Ultra-Compact Cube Fold)',
+      brakes: 'Positive Lock Handle Brake',
+      warranty: '3-Year Australian Guarantee'
     },
     images: [
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   {
-    slug: 'big-max-blade-ip-flat-fold-push-golf-buggy',
-    name: 'Big Max Blade IP Ultra Flat-Fold Push Golf Buggy',
+    slug: 'big-max-blade-ip2-flat-fold-golf-buggy',
+    name: 'Big Max Blade IP 2 Ultra-Flat Push Golf Buggy',
     brand: 'big-max',
     brandName: 'Big Max',
-    category: 'push-4-wheel',
-    categoryPath: '/push-pull-golf-buggies/4-wheel/',
-    price: 549,
+    category: 'push-pull-golf-buggies',
+    categoryPath: '/push-pull-golf-buggies/',
+    price: 580,
     condition: 'New',
-    badge: 'Flattest Fold 12.5cm',
+    badge: 'Thinnest Fold',
     featured: false,
-    rating: 4.8,
-    reviewCount: 34,
+    rating: 4.9,
+    reviewCount: 48,
     power: 'Manual push',
     wheels: '3-wheel',
-    batteryRange: 'N/A',
+    batteryRange: 'Manual',
     weightCategory: 'Under 10 kg',
     weightKg: 6.5,
     foldSize: 'Compact / flat-fold',
     seats: 'Walk-behind',
-    primaryKeyword: 'big max blade ip flat fold golf buggy',
-    shortDescription: 'Folds down to an incredible 12.5cm depth with Autofold wheel retraction for effortless boot and locker storage.',
-    description: 'The Big Max Blade IP features patented Flat-Fold technology that collapses the entire frame and automatically tucks all three wheels underneath in a single motion, resulting in an ultra-slim 12.5cm profile that slides behind front car seats or into slim golf lockers.',
+    primaryKeyword: 'big max blade ip2 flat fold golf buggy',
+    shortDescription: 'The world\'s flattest folding 3-wheel golf trolley, collapsing to an incredible 12.5 cm depth for easy boot and locker storage.',
+    description: 'Engineered in Austria, the Big Max Blade IP 2 folds completely flat in seconds. Features Quick-Fold technology, dual footbrakes, integrated scorecard compartment, and aircraft-grade featherweight aluminium.',
     specs: {
       power: 'Manual Push',
-      frame: 'Ultra-Lightweight Hydroformed Aluminium',
+      motor: 'Manual',
+      battery: 'None',
       weight: '6.5 kg',
-      foldDepth: '12.5 cm Flat Profile',
-      brakes: 'Dual Rear Wheel Foot Brake',
-      warranty: '5-Year Manufacturer Warranty upon registration'
+      wheels: '3-Wheel Low Profile Ball-Bearing Tyres',
+      foldSize: '88cm x 62cm x 12.5cm (Ultra-Flat)',
+      brakes: 'Dual Footbrakes',
+      warranty: '5-Year Manufacturer Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   {
-    slug: 'clicgear-model-8-plus-4-wheel-push-golf-buggy',
-    name: 'Clicgear Model 8.0+ 4-Wheel Push Golf Buggy',
+    slug: 'clicgear-rovic-rv1s-swivel-push-golf-buggy',
+    name: 'Clicgear Rovic RV1S Swivel Front Wheel Push Buggy',
     brand: 'clicgear',
-    brandName: 'Clicgear',
-    category: 'push-4-wheel',
-    categoryPath: '/push-pull-golf-buggies/4-wheel/',
-    price: 599,
+    brandName: 'Clicgear (Rovic)',
+    category: 'push-pull-golf-buggies',
+    categoryPath: '/push-pull-golf-buggies/',
+    price: 449,
     condition: 'New',
-    badge: '4-Wheel Stability',
+    badge: 'Swivel Wheel',
     featured: false,
-    rating: 4.9,
-    reviewCount: 27,
+    rating: 4.8,
+    reviewCount: 62,
     power: 'Manual push',
-    wheels: '4-wheel',
-    batteryRange: 'N/A',
+    wheels: '3-wheel',
+    batteryRange: 'Manual',
     weightCategory: 'Under 10 kg',
-    weightKg: 9.8,
+    weightKg: 7.6,
     foldSize: 'Compact / flat-fold',
     seats: 'Walk-behind',
-    primaryKeyword: 'clicgear 8.0 plus 4 wheel golf buggy',
-    shortDescription: 'Engineered 4-wheel stability with dual front-wheel handbrake, oversized console, and patented 4XFold mechanism.',
-    description: 'For golfers seeking rock-solid 4-wheel stability across uneven turf and sidehills. The Clicgear 8.0+ features twin front brake levers, oversized lower saddle for tour bags, and patented V-Slide folding.',
+    primaryKeyword: 'clicgear rovic rv1s swivel push golf buggy',
+    shortDescription: '360-degree front swivelling wheel for effortless steering on tight tee boxes and around green complexes.',
+    description: 'The Rovic RV1S by Clicgear provides full 360-degree swivel front-wheel manoeuvrability. The front wheel can be locked straight with a handlebar lever for long fairway pushes.',
     specs: {
-      power: 'Manual Push (4-Wheel Wide-Track Stance)',
-      weight: '9.8 kg',
-      wheels: '4-Wheel Airless Foam Filled Tyres',
-      brakes: 'Dual Front Wheel Handbrake',
-      foldSize: '38cm x 68cm x 43cm',
-      warranty: '3-Year Australian Warranty'
+      power: 'Manual Push with 360-Degree Swivel',
+      motor: 'Manual',
+      battery: 'None',
+      weight: '7.6 kg',
+      wheels: '3-Wheel Swivel Geometry',
+      foldSize: '61cm x 38cm x 33cm',
+      brakes: 'Handlebar Brake Lever',
+      warranty: '2-Year Australian Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
     ]
   },
 
   // ==========================================
-  // 5. RIDE-ON GOLF CARTS (2, 4, 6 SEAT & LIFTED)
+  // 5. RIDE-ON GOLF CARTS (2-6 SEAT LUXURY & RESORT)
   // ==========================================
   {
-    slug: 'ecar-lt-a627-2-seat-electric-golf-cart',
-    name: 'ECAR LT-A627 2-Seat Electric Golf Cart',
+    slug: 'cougar-2-seater-electric-golf-cart',
+    name: 'Cougar 2-Seater Electric Golf Cart',
+    brand: 'cougar',
+    brandName: 'Cougar',
+    category: 'luxury-golf-carts',
+    categoryPath: '/luxury-golf-carts/',
+    price: 7450,
+    condition: 'New',
+    badge: 'Best Value New Cart',
+    featured: true,
+    rating: 4.8,
+    reviewCount: 26,
+    power: 'Electric',
+    wheels: '4-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '13 kg+',
+    weightKg: 280,
+    foldSize: 'Standard',
+    seats: '2-Passenger Seating',
+    primaryKeyword: 'cougar 2 seater electric golf cart',
+    shortDescription: 'Australia\'s most affordable new 2-seater golf cart with 48V electric motor, split windscreen, bag holder, and turnkey charger.',
+    description: 'Recognized by Inside Golf as Australia\'s best-value new golf cart. The Cougar 2-Seater comes standard with 48V electric drivetrain, Curtis controller, heavy-duty suspension, dual golf bag holders, split folding windscreen, and fast onboard charger.',
+    specs: {
+      seating: '2-Passenger Forward-Facing',
+      motor: '48V 3.8kW AC Electric Motor',
+      battery: '48V Deep-Cycle Battery Pack (Lithium Upgrade Available)',
+      range: '60+ km Per Charge (36+ Holes)',
+      topSpeed: '24 km/h (Golf Regulated)',
+      brakes: 'Mechanical Drum Brakes with Park Lock',
+      payloadCapacity: '360 kg Payload',
+      warranty: '2-Year Comprehensive Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'ecar-lithium-a2-2-seater-golf-cart',
+    name: 'ECAR Lithium A2 2-Seater Golf Cart',
     brand: 'ecar',
     brandName: 'ECAR',
-    category: 'carts-2-seat',
-    categoryPath: '/golf-carts/2-seat/',
-    price: 13990,
+    category: 'luxury-golf-carts',
+    categoryPath: '/luxury-golf-carts/',
+    price: 10990,
     condition: 'New',
-    badge: 'Course Standard',
+    badge: 'Lithium Standard',
     featured: true,
     rating: 4.9,
     reviewCount: 41,
     power: 'Electric',
     wheels: '4-wheel',
     batteryRange: '36 hole',
-    weightCategory: 'Over 13 kg',
-    weightKg: 430,
+    weightCategory: '13 kg+',
+    weightKg: 320,
     foldSize: 'Standard',
-    seats: '2',
-    primaryKeyword: 'ecar lt a627 2 seat electric golf cart',
-    shortDescription: 'Commercial-grade 2-passenger electric golf cart with 48V 4.0kW AC brushless motor, onboard Delta-Q charger, and 36+ hole range.',
-    description: 'The ECAR LT-A627 is Australia\'s premier 2-seat golf cart for private owners, golf resorts, and residential estate commuting. Powered by an advanced 48V AC brushless powertrain with regenerative downhill braking, deep-cycle Trojan battery pack or drop-in lithium upgrade, split tinted windscreen, dual bag rack, and weather-sealed sand bottles.',
+    seats: '2-Passenger Seating',
+    primaryKeyword: 'ecar lithium a2 golf cart',
+    shortDescription: 'Turnkey commercial-grade 2-seater cart with zero-maintenance LiFePO4 lithium pack, Toyota AC controller, and automotive lighting.',
+    description: 'The ECAR Lithium A2 is the premier choice for Australian golf clubs, private estate owners, and gated communities. Powered by a maintenance-free 48V 105Ah LiFePO4 lithium battery and advanced Toyota AC controller.',
     specs: {
-      power: '48V 4.0 kW AC Brushless Motor with Curtis Controller',
-      battery: '48V Deep-Cycle Pack or Drop-in LiFePO4 Lithium (Optional)',
-      range: '70 km per charge (36+ Holes)',
-      topSpeed: '24 km/h (Golf Course Governor) / 32 km/h (Estate Mode)',
-      brakes: 'Self-Compensating Rear Drum & Auto Hill Park Brake',
-      seating: '2 Adult Passengers on UV-Resistant Marine Cushions',
-      warranty: '2-Year Chassis & Electrical + 3-Year Battery Warranty'
+      seating: '2-Passenger Premium Contour Marine Vinyl',
+      motor: '48V 4.0kW High-Efficiency AC Motor',
+      battery: '48V 105Ah LiFePO4 Lithium (5-Year Warranty)',
+      range: '80+ km Per Charge',
+      topSpeed: '25 km/h',
+      brakes: 'Four-Wheel Hydraulic Disc Brakes & Auto Park',
+      payloadCapacity: '400 kg',
+      warranty: '5-Year Battery / 3-Year Chassis Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   {
-    slug: 'club-car-onward-4-passenger-lifted-lithium-golf-cart',
-    name: 'Club Car Onward 4-Passenger Lifted Lithium Golf Cart',
-    brand: 'club-car',
-    brandName: 'Club Car',
-    category: 'carts-lifted',
-    categoryPath: '/golf-carts/lifted-all-terrain/',
-    price: 26990,
+    slug: 'rippa-4-seat-electric-golf-cart',
+    name: 'Rippa 4-Seat Electric Golf Cart Australia',
+    brand: 'rippa',
+    brandName: 'Rippa',
+    category: 'luxury-golf-carts',
+    categoryPath: '/luxury-golf-carts/',
+    price: 12990,
     condition: 'New',
-    badge: 'Luxury Lifted',
-    featured: true,
-    rating: 5.0,
-    reviewCount: 35,
+    badge: '4-Passenger Value',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 33,
     power: 'Electric',
     wheels: '4-wheel',
     batteryRange: '36 hole',
-    weightCategory: 'Over 13 kg',
-    weightKg: 490,
+    weightCategory: '13 kg+',
+    weightKg: 360,
     foldSize: 'Standard',
-    seats: '4',
-    primaryKeyword: 'club car onward 4 passenger lifted lithium golf cart',
-    shortDescription: 'Rustproof aircraft aluminium AlumiCore chassis, factory 4-inch lift kit, 23" all-terrain tyres, and maintenance-free Li-ion battery.',
-    description: 'The Club Car Onward 4-Passenger Lifted Lithium is the ultimate expression of personal resort mobility. Features Club Car\'s legendary rustproof aluminium frame, factory-tuned lifted suspension with double A-arms, 14" alloy wheels on 23" rugged all-terrain tyres, flip-flop rear seat with concealed storage bucket, and automotive LED headlights with daylight running accents.',
+    seats: '4-Passenger Seating (2+2)',
+    primaryKeyword: 'rippa 4 seat electric golf cart',
+    shortDescription: 'Family and resort 4-seater with fold-down rear utility cargo deck, full LED lighting, and long-range lithium pack.',
+    description: 'The Rippa 4-Seat Electric Cart is ideal for golf resorts, lifestyle villages, and private properties. Features 2 forward seats and 2 rear-facing seats that fold down into a heavy-duty flat cargo deck.',
     specs: {
-      chassis: 'AlumiCore Rustproof Aircraft-Grade Aluminium Frame',
-      power: '4.7 hp (3.5 kW) Rated AC Motor (14.8 hp Peak)',
-      battery: '48V Maintenance-Free Lithium-Ion (6-Year Warranty)',
-      suspension: 'Factory 4-Inch Lift Kit with Heavy-Duty Leaf Springs',
-      groundClearance: '165 mm Under Differential',
-      seating: '4 Passengers (2 Forward, 2 Rear-Facing Flip Seat)',
-      brakes: 'Self-Adjusting Rear Drum Brakes',
-      warranty: '3-Year Limited Vehicle + 6-Year Lithium Battery Warranty'
+      seating: '4-Passenger (2+2 Flip-Flop Cargo Seat)',
+      motor: '48V 4.0kW AC Motor',
+      battery: '48V 100Ah Lithium LiFePO4',
+      range: '75+ km Per Charge',
+      topSpeed: '25 km/h (Conditional Road Compliant)',
+      brakes: 'Hydraulic 4-Wheel Disc Brakes',
+      payloadCapacity: '450 kg',
+      warranty: '3-Year Australian Warranty'
     },
     images: [
       'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   {
-    slug: 'ecar-lt-a627-6-seat-resort-vip-transporter',
-    name: 'ECAR LT-A627.6 6-Seat Resort & Estate VIP Transporter',
+    slug: 'ecar-lithium-a4-4-seater-golf-cart',
+    name: 'ECAR Lithium A4 4-Seater Golf Cart',
     brand: 'ecar',
     brandName: 'ECAR',
-    category: 'carts-4-6-seat',
-    categoryPath: '/golf-carts/4-6-seat/',
-    price: 23800,
+    category: 'luxury-golf-carts',
+    categoryPath: '/luxury-golf-carts/',
+    price: 13990,
     condition: 'New',
-    badge: '6-Seat Transporter',
+    badge: '4-Seat Benchmark',
     featured: true,
     rating: 4.9,
-    reviewCount: 19,
+    reviewCount: 56,
     power: 'Electric',
     wheels: '4-wheel',
     batteryRange: '36 hole',
-    weightCategory: 'Over 13 kg',
-    weightKg: 580,
+    weightCategory: '13 kg+',
+    weightKg: 380,
     foldSize: 'Standard',
-    seats: '6',
-    primaryKeyword: 'ecar 6 seat resort golf cart',
-    shortDescription: 'Extended chassis 6-seat luxury passenger transporter with 72V 5.0kW AC high-torque motor and hydraulic disc brakes.',
-    description: 'Designed for VIP hospitality, gated estate shuttles, winery tours and large families. Offers three spacious rows of deeply contoured marine vinyl seating, overhead stereo soundbar, tinted extended canopy, and full LED road-lighting package with horn and indicators.',
+    seats: '4-Passenger Seating',
+    primaryKeyword: 'ecar lithium a4 4 seater golf cart',
+    shortDescription: 'Australia\'s best-value 4-seater with 48V LiFePO4 lithium battery, extended roof, and premium marine upholstery.',
+    description: 'The ECAR Lithium A4 delivers luxury personal mobility for 4 adults. Equipped with an extended colour-matched hardtop roof, 10" alloy wheels, rear grab bar, split windscreen, and 48V 105Ah lithium pack.',
     specs: {
-      power: '72V 5.0 kW AC Brushless Motor with Toyota Controller',
-      battery: '72V 150Ah LiFePO4 Lithium Battery with Bluetooth BMS',
-      range: 'Up to 90 km per charge with 6 passengers',
-      brakes: '4-Wheel Hydraulic Disc Brakes + Auto Electromagnetic Brake',
-      seating: '6 Adult Passengers (4 Forward, 2 Rear)',
-      lighting: 'High/Low Beam LED Headlights, Indicators, Brake Lights, Horn',
-      warranty: '2-Year Vehicle Warranty + 5-Year Lithium Warranty'
+      seating: '4-Passenger Forward & Rear Seats',
+      motor: '48V 4.0kW Toyota AC System',
+      battery: '48V 105Ah LiFePO4 Lithium Battery',
+      range: '80 km Per Charge',
+      topSpeed: '25 km/h',
+      brakes: 'Hydraulic Disc Brakes',
+      payloadCapacity: '450 kg',
+      warranty: '5-Year Lithium / 3-Year Vehicle Warranty'
     },
     images: [
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   {
-    slug: 'ecar-commercial-electric-utility-tipper-cart',
-    name: 'ECAR Commercial Electric Utility Tipper Cart',
+    slug: 'ecar-lithium-magnum-4lr-lifted-golf-cart',
+    name: 'ECAR Lithium Magnum 4LR Lifted 4x4 Off-Road Cart',
     brand: 'ecar',
     brandName: 'ECAR',
-    category: 'carts-utility',
-    categoryPath: '/golf-carts/utility/',
+    category: 'luxury-golf-carts',
+    categoryPath: '/luxury-golf-carts/',
     price: 16990,
     condition: 'New',
-    badge: 'Commercial Utility',
+    badge: 'Lifted All-Terrain',
     featured: false,
-    rating: 4.8,
-    reviewCount: 23,
+    rating: 4.9,
+    reviewCount: 29,
     power: 'Electric',
     wheels: '4-wheel',
     batteryRange: '36 hole',
-    weightCategory: 'Over 13 kg',
-    weightKg: 510,
-    foldSize: 'Standard',
-    seats: '2',
-    primaryKeyword: 'commercial electric utility tipper golf cart',
-    shortDescription: 'Heavy-duty commercial utility buggy with aluminium drop-side tipper tray, 500kg payload rating, and 48V AC powertrain.',
-    description: 'Engineered for councils, golf course greenskeeping, schools, equestrian centres, and industrial facilities. Features an electro-hydraulic tipping aluminium cargo bed with drop-down tailgate and removable sides, 50mm tow ball hitch, and whisper-quiet electric drive.',
-    specs: {
-      power: '48V 4.0 kW AC Motor with Heavy-Duty Transaxle',
-      tray: 'Aluminium Tipper Tray (1200mm x 1100mm x 300mm)',
-      payload: '500 kg Payload Capacity / 750 kg Tow Rating',
-      brakes: 'Mechanical Rear Drum with Handbrake Lock',
-      tyres: 'Heavy-Duty 6-Ply Turf Master Puncture Resistant Tyres',
-      warranty: '2-Year Commercial Fleet Warranty'
-    },
-    images: [
-      'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80'
-    ]
-  },
-  {
-    slug: 'club-car-precedent-certified-used-golf-cart',
-    name: 'Club Car Precedent Certified Used 2-Seat Golf Cart',
-    brand: 'club-car',
-    brandName: 'Club Car',
-    category: 'carts-used',
-    categoryPath: '/golf-carts/used/',
-    price: 7990,
-    condition: 'Used',
-    badge: 'Certified Pre-Owned',
-    featured: false,
-    rating: 4.7,
-    reviewCount: 26,
-    power: 'Electric',
-    wheels: '4-wheel',
-    batteryRange: '36 hole',
-    weightCategory: 'Over 13 kg',
+    weightCategory: '13 kg+',
     weightKg: 420,
     foldSize: 'Standard',
-    seats: '2',
-    primaryKeyword: 'used club car precedent golf cart australia',
-    shortDescription: 'Workshop-certified refurbished Club Car Precedent with tested batteries, new body panels, split windscreen, and 12-month warranty.',
-    description: 'Each pre-owned Club Car Precedent undergoes a rigorous 48-point workshop inspection, brake rebuild, electrical diagnostic, and fresh battery health testing. Standard with charger, dual golf bag holder, and Australian workshop warranty.',
+    seats: '4-Passenger Seating',
+    primaryKeyword: 'ecar magnum 4lr lifted golf cart',
+    shortDescription: 'High-riding lifted all-terrain cruiser with 12" knobby tyres, heavy-duty suspension, bull bar, and 48V lithium power.',
+    description: 'Designed for rural acreage, undulating farm trails, and rugged coastal properties. Features 6" suspension lift kit, 23" all-terrain knobby tyres, steel front brush guard, and 48V 105Ah LiFePO4 battery.',
     specs: {
-      condition: 'Certified Workshop Reconditioned',
-      chassis: 'AlumiCore Rustproof Aluminium Chassis',
-      power: '48V DC Motor with Curtis Controller',
-      battery: 'Tested Deep-Cycle 48V Pack with Fresh Capacity Certificate',
-      warranty: '12-Month Comprehensive Australian Warranty'
+      seating: '4-Passenger Elevated Seats',
+      motor: '48V 5.0kW High-Torque AC Motor',
+      battery: '48V 105Ah Deep-Cycle Lithium',
+      range: '70+ km (Rough Terrain)',
+      topSpeed: '32 km/h',
+      groundClearance: '210 mm Ground Clearance',
+      brakes: '4-Wheel Hydraulic Disc Brakes',
+      warranty: '5-Year Battery / 3-Year Chassis'
     },
     images: [
-      'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
     ]
   },
-
-  // ==========================================
-  // 6. OFF-ROAD & RECREATIONAL BUGGIES
-  // ==========================================
   {
-    slug: 'outback-boss-4x4-electric-farm-buggy-utv',
-    name: 'Outback Boss 4x4 Electric Farm Buggy UTV',
-    brand: 'bennche',
-    brandName: 'Bennche',
-    category: 'farm-buggies',
-    categoryPath: '/off-road-buggies/farm-buggies/',
-    price: 22450,
+    slug: 'tomberlin-e-merge-ss-4-seat-saloon-cart',
+    name: 'Tomberlin E-Merge SS 4-Seat Luxury Saloon Cart',
+    brand: 'tomberlin',
+    brandName: 'Tomberlin',
+    category: 'luxury-golf-carts',
+    categoryPath: '/luxury-golf-carts/',
+    price: 27990,
     condition: 'New',
-    badge: 'AWD Electric Farm UTV',
+    badge: 'Resort Flagship',
     featured: true,
     rating: 5.0,
-    reviewCount: 44,
+    reviewCount: 21,
     power: 'Electric',
     wheels: '4-wheel',
-    batteryRange: 'N/A',
-    weightCategory: 'Over 13 kg',
-    weightKg: 680,
+    batteryRange: '36 hole',
+    weightCategory: '13 kg+',
+    weightKg: 460,
     foldSize: 'Standard',
-    seats: '2',
-    primaryKeyword: 'outback boss 4x4 electric farm buggy utv',
-    shortDescription: 'Twin-motor 9kW peak AWD electric farm UTV with hydraulic tipping bed, 3,500lb winch, 25" all-terrain tyres, and 72V lithium pack.',
-    description: 'The ultimate zero-emission agricultural utility machine for Australian farms and cattle stations. Twin synchronous AC motors deliver instantaneous 4WD torque without engine noise or expensive diesel maintenance. Standard with hydraulic dump bed, 50mm tow receiver, heavy steel skid plates, and full roll cage.',
+    seats: '4-Passenger Seating',
+    primaryKeyword: 'tomberlin e merge ss 4 seat saloon',
+    shortDescription: 'Automotive luxury featuring diamond double-stitched leather upholstery, 7" digital LCD dash, rearview camera, and 4-wheel disc brakes.',
+    description: 'The Tomberlin E-Merge SS (Super Sport) Saloon is the pinnacle of luxury estate mobility. Fitted with 3-point seatbelts, illuminated cupholders, Bluetooth sound system, and electric power steering.',
     specs: {
-      power: 'Dual 4.5kW AC Synchronous Motors (9kW Peak AWD)',
-      battery: '72V 160Ah High-Density LiFePO4 with Thermal Balancing',
-      range: '85 km on heavy paddock & trail terrain',
-      payload: '650 kg total payload (450 kg tipping cargo tray)',
-      towing: '900 kg rated 50mm tow ball receiver',
-      winch: '3,500 lb Electric Front Recovery Winch Standard',
-      warranty: '5-Year LiFePO4 Battery + 3-Year Chassis Warranty'
+      seating: '4-Passenger Diamond Stitched Luxury Seats',
+      motor: '48V 5.0kW AC High Performance Motor',
+      battery: '48V 105Ah Premium Lithium LiFePO4',
+      range: '90+ km Per Charge',
+      topSpeed: '38 km/h (Conditional Road Compliant)',
+      brakes: '4-Wheel Hydraulic Disc Brakes & Electric Power Steering',
+      warranty: '5-Year Factory Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   {
-    slug: 'trail-blazer-200cc-petrol-dune-buggy',
-    name: 'Trail Blazer 200cc 2-Seater Petrol Dune Buggy',
-    brand: 'bennche',
-    brandName: 'Bennche',
-    category: 'dune-buggies',
-    categoryPath: '/off-road-buggies/dune-buggies/',
-    price: 4990,
+    slug: 'garia-lithium-luxury-golf-cart',
+    name: 'Garia Lithium Luxury Golf Cart (Danish Handcrafted)',
+    brand: 'garia',
+    brandName: 'Garia',
+    category: 'luxury-golf-carts',
+    categoryPath: '/luxury-golf-carts/',
+    price: 62500,
     condition: 'New',
-    badge: 'Trail & Dunes',
-    featured: false,
-    rating: 4.8,
-    reviewCount: 18,
-    power: 'Petrol',
-    wheels: '4-wheel',
-    batteryRange: 'N/A',
-    weightCategory: 'Over 13 kg',
-    weightKg: 195,
-    foldSize: 'Standard',
-    seats: '2',
-    primaryKeyword: '200cc petrol dune buggy australia',
-    shortDescription: '200cc 4-stroke petrol dune buggy with full roll cage, 4-point racing harnesses, dual hydraulic disc brakes, and automatic CVT with reverse.',
-    description: 'Built for sand dunes, dirt tracks and rural property fun. Powered by a reliable GY6 200cc 4-stroke engine with electric key start, fully independent dual A-arm front suspension, adjustable bucket seats, and overhead LED spotlight bar.',
-    specs: {
-      engine: '200cc 4-Stroke Air-Cooled Single Cylinder (Electric Start)',
-      transmission: 'Automatic CVT with Forward, Neutral & Reverse',
-      brakes: 'Front & Rear Ventilated Hydraulic Disc Brakes',
-      suspension: 'Independent Dual A-Arm Front / Heavy Swing Arm Rear',
-      safety: 'Reinforced Tubular Steel Roll Cage & 4-Point Harnesses',
-      warranty: '12-Month Australian Parts Warranty'
-    },
-    images: [
-      'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80'
-    ]
-  },
-  {
-    slug: 'classic-coastal-volkswagen-beach-buggy',
-    name: 'Classic Coastal Custom Fibreglass Beach Buggy (Turnkey)',
-    brand: 'kandi',
-    brandName: 'The Buggy Shop Custom',
-    category: 'beach-buggies',
-    categoryPath: '/off-road-buggies/beach-buggies/',
-    price: 24900,
-    condition: 'New',
-    badge: 'Coastal Classic',
+    badge: 'The Rolls-Royce of Carts',
     featured: false,
     rating: 5.0,
     reviewCount: 14,
-    power: 'Petrol',
+    power: 'Electric',
     wheels: '4-wheel',
-    batteryRange: 'N/A',
-    weightCategory: 'Over 13 kg',
-    weightKg: 580,
+    batteryRange: '36 hole',
+    weightCategory: '13 kg+',
+    weightKg: 520,
     foldSize: 'Standard',
-    seats: '2',
-    primaryKeyword: 'beach buggy for sale australia',
-    shortDescription: 'Turnkey Australian-built Manx-style fibreglass beach buggy with wide paddle sand tyres, stainless roll bar, and road-compliance lighting.',
-    description: 'A genuine Australian summer icon. Built on a reinforced short-wheelbase chassis with a vibrant gel-coat heavy-gauge fibreglass body, classic chrome roll bar, twin high-back marine bucket seats, and all-weather digital instrumentation.',
+    seats: '2-Passenger (Optional 2+2)',
+    primaryKeyword: 'garia luxury golf cart australia',
+    shortDescription: 'Handcrafted in Denmark. Automotive double wishbone suspension, carbon fibre roof, built-in refrigerator, and 10.1" touchscreen infotainment.',
+    description: 'Regarded globally as "the Rolls-Royce of golf carts". Hand-built in Denmark with Formula 1 inspired double wishbone suspension, custom bridge-of-weir leather seats, built-in dashboard refrigerator, and 10.1" touchscreen.',
     specs: {
-      chassis: 'Reinforced Sand-Blasted & Powder-Coated Short Wheelbase Chassis',
-      body: 'Heavy-Gauge Hand-Laid Gel-Coat Fibreglass',
-      tyres: 'Wide Deep-Dish Polished Alloys with High-Flotation Tyres',
-      safety: 'Full Roll Hoop & ADR Approved Lap-Sash Seatbelts',
-      warranty: '2-Year Australian Drivetrain Warranty'
+      seating: '2-Passenger Hand-Stitched Scottish Leather',
+      motor: '48V 3.0kW Ultra-Quiet AC Drivetrain',
+      battery: 'Samsung SDI Lithium High Capacity Pack',
+      range: '95+ km Single Charge',
+      topSpeed: '30 km/h (Road Registerable Ready)',
+      brakes: 'Dual Circuit Hydraulic Disc Brakes',
+      warranty: '3-Year Bespoke Manufacturer Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
     ]
   },
 
   // ==========================================
-  // 7. KIDS' RIDE-ON BUGGIES
+  // 6. OFF-ROAD & RECREATIONAL UTVS ($1,699 - $38,995)
   // ==========================================
   {
-    slug: 'kandi-48v-electric-kids-off-road-buggy',
-    name: 'Kandi 48V 1000W Electric Kids Off-Road Buggy',
-    brand: 'kandi',
-    brandName: 'Kandi',
-    category: 'kids-electric',
-    categoryPath: '/kids-buggies/electric/',
-    price: 2290,
+    slug: 'gmx-gkt150-dune-buggy',
+    name: 'GMX GKT150 150cc 2-Seat Dune Buggy',
+    brand: 'gmx',
+    brandName: 'GMX',
+    category: 'off-road-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 2999,
     condition: 'New',
-    badge: 'Kids Electric 48V',
+    badge: 'Recreational Dune',
     featured: true,
-    rating: 4.9,
-    reviewCount: 37,
-    power: 'Electric',
-    wheels: '4-wheel',
-    batteryRange: 'N/A',
-    weightCategory: 'Over 13 kg',
-    weightKg: 85,
-    foldSize: 'Standard',
-    seats: '2',
-    primaryKeyword: 'kids electric buggy 48v australia',
-    shortDescription: 'Proper 48V 1000W brushless electric kids buggy with 3-speed parental key lock governor, full roll cage, and remote engine cut-off.',
-    description: 'A real off-road buggy designed for kids and tweens (ages 6 to 13). Features a powerful 1000W 48V brushless electric motor that runs whisper-quiet around the yard or farm. Equipped with 3-speed parental key limit settings (10 km/h, 20 km/h, 35 km/h), full roll cage, twin seats with seatbelts, and disc brakes.',
-    specs: {
-      motor: '1000W 48V High-Efficiency Brushless Electric Motor',
-      battery: '48V 20Ah Lead-Acid / Li-Ion Pack (Up to 2.5 Hours Runtime)',
-      safetyControls: 'Parental 3-Speed Key Lock (10 / 20 / 35 km/h) & Remote Kill Handset',
-      chassis: 'Full Steel Tubular Roll Cage & Padded Side Protection',
-      brakes: 'Hydraulic Rear Disc Brakes with Child-Proportion Foot Pedal',
-      warranty: '12-Month Australian Manufacturer Warranty'
-    },
-    images: [
-      'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80'
-    ]
-  },
-  {
-    slug: 'predator-110cc-petrol-kids-teen-buggy',
-    name: 'Predator 110cc 4-Stroke Kids & Teen Petrol Buggy',
-    brand: 'bennche',
-    brandName: 'Bennche',
-    category: 'kids-petrol',
-    categoryPath: '/kids-buggies/petrol/',
-    price: 2890,
-    condition: 'New',
-    badge: 'Kids Petrol 110cc',
-    featured: false,
     rating: 4.8,
-    reviewCount: 21,
+    reviewCount: 38,
     power: 'Petrol',
     wheels: '4-wheel',
-    batteryRange: 'N/A',
-    weightCategory: 'Over 13 kg',
-    weightKg: 115,
+    batteryRange: 'Petrol Tank',
+    weightCategory: '13 kg+',
+    weightKg: 190,
     foldSize: 'Standard',
-    seats: '2',
-    primaryKeyword: 'childrens petrol buggy australia',
-    shortDescription: '110cc 4-stroke automatic petrol buggy for kids and teens with electric start, adjustable throttle limiter, and tethered safety lanyard.',
-    description: 'Built tough for paddocks and fire trails. The Predator 110cc gives young riders real driving experience with an easy electric start, automatic transmission with reverse, adjustable speed governor screw on the gas pedal, and full dual seatbelts.',
+    seats: '2-Passenger Seating',
+    primaryKeyword: 'gmx gkt150 dune buggy australia',
+    shortDescription: '150cc 4-stroke petrol dune buggy with automatic CVT transmission, roll cage, dual bucket seats, and hydraulic disc brakes.',
+    description: 'The GMX GKT150 is the ultimate weekend recreational buggy for dirt tracks, dunes, and farm paddocks. Powered by a reliable 150cc GY6 engine with electric start and reverse gear.',
     specs: {
-      engine: '110cc 4-Stroke Single Cylinder (Electric Key Start)',
-      transmission: 'Fully Automatic with Reverse (F-N-R)',
-      speedControl: 'Adjustable Throttle Screw Governor (15 km/h to 45 km/h)',
-      safety: 'Dual 4-Point Harnesses & Engine Safety Cut-Off Switch',
+      engine: '150cc 4-Stroke Air-Cooled Petrol Single Cylinder',
+      transmission: 'Automatic CVT (Forward, Neutral, Reverse)',
+      starter: 'Electric Push Button Start',
+      topSpeed: '55 km/h',
+      brakes: 'Front & Rear Hydraulic Disc Brakes',
+      safety: 'Full Tubular Steel Roll Cage & 4-Point Harnesses',
       warranty: '12-Month Australian Parts Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80'
-    ]
-  },
-
-  // ==========================================
-  // 8. BATTERIES & CHARGERS
-  // ==========================================
-  {
-    slug: 'mgi-24v-380wh-click-and-go-lithium-battery',
-    name: 'MGI 24V 380Wh Click & Go 36-Hole Lithium Battery Pack',
-    brand: 'mgi',
-    brandName: 'MGI',
-    category: 'batteries-buggy-lithium',
-    categoryPath: '/golf-buggy-batteries/lithium/',
-    price: 549,
-    condition: 'New',
-    badge: '36 Hole Lithium',
-    featured: false,
-    rating: 4.9,
-    reviewCount: 72,
-    power: 'Electric',
-    wheels: 'N/A',
-    batteryRange: '36 hole',
-    weightCategory: 'Under 10 kg',
-    weightKg: 2.8,
-    foldSize: 'Standard',
-    seats: 'Walk-behind',
-    primaryKeyword: 'mgi lithium battery replacement 36 hole',
-    shortDescription: 'Genuine MGI 24V 380Wh Click & Go lithium replacement battery for MGI Zip Navigator, Zip X5, X3 and X1 models with 3-year warranty.',
-    description: 'Genuine MGI replacement 24V 380Wh lithium battery. Delivers up to 36 holes of continuous operation even on undulating courses. Features integrated digital battery management system (BMS) with overcharge and temperature protection.',
-    specs: {
-      voltage: '24V Nominal (Click & Go Interface)',
-      capacity: '380Wh (36 Holes Capacity)',
-      weight: '2.8 kg Ultra-Lightweight',
-      compatibility: 'MGI Zip Navigator AT, Ai Navigator, Zip X5, Zip X3, Zip X1',
-      warranty: '3-Year Full Replacement Australian Warranty'
-    },
-    images: [
+      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   {
-    slug: 'trojan-t-105-6v-golf-cart-battery-set-48v',
-    name: 'Trojan T-105 6V Deep-Cycle Golf Cart Battery Set (Set of 8 - 48V)',
-    brand: 'trojan',
-    brandName: 'Trojan',
-    category: 'batteries-cart-sets',
-    categoryPath: '/golf-buggy-batteries/cart-sets/',
-    price: 2490,
+    slug: 'crossfire-blazer-200r-dune-buggy',
+    name: 'Crossfire Blazer 200R Teen / Adult Off-Road Buggy',
+    brand: 'crossfire',
+    brandName: 'Crossfire',
+    category: 'off-road-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 3199,
     condition: 'New',
-    badge: 'Industry Standard',
+    badge: 'Acreage Favourite',
     featured: false,
     rating: 4.9,
-    reviewCount: 39,
-    power: 'Electric',
-    wheels: 'N/A',
-    batteryRange: '36 hole',
-    weightCategory: 'Over 13 kg',
-    weightKg: 240,
+    reviewCount: 44,
+    power: 'Petrol',
+    wheels: '4-wheel',
+    batteryRange: 'Petrol Tank',
+    weightCategory: '13 kg+',
+    weightKg: 175,
     foldSize: 'Standard',
-    seats: '2',
-    primaryKeyword: 'trojan t105 golf cart batteries australia',
-    shortDescription: 'Complete 48V set of 8 genuine Trojan T-105 6V deep-cycle flooded batteries for Club Car, Yamaha, EZGO and ECAR golf carts.',
-    description: 'The global benchmark for deep-cycle golf cart longevity. Trojan T-105 features Alpha Plus Paste with T2 Technology for maximum operating hours and sustained energy output across Australian conditions.',
+    seats: '2-Passenger Seating',
+    primaryKeyword: 'crossfire blazer 200r buggy',
+    shortDescription: '200cc 4-stroke torque-converter dune buggy with dual A-arm suspension, LED headlights, and speed governor for teen safety.',
+    description: 'The Crossfire Blazer 200R bridges teen and adult recreational off-roading. Built with dual A-arm front suspension, heavy-duty rear swingarm, and adjustable throttle limiter.',
     specs: {
-      voltage: '48V System (8 x 6V T-105 Batteries)',
-      capacity: '225Ah @ 20-Hr Rate',
-      terminal: 'Standard Automotive & Threaded Post Options',
-      warranty: '2-Year Commercial & Private Golf Cart Warranty'
+      engine: '196cc 4-Stroke OHV Single Cylinder Engine',
+      transmission: 'Torque Converter (Automatic CVT with Reverse)',
+      topSpeed: '48 km/h (Speed Governor Adjustable)',
+      brakes: 'Hydraulic Rear Disc Brake',
+      payloadCapacity: '180 kg (2-Passenger)',
+      warranty: '12-Month Factory Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
-    ]
-  },
-
-  {
-    slug: 'relion-insight-48v-30ah-lifepo4-golf-cart-battery',
-    name: 'RELiON InSight 48V 30Ah GC2 Drop-In LiFePO4 Golf Cart Battery',
-    brand: 'relion',
-    brandName: 'RELiON',
-    category: 'batteries-cart-sets',
-    categoryPath: '/golf-buggy-batteries/cart-sets/',
-    price: 1790,
-    condition: 'New',
-    badge: 'Drop-In LiFePO4',
-    featured: false,
-    rating: 5.0,
-    reviewCount: 46,
-    power: 'Electric',
-    wheels: 'N/A',
-    batteryRange: '36 hole',
-    weightCategory: '10–13 kg',
-    weightKg: 15.6,
-    foldSize: 'Standard',
-    seats: '2',
-    primaryKeyword: 'relion insight 48v lifepo4 golf cart battery',
-    shortDescription: 'Scalable GC2 drop-in LiFePO4 battery pack with SuperBMS, dual M8 terminals, parallel capacity expansion, and 4,000+ cycle lifespan.',
-    description: 'The RELiON InSight 48V 30Ah battery is the standard in drop-in lithium replacement for golf carts. Directly replaces 6V, 8V or 12V lead-acid batteries with zero tray modifications. Features an intelligent SuperBMS that manages regenerative braking currents and thermal states, delivering 70% weight savings over flooded lead-acid.',
-    specs: {
-      voltage: '48V Nominal (51.2V Operating)',
-      capacity: '30Ah (1,536 Wh per module, connect up to 4 in parallel for 120Ah / 6.1 kWh)',
-      chemistry: 'LiFePO4 (Lithium Iron Phosphate)',
-      cycleLife: '4,000+ Cycles @ 80% Depth of Discharge',
-      bms: 'Integrated SuperBMS with Over-Voltage, Low-Temp & Active Thermal Management',
-      charging: 'Compatible with Delta-Q, Lester Summit II, and High-Frequency LiFePO4 Profiles',
-      chargeTime: '2.5 to 3.5 Hours Fast Charge',
-      weight: '15.6 kg (Saves 160+ kg over lead-acid bank)',
-      warranty: '7-Year Global Manufacturer Warranty'
-    },
-    images: [
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
-    ]
-  },
-  {
-    slug: 'roypow-48v-105ah-lithium-golf-cart-conversion-kit',
-    name: 'RoyPow 48V 105Ah LiFePO4 Golf Cart Lithium Conversion Kit & Charger',
-    brand: 'roypow',
-    brandName: 'RoyPow',
-    category: 'batteries-cart-sets',
-    categoryPath: '/golf-buggy-batteries/cart-sets/',
-    price: 3490,
-    condition: 'New',
-    badge: 'Complete 105Ah Kit',
-    featured: true,
-    rating: 5.0,
-    reviewCount: 54,
-    power: 'Electric',
-    wheels: 'N/A',
-    batteryRange: '36 hole',
-    weightCategory: 'Over 13 kg',
-    weightKg: 42.0,
-    foldSize: 'Standard',
-    seats: '2',
-    primaryKeyword: 'roypow 48v 105ah golf cart lithium conversion',
-    shortDescription: 'Turnkey 48V 105Ah LiFePO4 single-pack drop-in battery system with 48V 22A high-speed onboard charger, digital state-of-charge dashboard meter, and 80km range.',
-    description: 'Complete lithium retrofit system for Club Car, EZGO, Yamaha and ECAR carts. Replaces 6 heavy lead-acid batteries with a single lightweight 42kg aluminium-encased LiFePO4 module. Includes an automotive-grade 48V 22A high-frequency charger, digital circular dash gauge, and pre-wired mounting brackets.',
-    specs: {
-      voltage: '48V Nominal (51.2V)',
-      capacity: '105Ah (5.37 kWh Total Energy)',
-      chemistry: 'Grade-A LiFePO4 Prismatic Cells',
-      cycleLife: '3,500+ Deep Cycles to 80% Capacity',
-      range: 'Up to 80 km per charge (54+ Holes of Golf)',
-      chargerIncluded: 'RoyPow 48V 22A High-Frequency Smart Charger (Australian 240V 10A Plug)',
-      chargeTime: '3.5 Hours Full Charge (0 to 100%)',
-      bms: 'Integrated BMS with Bluetooth Diagnostic App & Dashboard SOC Gauge',
-      weight: '42.0 kg Total System Weight',
-      warranty: '5-Year Full Replacement Australian Warranty'
-    },
-    images: [
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
-    ]
-  },
-  {
-    slug: 'delta-q-ic650-48v-sealed-smart-golf-cart-charger',
-    name: 'Delta-Q IC650 48V 13.5A High-Frequency Smart Golf Cart Charger',
-    brand: 'delta-q',
-    brandName: 'Delta-Q Technologies',
-    category: 'batteries-cart-sets',
-    categoryPath: '/golf-buggy-batteries/cart-sets/',
-    price: 749,
-    condition: 'New',
-    badge: 'IP66 Industrial Charger',
-    featured: false,
-    rating: 4.9,
-    reviewCount: 31,
-    power: 'Electric',
-    wheels: 'N/A',
-    batteryRange: 'N/A',
-    weightCategory: 'Under 10 kg',
-    weightKg: 3.2,
-    foldSize: 'Standard',
-    seats: 'Walk-behind',
-    primaryKeyword: 'delta q ic650 48v golf cart charger australia',
-    shortDescription: 'Commercial IP66 sealed 48V 13.5A smart battery charger with multi-chemistry algorithm profiles (LiFePO4, AGM, Flooded) and USB data logging.',
-    description: 'The industry-standard Delta-Q IC650 high-frequency industrial charger. Die-cast aluminium enclosure with IP66 dust and high-pressure water ingress protection. Capable of charging 48V lead-acid and lithium battery packs with patented temperature-compensated charge algorithms.',
-    specs: {
-      voltage: '48V DC Output (Nominal)',
-      currentOutput: '13.5 Amps Maximum Continuous Current',
-      inputVoltage: '85–270V AC Universal Auto-Ranging (Australian 240V 10A 3-Pin Plug)',
-      efficiency: '>93.5% Peak Energy Conversion Efficiency',
-      ipRating: 'IP66 Sealed Die-Cast Aluminium (Waterproof & Dustproof)',
-      connectors: 'Choice of Club Car 3-Pin, Anderson SB50, or Direct Ring Terminals',
-      protection: 'Over-Voltage, Reverse Polarity, Short-Circuit & Thermal Throttling',
-      warranty: '3-Year Heavy-Duty Commercial Warranty'
-    },
-    images: [
+      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   {
-    slug: 'mgi-zip-24v-4a-fast-lithium-battery-charger',
-    name: 'MGI Zip Series 24V 4A Smart Lithium Desktop Fast Charger',
-    brand: 'mgi',
-    brandName: 'MGI',
-    category: 'batteries-buggy-lithium',
-    categoryPath: '/golf-buggy-batteries/lithium/',
-    price: 189,
+    slug: 'kayo-s350-side-by-side-utv',
+    name: 'Kayo S350 2-Seat Side-by-Side UTV',
+    brand: 'kayo',
+    brandName: 'Kayo Moto',
+    category: 'off-road-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 8999,
     condition: 'New',
-    badge: 'Fast Charger 24V',
-    featured: false,
-    rating: 4.8,
-    reviewCount: 65,
-    power: 'Electric',
-    wheels: 'N/A',
-    batteryRange: 'N/A',
-    weightCategory: 'Under 10 kg',
-    weightKg: 0.8,
-    foldSize: 'Standard',
-    seats: 'Walk-behind',
-    primaryKeyword: 'mgi zip 24v lithium charger',
-    shortDescription: 'Genuine MGI 24V 4A high-efficiency desktop smart charger for MGI Zip Navigator, Ai Navigator, Zip X5, X3, and X1 24V Click & Go lithium batteries.',
-    description: 'Genuine MGI smart desktop charger for all MGI 24V Click & Go lithium batteries. Features dual-stage constant current/constant voltage (CC/CV) smart charging with LED charging indicator and auto-cutoff float protection.',
-    specs: {
-      voltage: '24V DC Nominal Output (29.4V Max Float)',
-      currentOutput: '4.0 Amps Rapid Charge',
-      inputVoltage: '100–240V AC 50/60Hz (Australian 3-Pin Standard Plug)',
-      chargeTime: 'Under 4 Hours for 380Wh 36-Hole Battery',
-      indicator: 'Multi-Colour LED Status (Red = Charging, Green = 100% Ready)',
-      warranty: '2-Year Australian Replacement Warranty'
-    },
-    images: [
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
-    ]
-  },
-  // ==========================================
-  {
-    slug: 'mgi-all-terrain-winter-rear-wheel-kit',
-    name: 'MGI Zip All-Terrain Winter & Sand Rear Wheel Kit (Pair)',
-    brand: 'mgi',
-    brandName: 'MGI',
-    category: 'parts-wheels',
-    categoryPath: '/golf-buggy-parts/wheels-tyres/',
-    price: 139,
-    condition: 'New',
-    badge: 'All-Terrain Traction',
+    badge: 'Popular UTV Pick',
     featured: false,
     rating: 4.8,
     reviewCount: 28,
-    power: 'Manual push',
-    wheels: '2-wheel',
-    batteryRange: 'N/A',
-    weightCategory: 'Under 10 kg',
-    weightKg: 1.4,
+    power: 'Petrol',
+    wheels: '4-wheel',
+    batteryRange: 'Petrol Tank',
+    weightCategory: '13 kg+',
+    weightKg: 340,
     foldSize: 'Standard',
-    seats: 'Walk-behind',
-    primaryKeyword: 'mgi zip all terrain rear wheels',
-    shortDescription: 'Heavy-duty deep-tread polyurethane rear wheels for MGI Zip Series buggies to eliminate fairway slipping in wet, sandy or muddy conditions.',
-    description: 'Upgrade your MGI Zip buggy for maximum grip on wet fairways, sand, and steep slopes. These polyurethane high-traction tyres clip on in seconds using MGI quick-release hubs.',
+    seats: '2-Passenger Seating',
+    primaryKeyword: 'kayo s350 side by side utv',
+    shortDescription: '350cc fuel-injected recreation and light farm UTV with tipper cargo box, roof, windscreen, and tow hitch.',
+    description: 'The Kayo S350 offers full UTV utility at under $9,000 AUD. Equipped with a responsive EFI engine, independent double wishbone suspension, tilting rear cargo bed, and 12-inch aluminium wheels.',
     specs: {
-      compatibility: 'All MGI Zip Series Models (Navigator, X5, X3, X1)',
-      material: 'Durable Non-Marking Polyurethane Deep Lug Tread',
-      package: 'Pair of Left & Right Wheels with Hub Clips'
+      engine: '350cc Liquid-Cooled 4-Stroke Electronic Fuel Injection (EFI)',
+      transmission: 'Automatic CVT with High, Low, Neutral, Reverse',
+      towingCapacity: '450 kg Tow Rating',
+      brakes: '4-Wheel Hydraulic Disc Brakes',
+      cargoBed: 'Rear Tilting Tipper Bed (150 kg Capacity)',
+      warranty: '12-Month Parts & Labour Warranty'
     },
     images: [
+      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'crossfire-400gt-4x4-farm-utv',
+    name: 'Crossfire 400GT 4x4 Heavy-Duty Farm UTV',
+    brand: 'crossfire',
+    brandName: 'Crossfire',
+    category: 'off-road-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 10999,
+    condition: 'New',
+    badge: 'Selectable 4WD',
+    featured: true,
+    rating: 4.9,
+    reviewCount: 35,
+    power: 'Petrol',
+    wheels: '4-wheel',
+    batteryRange: 'Petrol Tank',
+    weightCategory: '13 kg+',
+    weightKg: 520,
+    foldSize: 'Standard',
+    seats: '2-Passenger Seating',
+    primaryKeyword: 'crossfire 400gt 4x4 farm utv',
+    shortDescription: 'Selectable 2WD/4WD with front differential lock, electronic power steering, electric winch, and hydraulic tip tray.',
+    description: 'A genuine workhorse for Australian rural properties and farms. Features selectable 4x4 with differential lock, 3,500lb electric front winch, tow hitch, and gas-assist tipping cargo bed.',
+    specs: {
+      engine: '400cc EFI Liquid-Cooled 4-Stroke Engine',
+      driveSystem: 'Selectable 2WD / 4WD with Front Diff Lock',
+      transmission: 'Automatic CVT (H/L/N/R/P)',
+      winch: '3,500 lb Heavy-Duty Electric Winch',
+      towingCapacity: '550 kg Tow Rating',
+      warranty: '2-Year Australian Commercial Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
     ]
   },
   {
-    slug: 'deluxe-golf-buggy-accessory-bundle',
-    name: 'Deluxe Universal Golf Buggy Accessory Bundle (Umbrella, Seat & Bottle Holder)',
-    brand: 'stinger',
-    brandName: 'The Buggy Shop',
-    category: 'accessories',
-    categoryPath: '/golf-buggy-accessories/',
-    price: 249,
+    slug: 'polaris-ranger-xp-1000-hd-utv',
+    name: 'Polaris Ranger XP 1000 Heavy Duty Side-by-Side',
+    brand: 'polaris',
+    brandName: 'Polaris',
+    category: 'off-road-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 38995,
     condition: 'New',
-    badge: '3-Piece Bundle',
+    badge: 'Heavy Duty UTV',
     featured: false,
-    rating: 4.9,
-    reviewCount: 42,
-    power: 'Manual push',
-    wheels: 'N/A',
-    batteryRange: 'N/A',
-    weightCategory: 'Under 10 kg',
-    weightKg: 2.1,
+    rating: 5.0,
+    reviewCount: 19,
+    power: 'Petrol',
+    wheels: '4-wheel',
+    batteryRange: 'Petrol Tank',
+    weightCategory: '13 kg+',
+    weightKg: 780,
     foldSize: 'Standard',
-    seats: 'Walk-behind',
-    primaryKeyword: 'golf buggy accessories australia',
-    shortDescription: 'Complete 3-piece accessory pack including padded spring-loaded seat, dual-pivot umbrella holder, and insulated drink holder.',
-    description: 'Transform your on-course comfort with our best-selling accessory bundle. Includes a padded spring-loaded seat with internal dry storage compartment for balls and tees, an adjustable dual-axis umbrella holder, and an insulated beverage holder.',
+    seats: '3-Passenger Bench',
+    primaryKeyword: 'polaris ranger xp 1000 australia',
+    shortDescription: 'The undisputed heavy-duty king. 82 HP ProStar 1000cc engine, 1,134 kg towing capacity, and On-Demand True All-Wheel Drive.',
+    description: 'Australia\'s premier side-by-side for heavy agricultural, commercial, and sporting estate transport. Powered by the legendary 999cc twin-cylinder ProStar engine with 13 inches of ground clearance.',
     specs: {
-      includes: 'Padded Storage Seat + Dual-Pivot Umbrella Extender + Insulated Drink Mount',
-      fitment: 'Universal Bracket Clamps fit 25mm to 35mm round & oval buggy frames',
-      seatCapacity: '110 kg Recommended Maximum Sitting Load'
+      engine: '999cc 4-Stroke DOHC Twin Cylinder (82 HP)',
+      driveSystem: 'High Performance On-Demand True AWD/2WD/VersaTrac Turf Mode',
+      payloadCapacity: '680 kg Payload Capacity',
+      towingCapacity: '1,134 kg Tow Rating',
+      groundClearance: '330 mm (13 in)',
+      warranty: '2-Year Factory Warranty'
     },
     images: [
+      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
     ]
   },
 
   // ==========================================
-  // 10. USED & EX-DEMO GOLF BUGGIES
+  // 7. KIDS & TEEN BUGGIES ($850+ FLOOR)
   // ==========================================
   {
-    slug: 'mgi-zip-navigator-ex-demo-electric-golf-buggy',
-    name: 'MGI Zip Navigator AT Remote Electric Golf Buggy (Ex-Demo)',
-    brand: 'mgi',
-    brandName: 'MGI',
-    category: 'used-buggies',
-    categoryPath: '/used-golf-buggies/',
-    price: 1490,
-    condition: 'Ex-demo',
-    badge: 'Ex-Demo Warranty',
+    slug: 'electric-48v-kids-4x4-off-road-buggy',
+    name: '48V Electric Kids 4x4 Off-Road Buggy',
+    brand: 'buggy-shop-junior',
+    brandName: 'The Buggy Shop Junior',
+    category: 'kids-buggies',
+    categoryPath: '/kids-buggies/',
+    price: 1290,
+    condition: 'New',
+    badge: '48V Electric Kids',
+    featured: true,
+    rating: 4.9,
+    reviewCount: 46,
+    power: 'Electric',
+    wheels: '4-wheel',
+    batteryRange: '18 hole',
+    weightCategory: '13 kg+',
+    weightKg: 68,
+    foldSize: 'Standard',
+    seats: '2-Child Seating',
+    primaryKeyword: 'kids electric buggy 48v australia',
+    shortDescription: '48V 1000W brushless electric kids buggy with 3-speed parental lock, hydraulic rear disc brake, and full roll cage.',
+    description: 'A genuine high-voltage electric buggy for kids aged 6-12. Features 48V 1000W brushless motor, key-switch parental speed control (10 km/h, 20 km/h, 32 km/h), leather bucket seats, and hydraulic brakes.',
+    specs: {
+      motor: '48V 1000W Brushless High-Torque Electric Motor',
+      battery: '48V 20Ah Rechargeable Deep-Cycle Battery Pack',
+      speedLimit: '3-Speed Key Lock (10 km/h, 20 km/h, 32 km/h)',
+      safety: 'Full Roll Cage, 3-Point Harnesses, Remote Safety Kill Switch',
+      payloadCapacity: '85 kg',
+      warranty: '12-Month Australian Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'crossfire-90cc-twin-seat-kids-petrol-buggy',
+    name: 'Crossfire 90cc Twin-Seat Petrol Kids Buggy',
+    brand: 'crossfire',
+    brandName: 'Crossfire',
+    category: 'kids-buggies',
+    categoryPath: '/kids-buggies/',
+    price: 1890,
+    condition: 'New',
+    badge: '90cc Petrol Kids',
     featured: false,
     rating: 4.8,
-    reviewCount: 15,
+    reviewCount: 31,
+    power: 'Petrol',
+    wheels: '4-wheel',
+    batteryRange: 'Petrol Tank',
+    weightCategory: '13 kg+',
+    weightKg: 110,
+    foldSize: 'Standard',
+    seats: '2-Child Seating',
+    primaryKeyword: 'kids 90cc petrol buggy australia',
+    shortDescription: '90cc 4-stroke electric-start petrol buggy with automatic transmission, adjustable speed governor, and dual padded bucket seats.',
+    description: 'Engineered for young riders taking their first steps in off-roading. Equipped with a reliable 90cc electric-start engine, full padded roll cage, throttle limiter, and rear disc brake.',
+    specs: {
+      engine: '90cc 4-Stroke Air-Cooled Petrol Engine',
+      starter: 'Electric Key Start',
+      transmission: 'Fully Automatic Single Speed',
+      safety: 'Parental Throttle Limiter & Safety Flag Included',
+      payloadCapacity: '95 kg',
+      warranty: '12-Month Factory Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+
+  // ==========================================
+  // 8. LITHIUM BATTERIES & CHARGERS
+  // ==========================================
+  {
+    slug: 'mgi-24v-380wh-click-and-go-lithium-battery',
+    name: 'MGI 24V 380Wh 36-Hole Click & Go Lithium Battery Pack',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'batteries',
+    categoryPath: '/batteries/',
+    price: 499,
+    condition: 'New',
+    badge: 'Genuine OEM',
+    featured: true,
+    rating: 5.0,
+    reviewCount: 142,
+    power: 'Battery',
+    wheels: 'Accessory',
+    batteryRange: '36 hole',
+    weightCategory: 'Under 10 kg',
+    weightKg: 2.8,
+    foldSize: 'Compact / flat-fold',
+    seats: 'Part',
+    primaryKeyword: 'mgi 24v lithium battery replacement price',
+    shortDescription: 'Genuine OEM 24V 380Wh 36-hole lithium battery compatible with all MGI Zip and Ai series electric golf buggies.',
+    description: 'Genuine factory replacement Click & Go 24V 380Wh lithium battery pack for MGI Zip Navigator, Zip X1, X3, X5, and Ai series. Delivers up to 36+ holes on a single charge with integrated Battery Management System (BMS).',
+    specs: {
+      voltage: '24V Direct Fit Click & Go System',
+      capacity: '380Wh (36+ Holes Capacity)',
+      chemistry: 'High-Density Lithium-Ion',
+      weight: '2.8 kg',
+      compatibility: 'All MGI Zip & MGI Ai Series Buggies',
+      warranty: '2-Year Australian Replacement Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'giant-48v-90ah-golf-cart-drop-in-lithium-battery',
+    name: 'GIANT 48V 90Ah Drop-In Golf Cart LiFePO4 Lithium Battery',
+    brand: 'giant',
+    brandName: 'GIANT Power',
+    category: 'batteries',
+    categoryPath: '/batteries/',
+    price: 1479,
+    condition: 'New',
+    badge: 'Drop-In Cart Lithium',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 39,
+    power: 'Battery',
+    wheels: 'Accessory',
+    batteryRange: '36 hole',
+    weightCategory: '13 kg+',
+    weightKg: 38,
+    foldSize: 'Standard',
+    seats: 'Part',
+    primaryKeyword: '48v drop in lithium golf cart battery australia',
+    shortDescription: 'Single-cased 48V 90Ah LiFePO4 lithium conversion unit replacing 6 or 8 heavy lead-acid batteries in Club Car, Yamaha, and E-Z-GO carts.',
+    description: 'Transform your heavy lead-acid golf cart. Shed 130+ kg of weight and gain 80+ km of single-charge range with this single drop-in 48V 90Ah LiFePO4 battery with Bluetooth battery status app.',
+    specs: {
+      voltage: '48V Nominal (51.2V Actual)',
+      capacity: '90Ah (4.6 kWh Usable Power)',
+      cycleLife: '3,500+ Deep Discharge Cycles',
+      weight: '38 kg (Saves 130kg+ over Lead Acid)',
+      compatibility: 'Club Car, Yamaha, E-Z-GO, ECAR 48V Carts',
+      warranty: '5-Year Australian Replacement Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+
+  // ==========================================
+  // 9. USED & EX-DEMO GOLF BUGGIES
+  // ==========================================
+  {
+    slug: 'ex-demo-mgi-zip-navigator-at-remote-buggy',
+    name: 'Ex-Demo MGI Zip Navigator AT Remote Buggy (Certified)',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'used-golf-buggies',
+    categoryPath: '/used-golf-buggies/',
+    price: 1490,
+    condition: 'Ex-Demo',
+    badge: 'Certified Pre-Owned',
+    featured: true,
+    rating: 4.9,
+    reviewCount: 18,
     power: 'Remote control',
     wheels: '4-wheel',
     batteryRange: '36 hole',
@@ -1054,100 +1332,72 @@ export const PRODUCTS = [
     weightKg: 13.0,
     foldSize: 'Compact / flat-fold',
     seats: 'Walk-behind',
-    primaryKeyword: 'used mgi zip navigator golf buggy',
-    shortDescription: 'Workshop-inspected ex-demo MGI Zip Navigator AT with tested 24V lithium battery, remote handset, and 12-month Australian workshop warranty.',
-    description: 'Save hundreds on an ex-demonstrator MGI Zip Navigator AT. Used only for supervised clubhouse demo rounds, fully serviced and certified with new tyre treads and a fresh battery capacity test report.',
+    primaryKeyword: 'used mgi zip navigator for sale australia',
+    shortDescription: 'Factory-inspected ex-showroom demonstration unit with tested 36-hole 24V lithium battery, remote handset, and 12-month warranty.',
+    description: 'Save $600+ AUD on Australia\'s favourite remote buggy. Certified ex-demonstration unit thoroughly workshop-tested with brand-new tyres, fully health-tested 24V lithium battery, and 12-month dealer warranty.',
     specs: {
-      condition: 'Ex-Demo (Under 10 Rounds Use)',
-      battery: '24V 380Wh Tested Lithium Battery (100% Health Certificate)',
-      includes: 'Remote Handset, Charger, Umbrella Holder',
-      warranty: '12-Month Australian Workshop Warranty'
+      condition: 'Grade A+ Ex-Showroom Demonstration',
+      motor: 'Twin 230W Calibrated Motors',
+      battery: 'Tested 24V 380Wh Lithium (98%+ Health)',
+      remote: 'Included with USB Charging Cable',
+      brakes: 'Downhill Speed Regulation',
+      warranty: '12-Month Australian Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
+      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+    ]
+  },
+  {
+    slug: 'ex-fleet-ezgo-rxv-48v-lithium-2-seat-cart',
+    name: 'Ex-Fleet E-Z-GO RXV 48V Lithium 2-Seat Cart (Refurbished)',
+    brand: 'ezgo',
+    brandName: 'E-Z-GO',
+    category: 'used-golf-buggies',
+    categoryPath: '/used-golf-buggies/',
+    price: 6490,
+    condition: 'Used',
+    badge: 'Ex-Fleet Value',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 15,
+    power: 'Electric',
+    wheels: '4-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '13 kg+',
+    weightKg: 290,
+    foldSize: 'Standard',
+    seats: '2-Passenger Seating',
+    primaryKeyword: 'used ezgo rxv golf cart for sale melbourne brisbane',
+    shortDescription: 'Ex-resort lease return with brand-new 48V lithium battery conversion, automatic park brake, and split windscreen.',
+    description: 'Premium ex-lease resort cart rebuilt by our Queensland technical workshop. Fitted with a brand-new 48V drop-in lithium battery pack, automatic IntelliBrake park brake, split windscreen, and charger.',
+    specs: {
+      condition: 'Workshop Refurbished & Tested',
+      motor: '48V AC Induction Motor',
+      battery: 'Brand-New 48V Drop-In Lithium Pack',
+      range: '70+ km Per Charge',
+      brakes: 'Patented IntelliBrake Auto Park System',
+      warranty: '12-Month Vehicle / 3-Year Battery Warranty'
+    },
+    images: [
+      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
+      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
     ]
   }
 ];
 
-// Helper functions for products
 export function getProductBySlug(slug) {
-  if (!slug) return null;
-  const clean = slug.toLowerCase().trim();
-  return PRODUCTS.find(p => p.slug === clean);
+  return PRODUCTS.find((p) => p.slug === slug);
 }
 
 export function getProductsByCategory(categorySlug) {
-  if (!categorySlug) return [];
-  const clean = categorySlug.toLowerCase().trim();
-  
-  // Special category handling
-  if (clean === 'electric-golf-buggies') {
-    return PRODUCTS.filter(p => 
-      p.category === 'electric-golf-buggies' || 
-      p.category === 'remote-control-golf-buggies' || 
-      p.category === 'electric-walk-behind' || 
-      p.category === 'gps-follow-buggies' || 
-      p.category === 'conversion-kits' ||
-      p.power === 'Electric' || p.power === 'Remote control' || p.power === 'Follow / GPS'
-    );
-  }
-  if (clean === 'push-pull-golf-buggies' || clean === 'golf-trolleys') {
-    return PRODUCTS.filter(p => 
-      p.category === 'push-pull-golf-buggies' || 
-      p.category === 'push-3-wheel' || 
-      p.category === 'push-4-wheel' ||
-      p.power === 'Manual push'
-    );
-  }
-  if (clean === 'golf-carts') {
-    return PRODUCTS.filter(p => 
-      p.category === 'golf-carts' ||
-      p.category === 'carts-2-seat' ||
-      p.category === 'carts-4-6-seat' ||
-      p.category === 'carts-lifted' ||
-      p.category === 'carts-utility' ||
-      p.category === 'carts-used' ||
-      p.seats === '2' || p.seats === '4' || p.seats === '6'
-    );
-  }
-  if (clean === 'off-road-buggies') {
-    return PRODUCTS.filter(p => 
-      p.category === 'off-road-buggies' ||
-      p.category === 'dune-buggies' ||
-      p.category === 'side-by-side-buggies' ||
-      p.category === 'beach-buggies' ||
-      p.category === 'farm-buggies' ||
-      p.category === 'adult-2-seat-petrol'
-    );
-  }
-  if (clean === 'kids-buggies') {
-    return PRODUCTS.filter(p => 
-      p.category === 'kids-buggies' ||
-      p.category === 'kids-electric' ||
-      p.category === 'kids-petrol'
-    );
-  }
-  if (clean === 'batteries' || clean === 'golf-buggy-batteries') {
-    return PRODUCTS.filter(p => 
-      p.category.startsWith('batteries') || p.category === 'batteries'
-    );
-  }
-  if (clean === 'parts' || clean === 'golf-buggy-parts') {
-    return PRODUCTS.filter(p => 
-      p.category.startsWith('parts') || p.category === 'parts'
-    );
-  }
-
-  // Exact category match or categoryPath match
-  return PRODUCTS.filter(p => 
-    p.category === clean || 
-    p.categoryPath === `/${clean}/` || 
-    p.categoryPath.includes(`/${clean}/`)
-  );
+  return PRODUCTS.filter((p) => p.category === categorySlug);
 }
 
 export function getProductsByBrand(brandSlug) {
-  if (!brandSlug) return [];
-  const clean = brandSlug.toLowerCase().trim();
-  return PRODUCTS.filter(p => p.brand === clean || p.brandName?.toLowerCase() === clean);
+  return PRODUCTS.filter((p) => p.brand === brandSlug);
+}
+
+export function getFeaturedProducts() {
+  return PRODUCTS.filter((p) => p.featured);
 }

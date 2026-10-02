@@ -153,11 +153,15 @@ export default function ProductDetailClient({ product, relatedProducts }) {
 
             {/* Crypto & Finance Split Details */}
             <div className="space-y-2 pt-2 border-t border-[#DDE4DF] text-xs">
-              <div className="flex items-center justify-between p-3 rounded-xl bg-[#0E2A1E] text-white border border-[#C5A265]/40 shadow-xs">
-                <span className="font-bold flex items-center gap-1.5 text-[#D3DFD8]">
-                  <Zap className="w-4 h-4 text-[#C5A265]" /> 10% Bitcoin / USDT Price:
-                </span>
-                <span className="font-black text-sm text-[#C5A265]">
+              <div className="flex items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white border border-[#C5A880] shadow-md">
+                <div className="flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-full bg-[#C5A880] text-slate-950 flex items-center justify-center font-bold text-xs">₿</span>
+                  <div>
+                    <span className="font-bold text-slate-200 block text-xs">Pay with Crypto (BTC / USDT):</span>
+                    <span className="text-[11px] font-bold text-[#C5A880]">Save ${(product.price - cryptoPrice).toLocaleString('en-AU')} (10% Instant Rebate)</span>
+                  </div>
+                </div>
+                <span className="font-black text-base text-[#C5A880] font-mono">
                   ${cryptoPrice.toLocaleString('en-AU')} AUD
                 </span>
               </div>

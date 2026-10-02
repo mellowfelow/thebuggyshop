@@ -3,7 +3,16 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Shield, BatteryCharging, Gauge, ArrowRight, Scale, Check, ShoppingBag, Users, Plus, Minus } from 'lucide-react';
+import { 
+  BatteryCharging, 
+  Gauge, 
+  Check, 
+  ShoppingBag, 
+  Users, 
+  Plus, 
+  Minus,
+  Scale
+} from 'lucide-react';
 import { SHOP } from '@/src/config/site';
 
 export default function ProductCard({ 
@@ -13,8 +22,10 @@ export default function ProductCard({
   isCompared = false 
 }) {
   const [qty, setQty] = useState(1);
-  const cryptoPrice = Math.round(product.price * (1 - SHOP.cryptoDiscount / 100));
-  const seatingText = product.seats || product.specs?.seating || product.specs?.seat || '2-Passenger Seating';
+  const discountPercent = SHOP.cryptoDiscount || 10;
+  const savings = Math.round(product.price * (discountPercent / 100));
+  const cryptoPrice = product.price - savings;
+  const seatingText = product.seats || product.specs?.seating || product.specs?.seat || '2-Seat';
 
   const handleDecrease = (e) => {
     e.preventDefault();
@@ -38,157 +49,145 @@ export default function ProductCard({
 
   return (
     <div 
-      className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#C5A880] hover:-translate-y-1.5 transition-all duration-300 flex flex-col group relative"
+      className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-2xs hover:shadow-md hover:border-[#C5A880] transition-all duration-200 flex flex-col group relative"
       id={`product-card-${product.slug}`}
     >
-      {/* Top luxury gold hairline accent that glows on hover */}
-      <div className="h-1.5 w-full bg-gradient-to-r from-slate-900 via-[#C5A880] to-slate-900 opacity-80 group-hover:opacity-100 group-hover:h-2 group-hover:from-[#C5A880] group-hover:via-[#F1DCA8] group-hover:to-[#C5A880] transition-all duration-300" />
+      {/* Top gold accent line */}
+      <div className="h-1 w-full bg-gradient-to-r from-slate-900 via-[#C5A880] to-slate-900 opacity-60 group-hover:opacity-100 transition-opacity" />
 
-      {/* 4:3 Product Frame Container */}
-      <div className="relative product-frame bg-slate-50 group-hover:bg-slate-100 overflow-hidden border-b border-slate-200 transition-colors duration-300">
+      {/* Compact Image Frame */}
+      <div className="relative aspect-[4/3] max-h-36 sm:max-h-40 bg-slate-50 overflow-hidden border-b border-slate-100">
         {/* Badge */}
         {product.badge && (
-          <div className="absolute top-3 left-3 z-10 bg-slate-950/95 backdrop-blur-xs text-[#C5A880] text-[10px] font-black uppercase px-3 py-1 rounded-full border border-[#C5A880] shadow-md group-hover:scale-105 transition-all">
+          <div className="absolute top-1.5 left-1.5 z-10 bg-slate-950/90 text-[#C5A880] text-[8px] sm:text-[9px] font-bold uppercase px-1.5 py-0.5 rounded border border-[#C5A880]/50 shadow-xs">
             {product.badge}
           </div>
         )}
 
-        {/* Compare Toggle Pill */}
+        {/* Compare Button */}
         <button
           type="button"
           onClick={() => onToggleCompare && onToggleCompare(product)}
-          className={`absolute top-3 right-3 z-10 p-2 rounded-full border text-xs font-bold transition-all shadow-md flex items-center gap-1 cursor-pointer ${
+          className={`absolute top-1.5 right-1.5 z-10 p-1 rounded-full border text-[9px] transition-all shadow-xs cursor-pointer ${
             isCompared 
               ? 'bg-slate-950 text-[#C5A880] border-[#C5A880]' 
-              : 'bg-white/95 text-slate-800 hover:bg-white hover:border-[#C5A880] border-slate-300'
+              : 'bg-white/90 text-slate-600 hover:bg-white hover:border-[#C5A880] border-slate-200'
           }`}
-          aria-label={`${isCompared ? 'Remove from' : 'Add to'} comparison matrix`}
+          aria-label={`${isCompared ? 'Remove from' : 'Add to'} comparison`}
         >
-          {isCompared ? <Check className="w-3.5 h-3.5" /> : <Scale className="w-3.5 h-3.5" />}
-          <span className="text-[10px] hidden sm:inline">{isCompared ? 'Comparing' : 'Compare'}</span>
+          {isCompared ? <Check className="w-2.5 h-2.5" /> : <Scale className="w-2.5 h-2.5" />}
         </button>
 
-        {/* Product Image Link */}
+        {/* Image Link */}
         <Link href={`/shop/${product.category}/${product.slug}/`} className="block w-full h-full">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src={product.images[0]} 
-            alt={`${product.name} - Turnkey Australian Golf Buggy & Cart for Sale`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+            alt={`${product.name} - Australian Golf Buggy`}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
             loading="lazy"
           />
         </Link>
       </div>
 
-      {/* Card Content Body */}
-      <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
-        <div className="space-y-2">
-          {/* Category Tag & Seat Number Pill */}
-          <div className="flex items-center justify-between gap-2 flex-wrap">
-            <span className="text-[10px] uppercase tracking-wider font-bold text-[#C5A880] bg-[#FAF8F5] px-2.5 py-0.5 rounded-full border border-[#C5A880]/30 transition-colors">
+      {/* Compact Content Body */}
+      <div className="p-2.5 sm:p-3 flex-1 flex flex-col justify-between space-y-2">
+        <div className="space-y-1">
+          {/* Category & Seating Tag */}
+          <div className="flex items-center justify-between gap-1 text-[8px] sm:text-[9px]">
+            <span className="uppercase tracking-wider font-bold text-[#C5A880] truncate">
               {product.category.replace(/-/g, ' ')}
             </span>
-            <span className="text-[10px] font-extrabold text-slate-800 bg-slate-100 px-2.5 py-0.5 rounded-full border border-slate-200 flex items-center gap-1">
-              <Users className="w-3 h-3 text-[#C5A880]" />
+            <span className="font-semibold text-slate-600 bg-slate-100 px-1 py-0.2 rounded flex items-center gap-0.5 shrink-0">
+              <Users className="w-2.5 h-2.5 text-[#C5A880]" />
               <span>{seatingText.split('(')[0].trim()}</span>
             </span>
           </div>
 
           {/* Title */}
           <Link href={`/shop/${product.category}/${product.slug}/`}>
-            <h3 className="font-extrabold text-lg sm:text-xl text-slate-900 group-hover:text-[#C5A880] transition-colors leading-tight font-serif pt-1">
+            <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-[#C5A880] transition-colors leading-snug line-clamp-1 font-serif">
               {product.name}
             </h3>
           </Link>
 
-          {/* Short Description */}
-          <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
-            {product.shortDescription}
-          </p>
-        </div>
-
-        {/* Key Specs Tinted Grid Box */}
-        <div className="bg-slate-50 rounded-xl p-3 border border-slate-200 grid grid-cols-2 gap-2 text-xs text-slate-700 transition-all duration-300">
-          <div className="flex items-center gap-1.5 min-w-0">
-            <Users className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
-            <span className="truncate text-[11px] font-bold text-slate-900">{seatingText}</span>
-          </div>
-          <div className="flex items-center gap-1.5 min-w-0">
-            <BatteryCharging className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
-            <span className="truncate text-[11px] font-semibold">{product.specs?.battery || product.specs?.batteryUpgrade || product.specs?.material || 'LiFePO4 Power'}</span>
-          </div>
-          <div className="flex items-center gap-1.5 min-w-0">
-            <Gauge className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
-            <span className="truncate text-[11px] font-semibold">{product.specs?.range || '36+ Holes Range'}</span>
-          </div>
-          <div className="flex items-center gap-1.5 min-w-0">
-            <Shield className="w-3.5 h-3.5 text-[#C5A880] shrink-0" />
-            <span className="truncate text-[11px] font-semibold">{product.specs?.warranty || '5-Yr Battery Warranty'}</span>
+          {/* Inline Micro Specs */}
+          <div className="flex items-center gap-1.5 text-[9px] text-slate-500 pt-0.5">
+            <span className="inline-flex items-center gap-0.5 truncate font-medium">
+              <BatteryCharging className="w-2.5 h-2.5 text-[#C5A880] shrink-0" />
+              <span className="truncate">{product.specs?.battery || 'LiFePO4'}</span>
+            </span>
+            <span className="text-slate-300">&bull;</span>
+            <span className="inline-flex items-center gap-0.5 truncate font-medium">
+              <Gauge className="w-2.5 h-2.5 text-[#C5A880] shrink-0" />
+              <span className="truncate">{product.specs?.range || '36+ Holes'}</span>
+            </span>
           </div>
         </div>
 
-        {/* Price & Action Area with Elevated Surface Tint */}
-        <div className="space-y-3 pt-2">
-          <div className="flex items-baseline justify-between bg-[#F8F9FA] p-3 rounded-xl border border-slate-200 transition-all duration-300">
-            <div>
-              <span className="text-[10px] text-slate-500 block uppercase tracking-wider font-bold">Driveaway Price</span>
-              <span className="text-xl sm:text-2xl font-black text-slate-950 font-serif">
-                ${product.price.toLocaleString('en-AU')} <span className="text-xs font-bold text-slate-500">AUD</span>
+        {/* Pricing & Crypto Banner */}
+        <div className="space-y-1 pt-1 border-t border-slate-100">
+          {/* Price Header */}
+          <div className="flex items-baseline justify-between">
+            <div className="flex items-baseline gap-1">
+              <span className="text-sm sm:text-base font-black text-slate-950 font-serif">
+                ${product.price.toLocaleString('en-AU')}
               </span>
+              <span className="text-[9px] font-bold text-slate-500">AUD</span>
             </div>
-
-            {/* Crypto 10% Off Tag */}
-            <div className="text-right">
-              <span className="text-[10px] font-black text-[#C5A880] bg-slate-950 px-2.5 py-1 rounded-full border border-[#C5A880] block shadow-xs">
-                ${cryptoPrice.toLocaleString('en-AU')} BTC/USDT
-              </span>
-            </div>
+            <span className="text-[8px] font-semibold text-slate-500 bg-slate-100 px-1 py-0.2 rounded">
+              Inc. GST
+            </span>
           </div>
 
-          {/* Stepper & Action Buttons */}
-          <div className="space-y-2 pt-1">
-            <div className="flex items-center gap-2">
-              {/* Quantity Stepper */}
-              <div className="flex items-center border border-slate-300 rounded-xl bg-slate-50 overflow-hidden shadow-2xs">
-                <button
-                  type="button"
-                  onClick={handleDecrease}
-                  className="px-2.5 py-2 hover:bg-slate-200 text-slate-700 font-bold transition-colors cursor-pointer"
-                  aria-label="Decrease quantity"
-                >
-                  <Minus className="w-3.5 h-3.5" />
-                </button>
-                <span className="px-2 text-xs font-black text-slate-900 min-w-[24px] text-center">{qty}</span>
-                <button
-                  type="button"
-                  onClick={handleIncrease}
-                  className="px-2.5 py-2 hover:bg-slate-200 text-slate-700 font-bold transition-colors cursor-pointer"
-                  aria-label="Increase quantity"
-                >
-                  <Plus className="w-3.5 h-3.5" />
-                </button>
-              </div>
+          {/* Compact Crypto Pill */}
+          <div className="bg-[#FAF8F5] border border-[#C5A880]/60 px-1.5 py-0.5 rounded flex items-center justify-between gap-1 text-[9px]">
+            <div className="flex items-center gap-1 min-w-0 truncate">
+              <span className="w-3.5 h-3.5 rounded-full bg-slate-950 text-[#C5A880] flex items-center justify-center font-bold text-[8px] shrink-0">
+                ₿
+              </span>
+              <span className="font-semibold text-slate-800 truncate">
+                Pay <strong className="text-emerald-700 font-mono font-bold">${cryptoPrice.toLocaleString('en-AU')}</strong>
+              </span>
+            </div>
+            <span className="text-[8px] font-bold text-[#8E6E3E] shrink-0">
+              Save ${savings}
+            </span>
+          </div>
 
-              {/* Add to Order Button */}
+          {/* Action Row: Stepper + Add Button */}
+          <div className="flex items-center gap-1.5 pt-1">
+            {/* Compact Stepper */}
+            <div className="flex items-center border border-slate-200 rounded bg-slate-50 overflow-hidden shrink-0">
               <button
                 type="button"
-                onClick={handleAdd}
-                className="flex-1 py-2.5 px-3 rounded-xl bg-slate-950 hover:bg-[#C5A880] hover:text-slate-950 text-[#C5A880] text-xs font-black uppercase tracking-wider text-center transition-all shadow-sm border border-[#C5A880]/50 flex items-center justify-center gap-1.5 cursor-pointer active:scale-[0.98]"
-                id={`add-to-cart-${product.slug}`}
+                onClick={handleDecrease}
+                className="px-1.5 py-1 hover:bg-slate-200 text-slate-700 font-bold transition-colors cursor-pointer"
+                aria-label="Decrease quantity"
               >
-                <ShoppingBag className="w-3.5 h-3.5" />
-                <span>Add {qty > 1 ? `(${qty}) ` : ''}to Order</span>
+                <Minus className="w-2.5 h-2.5" />
+              </button>
+              <span className="px-1 text-[10px] font-black text-slate-900 min-w-[14px] text-center">{qty}</span>
+              <button
+                type="button"
+                onClick={handleIncrease}
+                className="px-1.5 py-1 hover:bg-slate-200 text-slate-700 font-bold transition-colors cursor-pointer"
+                aria-label="Increase quantity"
+              >
+                <Plus className="w-2.5 h-2.5" />
               </button>
             </div>
 
-            {/* View Specs Link */}
-            <Link
-              href={`/shop/${product.category}/${product.slug}/`}
-              className="w-full py-2 px-3 rounded-xl bg-white hover:bg-slate-100 text-slate-700 hover:text-slate-950 text-xs font-semibold text-center border border-slate-200 transition-all flex items-center justify-center gap-1"
+            {/* Compact Add to Order Button */}
+            <button
+              type="button"
+              onClick={handleAdd}
+              className="flex-1 py-1 px-2 rounded bg-slate-950 hover:bg-[#C5A880] hover:text-slate-950 text-[#C5A880] text-[10px] font-bold uppercase tracking-wider text-center transition-all border border-[#C5A880]/30 flex items-center justify-center gap-1 cursor-pointer active:scale-95 shadow-2xs"
+              id={`add-to-cart-${product.slug}`}
             >
-              <span>View Full Engineering Specifications</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#C5A880]" />
-            </Link>
+              <ShoppingBag className="w-2.5 h-2.5" />
+              <span>Add</span>
+            </button>
           </div>
         </div>
       </div>

@@ -13,13 +13,16 @@ import {
   Scale, 
   Calculator, 
   Sparkles,
-  Award
+  Award,
+  HelpCircle
 } from 'lucide-react';
 import { SITE, BRAND, CONTACT, CATEGORIES, PRODUCTS, POSTS, SHOP, REVIEW_STATS } from '@/src/config/site';
 import JsonLd from '@/src/components/JsonLd';
 import HomeClientProducts from './HomeClientProducts';
 import ReviewsCarousel from '@/src/components/ReviewsCarousel';
 import HeroSlider from '@/src/components/HeroSlider';
+import CollapsibleFaq from '@/src/components/CollapsibleFaq';
+import { HOMEPAGE_FAQS } from '@/src/config/faq';
 
 export const metadata = {
   title: 'Golf Buggy for Sale Australia | Luxury, Remote & Off Road Buggies',
@@ -39,9 +42,14 @@ export const metadata = {
 };
 
 export default function HomePage() {
-  const featuredProducts = PRODUCTS.filter(p => p.featured);
+  // Select top 8 featured products (2 neat rows of 4 cards = 4/4 grid)
+  const featuredProducts = PRODUCTS.filter(p => p.featured).slice(0, 8);
+  if (featuredProducts.length < 8) {
+    const additional = PRODUCTS.filter(p => !p.featured).slice(0, 8 - featuredProducts.length);
+    featuredProducts.push(...additional);
+  }
 
-  // Full Homepage JSON-LD
+  // Full Homepage JSON-LD with FAQPage schema
   const homeSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -90,8 +98,8 @@ export default function HomePage() {
         "makesOffer": {
           "@type": "AggregateOffer",
           "priceCurrency": SITE.currency,
-          "lowPrice": 690,
-          "highPrice": 24800,
+          "lowPrice": 449,
+          "highPrice": 62500,
           "offerCount": PRODUCTS.length
         }
       },
@@ -105,6 +113,18 @@ export default function HomePage() {
           "target": `https://${SITE.domain}/search/?q={search_term_string}`,
           "query-input": "required name=search_term_string"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `https://${SITE.domain}/#faq`,
+        "mainEntity": HOMEPAGE_FAQS.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
       }
     ]
   };
@@ -118,15 +138,15 @@ export default function HomePage() {
 
       {/* SECTION 2: TRUST BAR (4 PILLARS) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4 hover:border-[#C5A880] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
             <div className="w-12 h-12 rounded-xl bg-slate-900 text-[#C5A880] border border-slate-700 flex items-center justify-center shrink-0 shadow-sm group-hover:scale-105 transition-all">
               <Truck className="w-5 h-5 text-[#C5A880]" />
             </div>
             <div className="space-y-1">
-              <h3 className="font-black text-sm text-slate-900 group-hover:text-[#C5A880] font-serif transition-colors">Australia-Wide Freight</h3>
+              <h3 className="font-black text-sm text-slate-900 group-hover:text-[#C5A880] font-serif transition-colors">Hydraulic Tail-Lift Freight</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Direct hydraulic tail-lift delivery to golf clubs, private homesteads, and regional depots nationwide.
+                Direct to your door, golf club pro-shop, or rural property across regional QLD, NSW, VIC, SA &amp; WA.
               </p>
             </div>
           </div>
@@ -198,11 +218,12 @@ export default function HomePage() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <span className="text-[10px] font-black text-[#C5A880] bg-slate-900/90 px-2.5 py-0.5 rounded-full border border-[#C5A880]/50 uppercase tracking-wider inline-block mb-1 shadow-sm">
-                    {category.itemCount} Buggies Available
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#C5A880] bg-slate-950/90 px-2.5 py-1 rounded-full border border-[#C5A880]/40 inline-block mb-1">
+                    {category.itemCount} Vehicles Available
                   </span>
-                  <h3 className="text-xl font-black tracking-tight leading-snug font-serif text-white">
+                  <h3 className="font-extrabold text-lg sm:text-xl font-serif text-white group-hover:text-[#C5A880] transition-colors leading-tight">
                     {category.name}
                   </h3>
                 </div>
@@ -224,12 +245,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 4: FEATURED VEHICLES GRID */}
+      {/* SECTION 4: FEATURED VEHICLES GRID (4/4 LAYOUT) */}
       <section className="bg-slate-100/70 py-16 sm:py-20 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div className="space-y-1">
-              <span className="text-xs font-black uppercase tracking-wider text-[#C5A880] bg-white px-3 py-1 rounded-full border border-slate-200 inline-block">
+              <span className="text-xs font-black uppercase tracking-wider text-[#C5A880] bg-white px-3 py-1 rounded-full border border-slate-200 inline-block shadow-2xs">
                 In Stock &amp; Ready for Immediate Dispatch
               </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif">
@@ -318,7 +339,7 @@ export default function HomePage() {
                 </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-[#C5A880] font-black">4.</span>
-                  <span><strong>DOT Fold-Down Windscreen:</strong> Impact-resistant tinted acrylic windscreen with optional electric wiper.</span>
+                  <span><strong>Australian Compliance Documentation:</strong> Certified vehicle identification plate and pre-filled registration application.</span>
                 </li>
               </ul>
             </div>
@@ -326,150 +347,120 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 6: COMMERCIAL ASSET FINANCE & CRYPTO REBATE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-md flex flex-col lg:flex-row items-center justify-between gap-8 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-2 h-full bg-[#C5A880]" />
-
-          <div className="space-y-3 max-w-2xl pl-2">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-900 text-xs font-black uppercase tracking-wider border border-slate-200">
-              <Calculator className="w-3.5 h-3.5 text-[#C5A880]" />
-              <span>Australian Commercial &amp; Private Finance</span>
+      {/* SECTION 6: AUSTRALIAN CUSTOMER REVIEWS (REAL VERIFIED EXPERIENCES) */}
+      <section className="bg-slate-100/70 py-16 sm:py-20 border-y border-slate-200 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div className="space-y-1">
+              <span className="text-xs font-black uppercase tracking-wider text-[#C5A880] bg-white px-3 py-1 rounded-full border border-slate-200 inline-block shadow-2xs">
+                Real Australian Golfers &amp; Property Owners
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif">
+                Verified Reviews from Across Australia
+              </h2>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-serif">
-              Commercial Fleet Leasing &amp; Instant 10% Crypto Settlement
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Acquire single golf buggies or entire club fleets with tax-effective equipment chattel mortgages and asset leasing. Plus, save an instant 10% discount when settling via Bitcoin (BTC) or Tether (USDT). Standard Australian PayID and bank wire also supported.
-            </p>
+
+            <div className="flex items-center gap-3">
+              <div className="flex text-amber-500 text-sm">
+                {'★'.repeat(5)}
+              </div>
+              <span className="text-xs font-bold text-slate-700">
+                {REVIEW_STATS.averageRating} / 5.0 Average ({REVIEW_STATS.totalReviews} Reviews)
+              </span>
+            </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
-            <Link
-              href="/finance/"
-              className="py-3.5 px-6 rounded-xl bg-slate-900 hover:bg-slate-800 text-[#C5A880] font-black text-xs uppercase tracking-wider text-center transition-colors flex items-center justify-center gap-2 shadow-sm border border-slate-700"
-            >
-              <Calculator className="w-4 h-4" />
-              <span>Finance Calculator</span>
-            </Link>
-
-            <Link
-              href="/contact/"
-              className="py-3.5 px-6 rounded-xl bg-white hover:bg-slate-50 text-slate-900 border border-slate-300 font-bold text-xs uppercase tracking-wider text-center transition-colors shadow-xs"
-            >
-              Request Commercial Invoice
-            </Link>
-          </div>
+          <ReviewsCarousel />
         </div>
       </section>
 
-      {/* SECTION 7: BRAND AUTHORITY & QUEENSLAND HERITAGE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10" id="about-authority-section">
+      {/* SECTION 7: INTERACTIVE COLLAPSIBLE FAQ ACCORDION */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8" id="faq">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-black uppercase tracking-wider text-[#C5A880] bg-[#FAF8F5] px-3 py-1 rounded-full border border-[#C5A880]/30 inline-block">
-            The Buggy Shop Difference
+            Frequently Asked Questions
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif">
-            Why Australian Golfers &amp; Estate Owners Choose Us
+            Golf Buggy Sales, Freight &amp; Lithium Tech FAQ
           </h2>
           <p className="text-sm text-slate-600">
-            Over 20 years of real field experience delivering purpose-engineered golf buggies, push trolleys, and off road buggies across Australia.
+            Answers to common questions regarding conditional road permits, remote gyroscope control, lithium warranties, and nationwide delivery.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {BRAND.differentiation.map((point, index) => (
-            <div 
-              key={index} 
-              className="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm hover:border-[#C5A880] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 space-y-4 flex flex-col justify-between group"
+        <CollapsibleFaq faqs={HOMEPAGE_FAQS} />
+      </section>
+
+      {/* SECTION 8: LATEST BUYING GUIDES & TECH ARTICLES */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 pb-4">
+          <div className="space-y-1">
+            <span className="text-xs font-black uppercase tracking-wider text-[#C5A880] bg-[#FAF8F5] px-3 py-1 rounded-full border border-[#C5A880]/30 inline-block">
+              Australian Golf Buggy Guides
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-serif">
+              Expert Advice &amp; Technical Insights
+            </h2>
+          </div>
+
+          <Link
+            href="/blog/"
+            className="inline-flex items-center gap-2 text-xs font-black text-slate-900 hover:text-[#C5A880] uppercase tracking-wider transition-colors"
+          >
+            <span>View All Guides &amp; Articles</span>
+            <ArrowRight className="w-4 h-4 text-[#C5A880]" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {POSTS.slice(0, 3).map((post) => (
+            <article
+              key={post.slug}
+              className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#C5A880] hover:-translate-y-1.5 transition-all duration-300 flex flex-col group"
             >
-              <div className="space-y-3">
-                <div className="w-9 h-9 rounded-xl bg-slate-900 text-[#C5A880] border border-slate-700 font-black text-xs flex items-center justify-center shadow-xs group-hover:scale-105 transition-all">
-                  0{index + 1}
+              <div className="product-frame relative overflow-hidden bg-slate-900">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 ease-out"
+                />
+                <div className="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-xs text-[#C5A880] text-[10px] font-black uppercase px-2.5 py-1 rounded-full border border-[#C5A880]/40">
+                  {post.category}
                 </div>
-                <p className="text-xs text-slate-800 leading-relaxed font-medium">
-                  {point}
-                </p>
               </div>
-            </div>
+
+              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-2">
+                  <div className="text-[11px] text-slate-500 flex items-center gap-2 font-medium">
+                    <span>{post.date}</span>
+                    <span>&bull;</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <Link href={`/blog/${post.slug}/`}>
+                    <h3 className="font-extrabold text-base text-slate-900 group-hover:text-[#C5A880] transition-colors leading-snug font-serif">
+                      {post.title}
+                    </h3>
+                  </Link>
+                  <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                </div>
+
+                <Link
+                  href={`/blog/${post.slug}/`}
+                  className="text-xs font-black text-slate-900 group-hover:text-[#C5A880] transition-colors inline-flex items-center justify-between pt-3 border-t border-slate-100 uppercase tracking-wider"
+                >
+                  <span>Read Guide</span>
+                  <span className="w-6 h-6 rounded-full bg-slate-100 group-hover:bg-[#C5A880] group-hover:text-slate-950 flex items-center justify-center transition-all font-black">&rarr;</span>
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* SECTION 8: VERIFIED AUSTRALIAN REVIEWS SLIDING CAROUSEL */}
-      <ReviewsCarousel />
-
-      {/* SECTION 9: LATEST BUYER'S GUIDES */}
-      <section className="bg-slate-100/70 py-16 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div className="space-y-1">
-              <span className="text-xs font-black uppercase tracking-wider text-[#C5A880] bg-white px-3 py-1 rounded-full border border-slate-200 inline-block">
-                Australian Buyer&apos;s Guides
-              </span>
-              <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif">
-                Golf Buggy Reviews, Comparisons &amp; Advice
-              </h2>
-            </div>
-
-            <Link
-              href="/blog/"
-              className="inline-flex items-center gap-2 text-xs font-black text-slate-900 hover:text-[#C5A880] uppercase tracking-wider transition-colors bg-white px-4 py-2.5 rounded-xl border border-slate-200 shadow-xs hover:border-[#C5A880]"
-            >
-              <span>View All Guides</span>
-              <ArrowRight className="w-4 h-4 text-[#C5A880]" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {POSTS.map((post) => (
-              <article 
-                key={post.slug} 
-                className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#C5A880] hover:-translate-y-1.5 transition-all duration-300 flex flex-col group"
-              >
-                <div className="product-frame relative overflow-hidden bg-slate-900">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-3 left-3 bg-slate-950/95 backdrop-blur-xs text-[#C5A880] text-[10px] font-black uppercase px-3 py-1 rounded-full border border-[#C5A880]/50 shadow-sm">
-                    {post.category}
-                  </div>
-                </div>
-
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                  <div className="space-y-2">
-                    <span className="text-[11px] text-slate-500 block font-bold">
-                      {post.date} &bull; {post.readTime}
-                    </span>
-                    <Link href={`/blog/${post.slug}/`}>
-                      <h3 className="font-extrabold text-base text-slate-900 group-hover:text-[#C5A880] transition-colors leading-snug line-clamp-2 font-serif">
-                        {post.title}
-                      </h3>
-                    </Link>
-                    <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
-                      {post.excerpt}
-                    </p>
-                  </div>
-
-                  <Link
-                    href={`/blog/${post.slug}/`}
-                    className="text-xs font-black text-slate-900 group-hover:text-[#C5A880] transition-colors inline-flex items-center justify-between pt-3 border-t border-slate-100 uppercase tracking-wider"
-                  >
-                    <span>Read Guide</span>
-                    <span className="w-6 h-6 rounded-full bg-slate-100 group-hover:bg-[#C5A880] group-hover:text-slate-950 flex items-center justify-center transition-all font-black">&rarr;</span>
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 10: INSTANT DISPATCH & WHATSAPP SETTLEMENT CTA */}
+      {/* SECTION 9: INSTANT DISPATCH & WHATSAPP SETTLEMENT CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-14 border border-slate-800 shadow-2xl text-center space-y-6 relative overflow-hidden">
           <div className="max-w-3xl mx-auto space-y-3">
@@ -508,7 +499,7 @@ export default function HomePage() {
           <div className="text-xs text-slate-400 pt-4 flex flex-wrap items-center justify-center gap-4">
             <span>&check; Australian PayID Direct</span>
             <span>&bull;</span>
-            <span>&check; Direct Bank Transfer</span>
+            <span>&check; Direct Bank Transfer (Osko / Fast EFT)</span>
             <span>&bull;</span>
             <span className="text-[#C5A880] font-bold">&check; 10% Crypto Rebate (BTC/USDT)</span>
           </div>

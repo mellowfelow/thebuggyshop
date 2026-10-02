@@ -1,12 +1,21 @@
 // utils/emailTemplates.js
-// Branded HTML Email Builder with Mandatory LIGHT Shell per WebForge v11.1
-// White card body, dark header band, champagne gold accent, table-based inline styling.
-import { SITE, CONTACT, REPLY, ENTITY } from '@/src/config/site';
-import { money, paymentTermsHtml, paymentMethodParts } from '@/lib/order';
+// Branded Light HTML Email Builder (WebForge v11.1 Standard)
+// Mandatory: Light shell (white card, dark brand header band, near-black text, brand colour as accent only).
+// All domain links dynamically resolve the live host so Zoho Mail notifications directly open the admin dashboard.
 
+import { SITE, CONTACT, REPLY } from '@/src/config/site';
+import { money, paymentMethodParts, paymentTermsHtml } from '@/lib/order';
+
+// Palette constants driven directly by SITE.reply config
+const PRIMARY_ACCENT = REPLY?.brand?.primary || '#C5A880';
+const HEADER_DARK = REPLY?.brand?.headerDark || '#0F172A';
+
+/**
+ * Escapes HTML entities to prevent injection
+ */
 function escapeHtml(str) {
-  if (!str) return '';
-  return String(str)
+  if (typeof str !== 'string') return String(str || '');
+  return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -14,120 +23,114 @@ function escapeHtml(str) {
     .replace(/'/g, '&#039;');
 }
 
-const PRIMARY_ACCENT = REPLY?.brand?.primary || '#C5A880';
-const HEADER_DARK = REPLY?.brand?.headerDark || '#0B111E';
+/**
+ * Dynamically resolves the base URL so email links in Zoho Mail
+ * always lead directly to the active store and admin dashboard.
+ */
+export function resolveBaseUrl(customBaseUrl) {
+  if (customBaseUrl && typeof customBaseUrl === 'string' && customBaseUrl.startsWith('http')) {
+    return customBaseUrl.replace(/\/$/, '');
+  }
+  if (process.env.NEXT_PUBLIC_SITE_URL && !process.env.NEXT_PUBLIC_SITE_URL.includes('DOMAIN')) {
+    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '');
+  }
+  if (process.env.SITE_URL && !process.env.SITE_URL.includes('DOMAIN')) {
+    return process.env.SITE_URL.replace(/\/$/, '');
+  }
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  if (SITE.domain && SITE.domain !== 'DOMAIN.com' && !SITE.domain.includes('DOMAIN')) {
+    return `https://${SITE.domain}`;
+  }
+  // Cloud environment / preview fallback
+  return 'https://ais-dev-xdh4d5ckavk5dajkxx66zn-274197567478.us-west2.run.app';
+}
 
 /**
- * LIGHT Shell primitive with Favicon & Gold Crest Header
+ * Base shell wrapper: White card on light background, dark header band, light body.
  */
 function shell({ eyebrow, title, meta, body }) {
-  const domain = SITE.domain || 'thebuggyshop.com.au';
-  const siteName = SITE.name || 'The Buggy Shop';
+  const currentYear = new Date().getFullYear();
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtml(title)}</title>
+  <style>
+    body { margin: 0; padding: 0; background-color: #F1F5F9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    table { border-collapse: collapse; }
+    img { border: 0; outline: none; text-decoration: none; }
+    a { color: ${PRIMARY_ACCENT}; text-decoration: underline; }
+  </style>
 </head>
-<body style="margin: 0; padding: 0; background-color: #F1F5F9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #0F172A;">
-  <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #F1F5F9; padding: 32px 16px;">
+<body style="margin: 0; padding: 24px 12px; background-color: #F1F5F9;">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #F1F5F9;">
     <tr>
       <td align="center">
-        <!-- Main Card Container (LIGHT BODY) -->
-        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width: 600px; background-color: #FFFFFF; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07); border: 1px solid #E2E8F0;">
+        <!-- Main Card (Max 600px) -->
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="max-width: 600px; background-color: #FFFFFF; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08); border: 1px solid #E2E8F0;">
           
           <!-- Dark Brand Header Band -->
           <tr>
-            <td style="background-color: ${HEADER_DARK}; padding: 26px 32px; border-bottom: 3px solid ${PRIMARY_ACCENT};">
-              <table width="100%" border="0" cellpadding="0" cellspacing="0">
-                
-                <!-- Brand Crest / Favicon & Wordmark Header Row -->
-                <tr>
-                  <td style="padding-bottom: 16px;">
-                    <table border="0" cellpadding="0" cellspacing="0">
-                      <tr>
-                        <!-- Favicon & Gold Cart Emblem Box -->
-                        <td width="42" height="42" valign="middle" align="center" style="background-color: #070B14; border: 1.5px solid ${PRIMARY_ACCENT}; border-radius: 10px; padding: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.4);">
-                          <table border="0" cellpadding="0" cellspacing="0">
-                            <tr>
-                              <td align="center" style="font-size: 20px; line-height: 1; color: ${PRIMARY_ACCENT};">
-                                &#9971;
-                              </td>
-                            </tr>
-                          </table>
-                        </td>
-                        <td style="padding-left: 14px; vertical-align: middle;">
-                          <div style="color: #FFFFFF; font-size: 15px; font-weight: 900; letter-spacing: 0.8px; text-transform: uppercase; font-family: Georgia, serif; line-height: 1.2;">
-                            ${escapeHtml(siteName)}
-                          </div>
-                          <div style="color: ${PRIMARY_ACCENT}; font-size: 9px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding-top: 2px;">
-                            ${escapeHtml(ENTITY?.legalName || 'TBS NO.2 PTY LTD')} (ABN ${escapeHtml(ENTITY?.abn || '65 108 218 471')}) &bull; EST. 2004
-                          </div>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
+            <td style="background-color: ${HEADER_DARK}; padding: 32px 28px; text-align: left;">
+              ${eyebrow ? `
+                <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: ${PRIMARY_ACCENT}; margin-bottom: 6px;">
+                  ${escapeHtml(eyebrow)}
+                </div>
+              ` : ''}
+              
+              <div style="font-size: 24px; font-weight: 800; color: #FFFFFF; line-height: 1.2; margin: 0 0 4px 0;">
+                ${escapeHtml(SITE.name)}
+              </div>
 
-                <!-- Eyebrow Tag -->
-                ${eyebrow ? `
-                <tr>
-                  <td style="color: ${PRIMARY_ACCENT}; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding-bottom: 6px; padding-top: 4px; border-top: 1px solid rgba(197, 168, 128, 0.2);">
-                    ${escapeHtml(eyebrow)}
-                  </td>
-                </tr>` : ''}
+              <div style="font-size: 13px; color: #94A3B8; margin: 0 0 12px 0;">
+                ${escapeHtml(REPLY?.headerTagline || 'Australia\'s Premier Golf Buggies & Luxury Carts')}
+              </div>
 
-                <!-- Main Title -->
-                <tr>
-                  <td style="color: #FFFFFF; font-size: 22px; font-weight: 700; line-height: 1.3; letter-spacing: -0.3px;">
-                    ${escapeHtml(title)}
-                  </td>
-                </tr>
+              <div style="font-size: 18px; font-weight: 700; color: #F8FAFC; margin: 0;">
+                ${escapeHtml(title)}
+              </div>
 
-                <!-- Meta subtitle -->
-                ${meta ? `
-                <tr>
-                  <td style="color: #94A3B8; font-size: 13px; padding-top: 6px;">
-                    ${escapeHtml(meta)}
-                  </td>
-                </tr>` : ''}
-              </table>
+              ${meta ? `
+                <div style="font-size: 12px; color: #CBD5E1; margin-top: 6px; font-family: monospace;">
+                  ${escapeHtml(meta)}
+                </div>
+              ` : ''}
             </td>
           </tr>
 
-          <!-- Card Body Content -->
+          <!-- Gold Accent Rule (3px) -->
           <tr>
-            <td style="padding: 32px; background-color: #FFFFFF; color: #0F172A; font-size: 15px; line-height: 1.6;">
+            <td style="height: 3px; background-color: ${PRIMARY_ACCENT}; font-size: 0; line-height: 0;">&nbsp;</td>
+          </tr>
+
+          <!-- Light Email Body -->
+          <tr>
+            <td style="padding: 32px 28px; color: #0F172A; font-size: 14px; line-height: 1.6; background-color: #FFFFFF;">
               ${body}
             </td>
           </tr>
 
-          <!-- Complete Verified Business Footer Band -->
+          <!-- Light Footer -->
           <tr>
-            <td style="padding: 24px 32px; background-color: #F8FAFC; border-top: 1px solid #E2E8F0; text-align: center; color: #475569; font-size: 12px; line-height: 1.6;">
-              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 10px;">
-                <tr>
-                  <td align="center">
-                    <span style="display: inline-block; width: 6px; height: 6px; background-color: ${PRIMARY_ACCENT}; border-radius: 50%; margin-right: 6px; vertical-align: middle;"></span>
-                    <strong style="color: #0F172A; font-size: 13px; font-family: Georgia, serif;">${escapeHtml(ENTITY?.legalName || 'TBS NO.2 PTY LTD')}</strong>
-                    <span style="color: #64748B; font-size: 12px; margin-left: 4px;">(ABN: ${escapeHtml(ENTITY?.abn || '65 108 218 471')})</span>
-                  </td>
-                </tr>
-              </table>
-
-              <p style="margin: 0 0 4px 0; color: #334155; font-weight: 600;">
-                Queensland Headquarters &amp; Technical Facility: 42 Industrial Avenue, Molendinar QLD 4214, Australia
+            <td style="background-color: #F8FAFC; padding: 20px 28px; border-top: 1px solid #E2E8F0; text-align: center; font-size: 12px; color: #64748B;">
+              <p style="margin: 0 0 6px 0; font-weight: 700; color: #334155;">
+                ${escapeHtml(SITE.legalName || SITE.name)} &bull; ABN: ${escapeHtml(SITE.abn || '65 108 218 471')}
               </p>
-              <p style="margin: 0 0 6px 0; color: #64748B;">
-                Nationwide Hydraulic Tail-Lift Delivery to Clubs, Acreage Estates &amp; Depots Australia-Wide
+              <p style="margin: 0 0 6px 0;">
+                Gold Coast &amp; Brisbane Technical Workshop &bull; Dispatching Australia-Wide
               </p>
-              <p style="margin: 0 0 8px 0; color: #64748B;">
-                Direct Sales &amp; Technical Desk: <strong><a href="tel:0480811308" style="color: #0F172A; text-decoration: none;">0480 811 308</a></strong> &bull; Official Email: <strong><a href="mailto:sales@thebuggyshoppty.com.au" style="color: #0F172A; text-decoration: none;">sales@thebuggyshoppty.com.au</a></strong>
+              <p style="margin: 0; color: #94A3B8;">
+                Phone: ${escapeHtml(CONTACT.phoneDisplay || '0480 811 308')} &bull; Email: ${escapeHtml(CONTACT.email || 'sales@thebuggyshop.com.au')}
               </p>
-              <p style="margin: 0; color: #94A3B8; font-size: 11px;">
-                Operating Hours: Monday &ndash; Friday: 8:00 AM &ndash; 5:00 PM AEST | Saturday: 9:00 AM &ndash; 1:00 PM AEST
+              <p style="margin: 8px 0 0 0; font-size: 11px; color: #CBD5E1;">
+                &copy; ${currentYear} ${escapeHtml(SITE.name)}. All rights reserved.
               </p>
             </td>
           </tr>
@@ -140,32 +143,44 @@ function shell({ eyebrow, title, meta, body }) {
 </html>`;
 }
 
-function field(label, valueHtml, marginBottom = 16) {
+/**
+ * Label + Value row primitive
+ */
+function field(label, valueHtml, marginBottom = 12) {
   return `
-  <div style="margin-bottom: ${marginBottom}px;">
-    <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748B; margin-bottom: 4px;">
-      ${escapeHtml(label)}
+    <div style="margin-bottom: ${marginBottom}px;">
+      <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #64748B; margin-bottom: 2px;">
+        ${escapeHtml(label)}
+      </div>
+      <div style="font-size: 14px; color: #0F172A; font-weight: 500;">
+        ${valueHtml}
+      </div>
     </div>
-    <div style="font-size: 14px; font-weight: 600; color: #0F172A;">
-      ${valueHtml}
-    </div>
-  </div>`;
+  `;
 }
 
-function divider() {
-  return `<hr style="border: 0; border-top: 1px solid #E2E8F0; margin: 24px 0;" />`;
-}
-
+/**
+ * Callout panel with left gold border
+ */
 function callout(innerHtml) {
   return `
-  <div style="background-color: #FAF8F5; border-left: 4px solid ${PRIMARY_ACCENT}; padding: 16px 20px; border-radius: 6px; margin: 20px 0;">
-    ${innerHtml}
-  </div>`;
+    <div style="background-color: #FAF8F5; border-left: 4px solid ${PRIMARY_ACCENT}; border-radius: 6px; padding: 16px 20px; margin: 18px 0; border-top: 1px solid #EBE5D8; border-right: 1px solid #EBE5D8; border-bottom: 1px solid #EBE5D8;">
+      ${innerHtml}
+    </div>
+  `;
 }
 
+/**
+ * Horizontal rule divider
+ */
+const divider = '<hr style="border: 0; height: 1px; background-color: #E2E8F0; margin: 24px 0;" />';
+
+/**
+ * Dark styled CTA button with arrow
+ */
 function button(href, text) {
   return `
-  <table border="0" cellpadding="0" cellspacing="0" style="margin: 16px 0;">
+  <table border="0" cellpadding="0" cellspacing="0" style="margin: 20px 0;">
     <tr>
       <td align="center" style="border-radius: 8px; background-color: ${HEADER_DARK};">
         <a href="${escapeHtml(href)}" target="_blank" style="display: inline-block; padding: 14px 28px; font-size: 14px; font-weight: 700; color: #FFFFFF; text-decoration: none; border-radius: 8px; letter-spacing: 0.3px; border: 1px solid ${PRIMARY_ACCENT};">
@@ -179,13 +194,13 @@ function button(href, text) {
 /**
  * 1. Order Notification Email to Admin Desk (Zoho Mail)
  */
-export function orderNotificationEmail(order) {
+export function orderNotificationEmail(order, customBaseUrl) {
   const ref = order.orderNumber || order.id || 'Pending';
   const customer = order.customer || {};
   const items = order.items || [];
   const total = money(order.total || 0);
-  const domain = SITE.domain || 'thebuggyshop.com.au';
-  const paymentMethod = order.paymentMethod || 'Direct Bank Wire / PayID';
+  const baseUrl = resolveBaseUrl(customBaseUrl);
+  const paymentMethod = order.paymentMethod || 'Direct Bank Transfer (Osko / Fast EFT)';
 
   const itemsHtml = items.map(item => `
     <tr>
@@ -247,10 +262,12 @@ export function orderNotificationEmail(order) {
       Click below to compose and send verified payment details directly to this customer:
     </p>
 
-    ${button(`https://${domain}/admin/send-payment-email/?orderId=${escapeHtml(ref)}`, 'Compose & Send Payment Details')}
+    ${button(`${baseUrl}/admin/send-payment-email/?orderId=${escapeHtml(ref)}`, 'Compose & Send Payment Details')}
 
-    <p style="font-size: 12px; color: #94A3B8; margin-top: 12px;">
-      Or manage all orders directly at: <a href="https://${domain}/admin/orders/${escapeHtml(ref)}/" target="_blank" style="color: #0F172A; font-weight: 600; text-decoration: underline;">View Order ${escapeHtml(ref)} in Portal</a> &bull; <a href="https://${domain}/admin/" target="_blank" style="color: #0F172A; text-decoration: underline;">Admin Dashboard Hub</a>
+    <p style="font-size: 12px; color: #64748B; margin-top: 14px; line-height: 1.6;">
+      Direct Portal Links:<br />
+      &bull; <a href="${baseUrl}/admin/orders/${escapeHtml(ref)}/" target="_blank" style="color: #0F172A; font-weight: 700; text-decoration: underline;">Open Order ${escapeHtml(ref)} in Admin Dashboard</a><br />
+      &bull; <a href="${baseUrl}/admin/" target="_blank" style="color: #0F172A; text-decoration: underline;">View All Orders in Admin Hub</a>
     </p>
   `;
 
@@ -265,12 +282,13 @@ export function orderNotificationEmail(order) {
 /**
  * 2. Customer Confirmation Email with Tailored "What Happens Next"
  */
-export function orderConfirmationEmail(order) {
+export function orderConfirmationEmail(order, customBaseUrl) {
   const ref = order.orderNumber || order.id || 'Pending';
   const customer = order.customer || {};
   const items = order.items || [];
   const total = money(order.total || 0);
   const paymentMethod = (order.paymentMethod || '').toLowerCase();
+  const baseUrl = resolveBaseUrl(customBaseUrl);
 
   const itemsList = items.map(item => `
     <li style="margin-bottom: 6px; color: #334155;">
@@ -299,13 +317,13 @@ export function orderConfirmationEmail(order) {
       </p>
     `;
   } else {
-    // Bank Transfer / EFT
+    // Bank Transfer / Osko / Fast EFT
     paymentExplanation = `
       <p style="color: #334155; margin-bottom: 10px;">
-        <strong>Direct Australian Bank Wire (EFT / Osko):</strong> You have selected standard electronic funds transfer.
+        <strong>Direct Australian Bank Transfer (Osko / Fast EFT):</strong> You have selected standard electronic funds transfer.
       </p>
       <p style="color: #334155; margin-bottom: 12px;">
-        Our sales desk is reviewing your order details. <strong>You will receive an official payment-details email shortly</strong> with verified Australian Bank Wire details (BSB and Account Number), and your unique reference number (<strong>${escapeHtml(ref)}</strong>).
+        Our sales desk is reviewing your order details. <strong>You will receive an official payment-details email shortly</strong> with verified Australian Bank Transfer details (BSB and Account Number), and your unique reference number (<strong>${escapeHtml(ref)}</strong>).
       </p>
     `;
   }
@@ -331,7 +349,7 @@ export function orderConfirmationEmail(order) {
         </tr>
         <tr>
           <td style="padding-top: 8px;"><strong style="color: #64748B; font-size: 13px;">Selected Payment:</strong></td>
-          <td align="right" style="padding-top: 8px;"><span style="color: #0F172A; font-size: 13px; font-weight: 600;">${escapeHtml(order.paymentMethod || 'Direct Bank Wire / PayID')}</span></td>
+          <td align="right" style="padding-top: 8px;"><span style="color: #0F172A; font-size: 13px; font-weight: 600;">${escapeHtml(order.paymentMethod || 'Direct Bank Transfer (Osko / Fast EFT)')}</span></td>
         </tr>
       </table>
     `)}
@@ -352,7 +370,7 @@ export function orderConfirmationEmail(order) {
     ${paymentExplanation}
 
     <p style="color: #64748B; font-size: 13px; margin: 0;">
-      Please keep your order reference <strong>${escapeHtml(ref)}</strong> handy for all correspondence. If you have any urgent dispatch requirements, feel free to call our direct technical desk at <strong>0480 811 308</strong>.
+      Please keep your order reference <strong>${escapeHtml(ref)}</strong> handy for all correspondence. If you have any urgent dispatch requirements, feel free to call our direct technical desk at <strong>${escapeHtml(CONTACT.phoneDisplay || '0480 811 308')}</strong>.
     </p>
   `;
 
@@ -367,13 +385,12 @@ export function orderConfirmationEmail(order) {
 /**
  * 3. Payment Details Email (Sent by Admin via Reply Portal Composer)
  */
-export function paymentDetailsEmail({ order, parsedFields = [], customNotes = '' }) {
+export function paymentDetailsEmail(order, { methodId = 'bank-transfer', parsedFields = [], customNote = '', customBaseUrl } = {}) {
   const ref = order.orderNumber || order.id || 'Pending';
   const customer = order.customer || {};
   const total = money(order.total || 0);
-  const methodId = order.paymentMethodId || 'bank-transfer';
   const methodParts = paymentMethodParts(methodId, total, ref);
-  const domain = SITE.domain || 'thebuggyshop.com.au';
+  const baseUrl = resolveBaseUrl(customBaseUrl);
 
   const fieldsHtml = parsedFields.map(f => `
     <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 12px 16px; margin-bottom: 10px;">
@@ -418,7 +435,7 @@ export function paymentDetailsEmail({ order, parsedFields = [], customNotes = ''
       ${escapeHtml(methodParts.closing)}
     </p>
 
-    ${button(`https://${domain}/order/payment-details/?id=${escapeHtml(ref)}`, 'View & Tap-to-Copy Payment Details Online')}
+    ${button(`${baseUrl}/order/payment-details/?id=${escapeHtml(ref)}`, 'View & Tap-to-Copy Payment Details Online')}
 
     ${divider()}
 
@@ -429,12 +446,16 @@ export function paymentDetailsEmail({ order, parsedFields = [], customNotes = ''
       ${paymentTermsHtml(ref)}
     </div>
 
-    ${customNotes ? `
+    ${customNote ? `
       ${divider()}
       <div style="background-color: #F8FAFC; border: 1px dashed #CBD5E1; padding: 14px; border-radius: 8px; font-size: 13px; color: #334155;">
-        <strong>Special Dispatch Note:</strong> ${escapeHtml(customNotes)}
+        <strong>Special Dispatch Note:</strong> ${escapeHtml(customNote)}
       </div>
     ` : ''}
+
+    <p style="font-size: 12px; color: #64748B; margin-top: 14px;">
+      Once paid, you can submit your remittance proof directly at: <a href="${baseUrl}/order/confirm-payment/?id=${escapeHtml(ref)}" target="_blank" style="color: #0F172A; text-decoration: underline; font-weight: 600;">Confirm Remittance Receipt Online</a>
+    </p>
   `;
 
   return shell({
@@ -448,10 +469,10 @@ export function paymentDetailsEmail({ order, parsedFields = [], customNotes = ''
 /**
  * 4. General & Wholesale Enquiry Notification to Admin Desk
  */
-export function enquiryNotificationEmail(enquiry) {
+export function enquiryNotificationEmail(enquiry, customBaseUrl) {
   const isWholesale = enquiry.type === 'wholesale';
   const ref = enquiry.id || 'Enquiry';
-  const domain = SITE.domain || 'thebuggyshop.com.au';
+  const baseUrl = resolveBaseUrl(customBaseUrl);
 
   const body = `
     <p style="margin-top: 0; font-size: 16px; color: #334155;">
@@ -472,7 +493,13 @@ export function enquiryNotificationEmail(enquiry) {
       ${escapeHtml(enquiry.message)}
     </div>
 
-    ${button(`https://${domain}/admin/reply-enquiry/?enquiryId=${escapeHtml(ref)}`, 'Reply via Reply Portal Composer')}
+    ${button(`${baseUrl}/admin/reply-enquiry/?enquiryId=${escapeHtml(ref)}`, 'Reply via Reply Portal Composer')}
+
+    <p style="font-size: 12px; color: #64748B; margin-top: 14px;">
+      Direct Portal Links:<br />
+      &bull; <a href="${baseUrl}/admin/enquiries/${escapeHtml(ref)}/" target="_blank" style="color: #0F172A; font-weight: 700; text-decoration: underline;">View Enquiry ${escapeHtml(ref)} in Dashboard</a><br />
+      &bull; <a href="${baseUrl}/admin/" target="_blank" style="color: #0F172A; text-decoration: underline;">Admin Dashboard Hub</a>
+    </p>
   `;
 
   return shell({
@@ -518,6 +545,58 @@ export function enquiryReplyEmail({ enquiry, replyMessage, adminName = 'The Bugg
     eyebrow: 'Customer Support & Sales Desk',
     title: `Re: ${escapeHtml(enquiry.subject || 'Your Enquiry')}`,
     meta: `Reference: ${ref}`,
+    body,
+  });
+}
+
+/**
+ * 6. Payment Confirmation Alert Notification to Admin Desk
+ */
+export function paymentConfirmationNotificationEmail(order, note = '', screenshotUrl = '', customBaseUrl) {
+  const ref = order.orderNumber || order.id || 'Order';
+  const customer = order.customer || {};
+  const baseUrl = resolveBaseUrl(customBaseUrl);
+
+  const body = `
+    <p style="margin-top: 0; font-size: 16px; color: #334155;">
+      A customer has submitted a <strong>Payment Confirmation / Remittance Notification</strong> for order <strong>${escapeHtml(ref)}</strong>.
+    </p>
+
+    ${field('Order Reference', escapeHtml(ref))}
+    ${field('Customer Name', escapeHtml(customer.name || 'N/A'))}
+    ${field('Customer Email', `<a href="mailto:${escapeHtml(customer.email)}" style="color: #0F172A;">${escapeHtml(customer.email)}</a>`)}
+    ${field('Customer Phone', `<a href="tel:${escapeHtml(customer.phone)}" style="color: #0F172A;">${escapeHtml(customer.phone || 'N/A')}</a>`)}
+    ${field('Total Amount Due', money(order.total || 0))}
+    
+    ${note ? `
+      ${divider()}
+      <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748B; margin-bottom: 6px;">
+        Customer Payment Reference / Transaction Note
+      </div>
+      <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; padding: 14px; border-radius: 8px; font-size: 14px; color: #0F172A;">
+        ${escapeHtml(note)}
+      </div>
+    ` : ''}
+
+    ${screenshotUrl ? `
+      ${divider()}
+      <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748B; margin-bottom: 6px;">
+        Remittance Receipt Link
+      </div>
+      <div>
+        <a href="${escapeHtml(screenshotUrl)}" target="_blank" style="color: #0F172A; font-weight: 700; text-decoration: underline;">
+          View Uploaded Remittance Screenshot &rarr;
+        </a>
+      </div>
+    ` : ''}
+
+    ${button(`${baseUrl}/admin/orders/${escapeHtml(ref)}/`, 'Open Order in Admin Portal')}
+  `;
+
+  return shell({
+    eyebrow: 'Payment Remittance Alert',
+    title: `Payment Submitted: Order ${ref}`,
+    meta: `Customer: ${escapeHtml(customer.name || 'Client')}`,
     body,
   });
 }

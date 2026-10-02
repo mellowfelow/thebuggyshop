@@ -9,10 +9,42 @@ import {
 } from '@/utils/emailTemplates';
 import { CONTACT, FORMS, SITE } from '@/src/config/site';
 
+function getRequestBaseUrl(request) {
+  const origin = request.headers.get('origin') || request.headers.get('referer');
+  if (origin) {
+    try {
+      const u = new URL(origin);
+      return `${u.protocol}//${u.host}`;
+    } catch (e) {}
+  }
+  const host = request.headers.get('x-forwarded-host') || request.headers.get('host');
+  const proto = request.headers.get('x-forwarded-proto') || 'https';
+  if (host && !host.includes('localhost') && !host.includes('127.0.0.1')) {
+    return `${proto}://${host}`;
+  }
+  if (process.env.NEXT_PUBLIC_SITE_URL && !process.env.NEXT_PUBLIC_SITE_URL.includes('DOMAIN')) {
+    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '');
+  }
+  if (process.env.SITE_URL && !process.env.SITE_URL.includes('DOMAIN')) {
+    return process.env.SITE_URL.replace(/\/$/, '');
+  }
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  if (SITE.domain && SITE.domain !== 'DOMAIN.com' && !SITE.domain.includes('DOMAIN')) {
+    return `https://${SITE.domain}`;
+  }
+  return 'https://ais-dev-xdh4d5ckavk5dajkxx66zn-274197567478.us-west2.run.app';
+}
+
 export async function POST(request) {
   try {
     const body = await request.json();
     const formName = body.formName || (body.items ? 'order' : 'contact');
+    const baseUrl = getRequestBaseUrl(request);
 
     // =========================================================================
     // 1. ORDER SUBMISSION (both 'Place order' and 'Order via WhatsApp' checkout)
@@ -25,7 +57,7 @@ export async function POST(request) {
         shipping = 0,
         discount = 0,
         total = 0,
-        paymentMethod = 'Direct Bank Wire (EFT / Osko / PayID)',
+        paymentMethod = 'Direct Bank Transfer (Osko / Fast EFT)',
         channel = 'email', // 'email' | 'whatsapp'
         orderRef,
       } = body;
@@ -70,7 +102,7 @@ export async function POST(request) {
       await sendMail({
         to: adminDest,
         subject: `[New Order ${orderNumber}] ${customer.name} - ${channel === 'whatsapp' ? 'WhatsApp' : 'Web'} Checkout`,
-        html: orderNotificationEmail(orderRecord),
+        html: orderNotificationEmail(orderRecord, baseUrl),
         replyTo: customer.email,
       });
 
@@ -78,7 +110,7 @@ export async function POST(request) {
       await sendMail({
         to: customer.email,
         subject: `Order Confirmation: ${orderNumber} - The Buggy Shop`,
-        html: orderConfirmationEmail(orderRecord),
+        html: orderConfirmationEmail(orderRecord, baseUrl),
         replyTo: adminDest,
       });
 
@@ -99,12 +131,12 @@ export async function POST(request) {
       phone = '',
       subject = '',
       message = '',
-      type = formName === 'wholesale' ? 'wholesale' : 'contact',
+      type = 'contact',
     } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
-        { success: false, message: 'Please provide your name, email, and message.' },
+        { success: false, message: 'Name, email, and message are required.' },
         { status: 400 }
       );
     }
@@ -115,17 +147,17 @@ export async function POST(request) {
       name,
       email,
       phone,
-      subject: subject || `${SITE.name} ${type === 'wholesale' ? 'Wholesale / Fleet' : 'General'} Enquiry`,
+      subject: subject || (type === 'wholesale' ? 'Wholesale / Fleet Application' : 'General Enquiry'),
       message,
       type,
       status: 'new',
       createdAt: new Date().toISOString(),
     };
 
-    // 1. Save to enquiry store
+    // 1. Save to Redis enquiry store
     await saveEnquiry(enquiryRecord);
 
-    // 2. Email Admin Desk
+    // 2. Send Notification Email to Admin
     const destEmail =
       type === 'wholesale'
         ? process.env.WHOLESALE_EMAIL || FORMS.destinations?.wholesale || CONTACT.email
@@ -133,20 +165,20 @@ export async function POST(request) {
 
     await sendMail({
       to: destEmail,
-      subject: `[Enquiry ${enquiryId}] ${subject || name}`,
-      html: enquiryNotificationEmail(enquiryRecord),
+      subject: `[${type === 'wholesale' ? 'Wholesale Enquiry' : 'Customer Enquiry'}] ${name} - ${subject || 'The Buggy Shop'}`,
+      html: enquiryNotificationEmail(enquiryRecord, baseUrl),
       replyTo: email,
     });
 
     return NextResponse.json({
       success: true,
       enquiryId,
-      message: 'Enquiry received. Our Queensland team will respond promptly.',
+      message: 'Enquiry received. A technical consultant will respond shortly.',
     });
-  } catch (error) {
-    console.error('[api/contact] Error processing request:', error);
+  } catch (err) {
+    console.error('[api/contact] Error processing submission:', err);
     return NextResponse.json(
-      { success: false, message: error.message || 'Internal server error' },
+      { success: false, message: 'Internal server error processing request.' },
       { status: 500 }
     );
   }

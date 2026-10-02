@@ -94,7 +94,7 @@ export default function CheckoutClient() {
         ? 'Bitcoin (BTC) / Tether (USDT) (10% Instant Rebate Applied)'
         : selectedPayment === 'pay-id'
         ? 'Australian PayID Instant Transfer (Registered ABN)'
-        : 'Direct Bank Wire (EFT / Osko)';
+        : 'Direct Bank Transfer (Osko / Fast EFT)';
 
     const orderData = {
       orderNumber: orderRef,
@@ -349,10 +349,10 @@ export default function CheckoutClient() {
                   />
                   <div>
                     <strong className="text-sm text-slate-900 block font-bold">
-                      Direct Australian Bank Wire (EFT / Osko)
+                      Direct Bank Transfer (Osko / Fast EFT)
                     </strong>
                     <span className="text-xs text-slate-600 block mt-0.5">
-                      Direct Electronic Funds Transfer. Official business BSB &amp; Account number dispatched via email.
+                      Instant electronic funds transfer via Osko / NPP. Official business BSB &amp; Account number dispatched via email.
                     </span>
                   </div>
                 </div>
