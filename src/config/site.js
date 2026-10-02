@@ -52,7 +52,7 @@ export const SHOP = {
   freeShippingThreshold: 0,
   shippingFee: 495, // Flat-rate hydraulic tail-lift delivery to property gates nationwide
   cryptoDiscount: 10, // 10% discount for BTC / USDT payments
-  paymentMethods: ['bank-transfer', 'pay-id', 'crypto-BTC', 'crypto-USDT'],
+  paymentMethods: ['bank-transfer', 'pay-id', 'pay-in-4', 'crypto-BTC', 'crypto-USDT'],
   gstIncluded: true,
   taxRate: 0.10, // 10% Australian GST included in pricing
 }
@@ -89,6 +89,12 @@ export const REPLY = {
       label: 'Australian PayID Instant Transfer',
       opening: 'Please transfer the order total of {amount} to our registered Australian PayID identifier for order {ref}.',
       closing: 'PayID transfers settle in real-time under the Australian New Payments Platform (NPP).'
+    },
+    {
+      id: 'pay-in-4',
+      label: 'Pay in 4 (Commercial Split: 1st Due Today, Rest Month-End)',
+      opening: 'Your order {ref} has been set up under our Pay in 4 Commercial Split Plan. The 1st installment (25% of {amount}) is due today to lock in your machinery reservation and schedule pre-delivery inspection.',
+      closing: 'The remaining 3 equal installments will be billed and payable at each month end. Official EFT / BSB remittance details are provided above.'
     },
     {
       id: 'crypto-BTC',

@@ -153,15 +153,15 @@ export default function ProductDetailClient({ product, relatedProducts }) {
 
             {/* Crypto & Finance Split Details */}
             <div className="space-y-2 pt-2 border-t border-[#DDE4DF] text-xs">
-              <div className="flex items-center justify-between p-3.5 rounded-xl bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 text-white border border-[#C5A880] shadow-md">
-                <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 rounded-full bg-[#C5A880] text-slate-950 flex items-center justify-center font-bold text-xs">₿</span>
+              <div className="flex items-center justify-between p-3.5 rounded-xl bg-emerald-950 text-white border border-emerald-500 shadow-md">
+                <div className="flex items-center gap-2.5">
+                  <span className="w-7 h-7 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center font-black text-sm shadow-xs">₿</span>
                   <div>
-                    <span className="font-bold text-slate-200 block text-xs">Pay with Crypto (BTC / USDT):</span>
-                    <span className="text-[11px] font-bold text-[#C5A880]">Save ${(product.price - cryptoPrice).toLocaleString('en-AU')} (10% Instant Rebate)</span>
+                    <span className="font-bold text-emerald-100 block text-xs">Pay with Crypto (BTC / USDT):</span>
+                    <span className="text-[11px] font-bold text-emerald-300">Save ${(product.price - cryptoPrice).toLocaleString('en-AU')} (10% Instant Rebate)</span>
                   </div>
                 </div>
-                <span className="font-black text-base text-[#C5A880] font-mono">
+                <span className="font-black text-base text-emerald-400 font-mono">
                   ${cryptoPrice.toLocaleString('en-AU')} AUD
                 </span>
               </div>

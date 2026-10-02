@@ -173,7 +173,10 @@ function callout(innerHtml) {
 /**
  * Horizontal rule divider
  */
-const divider = '<hr style="border: 0; height: 1px; background-color: #E2E8F0; margin: 24px 0;" />';
+function divider() {
+  return '<hr style="border: 0; height: 1px; background-color: #E2E8F0; margin: 24px 0;" />';
+}
+divider.toString = () => '<hr style="border: 0; height: 1px; background-color: #E2E8F0; margin: 24px 0;" />';
 
 /**
  * Dark styled CTA button with arrow
@@ -314,6 +317,19 @@ export function orderConfirmationEmail(order, customBaseUrl) {
       </p>
       <p style="color: #334155; margin-bottom: 12px;">
         Our commercial desk is preparing your registered ABN PayID identifier and exact reference instructions. <strong>You will receive an official payment-details email shortly</strong> with tap-to-copy PayID details. Once settled, your vehicle will enter pre-delivery inspection.
+      </p>
+    `;
+  } else if (paymentMethod.includes('pay-in-4') || paymentMethod.includes('pay in 4')) {
+    const firstSplit = money(Math.round((order.total || 0) / 4));
+    paymentExplanation = `
+      <p style="color: #334155; margin-bottom: 10px;">
+        <strong>Commercial Pay in 4 Schedule Activated:</strong> You have selected our 4-split commercial equipment plan (0% interest).
+      </p>
+      <p style="color: #334155; margin-bottom: 12px;">
+        <strong>1st Installment Due Today:</strong> ${firstSplit} is required to lock in your machinery reservation and trigger pre-delivery mechanical testing.
+      </p>
+      <p style="color: #334155; margin-bottom: 12px;">
+        <strong>Subsequent 3 Installments:</strong> The remaining 3 installments will be billed and payable at each consecutive month end. Our commercial team will email your verified payment details and schedule shortly.
       </p>
     `;
   } else {

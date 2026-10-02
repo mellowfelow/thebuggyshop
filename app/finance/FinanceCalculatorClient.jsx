@@ -13,6 +13,21 @@ export default function FinanceCalculatorClient() {
 
   // Pay in 4 calculation
   const payIn4Installment = Math.round(vehiclePrice / 4);
+  const payIn4FinalInstallment = vehiclePrice - (payIn4Installment * 3);
+
+  // Dynamic month end dates for the 3 subsequent installments
+  const getMonthEndDates = (count = 3) => {
+    const dates = [];
+    const now = new Date();
+    for (let i = 1; i <= count; i++) {
+      const lastDay = new Date(now.getFullYear(), now.getMonth() + i + 1, 0);
+      dates.push(
+        lastDay.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })
+      );
+    }
+    return dates;
+  };
+  const monthEndDates = getMonthEndDates(3);
 
   // Crypto calculation (10% rebate)
   const cryptoSavings = Math.round(vehiclePrice * (SHOP.cryptoDiscount / 100));
@@ -133,27 +148,63 @@ export default function FinanceCalculatorClient() {
           <div className="bg-gradient-to-br from-[#0E2A1E] to-[#071810] text-white rounded-3xl p-6 border border-[#C5A265]/40 shadow-xl space-y-4">
             <div className="flex items-center justify-between">
               <span className="text-xs font-black uppercase tracking-wider text-[#C5A265]">
-                Option 1: 4 Commercial Split Payments
+                Option 1: Commercial Pay in 4 Splits
               </span>
               <span className="text-[10px] bg-[#071810] text-[#C5A265] px-2.5 py-0.5 rounded-full border border-[#C5A265]/40 font-bold">
-                Zero Surcharge
+                0% Interest &bull; Zero Surcharge
               </span>
             </div>
 
             <div className="space-y-1">
               <div className="text-3xl font-black text-white tracking-tight font-serif">
                 ${payIn4Installment.toLocaleString('en-AU')}{' '}
-                <span className="text-xs font-normal text-[#D3DFD8]">/ instalment</span>
+                <span className="text-xs font-normal text-[#D3DFD8]">/ installment</span>
               </div>
               <p className="text-xs text-[#D3DFD8]">
-                4 equal installments of ${payIn4Installment.toLocaleString('en-AU')} AUD covering full machine drive-away price.
+                Pay 1st installment today to lock reservation. The remaining 3 installments are paid every month end for the following months.
               </p>
             </div>
 
-            <div className="text-[11px] text-[#A6BCB0] space-y-1 pt-2 border-t border-[#183B2B]">
-              <div>• 1st Payment: Today upon order confirmation</div>
-              <div>• 2nd, 3rd, 4th Payments: Scheduled fortnightly or monthly</div>
+            {/* Smart Automated Installment Schedule */}
+            <div className="bg-white/5 rounded-2xl p-3.5 border border-white/10 space-y-2 text-xs">
+              <div className="font-bold text-[#C5A265] text-[10px] uppercase tracking-wider flex items-center justify-between">
+                <span>Automated Month-End Schedule</span>
+                <span className="text-[#D3DFD8] font-mono">4 x ${payIn4Installment.toLocaleString('en-AU')} AUD</span>
+              </div>
+              <div className="space-y-1.5 text-xs">
+                <div className="flex justify-between items-center p-2 rounded-lg bg-emerald-950/90 border border-emerald-500/50 text-white">
+                  <span className="font-bold text-xs flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    1st Installment (Due Today):
+                  </span>
+                  <span className="font-mono font-black text-sm text-emerald-400">
+                    ${payIn4Installment.toLocaleString('en-AU')} AUD
+                  </span>
+                </div>
+                <div className="flex justify-between items-center p-1.5 px-2 rounded-lg bg-black/30 border border-white/5 text-[11px] text-[#D3DFD8]">
+                  <span>2nd Installment ({monthEndDates[0]}):</span>
+                  <span className="font-mono font-bold text-white">${payIn4Installment.toLocaleString('en-AU')}</span>
+                </div>
+                <div className="flex justify-between items-center p-1.5 px-2 rounded-lg bg-black/30 border border-white/5 text-[11px] text-[#D3DFD8]">
+                  <span>3rd Installment ({monthEndDates[1]}):</span>
+                  <span className="font-mono font-bold text-white">${payIn4Installment.toLocaleString('en-AU')}</span>
+                </div>
+                <div className="flex justify-between items-center p-1.5 px-2 rounded-lg bg-black/30 border border-white/5 text-[11px] text-[#D3DFD8]">
+                  <span>4th Installment ({monthEndDates[2]}):</span>
+                  <span className="font-mono font-bold text-white">${payIn4FinalInstallment.toLocaleString('en-AU')}</span>
+                </div>
+              </div>
+              <p className="text-[10px] text-[#A6BCB0] pt-0.5 leading-tight">
+                *Select <strong>&quot;Commercial Pay in 4&quot;</strong> on our checkout page to place your order with this automated split schedule.
+              </p>
             </div>
+
+            <Link
+              href="/shop/"
+              className="w-full py-3 px-4 rounded-xl bg-[#C5A265] hover:bg-[#d4b27c] text-slate-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors shadow-md text-center"
+            >
+              <span>Explore Fleet &amp; Choose Pay in 4 at Checkout &rarr;</span>
+            </Link>
           </div>
 
           {/* OPTION 2: INSTANT CRYPTO 10% DISCOUNT */}

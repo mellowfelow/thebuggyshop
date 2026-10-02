@@ -140,17 +140,17 @@ export default function ProductCard({
             </span>
           </div>
 
-          {/* Compact Crypto Pill */}
-          <div className="bg-[#FAF8F5] border border-[#C5A880]/60 px-1.5 py-0.5 rounded flex items-center justify-between gap-1 text-[9px]">
-            <div className="flex items-center gap-1 min-w-0 truncate">
-              <span className="w-3.5 h-3.5 rounded-full bg-slate-950 text-[#C5A880] flex items-center justify-center font-bold text-[8px] shrink-0">
+          {/* Eye-Catching Green Crypto Pill */}
+          <div className="bg-emerald-50/90 border border-emerald-500/60 px-2 py-1 rounded-md flex items-center justify-between gap-1 text-[9px] sm:text-[10px] shadow-2xs">
+            <div className="flex items-center gap-1.5 min-w-0 truncate">
+              <span className="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-[9px] shrink-0 shadow-xs">
                 ₿
               </span>
-              <span className="font-semibold text-slate-800 truncate">
-                Pay <strong className="text-emerald-700 font-mono font-bold">${cryptoPrice.toLocaleString('en-AU')}</strong>
+              <span className="font-semibold text-emerald-950 truncate">
+                Pay <strong className="text-emerald-800 font-mono font-black">${cryptoPrice.toLocaleString('en-AU')}</strong> with Crypto
               </span>
             </div>
-            <span className="text-[8px] font-bold text-[#8E6E3E] shrink-0">
+            <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-tight bg-emerald-600 text-white px-1.5 py-0.5 rounded shrink-0 shadow-2xs">
               Save ${savings}
             </span>
           </div>

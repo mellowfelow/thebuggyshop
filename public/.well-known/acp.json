@@ -22,6 +22,7 @@
     "payment_methods": [
       "bank-transfer",
       "pay-id",
+      "pay-in-4",
       "crypto-BTC",
       "crypto-USDT"
     ],

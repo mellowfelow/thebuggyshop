@@ -49,17 +49,36 @@ export default function CheckoutClient() {
   const [customerState, setCustomerState] = useState('QLD');
   const [customerPostcode, setCustomerPostcode] = useState('');
   const [deliveryNotes, setDeliveryNotes] = useState('');
-  const [selectedPayment, setSelectedPayment] = useState('bank-transfer'); // bank-transfer, pay-id, crypto
+  const [selectedPayment, setSelectedPayment] = useState('bank-transfer'); // bank-transfer, pay-id, pay-in-4, crypto
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const isCrypto = selectedPayment === 'crypto';
+  const isPayIn4 = selectedPayment === 'pay-in-4';
   const cryptoDiscountAmount = isCrypto ? Math.round(subtotal * (SHOP.cryptoDiscount / 100)) : 0;
   
   const isFreeShipping = SHOP.freeShippingThreshold > 0 && subtotal >= SHOP.freeShippingThreshold;
   const shippingFee = subtotal > 0 ? (isFreeShipping ? 0 : SHOP.shippingFee) : 0;
   const total = subtotal - cryptoDiscountAmount + shippingFee;
+
+  // Pay in 4 Smart Calculation (1st installment today, 3 remaining at month-end)
+  const payIn4Installment = Math.round(total / 4);
+  const payIn4FinalInstallment = total - (payIn4Installment * 3);
+
+  // Dynamic month end dates for the 3 subsequent installments
+  const getMonthEndDates = (count = 3) => {
+    const dates = [];
+    const now = new Date();
+    for (let i = 1; i <= count; i++) {
+      const lastDay = new Date(now.getFullYear(), now.getMonth() + i + 1, 0);
+      dates.push(
+        lastDay.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })
+      );
+    }
+    return dates;
+  };
+  const monthEndDates = getMonthEndDates(3);
 
   const handleOrderSubmission = async (channel = 'email') => {
     setErrorMsg('');
@@ -89,12 +108,19 @@ export default function CheckoutClient() {
     setSubmitting(true);
     const orderRef = generateOrderRef();
 
-    const paymentMethodLabel = 
-      selectedPayment === 'crypto'
-        ? 'Bitcoin (BTC) / Tether (USDT) (10% Instant Rebate Applied)'
-        : selectedPayment === 'pay-id'
-        ? 'Australian PayID Instant Transfer (Registered ABN)'
-        : 'Direct Bank Transfer (Osko / Fast EFT)';
+    let paymentMethodLabel = 'Direct Bank Transfer (Osko / Fast EFT)';
+    let paymentMethodId = 'bank-transfer';
+
+    if (selectedPayment === 'crypto') {
+      paymentMethodLabel = 'Bitcoin (BTC) / Tether (USDT) (10% Instant Rebate Applied)';
+      paymentMethodId = 'crypto-BTC';
+    } else if (selectedPayment === 'pay-id') {
+      paymentMethodLabel = 'Australian PayID Instant Transfer (Registered ABN)';
+      paymentMethodId = 'pay-id';
+    } else if (selectedPayment === 'pay-in-4') {
+      paymentMethodLabel = `Commercial Pay in 4 (1st Split: $${payIn4Installment.toLocaleString('en-AU')} Due Today · Remaining 3 Monthly at Month-End)`;
+      paymentMethodId = 'pay-in-4';
+    }
 
     const orderData = {
       orderNumber: orderRef,
@@ -105,7 +131,19 @@ export default function CheckoutClient() {
       discount: cryptoDiscountAmount,
       total,
       paymentMethod: paymentMethodLabel,
-      paymentMethodId: selectedPayment === 'crypto' ? 'crypto-BTC' : (selectedPayment === 'pay-id' ? 'pay-id' : 'bank-transfer'),
+      paymentMethodId,
+      installmentPlan: isPayIn4 ? {
+        type: 'pay-in-4',
+        firstInstallment: payIn4Installment,
+        monthlyInstallment: payIn4Installment,
+        finalInstallment: payIn4FinalInstallment,
+        schedule: [
+          { split: 1, label: '1st Installment (Due Today)', dueDate: 'Due Today', amount: payIn4Installment },
+          { split: 2, label: `2nd Installment (${monthEndDates[0]})`, dueDate: monthEndDates[0], amount: payIn4Installment },
+          { split: 3, label: `3rd Installment (${monthEndDates[1]})`, dueDate: monthEndDates[1], amount: payIn4Installment },
+          { split: 4, label: `4th Installment (${monthEndDates[2]})`, dueDate: monthEndDates[2], amount: payIn4FinalInstallment },
+        ]
+      } : null,
       channel,
       customer: {
         name: customerName.trim(),
@@ -139,11 +177,20 @@ export default function CheckoutClient() {
         clearCart();
         router.push(`/thank-you-order/?orderId=${orderRef}`);
       } else {
-        setErrorMsg('Order details could not be logged, but your WhatsApp request was prepared.');
+        const errData = await res.json().catch(() => ({}));
+        if (channel === 'whatsapp') {
+          setErrorMsg('Order details could not be logged, but your WhatsApp request was prepared.');
+        } else {
+          setErrorMsg(errData.message || 'There was an issue processing your order. Please try again or contact us directly.');
+        }
       }
     } catch (err) {
       console.error('Order submission error:', err);
-      setErrorMsg('There was an issue processing your order. Please try again or contact us via WhatsApp.');
+      if (channel === 'whatsapp') {
+        setErrorMsg('Order details could not be logged, but your WhatsApp request was prepared.');
+      } else {
+        setErrorMsg('There was an issue processing your order. Please check your connection and try again.');
+      }
     } finally {
       setSubmitting(false);
     }
@@ -388,7 +435,98 @@ export default function CheckoutClient() {
                 <Zap className="w-5 h-5 text-[#C5A880] shrink-0 mt-0.5" />
               </label>
 
-              {/* Option 3: Cryptocurrency (10% Rebate) */}
+              {/* Option 3: Commercial Pay in 4 (4 Equal Monthly Splits) */}
+              <div 
+                className={`p-4 rounded-xl border-2 transition-all ${
+                  selectedPayment === 'pay-in-4'
+                    ? 'border-[#C5A880] bg-[#FAF8F5]'
+                    : 'border-slate-200 hover:border-slate-300 bg-white'
+                }`}
+              >
+                <label className="flex items-start justify-between cursor-pointer">
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="radio"
+                      name="payment_choice"
+                      value="pay-in-4"
+                      checked={selectedPayment === 'pay-in-4'}
+                      onChange={() => setSelectedPayment('pay-in-4')}
+                      className="mt-1 text-[#C5A880] focus:ring-[#C5A880]"
+                    />
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <strong className="text-sm text-slate-900 font-bold">
+                          Commercial Pay in 4 (4 Monthly Splits)
+                        </strong>
+                        <span className="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-500/50">
+                          0% Interest &bull; Zero Surcharge
+                        </span>
+                      </div>
+                      <span className="text-xs text-slate-600 block mt-0.5">
+                        Pay 1st installment today. Remaining 3 installments paid every month end.
+                      </span>
+                    </div>
+                  </div>
+                  <CreditCard className="w-5 h-5 text-[#C5A880] shrink-0 mt-0.5" />
+                </label>
+
+                {/* Smart Automated Installment Schedule Breakdown */}
+                {selectedPayment === 'pay-in-4' && (
+                  <div className="mt-3.5 pt-3 border-t border-[#C5A880]/30 space-y-2.5">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="font-bold text-slate-900 uppercase text-[10px] tracking-wider">
+                        Smart Automated Installment Breakdown
+                      </span>
+                      <span className="font-mono font-bold text-[#8E6E3E] text-xs">
+                        4 x ${payIn4Installment.toLocaleString('en-AU')} AUD
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                      {/* 1st Installment Due Today */}
+                      <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-950">
+                        <div className="flex items-center justify-between">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800">
+                            1st Installment (Due Today)
+                          </span>
+                          <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                        </div>
+                        <div className="font-mono font-black text-lg text-emerald-700 mt-0.5">
+                          ${payIn4Installment.toLocaleString('en-AU')} AUD
+                        </div>
+                        <span className="text-[10px] text-emerald-800 block mt-0.5 font-medium">
+                          Locks machine reservation &amp; triggers pre-delivery inspection.
+                        </span>
+                      </div>
+
+                      {/* Remaining 3 Splits at Month-End */}
+                      <div className="p-3 rounded-xl bg-white border border-slate-200 text-slate-700 space-y-1">
+                        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">
+                          3 Consecutive Month-End Splits
+                        </span>
+                        <div className="flex justify-between text-[11px] pt-0.5 border-b border-slate-100 pb-0.5">
+                          <span>Split 2 ({monthEndDates[0]}):</span>
+                          <span className="font-mono font-bold text-slate-900">${payIn4Installment.toLocaleString('en-AU')}</span>
+                        </div>
+                        <div className="flex justify-between text-[11px] border-b border-slate-100 pb-0.5">
+                          <span>Split 3 ({monthEndDates[1]}):</span>
+                          <span className="font-mono font-bold text-slate-900">${payIn4Installment.toLocaleString('en-AU')}</span>
+                        </div>
+                        <div className="flex justify-between text-[11px]">
+                          <span>Split 4 ({monthEndDates[2]}):</span>
+                          <span className="font-mono font-bold text-slate-900">${payIn4FinalInstallment.toLocaleString('en-AU')}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p className="text-[10px] text-slate-500 italic">
+                      *Zero interest, no merchant fees. Official commercial tax invoice with scheduled month-end direct transfer details dispatched to your email.
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              {/* Option 4: Cryptocurrency (10% Rebate) */}
               <label 
                 className={`p-4 rounded-xl border-2 cursor-pointer flex items-start justify-between transition-all ${
                   selectedPayment === 'crypto'
@@ -574,6 +712,31 @@ export default function CheckoutClient() {
                 <span className="text-[#C5A880]">${total.toLocaleString('en-AU')} AUD</span>
               </div>
               <span className="text-[10px] text-slate-400 block text-right">Includes 10% Australian GST</span>
+
+              {/* Pay in 4 Highlight in Summary */}
+              {isPayIn4 && (
+                <div className="p-3.5 rounded-xl bg-emerald-950 text-white space-y-2 border border-emerald-500/50 shadow-sm mt-3">
+                  <div className="flex items-center justify-between text-[11px]">
+                    <span className="font-bold text-emerald-300 uppercase tracking-wider">Plan Activated</span>
+                    <span className="text-[10px] bg-emerald-800 text-emerald-100 px-2 py-0.5 rounded font-black">
+                      Pay in 4 Commercial
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-baseline pt-1 border-t border-emerald-800/80">
+                    <span className="font-bold text-emerald-200 text-xs">1st Installment (Due Today):</span>
+                    <span className="font-mono font-black text-emerald-400 text-base">
+                      ${payIn4Installment.toLocaleString('en-AU')} AUD
+                    </span>
+                  </div>
+                  <div className="flex justify-between text-[11px] text-slate-300">
+                    <span>3 Month-End Splits:</span>
+                    <span className="font-mono font-bold text-white">${payIn4Installment.toLocaleString('en-AU')} / month</span>
+                  </div>
+                  <span className="text-[9px] text-emerald-300/80 block leading-tight pt-0.5">
+                    &bull; Initial payment locks machinery allocation. The rest is billed at consecutive month-ends.
+                  </span>
+                </div>
+              )}
             </div>
 
             {/* Trust Assurances */}

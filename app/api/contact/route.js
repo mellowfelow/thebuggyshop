@@ -95,24 +95,39 @@ export async function POST(request) {
       };
 
       // 1. Save to Redis order store
-      await saveOrder(orderRecord);
+      let saved = null;
+      try {
+        saved = await saveOrder(orderRecord);
+      } catch (saveErr) {
+        console.error('[contact/route] Failed to save order to store:', saveErr);
+      }
 
-      // 2. Send Shop Notification Email to Admin
+      // 2. Send Shop Notification Email to Admin Desk (Zoho Mail)
       const adminDest = process.env.ORDER_EMAIL || FORMS.destinations?.order || CONTACT.email;
-      await sendMail({
-        to: adminDest,
-        subject: `[New Order ${orderNumber}] ${customer.name} - ${channel === 'whatsapp' ? 'WhatsApp' : 'Web'} Checkout`,
-        html: orderNotificationEmail(orderRecord, baseUrl),
-        replyTo: customer.email,
-      });
+      try {
+        const adminEmailHtml = orderNotificationEmail(orderRecord, baseUrl);
+        await sendMail({
+          to: adminDest,
+          subject: `[New Order ${orderNumber}] ${customer.name} - ${channel === 'whatsapp' ? 'WhatsApp' : 'Web'} Checkout`,
+          html: adminEmailHtml,
+          replyTo: customer.email,
+        });
+      } catch (mailErr) {
+        console.error('[contact/route] Failed to dispatch admin order email:', mailErr);
+      }
 
       // 3. UNCONDITIONAL Customer Confirmation Email (sent on both Web and WhatsApp checkouts)
-      await sendMail({
-        to: customer.email,
-        subject: `Order Confirmation: ${orderNumber} - The Buggy Shop`,
-        html: orderConfirmationEmail(orderRecord, baseUrl),
-        replyTo: adminDest,
-      });
+      try {
+        const customerEmailHtml = orderConfirmationEmail(orderRecord, baseUrl);
+        await sendMail({
+          to: customer.email,
+          subject: `Order Confirmation: ${orderNumber} - The Buggy Shop`,
+          html: customerEmailHtml,
+          replyTo: adminDest,
+        });
+      } catch (custMailErr) {
+        console.error('[contact/route] Failed to dispatch customer confirmation email:', custMailErr);
+      }
 
       return NextResponse.json({
         success: true,
