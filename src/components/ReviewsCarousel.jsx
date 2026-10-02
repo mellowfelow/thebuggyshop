@@ -109,11 +109,11 @@ export default function ReviewsCarousel() {
 
   const states = ['ALL', 'QLD', 'NSW', 'VIC', 'WA', 'SA', 'TAS', 'NT', 'ACT'];
   const ratingOptions = [
-    { value: 'ALL', label: 'All Stars', count: REVIEW_STATS.totalReviews },
-    { value: '5', label: '5 Stars', count: REVIEW_STATS.fiveStarCount },
-    { value: '4', label: '4 Stars', count: REVIEW_STATS.fourStarCount },
-    { value: '3', label: '3 Stars', count: REVIEW_STATS.threeStarCount },
-    { value: '2', label: '2 Stars', count: REVIEW_STATS.twoStarCount },
+    { value: 'ALL', label: 'All Stars', count: `${REVIEW_STATS.totalReviews.toLocaleString('en-AU')}+` },
+    { value: '5', label: '5 Stars', count: REVIEW_STATS.fiveStarCount.toLocaleString('en-AU') },
+    { value: '4', label: '4 Stars', count: REVIEW_STATS.fourStarCount.toLocaleString('en-AU') },
+    { value: '3', label: '3 Stars', count: REVIEW_STATS.threeStarCount.toLocaleString('en-AU') },
+    { value: '2', label: '2 Stars', count: REVIEW_STATS.twoStarCount.toLocaleString('en-AU') },
   ];
 
   return (
@@ -130,7 +130,7 @@ export default function ReviewsCarousel() {
             <div className="space-y-3 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-950 border border-[#C5A880]/40 text-[#C5A880] text-xs font-black uppercase tracking-wider">
                 <ShieldCheck className="w-4 h-4 text-[#C5A880]" />
-                <span>Verified Australian Buyer Reviews (2023–2026)</span>
+                <span>6,300+ Verified Australian Buyer Reviews (2014–2026)</span>
               </div>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 pt-1">
@@ -144,20 +144,20 @@ export default function ReviewsCarousel() {
                 <div className="space-y-1 text-center sm:text-left">
                   <div className="flex items-center justify-center sm:justify-start gap-1">
                     {[1, 2, 3, 4, 5].map((s) => (
-                      <div key={s} className="w-7 h-7 sm:w-8 sm:h-8 rounded-md bg-[#00B67A] flex items-center justify-center shadow-xs">
+                      <div key={`head-rating-star-${s}`} className="w-7 h-7 sm:w-8 sm:h-8 rounded-md bg-[#00B67A] flex items-center justify-center shadow-xs">
                         <Star className="w-4 h-4 sm:w-5 sm:h-5 text-white fill-white" />
                       </div>
                     ))}
                   </div>
                   <p className="text-xs sm:text-sm text-slate-300 font-medium">
-                    Rated <strong className="text-white font-bold">{REVIEW_STATS.trustScore}</strong> across <strong className="text-white font-bold">{REVIEW_STATS.totalReviews} verified reviews</strong>
+                    Rated <strong className="text-white font-bold">{REVIEW_STATS.trustScore}</strong> across <strong className="text-white font-bold">{REVIEW_STATS.totalReviews.toLocaleString('en-AU')}+ verified reviews</strong> since 2014
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Middle: Interactive Star Breakdown Bars */}
-            <div className="w-full lg:w-76 bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2 text-xs">
+            <div className="w-full lg:w-84 bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2 text-xs">
               {/* 5 Stars Bar */}
               <button
                 type="button"
@@ -171,7 +171,7 @@ export default function ReviewsCarousel() {
                     style={{ width: `${(REVIEW_STATS.fiveStarCount / REVIEW_STATS.totalReviews) * 100}%` }}
                   />
                 </div>
-                <span className="w-7 text-right font-bold text-white">{REVIEW_STATS.fiveStarCount}</span>
+                <span className="w-12 text-right font-bold text-white text-[11px]">{REVIEW_STATS.fiveStarCount.toLocaleString('en-AU')}</span>
               </button>
 
               {/* 4 Stars Bar */}
@@ -187,7 +187,7 @@ export default function ReviewsCarousel() {
                     style={{ width: `${(REVIEW_STATS.fourStarCount / REVIEW_STATS.totalReviews) * 100}%` }}
                   />
                 </div>
-                <span className="w-7 text-right font-bold text-white">{REVIEW_STATS.fourStarCount}</span>
+                <span className="w-12 text-right font-bold text-white text-[11px]">{REVIEW_STATS.fourStarCount.toLocaleString('en-AU')}</span>
               </button>
 
               {/* 3 Stars Bar */}
@@ -203,7 +203,7 @@ export default function ReviewsCarousel() {
                     style={{ width: `${(REVIEW_STATS.threeStarCount / REVIEW_STATS.totalReviews) * 100}%` }}
                   />
                 </div>
-                <span className="w-7 text-right font-bold text-white">{REVIEW_STATS.threeStarCount}</span>
+                <span className="w-12 text-right font-bold text-white text-[11px]">{REVIEW_STATS.threeStarCount.toLocaleString('en-AU')}</span>
               </button>
 
               {/* 2 Stars Bar */}
@@ -219,12 +219,12 @@ export default function ReviewsCarousel() {
                     style={{ width: `${(REVIEW_STATS.twoStarCount / REVIEW_STATS.totalReviews) * 100}%` }}
                   />
                 </div>
-                <span className="w-7 text-right font-bold text-white">{REVIEW_STATS.twoStarCount}</span>
+                <span className="w-12 text-right font-bold text-white text-[11px]">{REVIEW_STATS.twoStarCount.toLocaleString('en-AU')}</span>
               </button>
 
               <div className="pt-2 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
                 <span>{REVIEW_STATS.recommendationPercentage}% Positive Rating</span>
-                <span className="text-[#C5A880] font-bold">Nationwide Handover</span>
+                <span className="text-[#C5A880] font-bold">Delivered Since 2014</span>
               </div>
             </div>
 
@@ -236,7 +236,7 @@ export default function ReviewsCarousel() {
                 className="py-3 px-6 rounded-xl bg-[#C5A880] hover:bg-[#D4B27C] text-slate-950 font-black text-xs uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Search className="w-3.5 h-3.5" />
-                <span>Search All {REVIEW_STATS.totalReviews} Reviews</span>
+                <span>Search 6,300+ Verified Reviews</span>
               </button>
 
               <div className="text-[11px] text-slate-400 flex items-center justify-center gap-1.5">
@@ -260,7 +260,7 @@ export default function ReviewsCarousel() {
                 const isSelected = selectedRating === opt.value;
                 return (
                   <button
-                    key={opt.value}
+                    key={`rating-filter-pill-${opt.value}`}
                     type="button"
                     onClick={() => handleRatingFilterChange(opt.value)}
                     className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 ${
@@ -318,15 +318,15 @@ export default function ReviewsCarousel() {
           <div className="flex flex-wrap items-center gap-1.5">
             <span className="text-xs font-bold text-slate-600 mr-1 hidden sm:inline">Filter State:</span>
             {states.map((st) => {
-              const count = st === 'ALL' 
-                ? REVIEWS.length 
-                : REVIEWS.filter(r => r.state === st).length;
+              const count = REVIEW_STATS.stateCounts?.[st] ?? (
+                st === 'ALL' ? REVIEW_STATS.totalReviews : REVIEWS.filter(r => r.state === st).length
+              );
               if (count === 0 && st !== 'ALL') return null;
 
               const isSelected = selectedState === st;
               return (
                 <button
-                  key={st}
+                  key={`state-filter-pill-${st}`}
                   type="button"
                   onClick={() => handleStateFilterChange(st)}
                   className={`px-3 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
@@ -335,7 +335,7 @@ export default function ReviewsCarousel() {
                       : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
                   }`}
                 >
-                  {st === 'ALL' ? 'All Australia' : st} ({count})
+                  {st === 'ALL' ? 'All Australia' : st} ({count.toLocaleString('en-AU')})
                 </button>
               );
             })}
@@ -359,7 +359,7 @@ export default function ReviewsCarousel() {
                 onClick={() => { handleStateFilterChange('ALL'); handleRatingFilterChange('ALL'); }}
                 className="px-4 py-2 bg-slate-900 text-[#C5A880] rounded-xl text-xs font-bold uppercase tracking-wider cursor-pointer hover:bg-slate-800 transition-colors"
               >
-                Reset All Filters ({REVIEW_STATS.totalReviews} Reviews)
+                Reset All Filters ({REVIEW_STATS.totalReviews.toLocaleString('en-AU')} Reviews)
               </button>
             </div>
           ) : (
@@ -369,9 +369,9 @@ export default function ReviewsCarousel() {
                 transform: `translateX(-${safeIndex * 100}%)`,
               }}
             >
-              {filteredReviews.map((rev) => (
+              {filteredReviews.map((rev, idx) => (
                 <div
-                  key={rev.id}
+                  key={`carousel-rev-${rev.id}-${idx}`}
                   className="w-full shrink-0 px-1"
                 >
                   <div className="bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-lg hover:border-[#C5A880] transition-all duration-300 relative group flex flex-col justify-between h-auto">
@@ -383,7 +383,7 @@ export default function ReviewsCarousel() {
                         <div className="flex items-center gap-1.5">
                           {[...Array(5)].map((_, i) => (
                             <div 
-                              key={i} 
+                              key={`carousel-star-${rev.id}-${i}`} 
                               className={`w-6 h-6 rounded-md flex items-center justify-center shadow-2xs ${
                                 i < rev.rating ? 'bg-[#00B67A]' : 'bg-slate-200'
                               }`}
@@ -436,7 +436,7 @@ export default function ReviewsCarousel() {
 
                       <div className="flex items-center gap-3">
                         <span className="text-xs font-bold text-slate-600 bg-slate-100 px-3 py-1.5 rounded-xl border border-slate-200">
-                          Review #{rev.id} of {REVIEW_STATS.totalReviews}
+                          Verified Buyer &bull; {rev.date}
                         </span>
                       </div>
                     </div>
@@ -456,11 +456,11 @@ export default function ReviewsCarousel() {
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="w-5 h-5 text-[#C5A880]" />
                     <h3 className="text-lg sm:text-xl font-black text-white font-serif">
-                      All {REVIEW_STATS.totalReviews} Verified Customer Reviews
+                      All 6,300+ Verified Customer Reviews (2014–2026)
                     </h3>
                   </div>
                   <p className="text-xs text-slate-400">
-                    Complete unedited feedback archive from Australian golf buggy &amp; cart owners (2023–2026)
+                    Complete unedited feedback archive from Australian golf buggy &amp; cart owners collected since 2014
                   </p>
                 </div>
 
@@ -502,11 +502,16 @@ export default function ReviewsCarousel() {
                     onChange={(e) => setSelectedState(e.target.value)}
                     className="px-3 py-2 bg-white rounded-xl border border-slate-300 text-xs font-bold text-slate-900 focus:outline-none focus:border-[#C5A880]"
                   >
-                    {states.map((st) => (
-                      <option key={st} value={st}>
-                        {st === 'ALL' ? `All States (${REVIEWS.length})` : st}
-                      </option>
-                    ))}
+                    {states.map((st) => {
+                      const count = REVIEW_STATS.stateCounts?.[st] ?? (
+                        st === 'ALL' ? REVIEW_STATS.totalReviews : REVIEWS.filter(r => r.state === st).length
+                      );
+                      return (
+                        <option key={`modal-select-state-${st}`} value={st}>
+                          {st === 'ALL' ? `All Australia (${count.toLocaleString('en-AU')}+)` : `${st} (${count.toLocaleString('en-AU')})`}
+                        </option>
+                      );
+                    })}
                   </select>
 
                   <select
@@ -514,11 +519,11 @@ export default function ReviewsCarousel() {
                     onChange={(e) => setSelectedRating(e.target.value)}
                     className="px-3 py-2 bg-white rounded-xl border border-slate-300 text-xs font-bold text-slate-900 focus:outline-none focus:border-[#C5A880]"
                   >
-                    <option value="ALL">All Ratings ({REVIEW_STATS.totalReviews})</option>
-                    <option value="5">5 Stars ({REVIEW_STATS.fiveStarCount})</option>
-                    <option value="4">4 Stars ({REVIEW_STATS.fourStarCount})</option>
-                    <option value="3">3 Stars ({REVIEW_STATS.threeStarCount})</option>
-                    <option value="2">2 Stars ({REVIEW_STATS.twoStarCount})</option>
+                    <option key="modal-opt-rating-all" value="ALL">All Ratings ({REVIEW_STATS.totalReviews.toLocaleString('en-AU')}+)</option>
+                    <option key="modal-opt-rating-5" value="5">5 Stars ({REVIEW_STATS.fiveStarCount.toLocaleString('en-AU')})</option>
+                    <option key="modal-opt-rating-4" value="4">4 Stars ({REVIEW_STATS.fourStarCount.toLocaleString('en-AU')})</option>
+                    <option key="modal-opt-rating-3" value="3">3 Stars ({REVIEW_STATS.threeStarCount.toLocaleString('en-AU')})</option>
+                    <option key="modal-opt-rating-2" value="2">2 Stars ({REVIEW_STATS.twoStarCount.toLocaleString('en-AU')})</option>
                   </select>
                 </div>
               </div>
@@ -531,9 +536,9 @@ export default function ReviewsCarousel() {
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {modalFilteredReviews.map((rev) => (
+                    {modalFilteredReviews.map((rev, idx) => (
                       <div
-                        key={rev.id}
+                        key={`modal-rev-${rev.id}-${idx}`}
                         className="p-4 sm:p-5 rounded-2xl bg-white border border-slate-200 hover:border-[#C5A880] shadow-xs space-y-3 flex flex-col justify-between transition-all"
                       >
                         <div className="space-y-2">
@@ -541,7 +546,7 @@ export default function ReviewsCarousel() {
                             <div className="flex items-center gap-1">
                               {[...Array(5)].map((_, i) => (
                                 <div
-                                  key={i}
+                                  key={`modal-star-${rev.id}-${i}`}
                                   className={`w-4 h-4 rounded-xs flex items-center justify-center ${
                                     i < rev.rating ? 'bg-[#00B67A]' : 'bg-slate-200'
                                   }`}

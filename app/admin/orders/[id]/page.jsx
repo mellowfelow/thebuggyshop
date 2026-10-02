@@ -159,7 +159,7 @@ export default function AdminOrderDetailPage({ params }) {
             </h2>
             <div className="divide-y divide-slate-800/80">
               {items.map((item, idx) => (
-                <div key={idx} className="py-2.5 flex items-center justify-between gap-3">
+                <div key={`order-item-row-${item.slug || idx}-${idx}`} className="py-2.5 flex items-center justify-between gap-3">
                   <div className="min-w-0 flex-1">
                     <div className="font-semibold text-xs sm:text-sm text-white truncate">{item.name}</div>
                     <div className="text-[10px] text-slate-400">
@@ -206,7 +206,7 @@ export default function AdminOrderDetailPage({ params }) {
               </h2>
               <div className="space-y-1.5">
                 {parsedFields.map((field, i) => (
-                  <div key={i} className="flex justify-between items-center p-2.5 bg-slate-950 rounded-lg border border-slate-800 text-xs">
+                  <div key={`order-parsed-field-${field.label}-${i}`} className="flex justify-between items-center p-2.5 bg-slate-950 rounded-lg border border-slate-800 text-xs">
                     <span className="text-[11px] font-bold text-slate-400 uppercase">{field.label}</span>
                     <span className="font-mono font-bold text-slate-100">{field.value}</span>
                   </div>

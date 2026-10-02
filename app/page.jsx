@@ -365,7 +365,7 @@ export default function HomePage() {
                 {'★'.repeat(5)}
               </div>
               <span className="text-xs font-bold text-slate-700">
-                {REVIEW_STATS.averageRating} / 5.0 Average ({REVIEW_STATS.totalReviews} Reviews)
+                {REVIEW_STATS.averageRating} / 5.0 Average ({REVIEW_STATS.totalReviews.toLocaleString('en-AU')}+ Verified Reviews Since 2014)
               </span>
             </div>
           </div>

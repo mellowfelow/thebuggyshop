@@ -188,11 +188,11 @@ export default function AboutPage() {
               </div>
               <div className="flex items-center gap-1">
                 {[1, 2, 3, 4, 5].map((s) => (
-                  <div key={s} className="w-5 h-5 rounded-xs bg-[#00B67A] flex items-center justify-center">
+                  <div key={`about-star-${s}`} className="w-5 h-5 rounded-xs bg-[#00B67A] flex items-center justify-center">
                     <Star className="w-3 h-3 text-white fill-white" />
                   </div>
                 ))}
-                <span className="text-[11px] text-[#A6BCB0] ml-1">({REVIEW_STATS.totalReviews} Verified Reviews)</span>
+                <span className="text-[11px] text-[#A6BCB0] ml-1">({REVIEW_STATS.totalReviews.toLocaleString('en-AU')}+ Verified Reviews Since 2014)</span>
               </div>
               <Link 
                 href="/#customer-reviews-section" 
@@ -227,7 +227,7 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {BRAND.milestones.map((m, idx) => (
-            <div key={idx} className="p-6 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] shadow-[0_4px_16px_-4px_rgba(14,42,30,0.06)] hover:border-[#C5A265] hover:shadow-md transition-all space-y-3">
+            <div key={`about-milestone-${m.year}-${idx}`} className="p-6 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] shadow-[0_4px_16px_-4px_rgba(14,42,30,0.06)] hover:border-[#C5A265] hover:shadow-md transition-all space-y-3">
               <span className="text-2xl font-black text-[#8A7045] block font-serif">
                 {m.year}
               </span>
@@ -252,7 +252,7 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {BRAND.differentiation.map((item, idx) => (
-            <div key={idx} className="p-6 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] shadow-[0_4px_16px_-4px_rgba(14,42,30,0.06)] hover:border-[#C5A265] hover:shadow-md transition-all space-y-3 group">
+            <div key={`about-diff-${idx}`} className="p-6 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] shadow-[0_4px_16px_-4px_rgba(14,42,30,0.06)] hover:border-[#C5A265] hover:shadow-md transition-all space-y-3 group">
               <div className="w-8 h-8 rounded-lg bg-[#0E2A1E] text-[#C5A265] border border-[#C5A265]/40 font-black text-sm flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
                 {idx + 1}
               </div>

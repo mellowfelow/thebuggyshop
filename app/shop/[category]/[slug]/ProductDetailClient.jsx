@@ -68,7 +68,7 @@ export default function ProductDetailClient({ product, relatedProducts }) {
             <div className="flex gap-3">
               {product.images.map((img, idx) => (
                 <button
-                  key={idx}
+                  key={`product-thumb-${product.slug}-${idx}`}
                   type="button"
                   onClick={() => setActiveImageIndex(idx)}
                   className={`w-24 h-18 rounded-2xl overflow-hidden border-2 transition-all cursor-pointer ${

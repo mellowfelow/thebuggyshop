@@ -125,7 +125,7 @@ export default function FinanceCalculatorClient() {
               <div className="grid grid-cols-4 gap-1.5">
                 {[12, 24, 36, 48].map((term) => (
                   <button
-                    key={term}
+                    key={`finance-loan-term-${term}`}
                     type="button"
                     onClick={() => setLoanTermMonths(term)}
                     className={`py-2 rounded-lg text-xs font-bold transition-all cursor-pointer ${

@@ -386,7 +386,7 @@ export default function ShopClient({
             <div className="flex flex-wrap items-center gap-1.5 ml-2">
               {activeFilterPills.map((pill, idx) => (
                 <span
-                  key={idx}
+                  key={`active-filter-pill-${pill.facetKey}-${pill.value}-${idx}`}
                   className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-900 text-[#C5A880] text-[11px] font-bold border border-[#C5A880]/30 shadow-xs"
                 >
                   <span>{pill.label}</span>

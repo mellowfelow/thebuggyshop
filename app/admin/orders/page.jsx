@@ -251,7 +251,7 @@ export default function AdminOrdersListPage() {
                       <td className="py-3 px-4">
                         <div className="max-w-xs space-y-0.5">
                           {(order.items || []).map((it, idx) => (
-                            <div key={idx} className="text-slate-300 truncate">
+                            <div key={`order-table-item-${order.id}-${it.slug || idx}-${idx}`} className="text-slate-300 truncate">
                               &bull; {it.name} <span className="text-slate-500">(x{it.quantity || 1})</span>
                             </div>
                           ))}

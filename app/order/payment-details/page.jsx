@@ -145,7 +145,7 @@ function PaymentDetailsContent() {
 
         {parsedFields.length > 0 ? (
           parsedFields.map((field, idx) => (
-            <CopyField key={idx} label={field.label} value={field.value} />
+            <CopyField key={`payment-field-${field.label}-${idx}`} label={field.label} value={field.value} />
           ))
         ) : (
           <div className="p-6 bg-white rounded-xl border border-slate-200 text-center text-sm text-slate-500">
@@ -168,7 +168,7 @@ function PaymentDetailsContent() {
         </h3>
         <ul className="space-y-2.5 text-sm text-slate-600">
           {(data.terms || []).map((term, i) => (
-            <li key={i} className="flex items-start gap-2.5">
+            <li key={`payment-term-rule-${i}`} className="flex items-start gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
               <span>{term}</span>
             </li>

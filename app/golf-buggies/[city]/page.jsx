@@ -131,8 +131,8 @@ export default async function LocationCityPage({ params }) {
                 <span>Popular Course Deliveries in {location.name}</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
-                {location.popularClubs.map(club => (
-                  <span key={club} className="text-[11px] bg-white text-[#0E2A1E] px-2.5 py-1 rounded-lg border border-[#CAD5CE] font-semibold">
+                {location.popularClubs.map((club, cIdx) => (
+                  <span key={`location-club-${location.slug}-${cIdx}`} className="text-[11px] bg-white text-[#0E2A1E] px-2.5 py-1 rounded-lg border border-[#CAD5CE] font-semibold">
                     {club}
                   </span>
                 ))}

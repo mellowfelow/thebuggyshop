@@ -470,7 +470,7 @@ function SendPaymentEmailContent() {
                   </div>
                   {parsedFields.length > 0 ? (
                     parsedFields.map((f, i) => (
-                      <div key={i} className="bg-white p-2 rounded border border-slate-200 flex justify-between items-center gap-2">
+                      <div key={`admin-preview-field-${f.label}-${i}`} className="bg-white p-2 rounded border border-slate-200 flex justify-between items-center gap-2">
                         <span className="font-bold text-slate-600 text-[10px] uppercase truncate shrink-0">{f.label}</span>
                         <span className="font-mono font-bold text-slate-900 text-[11px] truncate text-right">{f.value}</span>
                       </div>
@@ -502,7 +502,7 @@ function SendPaymentEmailContent() {
                   <div className="font-bold text-slate-800 uppercase text-[9px]">Terms &amp; Logistics:</div>
                   <ul className="list-disc pl-3.5 space-y-0.5">
                     {terms.map((t, idx) => (
-                      <li key={idx}>{t}</li>
+                      <li key={`admin-preview-term-${idx}`}>{t}</li>
                     ))}
                   </ul>
                 </div>

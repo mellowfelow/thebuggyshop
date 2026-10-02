@@ -101,7 +101,7 @@ export default function BrandsIndexPage() {
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {brand.popularModels.slice(0, 3).map((m) => (
-                      <span key={m} className="text-[10px] bg-[#F1F6F3] text-[#2A4D3B] px-2.5 py-0.5 rounded-lg border border-[#CAD5CE] font-semibold">
+                      <span key={`brand-model-${brand.slug}-${m}`} className="text-[10px] bg-[#F1F6F3] text-[#2A4D3B] px-2.5 py-0.5 rounded-lg border border-[#CAD5CE] font-semibold">
                         {m}
                       </span>
                     ))}

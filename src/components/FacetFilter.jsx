@@ -245,7 +245,7 @@ export default function FacetFilter({
               const count = facetCounts?.power?.[opt.id] || 0;
               return (
                 <label 
-                  key={opt.id} 
+                  key={`facet-power-opt-${opt.id}`} 
                   className={`flex items-center justify-between p-2 rounded-xl cursor-pointer transition-all duration-200 select-none ${
                     checked 
                       ? 'bg-[#0E2A1E] text-[#C5A265] shadow-xs' 
@@ -350,7 +350,7 @@ export default function FacetFilter({
 
                 return (
                   <label 
-                    key={brandId} 
+                    key={`facet-brand-opt-${brandId}`} 
                     className={`flex items-center justify-between p-1.5 sm:p-2 rounded-xl cursor-pointer transition-all duration-200 select-none ${
                       checked 
                         ? 'bg-[#0E2A1E] text-[#C5A265] shadow-xs' 
@@ -445,7 +445,7 @@ export default function FacetFilter({
 
                 return (
                   <label 
-                    key={p.id} 
+                    key={`facet-price-opt-${p.id}`} 
                     className={`flex items-center justify-between p-2 rounded-xl cursor-pointer transition-all duration-200 select-none ${
                       checked 
                         ? 'bg-[#0E2A1E] text-[#C5A265] shadow-xs' 
@@ -583,7 +583,7 @@ export default function FacetFilter({
 
               return (
                 <label 
-                  key={s.id} 
+                  key={`facet-seat-opt-${s.id}`} 
                   className={`flex items-center justify-between p-2 rounded-xl cursor-pointer transition-all duration-200 select-none ${
                     checked 
                       ? 'bg-[#0E2A1E] text-[#C5A265] shadow-xs' 
@@ -666,7 +666,7 @@ export default function FacetFilter({
 
               return (
                 <label 
-                  key={w.id} 
+                  key={`facet-wheel-opt-${w.id}`} 
                   className={`flex items-center justify-between p-2 rounded-xl cursor-pointer transition-all duration-200 select-none ${
                     checked 
                       ? 'bg-[#0E2A1E] text-[#C5A265] shadow-xs' 
@@ -749,7 +749,7 @@ export default function FacetFilter({
 
               return (
                 <label 
-                  key={c.id} 
+                  key={`facet-condition-opt-${c.id}`} 
                   className={`flex items-center justify-between p-2 rounded-xl cursor-pointer transition-all duration-200 select-none ${
                     checked 
                       ? 'bg-[#0E2A1E] text-[#C5A265] shadow-xs' 
@@ -837,7 +837,7 @@ export default function FacetFilter({
 
               return (
                 <label 
-                  key={b.id} 
+                  key={`facet-battery-opt-${b.id}`} 
                   className={`flex items-center justify-between p-2 rounded-xl cursor-pointer transition-all duration-200 select-none ${
                     checked 
                       ? 'bg-[#0E2A1E] text-[#C5A265] shadow-xs' 

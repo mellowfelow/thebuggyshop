@@ -121,7 +121,7 @@ export default function HeroSlider() {
         const isActive = idx === currentSlide;
         return (
           <div
-            key={s.id}
+            key={`hero-slide-layer-${s.id}`}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
               isActive ? 'opacity-100 z-0' : 'opacity-0 pointer-events-none'
             }`}
@@ -279,7 +279,7 @@ export default function HeroSlider() {
         <div className="flex items-center gap-2">
           {SLIDES.map((s, idx) => (
             <button
-              key={s.id}
+              key={`hero-bullet-nav-${s.id}`}
               type="button"
               onClick={() => setCurrentSlide(idx)}
               aria-label={`Go to slide ${idx + 1}: ${s.titleAccent}`}
