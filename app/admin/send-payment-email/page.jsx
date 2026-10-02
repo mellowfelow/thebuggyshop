@@ -36,7 +36,7 @@ function SendPaymentEmailContent() {
   // Default presets for quick fill
   const defaultPresets = {
     'bank-transfer': `Account Name: TBS NO.2 PTY LTD\nBank: Commonwealth Bank of Australia\nBSB: 064-000\nAccount Number: 1234 5678\nPayment Reference: ${orderRef || 'TBS-ORDER'}`,
-    'pay-id': `PayID Name: TBS NO.2 PTY LTD\nPayID Type: Australian Business Number (ABN)\nPayID / ABN: 65108218471\nPayment Reference: ${orderRef || 'TBS-ORDER'}`,
+    'pay-id': `PayID Name: TBS NO.2 PTY LTD\nPayID Phone / Identifier: 0480811308\nPayment Reference: ${orderRef || 'TBS-ORDER'}`,
     'pay-in-4': `Account Name: TBS NO.2 PTY LTD\nBank: Commonwealth Bank of Australia\nBSB: 064-000\nAccount Number: 1234 5678\nPlan: Pay in 4 Commercial Split\n1st Installment (Due Today): $${Math.round(orderTotal / 4).toLocaleString('en-AU')} AUD\nSubsequent 3 Month-End Splits: $${Math.round(orderTotal / 4).toLocaleString('en-AU')} AUD\nPayment Reference: ${orderRef || 'TBS-ORDER'}`,
     'crypto-BTC': `Network: Bitcoin (BTC Native)\nDeposit Wallet: bc1q8v7xkd9m2pw4z3rt65nljhqfeyac78g52t\nPayment Reference: ${orderRef || 'TBS-ORDER'}`,
     'crypto-USDT': `Network: USDT (TRC-20 Tron Network)\nDeposit Wallet: TYDzsYnNp5k8F3m9QJ2vWxLkE8Rt6PqA1z\nPayment Reference: ${orderRef || 'TBS-ORDER'}`,
@@ -120,6 +120,7 @@ function SendPaymentEmailContent() {
     methodId,
     parsedFields,
     rawDetail,
+    customBaseUrl: typeof window !== 'undefined' ? window.location.origin : undefined,
   });
 
   const handleSendEmail = async (e) => {
@@ -337,7 +338,7 @@ function SendPaymentEmailContent() {
                 >
                   {(REPLY?.paymentMethods || [
                     { id: 'bank-transfer', label: 'Direct Bank Transfer (Osko / Fast EFT)' },
-                    { id: 'pay-id', label: 'PayID Instant Transfer (ABN / Phone)' },
+                    { id: 'pay-id', label: 'PayID Instant Transfer' },
                     { id: 'crypto-BTC', label: 'Bitcoin (BTC) - 10% Crypto Rebate' },
                     { id: 'crypto-USDT', label: 'Tether USDT (TRC-20) - 10% Crypto Rebate' },
                   ]).map((pm) => (

@@ -18,7 +18,7 @@ export default function CollapsibleFaq({ faqs = HOMEPAGE_FAQS }) {
         const isOpen = openIndex === index;
         return (
           <div
-            key={faq.id || index}
+            key={`faq-item-${faq.id || index}`}
             className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
               isOpen
                 ? 'bg-white border-[#C5A880] shadow-md ring-1 ring-[#C5A880]/30'

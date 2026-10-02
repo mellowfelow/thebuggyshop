@@ -31,6 +31,10 @@ export function resolveBaseUrl(customBaseUrl) {
   if (customBaseUrl && typeof customBaseUrl === 'string' && customBaseUrl.startsWith('http')) {
     return customBaseUrl.replace(/\/$/, '');
   }
+  // If running in browser (e.g., admin composing WhatsApp messages or client components)
+  if (typeof window !== 'undefined' && window.location && window.location.origin) {
+    return window.location.origin.replace(/\/$/, '');
+  }
   if (process.env.NEXT_PUBLIC_SITE_URL && !process.env.NEXT_PUBLIC_SITE_URL.includes('DOMAIN')) {
     return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '');
   }
@@ -46,8 +50,9 @@ export function resolveBaseUrl(customBaseUrl) {
   if (SITE.domain && SITE.domain !== 'DOMAIN.com' && !SITE.domain.includes('DOMAIN')) {
     return `https://${SITE.domain}`;
   }
-  // Cloud environment / preview fallback
-  return 'https://ais-dev-xdh4d5ckavk5dajkxx66zn-274197567478.us-west2.run.app';
+  // Cloud environment / preview fallback:
+  // Use the public shared URL so external mobile devices & WhatsApp links can open the page
+  return 'https://ais-pre-xdh4d5ckavk5dajkxx66zn-274197567478.us-west2.run.app';
 }
 
 /**
@@ -299,12 +304,24 @@ export function orderConfirmationEmail(order, customBaseUrl) {
     </li>
   `).join('');
 
-  // Dynamic tailoring of What Happens Next based on payment choice
+  // Dynamic tailoring of What Happens Next based on payment choice and schedule
   let paymentExplanation = '';
+  const isPayIn4 = !!(
+    order.isPayIn4 ||
+    order.paymentSchedule === 'pay-in-4' ||
+    order.installmentPlan ||
+    paymentMethod.toLowerCase().includes('pay in 4') ||
+    paymentMethod.toLowerCase().includes('pay-in-4')
+  );
+
+  const firstSplit = order.installmentPlan?.firstInstallment
+    ? money(order.installmentPlan.firstInstallment)
+    : money(Math.round((order.total || 0) / 4));
+
   if (paymentMethod.includes('btc') || paymentMethod.includes('crypto') || paymentMethod.includes('usdt') || paymentMethod.includes('tether')) {
     paymentExplanation = `
       <p style="color: #334155; margin-bottom: 10px;">
-        <strong>10% Instant Cryptocurrency Rebate Applied:</strong> You have selected direct cryptocurrency settlement.
+        <strong>10% Instant Cryptocurrency Rebate Applied:</strong> You have selected direct cryptocurrency settlement (Bitcoin BTC / Tether USDT).
       </p>
       <p style="color: #334155; margin-bottom: 12px;">
         Our treasury desk is preparing your dedicated deposit wallet address (<strong>Bitcoin BTC Native</strong> or <strong>Tether USDT TRC-20</strong>) and discounted AUD-to-crypto invoice total. <strong>You will receive an official payment-details email shortly</strong> containing verified deposit addresses.
@@ -316,20 +333,7 @@ export function orderConfirmationEmail(order, customBaseUrl) {
         <strong>Australian PayID Instant Settlement:</strong> You have selected instant Australian PayID transfer.
       </p>
       <p style="color: #334155; margin-bottom: 12px;">
-        Our commercial desk is preparing your registered ABN PayID identifier and exact reference instructions. <strong>You will receive an official payment-details email shortly</strong> with tap-to-copy PayID details. Once settled, your vehicle will enter pre-delivery inspection.
-      </p>
-    `;
-  } else if (paymentMethod.includes('pay-in-4') || paymentMethod.includes('pay in 4')) {
-    const firstSplit = money(Math.round((order.total || 0) / 4));
-    paymentExplanation = `
-      <p style="color: #334155; margin-bottom: 10px;">
-        <strong>Commercial Pay in 4 Schedule Activated:</strong> You have selected our 4-split commercial equipment plan (0% interest).
-      </p>
-      <p style="color: #334155; margin-bottom: 12px;">
-        <strong>1st Installment Due Today:</strong> ${firstSplit} is required to lock in your machinery reservation and trigger pre-delivery mechanical testing.
-      </p>
-      <p style="color: #334155; margin-bottom: 12px;">
-        <strong>Subsequent 3 Installments:</strong> The remaining 3 installments will be billed and payable at each consecutive month end. Our commercial team will email your verified payment details and schedule shortly.
+        Our commercial desk is preparing your registered PayID identifier and exact reference instructions. <strong>You will receive an official payment-details email shortly</strong> with tap-to-copy PayID details. Once settled, your vehicle will enter pre-delivery inspection.
       </p>
     `;
   } else {
@@ -341,6 +345,18 @@ export function orderConfirmationEmail(order, customBaseUrl) {
       <p style="color: #334155; margin-bottom: 12px;">
         Our sales desk is reviewing your order details. <strong>You will receive an official payment-details email shortly</strong> with verified Australian Bank Transfer details (BSB and Account Number), and your unique reference number (<strong>${escapeHtml(ref)}</strong>).
       </p>
+    `;
+  }
+
+  if (isPayIn4) {
+    paymentExplanation += `
+      <div style="background-color: #ECFDF5; border: 1px solid #A7F3D0; padding: 12px 14px; border-radius: 8px; margin-top: 10px; margin-bottom: 12px;">
+        <strong style="color: #065F46; font-size: 13px; display: block; margin-bottom: 4px;">Commercial Pay in 4 Schedule Activated:</strong>
+        <p style="color: #047857; margin: 0; font-size: 12px; line-height: 1.5;">
+          • <strong>1st Installment Due Today:</strong> ${firstSplit} to lock in machinery reservation and trigger pre-delivery workshop inspection.<br />
+          • <strong>Remaining 3 Installments:</strong> 3 equal monthly installments billed at each month end via your chosen settlement method.
+        </p>
+      </div>
     `;
   }
 
@@ -451,7 +467,34 @@ export function paymentDetailsEmail(order, { methodId = 'bank-transfer', parsedF
       ${escapeHtml(methodParts.closing)}
     </p>
 
-    ${button(`${baseUrl}/order/payment-details/?id=${escapeHtml(ref)}`, 'View & Tap-to-Copy Payment Details Online')}
+    <!-- Prominent Action Buttons -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 24px 0 16px 0;">
+      <tr>
+        <td style="padding-bottom: 10px;">
+          <a href="${baseUrl}/order/payment-details/?id=${escapeHtml(ref)}" target="_blank" style="display: block; text-align: center; padding: 14px 20px; font-size: 14px; font-weight: 800; color: #0B111E; background-color: ${PRIMARY_ACCENT}; text-decoration: none; border-radius: 8px; letter-spacing: 0.3px; border: 1px solid #B3956D;">
+            📋 View &amp; Tap-to-Copy Payment Details Online &rarr;
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+              <td width="48%" style="padding-right: 2%;">
+                <a href="${baseUrl}/order/confirm-payment/?id=${escapeHtml(ref)}" target="_blank" style="display: block; text-align: center; padding: 12px 14px; font-size: 13px; font-weight: 700; color: #FFFFFF; background-color: ${HEADER_DARK}; text-decoration: none; border-radius: 8px; border: 1px solid #334155;">
+                  📤 Upload Payment Receipt
+                </a>
+              </td>
+              <td width="48%" style="padding-left: 2%;">
+                <a href="https://wa.me/${(CONTACT.whatsapp || CONTACT.phone || '61480811308').replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hi ${SITE.name}, I have sent payment for order ${ref}. Here is my receipt confirmation.`)}" target="_blank" style="display: block; text-align: center; padding: 12px 14px; font-size: 13px; font-weight: 700; color: #0B111E; background-color: #25D366; text-decoration: none; border-radius: 8px;">
+                  💬 Confirm via WhatsApp
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
 
     ${divider()}
 
@@ -597,13 +640,19 @@ export function paymentConfirmationNotificationEmail(order, note = '', screensho
     ${screenshotUrl ? `
       ${divider()}
       <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #64748B; margin-bottom: 6px;">
-        Remittance Receipt Link
+        Uploaded Remittance Proof
       </div>
-      <div>
-        <a href="${escapeHtml(screenshotUrl)}" target="_blank" style="color: #0F172A; font-weight: 700; text-decoration: underline;">
-          View Uploaded Remittance Screenshot &rarr;
-        </a>
-      </div>
+      ${screenshotUrl.startsWith('data:image/') ? `
+        <div style="margin-top: 8px;">
+          <img src="${screenshotUrl}" alt="Remittance Proof" style="max-width: 100%; max-height: 400px; border-radius: 8px; border: 1px solid #CBD5E1;" />
+        </div>
+      ` : `
+        <div>
+          <a href="${escapeHtml(screenshotUrl)}" target="_blank" style="color: #0F172A; font-weight: 700; text-decoration: underline;">
+            View Uploaded Remittance Screenshot &rarr;
+          </a>
+        </div>
+      `}
     ` : ''}
 
     ${button(`${baseUrl}/admin/orders/${escapeHtml(ref)}/`, 'Open Order in Admin Portal')}

@@ -25,7 +25,7 @@ export const HOMEPAGE_FAQS = [
   {
     id: 'payment-methods-crypto',
     question: 'What payment methods do you accept, and how does the 10% crypto rebate work?',
-    answer: 'We accept Direct Australian Bank Wire (EFT / Osko), Australian PayID instant transfer via registered ABN, and Cryptocurrency (Bitcoin BTC Native & Tether USDT TRC-20). When selecting Bitcoin or USDT at checkout, a 10% instant rebate is automatically deducted from your order total, and verified deposit wallet addresses are provided in your payment dispatch email.'
+    answer: 'We accept Direct Australian Bank Wire (EFT / Osko), Australian PayID instant transfer, and Cryptocurrency (Bitcoin BTC Native & Tether USDT TRC-20). When selecting Bitcoin or USDT at checkout, a 10% instant rebate is automatically deducted from your order total, and verified deposit wallet addresses are provided in your payment dispatch email.'
   },
   {
     id: 'warranty-parts-servicing',

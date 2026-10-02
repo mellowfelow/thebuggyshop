@@ -2,7 +2,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { ShieldCheck, CheckCircle2, AlertCircle, ArrowLeft, MessageSquare, Loader2, Sparkles, Truck } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, AlertCircle, ArrowLeft, MessageSquare, Loader2, Sparkles, Truck, Upload } from 'lucide-react';
 import CopyField from '@/src/components/CopyField';
 import { SITE, CONTACT } from '@/src/config/site';
 
@@ -176,23 +176,35 @@ function PaymentDetailsContent() {
         </ul>
       </div>
 
-      {/* Actions */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <Link
-          href={`/order/confirm-payment/?id=${data.orderNumber}`}
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#C5A880] hover:bg-[#D4B27C] text-slate-950 font-bold text-sm rounded-xl shadow-sm transition-all"
-        >
-          <span>&check; I&apos;ve Paid &mdash; Upload Receipt</span>
-        </Link>
-        <a
-          href={`https://wa.me/${CONTACT.whatsapp.replace('+', '')}?text=${encodeURIComponent(`Hi ${SITE.name}, I have sent payment for order ${data.orderNumber}.`)}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm rounded-xl transition-all border border-slate-800"
-        >
-          <MessageSquare className="w-4 h-4 text-emerald-400" />
-          <span>Confirm on WhatsApp</span>
-        </a>
+      {/* Settlement Verification & Receipt Upload Actions */}
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 sm:p-7 shadow-sm mb-8 text-center space-y-4">
+        <div>
+          <h3 className="text-sm font-black text-slate-900 uppercase tracking-wider">
+            Completed Your Payment?
+          </h3>
+          <p className="text-xs text-slate-500 mt-1 max-w-md mx-auto">
+            Upload your payment receipt photo directly from your device gallery to speed up warehouse allocation and dispatch.
+          </p>
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-1">
+          <Link
+            href={`/order/confirm-payment/?id=${data.orderNumber}`}
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-[#C5A880] hover:bg-[#D4B27C] text-slate-950 font-black text-xs uppercase tracking-wider rounded-xl shadow-sm hover:shadow-md transition-all cursor-pointer"
+          >
+            <Upload className="w-4 h-4" />
+            <span>Upload Payment Receipt</span>
+          </Link>
+          <a
+            href={`https://wa.me/${(CONTACT.whatsapp || CONTACT.phone || '61480811308').replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hi ${SITE.name}, I have sent payment for order ${data.orderNumber}. Here is my receipt confirmation.`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider rounded-xl transition-all border border-slate-800 shadow-sm"
+          >
+            <MessageSquare className="w-4 h-4 text-emerald-400" />
+            <span>Confirm via WhatsApp</span>
+          </a>
+        </div>
       </div>
 
     </div>

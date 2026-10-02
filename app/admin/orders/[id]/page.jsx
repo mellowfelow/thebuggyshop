@@ -227,15 +227,32 @@ export default function AdminOrderDetailPage({ params }) {
                 </p>
               )}
               {order.screenshotUrl && (
-                <a
-                  href={order.screenshotUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-blue-400 hover:underline inline-flex items-center gap-1 font-semibold"
-                >
-                  <span>View Uploaded Payment Receipt / Screenshot</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
+                <div className="mt-2 space-y-2">
+                  <div className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                    Uploaded Payment Receipt Photo:
+                  </div>
+                  {order.screenshotUrl.startsWith('data:image/') || order.screenshotUrl.match(/\.(jpeg|jpg|png|webp|gif)($|\?)/i) ? (
+                    <div className="bg-slate-950 p-2 rounded-lg border border-slate-800 inline-block">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={order.screenshotUrl}
+                        alt="Customer Payment Receipt"
+                        className="max-h-72 w-auto max-w-full rounded border border-slate-800 object-contain"
+                      />
+                    </div>
+                  ) : null}
+                  <div>
+                    <a
+                      href={order.screenshotUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-[#C5A880] hover:underline inline-flex items-center gap-1 font-semibold"
+                    >
+                      <span>Open Full Size Image / Link</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  </div>
+                </div>
               )}
             </div>
           )}
