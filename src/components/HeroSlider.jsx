@@ -22,7 +22,7 @@ const SLIDES = [
   {
     id: 1,
     isH1: true,
-    image: 'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=2000&q=85',
+    image: '/images/hero/hero-1.jpg',
     alt: 'Luxury Australian Golf Buggies for Sale - The Buggy Shop Queensland',
     eyebrow: 'AUSTRALIAN LUXURY GOLF BUGGIES • QUEENSLAND EST. 2004',
     titleMain: 'Premium ',
@@ -38,7 +38,7 @@ const SLIDES = [
   {
     id: 2,
     isH1: false,
-    image: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=2000&q=85',
+    image: '/images/hero/hero-2.jpg',
     alt: 'Remote Control Golf Buggies Australia - Active Gyro Stabilization',
     eyebrow: 'INTELLIGENT GYRO-STABILIZATION & DUAL 230W MOTORS',
     titleMain: 'Next-Gen ',
@@ -54,7 +54,7 @@ const SLIDES = [
   {
     id: 3,
     isH1: false,
-    image: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=2000&q=85',
+    image: '/images/hero/hero-3.jpg',
     alt: 'Heavy-Duty 4x4 Off Road Buggies for Sale Australia Acreage & Farm Carts',
     eyebrow: 'HEAVY-DUTY DUAL MOTOR 4X4 • TOW RATED TO 1,200 KG',
     titleMain: 'Rugged ',
@@ -70,7 +70,7 @@ const SLIDES = [
   {
     id: 4,
     isH1: false,
-    image: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=2000&q=85',
+    image: '/images/hero/hero-4.jpg',
     alt: 'Luxury Resort Multi-Passenger Golf Carts Australia',
     eyebrow: '5-YEAR LIFEPO4 BATTERY • 95 KM SINGLE-CHARGE RANGE',
     titleMain: 'Luxury ',
@@ -82,6 +82,22 @@ const SLIDES = [
     secondaryCta: { label: 'Speak with Specialist', href: '/contact/', icon: Compass },
     extraCta: { label: 'Nationwide Tail-Lift Delivery →', href: '/about/' },
     badge: 'Commercial & Resort Fleet',
+  },
+  {
+    id: 5,
+    isH1: false,
+    image: '/images/hero/hero-5.jpg',
+    alt: 'Certified Used Golf Buggies for Sale Australia - 5-Year Lithium Retrofits',
+    eyebrow: 'WORKSHOP-CERTIFIED PRE-OWNED • COMPREHENSIVE WARRANTY',
+    titleMain: 'Certified ',
+    titleAccent: 'Used Golf Buggies',
+    titleSuffix: ' & Ex-Demo Fleet.',
+    subtitle: 'Workshop Inspected, Battery Conditioned & Road-Ready with Nationwide Delivery',
+    description: 'Save thousands on premium refurbished golf carts and ex-demo motorized buggies. Every pre-owned vehicle undergoes a rigorous 42-point electrical and mechanical safety inspection, retrofitted with automotive-grade LiFePO4 lithium batteries and full Australian warranty.',
+    primaryCta: { label: 'Browse Used Buggies', href: '/shop/used-golf-buggies/' },
+    secondaryCta: { label: 'Speak with Workshop', href: '/contact/', icon: Sparkles },
+    extraCta: { label: 'View Certified Inventory →', href: '/shop/' },
+    badge: 'Certified Pre-Owned',
   },
 ];
 
@@ -134,6 +150,10 @@ export default function HeroSlider() {
               className={`w-full h-full object-cover object-center transform transition-transform duration-10000 ease-out ${
                 isActive ? 'scale-105' : 'scale-100'
               }`}
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = `/images/hero/hero-${s.id}.jpg`;
+              }}
             />
             {/* Multi-tier Cinematic Scrim & Shading Gradients for High Readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/95 via-[#070B14]/80 to-[#070B14]/30" />

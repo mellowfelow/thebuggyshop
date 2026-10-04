@@ -150,63 +150,63 @@ export const CATEGORIES = [
     slug: 'remote-control-golf-buggies',
     name: 'Remote Control Golf Buggies',
     description: 'Hands-free motorized remote control golf buggies with gyroscope tracking, downhill brakes, and 36-hole lithium batteries.',
-    heroImage: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/remote-control-golf-buggies.jpg',
     itemCount: 6
   },
   {
     slug: 'electric-golf-buggies',
     name: 'Walk-Behind Electric Golf Buggies',
     description: 'Push-button speed-dial electric golf buggies from MGI, Motocaddy, and PowaKaddy with quick-fold lithium power.',
-    heroImage: 'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/electric-golf-buggies.jpg',
     itemCount: 5
   },
   {
     slug: 'gps-follow-buggies',
     name: 'GPS & Auto-Follow Smart Buggies',
     description: 'Full-colour touchscreen GPS mapping and 7th-gen autonomous follow-me golf buggies from MGI and Stewart Golf.',
-    heroImage: 'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/gps-follow-buggies.jpg',
     itemCount: 3
   },
   {
     slug: 'push-pull-golf-buggies',
     name: 'Manual Push & Pull Golf Buggies',
     description: 'World-benchmark 3-wheel and ultra-flat 4-wheel manual push carts from Clicgear, Big Max, and QOD Golf ($450+ floor).',
-    heroImage: 'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/push-pull-golf-buggies.jpg',
     itemCount: 3
   },
   {
     slug: 'luxury-golf-carts',
     name: 'Ride-On Golf Carts (2–6 Seat)',
     description: 'Commercial and resort ride-on carts from Cougar, ECAR, Rippa, Tomberlin, Club Car, and Garia with LiFePO4 lithium power.',
-    heroImage: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/luxury-golf-carts.jpg',
     itemCount: 7
   },
   {
     slug: 'off-road-buggies',
     name: 'Off-Road Buggies & Side-by-Side UTVs',
     description: 'Dune buggies, farm UTVs, and heavy-duty 4x4 side-by-sides from GMX, Crossfire, Kayo, and Polaris.',
-    heroImage: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/off-road-buggies.jpg',
     itemCount: 5
   },
   {
     slug: 'kids-buggies',
     name: 'Kids & Teen Ride-On Buggies',
     description: '48V electric and 90cc-208cc petrol off-road buggies with parental speed locks and heavy-duty roll cages ($850+ floor).',
-    heroImage: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/kids-buggies.jpg',
     itemCount: 2
   },
   {
     slug: 'batteries',
     name: 'Golf Buggy Lithium Batteries & Chargers',
     description: 'Genuine MGI 24V packs, drop-in 48V cart lithium replacements, and multi-chemistry smart chargers.',
-    heroImage: 'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/batteries.jpg',
     itemCount: 2
   },
   {
     slug: 'used-golf-buggies',
     name: 'Certified Used & Ex-Demo Buggies',
     description: 'Workshop-inspected ex-demo MGI buggies and refurbished 48V lithium carts with comprehensive warranties.',
-    heroImage: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/used-golf-buggies.jpg',
     itemCount: 2
   }
 ]

@@ -14,7 +14,7 @@ export const CATEGORY_TREE = [
     h1: 'Electric Golf Buggies',
     targetKeywords: ['electric golf buggy', 'motorised golf buggy', 'battery golf buggy', 'lithium golf buggy', 'electric golf buggy australia'],
     introCopy: 'Electric golf buggies do the carrying so you can focus on your round. Our range covers walk-behind lithium models, hands-free remote-control buggies and GPS follow buggies from the brands Australian golfers trust. Every buggy ships with an Australian warranty and local service support.',
-    heroImage: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/electric-golf-buggies.jpg',
     itemCount: 8,
     facets: ['power', 'wheels', 'batteryRange', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
@@ -46,7 +46,7 @@ export const CATEGORY_TREE = [
     h1: 'Remote-control Golf Buggies',
     targetKeywords: ['remote control golf buggy', 'electric golf buggy with remote', 'remote golf buggy australia'],
     introCopy: 'Steer the buggy with a handset while you walk ahead, line up your next shot or clear a bunker. Our remote-control range covers everything from first-time remote buggies to all-terrain dual-motor models built for hilly Australian courses.',
-    heroImage: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/remote-control-golf-buggies.jpg',
     itemCount: 5,
     facets: ['power', 'wheels', 'batteryRange', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
@@ -95,7 +95,7 @@ export const CATEGORY_TREE = [
     h1: 'Push & Pull Golf Buggies',
     targetKeywords: ['golf push buggy', 'push golf buggy', 'golf trolley', '3 wheel golf buggy', 'manual golf buggy'],
     introCopy: 'No batteries, no fuss. A good push buggy rolls straight, folds in seconds and lasts for years. We stock the premium 3-wheel and 4-wheel models that hold their value, and skip the throwaway trolleys.',
-    heroImage: 'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/push-pull-golf-buggies.jpg',
     itemCount: 6,
     facets: ['power', 'wheels', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
@@ -161,7 +161,7 @@ export const CATEGORY_TREE = [
     h1: 'Ride-On Golf Carts',
     targetKeywords: ['golf cart for sale australia', 'golf buggy with seat', 'electric buggy for adults', 'ride on golf buggy'],
     introCopy: 'Sit-in electric carts for the course, the resort, the farm or the estate. From value 2-seaters to lifted 6-seat transporters and street-legal luxury carts, with finance and Australia-wide freight.',
-    heroImage: 'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/luxury-golf-carts.jpg',
     itemCount: 10,
     facets: ['seats', 'power', 'condition', 'price', 'brand']
   },
@@ -258,7 +258,7 @@ export const CATEGORY_TREE = [
     h1: 'Off-Road & Recreational Buggies',
     targetKeywords: ['off road buggies', 'off road buggy for sale', 'dune buggy', 'side by side buggy'],
     introCopy: 'Buggies built for sand, dirt and paddocks. Petrol dune buggies, side-by-side UTVs, classic beach buggies and electric farm buggies, from kids models up to premium performance machines.',
-    heroImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/off-road-buggies.jpg',
     itemCount: 8,
     facets: ['power', 'seats', 'condition', 'price', 'brand']
   },
@@ -355,7 +355,7 @@ export const CATEGORY_TREE = [
     h1: 'Kids\' Ride-On Buggies',
     targetKeywords: ['kids buggy for sale', 'kids electric buggy 48v', 'ride on buggy kids', 'children\'s petrol buggy'],
     introCopy: 'Proper off-road buggies scaled for kids and teens, not plastic toys. Roll cages, seat belts, adjustable speed limits and adult remote cut-off on the electric models.',
-    heroImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/kids-buggies.jpg',
     itemCount: 4,
     facets: ['power', 'price', 'condition', 'brand']
   },
@@ -404,7 +404,7 @@ export const CATEGORY_TREE = [
     h1: 'Golf Buggy Batteries & Chargers',
     targetKeywords: ['golf buggy battery replacement price', 'lithium battery golf buggy', 'golf buggy battery', 'golf cart batteries'],
     introCopy: 'Genuine and aftermarket replacement batteries by hole-range and brand fitment, plus chargers, battery bags and full ride-on cart battery sets. Lead-acid to lithium upgrades welcome.',
-    heroImage: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/batteries.jpg',
     itemCount: 6,
     facets: ['batteryRange', 'price', 'condition', 'brand']
   },
@@ -569,7 +569,7 @@ export const CATEGORY_TREE = [
     h1: 'Used & Ex-Demo Golf Buggies',
     targetKeywords: ['used golf buggy for sale', 'second hand golf buggies for sale', 'golf buggy for sale used'],
     introCopy: 'Ex-demo and trade-in electric buggies, fully tested with a fresh battery health report and a short warranty. Stock changes weekly.',
-    heroImage: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80',
+    heroImage: '/images/categories/used-golf-buggies.jpg',
     itemCount: 4,
     facets: ['power', 'wheels', 'condition', 'price', 'brand']
   }
