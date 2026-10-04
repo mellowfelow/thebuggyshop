@@ -273,8 +273,11 @@ export const PRODUCTS = [
       warranty: '3-Year Australian Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/mgi-zip-x1-electric-golf-buggy.jpg',
+      '/images/products/mgi-zip-x1-electric-golf-buggy-2.jpg',
+      '/images/products/mgi-zip-x1-electric-golf-buggy-3.jpg',
+      '/images/products/mgi-zip-x1-electric-golf-buggy-4.jpg',
+      '/images/products/mgi-zip-x1-electric-golf-buggy-5.jpg'
     ]
   },
   {

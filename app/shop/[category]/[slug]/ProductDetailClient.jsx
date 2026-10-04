@@ -49,9 +49,9 @@ export default function ProductDetailClient({ product, relatedProducts }) {
         {/* Left Column: Image Gallery */}
         <div className="lg:col-span-7 space-y-4">
           {/* Main Hero Image Frame */}
-          <div className="product-frame bg-[#EBF0EC] rounded-3xl overflow-hidden border border-[#D5DFD9] shadow-[0_8px_30px_-6px_rgba(14,42,30,0.1)] relative group">
+          <div className="product-frame bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-[0_8px_30px_-6px_rgba(0,0,0,0.06)] relative group aspect-[4/3]">
             {product.badge && (
-              <div className="absolute top-4 left-4 z-10 bg-[#0E2A1E]/95 backdrop-blur-xs text-[#C5A265] text-xs font-black uppercase px-3.5 py-1.5 rounded-full border border-[#C5A265]/50 shadow-md">
+              <div className="absolute top-4 left-4 z-10 bg-slate-950/90 backdrop-blur-xs text-[#C5A880] text-xs font-black uppercase px-3.5 py-1.5 rounded-full border border-[#C5A880]/50 shadow-md">
                 {product.badge}
               </div>
             )}
@@ -59,27 +59,27 @@ export default function ProductDetailClient({ product, relatedProducts }) {
             <img
               src={product.images[activeImageIndex]}
               alt={`${product.name} view ${activeImageIndex + 1}`}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
             />
           </div>
 
           {/* Thumbnail Strip */}
           {product.images.length > 1 && (
-            <div className="flex gap-3">
+            <div className="flex gap-3 overflow-x-auto pb-1">
               {product.images.map((img, idx) => (
                 <button
                   key={`product-thumb-${product.slug}-${idx}`}
                   type="button"
                   onClick={() => setActiveImageIndex(idx)}
-                  className={`w-24 h-18 rounded-2xl overflow-hidden border-2 transition-all cursor-pointer ${
+                  className={`w-24 h-18 rounded-2xl overflow-hidden border-2 transition-all cursor-pointer bg-white shrink-0 ${
                     activeImageIndex === idx
-                      ? 'border-[#C5A265] ring-2 ring-[#C5A265]/40 shadow-sm'
-                      : 'border-[#D5DFD9] opacity-75 hover:opacity-100 bg-[#EBF0EC]'
+                      ? 'border-[#C5A880] ring-2 ring-[#C5A880]/40 shadow-sm'
+                      : 'border-slate-200 opacity-75 hover:opacity-100 hover:border-slate-300'
                   }`}
                   aria-label={`View image ${idx + 1}`}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                  <img src={img} alt="Thumbnail" className="w-full h-full object-contain p-1" />
                 </button>
               ))}
             </div>
