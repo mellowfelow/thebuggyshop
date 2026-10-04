@@ -55,8 +55,8 @@ export default function ProductCard({
       {/* Top gold accent line */}
       <div className="h-1 w-full bg-gradient-to-r from-slate-900 via-[#C5A880] to-slate-900 opacity-60 group-hover:opacity-100 transition-opacity" />
 
-      {/* Larger, Spacious Image Frame */}
-      <div className="relative aspect-[4/3] w-full min-h-[210px] sm:min-h-[250px] bg-white overflow-hidden border-b border-slate-100 flex items-center justify-center p-3 sm:p-4">
+      {/* Uniform Fixed-Height Image Frame for Clean Grid Alignment */}
+      <div className="relative h-56 sm:h-64 w-full bg-white overflow-hidden border-b border-slate-100 flex items-center justify-center p-2 sm:p-3">
         {/* Badge */}
         {product.badge && (
           <div className="absolute top-2.5 left-2.5 z-10 bg-slate-950/90 text-[#C5A880] text-[9px] sm:text-[10px] font-bold uppercase px-2 py-0.5 rounded-md border border-[#C5A880]/50 shadow-xs">
@@ -79,12 +79,12 @@ export default function ProductCard({
         </button>
 
         {/* Image Link */}
-        <Link href={`/shop/${product.category}/${product.slug}/`} className="w-full h-full flex items-center justify-center">
+        <Link href={`/shop/${product.category}/${product.slug}/`} className="w-full h-full flex items-center justify-center relative">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src={product.images[0]} 
             alt={`${product.name} - Australian Golf Buggy`}
-            className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300 ease-out"
+            className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 ease-out"
             loading="lazy"
             referrerPolicy="no-referrer"
           />

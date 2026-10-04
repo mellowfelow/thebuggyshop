@@ -1760,14 +1760,3073 @@ export const PRODUCTS = [
       '/images/products/big-max-iq-2-360-push-golf-buggy/gallery-5.webp'
     ]
   }
+,
+  {
+    slug: 'clicgear-rovic-swivel-2-0-compact-push-golf-buggy',
+    name: 'Clicgear Rovic Swivel 2.0 Compact Push Golf Buggy',
+    brand: 'clicgear',
+    brandName: 'Clicgear',
+    category: 'push-pull-golf-buggies',
+    subcategory: '4-wheel',
+    categoryPath: '/push-pull-golf-buggies/',
+    price: 459,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'clicgear rovic swivel 2.0 compact push golf buggy',
+    shortDescription: 'Clicgear Rovic Swivel 2.0 Compact Push Golf Buggy available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Clicgear Rovic Swivel 2.0 Compact Push Golf Buggy provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Clicgear',
+      condition: 'New',
+      category: 'push-pull-golf-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'qod-compact-push-golf-buggy',
+    name: 'QOD Compact Push Golf Buggy',
+    brand: 'qod-golf',
+    brandName: 'QOD Golf',
+    category: 'push-pull-golf-buggies',
+    subcategory: '4-wheel',
+    categoryPath: '/push-pull-golf-buggies/',
+    price: 599,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'qod compact push golf buggy',
+    shortDescription: 'QOD Compact Push Golf Buggy available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The QOD Compact Push Golf Buggy provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'QOD Golf',
+      condition: 'New',
+      category: 'push-pull-golf-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'tara-spirit-plus-spirit-pro-2-seater-golf-cart',
+    name: 'Tara Spirit Plus / Spirit Pro 2-Seater Golf Cart',
+    brand: 'tara',
+    brandName: 'Tara',
+    category: 'luxury-golf-carts',
+    subcategory: '2-seat',
+    categoryPath: '/luxury-golf-carts/',
+    price: 12375,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'tara spirit plus / spirit pro 2-seater golf cart',
+    shortDescription: 'Tara Spirit Plus / Spirit Pro 2-Seater Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Tara Spirit Plus / Spirit Pro 2-Seater Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Tara',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'lvtong-2-seater-fleet-golf-cart',
+    name: 'LVTONG 2-Seater Fleet Golf Cart',
+    brand: 'lvtong',
+    brandName: 'LVTONG',
+    category: 'luxury-golf-carts',
+    subcategory: '2-seat',
+    categoryPath: '/luxury-golf-carts/',
+    price: 10990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'lvtong 2-seater fleet golf cart',
+    shortDescription: 'LVTONG 2-Seater Fleet Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The LVTONG 2-Seater Fleet Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'LVTONG',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'tomberlin-e-merge-revenge-2-and-4-seat-golf-cart',
+    name: 'Tomberlin E-Merge Revenge 2 & 4 Seat Golf Cart',
+    brand: 'tomberlin',
+    brandName: 'Tomberlin',
+    category: 'luxury-golf-carts',
+    subcategory: '2-seat',
+    categoryPath: '/luxury-golf-carts/',
+    price: 16990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'tomberlin e-merge revenge 2 & 4 seat golf cart',
+    shortDescription: 'Tomberlin E-Merge Revenge 2 & 4 Seat Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Tomberlin E-Merge Revenge 2 & 4 Seat Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Tomberlin',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'evolution-d3-2-seater-electric-golf-cart',
+    name: 'Evolution D3 2-Seater Electric Golf Cart',
+    brand: 'evolution',
+    brandName: 'Evolution',
+    category: 'luxury-golf-carts',
+    subcategory: '2-seat',
+    categoryPath: '/luxury-golf-carts/',
+    price: 12990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'evolution d3 2-seater electric golf cart',
+    shortDescription: 'Evolution D3 2-Seater Electric Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Evolution D3 2-Seater Electric Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Evolution',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'shelby-2-seat-electric-golf-cart',
+    name: 'Shelby 2-Seat Electric Golf Cart',
+    brand: 'shelby',
+    brandName: 'Shelby',
+    category: 'luxury-golf-carts',
+    subcategory: '2-seat',
+    categoryPath: '/luxury-golf-carts/',
+    price: 20990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'shelby 2-seat electric golf cart',
+    shortDescription: 'Shelby 2-Seat Electric Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Shelby 2-Seat Electric Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Shelby',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'club-car-tempo-onward-lithium-golf-cart-2-2-2-4-seat',
+    name: 'Club Car Tempo / Onward Lithium Golf Cart (2 / 2+2 / 4 Seat)',
+    brand: 'club-car',
+    brandName: 'Club Car',
+    category: 'luxury-golf-carts',
+    subcategory: '2-seat',
+    categoryPath: '/luxury-golf-carts/',
+    price: 19990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'club car tempo / onward lithium golf cart (2 / 2+2 / 4 seat)',
+    shortDescription: 'Club Car Tempo / Onward Lithium Golf Cart (2 / 2+2 / 4 Seat) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Club Car Tempo / Onward Lithium Golf Cart (2 / 2+2 / 4 Seat) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Club Car',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'yamaha-drive2-golf-cart-2-4-seat',
+    name: 'Yamaha Drive2 Golf Cart (2 / 4 Seat)',
+    brand: 'yamaha',
+    brandName: 'Yamaha',
+    category: 'luxury-golf-carts',
+    subcategory: '2-seat',
+    categoryPath: '/luxury-golf-carts/',
+    price: 16990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'yamaha drive2 golf cart (2 / 4 seat)',
+    shortDescription: 'Yamaha Drive2 Golf Cart (2 / 4 Seat) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Yamaha Drive2 Golf Cart (2 / 4 Seat) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Yamaha',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'tara-roadster-2-2-electric-golf-cart',
+    name: 'Tara Roadster 2+2 Electric Golf Cart',
+    brand: 'tara',
+    brandName: 'Tara',
+    category: 'luxury-golf-carts',
+    subcategory: '2-seat',
+    categoryPath: '/luxury-golf-carts/',
+    price: 15125,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'tara roadster 2+2 electric golf cart',
+    shortDescription: 'Tara Roadster 2+2 Electric Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Tara Roadster 2+2 Electric Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Tara',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'evolution-d5-4-seater-electric-golf-cart',
+    name: 'Evolution D5 4-Seater Electric Golf Cart',
+    brand: 'evolution',
+    brandName: 'Evolution',
+    category: 'luxury-golf-carts',
+    subcategory: '4-6-seat',
+    categoryPath: '/luxury-golf-carts/',
+    price: 15990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'evolution d5 4-seater electric golf cart',
+    shortDescription: 'Evolution D5 4-Seater Electric Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Evolution D5 4-Seater Electric Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Evolution',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'tomberlin-e-merge-beachcomber-4-and-6-seat-golf-cart',
+    name: 'Tomberlin E-Merge Beachcomber 4 & 6 Seat Golf Cart',
+    brand: 'tomberlin',
+    brandName: 'Tomberlin',
+    category: 'luxury-golf-carts',
+    subcategory: '4-6-seat',
+    categoryPath: '/luxury-golf-carts/',
+    price: 32990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'tomberlin e-merge beachcomber 4 & 6 seat golf cart',
+    shortDescription: 'Tomberlin E-Merge Beachcomber 4 & 6 Seat Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Tomberlin E-Merge Beachcomber 4 & 6 Seat Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Tomberlin',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'tomberlin-e-merge-ghosthawk-4-and-6-seat-golf-cart',
+    name: 'Tomberlin E-Merge Ghosthawk 4 & 6 Seat Golf Cart',
+    brand: 'tomberlin',
+    brandName: 'Tomberlin',
+    category: 'luxury-golf-carts',
+    subcategory: '4-6-seat',
+    categoryPath: '/luxury-golf-carts/',
+    price: 32990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'tomberlin e-merge ghosthawk 4 & 6 seat golf cart',
+    shortDescription: 'Tomberlin E-Merge Ghosthawk 4 & 6 Seat Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Tomberlin E-Merge Ghosthawk 4 & 6 Seat Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Tomberlin',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'ecar-compass-4s-6s-lifted-all-terrain-golf-cart',
+    name: 'ECAR Compass 4S / 6S Lifted All-Terrain Golf Cart',
+    brand: 'ecar',
+    brandName: 'ECAR',
+    category: 'luxury-golf-carts',
+    subcategory: 'lifted-all-terrain',
+    categoryPath: '/luxury-golf-carts/',
+    price: 17990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'ecar compass 4s / 6s lifted all-terrain golf cart',
+    shortDescription: 'ECAR Compass 4S / 6S Lifted All-Terrain Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The ECAR Compass 4S / 6S Lifted All-Terrain Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'ECAR',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'tomberlin-e-merge-defender-lifted-golf-cart-2-and-4-seat',
+    name: 'Tomberlin E-Merge Defender Lifted Golf Cart (2 & 4 Seat)',
+    brand: 'tomberlin',
+    brandName: 'Tomberlin',
+    category: 'luxury-golf-carts',
+    subcategory: 'lifted-all-terrain',
+    categoryPath: '/luxury-golf-carts/',
+    price: 29990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'tomberlin e-merge defender lifted golf cart (2 & 4 seat)',
+    shortDescription: 'Tomberlin E-Merge Defender Lifted Golf Cart (2 & 4 Seat) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Tomberlin E-Merge Defender Lifted Golf Cart (2 & 4 Seat) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Tomberlin',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'ecar-lithium-a2-utility-cart',
+    name: 'ECAR Lithium A2 Utility Cart',
+    brand: 'ecar',
+    brandName: 'ECAR',
+    category: 'luxury-golf-carts',
+    subcategory: 'utility',
+    categoryPath: '/luxury-golf-carts/',
+    price: 12990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'ecar lithium a2 utility cart',
+    shortDescription: 'ECAR Lithium A2 Utility Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The ECAR Lithium A2 Utility Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'ECAR',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'ecar-lithium-a4-utility-cart',
+    name: 'ECAR Lithium A4 Utility Cart',
+    brand: 'ecar',
+    brandName: 'ECAR',
+    category: 'luxury-golf-carts',
+    subcategory: 'utility',
+    categoryPath: '/luxury-golf-carts/',
+    price: 12990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'ecar lithium a4 utility cart',
+    shortDescription: 'ECAR Lithium A4 Utility Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The ECAR Lithium A4 Utility Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'ECAR',
+      condition: 'New',
+      category: 'luxury-golf-carts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'used-yamaha-g29-2-seat-ex-lease-golf-cart',
+    name: 'Used Yamaha G29 2-Seat Ex-Lease Golf Cart',
+    brand: 'yamaha',
+    brandName: 'Yamaha',
+    category: 'used-golf-buggies',
+    subcategory: 'used',
+    categoryPath: '/used-golf-buggies/',
+    price: 4990,
+    condition: 'Used',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'used yamaha g29 2-seat ex-lease golf cart',
+    shortDescription: 'Used Yamaha G29 2-Seat Ex-Lease Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Used Yamaha G29 2-Seat Ex-Lease Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Yamaha',
+      condition: 'Used',
+      category: 'used-golf-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'used-club-car-precedent-2-seat-ex-lease-golf-cart',
+    name: 'Used Club Car Precedent 2-Seat Ex-Lease Golf Cart',
+    brand: 'club-car',
+    brandName: 'Club Car',
+    category: 'used-golf-buggies',
+    subcategory: 'used',
+    categoryPath: '/used-golf-buggies/',
+    price: 6490,
+    condition: 'Used',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'used club car precedent 2-seat ex-lease golf cart',
+    shortDescription: 'Used Club Car Precedent 2-Seat Ex-Lease Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Used Club Car Precedent 2-Seat Ex-Lease Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Club Car',
+      condition: 'Used',
+      category: 'used-golf-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'used-yamaha-drive-2-seat-ex-lease-golf-cart',
+    name: 'Used Yamaha Drive 2-Seat Ex-Lease Golf Cart',
+    brand: 'yamaha',
+    brandName: 'Yamaha',
+    category: 'used-golf-buggies',
+    subcategory: 'used',
+    categoryPath: '/used-golf-buggies/',
+    price: 7490,
+    condition: 'Used',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'used yamaha drive 2-seat ex-lease golf cart',
+    shortDescription: 'Used Yamaha Drive 2-Seat Ex-Lease Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Used Yamaha Drive 2-Seat Ex-Lease Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Yamaha',
+      condition: 'Used',
+      category: 'used-golf-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'used-e-z-go-rxv-4-seat-ex-fleet-lithium-golf-cart',
+    name: 'Used E-Z-GO RXV 4-Seat Ex-Fleet Lithium Golf Cart',
+    brand: 'e-z-go',
+    brandName: 'E-Z-GO',
+    category: 'used-golf-buggies',
+    subcategory: 'used',
+    categoryPath: '/used-golf-buggies/',
+    price: 8990,
+    condition: 'Used',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'used e-z-go rxv 4-seat ex-fleet lithium golf cart',
+    shortDescription: 'Used E-Z-GO RXV 4-Seat Ex-Fleet Lithium Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Used E-Z-GO RXV 4-Seat Ex-Fleet Lithium Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'E-Z-GO',
+      condition: 'Used',
+      category: 'used-golf-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'used-club-car-precedent-4-seat-ex-lease-golf-cart',
+    name: 'Used Club Car Precedent 4-Seat Ex-Lease Golf Cart',
+    brand: 'club-car',
+    brandName: 'Club Car',
+    category: 'used-golf-buggies',
+    subcategory: 'used',
+    categoryPath: '/used-golf-buggies/',
+    price: 9990,
+    condition: 'Used',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'used club car precedent 4-seat ex-lease golf cart',
+    shortDescription: 'Used Club Car Precedent 4-Seat Ex-Lease Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Used Club Car Precedent 4-Seat Ex-Lease Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Club Car',
+      condition: 'Used',
+      category: 'used-golf-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'used-club-car-tempo-2-seat-lithium-ex-lease-golf-cart',
+    name: 'Used Club Car Tempo 2-Seat Lithium Ex-Lease Golf Cart',
+    brand: 'club-car',
+    brandName: 'Club Car',
+    category: 'used-golf-buggies',
+    subcategory: 'used',
+    categoryPath: '/used-golf-buggies/',
+    price: 11490,
+    condition: 'Used',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'used club car tempo 2-seat lithium ex-lease golf cart',
+    shortDescription: 'Used Club Car Tempo 2-Seat Lithium Ex-Lease Golf Cart available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Used Club Car Tempo 2-Seat Lithium Ex-Lease Golf Cart provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Club Car',
+      condition: 'Used',
+      category: 'used-golf-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'gmx-gkt110-110cc-dune-buggy',
+    name: 'GMX GKT110 110cc Dune Buggy',
+    brand: 'gmx',
+    brandName: 'GMX',
+    category: 'off-road-buggies',
+    subcategory: 'dune-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 2999,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'gmx gkt110 110cc dune buggy',
+    shortDescription: 'GMX GKT110 110cc Dune Buggy available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The GMX GKT110 110cc Dune Buggy provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'GMX',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mj-motor-forza-dune-buggy-163-300cc',
+    name: 'MJ Motor Forza Dune Buggy (163-300cc)',
+    brand: 'mj-motor',
+    brandName: 'MJ Motor',
+    category: 'off-road-buggies',
+    subcategory: 'dune-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 2099,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mj motor forza dune buggy (163-300cc)',
+    shortDescription: 'MJ Motor Forza Dune Buggy (163-300cc) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MJ Motor Forza Dune Buggy (163-300cc) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MJ Motor',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mxr-300cc-fuel-injected-dune-buggy',
+    name: 'MXR 300cc Fuel-Injected Dune Buggy',
+    brand: 'mxr-motorsports',
+    brandName: 'MXR Motorsports',
+    category: 'off-road-buggies',
+    subcategory: 'dune-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 5999,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mxr 300cc fuel-injected dune buggy',
+    shortDescription: 'MXR 300cc Fuel-Injected Dune Buggy available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MXR 300cc Fuel-Injected Dune Buggy provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MXR Motorsports',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'kayo-s150-150cc-2-seat-buggy',
+    name: 'Kayo S150 150cc 2-Seat Buggy',
+    brand: 'kayo',
+    brandName: 'Kayo',
+    category: 'off-road-buggies',
+    subcategory: 'side-by-side',
+    categoryPath: '/off-road-buggies/',
+    price: 4299,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'kayo s150 150cc 2-seat buggy',
+    shortDescription: 'Kayo S150 150cc 2-Seat Buggy available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Kayo S150 150cc 2-Seat Buggy provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Kayo',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'hawk-razorback-4-seat-utv',
+    name: 'Hawk Razorback 4-Seat UTV',
+    brand: 'hawk-carts',
+    brandName: 'Hawk Carts',
+    category: 'off-road-buggies',
+    subcategory: 'side-by-side',
+    categoryPath: '/off-road-buggies/',
+    price: 18490,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'hawk razorback 4-seat utv',
+    shortDescription: 'Hawk Razorback 4-Seat UTV available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Hawk Razorback 4-Seat UTV provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Hawk Carts',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'trident-1000cc-side-by-side-utv',
+    name: 'Trident 1000cc Side-by-Side UTV',
+    brand: 'trident',
+    brandName: 'Trident',
+    category: 'off-road-buggies',
+    subcategory: 'side-by-side',
+    categoryPath: '/off-road-buggies/',
+    price: 21990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'trident 1000cc side-by-side utv',
+    shortDescription: 'Trident 1000cc Side-by-Side UTV available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Trident 1000cc Side-by-Side UTV provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Trident',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'can-am-maverick-commander-defender-limited-side-by-side',
+    name: 'Can-Am Maverick / Commander / Defender Limited Side-by-Side',
+    brand: 'can-am',
+    brandName: 'Can-Am',
+    category: 'off-road-buggies',
+    subcategory: 'side-by-side',
+    categoryPath: '/off-road-buggies/',
+    price: 24999,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'can-am maverick / commander / defender limited side-by-side',
+    shortDescription: 'Can-Am Maverick / Commander / Defender Limited Side-by-Side available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Can-Am Maverick / Commander / Defender Limited Side-by-Side provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Can-Am',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'cfmoto-uforce-u10-pro-zforce-side-by-side',
+    name: 'CFMOTO UForce U10 Pro / ZFORCE Side-by-Side',
+    brand: 'cfmoto',
+    brandName: 'CFMOTO',
+    category: 'off-road-buggies',
+    subcategory: 'side-by-side',
+    categoryPath: '/off-road-buggies/',
+    price: 28990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'cfmoto uforce u10 pro / zforce side-by-side',
+    shortDescription: 'CFMOTO UForce U10 Pro / ZFORCE Side-by-Side available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The CFMOTO UForce U10 Pro / ZFORCE Side-by-Side provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'CFMOTO',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'yamaha-wolverine-x2-850-rmax2-1000-side-by-side',
+    name: 'Yamaha Wolverine X2 850 / RMAX2 1000 Side-by-Side',
+    brand: 'yamaha',
+    brandName: 'Yamaha',
+    category: 'off-road-buggies',
+    subcategory: 'side-by-side',
+    categoryPath: '/off-road-buggies/',
+    price: 27000,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'yamaha wolverine x2 850 / rmax2 1000 side-by-side',
+    shortDescription: 'Yamaha Wolverine X2 850 / RMAX2 1000 Side-by-Side available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Yamaha Wolverine X2 850 / RMAX2 1000 Side-by-Side provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Yamaha',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'yamaha-yxz1000r-ss-xt-r-sport-side-by-side',
+    name: 'Yamaha YXZ1000R SS XT-R Sport Side-by-Side',
+    brand: 'yamaha',
+    brandName: 'Yamaha',
+    category: 'off-road-buggies',
+    subcategory: 'side-by-side',
+    categoryPath: '/off-road-buggies/',
+    price: 39999,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'yamaha yxz1000r ss xt-r sport side-by-side',
+    shortDescription: 'Yamaha YXZ1000R SS XT-R Sport Side-by-Side available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Yamaha YXZ1000R SS XT-R Sport Side-by-Side provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Yamaha',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'yamaha-rmax4-1000-xt-r-4-seat-side-by-side',
+    name: 'Yamaha RMAX4 1000 XT-R 4-Seat Side-by-Side',
+    brand: 'yamaha',
+    brandName: 'Yamaha',
+    category: 'off-road-buggies',
+    subcategory: 'side-by-side',
+    categoryPath: '/off-road-buggies/',
+    price: 42999,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'yamaha rmax4 1000 xt-r 4-seat side-by-side',
+    shortDescription: 'Yamaha RMAX4 1000 XT-R 4-Seat Side-by-Side available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Yamaha RMAX4 1000 XT-R 4-Seat Side-by-Side provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Yamaha',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'polaris-ranger-xd-1500-northstar-side-by-side',
+    name: 'Polaris Ranger XD 1500 NorthStar Side-by-Side',
+    brand: 'polaris',
+    brandName: 'Polaris',
+    category: 'off-road-buggies',
+    subcategory: 'side-by-side',
+    categoryPath: '/off-road-buggies/',
+    price: 39995,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'polaris ranger xd 1500 northstar side-by-side',
+    shortDescription: 'Polaris Ranger XD 1500 NorthStar Side-by-Side available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Polaris Ranger XD 1500 NorthStar Side-by-Side provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Polaris',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'polaris-rzr-xpedition-adv-ultimate',
+    name: 'Polaris RZR XPEDITION ADV Ultimate',
+    brand: 'polaris',
+    brandName: 'Polaris',
+    category: 'off-road-buggies',
+    subcategory: 'side-by-side',
+    categoryPath: '/off-road-buggies/',
+    price: 40495,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'polaris rzr xpedition adv ultimate',
+    shortDescription: 'Polaris RZR XPEDITION ADV Ultimate available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Polaris RZR XPEDITION ADV Ultimate provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Polaris',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'polaris-ranger-500-farm-utv',
+    name: 'Polaris Ranger 500 Farm UTV',
+    brand: 'polaris',
+    brandName: 'Polaris',
+    category: 'off-road-buggies',
+    subcategory: 'farm-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 15995,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'polaris ranger 500 farm utv',
+    shortDescription: 'Polaris Ranger 500 Farm UTV available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Polaris Ranger 500 Farm UTV provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Polaris',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'polaris-ranger-1000-premium-farm-utv',
+    name: 'Polaris Ranger 1000 Premium Farm UTV',
+    brand: 'polaris',
+    brandName: 'Polaris',
+    category: 'off-road-buggies',
+    subcategory: 'farm-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 23995,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'polaris ranger 1000 premium farm utv',
+    shortDescription: 'Polaris Ranger 1000 Premium Farm UTV available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Polaris Ranger 1000 Premium Farm UTV provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Polaris',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'can-am-defender-hd7-hd9-farm-utv',
+    name: 'Can-Am Defender HD7 / HD9 Farm UTV',
+    brand: 'can-am',
+    brandName: 'Can-Am',
+    category: 'off-road-buggies',
+    subcategory: 'farm-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 21995,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'can-am defender hd7 / hd9 farm utv',
+    shortDescription: 'Can-Am Defender HD7 / HD9 Farm UTV available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Can-Am Defender HD7 / HD9 Farm UTV provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Can-Am',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'licensed-rzr-style-4x4-kids-electric-ride-on-buggy-24-48v',
+    name: 'Licensed RZR-Style 4x4 Kids Electric Ride-On Buggy (24-48V)',
+    brand: 'various',
+    brandName: 'Various',
+    category: 'kids-buggies',
+    subcategory: 'electric',
+    categoryPath: '/kids-buggies/',
+    price: 1490,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'licensed rzr-style 4x4 kids electric ride-on buggy (24-48v)',
+    shortDescription: 'Licensed RZR-Style 4x4 Kids Electric Ride-On Buggy (24-48V) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Licensed RZR-Style 4x4 Kids Electric Ride-On Buggy (24-48V) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Various',
+      condition: 'New',
+      category: 'kids-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'kids-dune-buggy-petrol-90-125cc',
+    name: 'Kids Dune Buggy Petrol (90-125cc)',
+    brand: 'various',
+    brandName: 'Various',
+    category: 'kids-buggies',
+    subcategory: 'petrol',
+    categoryPath: '/kids-buggies/',
+    price: 1999,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'kids dune buggy petrol (90-125cc)',
+    shortDescription: 'Kids Dune Buggy Petrol (90-125cc) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Kids Dune Buggy Petrol (90-125cc) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Various',
+      condition: 'New',
+      category: 'kids-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'hammerhead-torpedo-208cc-teen-buggy',
+    name: 'Hammerhead Torpedo 208cc Teen Buggy',
+    brand: 'hammerhead',
+    brandName: 'Hammerhead',
+    category: 'kids-buggies',
+    subcategory: 'petrol',
+    categoryPath: '/kids-buggies/',
+    price: 2299,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'hammerhead torpedo 208cc teen buggy',
+    shortDescription: 'Hammerhead Torpedo 208cc Teen Buggy available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Hammerhead Torpedo 208cc Teen Buggy provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Hammerhead',
+      condition: 'New',
+      category: 'kids-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mgi-lithium-24v-250wh-299wh-36-hole-battery',
+    name: 'MGI Lithium 24V 250Wh / 299Wh 36-Hole Battery',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'batteries',
+    subcategory: 'lithium',
+    categoryPath: '/batteries/',
+    price: 499,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mgi lithium 24v 250wh / 299wh 36-hole battery',
+    shortDescription: 'MGI Lithium 24V 250Wh / 299Wh 36-Hole Battery available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MGI Lithium 24V 250Wh / 299Wh 36-Hole Battery provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MGI',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mgi-lithium-12v-20ah-299wh-18-hole-battery',
+    name: 'MGI Lithium 12V 20Ah / 299Wh 18-Hole Battery',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'batteries',
+    subcategory: 'lithium',
+    categoryPath: '/batteries/',
+    price: 499,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mgi lithium 12v 20ah / 299wh 18-hole battery',
+    shortDescription: 'MGI Lithium 12V 20Ah / 299Wh 18-Hole Battery available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MGI Lithium 12V 20Ah / 299Wh 18-Hole Battery provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MGI',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mgi-lithium-24v-13ah-remote-series-battery',
+    name: 'MGI Lithium 24V 13Ah Remote Series Battery',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'batteries',
+    subcategory: 'lithium',
+    categoryPath: '/batteries/',
+    price: 579,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mgi lithium 24v 13ah remote series battery',
+    shortDescription: 'MGI Lithium 24V 13Ah Remote Series Battery available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MGI Lithium 24V 13Ah Remote Series Battery provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MGI',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'motocaddy-m-series-28v-lithium-battery-charger',
+    name: 'Motocaddy M-Series 28V Lithium Battery + Charger',
+    brand: 'motocaddy',
+    brandName: 'Motocaddy',
+    category: 'batteries',
+    subcategory: 'lithium',
+    categoryPath: '/batteries/',
+    price: 599,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'motocaddy m-series 28v lithium battery + charger',
+    shortDescription: 'Motocaddy M-Series 28V Lithium Battery + Charger available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Motocaddy M-Series 28V Lithium Battery + Charger provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Motocaddy',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'aftermarket-36-hole-lithium-battery-kit',
+    name: 'Aftermarket 36-Hole Lithium Battery Kit',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'batteries',
+    subcategory: 'lithium',
+    categoryPath: '/batteries/',
+    price: 399,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'aftermarket 36-hole lithium battery kit',
+    shortDescription: 'Aftermarket 36-Hole Lithium Battery Kit available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Aftermarket 36-Hole Lithium Battery Kit provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'aftermarket-12v-18-25ah-lithium-battery-charger',
+    name: 'Aftermarket 12V 18-25Ah Lithium Battery + Charger',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'batteries',
+    subcategory: 'lithium',
+    categoryPath: '/batteries/',
+    price: 249,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'aftermarket 12v 18-25ah lithium battery + charger',
+    shortDescription: 'Aftermarket 12V 18-25Ah Lithium Battery + Charger available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Aftermarket 12V 18-25Ah Lithium Battery + Charger provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'ultramax-22ah-12v-lithium-battery',
+    name: 'Ultramax 22Ah 12V Lithium Battery',
+    brand: 'ultramax',
+    brandName: 'Ultramax',
+    category: 'batteries',
+    subcategory: 'lithium',
+    categoryPath: '/batteries/',
+    price: 349,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'ultramax 22ah 12v lithium battery',
+    shortDescription: 'Ultramax 22Ah 12V Lithium Battery available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Ultramax 22Ah 12V Lithium Battery provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Ultramax',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'lead-acid-12v-24ah-buggy-battery',
+    name: 'Lead-Acid 12V 24Ah Buggy Battery',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'batteries',
+    subcategory: 'lithium',
+    categoryPath: '/batteries/',
+    price: 259,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'lead-acid 12v 24ah buggy battery',
+    shortDescription: 'Lead-Acid 12V 24Ah Buggy Battery available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Lead-Acid 12V 24Ah Buggy Battery provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mgi-lithium-24v-smart-charger',
+    name: 'MGI Lithium 24V Smart Charger',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'batteries',
+    subcategory: 'chargers',
+    categoryPath: '/batteries/',
+    price: 179,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mgi lithium 24v smart charger',
+    shortDescription: 'MGI Lithium 24V Smart Charger available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MGI Lithium 24V Smart Charger provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MGI',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mgi-lithium-12v-charger',
+    name: 'MGI Lithium 12V Charger',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'batteries',
+    subcategory: 'chargers',
+    categoryPath: '/batteries/',
+    price: 129,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mgi lithium 12v charger',
+    shortDescription: 'MGI Lithium 12V Charger available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MGI Lithium 12V Charger provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MGI',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'aftermarket-lithium-charger-12-18-24ah',
+    name: 'Aftermarket Lithium Charger (12/18/24Ah)',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'batteries',
+    subcategory: 'chargers',
+    categoryPath: '/batteries/',
+    price: 119,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'aftermarket lithium charger (12/18/24ah)',
+    shortDescription: 'Aftermarket Lithium Charger (12/18/24Ah) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Aftermarket Lithium Charger (12/18/24Ah) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'lead-acid-buggy-charger',
+    name: 'Lead-Acid Buggy Charger',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'batteries',
+    subcategory: 'chargers',
+    categoryPath: '/batteries/',
+    price: 115,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'lead-acid buggy charger',
+    shortDescription: 'Lead-Acid Buggy Charger available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Lead-Acid Buggy Charger provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-buggy-battery-bag',
+    name: 'Golf Buggy Battery Bag',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'batteries',
+    subcategory: 'chargers',
+    categoryPath: '/batteries/',
+    price: 39,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf buggy battery bag',
+    shortDescription: 'Golf Buggy Battery Bag available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Buggy Battery Bag provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'trojan-t105-flooded-battery-set-48v-8-batteries',
+    name: 'Trojan T105 Flooded Battery Set (48V, 8 Batteries)',
+    brand: 'trojan',
+    brandName: 'Trojan',
+    category: 'batteries',
+    subcategory: 'cart-sets',
+    categoryPath: '/batteries/',
+    price: 2640,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'trojan t105 flooded battery set (48v, 8 batteries)',
+    shortDescription: 'Trojan T105 Flooded Battery Set (48V, 8 Batteries) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Trojan T105 Flooded Battery Set (48V, 8 Batteries) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Trojan',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'trojan-t875-flooded-battery-set-48v',
+    name: 'Trojan T875 Flooded Battery Set (48V)',
+    brand: 'trojan',
+    brandName: 'Trojan',
+    category: 'batteries',
+    subcategory: 'cart-sets',
+    categoryPath: '/batteries/',
+    price: 2199,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'trojan t875 flooded battery set (48v)',
+    shortDescription: 'Trojan T875 Flooded Battery Set (48V) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Trojan T875 Flooded Battery Set (48V) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Trojan',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'trojan-t1275-12v-battery-set-48v',
+    name: 'Trojan T1275 12V Battery Set (48V)',
+    brand: 'trojan',
+    brandName: 'Trojan',
+    category: 'batteries',
+    subcategory: 'cart-sets',
+    categoryPath: '/batteries/',
+    price: 2499,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'trojan t1275 12v battery set (48v)',
+    shortDescription: 'Trojan T1275 12V Battery Set (48V) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Trojan T1275 12V Battery Set (48V) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Trojan',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'century-golf-cart-battery-set-36v-48v',
+    name: 'Century Golf Cart Battery Set (36V / 48V)',
+    brand: 'century',
+    brandName: 'Century',
+    category: 'batteries',
+    subcategory: 'cart-sets',
+    categoryPath: '/batteries/',
+    price: 1764,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'century golf cart battery set (36v / 48v)',
+    shortDescription: 'Century Golf Cart Battery Set (36V / 48V) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Century Golf Cart Battery Set (36V / 48V) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Century',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'trojan-agm-pro-maintenance-free-battery-set-48v',
+    name: 'Trojan AGM PRO Maintenance-Free Battery Set (48V)',
+    brand: 'trojan',
+    brandName: 'Trojan',
+    category: 'batteries',
+    subcategory: 'cart-sets',
+    categoryPath: '/batteries/',
+    price: 3127,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'trojan agm pro maintenance-free battery set (48v)',
+    shortDescription: 'Trojan AGM PRO Maintenance-Free Battery Set (48V) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Trojan AGM PRO Maintenance-Free Battery Set (48V) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Trojan',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'trojan-gc2-lithium-battery-48v-24v',
+    name: 'Trojan GC2 Lithium Battery (48V / 24V)',
+    brand: 'trojan',
+    brandName: 'Trojan',
+    category: 'batteries',
+    subcategory: 'cart-sets',
+    categoryPath: '/batteries/',
+    price: 2579,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'trojan gc2 lithium battery (48v / 24v)',
+    shortDescription: 'Trojan GC2 Lithium Battery (48V / 24V) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Trojan GC2 Lithium Battery (48V / 24V) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Trojan',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'voltrac-flex-lithium-conversion-kit-e-z-go-rxv-club-car-48v',
+    name: 'Voltrac Flex Lithium Conversion Kit (E-Z-GO RXV / Club Car 48V)',
+    brand: 'voltrac',
+    brandName: 'Voltrac',
+    category: 'batteries',
+    subcategory: 'cart-sets',
+    categoryPath: '/batteries/',
+    price: 2895,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'voltrac flex lithium conversion kit (e-z-go rxv / club car 48v)',
+    shortDescription: 'Voltrac Flex Lithium Conversion Kit (E-Z-GO RXV / Club Car 48V) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Voltrac Flex Lithium Conversion Kit (E-Z-GO RXV / Club Car 48V) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Voltrac',
+      condition: 'New',
+      category: 'batteries',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'clicgear-wheel-kit-4-0-8-0',
+    name: 'Clicgear Wheel Kit (4.0 / 8.0+)',
+    brand: 'clicgear',
+    brandName: 'Clicgear',
+    category: 'parts',
+    subcategory: 'wheels-tyres',
+    categoryPath: '/parts/',
+    price: 159,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'clicgear wheel kit (4.0 / 8.0+)',
+    shortDescription: 'Clicgear Wheel Kit (4.0 / 8.0+) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Clicgear Wheel Kit (4.0 / 8.0+) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Clicgear',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'hedgehog-solid-wheels-clicgear-2-0-8-0',
+    name: 'Hedgehog Solid Wheels (Clicgear 2.0-8.0)',
+    brand: 'hedgehog',
+    brandName: 'Hedgehog',
+    category: 'parts',
+    subcategory: 'wheels-tyres',
+    categoryPath: '/parts/',
+    price: 149,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'hedgehog solid wheels (clicgear 2.0-8.0)',
+    shortDescription: 'Hedgehog Solid Wheels (Clicgear 2.0-8.0) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Hedgehog Solid Wheels (Clicgear 2.0-8.0) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Hedgehog',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mgi-rear-wheels-pair-zip-ai',
+    name: 'MGI Rear Wheels Pair (Zip / Ai)',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'parts',
+    subcategory: 'wheels-tyres',
+    categoryPath: '/parts/',
+    price: 179,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mgi rear wheels pair (zip / ai)',
+    shortDescription: 'MGI Rear Wheels Pair (Zip / Ai) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MGI Rear Wheels Pair (Zip / Ai) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MGI',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mgi-zip-navigator-at-rear-wheel-single',
+    name: 'MGI Zip Navigator AT Rear Wheel (Single)',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'parts',
+    subcategory: 'wheels-tyres',
+    categoryPath: '/parts/',
+    price: 80,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mgi zip navigator at rear wheel (single)',
+    shortDescription: 'MGI Zip Navigator AT Rear Wheel (Single) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MGI Zip Navigator AT Rear Wheel (Single) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MGI',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mgi-winter-wheel-single',
+    name: 'MGI Winter Wheel (Single)',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'parts',
+    subcategory: 'wheels-tyres',
+    categoryPath: '/parts/',
+    price: 85,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mgi winter wheel (single)',
+    shortDescription: 'MGI Winter Wheel (Single) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MGI Winter Wheel (Single) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MGI',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mgi-quad-5th-anti-tip-wheel',
+    name: 'MGI Quad 5th / Anti-Tip Wheel',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'parts',
+    subcategory: 'wheels-tyres',
+    categoryPath: '/parts/',
+    price: 30,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mgi quad 5th / anti-tip wheel',
+    shortDescription: 'MGI Quad 5th / Anti-Tip Wheel available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MGI Quad 5th / Anti-Tip Wheel provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MGI',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'stinger-sg-4-front-wheel-assembly-rear-wheel',
+    name: 'Stinger SG-4 Front Wheel Assembly / Rear Wheel',
+    brand: 'stinger',
+    brandName: 'Stinger',
+    category: 'parts',
+    subcategory: 'wheels-tyres',
+    categoryPath: '/parts/',
+    price: 45,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'stinger sg-4 front wheel assembly / rear wheel',
+    shortDescription: 'Stinger SG-4 Front Wheel Assembly / Rear Wheel available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Stinger SG-4 Front Wheel Assembly / Rear Wheel provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Stinger',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'generic-buggy-front-wheel',
+    name: 'Generic Buggy Front Wheel',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'parts',
+    subcategory: 'wheels-tyres',
+    categoryPath: '/parts/',
+    price: 29,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'generic buggy front wheel',
+    shortDescription: 'Generic Buggy Front Wheel available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Generic Buggy Front Wheel provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'generic-buggy-rear-wheel-complete',
+    name: 'Generic Buggy Rear Wheel (Complete)',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'parts',
+    subcategory: 'wheels-tyres',
+    categoryPath: '/parts/',
+    price: 49,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'generic buggy rear wheel (complete)',
+    shortDescription: 'Generic Buggy Rear Wheel (Complete) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Generic Buggy Rear Wheel (Complete) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'replacement-tyre-rubber-10-inch-universal',
+    name: 'Replacement Tyre Rubber 10 inch (Universal)',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'parts',
+    subcategory: 'wheels-tyres',
+    categoryPath: '/parts/',
+    price: 35,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'replacement tyre rubber 10 inch (universal)',
+    shortDescription: 'Replacement Tyre Rubber 10 inch (Universal) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Replacement Tyre Rubber 10 inch (Universal) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'pneumatic-wheel-rim-18x8-5-8-4-stud',
+    name: 'Pneumatic Wheel + Rim 18x8.5-8 4-Stud',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'parts',
+    subcategory: 'wheels-tyres',
+    categoryPath: '/parts/',
+    price: 160,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'pneumatic wheel + rim 18x8.5-8 4-stud',
+    shortDescription: 'Pneumatic Wheel + Rim 18x8.5-8 4-Stud available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Pneumatic Wheel + Rim 18x8.5-8 4-Stud provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-cart-turf-tyres',
+    name: 'Golf Cart Turf Tyres',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'parts',
+    subcategory: 'wheels-tyres',
+    categoryPath: '/parts/',
+    price: 129,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf cart turf tyres',
+    shortDescription: 'Golf Cart Turf Tyres available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Cart Turf Tyres provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mgi-zip-navigator-motor-controller',
+    name: 'MGI Zip Navigator Motor Controller',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'parts',
+    subcategory: 'drive-electrical',
+    categoryPath: '/parts/',
+    price: 350,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mgi zip navigator motor controller',
+    shortDescription: 'MGI Zip Navigator Motor Controller available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MGI Zip Navigator Motor Controller provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MGI',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mgi-gps-front-wheel-assembly',
+    name: 'MGI GPS+ Front Wheel Assembly',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'parts',
+    subcategory: 'drive-electrical',
+    categoryPath: '/parts/',
+    price: 140,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mgi gps+ front wheel assembly',
+    shortDescription: 'MGI GPS+ Front Wheel Assembly available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MGI GPS+ Front Wheel Assembly provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MGI',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'electric-buggy-motor-gearbox-aftermarket',
+    name: 'Electric Buggy Motor / Gearbox (Aftermarket)',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'parts',
+    subcategory: 'drive-electrical',
+    categoryPath: '/parts/',
+    price: 189,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'electric buggy motor / gearbox (aftermarket)',
+    shortDescription: 'Electric Buggy Motor / Gearbox (Aftermarket) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Electric Buggy Motor / Gearbox (Aftermarket) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'clicgear-secondary-strut-mgi-bag-rest-spacer',
+    name: 'Clicgear Secondary Strut / MGI Bag-Rest Spacer',
+    brand: 'clicgear',
+    brandName: 'Clicgear',
+    category: 'parts',
+    subcategory: 'drive-electrical',
+    categoryPath: '/parts/',
+    price: 30,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'clicgear secondary strut / mgi bag-rest spacer',
+    shortDescription: 'Clicgear Secondary Strut / MGI Bag-Rest Spacer available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Clicgear Secondary Strut / MGI Bag-Rest Spacer provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Clicgear',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mgi-accessory-station-port-cover-and-trim-parts',
+    name: 'MGI Accessory-Station Port Cover & Trim Parts',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'parts',
+    subcategory: 'drive-electrical',
+    categoryPath: '/parts/',
+    price: 12,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mgi accessory-station port cover & trim parts',
+    shortDescription: 'MGI Accessory-Station Port Cover & Trim Parts available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The MGI Accessory-Station Port Cover & Trim Parts provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'MGI',
+      condition: 'New',
+      category: 'parts',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-buggy-umbrella-holder',
+    name: 'Golf Buggy Umbrella Holder',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'accessories',
+    categoryPath: '/accessories/',
+    price: 35,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf buggy umbrella holder',
+    shortDescription: 'Golf Buggy Umbrella Holder available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Buggy Umbrella Holder provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-buggy-drink-holder-gps-and-phone-holder',
+    name: 'Golf Buggy Drink Holder / GPS & Phone Holder',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'accessories',
+    categoryPath: '/accessories/',
+    price: 29,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf buggy drink holder / gps & phone holder',
+    shortDescription: 'Golf Buggy Drink Holder / GPS & Phone Holder available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Buggy Drink Holder / GPS & Phone Holder provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-buggy-scorecard-accessory-console',
+    name: 'Golf Buggy Scorecard / Accessory Console',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'accessories',
+    categoryPath: '/accessories/',
+    price: 39,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf buggy scorecard / accessory console',
+    shortDescription: 'Golf Buggy Scorecard / Accessory Console available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Buggy Scorecard / Accessory Console provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-buggy-add-on-seat-footboard',
+    name: 'Golf Buggy Add-On Seat / Footboard',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'accessories',
+    categoryPath: '/accessories/',
+    price: 99,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf buggy add-on seat / footboard',
+    shortDescription: 'Golf Buggy Add-On Seat / Footboard available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Buggy Add-On Seat / Footboard provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-buggy-travel-storage-cover-and-wheel-bags',
+    name: 'Golf Buggy Travel / Storage Cover & Wheel Bags',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'accessories',
+    categoryPath: '/accessories/',
+    price: 59,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf buggy travel / storage cover & wheel bags',
+    shortDescription: 'Golf Buggy Travel / Storage Cover & Wheel Bags available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Buggy Travel / Storage Cover & Wheel Bags provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'winter-all-terrain-wheel-upgrade-kit',
+    name: 'Winter / All-Terrain Wheel Upgrade Kit',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'accessories',
+    categoryPath: '/accessories/',
+    price: 129,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'winter / all-terrain wheel upgrade kit',
+    shortDescription: 'Winter / All-Terrain Wheel Upgrade Kit available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Winter / All-Terrain Wheel Upgrade Kit provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'sand-wet-weather-tyres-and-bag-rain-cover',
+    name: 'Sand / Wet-Weather Tyres & Bag Rain Cover',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'accessories',
+    categoryPath: '/accessories/',
+    price: 49,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'sand / wet-weather tyres & bag rain cover',
+    shortDescription: 'Sand / Wet-Weather Tyres & Bag Rain Cover available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Sand / Wet-Weather Tyres & Bag Rain Cover provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-cart-bag-14-way-divider',
+    name: 'Golf Cart Bag (14-Way Divider)',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'bags',
+    categoryPath: '/accessories/',
+    price: 299,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf cart bag (14-way divider)',
+    shortDescription: 'Golf Cart Bag (14-Way Divider) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Cart Bag (14-Way Divider) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'big-max-dri-lite-premium-cart-bag',
+    name: 'Big Max Dri Lite Premium Cart Bag',
+    brand: 'big-max',
+    brandName: 'Big Max',
+    category: 'accessories',
+    subcategory: 'bags',
+    categoryPath: '/accessories/',
+    price: 395,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'big max dri lite premium cart bag',
+    shortDescription: 'Big Max Dri Lite Premium Cart Bag available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Big Max Dri Lite Premium Cart Bag provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Big Max',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'lightweight-golf-stand-bag',
+    name: 'Lightweight Golf Stand Bag',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'bags',
+    categoryPath: '/accessories/',
+    price: 215,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'lightweight golf stand bag',
+    shortDescription: 'Lightweight Golf Stand Bag available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Lightweight Golf Stand Bag provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'soft-golf-travel-bag',
+    name: 'Soft Golf Travel Bag',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'bags',
+    categoryPath: '/accessories/',
+    price: 215,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'soft golf travel bag',
+    shortDescription: 'Soft Golf Travel Bag available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Soft Golf Travel Bag provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'titleist-pro-v1-golf-balls-dozen',
+    name: 'Titleist Pro V1 Golf Balls (Dozen)',
+    brand: 'titleist',
+    brandName: 'Titleist',
+    category: 'accessories',
+    subcategory: 'golf-balls',
+    categoryPath: '/accessories/',
+    price: 79,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'titleist pro v1 golf balls (dozen)',
+    shortDescription: 'Titleist Pro V1 Golf Balls (Dozen) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Titleist Pro V1 Golf Balls (Dozen) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Titleist',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'taylormade-tp5-golf-balls-dozen',
+    name: 'TaylorMade TP5 Golf Balls (Dozen)',
+    brand: 'taylormade',
+    brandName: 'TaylorMade',
+    category: 'accessories',
+    subcategory: 'golf-balls',
+    categoryPath: '/accessories/',
+    price: 79,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'taylormade tp5 golf balls (dozen)',
+    shortDescription: 'TaylorMade TP5 Golf Balls (Dozen) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The TaylorMade TP5 Golf Balls (Dozen) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'TaylorMade',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'srixon-z-star-golf-balls-dozen',
+    name: 'Srixon Z-Star Golf Balls (Dozen)',
+    brand: 'srixon',
+    brandName: 'Srixon',
+    category: 'accessories',
+    subcategory: 'golf-balls',
+    categoryPath: '/accessories/',
+    price: 69,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'srixon z-star golf balls (dozen)',
+    shortDescription: 'Srixon Z-Star Golf Balls (Dozen) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Srixon Z-Star Golf Balls (Dozen) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Srixon',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'precision-pro-nx7-golf-rangefinder',
+    name: 'Precision Pro NX7 Golf Rangefinder',
+    brand: 'precision-pro',
+    brandName: 'Precision Pro',
+    category: 'accessories',
+    subcategory: 'rangefinders-gps',
+    categoryPath: '/accessories/',
+    price: 479,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'precision pro nx7 golf rangefinder',
+    shortDescription: 'Precision Pro NX7 Golf Rangefinder available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Precision Pro NX7 Golf Rangefinder provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Precision Pro',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'bushnell-tour-v5-golf-rangefinder',
+    name: 'Bushnell Tour V5 Golf Rangefinder',
+    brand: 'bushnell',
+    brandName: 'Bushnell',
+    category: 'accessories',
+    subcategory: 'rangefinders-gps',
+    categoryPath: '/accessories/',
+    price: 549,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'bushnell tour v5 golf rangefinder',
+    shortDescription: 'Bushnell Tour V5 Golf Rangefinder available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Bushnell Tour V5 Golf Rangefinder provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Bushnell',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'bushnell-pro-x3-golf-rangefinder',
+    name: 'Bushnell Pro X3 Golf Rangefinder',
+    brand: 'bushnell',
+    brandName: 'Bushnell',
+    category: 'accessories',
+    subcategory: 'rangefinders-gps',
+    categoryPath: '/accessories/',
+    price: 899,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'bushnell pro x3 golf rangefinder',
+    shortDescription: 'Bushnell Pro X3 Golf Rangefinder available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Bushnell Pro X3 Golf Rangefinder provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Bushnell',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'shot-scope-g5-gps-golf-watch',
+    name: 'Shot Scope G5 GPS Golf Watch',
+    brand: 'shot-scope',
+    brandName: 'Shot Scope',
+    category: 'accessories',
+    subcategory: 'rangefinders-gps',
+    categoryPath: '/accessories/',
+    price: 239,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'shot scope g5 gps golf watch',
+    shortDescription: 'Shot Scope G5 GPS Golf Watch available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Shot Scope G5 GPS Golf Watch provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Shot Scope',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'garmin-approach-s12-gps-golf-watch',
+    name: 'Garmin Approach S12 GPS Golf Watch',
+    brand: 'garmin',
+    brandName: 'Garmin',
+    category: 'accessories',
+    subcategory: 'rangefinders-gps',
+    categoryPath: '/accessories/',
+    price: 249,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'garmin approach s12 gps golf watch',
+    shortDescription: 'Garmin Approach S12 GPS Golf Watch available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Garmin Approach S12 GPS Golf Watch provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Garmin',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'garmin-approach-s42-gps-golf-watch',
+    name: 'Garmin Approach S42 GPS Golf Watch',
+    brand: 'garmin',
+    brandName: 'Garmin',
+    category: 'accessories',
+    subcategory: 'rangefinders-gps',
+    categoryPath: '/accessories/',
+    price: 449,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'garmin approach s42 gps golf watch',
+    shortDescription: 'Garmin Approach S42 GPS Golf Watch available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Garmin Approach S42 GPS Golf Watch provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Garmin',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-putting-mat',
+    name: 'Golf Putting Mat',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'practice-aids',
+    categoryPath: '/accessories/',
+    price: 89,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf putting mat',
+    shortDescription: 'Golf Putting Mat available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Putting Mat provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-practice-hitting-net',
+    name: 'Golf Practice Hitting Net',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'practice-aids',
+    categoryPath: '/accessories/',
+    price: 129,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf practice hitting net',
+    shortDescription: 'Golf Practice Hitting Net available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Practice Hitting Net provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-hitting-mat',
+    name: 'Golf Hitting Mat',
+    brand: 'generic',
+    brandName: 'Generic',
+    category: 'accessories',
+    subcategory: 'practice-aids',
+    categoryPath: '/accessories/',
+    price: 119,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf hitting mat',
+    shortDescription: 'Golf Hitting Mat available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Hitting Mat provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Generic',
+      condition: 'New',
+      category: 'accessories',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'junior-golf-club-set',
+    name: 'Junior Golf Club Set',
+    brand: 'various',
+    brandName: 'Various',
+    category: 'golf-clubs',
+    subcategory: 'complete-sets',
+    categoryPath: '/golf-clubs/',
+    price: 249,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'junior golf club set',
+    shortDescription: 'Junior Golf Club Set available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Junior Golf Club Set provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Various',
+      condition: 'New',
+      category: 'golf-clubs',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'beginner-complete-golf-club-set-12-piece',
+    name: 'Beginner Complete Golf Club Set (12-Piece)',
+    brand: 'various',
+    brandName: 'Various',
+    category: 'golf-clubs',
+    subcategory: 'complete-sets',
+    categoryPath: '/golf-clubs/',
+    price: 699,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'beginner complete golf club set (12-piece)',
+    shortDescription: 'Beginner Complete Golf Club Set (12-Piece) available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Beginner Complete Golf Club Set (12-Piece) provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Various',
+      condition: 'New',
+      category: 'golf-clubs',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'ladies-complete-golf-club-set',
+    name: 'Ladies\' Complete Golf Club Set',
+    brand: 'various',
+    brandName: 'Various',
+    category: 'golf-clubs',
+    subcategory: 'complete-sets',
+    categoryPath: '/golf-clubs/',
+    price: 799,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'ladies\' complete golf club set',
+    shortDescription: 'Ladies\' Complete Golf Club Set available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Ladies\' Complete Golf Club Set provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Various',
+      condition: 'New',
+      category: 'golf-clubs',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-driver',
+    name: 'Golf Driver',
+    brand: 'various',
+    brandName: 'Various',
+    category: 'golf-clubs',
+    subcategory: 'woods-and-irons',
+    categoryPath: '/golf-clubs/',
+    price: 449,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf driver',
+    shortDescription: 'Golf Driver available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Driver provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Various',
+      condition: 'New',
+      category: 'golf-clubs',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'mid-range-golf-iron-set',
+    name: 'Mid-Range Golf Iron Set',
+    brand: 'various',
+    brandName: 'Various',
+    category: 'golf-clubs',
+    subcategory: 'woods-and-irons',
+    categoryPath: '/golf-clubs/',
+    price: 1199,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'mid-range golf iron set',
+    shortDescription: 'Mid-Range Golf Iron Set available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Mid-Range Golf Iron Set provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Various',
+      condition: 'New',
+      category: 'golf-clubs',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-wedge',
+    name: 'Golf Wedge',
+    brand: 'various',
+    brandName: 'Various',
+    category: 'golf-clubs',
+    subcategory: 'wedges-and-putters',
+    categoryPath: '/golf-clubs/',
+    price: 199,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf wedge',
+    shortDescription: 'Golf Wedge available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Wedge provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Various',
+      condition: 'New',
+      category: 'golf-clubs',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  },
+  {
+    slug: 'golf-putter',
+    name: 'Golf Putter',
+    brand: 'various',
+    brandName: 'Various',
+    category: 'golf-clubs',
+    subcategory: 'wedges-and-putters',
+    categoryPath: '/golf-clubs/',
+    price: 199,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'golf putter',
+    shortDescription: 'Golf Putter available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
+    description: 'The Golf Putter provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    specs: {
+      power: 'Manual / Accessory',
+      brand: 'Various',
+      condition: 'New',
+      category: 'golf-clubs',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    // TODO: replace placeholder image
+    images: [
+      '/images/placeholder.webp'
+    ]
+  }
 ];
+
 
 export function getProductBySlug(slug) {
   return PRODUCTS.find((p) => p.slug === slug);
 }
 
 export function getProductsByCategory(categorySlug) {
-  return PRODUCTS.filter((p) => p.category === categorySlug);
+  if (!categorySlug) return [];
+  const clean = categorySlug.replace(/^\/|\/$/g, '');
+  if (clean === 'used-golf-buggies' || clean === 'used') {
+    return PRODUCTS.filter((p) => p.condition === 'Used' || p.category === 'used-golf-buggies' || p.subcategory === 'used');
+  }
+  return PRODUCTS.filter((p) => p.category === clean || p.subcategory === clean || (p.category === 'parts' && clean === 'golf-buggy-parts') || (p.category === 'accessories' && clean === 'golf-buggy-accessories'));
 }
 
 export function getProductsByBrand(brandSlug) {

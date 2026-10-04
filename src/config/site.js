@@ -207,7 +207,28 @@ export const CATEGORIES = [
     name: 'Certified Used & Ex-Demo Buggies',
     description: 'Workshop-inspected ex-demo MGI buggies and refurbished 48V lithium carts with comprehensive warranties.',
     heroImage: '/images/categories/used-golf-buggies.jpg',
-    itemCount: 2
+    itemCount: 8
+  },
+  {
+    slug: 'parts',
+    name: 'Parts & Spares',
+    description: 'Golf buggy wheels, tyres, motors, controllers and spare parts for MGI, Clicgear, Motocaddy and ride-on carts.',
+    heroImage: '/images/placeholder.webp',
+    itemCount: 17
+  },
+  {
+    slug: 'accessories',
+    name: 'Accessories',
+    description: 'Golf buggy umbrella holders, drink holders, cart bags, golf balls, rangefinders and practice aids.',
+    heroImage: '/images/placeholder.webp',
+    itemCount: 22
+  },
+  {
+    slug: 'golf-clubs',
+    name: 'Golf Clubs',
+    description: 'Complete golf club package sets, drivers, iron sets, wedges and putters.',
+    heroImage: '/images/placeholder.webp',
+    itemCount: 7
   }
 ]
 
