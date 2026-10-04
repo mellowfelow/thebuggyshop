@@ -41,8 +41,13 @@ export const PRODUCTS = [
       warranty: '3-Year Australian Manufacturer Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/mgi-zip-navigator-at-remote-electric-golf-buggy/main.webp',
+      '/images/products/mgi-zip-navigator-at-remote-electric-golf-buggy/gallery-2.webp',
+      '/images/products/mgi-zip-navigator-at-remote-electric-golf-buggy/gallery-3.webp',
+      '/images/products/mgi-zip-navigator-at-remote-electric-golf-buggy/gallery-4.webp',
+      '/images/products/mgi-zip-navigator-at-remote-electric-golf-buggy/gallery-5.webp',
+      '/images/products/mgi-zip-navigator-at-remote-electric-golf-buggy/gallery-6.webp',
+      '/images/products/mgi-zip-navigator-at-remote-electric-golf-buggy/gallery-7.webp'
     ]
   },
   {
@@ -79,8 +84,16 @@ export const PRODUCTS = [
       warranty: '3-Year Australian Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/mgi-ai-500-remote-electric-golf-buggy/main.webp',
+      '/images/products/mgi-ai-500-remote-electric-golf-buggy/gallery-2.webp',
+      '/images/products/mgi-ai-500-remote-electric-golf-buggy/gallery-3.webp',
+      '/images/products/mgi-ai-500-remote-electric-golf-buggy/gallery-4.webp',
+      '/images/products/mgi-ai-500-remote-electric-golf-buggy/gallery-5.webp',
+      '/images/products/mgi-ai-500-remote-electric-golf-buggy/gallery-6.webp',
+      '/images/products/mgi-ai-500-remote-electric-golf-buggy/gallery-7.webp',
+      '/images/products/mgi-ai-500-remote-electric-golf-buggy/gallery-8.webp',
+      '/images/products/mgi-ai-500-remote-electric-golf-buggy/gallery-9.webp',
+      '/images/products/mgi-ai-500-remote-electric-golf-buggy/gallery-10.webp'
     ]
   },
   {
@@ -117,8 +130,9 @@ export const PRODUCTS = [
       warranty: '2-Year Buggy / 5-Year Battery Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/motocaddy-m7-remote-electric-golf-buggy/main.webp',
+      '/images/products/motocaddy-m7-remote-electric-golf-buggy/gallery-2.webp',
+      '/images/products/motocaddy-m7-remote-electric-golf-buggy/gallery-3.webp'
     ]
   },
   {
@@ -155,8 +169,13 @@ export const PRODUCTS = [
       warranty: '2-Year Australian Replacement Guarantee'
     },
     images: [
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/stinger-golf-sg4-crossover-remote-electric-buggy/main.webp',
+      '/images/products/stinger-golf-sg4-crossover-remote-electric-buggy/gallery-2.webp',
+      '/images/products/stinger-golf-sg4-crossover-remote-electric-buggy/gallery-3.webp',
+      '/images/products/stinger-golf-sg4-crossover-remote-electric-buggy/gallery-4.webp',
+      '/images/products/stinger-golf-sg4-crossover-remote-electric-buggy/gallery-5.webp',
+      '/images/products/stinger-golf-sg4-crossover-remote-electric-buggy/gallery-6.webp',
+      '/images/products/stinger-golf-sg4-crossover-remote-electric-buggy/gallery-7.webp'
     ]
   },
   {
@@ -193,8 +212,7 @@ export const PRODUCTS = [
       warranty: '2-Year Manufacturer Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/alphard-cybercart-remote-electric-buggy/main.webp'
     ]
   },
   {
@@ -231,8 +249,9 @@ export const PRODUCTS = [
       warranty: '2-Year Australian Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/explora-r1-remote-control-golf-buggy/main.webp',
+      '/images/products/explora-r1-remote-control-golf-buggy/gallery-2.webp',
+      '/images/products/explora-r1-remote-control-golf-buggy/gallery-3.webp'
     ]
   },
 
@@ -273,11 +292,11 @@ export const PRODUCTS = [
       warranty: '3-Year Australian Warranty'
     },
     images: [
-      '/images/products/mgi-zip-x1-electric-golf-buggy.jpg',
-      '/images/products/mgi-zip-x1-electric-golf-buggy-2.jpg',
-      '/images/products/mgi-zip-x1-electric-golf-buggy-3.jpg',
-      '/images/products/mgi-zip-x1-electric-golf-buggy-4.jpg',
-      '/images/products/mgi-zip-x1-electric-golf-buggy-5.jpg'
+      '/images/products/mgi-zip-x1-electric-golf-buggy/main.webp',
+      '/images/products/mgi-zip-x1-electric-golf-buggy/gallery-2.webp',
+      '/images/products/mgi-zip-x1-electric-golf-buggy/gallery-3.webp',
+      '/images/products/mgi-zip-x1-electric-golf-buggy/gallery-4.webp',
+      '/images/products/mgi-zip-x1-electric-golf-buggy/gallery-5.webp'
     ]
   },
   {
@@ -314,8 +333,13 @@ export const PRODUCTS = [
       warranty: '3-Year Australian Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/mgi-zip-x3-electric-golf-buggy/main.webp',
+      '/images/products/mgi-zip-x3-electric-golf-buggy/gallery-2.webp',
+      '/images/products/mgi-zip-x3-electric-golf-buggy/gallery-3.webp',
+      '/images/products/mgi-zip-x3-electric-golf-buggy/gallery-4.webp',
+      '/images/products/mgi-zip-x3-electric-golf-buggy/gallery-5.webp',
+      '/images/products/mgi-zip-x3-electric-golf-buggy/gallery-6.webp',
+      '/images/products/mgi-zip-x3-electric-golf-buggy/gallery-7.webp'
     ]
   },
   {
@@ -352,8 +376,13 @@ export const PRODUCTS = [
       warranty: '3-Year Australian Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/mgi-zip-x5-electric-golf-buggy/main.webp',
+      '/images/products/mgi-zip-x5-electric-golf-buggy/gallery-2.webp',
+      '/images/products/mgi-zip-x5-electric-golf-buggy/gallery-3.webp',
+      '/images/products/mgi-zip-x5-electric-golf-buggy/gallery-4.webp',
+      '/images/products/mgi-zip-x5-electric-golf-buggy/gallery-5.webp',
+      '/images/products/mgi-zip-x5-electric-golf-buggy/gallery-6.webp',
+      '/images/products/mgi-zip-x5-electric-golf-buggy/gallery-7.webp'
     ]
   },
   {
@@ -390,8 +419,9 @@ export const PRODUCTS = [
       warranty: '2-Year Buggy / 5-Year Battery Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/motocaddy-m1-dhc-electric-golf-buggy/main.webp',
+      '/images/products/motocaddy-m1-dhc-electric-golf-buggy/gallery-2.webp',
+      '/images/products/motocaddy-m1-dhc-electric-golf-buggy/gallery-3.webp'
     ]
   },
   {
@@ -428,8 +458,10 @@ export const PRODUCTS = [
       warranty: '2-Year Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/powakaddy-ct6-electric-golf-buggy/main.webp',
+      '/images/products/powakaddy-ct6-electric-golf-buggy/gallery-2.webp',
+      '/images/products/powakaddy-ct6-electric-golf-buggy/gallery-3.webp',
+      '/images/products/powakaddy-ct6-electric-golf-buggy/gallery-4.webp'
     ]
   },
 
@@ -470,8 +502,15 @@ export const PRODUCTS = [
       warranty: '3-Year Australian Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/mgi-ai-navigator-gps-plus-electric-golf-buggy/main.webp',
+      '/images/products/mgi-ai-navigator-gps-plus-electric-golf-buggy/gallery-2.webp',
+      '/images/products/mgi-ai-navigator-gps-plus-electric-golf-buggy/gallery-3.webp',
+      '/images/products/mgi-ai-navigator-gps-plus-electric-golf-buggy/gallery-4.webp',
+      '/images/products/mgi-ai-navigator-gps-plus-electric-golf-buggy/gallery-5.webp',
+      '/images/products/mgi-ai-navigator-gps-plus-electric-golf-buggy/gallery-6.webp',
+      '/images/products/mgi-ai-navigator-gps-plus-electric-golf-buggy/gallery-7.webp',
+      '/images/products/mgi-ai-navigator-gps-plus-electric-golf-buggy/gallery-8.webp',
+      '/images/products/mgi-ai-navigator-gps-plus-electric-golf-buggy/gallery-9.webp'
     ]
   },
   {
@@ -508,8 +547,15 @@ export const PRODUCTS = [
       warranty: '3-Year VIP Australian Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/mgi-ai-navigator-halo-flagship-buggy/main.webp',
+      '/images/products/mgi-ai-navigator-halo-flagship-buggy/gallery-2.webp',
+      '/images/products/mgi-ai-navigator-halo-flagship-buggy/gallery-3.webp',
+      '/images/products/mgi-ai-navigator-halo-flagship-buggy/gallery-4.webp',
+      '/images/products/mgi-ai-navigator-halo-flagship-buggy/gallery-5.webp',
+      '/images/products/mgi-ai-navigator-halo-flagship-buggy/gallery-6.webp',
+      '/images/products/mgi-ai-navigator-halo-flagship-buggy/gallery-7.webp',
+      '/images/products/mgi-ai-navigator-halo-flagship-buggy/gallery-8.webp',
+      '/images/products/mgi-ai-navigator-halo-flagship-buggy/gallery-9.webp'
     ]
   },
   {
@@ -546,8 +592,10 @@ export const PRODUCTS = [
       warranty: '2-Year Australian Replacement Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/stewart-golf-q-follow-electric-buggy/main.webp',
+      '/images/products/stewart-golf-q-follow-electric-buggy/gallery-2.webp',
+      '/images/products/stewart-golf-q-follow-electric-buggy/gallery-3.webp',
+      '/images/products/stewart-golf-q-follow-electric-buggy/gallery-4.webp'
     ]
   },
   {
@@ -584,8 +632,9 @@ export const PRODUCTS = [
       warranty: '2-Year Manufacturer Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/alphard-club-booster-v2-pro-conversion-kit/main.webp',
+      '/images/products/alphard-club-booster-v2-pro-conversion-kit/gallery-2.webp',
+      '/images/products/alphard-club-booster-v2-pro-conversion-kit/gallery-3.webp'
     ]
   },
 
@@ -626,8 +675,8 @@ export const PRODUCTS = [
       warranty: '3-Year Australian Guarantee'
     },
     images: [
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/clicgear-model-4-5-push-golf-buggy/main.webp',
+      '/images/products/clicgear-model-4-5-push-golf-buggy/gallery-2.webp'
     ]
   },
   {
@@ -702,8 +751,8 @@ export const PRODUCTS = [
       warranty: '2-Year Australian Warranty'
     },
     images: [
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
+      '/images/products/clicgear-rovic-rv1s-swivel-push-golf-buggy/main.webp',
+      '/images/products/clicgear-rovic-rv1s-swivel-push-golf-buggy/gallery-2.webp'
     ]
   },
 
@@ -1385,6 +1434,330 @@ export const PRODUCTS = [
     images: [
       'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
+    ]
+  }
+,
+  {
+    slug: 'mgi-zip-navigator-at-all-terrain-golf-buggy',
+    name: 'MGI Zip Navigator AT All-Terrain Conversion Bundle',
+    brand: 'mgi',
+    brandName: 'MGI',
+    category: 'conversion-kits',
+    categoryPath: '/electric-golf-buggies/conversion-kits/',
+    price: 1999,
+    condition: 'New',
+    badge: 'All-Terrain Twin Motor',
+    featured: false,
+    rating: 5,
+    reviewCount: 38,
+    power: 'Electric Remote',
+    wheels: '4-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '10–13 kg',
+    weightKg: 13,
+    foldSize: 'Compact flat-fold',
+    seats: 'Walk-behind / Remote',
+    primaryKeyword: 'mgi zip navigator at all terrain buggy',
+    shortDescription: 'All-terrain twin calibrated 230W motors, active gyro straight tracking, and full directional remote control.',
+    description: 'The MGI Zip Navigator AT All-Terrain model conquers steep undulations and heavy Australian grass with dual independent motors, rear fifth anti-tip wheel, and Gyroscopic Straight Tracker technology that automatically corrects side-slope drift.',
+    specs: {
+      power: 'Full Directional Ergonomic Remote Handset',
+      motor: 'Twin 230W Independent Calibrated Drive Motors',
+      battery: '24V 380Wh Click & Go Lithium (36 Hole)',
+      weight: '13.0 kg (Without Battery)',
+      wheels: 'All-Terrain Dual Front Swivel & Rear Anti-Tip',
+      foldSize: '70cm x 47cm x 42cm',
+      brakes: 'Downhill Speed Regulation & Electronic Park Brake',
+      warranty: '3-Year Australian Factory Warranty'
+    },
+    images: [
+      '/images/products/mgi-zip-navigator-at-all-terrain-golf-buggy/main.webp',
+      '/images/products/mgi-zip-navigator-at-all-terrain-golf-buggy/gallery-2.webp',
+      '/images/products/mgi-zip-navigator-at-all-terrain-golf-buggy/gallery-3.webp',
+      '/images/products/mgi-zip-navigator-at-all-terrain-golf-buggy/gallery-4.webp'
+    ]
+  },
+  {
+    slug: 'motocaddy-m5-gps-dhc-electric-golf-buggy',
+    name: 'Motocaddy M5 GPS DHC Electric Golf Buggy',
+    brand: 'motocaddy',
+    brandName: 'Motocaddy',
+    category: 'gps-follow-buggies',
+    categoryPath: '/electric-golf-buggies/gps-follow/',
+    price: 1899,
+    condition: 'New',
+    badge: 'Built-In Course GPS',
+    featured: true,
+    rating: 4.9,
+    reviewCount: 94,
+    power: 'Electric Touchscreen',
+    wheels: '3-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '10–13 kg',
+    weightKg: 10.9,
+    foldSize: 'Slim-Fold Compact',
+    seats: 'Walk-behind',
+    primaryKeyword: 'motocaddy m5 gps dhc electric golf buggy',
+    shortDescription: 'Responsive 3.5-inch touchscreen GPS preloaded with 40,000+ courses, Downhill Control (DHC), and whisper-quiet 230W motor.',
+    description: 'The Motocaddy M5 GPS DHC brings high-accuracy GPS fairway distances right to your buggy handle. Features a 3.5-inch colour touchscreen readable in direct Australian sunlight, automatic downhill speed control, electronic parking brake, and ultra-compact folding frame.',
+    specs: {
+      power: 'High-Res Touchscreen GPS & Digital Speed Dial',
+      motor: '230W Whisper-Quiet DHC Motor System',
+      battery: '28.8V High-Capacity Lithium Pack (36 Hole)',
+      weight: '10.9 kg (Without Battery)',
+      wheels: 'All-Terrain Inverted Wheels with DHC',
+      foldSize: '65cm x 47cm x 41cm',
+      brakes: 'Automatic Downhill Brake & Electronic Parking Brake',
+      warranty: '3-Year Australian Warranty'
+    },
+    images: [
+      '/images/products/motocaddy-m5-gps-dhc-electric-golf-buggy/main.webp',
+      '/images/products/motocaddy-m5-gps-dhc-electric-golf-buggy/gallery-2.webp',
+      '/images/products/motocaddy-m5-gps-dhc-electric-golf-buggy/gallery-3.webp',
+      '/images/products/motocaddy-m5-gps-dhc-electric-golf-buggy/gallery-4.webp',
+      '/images/products/motocaddy-m5-gps-dhc-electric-golf-buggy/gallery-5.webp'
+    ]
+  },
+  {
+    slug: 'powakaddy-fx7-gps-36-hole-electric-golf-buggy',
+    name: 'PowaKaddy FX7 GPS 36-Hole Electric Golf Buggy',
+    brand: 'powakaddy',
+    brandName: 'PowaKaddy',
+    category: 'gps-follow-buggies',
+    categoryPath: '/electric-golf-buggies/gps-follow/',
+    price: 1799,
+    condition: 'New',
+    badge: 'Flagship 3.5" Optical GPS',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 82,
+    power: 'Electric Touchscreen',
+    wheels: '3-wheel',
+    batteryRange: '36 hole',
+    weightCategory: 'Under 10 kg',
+    weightKg: 9.6,
+    foldSize: '1-Click Fold',
+    seats: 'Walk-behind',
+    primaryKeyword: 'powakaddy fx7 gps electric golf buggy',
+    shortDescription: 'Cutting-edge 3.5" full colour touchscreen with optical distance measuring, Plug\'n\'Play lithium battery, and ultra-quiet motor.',
+    description: 'The PowaKaddy FX7 GPS is the most technologically advanced walk-behind buggy in the FX collection. Featuring a super-responsive 3.5" optical display, fast distance calculations to greens and hazards, and PowaKaddy\'s 1-Click folding system.',
+    specs: {
+      power: 'Full Colour Touchscreen GPS Interface',
+      motor: 'High Power 30V 230W Motor',
+      battery: 'Plug\'n\'Play 30V Max Lithium (36 Hole)',
+      weight: '9.6 kg',
+      wheels: 'Low-Profile Sports Wheels',
+      foldSize: '80cm x 56cm x 34cm',
+      brakes: 'Electronic Speed Regulation',
+      warranty: '3-Year Australian Warranty'
+    },
+    images: [
+      '/images/products/powakaddy-fx7-gps-36-hole-electric-golf-buggy/main.webp',
+      '/images/products/powakaddy-fx7-gps-36-hole-electric-golf-buggy/gallery-2.webp',
+      '/images/products/powakaddy-fx7-gps-36-hole-electric-golf-buggy/gallery-3.webp'
+    ]
+  },
+  {
+    slug: 'stewart-golf-vertx-remote-electric-buggy',
+    name: 'Stewart Golf VERTX Remote Electric Golf Buggy',
+    brand: 'stewart-golf',
+    brandName: 'Stewart Golf',
+    category: 'remote-control-golf-buggies',
+    categoryPath: '/remote-control-golf-buggies/',
+    price: 2699,
+    condition: 'New',
+    badge: 'Active Terrain Stability',
+    featured: true,
+    rating: 5,
+    reviewCount: 67,
+    power: 'Electric Remote',
+    wheels: '4-wheel',
+    batteryRange: '45 hole',
+    weightCategory: '14+ kg',
+    weightKg: 14.5,
+    foldSize: 'Compact flat-fold',
+    seats: 'Remote / Walk-behind',
+    primaryKeyword: 'stewart golf vertx remote electric buggy',
+    shortDescription: 'British precision engineering featuring Active Terrain Control, 100-metre remote range, and SmartPower lithium battery system.',
+    description: 'The Stewart Golf VERTX Remote represents the pinnacle of remote-controlled golf trolleys. Active Terrain Stability constantly calculates pitch and roll to keep the buggy tracking straight across the steepest side slopes and undulating fairways.',
+    specs: {
+      power: 'Rechargeable Handset with 100m Range',
+      motor: 'Twin 230W Calibrated Stealth Drive Motors',
+      battery: 'SmartPower Lithium (45 Hole Capacity)',
+      weight: '14.5 kg',
+      wheels: 'Twin Front Swivel Wheels & Anti-Tip Rear',
+      foldSize: '64cm x 55cm x 32cm',
+      brakes: 'Active Downhill Dynamic Braking',
+      warranty: '3-Year Factory Warranty'
+    },
+    images: [
+      '/images/products/stewart-golf-vertx-remote-electric-buggy/main.webp',
+      '/images/products/stewart-golf-vertx-remote-electric-buggy/gallery-2.webp',
+      '/images/products/stewart-golf-vertx-remote-electric-buggy/gallery-3.webp',
+      '/images/products/stewart-golf-vertx-remote-electric-buggy/gallery-4.webp',
+      '/images/products/stewart-golf-vertx-remote-electric-buggy/gallery-5.webp',
+      '/images/products/stewart-golf-vertx-remote-electric-buggy/gallery-6.webp',
+      '/images/products/stewart-golf-vertx-remote-electric-buggy/gallery-7.webp'
+    ]
+  },
+  {
+    slug: 'stewart-golf-x10-follow-electric-buggy',
+    name: 'Stewart Golf X10 Follow Autonomous Electric Buggy',
+    brand: 'stewart-golf',
+    brandName: 'Stewart Golf',
+    category: 'gps-follow-buggies',
+    categoryPath: '/electric-golf-buggies/gps-follow/',
+    price: 3199,
+    condition: 'New',
+    badge: 'True Autonomous Follow',
+    featured: true,
+    rating: 5,
+    reviewCount: 78,
+    power: 'Autonomous Follow & Remote',
+    wheels: '4-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '14+ kg',
+    weightKg: 14.8,
+    foldSize: 'Compact fold',
+    seats: 'Autonomous / Remote',
+    primaryKeyword: 'stewart golf x10 follow electric buggy',
+    shortDescription: 'Seventh-generation autonomous follow technology that tracks you seamlessly down the fairway without touching a button.',
+    description: 'The iconic Stewart Golf X10 Follow uses neural tracking technology to monitor your position and follow you automatically down the fairway. Step forward and it rolls behind; stop and it halts instantly. Includes remote handset for manual guidance.',
+    specs: {
+      power: 'Seventh-Gen Autonomous Follow System & Remote',
+      motor: 'Twin Calibrated 230W Motors',
+      battery: 'SmartPower Lithium Pack (36 Hole)',
+      weight: '14.8 kg',
+      wheels: 'Dual Front Casters with Dual Anti-Tip Rollers',
+      foldSize: '65cm x 56cm x 33cm',
+      brakes: 'Smart Regenerative Dynamic Braking',
+      warranty: '3-Year Australian Warranty'
+    },
+    images: [
+      '/images/products/stewart-golf-x10-follow-electric-buggy/main.webp',
+      '/images/products/stewart-golf-x10-follow-electric-buggy/gallery-2.webp',
+      '/images/products/stewart-golf-x10-follow-electric-buggy/gallery-3.webp',
+      '/images/products/stewart-golf-x10-follow-electric-buggy/gallery-4.webp'
+    ]
+  },
+  {
+    slug: 'powakaddy-rx1-gps-remote-electric-golf-buggy',
+    name: 'PowaKaddy RX1 GPS Remote Electric Golf Buggy',
+    brand: 'powakaddy',
+    brandName: 'PowaKaddy',
+    category: 'remote-control-golf-buggies',
+    categoryPath: '/remote-control-golf-buggies/',
+    price: 2499,
+    condition: 'New',
+    badge: 'Remote + GPS Integrated',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 53,
+    power: 'Electric Remote',
+    wheels: '4-wheel',
+    batteryRange: '36 hole',
+    weightCategory: '14+ kg',
+    weightKg: 14,
+    foldSize: 'Slim fold',
+    seats: 'Remote / Walk-behind',
+    primaryKeyword: 'powakaddy rx1 gps remote electric golf buggy',
+    shortDescription: 'Dual control freedom combining ergonomic remote handset navigation with a 3.5-inch touchscreen course GPS.',
+    description: 'The PowaKaddy RX1 GPS Remote combines high-performance wireless handset steering with an ultra-bright 3.5" GPS touchscreen on the handle. Dual 230W motors power through deep rough and steep climbs while twin rear anti-tip wheels guarantee rock-solid stability.',
+    specs: {
+      power: 'Ergonomic Remote Control & 3.5" Touchscreen GPS',
+      motor: 'Twin 30V 230W Motors',
+      battery: 'Plug\'n\'Play 30V High-Capacity Lithium',
+      weight: '14.0 kg',
+      wheels: 'All-Terrain Sports Wheels with Anti-Tip',
+      foldSize: '80cm x 56cm x 34cm',
+      brakes: 'Electronic Slope Descent Control',
+      warranty: '3-Year Australian Warranty'
+    },
+    images: [
+      '/images/products/powakaddy-rx1-gps-remote-electric-golf-buggy/main.webp',
+      '/images/products/powakaddy-rx1-gps-remote-electric-golf-buggy/gallery-2.webp',
+      '/images/products/powakaddy-rx1-gps-remote-electric-golf-buggy/gallery-3.webp',
+      '/images/products/powakaddy-rx1-gps-remote-electric-golf-buggy/gallery-4.webp'
+    ]
+  },
+  {
+    slug: 'powakaddy-dlx-push-button-electric-golf-buggy',
+    name: 'PowaKaddy DLX Electric Golf Buggy',
+    brand: 'powakaddy',
+    brandName: 'PowaKaddy',
+    category: 'electric-golf-buggies',
+    categoryPath: '/electric-golf-buggies/walk-behind/',
+    price: 1199,
+    condition: 'New',
+    badge: 'Push-Button Benchmark',
+    featured: false,
+    rating: 4.8,
+    reviewCount: 65,
+    power: 'Electric',
+    wheels: '3-wheel',
+    batteryRange: '36 hole',
+    weightCategory: 'Under 10 kg',
+    weightKg: 9.4,
+    foldSize: '1-Click Fold',
+    seats: 'Walk-behind',
+    primaryKeyword: 'powakaddy dlx electric golf buggy',
+    shortDescription: 'Reliable, lightweight push-button electric buggy with whisper-quiet motor and high-performance lithium power.',
+    description: 'The PowaKaddy DLX delivers proven British engineering in a simple, durable walk-behind design. Turn the ergonomic speed dial, press start, and enjoy effortless power across 36 holes on a single charge.',
+    specs: {
+      power: 'Push-Button Variable Digital Speed Dial',
+      motor: '230W Whisper-Quiet Motor',
+      battery: 'Plug\'n\'Play Lightweight Lithium (36 Hole)',
+      weight: '9.4 kg',
+      wheels: 'Low-Profile Quick-Release Wheels',
+      foldSize: '78cm x 54cm x 35cm',
+      brakes: 'Dynamic Speed Descent Brakes',
+      warranty: '3-Year Australian Warranty'
+    },
+    images: [
+      '/images/products/powakaddy-dlx-push-button-electric-golf-buggy/main.webp',
+      '/images/products/powakaddy-dlx-push-button-electric-golf-buggy/gallery-2.webp',
+      '/images/products/powakaddy-dlx-push-button-electric-golf-buggy/gallery-3.webp'
+    ]
+  },
+  {
+    slug: 'big-max-iq-2-360-push-golf-buggy',
+    name: 'Big Max IQ 2 360 Push Golf Buggy',
+    brand: 'big-max',
+    brandName: 'Big Max',
+    category: 'push-pull-golf-buggies',
+    categoryPath: '/push-pull-golf-buggies/',
+    price: 499,
+    condition: 'New',
+    badge: '360° Front Swivel',
+    featured: false,
+    rating: 4.9,
+    reviewCount: 71,
+    power: 'Manual Push',
+    wheels: '3-wheel',
+    batteryRange: 'N/A - Push',
+    weightCategory: 'Under 7 kg',
+    weightKg: 6.8,
+    foldSize: 'Ultra-compact cubic fold',
+    seats: 'Manual push',
+    primaryKeyword: 'big max iq 2 360 push golf buggy',
+    shortDescription: 'Full 360-degree front wheel spin for effortless fairway turning, deluxe organiser panel, and ultra-compact cubic fold.',
+    description: 'The Big Max IQ 2 360 turns on a dime with its lockable 360-degree front wheel. Folds down into a compact cubic shape that fits in any Australian car boot alongside a full tour bag.',
+    specs: {
+      power: 'Manual Push with 360° Front Swivel Wheel',
+      motor: 'None (Manual Ultra-Lightweight)',
+      battery: 'None',
+      weight: '6.8 kg',
+      wheels: '360° Front Swivel + 2 Large Sealed Ball-Bearing Rear',
+      foldSize: '58cm x 37cm x 42cm',
+      brakes: 'Hand-Operated Foot Brake',
+      warranty: '5-Year Manufacturer Warranty'
+    },
+    images: [
+      '/images/products/big-max-iq-2-360-push-golf-buggy/main.webp',
+      '/images/products/big-max-iq-2-360-push-golf-buggy/gallery-2.webp',
+      '/images/products/big-max-iq-2-360-push-golf-buggy/gallery-3.webp',
+      '/images/products/big-max-iq-2-360-push-golf-buggy/gallery-4.webp',
+      '/images/products/big-max-iq-2-360-push-golf-buggy/gallery-5.webp'
     ]
   }
 ];

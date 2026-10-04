@@ -328,9 +328,9 @@ export default function CompareClient({ allProducts = [] }) {
                 return (
                   <th key={p.slug} className="py-6 px-4 w-1/3 align-top">
                     <div className="space-y-3">
-                      <div className="product-frame rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 relative shadow-md">
+                      <div className="product-frame rounded-2xl overflow-hidden border border-slate-700 bg-white relative shadow-md aspect-4/3 flex items-center justify-center p-3">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={p.images[0]} alt={p.name} className="w-full h-full object-cover" />
+                        <img src={p.images[0]} alt={p.name} className="max-w-full max-h-full object-contain" referrerPolicy="no-referrer" />
                         <button
                           type="button"
                           onClick={() => toggleCompare(p)}

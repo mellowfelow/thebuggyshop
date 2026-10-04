@@ -554,15 +554,20 @@ export default function ShopClient({
                     key={product.slug}
                     className="bg-white rounded-3xl p-5 border border-slate-200 hover:border-[#C5A880] transition-all shadow-xs hover:shadow-md flex flex-col md:flex-row items-center gap-6 group"
                   >
-                    <div className="w-full md:w-56 shrink-0 aspect-4/3 bg-slate-50 rounded-2xl flex items-center justify-center p-4 border border-slate-200 relative overflow-hidden">
+                    <div className="w-full md:w-60 shrink-0 aspect-4/3 bg-white rounded-2xl flex items-center justify-center p-3 border border-slate-200 relative overflow-hidden">
                       {product.badge && (
-                        <span className="absolute top-2.5 left-2.5 bg-slate-900 text-[#C5A880] text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md shadow-xs">
+                        <span className="absolute top-2.5 left-2.5 z-10 bg-slate-900 text-[#C5A880] text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md shadow-xs">
                           {product.badge}
                         </span>
                       )}
-                      <span className="text-4xl group-hover:scale-110 transition-transform duration-300">
-                        {product.category === 'golf-carts' ? '🚗' : product.category === 'off-road-buggies' ? '🚜' : product.power === 'Remote control' ? '🎮' : '⚡'}
-                      </span>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img 
+                        src={product.images[0]} 
+                        alt={product.name} 
+                        className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                      />
                     </div>
 
                     <div className="flex-1 min-w-0 space-y-2">

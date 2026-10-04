@@ -60,6 +60,7 @@ export default function ProductDetailClient({ product, relatedProducts }) {
               src={product.images[activeImageIndex]}
               alt={`${product.name} view ${activeImageIndex + 1}`}
               className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+              referrerPolicy="no-referrer"
             />
           </div>
 
@@ -79,7 +80,7 @@ export default function ProductDetailClient({ product, relatedProducts }) {
                   aria-label={`View image ${idx + 1}`}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={img} alt="Thumbnail" className="w-full h-full object-contain p-1" />
+                  <img src={img} alt="Thumbnail" className="w-full h-full object-contain p-1" referrerPolicy="no-referrer" />
                 </button>
               ))}
             </div>

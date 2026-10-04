@@ -92,7 +92,7 @@ export default function CartDrawer({ isOpen, onClose, cart, updateQuantity, remo
                       <div className="flex items-center gap-3">
                         <div className="w-14 h-14 rounded-xl bg-slate-100 overflow-hidden shrink-0 border border-slate-200">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                          <img src={item.image} alt={item.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                         </div>
                         <div>
                           <span className="text-[10px] font-black uppercase tracking-wider text-[#C5A880]">

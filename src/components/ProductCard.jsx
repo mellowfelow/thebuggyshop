@@ -55,11 +55,11 @@ export default function ProductCard({
       {/* Top gold accent line */}
       <div className="h-1 w-full bg-gradient-to-r from-slate-900 via-[#C5A880] to-slate-900 opacity-60 group-hover:opacity-100 transition-opacity" />
 
-      {/* Compact Image Frame */}
-      <div className="relative aspect-[4/3] max-h-36 sm:max-h-40 bg-slate-50 overflow-hidden border-b border-slate-100">
+      {/* Larger, Spacious Image Frame */}
+      <div className="relative aspect-[4/3] w-full min-h-[210px] sm:min-h-[250px] bg-white overflow-hidden border-b border-slate-100 flex items-center justify-center p-3 sm:p-4">
         {/* Badge */}
         {product.badge && (
-          <div className="absolute top-1.5 left-1.5 z-10 bg-slate-950/90 text-[#C5A880] text-[8px] sm:text-[9px] font-bold uppercase px-1.5 py-0.5 rounded border border-[#C5A880]/50 shadow-xs">
+          <div className="absolute top-2.5 left-2.5 z-10 bg-slate-950/90 text-[#C5A880] text-[9px] sm:text-[10px] font-bold uppercase px-2 py-0.5 rounded-md border border-[#C5A880]/50 shadow-xs">
             {product.badge}
           </div>
         )}
@@ -68,80 +68,81 @@ export default function ProductCard({
         <button
           type="button"
           onClick={() => onToggleCompare && onToggleCompare(product)}
-          className={`absolute top-1.5 right-1.5 z-10 p-1 rounded-full border text-[9px] transition-all shadow-xs cursor-pointer ${
+          className={`absolute top-2.5 right-2.5 z-10 p-1.5 rounded-full border text-[10px] transition-all shadow-xs cursor-pointer ${
             isCompared 
               ? 'bg-slate-950 text-[#C5A880] border-[#C5A880]' 
               : 'bg-white/90 text-slate-600 hover:bg-white hover:border-[#C5A880] border-slate-200'
           }`}
           aria-label={`${isCompared ? 'Remove from' : 'Add to'} comparison`}
         >
-          {isCompared ? <Check className="w-2.5 h-2.5" /> : <Scale className="w-2.5 h-2.5" />}
+          {isCompared ? <Check className="w-3 h-3" /> : <Scale className="w-3 h-3" />}
         </button>
 
         {/* Image Link */}
-        <Link href={`/shop/${product.category}/${product.slug}/`} className="block w-full h-full">
+        <Link href={`/shop/${product.category}/${product.slug}/`} className="w-full h-full flex items-center justify-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img 
             src={product.images[0]} 
             alt={`${product.name} - Australian Golf Buggy`}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
+            className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300 ease-out"
             loading="lazy"
+            referrerPolicy="no-referrer"
           />
         </Link>
       </div>
 
-      {/* Compact Content Body */}
-      <div className="p-2.5 sm:p-3 flex-1 flex flex-col justify-between space-y-2">
-        <div className="space-y-1">
+      {/* Spacious Content Body */}
+      <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between space-y-3">
+        <div className="space-y-1.5">
           {/* Category & Seating Tag */}
-          <div className="flex items-center justify-between gap-1 text-[8px] sm:text-[9px]">
+          <div className="flex items-center justify-between gap-1 text-[9px] sm:text-[10px]">
             <span className="uppercase tracking-wider font-bold text-[#C5A880] truncate">
               {product.category.replace(/-/g, ' ')}
             </span>
-            <span className="font-semibold text-slate-600 bg-slate-100 px-1 py-0.2 rounded flex items-center gap-0.5 shrink-0">
-              <Users className="w-2.5 h-2.5 text-[#C5A880]" />
+            <span className="font-semibold text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded flex items-center gap-1 shrink-0">
+              <Users className="w-3 h-3 text-[#C5A880]" />
               <span>{seatingText.split('(')[0].trim()}</span>
             </span>
           </div>
 
           {/* Title */}
           <Link href={`/shop/${product.category}/${product.slug}/`}>
-            <h3 className="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-[#C5A880] transition-colors leading-snug line-clamp-1 font-serif">
+            <h3 className="font-bold text-sm sm:text-base text-slate-900 group-hover:text-[#C5A880] transition-colors leading-snug line-clamp-2 font-serif min-h-[2.5rem]">
               {product.name}
             </h3>
           </Link>
 
           {/* Inline Micro Specs */}
-          <div className="flex items-center gap-1.5 text-[9px] text-slate-500 pt-0.5">
-            <span className="inline-flex items-center gap-0.5 truncate font-medium">
-              <BatteryCharging className="w-2.5 h-2.5 text-[#C5A880] shrink-0" />
+          <div className="flex items-center gap-2 text-[10px] sm:text-xs text-slate-500 pt-0.5">
+            <span className="inline-flex items-center gap-1 truncate font-medium">
+              <BatteryCharging className="w-3 h-3 text-[#C5A880] shrink-0" />
               <span className="truncate">{product.specs?.battery || 'LiFePO4'}</span>
             </span>
             <span className="text-slate-300">&bull;</span>
-            <span className="inline-flex items-center gap-0.5 truncate font-medium">
-              <Gauge className="w-2.5 h-2.5 text-[#C5A880] shrink-0" />
+            <span className="inline-flex items-center gap-1 truncate font-medium">
+              <Gauge className="w-3 h-3 text-[#C5A880] shrink-0" />
               <span className="truncate">{product.specs?.range || '36+ Holes'}</span>
             </span>
           </div>
         </div>
 
         {/* Pricing & Crypto Banner */}
-        <div className="space-y-1 pt-1 border-t border-slate-100">
+        <div className="space-y-2 pt-2 border-t border-slate-100">
           {/* Price Header */}
           <div className="flex items-baseline justify-between">
             <div className="flex items-baseline gap-1">
-              <span className="text-sm sm:text-base font-black text-slate-950 font-serif">
+              <span className="text-base sm:text-lg font-black text-slate-950 font-serif">
                 ${product.price.toLocaleString('en-AU')}
               </span>
-              <span className="text-[9px] font-bold text-slate-500">AUD</span>
+              <span className="text-[10px] font-bold text-slate-500">AUD</span>
             </div>
-            <span className="text-[8px] font-semibold text-slate-500 bg-slate-100 px-1 py-0.2 rounded">
+            <span className="text-[9px] font-semibold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
               Inc. GST
             </span>
           </div>
 
           {/* Eye-Catching Green Crypto Pill */}
-          <div className="bg-emerald-50/90 border border-emerald-500/60 px-2 py-1 rounded-md flex items-center justify-between gap-1 text-[9px] sm:text-[10px] shadow-2xs">
+          <div className="bg-emerald-50/90 border border-emerald-500/60 px-2.5 py-1.5 rounded-lg flex items-center justify-between gap-1 text-[10px] sm:text-xs shadow-2xs">
             <div className="flex items-center gap-1.5 min-w-0 truncate">
               <span className="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-[9px] shrink-0 shadow-xs">
                 ₿
@@ -150,43 +151,43 @@ export default function ProductCard({
                 Pay <strong className="text-emerald-800 font-mono font-black">${cryptoPrice.toLocaleString('en-AU')}</strong> with Crypto
               </span>
             </div>
-            <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-tight bg-emerald-600 text-white px-1.5 py-0.5 rounded shrink-0 shadow-2xs">
+            <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-tight bg-emerald-600 text-white px-1.5 py-0.5 rounded shrink-0 shadow-2xs">
               Save ${savings}
             </span>
           </div>
 
           {/* Action Row: Stepper + Add Button */}
-          <div className="flex items-center gap-1.5 pt-1">
-            {/* Compact Stepper */}
-            <div className="flex items-center border border-slate-200 rounded bg-slate-50 overflow-hidden shrink-0">
+          <div className="flex items-center gap-2 pt-1">
+            {/* Stepper */}
+            <div className="flex items-center border border-slate-200 rounded-md bg-slate-50 overflow-hidden shrink-0">
               <button
                 type="button"
                 onClick={handleDecrease}
-                className="px-1.5 py-1 hover:bg-slate-200 text-slate-700 font-bold transition-colors cursor-pointer"
+                className="px-2 py-1.5 hover:bg-slate-200 text-slate-700 font-bold transition-colors cursor-pointer"
                 aria-label="Decrease quantity"
               >
-                <Minus className="w-2.5 h-2.5" />
+                <Minus className="w-3 h-3" />
               </button>
-              <span className="px-1 text-[10px] font-black text-slate-900 min-w-[14px] text-center">{qty}</span>
+              <span className="px-1.5 text-xs font-black text-slate-900 min-w-[16px] text-center">{qty}</span>
               <button
                 type="button"
                 onClick={handleIncrease}
-                className="px-1.5 py-1 hover:bg-slate-200 text-slate-700 font-bold transition-colors cursor-pointer"
+                className="px-2 py-1.5 hover:bg-slate-200 text-slate-700 font-bold transition-colors cursor-pointer"
                 aria-label="Increase quantity"
               >
-                <Plus className="w-2.5 h-2.5" />
+                <Plus className="w-3 h-3" />
               </button>
             </div>
 
-            {/* Compact Add to Order Button */}
+            {/* Add to Order Button */}
             <button
               type="button"
               onClick={handleAdd}
-              className="flex-1 py-1 px-2 rounded bg-slate-950 hover:bg-[#C5A880] hover:text-slate-950 text-[#C5A880] text-[10px] font-bold uppercase tracking-wider text-center transition-all border border-[#C5A880]/30 flex items-center justify-center gap-1 cursor-pointer active:scale-95 shadow-2xs"
+              className="flex-1 py-1.5 px-3 rounded-md bg-slate-950 hover:bg-[#C5A880] hover:text-slate-950 text-[#C5A880] text-xs font-bold uppercase tracking-wider text-center transition-all border border-[#C5A880]/30 flex items-center justify-center gap-1.5 cursor-pointer active:scale-95 shadow-2xs"
               id={`add-to-cart-${product.slug}`}
             >
-              <ShoppingBag className="w-2.5 h-2.5" />
-              <span>Add</span>
+              <ShoppingBag className="w-3.5 h-3.5" />
+              <span>Add to Cart</span>
             </button>
           </div>
         </div>
