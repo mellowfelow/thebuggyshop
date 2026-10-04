@@ -147,7 +147,7 @@ export default function HeroSlider() {
             <img
               src={s.image}
               alt={s.alt}
-              className={`w-full h-full object-cover object-center transform transition-transform duration-10000 ease-out ${
+              className={`w-full h-full object-cover object-center transform transition-transform duration-10000 ease-out brightness-[1.06] contrast-[1.02] ${
                 isActive ? 'scale-105' : 'scale-100'
               }`}
               onError={(e) => {
@@ -155,10 +155,9 @@ export default function HeroSlider() {
                 e.currentTarget.src = `/images/hero/hero-${s.id}.jpg`;
               }}
             />
-            {/* Multi-tier Cinematic Scrim & Shading Gradients for High Readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#070B14]/95 via-[#070B14]/80 to-[#070B14]/30" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#070B14] via-transparent to-[#070B14]/60" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_20%_40%,rgba(197,168,128,0.12),rgba(0,0,0,0))] pointer-events-none" />
+            {/* Luminous, soft scrim: keeps images bright and vibrant across the frame while maintaining crystal-clear text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-slate-950/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
           </div>
         );
       })}
@@ -181,25 +180,25 @@ export default function HeroSlider() {
           {/* Heading (Mandatory Single <h1> on Slide 1; Styled <div> on other slides) */}
           <div className="space-y-2.5">
             {slide.isH1 ? (
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.08] font-serif">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.08] font-serif drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                 {slide.titleMain}
                 <span className="text-[#C5A880]">{slide.titleAccent}</span>
                 {slide.titleSuffix}
               </h1>
             ) : (
-              <div className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.08] font-serif">
+              <div className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.08] font-serif drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                 {slide.titleMain}
                 <span className="text-[#C5A880]">{slide.titleAccent}</span>
                 {slide.titleSuffix}
               </div>
             )}
-            <p className="text-sm sm:text-base font-semibold uppercase tracking-wider text-[#C5A880] font-serif">
+            <p className="text-sm sm:text-base font-semibold uppercase tracking-wider text-[#C5A880] font-serif drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">
               {slide.subtitle}
             </p>
           </div>
 
           {/* Descriptive Copy */}
-          <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal max-w-2xl text-shadow-sm">
+          <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-normal max-w-2xl drop-shadow-[0_1px_6px_rgba(0,0,0,0.85)]">
             {slide.description}
           </p>
 
