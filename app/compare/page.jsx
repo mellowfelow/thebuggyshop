@@ -4,10 +4,11 @@ import { SITE, PRODUCTS } from '@/src/config/site';
 import JsonLd from '@/src/components/JsonLd';
 import CompareClient from './CompareClient';
 import { Scale, BatteryCharging, Zap, ShieldCheck, Truck, Sparkles } from 'lucide-react';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Compare Golf Buggy, Battery & Charger Specifications | The Buggy Shop Australia',
-  description: 'Side-by-side engineering comparison matrix for Australian golf buggies, LiFePO4 lithium batteries, and high-frequency smart chargers. Compare voltage, capacity, charging times, motor power, and warranties.',
+  title: { absolute: seoTitle('Compare Golf Buggy, Battery & Charger Specifications | The Buggy Shop Australia') },
+  description: seoDesc('Side-by-side engineering comparison matrix for Australian golf buggies, LiFePO4 lithium batteries, and high-frequency smart chargers. Compare voltage, capacity, charging times, motor power, and warranties.'),
   alternates: {
     canonical: `https://${SITE.domain}/compare/`,
   },

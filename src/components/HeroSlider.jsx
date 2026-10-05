@@ -16,13 +16,14 @@ import {
   Radio,
   SlidersHorizontal
 } from 'lucide-react';
+import Image from 'next/image';
 import { SITE, CONTACT } from '@/src/config/site';
 
 const SLIDES = [
   {
     id: 1,
     isH1: true,
-    image: '/images/hero/hero-1.jpg',
+    image: '/images/hero/hero-1.webp',
     alt: 'Luxury Australian Golf Buggies for Sale - The Buggy Shop Queensland',
     eyebrow: 'AUSTRALIAN LUXURY GOLF BUGGIES • QUEENSLAND EST. 2004',
     titleMain: 'Premium ',
@@ -38,7 +39,7 @@ const SLIDES = [
   {
     id: 2,
     isH1: false,
-    image: '/images/hero/hero-2.jpg',
+    image: '/images/hero/hero-2.webp',
     alt: 'Remote Control Golf Buggies Australia - Active Gyro Stabilization',
     eyebrow: 'INTELLIGENT GYRO-STABILIZATION & DUAL 230W MOTORS',
     titleMain: 'Next-Gen ',
@@ -54,7 +55,7 @@ const SLIDES = [
   {
     id: 3,
     isH1: false,
-    image: '/images/hero/hero-3.jpg',
+    image: '/images/hero/hero-3.webp',
     alt: 'Heavy-Duty 4x4 Off Road Buggies for Sale Australia Acreage & Farm Carts',
     eyebrow: 'HEAVY-DUTY DUAL MOTOR 4X4 • TOW RATED TO 1,200 KG',
     titleMain: 'Rugged ',
@@ -70,7 +71,7 @@ const SLIDES = [
   {
     id: 4,
     isH1: false,
-    image: '/images/hero/hero-4.jpg',
+    image: '/images/hero/hero-4.webp',
     alt: 'Luxury Resort Multi-Passenger Golf Carts Australia',
     eyebrow: '5-YEAR LIFEPO4 BATTERY • 95 KM SINGLE-CHARGE RANGE',
     titleMain: 'Luxury ',
@@ -86,7 +87,7 @@ const SLIDES = [
   {
     id: 5,
     isH1: false,
-    image: '/images/hero/hero-5.jpg',
+    image: '/images/hero/hero-5.webp',
     alt: 'Certified Used Golf Buggies for Sale Australia - 5-Year Lithium Retrofits',
     eyebrow: 'WORKSHOP-CERTIFIED PRE-OWNED • COMPREHENSIVE WARRANTY',
     titleMain: 'Certified ',
@@ -102,16 +103,27 @@ const SLIDES = [
 ];
 
 export default function HeroSlider() {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // currentSlide + the set of slides whose image has been mounted. Only the active and the next
+  // slide are mounted, so first paint downloads ONE hero image instead of all five.
+  const [{ currentSlide, seen }, setHero] = useState({ currentSlide: 0, seen: new Set([0, 1]) });
+  const setCurrentSlide = useCallback((value) => {
+    setHero((prev) => {
+      const next = typeof value === 'function' ? value(prev.currentSlide) : value;
+      const mounted = new Set(prev.seen);
+      mounted.add(next);
+      mounted.add((next + 1) % SLIDES.length);
+      return { currentSlide: next, seen: mounted };
+    });
+  }, []);
   const [isPaused, setIsPaused] = useState(false);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
-  }, []);
+  }, [setCurrentSlide]);
 
   const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + SLIDES.length) % SLIDES.length);
-  }, []);
+  }, [setCurrentSlide]);
 
   useEffect(() => {
     if (isPaused) return;
@@ -143,18 +155,19 @@ export default function HeroSlider() {
             }`}
             aria-hidden={!isActive}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={s.image}
-              alt={s.alt}
-              className={`w-full h-full object-cover object-center transform transition-transform duration-10000 ease-out brightness-[1.06] contrast-[1.02] ${
-                isActive ? 'scale-105' : 'scale-100'
-              }`}
-              onError={(e) => {
-                e.currentTarget.onerror = null;
-                e.currentTarget.src = `/images/hero/hero-${s.id}.jpg`;
-              }}
-            />
+            {seen.has(idx) && (
+              <Image
+                src={s.image}
+                alt={s.alt}
+                fill
+                sizes="100vw"
+                priority={idx === 0}
+                quality={72}
+                className={`object-cover object-center transform transition-transform duration-10000 ease-out brightness-[1.06] contrast-[1.02] ${
+                  isActive ? 'scale-105' : 'scale-100'
+                }`}
+              />
+            )}
             {/* Luminous, soft scrim: keeps images bright and vibrant across the frame while maintaining crystal-clear text readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-slate-950/20 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />

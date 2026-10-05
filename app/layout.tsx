@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import ClientStoreProvider from '@/src/components/ClientStoreProvider';
 import { SITE, BRAND, CONTACT } from '@/src/config/site';
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(`https://${SITE.domain}`),
   title: {
     default: `Golf Buggy for Sale Australia | ${SITE.name}`,
-    template: `%s | ${SITE.name}`
+    template: '%s'
   },
   description: "Australia's premier destination for luxury golf buggies for sale, remote control golf buggies, off road buggies, push golf buggies with seats, and used golf buggies for sale.",
   keywords: [
@@ -38,9 +38,6 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
-  alternates: {
-    canonical: `https://${SITE.domain}/`,
-  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -48,7 +45,7 @@ export const metadata: Metadata = {
     ],
     shortcut: ['/favicon.svg'],
     apple: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
   openGraph: {
@@ -60,7 +57,7 @@ export const metadata: Metadata = {
     description: "Australia's premier destination for luxury golf buggies for sale, remote control golf buggies, off road buggies, push golf buggies with seats, and used golf buggies for sale.",
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80',
+        url: '/images/hero/hero-1.webp',
         width: 1200,
         height: 630,
         alt: `${SITE.name} Luxury Australian Golf Buggies for Sale`,
@@ -71,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `Golf Buggy for Sale Australia | ${SITE.name}`,
     description: "Australia's premier destination for luxury golf buggies for sale, remote control golf buggies, and off road buggies.",
-    images: ['https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'],
+    images: ['/images/hero/hero-1.webp'],
   },
   robots: {
     index: true,
@@ -89,6 +86,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#0B111E',
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -97,11 +100,9 @@ export default function RootLayout({
   return (
     <html lang="en-AU" className="scroll-smooth">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#0B111E" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="alternate icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <script src="/js/webmcp.js" defer></script>
       </head>
       <body suppressHydrationWarning className="antialiased bg-[#F8F8F5] text-[#0E2A1E]">

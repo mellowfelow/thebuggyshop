@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { X, Trash2, Plus, Minus, Truck, ArrowRight, ShieldCheck, ShoppingBag } from 'lucide-react';
 import { SITE, CONTACT, SHOP } from '@/src/config/site';
+import Image from 'next/image';
 
 export default function CartDrawer({ isOpen, onClose, cart, updateQuantity, removeFromCart, clearCart }) {
   const router = useRouter();
@@ -91,8 +92,7 @@ export default function CartDrawer({ isOpen, onClose, cart, updateQuantity, remo
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-center gap-3">
                         <div className="w-14 h-14 rounded-xl bg-slate-100 overflow-hidden shrink-0 border border-slate-200">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={item.image} alt={item.name} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                          <Image src={item.image} alt={item.name} width={112} height={112} sizes="56px" className="w-full h-full object-cover" />
                         </div>
                         <div>
                           <span className="text-[10px] font-black uppercase tracking-wider text-[#C5A880]">

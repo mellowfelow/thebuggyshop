@@ -16,7 +16,7 @@
 6. `/finance/` (Interactive Pay in 4 and commercial asset lease calculator)
 7. `/blog/` & `/blog/[slug]/` (Outback technical guides, battery care, road registration)
 8. `/about/` (>700 words Australian heritage, milestones, 8 differentiators, Organization JSON-LD)
-9. `/contact/` (Web3Forms CORS form, WhatsApp direct channel, Queensland HQ details)
+9. `/contact/` (SMTP-backed enquiry form via `/api/contact`, WhatsApp direct channel, Queensland HQ details), plus `/wholesale/`, `/faq/`, `/shipping/`, `/returns/`, `/privacy/`, `/terms/`
 10. `/search/` (Instant search for vehicles, categories, and technical articles)
 11. `/thank-you-contact/` & `/thank-you-order/` (noindex, follow)
 12. `/not-found` (Custom 404, noindex, follow)
@@ -30,3 +30,14 @@
 - LLMs (`/llms.txt`)
 - Auth (`/auth.md`)
 - WebMCP (`/public/js/webmcp.js`)
+
+
+## Taxonomy (single source: src/config/categories.js)
+Roots: electric-golf-buggies (walk-behind, remote-control-golf-buggies, gps-follow-buggies, conversion-kits), push-pull-golf-buggies (3-wheel, 4-wheel, golf-trolleys), luxury-golf-carts (2-seat, 4-6-seat, lifted-all-terrain, utility, used), off-road-buggies (dune-buggies, side-by-side, farm-buggies, beach-buggies, 2-seater-petrol), kids-buggies (electric, petrol), batteries (lithium, chargers, cart-sets), parts (wheels-tyres, drive-electrical, golf-buggy-repairs), accessories (holders, seats-footboards, covers-and-bags, wheel-upgrades, bags, golf-balls, rangefinders-gps, practice-aids), golf-clubs (complete-sets, woods-and-irons, wedges-and-putters), used-golf-buggies (ex-demo; cross-lists every Used / Ex-Demo product).
+URLs: `/shop/<node-slug>/` for every node, `/shop/<root>/<product-slug>/` for products. Parent pages list the whole family.
+
+## Open items (client)
+- Final domain (repo currently uses thebuggyshop.com.au and thebuggyshoppty.com.au in different places).
+- Real photos for 128 products (109 placeholder, 19 stock).
+- Review the drafted shipping / returns / privacy / terms wording.
+- Brand pages for 28 product brands that have none.

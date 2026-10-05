@@ -14,6 +14,8 @@ import {
   Scale
 } from 'lucide-react';
 import { SHOP } from '@/src/config/site';
+import Image from 'next/image';
+import { productImageAlt } from '@/lib/seo';
 
 export default function ProductCard({ 
   product, 
@@ -80,13 +82,13 @@ export default function ProductCard({
 
         {/* Image Link */}
         <Link href={`/shop/${product.category}/${product.slug}/`} className="w-full h-full flex items-center justify-center relative">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src={product.images[0]} 
-            alt={`${product.name} - Australian Golf Buggy`}
+          <Image
+            src={product.images[0]}
+            alt={productImageAlt(product, 0)}
+            width={800}
+            height={600}
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
             className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 ease-out"
-            loading="lazy"
-            referrerPolicy="no-referrer"
           />
         </Link>
       </div>

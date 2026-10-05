@@ -3,20 +3,20 @@
   "protocol_version": "1.0",
   "spec": "https://ucp.dev/specification/overview/",
   "schema": "https://ucp.dev/schema/v1.json",
-  "site": "https://DOMAIN.com",
+  "site": "https://thebuggyshoppty.com.au",
   "name": "The Buggy Shop",
   "description": "Australia's Premier Golf Buggy for Sale & Luxury All-Terrain Cart Specialists",
   "services": [
     {
       "id": "product-catalog",
       "type": "catalog",
-      "url": "https://DOMAIN.com/shop/",
+      "url": "https://thebuggyshoppty.com.au/shop/",
       "description": "Full Australian electric buggy catalog"
     },
     {
       "id": "mcp-server",
       "type": "mcp",
-      "url": "https://DOMAIN.com/api/mcp",
+      "url": "https://thebuggyshoppty.com.au/api/mcp",
       "description": "MCP Streamable HTTP server for AI agents"
     },
     {
@@ -28,7 +28,7 @@
     {
       "id": "compare",
       "type": "b2b",
-      "url": "https://DOMAIN.com/compare/",
+      "url": "https://thebuggyshoppty.com.au/compare/",
       "description": "Technical comparison matrix"
     }
   ],
@@ -42,13 +42,13 @@
     "mcp"
   ],
   "endpoints": {
-    "mcp": "https://DOMAIN.com/api/mcp",
-    "catalog": "https://DOMAIN.com/shop/",
-    "contact": "https://DOMAIN.com/contact/",
-    "agent_skills": "https://DOMAIN.com/.well-known/agent-skills/index.json",
-    "mcp_server_card": "https://DOMAIN.com/.well-known/mcp/server-card.json",
-    "api_catalog": "https://DOMAIN.com/.well-known/api-catalog",
-    "llms_txt": "https://DOMAIN.com/llms.txt"
+    "mcp": "https://thebuggyshoppty.com.au/api/mcp",
+    "catalog": "https://thebuggyshoppty.com.au/shop/",
+    "contact": "https://thebuggyshoppty.com.au/contact/",
+    "agent_skills": "https://thebuggyshoppty.com.au/.well-known/agent-skills/index.json",
+    "mcp_server_card": "https://thebuggyshoppty.com.au/.well-known/mcp/server-card.json",
+    "api_catalog": "https://thebuggyshoppty.com.au/.well-known/api-catalog",
+    "llms_txt": "https://thebuggyshoppty.com.au/llms.txt"
   },
   "currency": "AUD",
   "payment_methods": [

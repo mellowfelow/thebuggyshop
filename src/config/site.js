@@ -10,7 +10,7 @@ export const SITE = {
   abn: '65 108 218 471',
   abnLookupUrl: 'https://abr.business.gov.au/ABN/View?id=65108218471',
   tagline: 'Australia\'s Premier Golf Buggy for Sale & Luxury All-Terrain Cart Specialists',
-  domain: 'DOMAIN.com',           // Single source of truth (pending domain)
+  domain: 'thebuggyshoppty.com.au', // Single source of truth (Vercel production domain; www redirects here)
   locale: 'en-AU',                // Australian English BCP-47
   currency: 'AUD',
   target: 'vercel',
@@ -58,7 +58,7 @@ export const SHOP = {
 }
 
 export const FORMS = {
-  provider: 'smtp',               // 'smtp' (default) | 'resend' (opt-in, verified domain only) — Web3Forms retired
+  provider: 'smtp',               // 'smtp' (default) | 'resend' (opt-in, verified domain only)
   smtpFrom: 'sales@thebuggyshoppty.com.au', // fallback; SMTP_FROM env var overrides
   resendFrom: '',                 // only for provider: 'resend'
   turnstileSiteKey: '',
@@ -145,92 +145,92 @@ export const BRAND = {
   awards: [],
 }
 
-export const CATEGORIES = [
+// Home-page / feed category tiles. Names + blurbs are marketing copy; slugs MUST exist in
+// src/config/categories.js (the single taxonomy). Counts are computed from PRODUCTS, never stored.
+const CATEGORY_TILES = [
   {
     slug: 'remote-control-golf-buggies',
     name: 'Remote Control Golf Buggies',
     description: 'Hands-free motorized remote control golf buggies with gyroscope tracking, downhill brakes, and 36-hole lithium batteries.',
-    heroImage: '/images/categories/remote-control-golf-buggies.jpg',
-    itemCount: 8
+    heroImage: '/images/categories/remote-control-golf-buggies.webp'
   },
   {
     slug: 'electric-golf-buggies',
-    name: 'Walk-Behind Electric Golf Buggies',
-    description: 'Push-button speed-dial electric golf buggies from MGI, Motocaddy, and PowaKaddy with quick-fold lithium power.',
-    heroImage: '/images/categories/electric-golf-buggies.jpg',
-    itemCount: 6
+    name: 'Electric Golf Buggies',
+    description: 'Walk-behind, remote-control and GPS follow electric golf buggies from MGI, Motocaddy, PowaKaddy and Stewart Golf with quick-fold lithium power.',
+    heroImage: '/images/categories/electric-golf-buggies.webp'
   },
   {
     slug: 'gps-follow-buggies',
     name: 'GPS & Auto-Follow Smart Buggies',
     description: 'Full-colour touchscreen GPS mapping and 7th-gen autonomous follow-me golf buggies from MGI and Stewart Golf.',
-    heroImage: '/images/categories/gps-follow-buggies.jpg',
-    itemCount: 6
+    heroImage: '/images/categories/gps-follow-buggies.webp'
   },
   {
     slug: 'push-pull-golf-buggies',
     name: 'Manual Push & Pull Golf Buggies',
     description: 'World-benchmark 3-wheel and ultra-flat 4-wheel manual push carts from Clicgear, Big Max, and QOD Golf ($450+ floor).',
-    heroImage: '/images/categories/push-pull-golf-buggies.jpg',
-    itemCount: 6
+    heroImage: '/images/categories/push-pull-golf-buggies.webp'
   },
   {
     slug: 'luxury-golf-carts',
     name: 'Ride-On Golf Carts (2–6 Seat)',
     description: 'Commercial and resort ride-on carts from Cougar, ECAR, Rippa, Tomberlin, Club Car, and Garia with LiFePO4 lithium power.',
-    heroImage: '/images/categories/luxury-golf-carts.jpg',
-    itemCount: 22
+    heroImage: '/images/categories/luxury-golf-carts.webp'
   },
   {
     slug: 'off-road-buggies',
     name: 'Off-Road Buggies & Side-by-Side UTVs',
     description: 'Dune buggies, farm UTVs, and heavy-duty 4x4 side-by-sides from GMX, Crossfire, Kayo, and Polaris.',
-    heroImage: '/images/categories/off-road-buggies.jpg',
-    itemCount: 21
+    heroImage: '/images/categories/off-road-buggies.webp'
   },
   {
     slug: 'kids-buggies',
     name: 'Kids & Teen Ride-On Buggies',
     description: '48V electric and 90cc-208cc petrol off-road buggies with parental speed locks and heavy-duty roll cages ($850+ floor).',
-    heroImage: '/images/categories/kids-buggies.jpg',
-    itemCount: 5
+    heroImage: '/images/categories/kids-buggies.webp'
   },
   {
     slug: 'batteries',
     name: 'Golf Buggy Lithium Batteries & Chargers',
     description: 'Genuine MGI 24V packs, drop-in 48V cart lithium replacements, and multi-chemistry smart chargers.',
-    heroImage: '/images/categories/batteries.jpg',
-    itemCount: 22
+    heroImage: '/images/categories/batteries.webp'
   },
   {
     slug: 'used-golf-buggies',
     name: 'Certified Used & Ex-Demo Buggies',
     description: 'Workshop-inspected ex-demo MGI buggies and refurbished 48V lithium carts with comprehensive warranties.',
-    heroImage: '/images/categories/used-golf-buggies.jpg',
-    itemCount: 8
+    heroImage: '/images/categories/used-golf-buggies.webp'
   },
   {
     slug: 'parts',
     name: 'Parts & Spares',
     description: 'Golf buggy wheels, tyres, motors, controllers and spare parts for MGI, Clicgear, Motocaddy and ride-on carts.',
-    heroImage: '/images/placeholder.webp',
-    itemCount: 17
+    heroImage: '/images/placeholder.webp'
   },
   {
     slug: 'accessories',
     name: 'Accessories',
     description: 'Golf buggy umbrella holders, drink holders, cart bags, golf balls, rangefinders and practice aids.',
-    heroImage: '/images/placeholder.webp',
-    itemCount: 30
+    heroImage: '/images/placeholder.webp'
   },
   {
     slug: 'golf-clubs',
     name: 'Golf Clubs',
     description: 'Complete golf club package sets, drivers, iron sets, wedges and putters.',
-    heroImage: '/images/placeholder.webp',
-    itemCount: 7
+    heroImage: '/images/placeholder.webp'
   }
 ]
+
+const countFor = (slug) =>
+  PRODUCTS.filter(
+    (p) =>
+      p.category === slug ||
+      p.subcategory === slug ||
+      (slug === 'used-golf-buggies' && (p.condition === 'Used' || p.condition === 'Ex-Demo'))
+  ).length;
+
+export const CATEGORIES = CATEGORY_TILES.map((c) => ({ ...c, itemCount: countFor(c.slug) }));
 
 
 export const POSTS = [

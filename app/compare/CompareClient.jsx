@@ -19,6 +19,8 @@ import {
   Plus
 } from 'lucide-react';
 import { useStore } from '@/src/components/ClientStoreProvider';
+import Image from 'next/image';
+import { productImageAlt } from '@/lib/seo';
 
 export default function CompareClient({ allProducts = [] }) {
   const { comparedProducts, toggleCompare, addToCart } = useStore();
@@ -329,8 +331,7 @@ export default function CompareClient({ allProducts = [] }) {
                   <th key={p.slug} className="py-6 px-4 w-1/3 align-top">
                     <div className="space-y-3">
                       <div className="product-frame rounded-2xl overflow-hidden border border-slate-700 bg-white relative shadow-md aspect-4/3 flex items-center justify-center p-3">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={p.images[0]} alt={p.name} className="max-w-full max-h-full object-contain" referrerPolicy="no-referrer" />
+                        <Image src={p.images[0]} alt={productImageAlt(p, 0)} width={600} height={450} sizes="(max-width: 768px) 50vw, 25vw" className="max-w-full max-h-full object-contain" />
                         <button
                           type="button"
                           onClick={() => toggleCompare(p)}

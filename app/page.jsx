@@ -23,10 +23,12 @@ import ReviewsCarousel from '@/src/components/ReviewsCarousel';
 import HeroSlider from '@/src/components/HeroSlider';
 import CollapsibleFaq from '@/src/components/CollapsibleFaq';
 import { HOMEPAGE_FAQS } from '@/src/config/faq';
+import Image from 'next/image';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Golf Buggy for Sale Australia | Luxury, Remote & Off Road Buggies',
-  description: 'Explore premium golf buggies for sale in Australia. From remote control golf buggies and off road buggies to luxury golf carts with seats and used golf buggies for sale with 5-year warranty.',
+  title: { absolute: seoTitle('Golf Buggy for Sale Australia | Luxury, Remote & Off Road Buggies') },
+  description: seoDesc('Explore premium golf buggies for sale in Australia. From remote control golf buggies and off road buggies to luxury golf carts with seats and used golf buggies for sale with 5-year warranty.'),
   alternates: {
     canonical: `https://${SITE.domain}/`,
   },
@@ -211,10 +213,12 @@ export default function HomePage() {
               className="group relative rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-xl hover:border-[#C5A880] hover:-translate-y-1.5 transition-all duration-300 flex flex-col"
             >
               <div className="product-frame relative overflow-hidden bg-slate-900">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={category.heroImage}
                   alt={`${category.name} - Golf Buggy for Sale`}
+                  width={800}
+                  height={600}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
@@ -419,10 +423,12 @@ export default function HomePage() {
               className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:border-[#C5A880] hover:-translate-y-1.5 transition-all duration-300 flex flex-col group"
             >
               <div className="product-frame relative overflow-hidden bg-slate-900">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={post.image}
                   alt={post.title}
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 ease-out"
                 />
                 <div className="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-xs text-[#C5A880] text-[10px] font-black uppercase px-2.5 py-1 rounded-full border border-[#C5A880]/40">

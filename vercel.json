@@ -7,10 +7,10 @@
       "has": [
         {
           "type": "host",
-          "value": "www.DOMAIN.com"
+          "value": "www.thebuggyshoppty.com.au"
         }
       ],
-      "destination": "https://DOMAIN.com/:path*",
+      "destination": "https://thebuggyshoppty.com.au/:path*",
       "permanent": true
     }
   ],
@@ -25,6 +25,10 @@
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
         },
         {
           "key": "Referrer-Policy",

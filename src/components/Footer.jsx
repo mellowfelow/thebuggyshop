@@ -212,14 +212,16 @@ export default function Footer() {
             <span>All Prices Include 10% Australian GST</span>
           </div>
 
-          <div className="flex items-center space-x-6">
-            <Link href="/about/" className="hover:text-[#C5A880] transition-colors">
-              Our Heritage
-            </Link>
-            <Link href="/contact/" className="hover:text-[#C5A880] transition-colors">
-              Queensland Sales Desk
-            </Link>
-          </div>
+          <nav aria-label="Footer" className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link href="/about/" className="hover:text-[#C5A880] transition-colors">Our Heritage</Link>
+            <Link href="/contact/" className="hover:text-[#C5A880] transition-colors">Queensland Sales Desk</Link>
+            <Link href="/wholesale/" className="hover:text-[#C5A880] transition-colors">Wholesale</Link>
+            <Link href="/faq/" className="hover:text-[#C5A880] transition-colors">FAQ</Link>
+            <Link href="/shipping/" className="hover:text-[#C5A880] transition-colors">Shipping</Link>
+            <Link href="/returns/" className="hover:text-[#C5A880] transition-colors">Returns &amp; Warranty</Link>
+            <Link href="/privacy/" className="hover:text-[#C5A880] transition-colors">Privacy</Link>
+            <Link href="/terms/" className="hover:text-[#C5A880] transition-colors">Terms</Link>
+          </nav>
         </div>
       </div>
     </footer>

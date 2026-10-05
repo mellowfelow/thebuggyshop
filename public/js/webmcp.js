@@ -11,7 +11,7 @@
           if (query) params.set('q', query);
           if (category) params.set('category', category);
           if (max_price) params.set('max_price', max_price);
-          const res = await fetch(`https://DOMAIN.com/api/search?${params}`);
+          const res = await fetch(`https://thebuggyshoppty.com.au/api/search?${params}`);
           return res.json();
         }
       },
@@ -20,7 +20,7 @@
         description: "Browse electric buggies by category",
         inputSchema: { type: "object", properties: { category: { type: "string" } } },
         execute: async ({ category }) => {
-          const url = category ? `https://DOMAIN.com/shop/${category}/` : `https://DOMAIN.com/shop/`;
+          const url = category ? `https://thebuggyshoppty.com.au/shop/${category}/` : `https://thebuggyshoppty.com.au/shop/`;
           window.location.href = url;
           return { url };
         }
@@ -41,8 +41,8 @@
         description: "Open the technical comparison matrix",
         inputSchema: { type: "object", properties: {} },
         execute: async () => {
-          window.location.href = `https://DOMAIN.com/compare/`;
-          return { url: `https://DOMAIN.com/compare/` };
+          window.location.href = `https://thebuggyshoppty.com.au/compare/`;
+          return { url: `https://thebuggyshoppty.com.au/compare/` };
         }
       },
       {
@@ -50,8 +50,8 @@
         description: "Contact The Buggy Shop Queensland dispatch and sales desk",
         inputSchema: { type: "object", properties: {} },
         execute: async () => {
-          window.location.href = `https://DOMAIN.com/contact/`;
-          return { url: `https://DOMAIN.com/contact/` };
+          window.location.href = `https://thebuggyshoppty.com.au/contact/`;
+          return { url: `https://thebuggyshoppty.com.au/contact/` };
         }
       }
     ]

@@ -1,5 +1,5 @@
 {
-  "issuer": "https://DOMAIN.com",
+  "issuer": "https://thebuggyshoppty.com.au",
   "authorization_endpoint": null,
   "token_endpoint": null,
   "jwks_uri": null,
@@ -8,16 +8,16 @@
   "scopes_supported": [],
   "note": "The Buggy Shop has no protected APIs. All vehicle catalog resources are publicly accessible.",
   "public_resources": [
-    "https://DOMAIN.com/shop/",
-    "https://DOMAIN.com/compare/",
-    "https://DOMAIN.com/finance/",
-    "https://DOMAIN.com/blog/",
-    "https://DOMAIN.com/about/",
-    "https://DOMAIN.com/contact/",
-    "https://DOMAIN.com/llms.txt",
-    "https://DOMAIN.com/.well-known/api-catalog",
-    "https://DOMAIN.com/.well-known/agent-skills/index.json",
-    "https://DOMAIN.com/.well-known/mcp/server-card.json"
+    "https://thebuggyshoppty.com.au/shop/",
+    "https://thebuggyshoppty.com.au/compare/",
+    "https://thebuggyshoppty.com.au/finance/",
+    "https://thebuggyshoppty.com.au/blog/",
+    "https://thebuggyshoppty.com.au/about/",
+    "https://thebuggyshoppty.com.au/contact/",
+    "https://thebuggyshoppty.com.au/llms.txt",
+    "https://thebuggyshoppty.com.au/.well-known/api-catalog",
+    "https://thebuggyshoppty.com.au/.well-known/agent-skills/index.json",
+    "https://thebuggyshoppty.com.au/.well-known/mcp/server-card.json"
   ],
   "agent_auth": {
     "register_uri": null,

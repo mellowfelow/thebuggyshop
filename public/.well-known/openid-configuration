@@ -1,5 +1,5 @@
 {
-  "issuer": "https://DOMAIN.com",
+  "issuer": "https://thebuggyshoppty.com.au",
   "note": "The Buggy Shop does not operate an OpenID Connect provider. All resources publicly accessible.",
   "public_site": true,
   "authorization_endpoint": null,

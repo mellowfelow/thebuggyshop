@@ -3,10 +3,12 @@ import Link from 'next/link';
 import { SITE, POSTS } from '@/src/config/site';
 import JsonLd from '@/src/components/JsonLd';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import Image from 'next/image';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Golf Buggy Insights & Technical Guides | The Buggy Shop Australia',
-  description: 'Technical advice, lithium battery maintenance, golf buggy accessories, and road registration guides for Australian golf buggy buyers.',
+  title: { absolute: seoTitle('Golf Buggy Insights & Technical Guides | The Buggy Shop Australia') },
+  description: seoDesc('Technical advice, lithium battery maintenance, golf buggy accessories, and road registration guides for Australian golf buggy buyers.'),
   alternates: {
     canonical: `https://${SITE.domain}/blog/`,
   },
@@ -73,10 +75,12 @@ export default function BlogIndexPage() {
           >
             <div className="product-frame relative overflow-hidden bg-[#F0F3F1] border-b border-[#D5DFD9] group-hover:border-[#E5D2A8] transition-colors">
               <Link href={`/blog/${post.slug}/`} className="block w-full h-full">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={post.image}
                   alt={post.title}
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
                 />
               </Link>

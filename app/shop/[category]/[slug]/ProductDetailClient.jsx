@@ -21,6 +21,8 @@ import {
 import { useStore } from '@/src/components/ClientStoreProvider';
 import { SITE, CONTACT, SHOP } from '@/src/config/site';
 import ProductCard from '@/src/components/ProductCard';
+import Image from 'next/image';
+import { productImageAlt } from '@/lib/seo';
 
 export default function ProductDetailClient({ product, relatedProducts }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -55,12 +57,14 @@ export default function ProductDetailClient({ product, relatedProducts }) {
                 {product.badge}
               </div>
             )}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={product.images[activeImageIndex]}
-              alt={`${product.name} view ${activeImageIndex + 1}`}
+              alt={productImageAlt(product, activeImageIndex)}
+              width={1200}
+              height={900}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority={activeImageIndex === 0}
               className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
-              referrerPolicy="no-referrer"
             />
           </div>
 
@@ -79,8 +83,7 @@ export default function ProductDetailClient({ product, relatedProducts }) {
                   }`}
                   aria-label={`View image ${idx + 1}`}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={img} alt="Thumbnail" className="w-full h-full object-contain p-1" referrerPolicy="no-referrer" />
+                  <Image src={img} alt={`${product.name} thumbnail`} width={120} height={90} sizes="96px" className="w-full h-full object-contain p-1" />
                 </button>
               ))}
             </div>

@@ -35,24 +35,20 @@ export function resolveBaseUrl(customBaseUrl) {
   if (typeof window !== 'undefined' && window.location && window.location.origin) {
     return window.location.origin.replace(/\/$/, '');
   }
-  if (process.env.NEXT_PUBLIC_SITE_URL && !process.env.NEXT_PUBLIC_SITE_URL.includes('DOMAIN')) {
-    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '');
-  }
-  if (process.env.SITE_URL && !process.env.SITE_URL.includes('DOMAIN')) {
-    return process.env.SITE_URL.replace(/\/$/, '');
-  }
+  const fromEnv = [process.env.SITE_URL, process.env.NEXT_PUBLIC_SITE_URL].find(
+    (v) => v && !/DOMAIN/i.test(v)
+  );
+  if (fromEnv) return fromEnv.replace(/\/$/, '');
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  if (SITE.domain && !/DOMAIN/i.test(SITE.domain)) {
+    return `https://${SITE.domain}`;
   }
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`;
   }
-  if (SITE.domain && SITE.domain !== 'DOMAIN.com' && !SITE.domain.includes('DOMAIN')) {
-    return `https://${SITE.domain}`;
-  }
-  // Cloud environment / preview fallback:
-  // Use the public shared URL so external mobile devices & WhatsApp links can open the page
-  return 'https://ais-pre-xdh4d5ckavk5dajkxx66zn-274197567478.us-west2.run.app';
+  return 'http://localhost:3000';
 }
 
 /**

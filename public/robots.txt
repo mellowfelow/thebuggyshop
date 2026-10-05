@@ -1,52 +1,113 @@
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
 Disallow: /admin/
 Disallow: /order/
 Disallow: /thank-you-contact/
 Disallow: /thank-you-order/
 Disallow: /thank-you-wholesale/
-Sitemap: https://DOMAIN.com/sitemap.xml
 
-Content-Signal: search=yes, ai-input=yes, ai-train=no
-
-# AI crawlers — welcome to index product and content pages
+# AI crawlers - welcome on product and content pages (private paths stay blocked)
 User-agent: GPTBot
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 
 User-agent: Applebot
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 
 User-agent: Amazonbot
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 
 User-agent: Bytespider
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 
 User-agent: CCBot
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 
 User-agent: Meta-ExternalAgent
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
 
 User-agent: cohere-ai
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
+
+Sitemap: https://thebuggyshoppty.com.au/sitemap.xml
 
 # Agent-readable resources
-# llms.txt: https://DOMAIN.com/llms.txt
-# API Catalog: https://DOMAIN.com/.well-known/api-catalog
-# Agent Skills: https://DOMAIN.com/.well-known/agent-skills/index.json
-# MCP Server Card: https://DOMAIN.com/.well-known/mcp/server-card.json
+# llms.txt: https://thebuggyshoppty.com.au/llms.txt
+# API Catalog: https://thebuggyshoppty.com.au/.well-known/api-catalog
+# Agent Skills: https://thebuggyshoppty.com.au/.well-known/agent-skills/index.json
+# MCP Server Card: https://thebuggyshoppty.com.au/.well-known/mcp/server-card.json

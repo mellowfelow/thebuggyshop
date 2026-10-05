@@ -9,6 +9,7 @@ import { CATEGORY_TREE } from '@/src/config/categories';
 import JsonLd from '@/src/components/JsonLd';
 import ShopClient from '@/app/shop/ShopClient';
 import { Truck, MapPin, ShieldCheck, Flag, CheckCircle2 } from 'lucide-react';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export async function generateStaticParams() {
   return LOCATIONS.map((l) => ({ city: l.slug }));
@@ -20,8 +21,8 @@ export async function generateMetadata({ params }) {
   if (!location) return { title: 'Location Not Found | The Buggy Shop Australia' };
 
   return {
-    title: `${location.title} | The Buggy Shop`,
-    description: location.metaDescription,
+    title: { absolute: seoTitle(`${location.title} | The Buggy Shop`) },
+    description: seoDesc(location.metaDescription),
     alternates: {
       canonical: `https://${SITE.domain}/golf-buggies/${location.slug}/`,
     },

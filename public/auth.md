@@ -8,12 +8,12 @@ No authentication required. All catalog, specification, and educational resource
 ## Public Resources
 | Resource | URL |
 |---|---|
-| Product Catalog | https://DOMAIN.com/shop/ |
-| Product Compare | https://DOMAIN.com/compare/ |
-| Finance Calculator | https://DOMAIN.com/finance/ |
-| Educational Blog | https://DOMAIN.com/blog/ |
-| About & Heritage | https://DOMAIN.com/about/ |
-| Contact & Support | https://DOMAIN.com/contact/ |
+| Product Catalog | https://thebuggyshoppty.com.au/shop/ |
+| Product Compare | https://thebuggyshoppty.com.au/compare/ |
+| Finance Calculator | https://thebuggyshoppty.com.au/finance/ |
+| Educational Blog | https://thebuggyshoppty.com.au/blog/ |
+| About & Heritage | https://thebuggyshoppty.com.au/about/ |
+| Contact & Support | https://thebuggyshoppty.com.au/contact/ |
 
 ## Authentication
 

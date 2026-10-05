@@ -5,10 +5,11 @@ import { SITE } from '@/src/config/site';
 import { BRANDS } from '@/src/config/brands';
 import JsonLd from '@/src/components/JsonLd';
 import { ShieldCheck, Award, ArrowRight, Sparkles } from 'lucide-react';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Golf Buggy Brands Australia | MGI, Motocaddy, Club Car, ECAR & Clicgear',
-  description: 'Explore Australia\'s top golf buggy and cart brands. Authorized sales, factory warranty backup, lithium upgrades, and genuine parts for MGI, Motocaddy, Club Car, ECAR and more.',
+  title: { absolute: seoTitle('Golf Buggy Brands Australia | MGI, Motocaddy, Club Car, ECAR & Clicgear') },
+  description: seoDesc('Explore Australia\'s top golf buggy and cart brands. Authorized sales, factory warranty backup, lithium upgrades, and genuine parts for MGI, Motocaddy, Club Car, ECAR and more.'),
   alternates: {
     canonical: `https://${SITE.domain}/brands/`,
   },

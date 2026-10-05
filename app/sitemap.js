@@ -1,78 +1,58 @@
 // app/sitemap.js
-import { SITE } from '@/src/config/site';
+// One sitemap is well within protocol limits (a few hundred URLs); no index needed yet.
+// lastModified is only emitted where we have a real date (blog posts) - never a fake "now".
+import { SITE, POSTS } from '@/src/config/site';
 import { CATEGORY_TREE } from '@/src/config/categories';
 import { PRODUCTS } from '@/src/config/products';
 import { BRANDS } from '@/src/config/brands';
 import { LOCATIONS } from '@/src/config/locations';
-import { POSTS } from '@/src/config/site';
+import { absUrl } from '@/lib/seo';
 
-export default async function sitemap() {
-  const baseUrl = `https://${SITE.domain}`;
-  const now = new Date().toISOString();
+export default function sitemap() {
+  const base = `https://${SITE.domain}`;
 
-  // Core static pages
   const staticPages = [
-    { url: `${baseUrl}/`, lastModified: now, changeFrequency: 'daily', priority: 1.0 },
-    { url: `${baseUrl}/shop/`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
-    { url: `${baseUrl}/brands/`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/golf-buggies/`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/about/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/blog/`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${baseUrl}/compare/`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
-    { url: `${baseUrl}/finance/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/faq/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/contact/`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${baseUrl}/search/`, lastModified: now, changeFrequency: 'weekly', priority: 0.5 },
-  ];
+    ['/', 1.0, 'daily'],
+    ['/shop/', 0.9, 'daily'],
+    ['/brands/', 0.8, 'weekly'],
+    ['/golf-buggies/', 0.8, 'weekly'],
+    ['/about/', 0.7, 'monthly'],
+    ['/blog/', 0.7, 'weekly'],
+    ['/compare/', 0.7, 'weekly'],
+    ['/finance/', 0.7, 'monthly'],
+    ['/faq/', 0.7, 'monthly'],
+    ['/wholesale/', 0.6, 'monthly'],
+    ['/contact/', 0.7, 'monthly'],
+    ['/shipping/', 0.4, 'yearly'],
+    ['/returns/', 0.4, 'yearly'],
+    ['/privacy/', 0.3, 'yearly'],
+    ['/terms/', 0.3, 'yearly'],
+  ].map(([p, priority, changeFrequency]) => ({ url: `${base}${p}`, changeFrequency, priority }));
 
-  // 35 Categories
-  const categoryPages = CATEGORY_TREE.map((cat) => ({
-    url: `${baseUrl}/shop/${cat.slug}/`,
-    lastModified: now,
+  // Category + subcategory nodes. The "brands" node is a navigation entry served by /brands/.
+  const categoryPages = CATEGORY_TREE.filter((c) => c.id !== 'brands').map((c) => ({
+    url: `${base}/shop/${c.slug}/`,
     changeFrequency: 'weekly',
-    priority: 0.8,
+    priority: c.parent ? 0.7 : 0.8,
   }));
 
-  // Products with Image Sitemap Data
-  const productPages = PRODUCTS.map((prod) => ({
-    url: `${baseUrl}/shop/${prod.category}/${prod.slug}/`,
-    lastModified: now,
+  const productPages = PRODUCTS.map((p) => ({
+    url: `${base}/shop/${p.category}/${p.slug}/`,
     changeFrequency: 'weekly',
     priority: 0.85,
-    images: prod.images.map((img) => `${img}`),
+    images: (p.images || []).map(absUrl),
   }));
 
-  // Brands (16 Brands)
-  const brandPages = BRANDS.map((brand) => ({
-    url: `${baseUrl}/brands/${brand.slug}/`,
-    lastModified: now,
-    changeFrequency: 'weekly',
-    priority: 0.75,
-  }));
+  const brandPages = BRANDS.map((b) => ({ url: `${base}/brands/${b.slug}/`, changeFrequency: 'weekly', priority: 0.75 }));
+  const locationPages = LOCATIONS.map((l) => ({ url: `${base}/golf-buggies/${l.slug}/`, changeFrequency: 'weekly', priority: 0.75 }));
 
-  // Locations (Australian Cities & Regions)
-  const locationPages = LOCATIONS.map((loc) => ({
-    url: `${baseUrl}/golf-buggies/${loc.slug}/`,
-    lastModified: now,
-    changeFrequency: 'weekly',
-    priority: 0.75,
-  }));
-
-  // Blog Posts
   const blogPages = POSTS.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}/`,
-    lastModified: now,
+    url: `${base}/blog/${post.slug}/`,
+    ...(post.date && !Number.isNaN(Date.parse(post.date)) ? { lastModified: new Date(post.date) } : {}),
     changeFrequency: 'monthly',
     priority: 0.65,
-    images: [post.image],
+    ...(post.image ? { images: [absUrl(post.image)] } : {}),
   }));
 
-  return [
-    ...staticPages, 
-    ...categoryPages, 
-    ...productPages, 
-    ...brandPages, 
-    ...locationPages, 
-    ...blogPages
-  ];
+  return [...staticPages, ...categoryPages, ...productPages, ...brandPages, ...locationPages, ...blogPages];
 }

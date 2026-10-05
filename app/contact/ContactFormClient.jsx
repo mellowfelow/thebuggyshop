@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Send, Loader2, AlertCircle } from 'lucide-react';
 import { PRODUCTS } from '@/src/config/site';
 
-export default function ContactFormClient({ web3formsKey }) {
+export default function ContactFormClient() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -16,36 +16,34 @@ export default function ContactFormClient({ web3formsKey }) {
     setErrorMessage('');
     setSubmitting(true);
 
-    const form = e.target;
-    const accessKey = form.querySelector('[name="access_key"]')?.value || '';
-
-    // Key-Pending Fallback per Rule 10
-    if (!accessKey || accessKey.startsWith('YOUR-') || accessKey === '') {
-      setTimeout(() => {
-        router.push('/thank-you-contact/');
-      }, 400);
-      return;
-    }
+    const fd = new FormData(e.target);
+    const model = String(fd.get('model_interest') || '');
+    const location = String(fd.get('location') || '');
+    const message = String(fd.get('message') || '');
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('/api/contact/', {
         method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          // NO Content-Type header when submitting FormData
-        },
-        body: new FormData(form),
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          formName: 'contact',
+          type: 'contact',
+          name: fd.get('name'),
+          email: fd.get('email'),
+          phone: fd.get('phone'),
+          subject: model && model !== 'General Inquiry' ? `Enquiry: ${model}` : 'General Enquiry',
+          message: `Property / location: ${location}\nModel of interest: ${model}\n\n${message}`,
+          website: fd.get('website') || '',
+        }),
       });
-
-      const resData = await response.json();
-
-      if (response.status === 200 && resData.success) {
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success) {
         router.push('/thank-you-contact/');
       } else {
-        throw new Error(resData.message || 'Submission failed. Please try again or WhatsApp us.');
+        throw new Error(data.message || 'Submission failed. Please try again or WhatsApp us.');
       }
     } catch (err) {
-      setErrorMessage(err.message || 'Unable to submit inquiry at this moment. Please use WhatsApp or call us.');
+      setErrorMessage(err.message || 'Unable to submit your enquiry right now. Please use WhatsApp or call us.');
     } finally {
       setSubmitting(false);
     }
@@ -53,13 +51,11 @@ export default function ContactFormClient({ web3formsKey }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 text-xs">
-      {/* Required Web3Forms hidden inputs */}
-      <input type="hidden" name="access_key" value={web3formsKey || ''} />
-      <input type="hidden" name="subject" value="New Golf Buggy Inquiry from The Buggy Shop Website" />
-      <input type="hidden" name="from_name" value="The Buggy Shop Online Desk" />
-      <input type="hidden" name="replyto" value={emailValue} />
-      {/* Honeypot */}
-      <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+      {/* Honeypot: hidden from people and assistive tech, bots fill it in */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', width: 1, height: 1, overflow: 'hidden' }}>
+        <label htmlFor="contact-website">Leave this field empty</label>
+        <input id="contact-website" type="text" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
 
       {errorMessage && (
         <div className="p-3 bg-rose-50 border border-rose-200 text-rose-800 rounded-xl flex items-center gap-2">

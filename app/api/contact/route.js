@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
+import { getSiteBaseUrl } from '@/lib/siteUrl';
 import { sendMail } from '@/lib/mailer';
-import { saveOrder, generateOrderRef } from '@/lib/orderStore';
+import { saveOrder, getOrder, generateOrderRef } from '@/lib/orderStore';
+import { rateLimit, clientIp } from '@/lib/rateLimit';
 import { saveEnquiry, generateEnquiryRef } from '@/lib/enquiryStore';
 import {
   orderNotificationEmail,
@@ -9,40 +11,40 @@ import {
 } from '@/utils/emailTemplates';
 import { CONTACT, FORMS, SITE } from '@/src/config/site';
 
-function getRequestBaseUrl(request) {
-  const origin = request.headers.get('origin') || request.headers.get('referer');
-  if (origin) {
-    try {
-      const u = new URL(origin);
-      return `${u.protocol}//${u.host}`;
-    } catch (e) {}
-  }
-  const host = request.headers.get('x-forwarded-host') || request.headers.get('host');
-  const proto = request.headers.get('x-forwarded-proto') || 'https';
-  if (host && !host.includes('localhost') && !host.includes('127.0.0.1')) {
-    return `${proto}://${host}`;
-  }
-  if (process.env.NEXT_PUBLIC_SITE_URL && !process.env.NEXT_PUBLIC_SITE_URL.includes('DOMAIN')) {
-    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '');
-  }
-  if (process.env.SITE_URL && !process.env.SITE_URL.includes('DOMAIN')) {
-    return process.env.SITE_URL.replace(/\/$/, '');
-  }
-  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
-  }
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
-  }
-  if (SITE.domain && SITE.domain !== 'DOMAIN.com' && !SITE.domain.includes('DOMAIN')) {
-    return `https://${SITE.domain}`;
-  }
-  return 'https://ais-dev-xdh4d5ckavk5dajkxx66zn-274197567478.us-west2.run.app';
+function getRequestBaseUrl() {
+  return getSiteBaseUrl();
 }
 
 export async function POST(request) {
   try {
-    const body = await request.json();
+    // --- abuse protection: per-IP rate limit (best-effort, in-memory) ---
+    const { allowed } = rateLimit(`contact:${clientIp(request)}`, { limit: 8, windowMs: 10 * 60 * 1000 });
+    if (!allowed) {
+      return NextResponse.json(
+        { success: false, message: 'Too many submissions. Please wait a few minutes or WhatsApp us.' },
+        { status: 429 }
+      );
+    }
+
+    const raw = await request.text();
+    if (raw.length > 100_000) {
+      return NextResponse.json({ success: false, message: 'Request too large.' }, { status: 413 });
+    }
+    let body;
+    try {
+      body = JSON.parse(raw);
+    } catch {
+      return NextResponse.json({ success: false, message: 'Invalid request.' }, { status: 400 });
+    }
+
+    // Honeypot: real users never fill this hidden field. Pretend success so bots move on.
+    if (body && typeof body.website === 'string' && body.website.trim() !== '') {
+      return NextResponse.json({ success: true, message: 'Received.' });
+    }
+
+    const clean = (v, max) => String(v ?? '').replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, '').trim().slice(0, max);
+    const isEmail = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) && v.length <= 200;
+
     const formName = body.formName || (body.items ? 'order' : 'contact');
     const baseUrl = getRequestBaseUrl(request);
 
@@ -62,7 +64,22 @@ export async function POST(request) {
         orderRef,
       } = body;
 
-      const orderNumber = orderRef || body.orderNumber || generateOrderRef();
+      const suppliedRef = String(orderRef || body.orderNumber || '').trim().toUpperCase();
+      const orderNumber = /^[A-Z]{2,6}-[A-Z2-9]{6}$/.test(suppliedRef) ? suppliedRef : generateOrderRef();
+      if (suppliedRef && orderNumber === suppliedRef) {
+        try {
+          if (await getOrder(orderNumber)) {
+            return NextResponse.json({ success: false, message: 'This order reference already exists. Please refresh and try again.' }, { status: 409 });
+          }
+        } catch (e) {}
+      }
+
+      if (!Array.isArray(items) || items.length === 0 || items.length > 60) {
+        return NextResponse.json({ success: false, message: 'Your cart is empty or invalid.' }, { status: 400 });
+      }
+      if (!isEmail(clean(customer.email, 200)) || !clean(customer.name, 120)) {
+        return NextResponse.json({ success: false, message: 'A valid name and email are required for order dispatch.' }, { status: 400 });
+      }
 
       if (!customer.email || !customer.name) {
         return NextResponse.json(
@@ -75,13 +92,13 @@ export async function POST(request) {
         id: orderNumber,
         orderNumber,
         customer: {
-          name: customer.name || '',
-          email: customer.email || '',
-          phone: customer.phone || '',
-          address: customer.address || '',
-          state: customer.state || '',
-          postcode: customer.postcode || '',
-          notes: customer.notes || '',
+          name: clean(customer.name, 120),
+          email: clean(customer.email, 200),
+          phone: clean(customer.phone, 40),
+          address: clean(customer.address, 300),
+          state: clean(customer.state, 40),
+          postcode: clean(customer.postcode, 12),
+          notes: clean(customer.notes, 1500),
         },
         items,
         subtotal,
@@ -140,16 +157,14 @@ export async function POST(request) {
     // =========================================================================
     // 2. ENQUIRY / CONTACT / WHOLESALE SUBMISSION
     // =========================================================================
-    const {
-      name,
-      email,
-      phone = '',
-      subject = '',
-      message = '',
-      type = 'contact',
-    } = body;
+    const type = body.type === 'wholesale' ? 'wholesale' : 'contact';
+    const name = clean(body.name, 120);
+    const email = clean(body.email, 200);
+    const phone = clean(body.phone, 40);
+    const subject = clean(body.subject, 200);
+    const message = clean(body.message, 5000);
 
-    if (!name || !email || !message) {
+    if (!name || !isEmail(email) || !message) {
       return NextResponse.json(
         { success: false, message: 'Name, email, and message are required.' },
         { status: 400 }

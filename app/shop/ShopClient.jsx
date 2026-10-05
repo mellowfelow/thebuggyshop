@@ -21,6 +21,8 @@ import {
   ChevronRight
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { productImageAlt } from '@/lib/seo';
 
 export default function ShopClient({ 
   initialProducts = [], 
@@ -194,7 +196,7 @@ export default function ShopClient({
     }).sort((a, b) => {
       if (sortBy === 'price-asc') return a.price - b.price;
       if (sortBy === 'price-desc') return b.price - a.price;
-      if (sortBy === 'rating') return (b.rating || 4.8) - (a.rating || 4.8);
+      if (sortBy === 'rating') return (b.rating || 0) - (a.rating || 0);
       if (sortBy === 'name-asc') return a.name.localeCompare(b.name);
       // 'featured' default: prioritize featured items then price
       if (a.featured && !b.featured) return -1;
@@ -560,13 +562,13 @@ export default function ShopClient({
                           {product.badge}
                         </span>
                       )}
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img 
-                        src={product.images[0]} 
-                        alt={product.name} 
+                      <Image
+                        src={product.images[0]}
+                        alt={productImageAlt(product, 0)}
+                        width={400}
+                        height={300}
+                        sizes="(max-width: 640px) 40vw, 200px"
                         className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                        referrerPolicy="no-referrer"
-                        loading="lazy"
                       />
                     </div>
 

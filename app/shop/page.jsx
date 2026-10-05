@@ -7,10 +7,11 @@ import { PRODUCTS } from '@/src/config/products';
 import JsonLd from '@/src/components/JsonLd';
 import ShopClient from './ShopClient';
 import { ShieldCheck, Truck, Sparkles, Scale, Calculator } from 'lucide-react';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Golf Buggy for Sale Australia | Electric, Remote, Push & Golf Carts',
-  description: 'Browse Australia\'s comprehensive range of golf buggies for sale. Electric, remote-control, manual push buggies, 2-seat to 6-seat resort carts, and 4x4 off-road UTVs.',
+  title: { absolute: seoTitle('Golf Buggy for Sale Australia | Electric, Remote, Push & Golf Carts') },
+  description: seoDesc('Browse Australia\'s comprehensive range of golf buggies for sale. Electric, remote-control, manual push buggies, 2-seat to 6-seat resort carts, and 4x4 off-road UTVs.'),
   alternates: {
     canonical: `https://${SITE.domain}/shop/`,
   },

@@ -19,12 +19,12 @@ import {
   FileCheck2, 
   CheckCircle2, 
   Lock, 
-  CreditCard 
-} from 'lucide-react';
+  CreditCard, Sparkles } from 'lucide-react';
 import { useStore } from '@/src/components/ClientStoreProvider';
 import { SITE, CONTACT, SHOP, REPLY } from '@/src/config/site';
 import { waOrderLink } from '@/lib/whatsapp';
 import { generateOrderRef, money } from '@/lib/order';
+import Image from 'next/image';
 
 const AUSTRALIAN_STATES = [
   { code: 'QLD', name: 'Queensland' },
@@ -722,8 +722,7 @@ export default function CheckoutClient() {
               {cart.map((item) => (
                 <div key={item.slug} className="flex items-center gap-3 border-b border-slate-100 pb-3 last:border-0 last:pb-0">
                   <div className="w-16 h-16 rounded-xl bg-slate-100 overflow-hidden shrink-0 border border-slate-200">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                    <Image src={item.image} alt={item.name} width={128} height={128} sizes="64px" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h4 className="font-bold text-xs text-slate-900 truncate font-serif">{item.name}</h4>

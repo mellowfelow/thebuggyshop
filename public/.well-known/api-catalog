@@ -1,50 +1,50 @@
 {
   "linkset": [
     {
-      "anchor": "https://DOMAIN.com/",
+      "anchor": "https://thebuggyshoppty.com.au/",
       "https://www.iana.org/assignments/link-relations/service-doc": [
         {
-          "href": "https://DOMAIN.com/about/"
+          "href": "https://thebuggyshoppty.com.au/about/"
         }
       ],
       "title": "The Buggy Shop — Australia's Premier Golf Buggy for Sale & Luxury All-Terrain Cart Specialists"
     },
     {
-      "anchor": "https://DOMAIN.com/shop/",
+      "anchor": "https://thebuggyshoppty.com.au/shop/",
       "type": "text/html",
       "title": "The Buggy Shop Product Catalog"
     },
     {
-      "anchor": "https://DOMAIN.com/compare/",
+      "anchor": "https://thebuggyshoppty.com.au/compare/",
       "type": "text/html",
       "title": "The Buggy Shop Compare Matrix"
     },
     {
-      "anchor": "https://DOMAIN.com/finance/",
+      "anchor": "https://thebuggyshoppty.com.au/finance/",
       "type": "text/html",
       "title": "The Buggy Shop Finance Calculator"
     },
     {
-      "anchor": "https://DOMAIN.com/api/products",
+      "anchor": "https://thebuggyshoppty.com.au/api/products",
       "type": "application/json",
       "title": "The Buggy Shop Products API"
     },
     {
-      "anchor": "https://DOMAIN.com/api/categories",
+      "anchor": "https://thebuggyshoppty.com.au/api/categories",
       "type": "application/json",
       "title": "The Buggy Shop Categories API"
     },
     {
-      "anchor": "https://DOMAIN.com/api/search",
+      "anchor": "https://thebuggyshoppty.com.au/api/search",
       "type": "application/json",
       "title": "The Buggy Shop Search API"
     },
     {
-      "anchor": "https://DOMAIN.com/api/mcp",
+      "anchor": "https://thebuggyshoppty.com.au/api/mcp",
       "type": "application/json",
       "https://www.iana.org/assignments/link-relations/service-desc": [
         {
-          "href": "https://DOMAIN.com/.well-known/mcp/server-card.json"
+          "href": "https://thebuggyshoppty.com.au/.well-known/mcp/server-card.json"
         }
       ],
       "title": "The Buggy Shop MCP Server"

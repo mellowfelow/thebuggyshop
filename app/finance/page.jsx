@@ -3,10 +3,11 @@ import Link from 'next/link';
 import { SITE, CONTACT } from '@/src/config/site';
 import JsonLd from '@/src/components/JsonLd';
 import FinanceCalculatorClient from './FinanceCalculatorClient';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Pay in 4 & Commercial Asset Finance | The Buggy Shop Australia',
-  description: 'Calculate flexible Pay in 4 split payments or primary producer commercial equipment leasing for Australian all-terrain buggies with instant calculations.',
+  title: { absolute: seoTitle('Pay in 4 & Commercial Asset Finance | The Buggy Shop Australia') },
+  description: seoDesc('Calculate flexible Pay in 4 split payments or primary producer commercial equipment leasing for Australian all-terrain buggies with instant calculations.'),
   alternates: {
     canonical: `https://${SITE.domain}/finance/`,
   },

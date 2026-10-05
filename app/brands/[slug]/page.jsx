@@ -9,6 +9,7 @@ import { CATEGORY_TREE } from '@/src/config/categories';
 import JsonLd from '@/src/components/JsonLd';
 import ShopClient from '@/app/shop/ShopClient';
 import { ShieldCheck, Award, ArrowLeft, Sparkles, CheckCircle2, Wrench, PackageCheck } from 'lucide-react';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export async function generateStaticParams() {
   return BRANDS.map((b) => ({ slug: b.slug }));
@@ -20,8 +21,8 @@ export async function generateMetadata({ params }) {
   if (!brand) return { title: 'Brand Not Found | The Buggy Shop Australia' };
 
   return {
-    title: brand.pageTitle || `${brand.name} Golf Buggies & Carts Australia | The Buggy Shop`,
-    description: brand.metaDescription || brand.blurb || brand.introCopy,
+    title: { absolute: seoTitle(brand.pageTitle || `${brand.name} Golf Buggies & Carts Australia | The Buggy Shop`) },
+    description: seoDesc(brand.metaDescription || brand.blurb || brand.introCopy),
     alternates: {
       canonical: `https://${SITE.domain}/brands/${brand.slug}/`,
     },

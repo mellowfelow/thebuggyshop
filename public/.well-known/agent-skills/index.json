@@ -1,49 +1,49 @@
 {
   "$schema": "https://agentskills.io/schema/v0.2.0/index.json",
   "name": "The Buggy Shop",
-  "url": "https://DOMAIN.com",
+  "url": "https://thebuggyshoppty.com.au",
   "description": "Australia's Premier Golf Buggy for Sale & Luxury All-Terrain Cart Specialists",
   "skills": [
     {
       "name": "search-products",
       "type": "commerce",
       "description": "Search Australian luxury all-terrain & farm utility buggies by keyword, category, or price",
-      "url": "https://DOMAIN.com/api/mcp",
+      "url": "https://thebuggyshoppty.com.au/api/mcp",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "browse-catalog",
       "type": "navigation",
       "description": "Browse the complete electric buggy catalog with LiFePO4 battery specifications",
-      "url": "https://DOMAIN.com/shop/",
+      "url": "https://thebuggyshoppty.com.au/shop/",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "order-draft",
       "type": "commerce",
       "description": "Create a prefilled order draft URL. Human customer completes transaction via WhatsApp.",
-      "url": "https://DOMAIN.com/api/mcp",
+      "url": "https://thebuggyshoppty.com.au/api/mcp",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "compare-models",
       "type": "commerce",
       "description": "Compare engineering specifications, payload capacities, and terrain ratings",
-      "url": "https://DOMAIN.com/compare/",
+      "url": "https://thebuggyshoppty.com.au/compare/",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "product-education",
       "type": "content",
       "description": "Educational articles on QLD/NSW/VIC conditional road rego and LiFePO4 battery care",
-      "url": "https://DOMAIN.com/blog/",
+      "url": "https://thebuggyshoppty.com.au/blog/",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "name": "contact",
       "type": "support",
       "description": "Contact The Buggy Shop Queensland dispatch and sales desk",
-      "url": "https://DOMAIN.com/contact/",
+      "url": "https://thebuggyshoppty.com.au/contact/",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   ]

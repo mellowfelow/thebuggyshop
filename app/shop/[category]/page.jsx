@@ -1,7 +1,7 @@
 // app/shop/[category]/page.jsx
 import React from 'react';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { SITE } from '@/src/config/site';
 import { 
   CATEGORY_TREE, 
@@ -12,9 +12,10 @@ import { PRODUCTS, getProductsByCategory } from '@/src/config/products';
 import JsonLd from '@/src/components/JsonLd';
 import ShopClient from '../ShopClient';
 import { ArrowRight, ChevronRight, Layers, Sparkles } from 'lucide-react';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export async function generateStaticParams() {
-  return CATEGORY_TREE.map((c) => ({ category: c.slug }));
+  return CATEGORY_TREE.filter((c) => c.id !== 'brands').map((c) => ({ category: c.slug }));
 }
 
 export async function generateMetadata({ params }) {
@@ -23,8 +24,8 @@ export async function generateMetadata({ params }) {
   if (!category) return { title: 'Category Not Found | The Buggy Shop' };
 
   return {
-    title: category.pageTitle || `${category.navLabel} | The Buggy Shop`,
-    description: category.metaDescription || category.introCopy,
+    title: { absolute: seoTitle(category.pageTitle || `${category.navLabel} | The Buggy Shop`) },
+    description: seoDesc(category.metaDescription || category.introCopy),
     alternates: {
       canonical: `https://${SITE.domain}/shop/${category.slug}/`,
     },
@@ -43,6 +44,9 @@ export default async function CategoryPage({ params }) {
   const { category: catSlug } = await params;
   const category = getCategoryBySlug(catSlug);
   if (!category) notFound();
+  if (category.id === 'brands') permanentRedirect('/brands/');
+  // Old/alternate paths (id or spec path) resolve to the one canonical /shop/<slug>/
+  if (category.slug !== catSlug) permanentRedirect(`/shop/${category.slug}/`);
 
   const subcategories = getSubcategories(category.slug);
   const categoryProducts = getProductsByCategory(category.slug);

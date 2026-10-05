@@ -2,9 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import { CheckCircle2, MessageCircle, ArrowRight } from 'lucide-react';
 import { SITE, CONTACT } from '@/src/config/site';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Wholesale Application Received | The Buggy Shop Australia',
+  title: { absolute: seoTitle('Wholesale Application Received | The Buggy Shop Australia') },
   robots: {
     index: false,
     follow: true,

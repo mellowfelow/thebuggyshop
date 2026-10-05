@@ -14,10 +14,11 @@ import {
   Zap 
 } from 'lucide-react';
 import ContactFormClient from './ContactFormClient';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Contact Queensland Golf Buggy Sales & Quotes | The Buggy Shop',
-  description: 'Connect with The Buggy Shop Queensland for golf buggy for sale availability, tail-lift freight quotes, commercial invoices, and conditional road registration guidance.',
+  title: { absolute: seoTitle('Contact Queensland Golf Buggy Sales & Quotes | The Buggy Shop') },
+  description: seoDesc('Connect with The Buggy Shop Queensland for golf buggy for sale availability, tail-lift freight quotes, commercial invoices, and conditional road registration guidance.'),
   alternates: {
     canonical: `https://${SITE.domain}/contact/`,
   },
@@ -161,7 +162,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Right Column: Web3Forms CORS Form */}
+        {/* Right Column: enquiry form (posts to /api/contact) */}
         <div className="lg:col-span-7 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-3xl p-6 sm:p-10 border border-[#D5DFD9] shadow-md space-y-6">
           <div className="space-y-1">
             <h2 className="text-xl sm:text-2xl font-black text-[#0E2A1E] tracking-tight font-serif">
@@ -172,7 +173,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <ContactFormClient web3formsKey={FORMS.web3formsKey} />
+          <ContactFormClient />
         </div>
       </div>
     </div>

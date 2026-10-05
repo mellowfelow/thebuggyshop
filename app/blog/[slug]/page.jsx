@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation';
 import { SITE, POSTS, PRODUCTS, CONTACT } from '@/src/config/site';
 import JsonLd from '@/src/components/JsonLd';
 import { Calendar, Clock, User, ArrowLeft, ArrowRight, MessageCircle } from 'lucide-react';
+import Image from 'next/image';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export async function generateStaticParams() {
   return POSTS.map((p) => ({ slug: p.slug }));
@@ -15,8 +17,8 @@ export async function generateMetadata({ params }) {
   if (!post) return { title: 'Article Not Found' };
 
   return {
-    title: `${post.title} | The Buggy Shop Australia`,
-    description: post.excerpt,
+    title: { absolute: seoTitle(`${post.title} | The Buggy Shop Australia`) },
+    description: seoDesc(post.excerpt),
     alternates: {
       canonical: `https://${SITE.domain}/blog/${post.slug}/`,
     },
@@ -132,10 +134,13 @@ export default async function BlogPostPage({ params }) {
 
       {/* Featured Image */}
       <div className="product-frame rounded-3xl overflow-hidden border border-[#DDE4DF] shadow-xs bg-[#F0F3F1]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={post.image}
           alt={post.title}
+          width={1200}
+          height={675}
+          sizes="(max-width: 1024px) 100vw, 768px"
+          priority
           className="w-full h-full object-cover"
         />
       </div>

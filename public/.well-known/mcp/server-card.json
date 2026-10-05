@@ -4,7 +4,7 @@
     "name": "The Buggy Shop",
     "version": "1.0.0",
     "description": "Australia's Premier Golf Buggy for Sale & Luxury All-Terrain Cart Specialists",
-    "homepage": "https://DOMAIN.com",
+    "homepage": "https://thebuggyshoppty.com.au",
     "contact": {
       "email": "sales@thebuggyshoppty.com.au",
       "whatsapp": "+61 480 811 308"
@@ -12,7 +12,7 @@
   },
   "transport": {
     "type": "streamable-http",
-    "endpoint": "https://DOMAIN.com/api/mcp"
+    "endpoint": "https://thebuggyshoppty.com.au/api/mcp"
   },
   "capabilities": {
     "tools": [
@@ -85,17 +85,17 @@
       {
         "name": "product-catalog",
         "description": "Full Australian electric buggy catalog",
-        "uri": "https://DOMAIN.com/shop/"
+        "uri": "https://thebuggyshoppty.com.au/shop/"
       },
       {
         "name": "compare",
         "description": "Product comparison matrix",
-        "uri": "https://DOMAIN.com/compare/"
+        "uri": "https://thebuggyshoppty.com.au/compare/"
       },
       {
         "name": "blog",
         "description": "Educational guides and road compliance rules",
-        "uri": "https://DOMAIN.com/blog/"
+        "uri": "https://thebuggyshoppty.com.au/blog/"
       }
     ],
     "commerce": {

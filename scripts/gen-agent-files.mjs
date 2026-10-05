@@ -26,10 +26,12 @@ const jsDir = path.join(publicDir, 'js');
 });
 
 // 1. vercel.json
+const isPlaceholderDomain = /DOMAIN/i.test(domain);
 const vercelConfig = {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": true,
-  "redirects": [
+  // www -> apex redirect only once a real domain is configured (never emit www.DOMAIN.com)
+  "redirects": isPlaceholderDomain ? [] : [
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": `www.${domain}` }],
@@ -43,6 +45,7 @@ const vercelConfig = {
       "headers": [
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" },
         { "key": "Link", "value": `</.well-known/api-catalog>; rel="api-catalog", </.well-known/agent-skills/index.json>; rel="describedby", </llms.txt>; rel="describedby", </.well-known/mcp/server-card.json>; rel="service-desc", </auth.md>; rel="auth", </.well-known/openid-configuration>; rel="openid-configuration"` }
@@ -64,53 +67,19 @@ const vercelConfig = {
 };
 fs.writeFileSync(path.join(rootDir, 'vercel.json'), JSON.stringify(vercelConfig, null, 2));
 
-// 2. public/robots.txt (Disallows admin, order, and thank-you pages per WebForge v11.1)
+// 2. public/robots.txt  (single source: app/robots.js was removed - it conflicted with this file)
+const PRIVATE_PATHS = ['/admin/', '/order/', '/thank-you-contact/', '/thank-you-order/', '/thank-you-wholesale/'];
+const AI_BOTS = ['GPTBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-Web', 'PerplexityBot', 'Applebot', 'Amazonbot', 'Bytespider', 'CCBot', 'Google-Extended', 'Meta-ExternalAgent', 'cohere-ai'];
+const disallowBlock = PRIVATE_PATHS.map((p) => `Disallow: ${p}`).join('\n');
 const robotsTxt = `User-agent: *
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
-Sitemap: ${baseUrl}/sitemap.xml
-
 Content-Signal: search=yes, ai-input=yes, ai-train=no
-
-# AI crawlers — welcome to index product and content pages
-User-agent: GPTBot
 Allow: /
+${disallowBlock}
 
-User-agent: ChatGPT-User
-Allow: /
+# AI crawlers - welcome on product and content pages (private paths stay blocked)
+${AI_BOTS.map((b) => `User-agent: ${b}\nAllow: /\n${disallowBlock}`).join('\n\n')}
 
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Meta-ExternalAgent
-Allow: /
-
-User-agent: cohere-ai
-Allow: /
+Sitemap: ${baseUrl}/sitemap.xml
 
 # Agent-readable resources
 # llms.txt: ${baseUrl}/llms.txt

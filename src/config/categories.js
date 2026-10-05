@@ -14,8 +14,7 @@ export const CATEGORY_TREE = [
     h1: 'Electric Golf Buggies',
     targetKeywords: ['electric golf buggy', 'motorised golf buggy', 'battery golf buggy', 'lithium golf buggy', 'electric golf buggy australia'],
     introCopy: 'Electric golf buggies do the carrying so you can focus on your round. Our range covers walk-behind lithium models, hands-free remote-control buggies and GPS follow buggies from the brands Australian golfers trust. Every buggy ships with an Australian warranty and local service support.',
-    heroImage: '/images/categories/electric-golf-buggies.jpg',
-    itemCount: 6,
+    heroImage: '/images/categories/electric-golf-buggies.webp',
     facets: ['power', 'wheels', 'batteryRange', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
   // 2.2 - Walk-behind Electric Buggies
@@ -30,8 +29,7 @@ export const CATEGORY_TREE = [
     h1: 'Walk-behind Electric Golf Buggies',
     targetKeywords: ['walk behind electric golf buggy', 'motorised golf buggy', 'MGI Zip'],
     introCopy: 'Push-button simple: set the speed, walk beside it, let the buggy carry the bag. These are the lightest, best-value way into an electric buggy, folding down to fit any boot.',
-    heroImage: 'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 6,
+    heroImage: '/images/categories/electric-golf-buggies.webp',
     facets: ['power', 'wheels', 'batteryRange', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
   // 2.3 - Remote-control Golf Buggies
@@ -46,8 +44,7 @@ export const CATEGORY_TREE = [
     h1: 'Remote-control Golf Buggies',
     targetKeywords: ['remote control golf buggy', 'electric golf buggy with remote', 'remote golf buggy australia'],
     introCopy: 'Steer the buggy with a handset while you walk ahead, line up your next shot or clear a bunker. Our remote-control range covers everything from first-time remote buggies to all-terrain dual-motor models built for hilly Australian courses.',
-    heroImage: '/images/categories/remote-control-golf-buggies.jpg',
-    itemCount: 8,
+    heroImage: '/images/categories/remote-control-golf-buggies.webp',
     facets: ['power', 'wheels', 'batteryRange', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
   // 2.4 - GPS & Follow Buggies
@@ -62,8 +59,7 @@ export const CATEGORY_TREE = [
     h1: 'GPS & Follow Golf Buggies',
     targetKeywords: ['follow me golf buggy', 'GPS golf buggy', 'smart golf buggy'],
     introCopy: 'The buggy tracks you with a smart handset or magnetic sensor and rolls along behind, hands free. Onboard GPS models add course distances without a second device.',
-    heroImage: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 6,
+    heroImage: '/images/categories/electric-golf-buggies.webp',
     facets: ['power', 'wheels', 'batteryRange', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
   // 2.5 - Electric Conversion Kits
@@ -78,8 +74,7 @@ export const CATEGORY_TREE = [
     h1: 'Electric Conversion Kits',
     targetKeywords: ['golf buggy conversion kit', 'make push buggy electric', 'Alphard Club Booster'],
     introCopy: 'Already own a push buggy you like? A conversion kit adds motors, a battery and remote control to the frame you already have, for a fraction of the price of a new electric buggy.',
-    heroImage: 'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 4,
+    heroImage: '/images/categories/electric-golf-buggies.webp',
     facets: ['power', 'price', 'condition', 'brand']
   },
 
@@ -95,8 +90,7 @@ export const CATEGORY_TREE = [
     h1: 'Push & Pull Golf Buggies',
     targetKeywords: ['golf push buggy', 'push golf buggy', 'golf trolley', '3 wheel golf buggy', 'manual golf buggy'],
     introCopy: 'No batteries, no fuss. A good push buggy rolls straight, folds in seconds and lasts for years. We stock the premium 3-wheel and 4-wheel models that hold their value, and skip the throwaway trolleys.',
-    heroImage: '/images/categories/push-pull-golf-buggies.jpg',
-    itemCount: 6,
+    heroImage: '/images/categories/push-pull-golf-buggies.webp',
     facets: ['power', 'wheels', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
   // 2.7 - 3-wheel Push Buggies
@@ -111,8 +105,7 @@ export const CATEGORY_TREE = [
     h1: '3-Wheel Push Golf Buggies',
     targetKeywords: ['3 wheel golf buggy', 'three wheel golf buggy', 'clicgear'],
     introCopy: 'The classic setup: two wheels behind, one steering wheel in front for easy one-hand turns. Light, manoeuvrable and the quickest to fold.',
-    heroImage: 'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 4,
+    heroImage: '/images/categories/push-pull-golf-buggies.webp',
     facets: ['wheels', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
   // 2.8 - 4-wheel & Flat-fold Push Buggies
@@ -127,8 +120,7 @@ export const CATEGORY_TREE = [
     h1: '4-Wheel & Compact Push Golf Buggies',
     targetKeywords: ['4 wheel golf buggy', 'compact golf buggy', 'foldable golf buggy'],
     introCopy: 'Four wheels track dead straight across slopes and never tip when you stop. Flat-fold models pack down thinner than a golf bag.',
-    heroImage: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 2,
+    heroImage: '/images/categories/push-pull-golf-buggies.webp',
     facets: ['wheels', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
   // 2.9 - Golf Trolleys (synonym landing page)
@@ -143,9 +135,7 @@ export const CATEGORY_TREE = [
     h1: 'Golf Trolleys',
     targetKeywords: ['golf trolley', 'electric golf trolley', 'golf trolleys', 'push golf trolley'],
     introCopy: '"Trolley" or "buggy", it is the same thing. This page brings together our full push and electric trolley range for shoppers who call it a trolley.',
-    canonical: 'https://DOMAIN.com/push-pull-golf-buggies/',
-    heroImage: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 0,
+    heroImage: '/images/categories/push-pull-golf-buggies.webp',
     facets: ['power', 'wheels', 'weight', 'price', 'condition', 'brand']
   },
 
@@ -161,8 +151,7 @@ export const CATEGORY_TREE = [
     h1: 'Ride-On Golf Carts',
     targetKeywords: ['golf cart for sale australia', 'golf buggy with seat', 'electric buggy for adults', 'ride on golf buggy'],
     introCopy: 'Sit-in electric carts for the course, the resort, the farm or the estate. From value 2-seaters to lifted 6-seat transporters and street-legal luxury carts, with finance and Australia-wide freight.',
-    heroImage: '/images/categories/luxury-golf-carts.jpg',
-    itemCount: 22,
+    heroImage: '/images/categories/luxury-golf-carts.webp',
     facets: ['seats', 'power', 'condition', 'price', 'brand']
   },
   // 2.11 - 2-Seat Golf Carts
@@ -177,8 +166,7 @@ export const CATEGORY_TREE = [
     h1: '2-Seat Golf Carts',
     targetKeywords: ['2 seater golf cart', '2 seat electric golf cart'],
     introCopy: 'The standard course cart: two seats, a bag rack and enough range for 36 holes.',
-    heroImage: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 11,
+    heroImage: '/images/categories/luxury-golf-carts.webp',
     facets: ['power', 'condition', 'price', 'brand']
   },
   // 2.12 - 4 & 6-Seat Golf Carts
@@ -193,8 +181,7 @@ export const CATEGORY_TREE = [
     h1: '4 & 6-Seat Golf Carts',
     targetKeywords: ['4 seater golf cart', '6 seat golf cart', 'family golf cart'],
     introCopy: 'Rear-facing or forward-facing extra seats for families, resorts and clubs.',
-    heroImage: 'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 6,
+    heroImage: '/images/categories/luxury-golf-carts.webp',
     facets: ['seats', 'power', 'condition', 'price', 'brand']
   },
   // 2.13 - Lifted & All-Terrain Carts
@@ -209,8 +196,7 @@ export const CATEGORY_TREE = [
     h1: 'Lifted & All-Terrain Carts',
     targetKeywords: ['lifted golf cart', 'all terrain golf cart', 'off road golf cart'],
     introCopy: 'Raised suspension, knobby tyres and more ground clearance for tracks, paddocks and the beach path.',
-    heroImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 3,
+    heroImage: '/images/categories/luxury-golf-carts.webp',
     facets: ['seats', 'power', 'condition', 'price', 'brand']
   },
   // 2.14 - Utility & Commercial Carts
@@ -225,8 +211,7 @@ export const CATEGORY_TREE = [
     h1: 'Utility & Commercial Carts',
     targetKeywords: ['utility golf cart', 'electric utility cart', 'commercial cart'],
     introCopy: 'Cargo beds, tipper trays and load ratings for wineries, retirement villages, factories and councils.',
-    heroImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 2,
+    heroImage: '/images/categories/luxury-golf-carts.webp',
     facets: ['power', 'condition', 'price', 'brand']
   },
   // 2.15 - Used & Ex-Fleet Carts
@@ -241,8 +226,7 @@ export const CATEGORY_TREE = [
     h1: 'Used & Ex-Fleet Carts',
     targetKeywords: ['used golf cart for sale australia', 'second hand golf cart', 'ex fleet golf cart'],
     introCopy: 'Ex-lease and refurbished Club Car, Yamaha and E-Z-GO carts, checked and reconditioned.',
-    heroImage: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 8,
+    heroImage: '/images/categories/luxury-golf-carts.webp',
     facets: ['seats', 'condition', 'price', 'brand']
   },
 
@@ -258,8 +242,7 @@ export const CATEGORY_TREE = [
     h1: 'Off-Road & Recreational Buggies',
     targetKeywords: ['off road buggies', 'off road buggy for sale', 'dune buggy', 'side by side buggy'],
     introCopy: 'Buggies built for sand, dirt and paddocks. Petrol dune buggies, side-by-side UTVs, classic beach buggies and electric farm buggies, from kids models up to premium performance machines.',
-    heroImage: '/images/categories/off-road-buggies.jpg',
-    itemCount: 21,
+    heroImage: '/images/categories/off-road-buggies.webp',
     facets: ['power', 'seats', 'condition', 'price', 'brand']
   },
   // 2.17 - Dune Buggies
@@ -274,8 +257,7 @@ export const CATEGORY_TREE = [
     h1: 'Dune Buggies',
     targetKeywords: ['dune buggy', 'dune buggies for sale', 'dune buggy for sale australia'],
     introCopy: 'Lightweight 150cc to 300cc petrol buggies with roll cages, built for sand dunes and fire trails.',
-    heroImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 5,
+    heroImage: '/images/categories/off-road-buggies.webp',
     facets: ['power', 'price', 'condition', 'brand']
   },
   // 2.18 - Side-by-Side / UTV Buggies
@@ -290,8 +272,7 @@ export const CATEGORY_TREE = [
     h1: 'Side-by-Side / UTV Buggies',
     targetKeywords: ['side by side buggy', 'UTV buggy', 'side by side for sale'],
     introCopy: 'Two to four seats side by side, cargo bed, roll-over protection. Recreational models through to 1000cc performance UTVs.',
-    heroImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 10,
+    heroImage: '/images/categories/off-road-buggies.webp',
     facets: ['power', 'seats', 'price', 'condition', 'brand']
   },
   // 2.19 - Beach Buggies
@@ -306,8 +287,7 @@ export const CATEGORY_TREE = [
     h1: 'Beach Buggies',
     targetKeywords: ['beach buggy for sale australia', 'beach buggy', 'beach buggies for sale australia'],
     introCopy: 'From registered classic VW-based beach buggies to modern all-terrain buggies with sand tyres. Complete road-registered cars, restoration projects and fibreglass body kits.',
-    heroImage: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 0,
+    heroImage: '/images/categories/off-road-buggies.webp',
     facets: ['power', 'price', 'condition', 'brand']
   },
   // 2.20 - Farm & Utility Buggies
@@ -322,8 +302,7 @@ export const CATEGORY_TREE = [
     h1: 'Farm & Utility Buggies',
     targetKeywords: ['farm buggy', 'electric farm buggy for sale australia', 'farm buggies for sale', 'agricultural UTV'],
     introCopy: 'Work buggies for properties: full-time 4WD, tow ratings, tipper trays and long service intervals. Electric models cut running costs to near zero and run silent around stock.',
-    heroImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 6,
+    heroImage: '/images/categories/off-road-buggies.webp',
     facets: ['power', 'seats', 'price', 'condition', 'brand']
   },
   // 2.21 - Adult 2-Seater Petrol Buggies
@@ -338,8 +317,7 @@ export const CATEGORY_TREE = [
     h1: 'Adult 2-Seater Petrol Buggies',
     targetKeywords: ['2 seater buggy for sale', 'petrol 2 seater buggy'],
     introCopy: 'Petrol-powered two-seat buggies for trail riding and property use, roll cage and disc brakes standard.',
-    heroImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 0,
+    heroImage: '/images/categories/off-road-buggies.webp',
     facets: ['power', 'price', 'condition', 'brand']
   },
 
@@ -355,8 +333,7 @@ export const CATEGORY_TREE = [
     h1: 'Kids\' Ride-On Buggies',
     targetKeywords: ['kids buggy for sale', 'kids electric buggy 48v', 'ride on buggy kids', 'children\'s petrol buggy'],
     introCopy: 'Proper off-road buggies scaled for kids and teens, not plastic toys. Roll cages, seat belts, adjustable speed limits and adult remote cut-off on the electric models.',
-    heroImage: '/images/categories/kids-buggies.jpg',
-    itemCount: 5,
+    heroImage: '/images/categories/kids-buggies.webp',
     facets: ['power', 'price', 'condition', 'brand']
   },
   // 2.23 - Electric Kids Buggies
@@ -371,8 +348,7 @@ export const CATEGORY_TREE = [
     h1: 'Electric Kids Buggies',
     targetKeywords: ['kids electric buggy 48v', 'electric offroad buggy kids'],
     introCopy: '24V to 48V battery buggies for ages 5 to 12, with parent remote control and speed limiting.',
-    heroImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 2,
+    heroImage: '/images/categories/kids-buggies.webp',
     facets: ['power', 'price', 'condition', 'brand']
   },
   // 2.24 - Petrol Kids & Teen Buggies
@@ -387,8 +363,7 @@ export const CATEGORY_TREE = [
     h1: 'Petrol Kids & Teen Buggies',
     targetKeywords: ['children\'s petrol buggy', 'kids petrol buggy', 'teen buggy'],
     introCopy: '90cc to 208cc petrol buggies for older kids and teens, with governors and tethered kill switches.',
-    heroImage: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 3,
+    heroImage: '/images/categories/kids-buggies.webp',
     facets: ['power', 'price', 'condition', 'brand']
   },
 
@@ -402,8 +377,7 @@ export const CATEGORY_TREE = [
     h1: 'Golf Buggy Batteries & Chargers',
     targetKeywords: ['golf buggy battery replacement price', 'lithium battery golf buggy', 'golf buggy battery', 'golf cart batteries'],
     introCopy: 'Genuine and aftermarket replacement batteries by hole-range and brand fitment, plus chargers, battery bags and full ride-on cart battery sets. Lead-acid to lithium upgrades welcome.',
-    heroImage: '/images/categories/batteries.jpg',
-    itemCount: 22,
+    heroImage: '/images/categories/batteries.webp',
     facets: ['batteryRange', 'price', 'condition', 'brand']
   },
   // 2.26 - Buggy Lithium Batteries
@@ -418,8 +392,7 @@ export const CATEGORY_TREE = [
     h1: 'Buggy Lithium Batteries',
     targetKeywords: ['lithium battery golf buggy', '36 hole lithium battery', 'MGI lithium battery replacement'],
     introCopy: '12V and 24V lithium packs for MGI, Motocaddy, PowaKaddy and Hillbilly buggies, rated 18 to 36 holes.',
-    heroImage: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 9,
+    heroImage: '/images/placeholder.webp',
     facets: ['batteryRange', 'price', 'condition', 'brand']
   },
   // 2.27 - Buggy Chargers
@@ -434,8 +407,7 @@ export const CATEGORY_TREE = [
     h1: 'Chargers & Leads',
     targetKeywords: ['golf buggy charger', 'electric golf trolley battery charger'],
     introCopy: 'Smart lithium chargers and lead-acid chargers matched to your buggy.',
-    heroImage: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 5,
+    heroImage: '/images/placeholder.webp',
     facets: ['price', 'brand']
   },
   // 2.28 - Golf Cart Battery Sets
@@ -450,8 +422,7 @@ export const CATEGORY_TREE = [
     h1: 'Cart Battery Sets',
     targetKeywords: ['golf cart battery', '48v golf cart battery', 'trojan golf cart batteries'],
     introCopy: '36V and 48V flooded, AGM and lithium sets for ride-on carts, plus plug-and-play lithium conversion kits.',
-    heroImage: 'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 8,
+    heroImage: '/images/placeholder.webp',
     facets: ['price', 'brand']
   },
 
@@ -465,8 +436,7 @@ export const CATEGORY_TREE = [
     h1: 'Golf Buggy Parts & Spares',
     targetKeywords: ['golf buggy spare parts', 'golf buggy wheels', 'golf buggy parts australia'],
     introCopy: 'Wheels, tyres, motors, gearboxes, controllers and trim by brand and model. If you can name the buggy, we can fit it.',
-    heroImage: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 17,
+    heroImage: '/images/placeholder.webp',
     facets: ['price', 'brand']
   },
   // 2.30 - Wheels & Tyres
@@ -481,8 +451,7 @@ export const CATEGORY_TREE = [
     h1: 'Wheels & Tyres',
     targetKeywords: ['golf buggy wheels', 'golf buggy tyres', 'golf cart tyres'],
     introCopy: 'Front and rear wheels, winter and all-terrain wheels for buggies, plus turf and DOT tyres for carts.',
-    heroImage: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 12,
+    heroImage: '/images/placeholder.webp',
     facets: ['price', 'brand']
   },
   // 2.31 - Drive & Electrical Spares
@@ -497,8 +466,7 @@ export const CATEGORY_TREE = [
     h1: 'Drive & Electrical Spares',
     targetKeywords: ['golf buggy motor', 'golf buggy controller', 'golf buggy parts'],
     introCopy: 'Motors, gearboxes, controllers, handles and wiring for electric buggies.',
-    heroImage: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 5,
+    heroImage: '/images/placeholder.webp',
     facets: ['price', 'brand']
   },
   // 2.32 - Repairs & Servicing (Bookable service page)
@@ -514,8 +482,7 @@ export const CATEGORY_TREE = [
     targetKeywords: ['golf buggy repairs', 'golf buggy service', 'golf buggy repairs near me'],
     introCopy: 'Book a service or repair for any make of buggy or cart. Battery health checks, motor and wheel replacement, controller diagnostics.',
     isBookableService: true,
-    heroImage: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 0,
+    heroImage: '/images/placeholder.webp',
     facets: []
   },
 
@@ -529,8 +496,7 @@ export const CATEGORY_TREE = [
     h1: 'Golf Buggy Accessories',
     targetKeywords: ['golf buggy accessories', 'golf buggy accessories australia'],
     introCopy: 'Holders, seats, covers and upgrade kits to finish off your buggy. Most parts are brand-specific, so filter by your buggy.',
-    heroImage: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 30,
+    heroImage: '/images/placeholder.webp',
     facets: ['price', 'brand']
   },
 
@@ -546,8 +512,7 @@ export const CATEGORY_TREE = [
     h1: 'Shop by Brand',
     targetKeywords: ['mgi golf buggy', 'motocaddy australia', 'powakaddy australia'],
     introCopy: 'Every brand we stock, with its full range and matching spare parts on one page.',
-    heroImage: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
-    itemCount: 0,
+    heroImage: '/images/placeholder.webp',
     facets: ['brand']
   },
 
@@ -563,8 +528,7 @@ export const CATEGORY_TREE = [
     h1: 'Used & Ex-Demo Golf Buggies',
     targetKeywords: ['used golf buggy for sale', 'second hand golf buggies for sale', 'golf buggy for sale used'],
     introCopy: 'Ex-demo and trade-in electric buggies, fully tested with a fresh battery health report and a short warranty. Stock changes weekly.',
-    heroImage: '/images/categories/used-golf-buggies.jpg',
-    itemCount: 8,
+    heroImage: '/images/categories/used-golf-buggies.webp',
     facets: ['power', 'wheels', 'condition', 'price', 'brand']
   },
 
@@ -581,7 +545,6 @@ export const CATEGORY_TREE = [
     targetKeywords: ['golf clubs for sale australia', 'complete golf club set', 'golf driver'],
     introCopy: 'Quality golf club sets for juniors, beginners, ladies and experienced players.',
     heroImage: '/images/placeholder.webp',
-    itemCount: 7,
     facets: ['price', 'brand']
   },
   // Subcategories for Accessories
@@ -597,7 +560,62 @@ export const CATEGORY_TREE = [
     targetKeywords: ['golf cart bag', 'golf stand bag', 'golf travel bag'],
     introCopy: '14-way cart bags, waterproof stand bags, and travel covers designed for golf buggies.',
     heroImage: '/images/placeholder.webp',
-    itemCount: 4,
+    facets: ['price', 'brand']
+  },
+  {
+    id: 'acc-holders',
+    parent: 'accessories',
+    slug: 'holders',
+    path: '/accessories/holders/',
+    navLabel: 'Holders',
+    pageTitle: 'Golf Buggy Holders Australia',
+    metaDescription: 'Umbrella, drink, phone and GPS holders plus scorecard consoles for golf buggies. Fast Australia-wide delivery.',
+    h1: 'Golf Buggy Holders',
+    targetKeywords: ['golf buggy umbrella holder','golf buggy drink holder','golf buggy accessories'],
+    introCopy: 'Umbrella, drink, GPS and phone holders and scorecard consoles that fit most golf buggies and push carts.',
+    heroImage: '/images/placeholder.webp',
+    facets: ['price', 'brand']
+  },
+  {
+    id: 'acc-seats',
+    parent: 'accessories',
+    slug: 'seats-footboards',
+    path: '/accessories/seats-footboards/',
+    navLabel: 'Seats & Footboards',
+    pageTitle: 'Golf Buggy Seats & Footboards Australia',
+    metaDescription: 'Add-on seats and footboards for golf buggies. Rest between shots without buying a ride-on cart.',
+    h1: 'Seats & Footboards',
+    targetKeywords: ['golf buggy with seat','golf buggy seat','golf buggy footboard'],
+    introCopy: 'Add-on seats and footboards for golfers who want somewhere to rest between shots without moving to a ride-on cart.',
+    heroImage: '/images/placeholder.webp',
+    facets: ['price', 'brand']
+  },
+  {
+    id: 'acc-covers',
+    parent: 'accessories',
+    slug: 'covers-and-bags',
+    path: '/accessories/covers-and-bags/',
+    navLabel: 'Covers & Wheel Bags',
+    pageTitle: 'Golf Buggy Covers & Wheel Bags Australia',
+    metaDescription: 'Travel and storage covers, wheel bags and bag rain covers for golf buggies and trolleys.',
+    h1: 'Covers & Wheel Bags',
+    targetKeywords: ['golf buggy cover','golf buggy travel cover','golf buggy wheel bag'],
+    introCopy: 'Travel and storage covers, wheel bags and rain covers that protect your buggy in the boot, the garage and on wet days.',
+    heroImage: '/images/placeholder.webp',
+    facets: ['price', 'brand']
+  },
+  {
+    id: 'acc-wheel-upgrades',
+    parent: 'accessories',
+    slug: 'wheel-upgrades',
+    path: '/accessories/wheel-upgrades/',
+    navLabel: 'Wheel Upgrades',
+    pageTitle: 'Golf Buggy Wheel Upgrade Kits Australia',
+    metaDescription: 'Winter, all-terrain and sand-ready wheel upgrade kits for golf buggies.',
+    h1: 'Wheel Upgrades',
+    targetKeywords: ['golf buggy winter wheels','all terrain golf buggy wheels','golf buggy sand tyres'],
+    introCopy: 'Winter wheels, all-terrain upgrade kits and wet-weather or sand tyres for year-round play.',
+    heroImage: '/images/placeholder.webp',
     facets: ['price', 'brand']
   },
   {
@@ -612,7 +630,6 @@ export const CATEGORY_TREE = [
     targetKeywords: ['titleist pro v1', 'taylormade tp5', 'srixon z-star'],
     introCopy: 'Dozen packs of tour-tier and distance golf balls.',
     heroImage: '/images/placeholder.webp',
-    itemCount: 3,
     facets: ['price', 'brand']
   },
   {
@@ -627,7 +644,6 @@ export const CATEGORY_TREE = [
     targetKeywords: ['golf rangefinder', 'garmin approach', 'bushnell tour v5'],
     introCopy: 'Accurate laser rangefinders and GPS golf watches for pin-point yardages.',
     heroImage: '/images/placeholder.webp',
-    itemCount: 6,
     facets: ['price', 'brand']
   },
   {
@@ -642,7 +658,6 @@ export const CATEGORY_TREE = [
     targetKeywords: ['golf putting mat', 'golf practice net', 'golf hitting mat'],
     introCopy: 'Home putting greens and hitting nets to practice your game anywhere.',
     heroImage: '/images/placeholder.webp',
-    itemCount: 3,
     facets: ['price', 'brand']
   },
   // Subcategories for Golf Clubs
@@ -658,7 +673,6 @@ export const CATEGORY_TREE = [
     targetKeywords: ['complete golf club set', 'junior golf club set'],
     introCopy: 'All-in-one package sets including drivers, woods, irons, putter and cart bag.',
     heroImage: '/images/placeholder.webp',
-    itemCount: 3,
     facets: ['price', 'brand']
   },
   {
@@ -673,7 +687,6 @@ export const CATEGORY_TREE = [
     targetKeywords: ['golf driver', 'golf iron set'],
     introCopy: 'High-launch drivers and forged iron sets designed for distance and forgiveness.',
     heroImage: '/images/placeholder.webp',
-    itemCount: 2,
     facets: ['price', 'brand']
   },
   {
@@ -688,7 +701,6 @@ export const CATEGORY_TREE = [
     targetKeywords: ['golf wedge', 'golf putter'],
     introCopy: 'Short game scoring clubs: high-spin wedges and precision alignment putters.',
     heroImage: '/images/placeholder.webp',
-    itemCount: 2,
     facets: ['price', 'brand']
   }
 ];

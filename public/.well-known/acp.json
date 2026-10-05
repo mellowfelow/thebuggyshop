@@ -5,8 +5,8 @@
   },
   "name": "The Buggy Shop",
   "description": "Australia's Premier Golf Buggy for Sale & Luxury All-Terrain Cart Specialists",
-  "api_base_url": "https://DOMAIN.com",
-  "homepage": "https://DOMAIN.com",
+  "api_base_url": "https://thebuggyshoppty.com.au",
+  "homepage": "https://thebuggyshoppty.com.au",
   "transports": [
     "https"
   ],

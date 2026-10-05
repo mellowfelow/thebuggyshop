@@ -3,10 +3,11 @@ import React from 'react';
 import { SITE } from '@/src/config/site';
 import JsonLd from '@/src/components/JsonLd';
 import CheckoutClient from './CheckoutClient';
+import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: 'Secure Checkout & Machinery Allocation | The Buggy Shop Australia',
-  description: 'Complete your luxury golf buggy order, calculate freight, select PayID, Bank Wire or 10% Crypto rebate, and receive official payment dispatch instructions.',
+  title: { absolute: seoTitle('Secure Checkout & Machinery Allocation | The Buggy Shop Australia') },
+  description: seoDesc('Complete your luxury golf buggy order, calculate freight, select PayID, Bank Wire or 10% Crypto rebate, and receive official payment dispatch instructions.'),
   robots: {
     index: false,
     follow: true,

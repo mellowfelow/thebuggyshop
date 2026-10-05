@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { SITE, BRAND, CONTACT, PRODUCTS, REVIEW_STATS } from '@/src/config/site';
 import JsonLd from '@/src/components/JsonLd';
+import { seoTitle, seoDesc } from '@/lib/seo';
 import { 
   ShieldCheck, 
   Truck, 
@@ -18,8 +19,8 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: 'About The Buggy Shop | 20+ Years Australian Golf Buggy for Sale Heritage',
-  description: 'Founded in Queensland in 2004, The Buggy Shop is Australia\'s leading authority on luxury golf buggies for sale, remote control golf buggies, off road buggies, and golf push buggies.',
+  title: { absolute: seoTitle('About The Buggy Shop | 20+ Years Australian Golf Buggy for Sale Heritage') },
+  description: seoDesc('Founded in Queensland in 2004, The Buggy Shop is Australia\'s leading authority on luxury golf buggies for sale, remote control golf buggies, off road buggies, and golf push buggies.'),
   alternates: {
     canonical: `https://${SITE.domain}/about/`,
   },

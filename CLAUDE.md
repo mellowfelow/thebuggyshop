@@ -21,9 +21,17 @@ Never hand-edit generated files (`llms.txt`, `.well-known/*`, `vercel.json`) —
 - Framework Preset on Vercel must be "Next.js".
 
 ## Live Placeholders
-- `SITE.domain`: Currently `DOMAIN.com` (change before live custom domain DNS propagation).
-- `FORMS.web3formsKey`: Form submissions fallback to thank-you redirect until key is populated; WhatsApp chat remains live order channel.
-- `SITE.gscVerification`: Pending Google Search Console verification token.
+- `SITE.domain`: `thebuggyshoppty.com.au` (Vercel production domain; www 308-redirects to it). `CROSSCHECK_PRODUCTION=1 npm run crosscheck` fails if a placeholder domain ever returns.
+- Forms: ALL forms (checkout, contact, wholesale) post to `/api/contact` and send through SMTP. Web3Forms is retired and must not return.
+- Env vars (Vercel): `SMTP_HOST/PORT/USER/PASS/FROM`, `ORDER_EMAIL`, `CONTACT_EMAIL`, `WHOLESALE_EMAIL`, `ADMIN_PASSCODE` (required, 8+ chars, NO default), `UPSTASH_REDIS_REST_URL/TOKEN`, `SITE_URL`.
+- `SITE.gscVerification`: pending Google Search Console token.
+
+## Hard rules learned from the audit
+- Never put real or sample bank / PayID / wallet details in code. The operator pastes live details per order in /admin; the public payment page only shows details the admin has sent.
+- Never emit AggregateRating unless a product carries real supplied `rating` + `reviewCount` (use `hasRealRating`). Migrated client reviews in `REVIEWS` / `REVIEW_STATS` are real and stay untouched.
+- Taxonomy has ONE source: `src/config/categories.js`. Product `category` = a tree ROOT slug, `subcategory` = a child of that root. Counts are computed, never stored.
+- Product images live in `public/images/products/<product-slug>/main.webp|jpg + gallery-N`. See docs/IMAGES.md.
+- Never take URLs for emails from request headers; use `lib/siteUrl.js`.
 
 ## Brand Authority Facts
 - Founded: 2004, Queensland, Australia (20+ Years continuous trading).
