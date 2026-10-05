@@ -93,11 +93,11 @@ export default function ShopClient({
       // Category match
       if (selectedCategory !== 'all') {
         const catObj = categories.find(c => c.slug === selectedCategory);
-        if (catObj && catObj.subcategories) {
+        if (catObj && catObj.subcategories && catObj.subcategories.length > 0) {
           const validSlugs = [catObj.slug, ...catObj.subcategories.map(s => s.slug)];
-          if (!validSlugs.includes(product.category)) return false;
+          if (!validSlugs.includes(product.category) && !validSlugs.includes(product.subcategory)) return false;
         } else {
-          if (product.category !== selectedCategory) return false;
+          if (product.category !== selectedCategory && product.subcategory !== selectedCategory) return false;
         }
       }
 
@@ -369,7 +369,7 @@ export default function ShopClient({
                 : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
             }`}
           >
-            {cat.name}
+            {cat.navLabel || cat.name || cat.slug}
           </button>
         ))}
       </div>

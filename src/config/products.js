@@ -9,6 +9,7 @@ export const PRODUCTS = [
   // ==========================================
   {
     slug: 'mgi-zip-navigator-at-remote-electric-golf-buggy',
+    subcategory: 'remote-control',
     name: 'MGI Zip Navigator AT Remote Control Electric Golf Buggy',
     brand: 'mgi',
     brandName: 'MGI',
@@ -52,6 +53,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-ai-500-remote-electric-golf-buggy',
+    subcategory: 'remote-control',
     name: 'MGI Ai 500 Remote Electric Golf Buggy',
     brand: 'mgi',
     brandName: 'MGI',
@@ -98,6 +100,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'motocaddy-m7-remote-electric-golf-buggy',
+    subcategory: 'remote-control',
     name: 'Motocaddy M7 Remote Control Electric Golf Buggy',
     brand: 'motocaddy',
     brandName: 'Motocaddy',
@@ -137,6 +140,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'stinger-golf-sg4-crossover-remote-electric-buggy',
+    subcategory: 'remote-control',
     name: 'Stinger Golf SG-4 Crossover Remote Electric Buggy',
     brand: 'stinger',
     brandName: 'Stinger Golf',
@@ -180,6 +184,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'alphard-cybercart-remote-electric-buggy',
+    subcategory: 'remote-control',
     name: 'Alphard Cybercart Remote Control Electric Buggy',
     brand: 'alphard',
     brandName: 'Alphard Golf',
@@ -217,6 +222,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'explora-r1-remote-control-golf-buggy',
+    subcategory: 'remote-control',
     name: 'Explora R1 Remote Electric Golf Buggy',
     brand: 'explora',
     brandName: 'Explora',
@@ -260,6 +266,7 @@ export const PRODUCTS = [
   // ==========================================
   {
     slug: 'mgi-zip-x1-electric-golf-buggy',
+    subcategory: 'walk-behind',
     name: 'MGI Zip X1 Electric Golf Buggy',
     brand: 'mgi',
     brandName: 'MGI',
@@ -301,6 +308,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-zip-x3-electric-golf-buggy',
+    subcategory: 'walk-behind',
     name: 'MGI Zip X3 36-Hole Electric Golf Buggy',
     brand: 'mgi',
     brandName: 'MGI',
@@ -344,6 +352,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-zip-x5-electric-golf-buggy',
+    subcategory: 'walk-behind',
     name: 'MGI Zip X5 Downhill Braking Electric Golf Buggy',
     brand: 'mgi',
     brandName: 'MGI',
@@ -387,6 +396,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'motocaddy-m1-dhc-electric-golf-buggy',
+    subcategory: 'walk-behind',
     name: 'Motocaddy M1 DHC Electric Golf Buggy',
     brand: 'motocaddy',
     brandName: 'Motocaddy',
@@ -426,6 +436,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'powakaddy-ct6-electric-golf-buggy',
+    subcategory: 'walk-behind',
     name: 'PowaKaddy CT6 Compact Electric Golf Buggy',
     brand: 'powakaddy',
     brandName: 'PowaKaddy',
@@ -470,6 +481,7 @@ export const PRODUCTS = [
   // ==========================================
   {
     slug: 'mgi-ai-navigator-gps-plus-electric-golf-buggy',
+    subcategory: 'gps-follow',
     name: 'MGI Ai Navigator GPS+ Electric Golf Buggy',
     brand: 'mgi',
     brandName: 'MGI',
@@ -515,6 +527,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-ai-navigator-halo-flagship-buggy',
+    subcategory: 'gps-follow',
     name: 'MGI Ai Navigator Halo Flagship Electric Buggy',
     brand: 'mgi',
     brandName: 'MGI',
@@ -560,6 +573,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'stewart-golf-q-follow-electric-buggy',
+    subcategory: 'gps-follow',
     name: 'Stewart Golf Q Follow Autonomous Electric Buggy',
     brand: 'stewart-golf',
     brandName: 'Stewart Golf',
@@ -600,6 +614,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'alphard-club-booster-v2-pro-conversion-kit',
+    subcategory: 'conversion-kits',
     name: 'Alphard Club Booster V2Pro Electric Conversion Kit',
     brand: 'alphard',
     brandName: 'Alphard Golf',
@@ -643,6 +658,7 @@ export const PRODUCTS = [
   // ==========================================
   {
     slug: 'clicgear-model-4-5-push-golf-buggy',
+    subcategory: '3-wheel',
     name: 'Clicgear Model 4.5 3-Wheel Push Golf Buggy',
     brand: 'clicgear',
     brandName: 'Clicgear',
@@ -681,6 +697,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'big-max-blade-ip2-flat-fold-golf-buggy',
+    subcategory: '3-wheel',
     name: 'Big Max Blade IP 2 Ultra-Flat Push Golf Buggy',
     brand: 'big-max',
     brandName: 'Big Max',
@@ -719,6 +736,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'clicgear-rovic-rv1s-swivel-push-golf-buggy',
+    subcategory: '3-wheel',
     name: 'Clicgear Rovic RV1S Swivel Front Wheel Push Buggy',
     brand: 'clicgear',
     brandName: 'Clicgear (Rovic)',
@@ -761,6 +779,7 @@ export const PRODUCTS = [
   // ==========================================
   {
     slug: 'cougar-2-seater-electric-golf-cart',
+    subcategory: '2-seat',
     name: 'Cougar 2-Seater Electric Golf Cart',
     brand: 'cougar',
     brandName: 'Cougar',
@@ -799,6 +818,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'ecar-lithium-a2-2-seater-golf-cart',
+    subcategory: '2-seat',
     name: 'ECAR Lithium A2 2-Seater Golf Cart',
     brand: 'ecar',
     brandName: 'ECAR',
@@ -837,6 +857,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'rippa-4-seat-electric-golf-cart',
+    subcategory: '4-6-seat',
     name: 'Rippa 4-Seat Electric Golf Cart Australia',
     brand: 'rippa',
     brandName: 'Rippa',
@@ -875,6 +896,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'ecar-lithium-a4-4-seater-golf-cart',
+    subcategory: '4-6-seat',
     name: 'ECAR Lithium A4 4-Seater Golf Cart',
     brand: 'ecar',
     brandName: 'ECAR',
@@ -913,6 +935,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'ecar-lithium-magnum-4lr-lifted-golf-cart',
+    subcategory: 'lifted-all-terrain',
     name: 'ECAR Lithium Magnum 4LR Lifted 4x4 Off-Road Cart',
     brand: 'ecar',
     brandName: 'ECAR',
@@ -951,6 +974,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'tomberlin-e-merge-ss-4-seat-saloon-cart',
+    subcategory: '4-6-seat',
     name: 'Tomberlin E-Merge SS 4-Seat Luxury Saloon Cart',
     brand: 'tomberlin',
     brandName: 'Tomberlin',
@@ -988,6 +1012,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'garia-lithium-luxury-golf-cart',
+    subcategory: '2-seat',
     name: 'Garia Lithium Luxury Golf Cart (Danish Handcrafted)',
     brand: 'garia',
     brandName: 'Garia',
@@ -1029,6 +1054,7 @@ export const PRODUCTS = [
   // ==========================================
   {
     slug: 'gmx-gkt150-dune-buggy',
+    subcategory: 'dune-buggies',
     name: 'GMX GKT150 150cc 2-Seat Dune Buggy',
     brand: 'gmx',
     brandName: 'GMX',
@@ -1066,6 +1092,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'crossfire-blazer-200r-dune-buggy',
+    subcategory: 'dune-buggies',
     name: 'Crossfire Blazer 200R Teen / Adult Off-Road Buggy',
     brand: 'crossfire',
     brandName: 'Crossfire',
@@ -1102,6 +1129,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'kayo-s350-side-by-side-utv',
+    subcategory: 'farm-buggies',
     name: 'Kayo S350 2-Seat Side-by-Side UTV',
     brand: 'kayo',
     brandName: 'Kayo Moto',
@@ -1138,6 +1166,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'crossfire-400gt-4x4-farm-utv',
+    subcategory: 'farm-buggies',
     name: 'Crossfire 400GT 4x4 Heavy-Duty Farm UTV',
     brand: 'crossfire',
     brandName: 'Crossfire',
@@ -1174,6 +1203,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'polaris-ranger-xp-1000-hd-utv',
+    subcategory: 'farm-buggies',
     name: 'Polaris Ranger XP 1000 Heavy Duty Side-by-Side',
     brand: 'polaris',
     brandName: 'Polaris',
@@ -1214,6 +1244,7 @@ export const PRODUCTS = [
   // ==========================================
   {
     slug: 'electric-48v-kids-4x4-off-road-buggy',
+    subcategory: 'electric',
     name: '48V Electric Kids 4x4 Off-Road Buggy',
     brand: 'buggy-shop-junior',
     brandName: 'The Buggy Shop Junior',
@@ -1250,6 +1281,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'crossfire-90cc-twin-seat-kids-petrol-buggy',
+    subcategory: 'petrol',
     name: 'Crossfire 90cc Twin-Seat Petrol Kids Buggy',
     brand: 'crossfire',
     brandName: 'Crossfire',
@@ -1290,6 +1322,7 @@ export const PRODUCTS = [
   // ==========================================
   {
     slug: 'mgi-24v-380wh-click-and-go-lithium-battery',
+    subcategory: 'lithium',
     name: 'MGI 24V 380Wh 36-Hole Click & Go Lithium Battery Pack',
     brand: 'mgi',
     brandName: 'MGI',
@@ -1326,6 +1359,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'giant-48v-90ah-golf-cart-drop-in-lithium-battery',
+    subcategory: 'cart-sets',
     name: 'GIANT 48V 90Ah Drop-In Golf Cart LiFePO4 Lithium Battery',
     brand: 'giant',
     brandName: 'GIANT Power',
@@ -1366,6 +1400,7 @@ export const PRODUCTS = [
   // ==========================================
   {
     slug: 'ex-demo-mgi-zip-navigator-at-remote-buggy',
+    subcategory: 'used',
     name: 'Ex-Demo MGI Zip Navigator AT Remote Buggy (Certified)',
     brand: 'mgi',
     brandName: 'MGI',
@@ -1402,6 +1437,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'ex-fleet-ezgo-rxv-48v-lithium-2-seat-cart',
+    subcategory: 'used',
     name: 'Ex-Fleet E-Z-GO RXV 48V Lithium 2-Seat Cart (Refurbished)',
     brand: 'ezgo',
     brandName: 'E-Z-GO',
@@ -1439,6 +1475,7 @@ export const PRODUCTS = [
 ,
   {
     slug: 'mgi-zip-navigator-at-all-terrain-golf-buggy',
+    subcategory: 'conversion-kits',
     name: 'MGI Zip Navigator AT All-Terrain Conversion Bundle',
     brand: 'mgi',
     brandName: 'MGI',
@@ -1479,6 +1516,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'motocaddy-m5-gps-dhc-electric-golf-buggy',
+    subcategory: 'gps-follow',
     name: 'Motocaddy M5 GPS DHC Electric Golf Buggy',
     brand: 'motocaddy',
     brandName: 'Motocaddy',
@@ -1520,6 +1558,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'powakaddy-fx7-gps-36-hole-electric-golf-buggy',
+    subcategory: 'gps-follow',
     name: 'PowaKaddy FX7 GPS 36-Hole Electric Golf Buggy',
     brand: 'powakaddy',
     brandName: 'PowaKaddy',
@@ -1559,6 +1598,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'stewart-golf-vertx-remote-electric-buggy',
+    subcategory: 'remote-control',
     name: 'Stewart Golf VERTX Remote Electric Golf Buggy',
     brand: 'stewart-golf',
     brandName: 'Stewart Golf',
@@ -1602,6 +1642,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'stewart-golf-x10-follow-electric-buggy',
+    subcategory: 'gps-follow',
     name: 'Stewart Golf X10 Follow Autonomous Electric Buggy',
     brand: 'stewart-golf',
     brandName: 'Stewart Golf',
@@ -1642,6 +1683,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'powakaddy-rx1-gps-remote-electric-golf-buggy',
+    subcategory: 'remote-control',
     name: 'PowaKaddy RX1 GPS Remote Electric Golf Buggy',
     brand: 'powakaddy',
     brandName: 'PowaKaddy',
@@ -1682,6 +1724,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'powakaddy-dlx-push-button-electric-golf-buggy',
+    subcategory: 'walk-behind',
     name: 'PowaKaddy DLX Electric Golf Buggy',
     brand: 'powakaddy',
     brandName: 'PowaKaddy',
@@ -1721,6 +1764,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'big-max-iq-2-360-push-golf-buggy',
+    subcategory: '3-wheel',
     name: 'Big Max IQ 2 360 Push Golf Buggy',
     brand: 'big-max',
     brandName: 'Big Max',
@@ -1763,6 +1807,7 @@ export const PRODUCTS = [
 ,
   {
     slug: 'clicgear-rovic-swivel-2-0-compact-push-golf-buggy',
+    subcategory: '4-wheel',
     name: 'Clicgear Rovic Swivel 2.0 Compact Push Golf Buggy',
     brand: 'clicgear',
     brandName: 'Clicgear',
@@ -1791,6 +1836,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'qod-compact-push-golf-buggy',
+    subcategory: '4-wheel',
     name: 'QOD Compact Push Golf Buggy',
     brand: 'qod-golf',
     brandName: 'QOD Golf',
@@ -1819,6 +1865,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'tara-spirit-plus-spirit-pro-2-seater-golf-cart',
+    subcategory: '2-seat',
     name: 'Tara Spirit Plus / Spirit Pro 2-Seater Golf Cart',
     brand: 'tara',
     brandName: 'Tara',
@@ -1847,6 +1894,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'lvtong-2-seater-fleet-golf-cart',
+    subcategory: '2-seat',
     name: 'LVTONG 2-Seater Fleet Golf Cart',
     brand: 'lvtong',
     brandName: 'LVTONG',
@@ -1875,6 +1923,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'tomberlin-e-merge-revenge-2-and-4-seat-golf-cart',
+    subcategory: '2-seat',
     name: 'Tomberlin E-Merge Revenge 2 & 4 Seat Golf Cart',
     brand: 'tomberlin',
     brandName: 'Tomberlin',
@@ -1903,6 +1952,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'evolution-d3-2-seater-electric-golf-cart',
+    subcategory: '2-seat',
     name: 'Evolution D3 2-Seater Electric Golf Cart',
     brand: 'evolution',
     brandName: 'Evolution',
@@ -1931,6 +1981,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'shelby-2-seat-electric-golf-cart',
+    subcategory: '2-seat',
     name: 'Shelby 2-Seat Electric Golf Cart',
     brand: 'shelby',
     brandName: 'Shelby',
@@ -1959,6 +2010,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'club-car-tempo-onward-lithium-golf-cart-2-2-2-4-seat',
+    subcategory: '2-seat',
     name: 'Club Car Tempo / Onward Lithium Golf Cart (2 / 2+2 / 4 Seat)',
     brand: 'club-car',
     brandName: 'Club Car',
@@ -1987,6 +2039,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'yamaha-drive2-golf-cart-2-4-seat',
+    subcategory: '2-seat',
     name: 'Yamaha Drive2 Golf Cart (2 / 4 Seat)',
     brand: 'yamaha',
     brandName: 'Yamaha',
@@ -2015,6 +2068,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'tara-roadster-2-2-electric-golf-cart',
+    subcategory: '2-seat',
     name: 'Tara Roadster 2+2 Electric Golf Cart',
     brand: 'tara',
     brandName: 'Tara',
@@ -2043,6 +2097,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'evolution-d5-4-seater-electric-golf-cart',
+    subcategory: '4-6-seat',
     name: 'Evolution D5 4-Seater Electric Golf Cart',
     brand: 'evolution',
     brandName: 'Evolution',
@@ -2071,6 +2126,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'tomberlin-e-merge-beachcomber-4-and-6-seat-golf-cart',
+    subcategory: '4-6-seat',
     name: 'Tomberlin E-Merge Beachcomber 4 & 6 Seat Golf Cart',
     brand: 'tomberlin',
     brandName: 'Tomberlin',
@@ -2099,6 +2155,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'tomberlin-e-merge-ghosthawk-4-and-6-seat-golf-cart',
+    subcategory: '4-6-seat',
     name: 'Tomberlin E-Merge Ghosthawk 4 & 6 Seat Golf Cart',
     brand: 'tomberlin',
     brandName: 'Tomberlin',
@@ -2127,6 +2184,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'ecar-compass-4s-6s-lifted-all-terrain-golf-cart',
+    subcategory: 'lifted-all-terrain',
     name: 'ECAR Compass 4S / 6S Lifted All-Terrain Golf Cart',
     brand: 'ecar',
     brandName: 'ECAR',
@@ -2155,6 +2213,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'tomberlin-e-merge-defender-lifted-golf-cart-2-and-4-seat',
+    subcategory: 'lifted-all-terrain',
     name: 'Tomberlin E-Merge Defender Lifted Golf Cart (2 & 4 Seat)',
     brand: 'tomberlin',
     brandName: 'Tomberlin',
@@ -2183,6 +2242,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'ecar-lithium-a2-utility-cart',
+    subcategory: 'utility',
     name: 'ECAR Lithium A2 Utility Cart',
     brand: 'ecar',
     brandName: 'ECAR',
@@ -2211,6 +2271,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'ecar-lithium-a4-utility-cart',
+    subcategory: 'utility',
     name: 'ECAR Lithium A4 Utility Cart',
     brand: 'ecar',
     brandName: 'ECAR',
@@ -2239,6 +2300,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'used-yamaha-g29-2-seat-ex-lease-golf-cart',
+    subcategory: 'used',
     name: 'Used Yamaha G29 2-Seat Ex-Lease Golf Cart',
     brand: 'yamaha',
     brandName: 'Yamaha',
@@ -2267,6 +2329,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'used-club-car-precedent-2-seat-ex-lease-golf-cart',
+    subcategory: 'used',
     name: 'Used Club Car Precedent 2-Seat Ex-Lease Golf Cart',
     brand: 'club-car',
     brandName: 'Club Car',
@@ -2295,6 +2358,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'used-yamaha-drive-2-seat-ex-lease-golf-cart',
+    subcategory: 'used',
     name: 'Used Yamaha Drive 2-Seat Ex-Lease Golf Cart',
     brand: 'yamaha',
     brandName: 'Yamaha',
@@ -2323,6 +2387,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'used-e-z-go-rxv-4-seat-ex-fleet-lithium-golf-cart',
+    subcategory: 'used',
     name: 'Used E-Z-GO RXV 4-Seat Ex-Fleet Lithium Golf Cart',
     brand: 'e-z-go',
     brandName: 'E-Z-GO',
@@ -2351,6 +2416,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'used-club-car-precedent-4-seat-ex-lease-golf-cart',
+    subcategory: 'used',
     name: 'Used Club Car Precedent 4-Seat Ex-Lease Golf Cart',
     brand: 'club-car',
     brandName: 'Club Car',
@@ -2379,6 +2445,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'used-club-car-tempo-2-seat-lithium-ex-lease-golf-cart',
+    subcategory: 'used',
     name: 'Used Club Car Tempo 2-Seat Lithium Ex-Lease Golf Cart',
     brand: 'club-car',
     brandName: 'Club Car',
@@ -2407,6 +2474,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'gmx-gkt110-110cc-dune-buggy',
+    subcategory: 'dune-buggies',
     name: 'GMX GKT110 110cc Dune Buggy',
     brand: 'gmx',
     brandName: 'GMX',
@@ -2435,6 +2503,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mj-motor-forza-dune-buggy-163-300cc',
+    subcategory: 'dune-buggies',
     name: 'MJ Motor Forza Dune Buggy (163-300cc)',
     brand: 'mj-motor',
     brandName: 'MJ Motor',
@@ -2463,6 +2532,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mxr-300cc-fuel-injected-dune-buggy',
+    subcategory: 'dune-buggies',
     name: 'MXR 300cc Fuel-Injected Dune Buggy',
     brand: 'mxr-motorsports',
     brandName: 'MXR Motorsports',
@@ -2491,6 +2561,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'kayo-s150-150cc-2-seat-buggy',
+    subcategory: 'side-by-side',
     name: 'Kayo S150 150cc 2-Seat Buggy',
     brand: 'kayo',
     brandName: 'Kayo',
@@ -2519,6 +2590,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'hawk-razorback-4-seat-utv',
+    subcategory: 'side-by-side',
     name: 'Hawk Razorback 4-Seat UTV',
     brand: 'hawk-carts',
     brandName: 'Hawk Carts',
@@ -2547,6 +2619,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'trident-1000cc-side-by-side-utv',
+    subcategory: 'side-by-side',
     name: 'Trident 1000cc Side-by-Side UTV',
     brand: 'trident',
     brandName: 'Trident',
@@ -2575,6 +2648,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'can-am-maverick-commander-defender-limited-side-by-side',
+    subcategory: 'side-by-side',
     name: 'Can-Am Maverick / Commander / Defender Limited Side-by-Side',
     brand: 'can-am',
     brandName: 'Can-Am',
@@ -2603,6 +2677,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'cfmoto-uforce-u10-pro-zforce-side-by-side',
+    subcategory: 'side-by-side',
     name: 'CFMOTO UForce U10 Pro / ZFORCE Side-by-Side',
     brand: 'cfmoto',
     brandName: 'CFMOTO',
@@ -2631,6 +2706,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'yamaha-wolverine-x2-850-rmax2-1000-side-by-side',
+    subcategory: 'side-by-side',
     name: 'Yamaha Wolverine X2 850 / RMAX2 1000 Side-by-Side',
     brand: 'yamaha',
     brandName: 'Yamaha',
@@ -2659,6 +2735,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'yamaha-yxz1000r-ss-xt-r-sport-side-by-side',
+    subcategory: 'side-by-side',
     name: 'Yamaha YXZ1000R SS XT-R Sport Side-by-Side',
     brand: 'yamaha',
     brandName: 'Yamaha',
@@ -2687,6 +2764,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'yamaha-rmax4-1000-xt-r-4-seat-side-by-side',
+    subcategory: 'side-by-side',
     name: 'Yamaha RMAX4 1000 XT-R 4-Seat Side-by-Side',
     brand: 'yamaha',
     brandName: 'Yamaha',
@@ -2715,6 +2793,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'polaris-ranger-xd-1500-northstar-side-by-side',
+    subcategory: 'side-by-side',
     name: 'Polaris Ranger XD 1500 NorthStar Side-by-Side',
     brand: 'polaris',
     brandName: 'Polaris',
@@ -2743,6 +2822,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'polaris-rzr-xpedition-adv-ultimate',
+    subcategory: 'side-by-side',
     name: 'Polaris RZR XPEDITION ADV Ultimate',
     brand: 'polaris',
     brandName: 'Polaris',
@@ -2771,6 +2851,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'polaris-ranger-500-farm-utv',
+    subcategory: 'farm-buggies',
     name: 'Polaris Ranger 500 Farm UTV',
     brand: 'polaris',
     brandName: 'Polaris',
@@ -2799,6 +2880,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'polaris-ranger-1000-premium-farm-utv',
+    subcategory: 'farm-buggies',
     name: 'Polaris Ranger 1000 Premium Farm UTV',
     brand: 'polaris',
     brandName: 'Polaris',
@@ -2827,6 +2909,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'can-am-defender-hd7-hd9-farm-utv',
+    subcategory: 'farm-buggies',
     name: 'Can-Am Defender HD7 / HD9 Farm UTV',
     brand: 'can-am',
     brandName: 'Can-Am',
@@ -2855,6 +2938,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'licensed-rzr-style-4x4-kids-electric-ride-on-buggy-24-48v',
+    subcategory: 'electric',
     name: 'Licensed RZR-Style 4x4 Kids Electric Ride-On Buggy (24-48V)',
     brand: 'various',
     brandName: 'Various',
@@ -2883,6 +2967,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'kids-dune-buggy-petrol-90-125cc',
+    subcategory: 'petrol',
     name: 'Kids Dune Buggy Petrol (90-125cc)',
     brand: 'various',
     brandName: 'Various',
@@ -2911,6 +2996,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'hammerhead-torpedo-208cc-teen-buggy',
+    subcategory: 'petrol',
     name: 'Hammerhead Torpedo 208cc Teen Buggy',
     brand: 'hammerhead',
     brandName: 'Hammerhead',
@@ -2939,6 +3025,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-lithium-24v-250wh-299wh-36-hole-battery',
+    subcategory: 'lithium',
     name: 'MGI Lithium 24V 250Wh / 299Wh 36-Hole Battery',
     brand: 'mgi',
     brandName: 'MGI',
@@ -2967,6 +3054,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-lithium-12v-20ah-299wh-18-hole-battery',
+    subcategory: 'lithium',
     name: 'MGI Lithium 12V 20Ah / 299Wh 18-Hole Battery',
     brand: 'mgi',
     brandName: 'MGI',
@@ -2995,6 +3083,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-lithium-24v-13ah-remote-series-battery',
+    subcategory: 'lithium',
     name: 'MGI Lithium 24V 13Ah Remote Series Battery',
     brand: 'mgi',
     brandName: 'MGI',
@@ -3023,6 +3112,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'motocaddy-m-series-28v-lithium-battery-charger',
+    subcategory: 'lithium',
     name: 'Motocaddy M-Series 28V Lithium Battery + Charger',
     brand: 'motocaddy',
     brandName: 'Motocaddy',
@@ -3051,6 +3141,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'aftermarket-36-hole-lithium-battery-kit',
+    subcategory: 'lithium',
     name: 'Aftermarket 36-Hole Lithium Battery Kit',
     brand: 'generic',
     brandName: 'Generic',
@@ -3079,6 +3170,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'aftermarket-12v-18-25ah-lithium-battery-charger',
+    subcategory: 'lithium',
     name: 'Aftermarket 12V 18-25Ah Lithium Battery + Charger',
     brand: 'generic',
     brandName: 'Generic',
@@ -3107,6 +3199,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'ultramax-22ah-12v-lithium-battery',
+    subcategory: 'lithium',
     name: 'Ultramax 22Ah 12V Lithium Battery',
     brand: 'ultramax',
     brandName: 'Ultramax',
@@ -3135,6 +3228,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'lead-acid-12v-24ah-buggy-battery',
+    subcategory: 'lithium',
     name: 'Lead-Acid 12V 24Ah Buggy Battery',
     brand: 'generic',
     brandName: 'Generic',
@@ -3163,6 +3257,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-lithium-24v-smart-charger',
+    subcategory: 'chargers',
     name: 'MGI Lithium 24V Smart Charger',
     brand: 'mgi',
     brandName: 'MGI',
@@ -3191,6 +3286,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-lithium-12v-charger',
+    subcategory: 'chargers',
     name: 'MGI Lithium 12V Charger',
     brand: 'mgi',
     brandName: 'MGI',
@@ -3219,6 +3315,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'aftermarket-lithium-charger-12-18-24ah',
+    subcategory: 'chargers',
     name: 'Aftermarket Lithium Charger (12/18/24Ah)',
     brand: 'generic',
     brandName: 'Generic',
@@ -3247,6 +3344,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'lead-acid-buggy-charger',
+    subcategory: 'chargers',
     name: 'Lead-Acid Buggy Charger',
     brand: 'generic',
     brandName: 'Generic',
@@ -3275,6 +3373,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-buggy-battery-bag',
+    subcategory: 'chargers',
     name: 'Golf Buggy Battery Bag',
     brand: 'generic',
     brandName: 'Generic',
@@ -3303,6 +3402,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'trojan-t105-flooded-battery-set-48v-8-batteries',
+    subcategory: 'cart-sets',
     name: 'Trojan T105 Flooded Battery Set (48V, 8 Batteries)',
     brand: 'trojan',
     brandName: 'Trojan',
@@ -3331,6 +3431,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'trojan-t875-flooded-battery-set-48v',
+    subcategory: 'cart-sets',
     name: 'Trojan T875 Flooded Battery Set (48V)',
     brand: 'trojan',
     brandName: 'Trojan',
@@ -3359,6 +3460,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'trojan-t1275-12v-battery-set-48v',
+    subcategory: 'cart-sets',
     name: 'Trojan T1275 12V Battery Set (48V)',
     brand: 'trojan',
     brandName: 'Trojan',
@@ -3387,6 +3489,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'century-golf-cart-battery-set-36v-48v',
+    subcategory: 'cart-sets',
     name: 'Century Golf Cart Battery Set (36V / 48V)',
     brand: 'century',
     brandName: 'Century',
@@ -3415,6 +3518,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'trojan-agm-pro-maintenance-free-battery-set-48v',
+    subcategory: 'cart-sets',
     name: 'Trojan AGM PRO Maintenance-Free Battery Set (48V)',
     brand: 'trojan',
     brandName: 'Trojan',
@@ -3443,6 +3547,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'trojan-gc2-lithium-battery-48v-24v',
+    subcategory: 'cart-sets',
     name: 'Trojan GC2 Lithium Battery (48V / 24V)',
     brand: 'trojan',
     brandName: 'Trojan',
@@ -3471,6 +3576,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'voltrac-flex-lithium-conversion-kit-e-z-go-rxv-club-car-48v',
+    subcategory: 'cart-sets',
     name: 'Voltrac Flex Lithium Conversion Kit (E-Z-GO RXV / Club Car 48V)',
     brand: 'voltrac',
     brandName: 'Voltrac',
@@ -3499,6 +3605,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'clicgear-wheel-kit-4-0-8-0',
+    subcategory: 'wheels-tyres',
     name: 'Clicgear Wheel Kit (4.0 / 8.0+)',
     brand: 'clicgear',
     brandName: 'Clicgear',
@@ -3527,6 +3634,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'hedgehog-solid-wheels-clicgear-2-0-8-0',
+    subcategory: 'wheels-tyres',
     name: 'Hedgehog Solid Wheels (Clicgear 2.0-8.0)',
     brand: 'hedgehog',
     brandName: 'Hedgehog',
@@ -3555,6 +3663,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-rear-wheels-pair-zip-ai',
+    subcategory: 'wheels-tyres',
     name: 'MGI Rear Wheels Pair (Zip / Ai)',
     brand: 'mgi',
     brandName: 'MGI',
@@ -3583,6 +3692,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-zip-navigator-at-rear-wheel-single',
+    subcategory: 'wheels-tyres',
     name: 'MGI Zip Navigator AT Rear Wheel (Single)',
     brand: 'mgi',
     brandName: 'MGI',
@@ -3611,6 +3721,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-winter-wheel-single',
+    subcategory: 'wheels-tyres',
     name: 'MGI Winter Wheel (Single)',
     brand: 'mgi',
     brandName: 'MGI',
@@ -3639,6 +3750,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-quad-5th-anti-tip-wheel',
+    subcategory: 'wheels-tyres',
     name: 'MGI Quad 5th / Anti-Tip Wheel',
     brand: 'mgi',
     brandName: 'MGI',
@@ -3667,6 +3779,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'stinger-sg-4-front-wheel-assembly-rear-wheel',
+    subcategory: 'wheels-tyres',
     name: 'Stinger SG-4 Front Wheel Assembly / Rear Wheel',
     brand: 'stinger',
     brandName: 'Stinger',
@@ -3695,6 +3808,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'generic-buggy-front-wheel',
+    subcategory: 'wheels-tyres',
     name: 'Generic Buggy Front Wheel',
     brand: 'generic',
     brandName: 'Generic',
@@ -3723,6 +3837,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'generic-buggy-rear-wheel-complete',
+    subcategory: 'wheels-tyres',
     name: 'Generic Buggy Rear Wheel (Complete)',
     brand: 'generic',
     brandName: 'Generic',
@@ -3751,6 +3866,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'replacement-tyre-rubber-10-inch-universal',
+    subcategory: 'wheels-tyres',
     name: 'Replacement Tyre Rubber 10 inch (Universal)',
     brand: 'generic',
     brandName: 'Generic',
@@ -3779,6 +3895,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'pneumatic-wheel-rim-18x8-5-8-4-stud',
+    subcategory: 'wheels-tyres',
     name: 'Pneumatic Wheel + Rim 18x8.5-8 4-Stud',
     brand: 'generic',
     brandName: 'Generic',
@@ -3807,6 +3924,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-cart-turf-tyres',
+    subcategory: 'wheels-tyres',
     name: 'Golf Cart Turf Tyres',
     brand: 'generic',
     brandName: 'Generic',
@@ -3835,6 +3953,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-zip-navigator-motor-controller',
+    subcategory: 'drive-electrical',
     name: 'MGI Zip Navigator Motor Controller',
     brand: 'mgi',
     brandName: 'MGI',
@@ -3863,6 +3982,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-gps-front-wheel-assembly',
+    subcategory: 'drive-electrical',
     name: 'MGI GPS+ Front Wheel Assembly',
     brand: 'mgi',
     brandName: 'MGI',
@@ -3891,6 +4011,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'electric-buggy-motor-gearbox-aftermarket',
+    subcategory: 'drive-electrical',
     name: 'Electric Buggy Motor / Gearbox (Aftermarket)',
     brand: 'generic',
     brandName: 'Generic',
@@ -3919,6 +4040,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'clicgear-secondary-strut-mgi-bag-rest-spacer',
+    subcategory: 'drive-electrical',
     name: 'Clicgear Secondary Strut / MGI Bag-Rest Spacer',
     brand: 'clicgear',
     brandName: 'Clicgear',
@@ -3947,6 +4069,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mgi-accessory-station-port-cover-and-trim-parts',
+    subcategory: 'drive-electrical',
     name: 'MGI Accessory-Station Port Cover & Trim Parts',
     brand: 'mgi',
     brandName: 'MGI',
@@ -3975,6 +4098,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-buggy-umbrella-holder',
+    subcategory: 'accessories',
     name: 'Golf Buggy Umbrella Holder',
     brand: 'generic',
     brandName: 'Generic',
@@ -4003,6 +4127,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-buggy-drink-holder-gps-and-phone-holder',
+    subcategory: 'accessories',
     name: 'Golf Buggy Drink Holder / GPS & Phone Holder',
     brand: 'generic',
     brandName: 'Generic',
@@ -4031,6 +4156,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-buggy-scorecard-accessory-console',
+    subcategory: 'accessories',
     name: 'Golf Buggy Scorecard / Accessory Console',
     brand: 'generic',
     brandName: 'Generic',
@@ -4059,6 +4185,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-buggy-add-on-seat-footboard',
+    subcategory: 'accessories',
     name: 'Golf Buggy Add-On Seat / Footboard',
     brand: 'generic',
     brandName: 'Generic',
@@ -4087,6 +4214,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-buggy-travel-storage-cover-and-wheel-bags',
+    subcategory: 'accessories',
     name: 'Golf Buggy Travel / Storage Cover & Wheel Bags',
     brand: 'generic',
     brandName: 'Generic',
@@ -4115,6 +4243,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'winter-all-terrain-wheel-upgrade-kit',
+    subcategory: 'accessories',
     name: 'Winter / All-Terrain Wheel Upgrade Kit',
     brand: 'generic',
     brandName: 'Generic',
@@ -4143,6 +4272,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'sand-wet-weather-tyres-and-bag-rain-cover',
+    subcategory: 'accessories',
     name: 'Sand / Wet-Weather Tyres & Bag Rain Cover',
     brand: 'generic',
     brandName: 'Generic',
@@ -4171,6 +4301,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-cart-bag-14-way-divider',
+    subcategory: 'bags',
     name: 'Golf Cart Bag (14-Way Divider)',
     brand: 'generic',
     brandName: 'Generic',
@@ -4199,6 +4330,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'big-max-dri-lite-premium-cart-bag',
+    subcategory: 'bags',
     name: 'Big Max Dri Lite Premium Cart Bag',
     brand: 'big-max',
     brandName: 'Big Max',
@@ -4227,6 +4359,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'lightweight-golf-stand-bag',
+    subcategory: 'bags',
     name: 'Lightweight Golf Stand Bag',
     brand: 'generic',
     brandName: 'Generic',
@@ -4255,6 +4388,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'soft-golf-travel-bag',
+    subcategory: 'bags',
     name: 'Soft Golf Travel Bag',
     brand: 'generic',
     brandName: 'Generic',
@@ -4283,6 +4417,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'titleist-pro-v1-golf-balls-dozen',
+    subcategory: 'golf-balls',
     name: 'Titleist Pro V1 Golf Balls (Dozen)',
     brand: 'titleist',
     brandName: 'Titleist',
@@ -4311,6 +4446,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'taylormade-tp5-golf-balls-dozen',
+    subcategory: 'golf-balls',
     name: 'TaylorMade TP5 Golf Balls (Dozen)',
     brand: 'taylormade',
     brandName: 'TaylorMade',
@@ -4339,6 +4475,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'srixon-z-star-golf-balls-dozen',
+    subcategory: 'golf-balls',
     name: 'Srixon Z-Star Golf Balls (Dozen)',
     brand: 'srixon',
     brandName: 'Srixon',
@@ -4367,6 +4504,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'precision-pro-nx7-golf-rangefinder',
+    subcategory: 'rangefinders-gps',
     name: 'Precision Pro NX7 Golf Rangefinder',
     brand: 'precision-pro',
     brandName: 'Precision Pro',
@@ -4395,6 +4533,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'bushnell-tour-v5-golf-rangefinder',
+    subcategory: 'rangefinders-gps',
     name: 'Bushnell Tour V5 Golf Rangefinder',
     brand: 'bushnell',
     brandName: 'Bushnell',
@@ -4423,6 +4562,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'bushnell-pro-x3-golf-rangefinder',
+    subcategory: 'rangefinders-gps',
     name: 'Bushnell Pro X3 Golf Rangefinder',
     brand: 'bushnell',
     brandName: 'Bushnell',
@@ -4451,6 +4591,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'shot-scope-g5-gps-golf-watch',
+    subcategory: 'rangefinders-gps',
     name: 'Shot Scope G5 GPS Golf Watch',
     brand: 'shot-scope',
     brandName: 'Shot Scope',
@@ -4479,6 +4620,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'garmin-approach-s12-gps-golf-watch',
+    subcategory: 'rangefinders-gps',
     name: 'Garmin Approach S12 GPS Golf Watch',
     brand: 'garmin',
     brandName: 'Garmin',
@@ -4507,6 +4649,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'garmin-approach-s42-gps-golf-watch',
+    subcategory: 'rangefinders-gps',
     name: 'Garmin Approach S42 GPS Golf Watch',
     brand: 'garmin',
     brandName: 'Garmin',
@@ -4535,6 +4678,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-putting-mat',
+    subcategory: 'practice-aids',
     name: 'Golf Putting Mat',
     brand: 'generic',
     brandName: 'Generic',
@@ -4563,6 +4707,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-practice-hitting-net',
+    subcategory: 'practice-aids',
     name: 'Golf Practice Hitting Net',
     brand: 'generic',
     brandName: 'Generic',
@@ -4591,6 +4736,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-hitting-mat',
+    subcategory: 'practice-aids',
     name: 'Golf Hitting Mat',
     brand: 'generic',
     brandName: 'Generic',
@@ -4619,6 +4765,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'junior-golf-club-set',
+    subcategory: 'complete-sets',
     name: 'Junior Golf Club Set',
     brand: 'various',
     brandName: 'Various',
@@ -4647,6 +4794,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'beginner-complete-golf-club-set-12-piece',
+    subcategory: 'complete-sets',
     name: 'Beginner Complete Golf Club Set (12-Piece)',
     brand: 'various',
     brandName: 'Various',
@@ -4675,6 +4823,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'ladies-complete-golf-club-set',
+    subcategory: 'complete-sets',
     name: 'Ladies\' Complete Golf Club Set',
     brand: 'various',
     brandName: 'Various',
@@ -4703,6 +4852,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-driver',
+    subcategory: 'woods-and-irons',
     name: 'Golf Driver',
     brand: 'various',
     brandName: 'Various',
@@ -4731,6 +4881,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'mid-range-golf-iron-set',
+    subcategory: 'woods-and-irons',
     name: 'Mid-Range Golf Iron Set',
     brand: 'various',
     brandName: 'Various',
@@ -4759,6 +4910,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-wedge',
+    subcategory: 'wedges-and-putters',
     name: 'Golf Wedge',
     brand: 'various',
     brandName: 'Various',
@@ -4787,6 +4939,7 @@ export const PRODUCTS = [
   },
   {
     slug: 'golf-putter',
+    subcategory: 'wedges-and-putters',
     name: 'Golf Putter',
     brand: 'various',
     brandName: 'Various',
@@ -4826,7 +4979,15 @@ export function getProductsByCategory(categorySlug) {
   if (clean === 'used-golf-buggies' || clean === 'used') {
     return PRODUCTS.filter((p) => p.condition === 'Used' || p.category === 'used-golf-buggies' || p.subcategory === 'used');
   }
-  return PRODUCTS.filter((p) => p.category === clean || p.subcategory === clean || (p.category === 'parts' && clean === 'golf-buggy-parts') || (p.category === 'accessories' && clean === 'golf-buggy-accessories'));
+  return PRODUCTS.filter((p) => 
+    p.category === clean || 
+    p.subcategory === clean || 
+    (p.category === 'parts' && (clean === 'golf-buggy-parts' || clean === 'parts')) || 
+    (p.category === 'accessories' && (clean === 'golf-buggy-accessories' || clean === 'accessories')) ||
+    (p.category === 'luxury-golf-carts' && (clean === 'golf-carts' || clean === 'luxury-golf-carts')) ||
+    (p.category === 'batteries' && (clean === 'golf-buggy-batteries' || clean === 'batteries')) ||
+    (p.category === 'gps-follow-buggies' && (clean === 'gps-follow' || clean === 'gps-follow-buggies'))
+  );
 }
 
 export function getProductsByBrand(brandSlug) {
