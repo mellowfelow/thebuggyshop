@@ -27,7 +27,14 @@ export default function ProductCard({
   const discountPercent = SHOP.cryptoDiscount || 10;
   const savings = Math.round(product.price * (discountPercent / 100));
   const cryptoPrice = product.price - savings;
-  const seatingText = product.seats || product.specs?.seating || product.specs?.seat || '2-Seat';
+  // Only vehicles have seating / battery / range. Parts, accessories, clubs and batteries show brand + a short description instead.
+  const isVehicle = ['electric-golf-buggies', 'push-pull-golf-buggies', 'luxury-golf-carts', 'off-road-buggies', 'kids-buggies', 'used-golf-buggies'].includes(product.category);
+  const seatingRaw = isVehicle ? product.seats || product.specs?.seating || product.specs?.seat || '' : '';
+  const tagText = seatingRaw ? seatingRaw.split('(')[0].trim() : product.brandName || product.brand || '';
+  const microSpecs = [
+    product.specs?.battery && { Icon: BatteryCharging, text: product.specs.battery },
+    product.specs?.range && { Icon: Gauge, text: product.specs.range },
+  ].filter(Boolean);
 
   const handleDecrease = (e) => {
     e.preventDefault();
@@ -101,10 +108,12 @@ export default function ProductCard({
             <span className="uppercase tracking-wider font-bold text-[#C5A880] truncate">
               {product.category.replace(/-/g, ' ')}
             </span>
-            <span className="font-semibold text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded flex items-center gap-1 shrink-0">
-              <Users className="w-3 h-3 text-[#C5A880]" />
-              <span>{seatingText.split('(')[0].trim()}</span>
-            </span>
+            {tagText && (
+              <span className="font-semibold text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded flex items-center gap-1 min-w-0 max-w-[55%]">
+                {seatingRaw && <Users className="w-3 h-3 text-[#C5A880] shrink-0" />}
+                <span className="truncate">{tagText}</span>
+              </span>
+            )}
           </div>
 
           {/* Title */}
@@ -114,18 +123,22 @@ export default function ProductCard({
             </h3>
           </Link>
 
-          {/* Inline Micro Specs */}
-          <div className="flex items-center gap-2 text-[10px] sm:text-xs text-slate-500 pt-0.5">
-            <span className="inline-flex items-center gap-1 truncate font-medium">
-              <BatteryCharging className="w-3 h-3 text-[#C5A880] shrink-0" />
-              <span className="truncate">{product.specs?.battery || 'LiFePO4'}</span>
-            </span>
-            <span className="text-slate-300">&bull;</span>
-            <span className="inline-flex items-center gap-1 truncate font-medium">
-              <Gauge className="w-3 h-3 text-[#C5A880] shrink-0" />
-              <span className="truncate">{product.specs?.range || '36+ Holes'}</span>
-            </span>
-          </div>
+          {/* Inline specs (only when the product has them) or its short description */}
+          {microSpecs.length > 0 ? (
+            <div className="flex items-center gap-2 text-[10px] sm:text-xs text-slate-500 pt-0.5">
+              {microSpecs.map(({ Icon, text }, i) => (
+                <React.Fragment key={text}>
+                  {i > 0 && <span className="text-slate-300">&bull;</span>}
+                  <span className="inline-flex items-center gap-1 truncate font-medium">
+                    <Icon className="w-3 h-3 text-[#C5A880] shrink-0" />
+                    <span className="truncate">{text}</span>
+                  </span>
+                </React.Fragment>
+              ))}
+            </div>
+          ) : (
+            <p className="text-[11px] sm:text-xs text-slate-500 leading-snug line-clamp-2 pt-0.5">{product.shortDescription}</p>
+          )}
         </div>
 
         {/* Pricing & Crypto Banner */}

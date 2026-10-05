@@ -2,12 +2,13 @@ import { NextResponse } from 'next/server';
 import { SITE } from '@/src/config/site';
 import { CATEGORY_TREE } from '@/src/config/categories';
 import { PRODUCTS } from '@/src/config/products';
+import { inNode } from '@/lib/catalog';
 
 export async function GET() {
   const categories = CATEGORY_TREE.map((c) => ({
     ...c,
     url: `https://${SITE.domain}/shop/${c.slug}/`,
-    productCount: PRODUCTS.filter((p) => p.category === c.slug).length,
+    productCount: PRODUCTS.filter((p) => inNode(p, c.slug)).length,
   }));
 
   return NextResponse.json(

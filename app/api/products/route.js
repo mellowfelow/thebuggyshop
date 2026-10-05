@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { SITE } from '@/src/config/site';
 import { PRODUCTS } from '@/src/config/products';
+import { inNode } from '@/lib/catalog';
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
@@ -12,7 +13,7 @@ export async function GET(request) {
   let results = [...PRODUCTS];
 
   if (category) {
-    results = results.filter((p) => p.category === category);
+    results = results.filter((p) => inNode(p, category));
   }
 
   if (brand) {

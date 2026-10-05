@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { SITE, SHOP, CONTACT } from '@/src/config/site';
 import { PRODUCTS } from '@/src/config/products';
 import { CATEGORY_TREE } from '@/src/config/categories';
+import { searchProducts } from '@/lib/search';
+import { inNode } from '@/lib/catalog';
 
 const TOOLS_DEFINITIONS = [
   {
@@ -130,19 +132,9 @@ export async function POST(request) {
       const { name, arguments: args = {} } = params;
 
       if (name === 'search_products') {
-        let results = [...PRODUCTS];
-        if (args.query) {
-          const q = args.query.toLowerCase();
-          results = results.filter(
-            (p) =>
-              p.name.toLowerCase().includes(q) ||
-              p.shortDescription.toLowerCase().includes(q) ||
-              (p.brandName && p.brandName.toLowerCase().includes(q)) ||
-              p.category.toLowerCase().includes(q)
-          );
-        }
+        let results = args.query ? searchProducts(String(args.query)).results.map((r) => r.product) : [...PRODUCTS];
         if (args.category) {
-          results = results.filter((p) => p.category === args.category);
+          results = results.filter((p) => inNode(p, args.category));
         }
         if (args.brand) {
           results = results.filter((p) => p.brand === args.brand);
@@ -224,7 +216,7 @@ export async function POST(request) {
           slug: c.slug,
           name: c.navLabel,
           pageTitle: c.pageTitle,
-          productCount: PRODUCTS.filter((p) => p.category === c.slug).length,
+          productCount: PRODUCTS.filter((p) => inNode(p, c.slug)).length,
           url: `https://${SITE.domain}/shop/${c.slug}/`,
         }));
 

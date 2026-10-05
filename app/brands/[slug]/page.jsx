@@ -200,7 +200,7 @@ export default async function BrandPage({ params }) {
 
       {/* Brand Product Listing with Facet Filters */}
       <ShopClient 
-        initialProducts={brandProducts.length > 0 ? brandProducts : PRODUCTS}
+        initialProducts={brandProducts}
         categories={CATEGORY_TREE}
         currentBrand={brand}
       />

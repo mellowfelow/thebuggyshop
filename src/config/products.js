@@ -729,10 +729,7 @@ export const PRODUCTS = [
       brakes: 'Dual Footbrakes',
       warranty: '5-Year Manufacturer Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'clicgear-rovic-rv1s-swivel-push-golf-buggy',
@@ -811,10 +808,7 @@ export const PRODUCTS = [
       payloadCapacity: '360 kg Payload',
       warranty: '2-Year Comprehensive Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'ecar-lithium-a2-2-seater-golf-cart',
@@ -850,10 +844,7 @@ export const PRODUCTS = [
       payloadCapacity: '400 kg',
       warranty: '5-Year Battery / 3-Year Chassis Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'rippa-4-seat-electric-golf-cart',
@@ -889,10 +880,7 @@ export const PRODUCTS = [
       payloadCapacity: '450 kg',
       warranty: '3-Year Australian Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'ecar-lithium-a4-4-seater-golf-cart',
@@ -928,10 +916,7 @@ export const PRODUCTS = [
       payloadCapacity: '450 kg',
       warranty: '5-Year Lithium / 3-Year Vehicle Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'ecar-lithium-magnum-4lr-lifted-golf-cart',
@@ -967,10 +952,7 @@ export const PRODUCTS = [
       brakes: '4-Wheel Hydraulic Disc Brakes',
       warranty: '5-Year Battery / 3-Year Chassis'
     },
-    images: [
-      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'tomberlin-e-merge-ss-4-seat-saloon-cart',
@@ -1005,10 +987,7 @@ export const PRODUCTS = [
       brakes: '4-Wheel Hydraulic Disc Brakes & Electric Power Steering',
       warranty: '5-Year Factory Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'garia-lithium-luxury-golf-cart',
@@ -1043,10 +1022,7 @@ export const PRODUCTS = [
       brakes: 'Dual Circuit Hydraulic Disc Brakes',
       warranty: '3-Year Bespoke Manufacturer Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
 
   // ==========================================
@@ -1085,10 +1061,7 @@ export const PRODUCTS = [
       safety: 'Full Tubular Steel Roll Cage & 4-Point Harnesses',
       warranty: '12-Month Australian Parts Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'crossfire-blazer-200r-dune-buggy',
@@ -1122,10 +1095,7 @@ export const PRODUCTS = [
       payloadCapacity: '180 kg (2-Passenger)',
       warranty: '12-Month Factory Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'kayo-s350-side-by-side-utv',
@@ -1159,10 +1129,7 @@ export const PRODUCTS = [
       cargoBed: 'Rear Tilting Tipper Bed (150 kg Capacity)',
       warranty: '12-Month Parts & Labour Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'crossfire-400gt-4x4-farm-utv',
@@ -1196,10 +1163,7 @@ export const PRODUCTS = [
       towingCapacity: '550 kg Tow Rating',
       warranty: '2-Year Australian Commercial Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'polaris-ranger-xp-1000-hd-utv',
@@ -1233,10 +1197,7 @@ export const PRODUCTS = [
       groundClearance: '330 mm (13 in)',
       warranty: '2-Year Factory Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
 
   // ==========================================
@@ -1274,10 +1235,7 @@ export const PRODUCTS = [
       payloadCapacity: '85 kg',
       warranty: '12-Month Australian Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'crossfire-90cc-twin-seat-kids-petrol-buggy',
@@ -1311,10 +1269,7 @@ export const PRODUCTS = [
       payloadCapacity: '95 kg',
       warranty: '12-Month Factory Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
 
   // ==========================================
@@ -1352,10 +1307,7 @@ export const PRODUCTS = [
       compatibility: 'All MGI Zip & MGI Ai Series Buggies',
       warranty: '2-Year Australian Replacement Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1592919505780-303950717480?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'giant-48v-90ah-golf-cart-drop-in-lithium-battery',
@@ -1389,10 +1341,7 @@ export const PRODUCTS = [
       compatibility: 'Club Car, Yamaha, E-Z-GO, ECAR 48V Carts',
       warranty: '5-Year Australian Replacement Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
 
   // ==========================================
@@ -1430,10 +1379,7 @@ export const PRODUCTS = [
       brakes: 'Downhill Speed Regulation',
       warranty: '12-Month Australian Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1593111774642-a1548e64c5d5?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   },
   {
     slug: 'ex-fleet-ezgo-rxv-48v-lithium-2-seat-cart',
@@ -1467,10 +1413,7 @@ export const PRODUCTS = [
       brakes: 'Patented IntelliBrake Auto Park System',
       warranty: '12-Month Vehicle / 3-Year Battery Warranty'
     },
-    images: [
-      'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80'
-    ]
+    images: ['/images/placeholder.webp']
   }
 ,
   {

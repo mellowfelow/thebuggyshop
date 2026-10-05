@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { PRODUCTS, CATEGORIES, SHOP, SITE } from '@/src/config/site';
+import { inNode } from '@/lib/catalog';
 
 export async function GET() {
   return NextResponse.json(
@@ -7,7 +8,7 @@ export async function GET() {
       catalog: CATEGORIES.map((c) => ({
         ...c,
         url: `https://${SITE.domain}/shop/${c.slug}/`,
-        products: PRODUCTS.filter((p) => p.category === c.slug).map((p) => ({
+        products: PRODUCTS.filter((p) => inNode(p, c.slug)).map((p) => ({
           slug: p.slug,
           name: p.name,
           price: p.price,

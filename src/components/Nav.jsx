@@ -20,6 +20,7 @@ import { SITE, CONTACT, ENTITY } from '@/src/config/site';
 import { getRootCategories } from '@/src/config/categories';
 import { BRANDS } from '@/src/config/brands';
 import Logo from '@/src/components/Logo';
+import NavSearch from '@/src/components/NavSearch';
 
 export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -228,14 +229,7 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
 
         {/* Right Action Buttons */}
         <div className="flex items-center space-x-3">
-          <Link
-            href="/search/"
-            className="p-2.5 text-slate-300 hover:text-[#C5A880] hover:bg-slate-800 rounded-xl transition-colors"
-            aria-label="Search Golf Buggies and Accessories"
-            id="nav-search-btn"
-          >
-            <Search className="w-4 h-4" />
-          </Link>
+          <NavSearch />
 
           <button
             type="button"

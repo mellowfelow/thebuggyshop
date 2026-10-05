@@ -59,7 +59,7 @@ export default function SearchPage() {
       </div>
 
       <Suspense fallback={<div className="p-8 text-center text-xs text-[#4A5D53]">Loading search interface...</div>}>
-        <SearchClient products={PRODUCTS} posts={POSTS} categories={CATEGORIES} />
+        <SearchClient />
       </Suspense>
     </div>
   );
