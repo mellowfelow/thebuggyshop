@@ -6,7 +6,7 @@ import { SITE, CONTACT, SHOP } from '@/src/config/site';
 import { getCategoryBySlug } from '@/src/config/categories';
 import { PRODUCTS, getProductBySlug } from '@/src/config/products';
 import JsonLd from '@/src/components/JsonLd';
-import { absUrl, clampTitle, clampDesc, productSku, hasRealRating } from '@/lib/seo';
+import { absUrl, clampTitle, clampDesc, productSku, hasRealRating, realImages } from '@/lib/seo';
 import ProductDetailClient from './ProductDetailClient';
 
 export async function generateStaticParams() {
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
   const price = `$${product.price.toLocaleString('en-AU')}`;
   const title = clampTitle(product.name);
   const description = clampDesc(`${product.shortDescription} ${price} AUD inc. GST.`);
-  const image = absUrl(product.images?.[0]);
+  const image = absUrl(realImages(product)[0] || '/images/hero/hero-1.webp');
 
   return {
     title: { absolute: title },
@@ -61,7 +61,7 @@ export default async function ProductPage({ params }) {
         "@id": `https://${SITE.domain}/shop/${product.category}/${product.slug}/#product`,
         "name": product.name,
         "description": product.description,
-        "image": (product.images || []).map(absUrl),
+        ...(realImages(product).length ? { "image": realImages(product).map(absUrl) } : {}),
         "sku": productSku(product.slug),
         "brand": {
           "@type": "Brand",

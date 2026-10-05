@@ -6,7 +6,7 @@ import { CATEGORY_TREE } from '@/src/config/categories';
 import { PRODUCTS } from '@/src/config/products';
 import { BRANDS } from '@/src/config/brands';
 import { LOCATIONS } from '@/src/config/locations';
-import { absUrl } from '@/lib/seo';
+import { absUrl, realImages } from '@/lib/seo';
 
 export default function sitemap() {
   const base = `https://${SITE.domain}`;
@@ -40,7 +40,7 @@ export default function sitemap() {
     url: `${base}/shop/${p.category}/${p.slug}/`,
     changeFrequency: 'weekly',
     priority: 0.85,
-    images: (p.images || []).map(absUrl),
+    ...(realImages(p).length ? { images: realImages(p).map(absUrl) } : {}),
   }));
 
   const brandPages = BRANDS.map((b) => ({ url: `${base}/brands/${b.slug}/`, changeFrequency: 'weekly', priority: 0.75 }));
