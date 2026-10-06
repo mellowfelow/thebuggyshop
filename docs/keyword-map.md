@@ -1,731 +1,1004 @@
-# Keyword Map: The Buggy Shop (Market: Australia)
-**Generated:** 6 Oct 2026  |  **Site:** thebuggyshoppty.com.au  |  **Source:** 15 Semrush Keyword Magic exports (AU, 6 Sep 2026) in `Desktop/The Buggy Shop/keyword exports/`
-**Status: IMPLEMENTED on 6 Oct 2026 in five batches (titles and copy, structure, FAQs, blog, remaining keywords). Section 0 and section 3 describe the site BEFORE that work; docs/keyword-targets.json holds the live targets and the crosscheck enforces them. Replace this file after each new keyword export.**
-
-**Total Keywords Processed:** 1,499 rows, 854 unique
-**Keywords Kept (Primary Pool, T1+T2):** 143 in clusters
-**Keywords in Supporting Pool (T3, KD 41-55):** 6
-**Keywords Dropped:** 489 (427 under 50 searches, 58 baby-stroller keywords, 4 non-commercial) after merging 191 duplicate and spelling variants
-**Clusters Created:** 34 (28 on existing pages, 5 blog posts, 1 product gap)
-**Pages Mapped:** 28 existing / 5 new
-
----
-
-## 0. Where we are now (read this first)
-
-1. **The export is about golf buggies, carts and off-road buggies, which matches the site.** The head terms are healthy: "golf buggy" 6,600 (KD 11), "golf cart" 5,400 (KD 39), "golf buggy for sale" 1,900 (KD 10), "mgi golf buggy" 1,900 (KD 20). 88% of the clustered keywords are KD 25 or lower, so most of this is winnable.
-2. **A quarter of the real demand is the wrong product.** "Buggy" also means baby stroller in Australia. Of the 236 keywords with 50+ searches, 58 are stroller/pram terms (8,790 searches a month) and were removed. Seven bare terms such as "buggy" (5,400) and "buggies for sale" (590) are ambiguous and are parked for review, not targeted.
-3. **The site already has a page for almost every cluster (28 of 34 land on an existing page), but the wording only partly matches.** On the strict test, 16 of 24 titles, 11 of 24 H1s and 10 of 24 meta descriptions already contain the full planned keyword. See section 3.
-4. **Four structural problems stand out:**
-   - **Home and /shop/ compete.** Both are titled "Golf Buggy for Sale Australia ...". Plan: home = "golf buggy" (head term), /shop/ = "golf buggy for sale" (transactional).
-   - **"Golf trolley" demand lands on an empty page.** /shop/golf-trolleys/ has 0 products but "golf trolley" is 880 searches (1,070 with variants). Cross-list the push and walk-behind buggies there.
-   - **Used terms are split across two pages.** /shop/used-golf-buggies/ and /shop/used/ both target "used golf buggy/cart". Keep one.
-   - **Beach and dune buggies are the same product on two pages.** /shop/beach-buggies/ is empty; "beach buggy" (640) + "dune buggy" (930) belong on /shop/dune-buggies/.
-5. **6 keywords from the 36-keyword shortlist are not yet in any category target list** (see section 6), including "golf buggy sales" (390), "golf buggy sale" (320) and "used golf buggies" (210).
-6. **This export cannot judge batteries, parts, golf clubs, rangefinders or brands.** It has almost no demand data for them (the seeds were all "buggy / golf buggy / golf cart"). The next export should cover those, plus question and how-to terms. Only 4 question keywords reached 50 searches.
-7. **Content depth is the biggest gap.** The blog has 3 posts (295, 64 and 85 words). Five blog topics in this export are worth 5,440 searches a month in demand.
-
-### Data funnel
-| Step | Keywords |
-|---|---|
-| Raw rows in 15 files | 1,499 |
-| Unique keywords | 854 |
-| After merging singular/plural, word-order, spelling and typo variants | 663 |
-| Dropped: under 50 searches a month | 427 |
-| Dropped: baby stroller / pram / pushchair | 58 |
-| Dropped: non-commercial (image searches, novelty) | 4 |
-| Dropped: KD 56+ | 0 |
-| **In the pool** | **174** (T1 143, T2 14, T3 6) |
-| Held for manual review (ambiguous or off-topic) | 14 |
-| Held as competitor names | 11 |
-
----
-
-## 1. Keyword Allocation Table
-Sorted by total demand (every variant included). **Vol/KD are for the primary keyword.** Tier: T1 = KD 0-25, T2 = KD 26-40.
-
-| Cluster (primary keyword) | Vol | KD | Tier | Intent | Cluster demand | Assigned URL | Page type | Status | FAQ schema | Entity gaps | Speakable |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| golf buggy | 6600 | 11 | T1 | Commercial | 13,080 | / | Homepage | Existing | Planned (8) | None | Yes |
-| golf cart | 5400 | 39 | T2 | Commercial | 10,850 | /shop/luxury-golf-carts/ | Category | Existing | Planned (3) | None | Yes |
-| electric golf buggy for sale | 390 | 27 | T2 | Transactional | 6,450 | /shop/electric-golf-buggies/ | Category | Existing | Planned (2) | Product (H1) | Yes |
-| golf buggy for sale | 1900 | 10 | T1 | Transactional | 3,720 | /shop/ | Category hub | Existing | Planned (1) | None | Yes |
-| golf push buggy | 480 | 10 | T1 | Commercial | 3,040 | /shop/push-pull-golf-buggies/ | Category | Existing | No | None | No |
-| remote control golf buggy | 480 | 15 | T1 | Commercial | 2,740 | /shop/remote-control-golf-buggies/ | Category | Existing | No | None | No |
-| off road buggies | 590 | 6 | T1 | Commercial | 2,220 | /shop/off-road-buggies/ | Category | Existing | No | None | No |
-| mgi golf buggy | 1900 | 20 | T1 | Informational | 2,100 | /brands/mgi/ | Brand | Existing | No | None | No |
-| electric golf cart | 720 | 6 | T1 | Informational | 1,950 | /blog/electric-golf-carts-australia-guide/ | Blog | New | Planned (7) | Plan at build | Hook |
-| used golf buggy for sale | 320 | 3 | T1 | Transactional | 1,770 | /shop/used-golf-buggies/ | Category | Existing | Planned (1) | Product (H1) | Yes |
-| electric buggy | 720 | 6 | T1 | Informational | 1,620 | /blog/electric-buggy-for-adults-australia/ | Blog | New | Planned (5) | Plan at build | Hook |
-| dune buggies for sale | 260 | 18 | T1 | Transactional | 1,570 | /shop/dune-buggies/ | Sub-category | Existing | Planned (2) | Product (H1) | Yes |
-| golf trolley | 880 | 13 | T1 | Commercial | 1,070 | /shop/golf-trolleys/ | Category | Existing, EMPTY | No | None | No |
-| electric golf trolley | 70 | 5 | T1 | Informational | 990 | /shop/walk-behind/ | Sub-category | Existing | No | Product (H1) | No |
-| three wheel golf buggy | 210 | 7 | T1 | Commercial | 940 | /shop/3-wheel/ | Sub-category | Existing | No | Product (H1) | No |
-| aldi golf buggy | 390 | 28 | T2 | Informational | 740 | /blog/aldi-golf-buggy-vs-specialist-buggy/ | Blog | New | Planned (3) | Plan at build | Hook |
-| cheap golf buggy | 90 | 12 | T1 | Transactional | 570 | /blog/cheap-golf-buggies-and-carts-australia/ | Blog | New | Planned (4) | Plan at build | Hook |
-| best electric golf buggies | 50 | 25 | T1 | Commercial | 560 | /blog/best-electric-golf-buggies-australia/ | Blog | New | Planned (3) | Plan at build | Hook |
-| golf buggy accessories | 390 | 10 | T1 | Commercial | 500 | /shop/accessories/ | Category | Existing | Planned (1) | None | Yes |
-| kids buggy for sale | 50 | 1 | T1 | Commercial | 470 | /shop/kids-buggies/ | Category | Existing | No | Product (H1) | No |
-| 2 seater buggy for sale | 170 | 4 | T1 | Transactional | 290 | /shop/2-seat/ | Sub-category | Existing | No | Product (H1) | No |
-| foldable golf buggy | 90 | 6 | T1 | Commercial | 290 | /shop/4-wheel/ | Sub-category | Existing | No | Product (H1) | No |
-| electric utility cart | 70 | 2 | T1 | Informational | 240 | /shop/utility/ | Sub-category | Existing | No | Product (H1) | No |
-| ecar golf buggy | 50 | 10 | T1 | Navigational | 220 | /brands/ecar/ | Brand | Existing | No | None | No |
-| kids golf buggy | 110 | 7 | T1 | Commercial | 220 | (no page yet) | Product gap | Gap | No | - | No |
-| side by side buggy for sale | 70 | 7 | T1 | Transactional | 170 | /shop/side-by-side/ | Sub-category | Existing | No | Product (H1) | No |
-| golf buggies for sale near me | 50 | 16 | T1 | Transactional | 140 | /golf-buggies/ | Location hub | Existing | Planned (1) | Product (H1) | Yes |
-| follow me golf buggy | 50 | 17 | T1 | Informational | 100 | /shop/gps-follow-buggies/ | Category | Existing | No | Product (H1) | No |
-| farm buggies for sale | 50 | 2 | T1 | Transactional | 100 | /shop/farm-buggies/ | Sub-category | Existing | No | Product (H1) | No |
-| second hand golf carts for sale qld under $5000 | 50 | 1 | T1 | Transactional | 100 | /golf-buggies/brisbane/ | Location | Existing | No | Location, Product (H1) | No |
-| golf carts for sale wa | 50 | 12 | T1 | Transactional | 100 | /golf-buggies/perth/ | Location | Existing | No | Product (H1) | No |
-| golf buggy charger | 70 | 6 | T1 | Commercial | 70 | /shop/chargers/ | Sub-category | Existing | Planned (1) | Product (H1) | Yes |
-| triumph golf buggy accessories | 70 | 6 | T1 | Commercial | 70 | /brands/triumph/ | Brand | Existing | No | None | No |
-| golf buggies for sale sydney | 70 | 14 | T1 | Transactional | 70 | /golf-buggies/sydney/ | Location | Existing | No | Location | No |
-
-**Cannibalisation check on the plan:** every assigned URL appears once above, except `/golf-buggies/perth/` and `/golf-buggies/brisbane/`, each of which combines two geo keywords into one local cluster. No keyword is assigned twice. ✅
-
----
-
-## 2. Demand versus supply (existing pages)
-Where the searches are against what the site sells today.
-
-| Page | Cluster demand | Products on page | Words on page | Note |
-|---|---|---|---|---|
-| / | 13,080 | - | 4704 |  |
-| /shop/luxury-golf-carts/ | 10,850 | 29 | 1385 |  |
-| /shop/electric-golf-buggies/ | 6,450 | 22 | 1228 |  |
-| /shop/ | 3,720 | - | 1373 |  |
-| /shop/push-pull-golf-buggies/ | 3,040 | 6 | 804 |  |
-| /shop/remote-control-golf-buggies/ | 2,740 | 8 | 851 |  |
-| /shop/off-road-buggies/ | 2,220 | 25 | 1356 |  |
-| /brands/mgi/ | 2,100 | 22 | 1435 |  |
-| /shop/used-golf-buggies/ | 1,770 | 8 | 916 |  |
-| /shop/dune-buggies/ | 1,570 | 5 | 750 |  |
-| /shop/golf-trolleys/ | 1,070 | 0 | 480 | 🔴 Demand with no products |
-| /shop/walk-behind/ | 990 | 6 | 737 |  |
-| /shop/3-wheel/ | 940 | 3 | 618 |  |
-| /shop/accessories/ | 500 | 23 | 1500 |  |
-| /shop/kids-buggies/ | 470 | 5 | 761 |  |
-| /shop/2-seat/ | 290 | 11 | 1063 |  |
-| /shop/4-wheel/ | 290 | 3 | 656 |  |
-| /shop/utility/ | 240 | 2 | 561 |  |
-| /brands/ecar/ | 220 | 6 | 874 |  |
-| /shop/side-by-side/ | 170 | 14 | 1141 |  |
-| /shop/gps-follow-buggies/ | 100 | 6 | 763 |  |
-| /shop/farm-buggies/ | 100 | 6 | 815 |  |
-| /shop/chargers/ | 70 | 5 | 705 |  |
-| /brands/triumph/ | 70 | 0 | 541 | 🔴 Demand with no products |
-
----
-
-## 3. Current on-page state versus the plan
-Checked on the live site today. ✅ = the page title/H1/meta already contains every word of the planned primary keyword.
-
-| URL | Planned primary | Title today | Title | H1 | Meta |
-|---|---|---|---|---|---|
-| / | golf buggy | Golf Buggy for Sale Australia / Luxury, Remote & Off Road… (58) | ✅ | ✅ | ✅ |
-| /shop/luxury-golf-carts/ | golf cart | Golf Carts for Sale Australia / 2, 4 & 6 Seat (45) | ✅ | ✅ | ✅ |
-| /shop/electric-golf-buggies/ | electric golf buggy for sale | Electric Golf Buggies for Sale Australia / The Buggy Shop (57) | ✅ | ❌ | ❌ |
-| /shop/ | golf buggy for sale | Golf Buggy for Sale Australia / Electric, Remote, Push &… (57) | ✅ | ✅ | ✅ |
-| /shop/push-pull-golf-buggies/ | golf push buggy | Push Golf Buggies & Trolleys for Sale / The Buggy Shop (54) | ✅ | ✅ | ✅ |
-| /shop/remote-control-golf-buggies/ | remote control golf buggy | Remote Control Golf Buggies Australia / The Buggy Shop (54) | ✅ | ✅ | ✅ |
-| /shop/off-road-buggies/ | off road buggies | Off-Road Buggies for Sale Australia / The Buggy Shop (52) | ✅ | ✅ | ✅ |
-| /brands/mgi/ | mgi golf buggy | MGI Golf Buggies Australia / Zip Navigator, Ai & Parts (54) | ✅ | ✅ | ✅ |
-| /shop/used-golf-buggies/ | used golf buggy for sale | Used & Ex-Demo Golf Buggies for Sale Australia (46) | ✅ | ❌ | ❌ |
-| /shop/dune-buggies/ | dune buggies for sale | Dune Buggies for Sale Australia / The Buggy Shop (48) | ✅ | ❌ | ❌ |
-| /shop/golf-trolleys/ | golf trolley | Golf Trolleys for Sale Australia / The Buggy Shop (49) | ✅ | ✅ | ✅ |
-| /shop/walk-behind/ | electric golf trolley | Walk-behind Electric Golf Buggies / The Buggy Shop (50) | ❌ | ❌ | ❌ |
-| /shop/3-wheel/ | three wheel golf buggy | 3-Wheel Push Golf Buggies / The Buggy Shop (42) | ❌ | ❌ | ❌ |
-| /shop/accessories/ | golf buggy accessories | Golf Buggy Accessories Australia / The Buggy Shop (49) | ✅ | ✅ | ✅ |
-| /shop/kids-buggies/ | kids buggy for sale | Kids Ride-On Buggies for Sale Australia / The Buggy Shop (56) | ✅ | ❌ | ❌ |
-| /shop/2-seat/ | 2 seater buggy for sale | 2-Seat Golf Carts for Sale Australia / The Buggy Shop (53) | ❌ | ❌ | ❌ |
-| /shop/4-wheel/ | foldable golf buggy | 4-Wheel & Compact Push Golf Buggies / The Buggy Shop (52) | ❌ | ❌ | ❌ |
-| /shop/utility/ | electric utility cart | Utility & Commercial Electric Carts Australia (45) | ✅ | ❌ | ❌ |
-| /brands/ecar/ | ecar golf buggy | ECAR Golf Carts for Sale Australia / Lithium A2, A4 & Magnum (60) | ❌ | ✅ | ❌ |
-| /shop/side-by-side/ | side by side buggy for sale | Side-by-Side Buggies & UTVs Australia / The Buggy Shop (54) | ❌ | ❌ | ❌ |
-| /shop/gps-follow-buggies/ | follow me golf buggy | GPS & Follow Golf Buggies / The Buggy Shop (42) | ❌ | ❌ | ❌ |
-| /shop/farm-buggies/ | farm buggies for sale | Farm Buggies for Sale Australia / Electric & Petrol (51) | ✅ | ❌ | ✅ |
-| /shop/chargers/ | golf buggy charger | Golf Buggy Chargers & Leads Australia / The Buggy Shop (54) | ✅ | ❌ | ❌ |
-| /brands/triumph/ | triumph golf buggy accessories | Triumph Golf Buggy Spares Australia / Wheels & Mounts (53) | ❌ | ✅ | ❌ |
-
-**Score: 9 of 24 mapped category/brand pages already have the primary keyword in both title and H1** (38%). Title alone: 16 of 24. H1 alone: 11 of 24. Meta description: 10 of 24.
-The test is strict: every word of the planned keyword must appear, including "for sale". Several H1s such as "Electric Golf Buggies" are fine for people but do not carry "for sale", which is the transactional word. Whether that matters is a judgement call for review.
-Titles that end in "…" are being cut by the site's title limiter (home, /shop/, golf clubs, brands, Perth, Adelaide, About). Rewrite them by hand.
-
----
-
-## 4. Per-page on-page requirements
-Formulas from the keyword engine: title ≤60 chars, primary keyword first; meta 130-155 chars with a call to action; H1 ≤70. "Today" shows what is live now. **These are recommendations only.**
-
-### /
-- **Cluster:** golf buggy (Vol 6600, KD 11, T1), demand 13,080/month
-- **Title today:** Golf Buggy for Sale Australia | Luxury, Remote & Off Road…
-- **Title tag (new):** Golf Buggies Australia | Electric, Remote & Push Buggies (56)
-- **H1 today:** Premium Golf Buggy for Sale Across Australia.  |  **H1 (new):** Premium Golf Buggies Across Australia. (38)
-- **Meta description (new):** Shop golf buggies in Australia: electric, remote control and push models plus ride-on carts. Local warranty and tail-lift delivery. Browse the range today. (155)
-- **Primary keyword:** golf buggy
-- **Secondary keywords:** golf buggies australia
-- **LSI / supporting (use in body copy, never as targets):** buggies golf, golf buggies, buggy for golf, gold buggy, golf buggie, buggies for golf, buggy golf, golfbuggy
-- **Image alt text:** "golf buggy - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/ (anchor: golf buggies for sale); /shop/electric-golf-buggies/; /shop/push-pull-golf-buggies/; /shop/luxury-golf-carts/
-- **Internal links IN:** Every page via header logo and footer; /blog/ posts (intro link: "golf buggy")
-- **FAQ schema:** Planned, 8 questions from faq-bank.md
-- **Speakable target:** `.faq-answer-speakable` on "How much does a golf buggy cost in Australia?"
-- **Entity coverage:** ✅ Product | ✅ Category | ✅ Location
-- **Definition hook (first 150 words):** A golf buggy is a wheeled cart that carries your clubs so you can walk the course without carrying a bag. Electric and remote-control golf buggies add a battery motor, so the buggy drives itself.
-- **WebForge schema type:** Organization + WebSite + FAQPage
-- **Note:** Max 3 primary keywords on the homepage. Plan uses 1 ("golf buggy"). Today the homepage title is "Golf Buggy for Sale Australia", the same primary as /shop/. Give "for sale" to /shop/.
-
-### /shop/luxury-golf-carts/
-- **Cluster:** golf cart (Vol 5400, KD 39, T2), demand 10,850/month
-- **Title today:** Golf Carts for Sale Australia | 2, 4 & 6 Seat
-- **Title tag (new):** Golf Cart for Sale Australia | 2, 4 & 6 Seat Carts (50)
-- **H1 today:** Ride-On Golf Carts  |  **H1 (new):** Golf Carts for Sale in Australia (32)
-- **Meta description (new):** Golf cart for sale in Australia. New and used 2, 4 and 6 seat electric golf carts with warranty and tail-lift delivery. Compare models and shop golf carts. (155)
-- **Primary keyword:** golf cart
-- **Secondary keywords:** electric golf carts for sale, golf golf carts for sale, golf buggy with seat, electric ride on golf buggy, buy golf cart
-- **LSI / supporting (use in body copy, never as targets):** ride on golf cart, golf carts on sale, golf buggy cart, ride on golf buggy, golf cart buying, golf carts for sale australia, golf car cart, golf cart australia, new golf cart, golf carts, golf and carts, golf carts for golf, cart golf, glof cart
-- **Image alt text:** "golf cart - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/2-seat/; /shop/4-6-seat/; /shop/used-golf-buggies/; /blog/electric-golf-carts-australia-guide/
-- **Internal links IN:** /; /shop/; /blog/cheap-golf-buggies-and-carts-australia/
-- **FAQ schema:** Planned, 3 questions from faq-bank.md
-- **Speakable target:** `.faq-answer-speakable` on "How much does an electric golf cart cost?"
-- **Entity coverage:** ✅ Product | ✅ Category | ✅ Location
-- **Definition hook (first 150 words):** A golf cart is a small ride-on electric vehicle that carries two to six people, used on golf courses, estates and farms. Most run on a 48V battery.
-- **WebForge schema type:** CollectionPage + ItemList + FAQPage
-- **Note:** Head term "golf cart" (5,400, KD 39) is a T2. It also catches "golf buggy with seat" (320): check the SERP to confirm those shoppers want ride-on carts.
-
-### /shop/electric-golf-buggies/
-- **Cluster:** electric golf buggy for sale (Vol 390, KD 27, T2), demand 6,450/month
-- **Title today:** Electric Golf Buggies for Sale Australia | The Buggy Shop
-- **Title tag (new):** Electric Golf Buggy for Sale Australia | Lithium Buggies (56)
-- **H1 today:** Electric Golf Buggies  |  **H1 (new):** Electric Golf Buggies for Sale (30)
-- **Meta description (new):** Electric golf buggy for sale in Australia. Motorised walk-behind, remote and GPS lithium buggies from MGI, Motocaddy and PowaKaddy. Shop with warranty. (151)
-- **Primary keyword:** electric golf buggy for sale
-- **Secondary keywords:** battery golf buggies, motorised golf buggy for sale, estate electric golf buggy, motorised golf buggy, electric golf
-- **LSI / supporting (use in body copy, never as targets):** electric golf buggy, buy electric golf buggy, motor golf buggy, electric golf buggies australia, electric golf buggies for sale, electric golf buggy sale, golf buggy electric for sale, golf electric buggies for sale, battery golf buggy, batteries for golf buggy, motorised golf buggies for sale, motorized golf buggy
-- **Image alt text:** "electric golf buggy for sale - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/remote-control-golf-buggies/; /shop/walk-behind/; /shop/gps-follow-buggies/; /brands/mgi/
-- **Internal links IN:** / and /shop/ hub; /blog/best-electric-golf-buggies-australia/; /blog/electric-buggy-for-adults-australia/
-- **FAQ schema:** Planned, 2 questions from faq-bank.md
-- **Speakable target:** `.faq-answer-speakable` on "What is the best electric golf buggy in Australia?"
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** Electric golf buggies are battery-powered golf trolleys that carry your clubs and drive themselves. Most are lithium powered, fold for the boot and cover 18 to 36 holes on one charge.
-- **WebForge schema type:** CollectionPage + ItemList + FAQPage
-- **Note:** The biggest keyword here, "electric golf buggy" (1,900), is KD 41, so by the rules it is supporting copy, not the primary. Use it in the intro and H2s.
-
-### /shop/
-- **Cluster:** golf buggy for sale (Vol 1900, KD 10, T1), demand 3,720/month
-- **Title today:** Golf Buggy for Sale Australia | Electric, Remote, Push &…
-- **Title tag (new):** Golf Buggy for Sale Australia | Shop All Buggies (48)
-- **H1 today:** Golf Buggy for Sale Australia  |  **H1 (new):** Golf Buggy for Sale in Australia (32)
-- **Meta description (new):** Golf buggy for sale in Australia. Compare electric, remote control, push and used golf buggies, with warranty and delivery. Find your buggy now. (144)
-- **Primary keyword:** golf buggy for sale
-- **Secondary keywords:** new golf buggies, golf buggies for sale australia, buy golf buggy
-- **LSI / supporting (use in body copy, never as targets):** golf buggies for sale, golf buggy sales, golf buggy sale, for sale golf buggy, new golf buggy, golf buggy buy
-- **Image alt text:** "golf buggy for sale - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/electric-golf-buggies/; /shop/push-pull-golf-buggies/; /shop/used-golf-buggies/; /shop/luxury-golf-carts/
-- **Internal links IN:** / (hero button); Header "Shop" menu; /blog/ posts
-- **FAQ schema:** Planned, 1 questions from faq-bank.md
-- **Speakable target:** `.faq-answer-speakable` on "How much does a golf buggy cost in Australia?"
-- **Entity coverage:** ✅ Product | ✅ Category | ✅ Location
-- **Definition hook (first 150 words):** A golf buggy for sale in Australia can be a push buggy, an electric walk-behind buggy, a remote-control buggy or a ride-on golf cart. Prices start from $450 for push buggies.
-- **WebForge schema type:** CollectionPage + ItemList + FAQPage
-- **Note:** Takes the transactional "for sale" cluster away from the homepage so the two pages stop competing.
-
-### /shop/push-pull-golf-buggies/
-- **Cluster:** golf push buggy (Vol 480, KD 10, T1), demand 3,040/month
-- **Title today:** Push Golf Buggies & Trolleys for Sale | The Buggy Shop
-- **Title tag (new):** Golf Push Buggy for Sale Australia | Push & Pull Buggies (56)
-- **H1 today:** Push & Pull Golf Buggies  |  **H1 (new):** Golf Push Buggies for Sale (26)
-- **Meta description (new):** Golf push buggy for sale in Australia. Lightweight 3-wheel and 4-wheel push and pull buggies from Clicgear, Big Max and QOD. Prices from $450. (142)
-- **Primary keyword:** golf push buggy
-- **Secondary keywords:** golf bag and buggy, push golf buggy for sale, golf pull buggy, push buggy, pull buggy
-- **LSI / supporting (use in body copy, never as targets):** push pull golf buggy, golf carts push, golf pram, electric golf push cart, golf buggy push, push golf buggy, golf push buggies, push buggy golf, push golf buggies, golf bag buggy, golf push buggy for sale, pull buggy golf
-- **Image alt text:** "golf push buggy - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/3-wheel/; /shop/4-wheel/; /shop/golf-trolleys/; /shop/accessories/
-- **Internal links IN:** /shop/; /; /blog/best-electric-golf-buggies-australia/ (push section)
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ✅ Product | ✅ Category | ✅ Location
-- **Definition hook (first 150 words):** A golf push buggy is a manual, wheeled cart you push or pull while you walk, carrying your golf bag on a frame. Push buggies fold flat for the boot and need no battery.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** Keywords "3 wheel" (940) and "foldable" (290) are split out to their own sub-pages so the parent does not fight them.
-
-### /shop/remote-control-golf-buggies/
-- **Cluster:** remote control golf buggy (Vol 480, KD 15, T1), demand 2,740/month
-- **Title today:** Remote Control Golf Buggies Australia | The Buggy Shop
-- **Title tag (new):** Remote Control Golf Buggy Australia | Hands-Free Buggies (56)
-- **H1 today:** Remote-control Golf Buggies  |  **H1 (new):** Remote Control Golf Buggies (27)
-- **Meta description (new):** Remote control golf buggy in Australia. Hands-free electric buggies with handset steering and lithium power. Compare models and order with delivery. (148)
-- **Primary keyword:** remote control golf buggy
-- **Secondary keywords:** remote control electric golf buggy, remote control golf buggy for sale, remote golf buggy, electric golf buggy with remote, remote controlled golf buggy
-- **LSI / supporting (use in body copy, never as targets):** electric remote golf buggy, golf carts remote control, electric golf cart with remote, electric golf carts with remote control, electric remote golf carts, golf cart with remote control, golf buggy remote control, remote control golf buggies, electric remote control golf buggy, electric golf buggy remote control, golf buggy remote, remote golf buggies, remote electric golf buggy
-- **Image alt text:** "remote control golf buggy - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/electric-golf-buggies/; /shop/gps-follow-buggies/; /brands/mgi/; /shop/accessories/
-- **Internal links IN:** /shop/electric-golf-buggies/; /; /blog/best-electric-golf-buggies-australia/
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ✅ Product | ✅ Category | ✅ Location
-- **Definition hook (first 150 words):** A remote control golf buggy is an electric golf buggy you steer with a handset, so it drives ahead of you down the fairway. You walk free of the buggy and it follows your commands.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** Strongest tier-1 cluster after the head terms: 12 keywords, 2,740 monthly searches, all KD under 25.
-
-### /shop/off-road-buggies/
-- **Cluster:** off road buggies (Vol 590, KD 6, T1), demand 2,220/month
-- **Title today:** Off-Road Buggies for Sale Australia | The Buggy Shop
-- **Title tag (new):** Off Road Buggies for Sale Australia | Dune, UTV & Farm (54)
-- **H1 today:** Off-Road & Recreational Buggies  |  **H1 (new):** Off Road Buggies for Sale in Australia (38)
-- **Meta description (new):** Off road buggies for sale in Australia. Dune buggies, side by sides, farm UTVs and kids buggies with local support and delivery. Shop off road buggies. (151)
-- **Primary keyword:** off road buggies
-- **Secondary keywords:** off road buggy for sale, off road buggies for sale australia, offroad buggy for sale, dirt buggy, atv buggy for sale
-- **LSI / supporting (use in body copy, never as targets):** racing buggies, off road buggies for sale, buggies off road for sale, off road buggy for sale australia, buggy dirt
-- **Image alt text:** "off road buggies - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/dune-buggies/; /shop/side-by-side/; /shop/farm-buggies/; /shop/kids-buggies/
-- **Internal links IN:** /; /shop/; /brands/ (Polaris, Can-Am, CFMOTO, Yamaha)
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ✅ Product | ✅ Category | ✅ Location
-- **Definition hook (first 150 words):** Off road buggies are rugged recreation and work vehicles built for sand, dirt and farm tracks. The range covers dune buggies, side-by-side UTVs and petrol or electric farm buggies.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** Good tier-1 demand (2,220) for a category that has 25 products.
-
-### /brands/mgi/
-- **Cluster:** mgi golf buggy (Vol 1900, KD 20, T1), demand 2,100/month
-- **Title today:** MGI Golf Buggies Australia | Zip Navigator, Ai & Parts
-- **Title tag (new):** MGI Golf Buggy Australia | Zip, Ai & Navigator Buggies (54)
-- **H1 today:** MGI Golf Buggies & Spare Parts Australia  |  **H1 (new):** MGI Golf Buggies in Australia (29)
-- **Meta description (new):** MGI golf buggy range in Australia: Zip X1, X3, X5, Navigator AT and Ai GPS follow buggies, plus batteries and accessories. Shop MGI with local warranty. (152)
-- **Primary keyword:** mgi golf buggy
-- **Secondary keywords:** mgi golf buggy accessories, mgi buggies
-- **LSI / supporting (use in body copy, never as targets):** -
-- **Image alt text:** "mgi golf buggy - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/remote-control-golf-buggies/; /shop/gps-follow-buggies/; /shop/batteries/; /shop/accessories/
-- **Internal links IN:** /shop/electric-golf-buggies/; /shop/remote-control-golf-buggies/; MGI product pages
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ✅ Product | ✅ Category | ✅ Location
-- **Definition hook (first 150 words):** MGI is an Australian-designed brand of electric golf buggies, known for the Zip and Navigator remote-control range and Ai follow buggies.
-- **WebForge schema type:** Brand + ItemList
-- **Note:** One of the biggest single keywords in the export ("mgi golf buggy", 1,900, KD 20). Page already exists, so prioritise its quality.
-
-### /shop/used-golf-buggies/
-- **Cluster:** used golf buggy for sale (Vol 320, KD 3, T1), demand 1,770/month
-- **Title today:** Used & Ex-Demo Golf Buggies for Sale Australia
-- **Title tag (new):** Used Golf Buggy for Sale Australia | Ex-Demo & Used (51)
-- **H1 today:** Used & Ex-Demo Golf Buggies  |  **H1 (new):** Used Golf Buggies for Sale (26)
-- **Meta description (new):** Used golf buggy for sale in Australia. Inspected ex-demo and second hand golf buggies and carts at lower prices, with warranty. See what is in stock. (149)
-- **Primary keyword:** used golf buggy for sale
-- **Secondary keywords:** used golf buggies, second hand golf buggies for sale, second hand petrol golf carts for sale, second hand golf buggies, used electric golf buggy for sale
-- **LSI / supporting (use in body copy, never as targets):** golf cart auction, second hand electric golf buggy for sale, used golf buggy for sale, used golf buggies for sale, golf buggy used, second hand golf buggy for sale, second hand golf buggy
-- **Image alt text:** "used golf buggy for sale - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/luxury-golf-carts/; /shop/electric-golf-buggies/; /blog/cheap-golf-buggies-and-carts-australia/
-- **Internal links IN:** /; /shop/; /blog/cheap-golf-buggies-and-carts-australia/
-- **FAQ schema:** Planned, 1 questions from faq-bank.md
-- **Speakable target:** `.faq-answer-speakable` on "Can I buy a used golf buggy?"
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** A used golf buggy is a second hand or ex-demo buggy or cart sold at a lower price than new. Ours are inspected before sale, with prices from $1,490.
-- **WebForge schema type:** CollectionPage + ItemList + FAQPage
-- **Note:** DONE 6 Oct 2026: /shop/used/ now 308-redirects here, so one page owns every "used" keyword.
-
-### /shop/dune-buggies/
-- **Cluster:** dune buggies for sale (Vol 260, KD 18, T1), demand 1,570/month
-- **Title today:** Dune Buggies for Sale Australia | The Buggy Shop
-- **Title tag (new):** Dune Buggies for Sale Australia | Beach & Sand Buggies (54)
-- **H1 today:** Dune Buggies  |  **H1 (new):** Dune Buggies and Beach Buggies for Sale (39)
-- **Meta description (new):** Dune buggies for sale in Australia. Petrol dune and beach buggies for sand, dirt and tracks, with local support and delivery. Shop dune buggies today. (150)
-- **Primary keyword:** dune buggies for sale
-- **Secondary keywords:** dune buggy kart, dune buggies for sale in australia, dune buggies for sale, buggy dune buggy
-- **LSI / supporting (use in body copy, never as targets):** beach buggy for sale au, beach buggies for sale australia, dune bug, dunebug, dune buggies buggy, a dune buggy
-- **Image alt text:** "dune buggies for sale - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/off-road-buggies/; /shop/side-by-side/; /shop/kids-buggies/
-- **Internal links IN:** /shop/off-road-buggies/
-- **FAQ schema:** Planned, 2 questions from faq-bank.md
-- **Speakable target:** `.faq-answer-speakable` on "What is a dune buggy?"
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** A dune buggy, also called a beach buggy, is a light off-road vehicle with big rear tyres built for sand and dirt. Petrol models range from 110cc to 300cc.
-- **WebForge schema type:** CollectionPage + ItemList + FAQPage
-- **Note:** DONE 6 Oct 2026: /shop/beach-buggies/ was removed and 308-redirects here ("beach buggy" 640 and "dune buggy" 930 are the same product).
-
-### /shop/golf-trolleys/
-- **Cluster:** golf trolley (Vol 880, KD 13, T1), demand 1,070/month
-- **Title today:** Golf Trolleys for Sale Australia | The Buggy Shop
-- **Title tag (new):** Golf Trolley for Sale Australia | Push & Electric (49)
-- **H1 today:** Golf Trolleys  |  **H1 (new):** Golf Trolleys for Sale (22)
-- **Meta description (new):** Golf trolley for sale in Australia. Shop electric and push golf trolleys with warranty and nationwide delivery. Compare models and buy online today. (148)
-- **Primary keyword:** golf trolley
-- **Secondary keywords:** -
-- **LSI / supporting (use in body copy, never as targets):** golf trolleys, golf troley
-- **Image alt text:** "golf trolley - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/push-pull-golf-buggies/; /shop/walk-behind/; /shop/electric-golf-buggies/
-- **Internal links IN:** /shop/push-pull-golf-buggies/; /shop/electric-golf-buggies/; /
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ✅ Product | ✅ Category | ✅ Location
-- **Definition hook (first 150 words):** A golf trolley is a wheeled frame that carries your golf bag while you walk. Push trolleys are manual, and electric golf trolleys have a battery motor.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** DONE 6 Oct 2026: the page now lists all push and walk-behind buggies (12 products, cross-listed). It was empty while 880 searches a month landed on it.
-
-### /shop/walk-behind/
-- **Cluster:** electric golf trolley (Vol 70, KD 5, T1), demand 990/month
-- **Title today:** Walk-behind Electric Golf Buggies | The Buggy Shop
-- **Title tag (new):** Electric Golf Trolley Australia | Walk-Behind Buggies (53)
-- **H1 today:** Walk-behind Electric Golf Buggies  |  **H1 (new):** Electric Golf Trolleys (22)
-- **Meta description (new):** Electric golf trolley in Australia. Walk-behind motorised buggies with lithium batteries, fold-flat frames and warranty. Compare models and shop now. (149)
-- **Primary keyword:** electric golf trolley
-- **Secondary keywords:** electric golf trolley, estate electric golf trolley, golf caddy electric, electric caddies, smart golf trolley
-- **LSI / supporting (use in body copy, never as targets):** golf trolley electric, electric trolley for golf, trolley electric golf, electric golf trolleys, trolley golf electric
-- **Image alt text:** "electric golf trolley - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/electric-golf-buggies/; /shop/golf-trolleys/; /shop/remote-control-golf-buggies/
-- **Internal links IN:** /shop/electric-golf-buggies/; /shop/golf-trolleys/
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** An electric golf trolley is a walk-behind buggy with a battery motor that pulls your clubs for you. You steer by hand and the motor does the work uphill.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** Australians say "golf buggy" and "golf trolley" for the same product. Use both terms.
-
-### /shop/3-wheel/
-- **Cluster:** three wheel golf buggy (Vol 210, KD 7, T1), demand 940/month
-- **Title today:** 3-Wheel Push Golf Buggies | The Buggy Shop
-- **Title tag (new):** 3 Wheel Golf Buggy for Sale Australia | Push Buggies (52)
-- **H1 today:** 3-Wheel Push Golf Buggies  |  **H1 (new):** 3 Wheel Golf Buggies (20)
-- **Meta description (new):** 3 wheel golf buggy for sale in Australia. Easy-steering push buggies from Clicgear and others, with local support and delivery. Shop 3 wheel buggies. (149)
-- **Primary keyword:** three wheel golf buggy
-- **Secondary keywords:** 3 wheel golf buggy, three wheel golf cart, 3 wheel golf cart, golf three wheel trolley
-- **LSI / supporting (use in body copy, never as targets):** three wheeled golf buggy, golf buggy 3 wheel, 3 wheeled golf buggy
-- **Image alt text:** "three wheel golf buggy - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/push-pull-golf-buggies/; /shop/4-wheel/; /shop/accessories/
-- **Internal links IN:** /shop/push-pull-golf-buggies/; /brands/clicgear/
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** A 3 wheel golf buggy is a push buggy with one front wheel and two rear wheels. It steers easily on tight turns and folds compactly for the boot.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** Parent push page used to also target "3 wheel golf buggy": remove it there.
-
-### /shop/accessories/
-- **Cluster:** golf buggy accessories (Vol 390, KD 10, T1), demand 500/month
-- **Title today:** Golf Buggy Accessories Australia | The Buggy Shop
-- **Title tag (new):** Golf Buggy Accessories Australia | Holders, Bags & More (55)
-- **H1 today:** Golf Buggy Accessories  |  **H1 (new):** Golf Buggy Accessories (22)
-- **Meta description (new):** Golf buggy accessories in Australia: umbrella and drink holders, bags, covers and wheel upgrades. Save 5% on accessories when you buy a buggy or cart. (150)
-- **Primary keyword:** golf buggy accessories
-- **Secondary keywords:** golf buggy accessories australia
-- **LSI / supporting (use in body copy, never as targets):** -
-- **Image alt text:** "golf buggy accessories - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/push-pull-golf-buggies/; /shop/electric-golf-buggies/; /shop/parts/
-- **Internal links IN:** /shop/ category pages; Cart drawer and bundle popup
-- **FAQ schema:** Planned, 1 questions from faq-bank.md
-- **Speakable target:** `.faq-answer-speakable` on "Do I get a discount on accessories when I buy a buggy?"
-- **Entity coverage:** ✅ Product | ✅ Category | ✅ Location
-- **Definition hook (first 150 words):** Golf buggy accessories are add-ons that fit your push buggy or cart, such as umbrella holders, drink holders, bags, covers and upgraded wheels. Most fit the major buggy brands.
-- **WebForge schema type:** CollectionPage + ItemList + FAQPage
-- **Note:** Ties into the new 5% bundle offer: say so in the meta description.
-
-### /shop/kids-buggies/
-- **Cluster:** kids buggy for sale (Vol 50, KD 1, T1), demand 470/month
-- **Title today:** Kids Ride-On Buggies for Sale Australia | The Buggy Shop
-- **Title tag (new):** Kids Buggy for Sale Australia | Electric & Petrol (49)
-- **H1 today:** Kids' Ride-On Buggies  |  **H1 (new):** Kids Buggies for Sale (21)
-- **Meta description (new):** Kids buggy for sale in Australia. Electric and petrol ride-on off-road buggies and UTVs for children and teens, with local support. Shop kids buggies. (150)
-- **Primary keyword:** kids buggy for sale
-- **Secondary keywords:** buggies for kids, kids buggy for sale, children's petrol buggy, utv for kids, kids electric utv
-- **LSI / supporting (use in body copy, never as targets):** kids buggys, electric kids utv, electric utv for kids, electric utv kids
-- **Image alt text:** "kids buggy for sale - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/dune-buggies/; /shop/off-road-buggies/; /shop/accessories/
-- **Internal links IN:** /shop/off-road-buggies/; /
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** A kids buggy is a small electric or petrol ride-on off-road vehicle for children and teens. Electric models are quieter than petrol and run on a rechargeable battery.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** Add a speed-limiter line only if every kids model has one (product data does not say).
-
-### /shop/2-seat/
-- **Cluster:** 2 seater buggy for sale (Vol 170, KD 4, T1), demand 290/month
-- **Title today:** 2-Seat Golf Carts for Sale Australia | The Buggy Shop
-- **Title tag (new):** 2 Seater Buggy for Sale Australia | 2 Seat Golf Carts (53)
-- **H1 today:** 2-Seat Golf Carts  |  **H1 (new):** 2 Seater Buggies and Golf Carts for Sale (40)
-- **Meta description (new):** 2 seater buggy for sale in Australia. Electric 2 seat golf carts for courses, farms and estates, with lithium power and warranty. Browse 2 seat carts. (150)
-- **Primary keyword:** 2 seater buggy for sale
-- **Secondary keywords:** 2 seater electric buggy, 2 seater electric golf carts
-- **LSI / supporting (use in body copy, never as targets):** 2 seater buggies for sale
-- **Image alt text:** "2 seater buggy for sale - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/luxury-golf-carts/; /shop/4-6-seat/; /shop/used-golf-buggies/
-- **Internal links IN:** /shop/luxury-golf-carts/
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** A 2 seater buggy is a compact electric golf cart that carries a driver and one passenger. It suits golf courses, farms and larger properties.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** Small (290) but cheap to win: KD 0-7.
-
-### /shop/4-wheel/
-- **Cluster:** foldable golf buggy (Vol 90, KD 6, T1), demand 290/month
-- **Title today:** 4-Wheel & Compact Push Golf Buggies | The Buggy Shop
-- **Title tag (new):** Foldable Golf Buggy Australia | Compact 4 Wheel Buggies (55)
-- **H1 today:** 4-Wheel & Compact Push Golf Buggies  |  **H1 (new):** Foldable Golf Buggies (21)
-- **Meta description (new):** Foldable golf buggy for sale in Australia. Compact 4 wheel push buggies that fold flat for the boot. Compare folding golf buggies and order online. (147)
-- **Primary keyword:** foldable golf buggy
-- **Secondary keywords:** foldable golf buggy, collapsible golf buggy
-- **LSI / supporting (use in body copy, never as targets):** -
-- **Image alt text:** "foldable golf buggy - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/push-pull-golf-buggies/; /shop/3-wheel/; /shop/accessories/
-- **Internal links IN:** /shop/push-pull-golf-buggies/
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** A foldable golf buggy is a push buggy that collapses to a flat, compact size so it fits in a car boot. Four-wheel designs fold flatter and stand on their own.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** Smallest of the push clusters (290). Assumes /shop/4-wheel/ is the foldable range; confirm.
-
-### /shop/utility/
-- **Cluster:** electric utility cart (Vol 70, KD 2, T1), demand 240/month
-- **Title today:** Utility & Commercial Electric Carts Australia
-- **Title tag (new):** Electric Utility Cart Australia | Commercial Carts (50)
-- **H1 today:** Utility & Commercial Carts  |  **H1 (new):** Electric Utility Carts for Sale (31)
-- **Meta description (new):** Electric utility cart for sale in Australia. Commercial and farm carts with cargo beds and lithium power, backed by local warranty. Browse utility carts. (153)
-- **Primary keyword:** electric utility cart
-- **Secondary keywords:** electric commercial carts, electric utility cart for sale
-- **LSI / supporting (use in body copy, never as targets):** electric utility carts, commercial electric carts
-- **Image alt text:** "electric utility cart - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/luxury-golf-carts/; /shop/farm-buggies/; /shop/off-road-buggies/
-- **Internal links IN:** /shop/luxury-golf-carts/; /shop/farm-buggies/
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** An electric utility cart is a battery-powered work vehicle with a cargo bed for hauling tools, stock and supplies. Lithium models need no fuel and run quietly.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** Low demand (240), low difficulty (KD 2-8).
-
-### /brands/ecar/
-- **Cluster:** ecar golf buggy (Vol 50, KD 10, T1), demand 220/month
-- **Title today:** ECAR Golf Carts for Sale Australia | Lithium A2, A4 & Magnum
-- **Title tag (new):** ECAR Golf Buggy Australia | Lithium Carts & Utility (51)
-- **H1 today:** ECAR Electric Golf Carts & Utility Buggies Australia  |  **H1 (new):** ECAR Golf Buggies and Carts (27)
-- **Meta description (new):** ECAR golf buggy range in Australia: A2, A4 lithium golf carts, utility carts and the Magnum 4LR lifted cart. Shop ECAR with warranty and delivery. (146)
-- **Primary keyword:** ecar golf buggy
-- **Secondary keywords:** e car golf buggy
-- **LSI / supporting (use in body copy, never as targets):** -
-- **Image alt text:** "ecar golf buggy - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/luxury-golf-carts/; /shop/utility/; /shop/2-seat/
-- **Internal links IN:** /shop/luxury-golf-carts/; ECAR product pages
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ✅ Product | ✅ Category | ✅ Location
-- **Definition hook (first 150 words):** ECAR makes lithium electric golf carts and utility carts, including 2-seat and 4-seat golf carts and a lifted 4x4 model.
-- **WebForge schema type:** Brand + ItemList
-- **Note:** People type "e car golf buggy" (170) as well as "ecar": use both spellings.
-
-### /shop/side-by-side/
-- **Cluster:** side by side buggy for sale (Vol 70, KD 7, T1), demand 170/month
-- **Title today:** Side-by-Side Buggies & UTVs Australia | The Buggy Shop
-- **Title tag (new):** Side by Side Buggy for Sale Australia | UTV Range (49)
-- **H1 today:** Side-by-Side / UTV Buggies  |  **H1 (new):** Side by Side Buggies and UTVs for Sale (38)
-- **Meta description (new):** Side by side buggy for sale in Australia. Polaris, Can-Am, Yamaha, CFMOTO and more, with local support and delivery. Compare side by side UTVs. (143)
-- **Primary keyword:** side by side buggy for sale
-- **Secondary keywords:** side by side farm buggy, side by side buggy for sale australia
-- **LSI / supporting (use in body copy, never as targets):** -
-- **Image alt text:** "side by side buggy for sale - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/off-road-buggies/; /shop/farm-buggies/; /shop/dune-buggies/
-- **Internal links IN:** /shop/off-road-buggies/
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** A side by side buggy, or UTV, is a four-wheel off-road vehicle with two seats side by side, used for farm work and recreation. It carries more and goes further than a quad.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** Only 170 searches, yet 14 products (the biggest range in the shop). Strong stock, thin demand in this export: check with the next export.
-
-### /golf-buggies/
-- **Cluster:** golf buggies for sale near me (50), golf carts near me (90)
-- **Title today:** Golf Buggies for Sale by City & State | Australian…  |  **H1 today:** Golf Buggies for Sale Across Australia
-- **Action:** add the exact phrase(s) above to the title or H1 and the first paragraph. Keep one keyword per city page.
-
-### /shop/gps-follow-buggies/
-- **Cluster:** follow me golf buggy (Vol 50, KD 17, T1), demand 100/month
-- **Title today:** GPS & Follow Golf Buggies | The Buggy Shop
-- **Title tag (new):** Follow Me Golf Buggy Australia | GPS & Auto-Follow (50)
-- **H1 today:** GPS & Follow Golf Buggies  |  **H1 (new):** Follow Me Golf Buggies with GPS (31)
-- **Meta description (new):** Follow me golf buggy in Australia. Autonomous follow and GPS golf buggies that track you around the course. Compare models and shop with warranty. (146)
-- **Primary keyword:** follow me golf buggy
-- **Secondary keywords:** -
-- **LSI / supporting (use in body copy, never as targets):** automatic golf buggy
-- **Image alt text:** "follow me golf buggy - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/remote-control-golf-buggies/; /shop/electric-golf-buggies/; /brands/mgi/; /brands/motocaddy/
-- **Internal links IN:** /shop/electric-golf-buggies/; /blog/best-electric-golf-buggies-australia/
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** A follow me golf buggy is an electric buggy that tracks you with a sensor or handset and drives behind you automatically. GPS models also show distances to the green on a screen.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** Low demand in this export (100). Keep as a supporting page, link from the electric hub.
-
-### /shop/farm-buggies/
-- **Cluster:** farm buggies for sale (Vol 50, KD 2, T1), demand 100/month
-- **Title today:** Farm Buggies for Sale Australia | Electric & Petrol
-- **Title tag (new):** Farm Buggies for Sale Australia | Electric & Petrol (51)
-- **H1 today:** Farm & Utility Buggies  |  **H1 (new):** Farm Buggies for Sale (21)
-- **Meta description (new):** Farm buggies for sale in Australia. Electric and petrol farm UTVs for paddock and property work, with local warranty and delivery. Shop farm buggies. (149)
-- **Primary keyword:** farm buggies for sale
-- **Secondary keywords:** farm buggies for sale
-- **LSI / supporting (use in body copy, never as targets):** -
-- **Image alt text:** "farm buggies for sale - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/side-by-side/; /shop/utility/; /shop/off-road-buggies/
-- **Internal links IN:** /shop/off-road-buggies/
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** A farm buggy is a utility vehicle for property and paddock work, available as an electric or petrol UTV. It carries tools, stock feed and passengers across rough ground.
-- **WebForge schema type:** CollectionPage + ItemList
-- **Note:** Small demand (100). Already well titled.
-
-### /golf-buggies/brisbane/
-- **Cluster:** second hand golf carts for sale qld under $5000 (50), golf cart for sale qld (50)
-- **Title today:** Golf Buggies for Sale Brisbane, QLD | Direct from…  |  **H1 today:** Golf Buggies for Sale Brisbane
-- **Action:** add the exact phrase(s) above to the title or H1 and the first paragraph. Keep one keyword per city page.
-
-### /golf-buggies/perth/
-- **Cluster:** golf carts for sale wa (50), golf buggies perth (50)
-- **Title today:** Golf Buggies for Sale Perth, Western Australia…  |  **H1 today:** Golf Buggies for Sale Perth
-- **Action:** add the exact phrase(s) above to the title or H1 and the first paragraph. Keep one keyword per city page.
-
-### /shop/chargers/
-- **Cluster:** golf buggy charger (Vol 70, KD 6, T1), demand 70/month
-- **Title today:** Golf Buggy Chargers & Leads Australia | The Buggy Shop
-- **Title tag (new):** Golf Buggy Charger Australia | Lithium & Lead-Acid (50)
-- **H1 today:** Chargers & Leads  |  **H1 (new):** Golf Buggy Chargers (19)
-- **Meta description (new):** Golf buggy charger in Australia. Lithium and lead-acid smart chargers and leads for MGI and other electric buggies. Match your battery and order today. (151)
-- **Primary keyword:** golf buggy charger
-- **Secondary keywords:** -
-- **LSI / supporting (use in body copy, never as targets):** -
-- **Image alt text:** "golf buggy charger - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/batteries/; /shop/electric-golf-buggies/; /brands/mgi/
-- **Internal links IN:** /shop/batteries/; Electric buggy product pages
-- **FAQ schema:** Planned, 1 questions from faq-bank.md
-- **Speakable target:** `.faq-answer-speakable` on "How do you charge an electric golf cart?"
-- **Entity coverage:** ⚠️ Gaps: Product (H1)
-- **Definition hook (first 150 words):** A golf buggy charger refills your buggy battery. Lithium and lead-acid batteries need different chargers, so match the charger to your battery type.
-- **WebForge schema type:** CollectionPage + ItemList + FAQPage
-- **Note:** One keyword (70). The export has almost no battery terms: run a battery export next.
-
-### /brands/triumph/
-- **Cluster:** triumph golf buggy accessories (Vol 70, KD 6, T1), demand 70/month
-- **Title today:** Triumph Golf Buggy Spares Australia | Wheels & Mounts
-- **Title tag (new):** Triumph Golf Buggy Accessories | Spares & Parts (47)
-- **H1 today:** Triumph Golf Buggy Spare Parts & Accessories Australia  |  **H1 (new):** Triumph Golf Buggy Accessories and Spares (41)
-- **Meta description (new):** Triumph golf buggy accessories and spares in Australia: wheels, umbrella holders and mounts for Triumph push buggies. Order online with fast delivery. (150)
-- **Primary keyword:** triumph golf buggy accessories
-- **Secondary keywords:** -
-- **LSI / supporting (use in body copy, never as targets):** -
-- **Image alt text:** "triumph golf buggy accessories - [model name and key detail]" on at least the first product image
-- **Internal links OUT:** /shop/accessories/; /shop/parts/; /shop/push-pull-golf-buggies/
-- **Internal links IN:** /shop/accessories/; /shop/parts/
-- **FAQ schema:** No (no question keywords for this cluster)
-- **Speakable target:** N/A
-- **Entity coverage:** ✅ Product | ✅ Category | ✅ Location
-- **Definition hook (first 150 words):** Triumph golf buggy accessories are replacement wheels, umbrella holders and mounts made to fit Triumph push buggies.
-- **WebForge schema type:** Brand + ItemList
-- **Note:** Single keyword (70). Brand page exists; keep as is.
-
-### /golf-buggies/sydney/
-- **Cluster:** golf buggies for sale sydney (70)
-- **Title today:** Golf Buggies for Sale Sydney, NSW | Electric & Ride-On Carts  |  **H1 today:** Golf Buggies for Sale Sydney
-- **Action:** add the exact phrase(s) above to the title or H1 and the first paragraph. Keep one keyword per city page.
-
----
-
-## 5. Cannibalisation audit (plan vs what the site does today)
-
-| Keyword family | Pages that target it today | Problem | Fix |
-|---|---|---|---|
-| golf buggy for sale | `/` and `/shop/` (identical title start) | Two pages, one keyword | Home = "golf buggy"; /shop/ = "golf buggy for sale" |
-| used golf buggy/cart | `/shop/used-golf-buggies/` and `/shop/used/` | Two near-identical used pages | One page owns all "used" terms; redirect or merge the other |
-| beach/dune buggy | `/shop/dune-buggies/` (5 products) and `/shop/beach-buggies/` (0) | Same product, one page empty | Merge into /shop/dune-buggies/ and redirect |
-| golf trolley | `/shop/push-pull-golf-buggies/` and `/shop/golf-trolleys/` | Both list "golf trolley" | /shop/golf-trolleys/ owns it and must be stocked |
-| 3 wheel golf buggy | `/shop/push-pull-golf-buggies/` and `/shop/3-wheel/` | Parent steals the sub-page keyword | Remove from parent |
-| dune buggy | `/shop/off-road-buggies/` and `/shop/dune-buggies/` | Parent targets the child keyword | Parent keeps "off road buggies" |
-| lithium battery golf buggy | `/shop/batteries/` and `/shop/lithium/` | Same phrase on both | Needs battery export before deciding |
-| golf buggy accessories | `/shop/accessories/` and `/shop/holders/` | Same phrase on both | Holders targets "umbrella holder / drink holder" only |
-| golf buggy with seat | `/shop/luxury-golf-carts/` and `/shop/seats-footboards/` | Same phrase on both | Plan: carts page; seats page targets "golf buggy seat" |
-| motorised vs electric golf buggy | `/shop/electric-golf-buggies/` and `/shop/walk-behind/` | Same phrase on both | Electric parent owns "electric/motorised golf buggy"; walk-behind owns "electric golf trolley" |
-
-**Pages with no keyword in this plan** (the export had no demand data for them): /shop/4-6-seat/; /shop/batteries/ and sub-pages; /shop/parts/ and sub-pages; /shop/golf-clubs/ and sub-pages; /shop/accessories/ sub-pages (bags, holders, rangefinders...); /brands/ (other 47 brand pages); /golf-buggies/ other 5 cities.
-
----
-
-## 6. Check against your 36-keyword shortlist
-The older shortlist (`buggy-shop_keyword-shortlist.csv`) has 36 keywords. Not targeted by any category today: golf buggy sales (390), golf buggy sale (320), electric golf carts for sale (260), used golf buggies (210), golf buggy for sale melbourne (40), buy golf cart (210). In this plan they are covered by: golf buggy sales/sale and buy golf buggy on /shop/, electric golf carts for sale in the cart or blog cluster, used golf buggies on the used page.
-
----
-
-## 7. Supporting Pool keywords (KD 41-55: use in copy, never as primary)
-
-| Keyword | Vol | KD | Best page to use on | Role |
-|---|---|---|---|---|
-| electric golf buggy | 1900 | 41 | /shop/electric-golf-buggies/ | LSI in intro, H2 and body |
-| buy electric golf buggy | 50 | 41 | /shop/electric-golf-buggies/ | LSI in intro, H2 and body |
-| motorised golf cart | 140 | 43 | /blog/electric-golf-carts-australia-guide/ | LSI in intro, H2 and body |
-| best electric golf buggy australia | 140 | 41 | /blog/best-electric-golf-buggies-australia/ | LSI in intro, H2 and body |
-| golf carts near me | 90 | 47 | /golf-buggies/ | LSI in intro, H2 and body |
-| automatic golf buggy | 50 | 41 | /shop/gps-follow-buggies/ | LSI in intro, H2 and body |
-
-## 8. Revisit in 6 months (KD 41-55 and volume 2,000+)
-None qualify. The closest is "electric golf buggy" (1,900, KD 41), just under the 2,000 line. It is already used as supporting copy on the electric golf buggies page.
-
-## 9. Competitor names (held, never a primary keyword)
-
-| Keyword | Vol | KD | Who | Use |
-|---|---|---|---|---|
-| hillside buggies | 210 | 28 | Hillside Buggies (brand, unverified) | Verify what this is before any content |
-| aldi golf buggy | 390 | 28 | Aldi (retailer) | Comparison blog (see blog-plan.md) |
-| aldi electric golf buggy | 210 | 25 | Aldi (retailer) | Comparison blog (see blog-plan.md) |
-| bunnings golf buggy | 90 | 22 | Bunnings (retailer) | Verify what this is before any content |
-| axglo golf buggy | 70 | 5 | Axglo (brand, unverified) | Verify what this is before any content |
-| golf buggies drummond | 70 | 18 | Drummond Golf (retailer) | Verify what this is before any content |
-| gumtree golf cart | 70 | 16 | Gumtree (marketplace) | Verify what this is before any content |
-| aldi electric golf buggy review | 50 | 26 | Aldi (retailer) | Comparison blog (see blog-plan.md) |
-| aldi golf buggy review | 50 | 24 | Aldi (retailer) | Comparison blog (see blog-plan.md) |
-| eagles & birdies classic premium golf buggy | 50 | 25 | Eagles & Birdies (brand, unverified) | Verify what this is before any content |
-| walkinshaw golf buggy | 110 | 11 | Walkinshaw (brand, unverified) | Verify what this is before any content |
-
-## 10. Ambiguous head terms (manual review: do not target yet)
-In Australian search "buggy" is also a baby buggy. Check the Google results in Semrush before using these.
-
-| Keyword | Vol | KD | Variants merged | Suggested handling |
-|---|---|---|---|---|
-| buggy | 5400 | 18 | 4 | Use as supporting copy on /shop/ and /shop/off-road-buggies/ only if the SERP shows buggies, not prams |
-| buggies for sale | 590 | 8 | 1 | Use as supporting copy on /shop/ and /shop/off-road-buggies/ only if the SERP shows buggies, not prams |
-| used buggy for sale | 210 | 13 | 3 | Use as supporting copy on /shop/ and /shop/off-road-buggies/ only if the SERP shows buggies, not prams |
-| cheap buggy | 140 | 9 | 0 | Use as supporting copy on /shop/ and /shop/off-road-buggies/ only if the SERP shows buggies, not prams |
-| buggy spare parts | 140 | 6 | 0 | Use as supporting copy on /shop/ and /shop/off-road-buggies/ only if the SERP shows buggies, not prams |
-| buy a buggy | 90 | 9 | 0 | Use as supporting copy on /shop/ and /shop/off-road-buggies/ only if the SERP shows buggies, not prams |
-| buggy australia | 70 | 13 | 1 | Use as supporting copy on /shop/ and /shop/off-road-buggies/ only if the SERP shows buggies, not prams |
-
-## 11. Manual review (off-topic or unclear)
-
-| Keyword | Vol | KD | Why |
-|---|---|---|---|
-| custom golf buggy | 110 | 3 | Custom builds: a service you may not offer |
-| scooter golf | 90 | 2 | Golf scooters: product you do not stock |
-| petrol golf buggy | 50 | 3 | Petrol golf buggies: not in range |
-| golf buggy service | 50 | 4 | Servicing: only /shop/golf-buggy-repairs/ (empty page) fits |
-| golf buggy insurance | 70 | 8 | Informational blog idea (future) |
-| buggies cars | 110 | 13 | Unclear intent |
-| problems with electric golf carts | 50 | 10 | FAQ topic |
-
-## 12. Orphans and single-keyword clusters
-
-| Keyword | Vol | KD | Why orphaned / handling |
-|---|---|---|---|
-| golf trolley | 880 | 13 | Single keyword, but an exact page already exists (/shop/golf-trolleys/); kept as a minimal cluster |
-| golf buggy charger | 70 | 6 | Single keyword, but an exact page already exists (/shop/chargers/); kept as a minimal cluster |
-| triumph golf buggy accessories | 70 | 6 | Single keyword, but an exact page already exists (/brands/triumph/); kept as a minimal cluster |
-| golf buggies for sale sydney | 70 | 14 | Single keyword, but an exact page already exists (/golf-buggies/sydney/); kept as a minimal cluster |
-
-## 13. Assumptions made (please confirm or correct)
-1. Market is Australia only. US spellings (motorized) kept as supporting variants because the data is Australian search.
-2. "Golf buggy" and "golf trolley" are treated as the same product class for push and electric walk-behind buggies.
-3. `/shop/4-wheel/` is the foldable/compact push range.
-4. "Golf buggy with seat" (320) is mapped to ride-on carts. If the SERP shows push buggies with a seat, move it to /shop/seats-footboards/.
-5. Brand names with no page (Hillside Buggies, Walkinshaw, Axglo) are not assumed to be competitors or stockable; they are held for verification.
-6. Question keywords under 50 searches are used for the FAQ bank only (the rest of the plan respects the 50-search floor).
+# Keyword Map v2: The Buggy Shop (Australia)
+**Generated:** 6 Oct 2026. **Status: IMPLEMENTED on 6 Oct 2026 in three batches (page retargets and warranty; 17 guides and FAQ; links, expanded posts and guards). docs/keyword-targets.json holds the live targets and the crosscheck enforces them. Owner decisions (6 Oct 2026): no repair service (empty repairs page removed, 308 to /shop/parts/); lithium battery warranty is 5 years (catalogue updated); Can-Am: authorised dealer; Brosnan is a competitor retailer (brand page noindex); legal and general-knowledge wording approved; the 3 short live posts expanded. Replace this file after each new keyword export.**
+**Market:** Australia (Semrush AU database). **Sources:** 50 CSV exports, 5,099 rows (13 September "buggy" exports already mapped in v1, plus the new October exports for batteries, parts, accessories, kids buggies, golf clubs, bags, rangefinders, GPS watches and 16 brands).
+
+## 0. One-page summary
+| Measure | v1 (6 Oct, buggy terms only) | v2 (whole site) |
+| --- | --- | --- |
+| Raw keyword rows | 1,499 | 5,099 |
+| Unique keyword texts | 854 | 3,757 |
+| After merging spelling variants | 663 | 2,972 |
+| In the pool (volume 50+, KD under 56) | 174 | 450 (290 new) |
+| Tier mix (T1 / T2 / T3) | 143 / 14 / 6 | 401 / 39 / 10 |
+| Dropped: volume under 50 | 489 | 2,439 |
+| Dropped: KD 56 or more | (in the 489) | 4 |
+| Dropped: unrelated, typos or non-English (prams, strollers, US places, German) | (in the 489) | 79 |
+| Clusters | 34 | 62 |
+| URLs that own keywords | 33 (28 pages, 5 posts) | 91 (52 pages, 39 posts) |
+| Combined monthly searches in the pool | (not totalled) | 164,320 |
+
+**What changed since v1.** The new exports cover the parts of the site v1 could not map: batteries and chargers, parts, accessories, golf clubs, bags, rangefinders, GPS watches, kids buggies and 16 brands. 290 keywords are new to the pool. The golf-gear clusters are large (bags 39,390 searches, club sets 39,360, golf clubs 42,540) but your stock is thin (3 bags, 3 sets, 7 clubs), so section 4 flags where demand is real and where it is out of reach.
+
+**Merge rule (fixed after the double analysis).** Semrush difficulty (KD) drifts between exports: 181 of the 227 keywords that appear in both the September and October files changed, and even files from the same day disagreed (for example "electric golf buggy for sale" is KD 27 in four files and 17 in one). A first-pass merge picked whichever file loaded first. The rule now is: use the newest export; within it take the highest volume and the most common KD. The second pass recomputes every figure from the raw CSVs and matches all 450.
+
+## 1. Allocation by URL (every pooled keyword has exactly one owner)
+Sorted by combined monthly searches. "Owner" means the URL that targets the keyword; "LSI" keywords are used naturally in that URL's copy and are not targeted separately.
+
+| URL | Type | Primary keyword | Vol | KD | Tier | Keywords owned | Searches owned | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| /shop/golf-clubs/ | Category | golf clubs for sale | 2,400 | 28 | T2 | 11 | 25,360 | RETARGET |
+| /shop/complete-sets/ | Category | golf club set | 2,900 | 20 | T1 | 22 | 17,990 | RETARGET |
+| /shop/bags/ | Category | golf bag | 6,600 | 14 | T1 | 14 | 11,840 | RETARGET |
+| /shop/luxury-golf-carts/ | Category | golf cart | 5,400 | 39 | T2 | 18 | 7,690 | KEEP |
+| / | Category | golf buggy | 6,600 | 11 | T1 | 2 | 6,710 | KEEP |
+| /shop/golf-balls/ | Category | golf balls | 6,600 | 22 | T1 | 2 | 6,650 | RETARGET |
+| /shop/wedges-and-putters/ | Category | golf putter | 1,600 | 13 | T1 | 13 | 6,620 | RETARGET |
+| /brands/mgi/ | Brand | mgi golf buggy | 1,900 | 12 | T1 | 10 | 5,650 | KEEP |
+| /brands/can-am/ | Brand | canam australia | 1,000 | 25 | T1 | 9 | 5,500 | KEEP |
+| COMPETITOR (held for comparison content) | Competitor list | (support only) |  |  |  | 22 | 3,290 | HELD |
+| /shop/electric-golf-buggies/ | Category | electric golf buggy for sale | 390 | 27 | T2 | 9 | 3,210 | KEEP |
+| /shop/woods-and-irons/ | Category | golf driver | 2,400 | 20 | T1 | 6 | 2,990 | RETARGET |
+| /shop/rangefinders-gps/ | Category | golf rangefinder | 1,900 | 17 | T1 | 5 | 2,340 | RETARGET |
+| /brands/qod-golf/ | Brand | qocart | 1,900 | 15 | T1 | 5 | 2,340 | RETARGET |
+| /shop/ | Category | golf buggy for sale | 1,900 | 10 | T1 | 4 | 2,190 | KEEP |
+| /shop/remote-control-golf-buggies/ | Category | remote control golf buggy | 480 | 12 | T1 | 10 | 1,920 | KEEP |
+| /blog/ladies-golf-clubs-womens-golf-sets-guide/ | Blog | ladies golf clubs | 1,000 | 11 | T1 | 3 | 1,850 | NEW POST |
+| /brands/garmin/ | Brand | garmin golf watch | 1,600 | 23 | T1 | 3 | 1,820 | KEEP |
+| /brands/bushnell/ | Brand | bushnell rangefinder | 1,300 | 14 | T1 | 4 | 1,770 | KEEP |
+| /blog/golf-bag-and-cart-how-to-choose-stand-cart-carry/ | Blog | golf bag and cart | 1,000 | 11 | T1 | 5 | 1,620 | NEW POST |
+| /shop/cart-sets/ | Category | golf cart batteries | 880 | 14 | T1 | 6 | 1,580 | RETARGET |
+| /shop/off-road-buggies/ | Category | off road buggies | 590 | 6 | T1 | 7 | 1,570 | KEEP |
+| /blog/how-to-choose-an-iron-set/ | Blog | set of irons | 480 | 18 | T1 | 3 | 1,520 | NEW POST |
+| /shop/push-pull-golf-buggies/ | Category | golf push buggy | 480 | 10 | T1 | 10 | 1,390 | KEEP |
+| /blog/how-to-choose-a-golf-driver/ | Blog | driver golf club | 720 | 23 | T1 | 4 | 1,320 | NEW POST |
+| /blog/electric-golf-carts-australia-guide/ | Blog | (support only) |  |  |  | 7 | 1,190 | LIVE POST |
+| /shop/kids-buggies/ | Category | kids buggy for sale | 50 | 6 | T1 | 6 | 1,180 | KEEP |
+| /blog/electric-buggy-for-adults-australia/ | Blog | (support only) |  |  |  | 6 | 1,150 | LIVE POST |
+| /blog/golf-wedge-degrees-loft-guide/ | Blog | degrees for pitching wedge | 260 | 14 | T1 | 13 | 1,110 | NEW POST |
+| /blog/junior-golf-clubs-kids-golf-sets-by-age/ | Blog | kids golf club set | 480 | 14 | T1 | 6 | 1,090 | NEW POST |
+| /blog/golf-irons-explained-3-iron-to-9-iron/ | Blog | iron in golf | 390 | 28 | T2 | 6 | 1,080 | PLANNED POST |
+| /shop/accessories/ | Category | golf buggy accessories | 390 | 4 | T1 | 4 | 1,000 | RETARGET |
+| /shop/used-golf-buggies/ | Category | used golf buggy for sale | 320 | 6 | T1 | 7 | 980 | KEEP |
+| /blog/what-golf-clubs-do-you-need-full-set-explained/ | Blog | what golf clubs do you need | 50 | 17 | T1 | 5 | 910 | NEW POST |
+| /blog/best-golf-club-sets-for-beginners-australia/ | Blog | golf club set for beginners | 140 | 16 | T1 | 9 | 890 | NEW POST |
+| /shop/golf-trolleys/ | Category | golf trolley | 880 | 13 | T1 | 1 | 880 | KEEP |
+| /shop/dune-buggies/ | Category | dune buggies for sale | 210 | 16 | T1 | 5 | 870 | KEEP |
+| /shop/parts/ | Category | golf buggy parts | 210 | 7 | T1 | 6 | 860 | RETARGET |
+| /brands/club-car/ | Brand | club car | 590 | 40 | T2 | 4 | 860 | KEEP |
+| /shop/3-wheel/ | Category | three wheel golf buggy | 210 | 7 | T1 | 5 | 810 | KEEP |
+| /brands/yamaha/ | Brand | yamaha golf cart | 390 | 19 | T1 | 6 | 760 | KEEP |
+| /shop/walk-behind/ | Category | electric golf trolley | 260 | 17 | T1 | 6 | 710 | KEEP |
+| /brands/clicgear/ | Brand | clicgear | 590 | 20 | T1 | 2 | 660 | KEEP |
+| /brands/motocaddy/ | Brand | motocaddy | 590 | 10 | T1 | 2 | 660 | KEEP |
+| /blog/garmin-approach-s12-vs-s42-golf-gps-watch/ | Blog | garmin watch for golfers | 170 | 26 | T2 | 5 | 640 | PLANNED POST |
+| /blog/golf-rangefinder-vs-gps-watch-which-to-buy/ | Blog | best rated golf watches | 210 | 25 | T1 | 8 | 620 | NEW POST |
+| /brands/shot-scope/ | Brand | shotscope | 590 | 14 | T1 | 1 | 590 | KEEP |
+| /blog/cheap-golf-buggies-and-carts-australia/ | Blog | (support only) |  |  |  | 7 | 530 | LIVE POST |
+| /brands/ez-go/ | Brand | ezgo golf cart | 390 | 21 | T1 | 2 | 460 | RETARGET |
+| /blog/golf-sticks-and-golf-bats-explained/ | Blog | golf sticks | 320 | 23 | T1 | 3 | 460 | PLANNED POST |
+| /blog/best-electric-golf-buggies-australia/ | Blog | (support only) |  |  |  | 5 | 430 | LIVE POST |
+| /blog/best-golf-putters-types-guide-australia/ | Blog | best putters 2026 | 110 | 12 | T1 | 7 | 430 | NEW POST |
+| /blog/golf-cart-ac-vs-dc-motor-guide/ | Blog | golf cart ac | 390 | 17 | T1 | 1 | 390 | NEW POST |
+| /brands/ecar/ | Brand | e car golf buggy | 170 | 16 | T1 | 3 | 360 | KEEP |
+| /blog/mens-golf-club-sets-guide/ | Blog | mens golf set | 260 | 13 | T1 | 3 | 360 | PLANNED POST |
+| /blog/mgi-zip-vs-ai-navigator-which-mgi-buggy/ | Blog | mgi electric golf buggy | 170 | 17 | T1 | 3 | 330 | NEW POST |
+| /blog/shot-scope-g5-vs-g6-and-lm1-explained/ | Blog | shot scope launch monitor | 170 | 19 | T1 | 3 | 330 | PLANNED POST |
+| /blog/bushnell-hybrid-gps-rangefinders-explained/ | Blog | bushnell golf gps rangefinder | 140 | 3 | T1 | 4 | 290 | PLANNED POST |
+| /shop/4-wheel/ | Category | foldable golf buggy | 110 | 7 | T1 | 3 | 290 | KEEP |
+| /blog/clicgear-model-4-5-vs-4-0-vs-3-5/ | Blog | clicgear 4.5 | 110 | 13 | T1 | 4 | 280 | PLANNED POST |
+| /blog/golf-buggy-repairs-servicing-guide-australia/ | Blog | golf cart repairs | 70 | 5 | T1 | 5 | 270 | NEW POST |
+| /blog/golf-buggy-battery-replacement-guide/ | Blog | golf buggy battery replacement | 90 | 4 | T1 | 3 | 270 | NEW POST |
+| /shop/2-seat/ | Category | 2 seater buggy for sale | 170 | 4 | T1 | 3 | 270 | KEEP |
+| /shop/batteries/ | Category | golf buggy battery | 260 | 7 | T1 | 1 | 260 | RETARGET |
+| /shop/lithium/ | Category | golf buggy battery lithium | 260 | 6 | T1 | 1 | 260 | RETARGET |
+| /brands/powakaddy/ | Brand | powakaddy | 260 | 30 | T2 | 1 | 260 | KEEP |
+| /blog/used-golf-cart-auction-vs-dealer-australia/ | Blog | golf cart auction | 170 | 11 | T1 | 2 | 240 | NEW POST |
+| /blog/kids-off-road-buggy-buying-guide-electric-vs-petrol/ | Blog | kids off road buggy | 210 | 2 | T1 | 1 | 210 | NEW POST |
+| /blog/small-lightweight-golf-bags-guide/ | Blog | miniature golf bag | 110 | 16 | T1 | 3 | 210 | PLANNED POST |
+| /brands/big-max/ | Brand | big max golf buggy | 110 | 9 | T1 | 2 | 200 | KEEP |
+| /shop/side-by-side/ | Category | (support only) |  |  |  | 3 | 170 | KEEP |
+| /shop/utility/ | Category | electric utility cart | 70 | 2 | T1 | 3 | 170 | KEEP |
+| /blog/motocaddy-s1-vs-m5-gps-vs-m7-remote/ | Blog | motocaddy s1 | 50 | 9 | T1 | 3 | 170 | PLANNED POST |
+| /golf-buggies/brisbane/ | Location | (support only) |  |  |  | 3 | 150 | KEEP |
+| /golf-buggies/ | Location | golf buggies for sale near me | 50 | 16 | T1 | 2 | 140 | KEEP |
+| /blog/adjustable-golf-club-settings-explained/ | Blog | golf club settings | 140 | 23 | T1 | 1 | 140 | PLANNED POST |
+| /blog/putter-fitting-guide-length-lie-loft/ | Blog | fitted for a putter | 90 | 11 | T1 | 2 | 140 | PLANNED POST |
+| /blog/custom-golf-buggy-upgrades-guide/ | Blog | custom golf buggy | 110 | 3 | T1 | 1 | 110 | PLANNED POST |
+| /blog/corporate-golf-bags-bulk-orders-australia/ | Blog | corporate golf bags | 110 | 5 | T1 | 1 | 110 | PLANNED POST |
+| /shop/electric/ | Category | kids electric utv | 50 | 3 | T1 | 2 | 100 | RETARGET |
+| /golf-buggies/perth/ | Location | golf buggies perth | 50 | 26 | T2 | 2 | 100 | KEEP |
+| /shop/gps-follow-buggies/ | Category | follow me golf buggy | 50 | 17 | T1 | 2 | 100 | KEEP |
+| /shop/farm-buggies/ | Category | farm buggies for sale | 50 | 6 | T1 | 2 | 100 | KEEP |
+| /blog/golf-cart-battery-replacement-cost-australia/ | Blog | golf cart battery replacement | 50 | 9 | T1 | 2 | 100 | NEW POST |
+| /blog/golf-scooter-vs-golf-buggy/ | Blog | scooter golf | 90 | 2 | T1 | 1 | 90 | PLANNED POST |
+| /blog/golf-buggy-insurance-australia/ | Blog | golf buggy insurance | 70 | 8 | T1 | 1 | 70 | PLANNED POST |
+| /shop/chargers/ | Category | golf buggy charger | 70 | 18 | T1 | 1 | 70 | KEEP |
+| /golf-buggies/sydney/ | Location | golf buggies for sale sydney | 70 | 14 | T1 | 1 | 70 | KEEP |
+| /brands/triumph/ | Brand | triumph golf buggy accessories | 70 | 6 | T1 | 1 | 70 | KEEP |
+| /blog/powakaddy-ct6-vs-rx1-vs-fx7/ | Blog | powakaddy ct6 | 70 | 9 | T1 | 1 | 70 | PLANNED POST |
+| /blog/petrol-vs-electric-golf-buggy/ | Blog | petrol golf buggy | 50 | 3 | T1 | 1 | 50 | PLANNED POST |
+| /blog/golf-cart-brands-australia-compared/ | Blog | golf cart brands | 50 | 5 | T1 | 1 | 50 | PLANNED POST |
+
+**Untargeted on purpose:** 16 keywords (8,360 searches): the "buggy" ambiguity terms (prams and strollers share the word), "stinger" and "powercart" (ambiguous brands) and a few off-topic misc terms. See section 7.
+
+## 2. Pages that change (current live copy vs proposed)
+All lengths are checked: titles 60 characters or fewer, meta descriptions 130 to 155. Every proposed title, H1 and meta is unique against the 280 live pages and against each other (0 clashes).
+
+### /shop/batteries/  (RETARGET, Category)
+- **Why:** Old target "golf buggy battery replacement price" is not in the data; "golf buggy battery" is (260 searches, KD 7).
+- **Primary keyword:** golf buggy battery (260/KD 7) T1, Informational
+- **Secondary:** none (owner of one cluster only)
+- **LSI / supporting (0):** none
+- **Title now:** Golf Buggy Batteries & Chargers Australia | The Buggy Shop (58)
+- **Title proposed:** Golf Buggy Battery Australia | Packs, Chargers & Sets (53)
+- **H1 now:** Golf Buggy Batteries & Chargers
+- **H1 proposed:** Golf Buggy Battery for Sale in Australia
+- **Meta now:** Replacement lithium and lead-acid golf buggy batteries, chargers and cart battery sets. MGI, Motocaddy, PowaKaddy fitment plus Trojan cart sets. The Buggy… (155)
+- **Meta proposed:** Golf buggy battery for sale: replacement packs for MGI, Motocaddy and more, plus chargers, battery bags and 48V cart sets, all with Australian warranty. (152)
+- **Definition hook (first 150 words):** A golf buggy battery is the rechargeable pack that powers an electric buggy; our range covers 12V 18-hole and 24V 36-hole lithium packs, lead-acid options and matching chargers.
+- **Image alt formula:** "golf buggy battery - [product name and key detail]"
+- **Stock behind it:** 22 products across lithium, cart sets and chargers
+- **Internal links out:** /shop/lithium/, /shop/cart-sets/, /blog/golf-buggy-battery-replacement-guide/; **in:** /shop/chargers/, /brands/mgi/
+- **FAQ schema:** Yes: How much does a golf buggy battery cost?; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /shop/lithium/  (RETARGET, Sub-category)
+- **Why:** Parent and child must not share keywords: parent keeps "golf buggy battery", child owns "golf buggy battery lithium" (260 searches, KD 6).
+- **Primary keyword:** golf buggy battery lithium (260/KD 6) T1, Commercial
+- **Secondary:** none (owner of one cluster only)
+- **LSI / supporting (0):** none
+- **Title now:** Golf Buggy Lithium Batteries | 18 & 36 Hole | The Buggy Shop (60)
+- **Title proposed:** Golf Buggy Battery Lithium | 18 & 36 Hole Packs (47)
+- **H1 now:** Buggy Lithium Batteries
+- **H1 proposed:** Lithium Golf Buggy Battery: 18 & 36 Hole Packs
+- **Meta now:** 12V and 24V lithium battery replacements for MGI, Motocaddy and PowaKaddy electric golf buggies. Lightweight, fast charge. (122)
+- **Meta proposed:** Lithium golf buggy battery packs in 12V 18-hole and 24V 36-hole sizes for MGI, Motocaddy and more, with chargers and Australian warranty. (137)
+- **Definition hook (first 150 words):** A lithium golf buggy battery is a lighter, longer-lasting replacement for lead-acid; ours come in 12V 18-hole and 24V 36-hole sizes.
+- **Image alt formula:** "golf buggy battery lithium - [product name and key detail]"
+- **Stock behind it:** 9 products
+- **Internal links out:** /shop/chargers/, /blog/golf-buggy-battery-replacement-guide/, /blog/lifepo4-vs-lead-acid-battery-lifespan-australian-climate/; **in:** /shop/batteries/, /brands/mgi/
+- **FAQ schema:** Yes: What size battery does my golf buggy need? / Can I put a lithium battery in an old golf buggy?; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /shop/cart-sets/  (RETARGET, Sub-category)
+- **Why:** Biggest battery term in the export: 880 searches at KD 14 (T1) plus 320 for lithium at KD 4.
+- **Primary keyword:** golf cart batteries (880/KD 14) T1, Informational
+- **Secondary:** lithium golf cart batteries (320/KD 4); golf cart batteries australia (110/KD 8); 48v golf cart battery (70/KD 5); golf cart batteries and charger (90/KD 1); batteries for golf cars (110/KD 9)
+- **LSI / supporting (0):** none
+- **Title now:** Ride-On Golf Cart Battery Sets | 48V & Lithium (46)
+- **Title proposed:** Golf Cart Batteries Australia | 48V Lithium & Trojan (52)
+- **H1 now:** Cart Battery Sets
+- **H1 proposed:** Golf Cart Batteries for Sale in Australia
+- **Meta now:** 36V and 48V Trojan deep-cycle and drop-in LiFePO4 lithium battery sets for Club Car, Yamaha, EZGO and ECAR golf carts. (118)
+- **Meta proposed:** Golf cart batteries for sale in Australia: 48V lithium, Trojan and Century lead-acid and AGM sets and a lithium conversion kit. Compare prices. (143)
+- **Definition hook (first 150 words):** Golf cart batteries come as 36V or 48V sets; ours range from flooded lead-acid to 48V lithium drop-in packs.
+- **Image alt formula:** "golf cart batteries - [product name and key detail]"
+- **Stock behind it:** 8 products
+- **Internal links out:** /blog/golf-cart-battery-replacement-cost-australia/, /brands/trojan/, /shop/chargers/; **in:** /shop/luxury-golf-carts/, /shop/used-golf-buggies/
+- **FAQ schema:** Yes: How much do golf cart batteries cost?; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /shop/parts/  (RETARGET, Category)
+- **Why:** Six parts keywords collapse into one cluster (1,310 searches, KD 6-33); "golf cart parts" (260, KD 33) is the largest but T2, so "golf buggy parts" (210, KD 7) leads.
+- **Primary keyword:** golf buggy parts (210/KD 7) T1, Commercial
+- **Secondary:** golf cart parts (260/KD 33); buggy spare parts (140/KD 6); golf buggy parts australia (90/KD 6); golf cart parts australia (110/KD 33); golf car parts (50/KD 12)
+- **LSI / supporting (0):** none
+- **Title now:** Golf Buggy Parts & Spares Australia | The Buggy Shop (52)
+- **Title proposed:** Golf Buggy Parts Australia | Spares & Replacements (50)
+- **H1 now:** Golf Buggy Parts & Spares
+- **H1 proposed:** Golf Buggy Parts and Spares in Australia
+- **Meta now:** Golf buggy wheels, tyres, motors, controllers and spare parts by brand. MGI, Clicgear, Big Max, Stinger and cart tyres. Fast Australia-wide dispatch. The… (154)
+- **Meta proposed:** Golf buggy parts and golf cart parts in Australia: wheels, tyres, motors, controllers and trim parts for MGI, Clicgear, Stinger and more buggies. (145)
+- **Definition hook (first 150 words):** Golf buggy parts are the wheels, motors, controllers and trim that keep a buggy or cart running; we stock spares for MGI, Clicgear, Stinger and aftermarket buggies.
+- **Image alt formula:** "golf buggy parts - [product name and key detail]"
+- **Stock behind it:** 17 products
+- **Internal links out:** /shop/wheels-tyres/, /shop/drive-electrical/, /blog/golf-buggy-repairs-servicing-guide-australia/; **in:** /brands/mgi/, /brands/club-car/
+- **FAQ schema:** Yes: Where can I buy golf buggy parts in Australia? / Why will my golf cart not turn on?; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /shop/accessories/  (RETARGET, Category)
+- **Why:** Buggy (390, KD 4) and cart (390, KD 17) accessory searches have the same intent, so one page owns both. The 5% accessory discount is a real offer (lib/bundle.js).
+- **Primary keyword:** golf buggy accessories (390/KD 4) T1, Commercial
+- **Secondary:** golf cart accessories (390/KD 17); golf buggy accessories australia (110/KD 6); golf cart accessories australia (110/KD 10)
+- **LSI / supporting (0):** none
+- **Title now:** Golf Buggy Accessories Australia | Holders, Bags & More (55)
+- **Title proposed:** Golf Buggy Accessories | Golf Cart Accessories Australia (56)
+- **H1 now:** Golf Buggy Accessories
+- **H1 proposed:** Golf Buggy and Golf Cart Accessories in Australia
+- **Meta now:** Golf buggy accessories in Australia: umbrella and drink holders, bags, covers and wheel upgrades. Save 5% on accessories when you buy a buggy or cart. (150)
+- **Meta proposed:** Golf buggy accessories and golf cart accessories in Australia: holders, bags, covers, seats and wheel upgrades. Add a buggy and save 5% on accessories. (151)
+- **Definition hook (first 150 words):** Golf buggy accessories are the holders, covers, seats and upgrades that fit a buggy or cart; the same page serves golf cart accessories.
+- **Image alt formula:** "golf buggy accessories - [product name and key detail]"
+- **Stock behind it:** 23 products
+- **Internal links out:** /shop/bags/, /shop/holders/, /shop/covers-and-bags/; **in:** /shop/, /blog/golf-bag-and-cart-how-to-choose-stand-cart-carry/
+- **FAQ schema:** Uses the shared FAQ block for its theme; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /shop/bags/  (RETARGET, Sub-category)
+- **Why:** Largest cluster in the new data: 24 keywords, 39,390 searches combined. Only 3 bags in stock, so realism is limited (see product-gaps).
+- **Primary keyword:** golf bag (6,600/KD 14) T1, Commercial
+- **Secondary:** golf bags for sale (1,300/KD 11); golf stand bag (1,900/KD 19); golf bags australia (720/KD 18); golf carry bag (480/KD 15); golf bag affordable (260/KD 10)
+- **LSI / supporting (8):** golf club carry bag, golf bag cheap, golf bags discount, range golf bags, golf bags online, golf carrying bag, buy golf bag, used golf bag
+- **Title now:** Golf Cart & Stand Bags Australia | The Buggy Shop (49)
+- **Title proposed:** Golf Bags Australia | Stand, Cart & Carry Bags (46)
+- **H1 now:** Golf Bags
+- **H1 proposed:** Golf Bags for Sale in Australia
+- **Meta now:** 14-way cart bags, lightweight stand bags and travel covers. (59)
+- **Meta proposed:** Golf bags for sale in Australia: stand bags, cart bags and carry bags from $215, with the Big Max Dri Lite and a 14-way divider cart bag. Buy online. (149)
+- **Definition hook (first 150 words):** A golf bag is the bag that holds your clubs; we stock stand bags for carrying and cart bags for a buggy or trolley.
+- **Image alt formula:** "golf bag - [product name and key detail]"
+- **Stock behind it:** 3 bags (+3 covers and travel bags)
+- **Internal links out:** /blog/golf-bag-and-cart-how-to-choose-stand-cart-carry/, /shop/covers-and-bags/, /shop/push-pull-golf-buggies/; **in:** /shop/accessories/, /shop/golf-clubs/
+- **FAQ schema:** Yes: What golf bag is best for a golf buggy?; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /shop/rangefinders-gps/  (RETARGET, Sub-category)
+- **Why:** Rangefinder cluster is 11 keywords and 9,300 searches (head term 1,900 at KD 17). Watches and rangefinders share this page; a watches sub-page is a gap (see product-gaps).
+- **Primary keyword:** golf rangefinder (1,900/KD 17) T1, Informational
+- **Secondary:** golf range finders australia (110/KD 15); laser golf range finder (170/KD 19); gps golf rangefinder (110/KD 17); golf finder (50/KD 13)
+- **LSI / supporting (0):** none
+- **Title now:** Golf Laser Rangefinders & GPS Watches | The Buggy Shop (54)
+- **Title proposed:** Golf Rangefinder Australia | Laser Rangefinders & GPS (53)
+- **H1 now:** Rangefinders & GPS Watches
+- **H1 proposed:** Golf Rangefinders and GPS Watches in Australia
+- **Meta now:** Bushnell, Garmin, Precision Pro rangefinders and Shot Scope watches. (68)
+- **Meta proposed:** Golf rangefinder and GPS watch range in Australia: Bushnell Tour V5 and Pro X3, Precision Pro NX7, Garmin Approach and Shot Scope. Rangefinders from $479. (154)
+- **Definition hook (first 150 words):** A golf rangefinder is a laser device that measures the distance to the flag; we also stock GPS golf watches from Garmin and Shot Scope.
+- **Image alt formula:** "golf rangefinder - [product name and key detail]"
+- **Stock behind it:** 6 products (3 rangefinders, 3 watches)
+- **Internal links out:** /blog/golf-rangefinder-vs-gps-watch-which-to-buy/, /brands/bushnell/, /brands/garmin/; **in:** /shop/accessories/, /shop/golf-clubs/
+- **FAQ schema:** Yes: Is a golf rangefinder better than a GPS watch?; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /shop/golf-balls/  (RETARGET, Sub-category)
+- **Why:** "Golf balls" is 6,600 searches (KD 22) with only 3 SKUs: the page should win the brand-plus-model searches, not the head term.
+- **Primary keyword:** golf balls (6,600/KD 22) T1, Informational
+- **Secondary:** none (owner of one cluster only)
+- **LSI / supporting (1):** ball bag golf
+- **Title now:** Premium Golf Balls Australia | The Buggy Shop (45)
+- **Title proposed:** Golf Balls Australia | Titleist, TaylorMade, Srixon (51)
+- **H1 now:** Golf Balls
+- **H1 proposed:** Golf Balls for Sale in Australia
+- **Meta now:** Titleist Pro V1, TaylorMade TP5, Srixon Z-Star golf balls. (58)
+- **Meta proposed:** Golf balls in Australia: Titleist Pro V1, TaylorMade TP5 and Srixon Z-Star by the dozen. Premium tour golf balls delivered Australia-wide. (138)
+- **Definition hook (first 150 words):** Golf balls are sold by the dozen; we stock the Titleist Pro V1, TaylorMade TP5 and Srixon Z-Star.
+- **Image alt formula:** "golf balls - [product name and key detail]"
+- **Stock behind it:** 3 SKUs
+- **Internal links out:** /shop/golf-clubs/, /shop/practice-aids/, /brands/titleist/; **in:** /shop/accessories/
+- **FAQ schema:** Uses the shared FAQ block for its theme; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /shop/golf-clubs/  (RETARGET, Category)
+- **Why:** "Golf clubs" is the biggest single term in the export (14,800, KD 30); the parent page takes the head and "for sale" terms, the sub-pages take sets, drivers/irons and wedges/putters.
+- **Primary keyword:** golf clubs for sale (2,400/KD 28) T2, Transactional
+- **Secondary:** golf clubs (14,800/KD 30); golf clubs mens (320/KD 10); cheapest golf clubs (70/KD 8); golf clubs for sale au (90/KD 36); where to buy golf clubs (70/KD 21)
+- **LSI / supporting (5):** club golf equipment, black golf clubs, golf club purchase, golf clubs australia, buy golf clubs
+- **Title now:** Golf Clubs for Sale Australia | Sets, Drivers & Irons (53)
+- **Title proposed:** Golf Clubs for Sale Australia | Sets, Drivers & Irons (53)
+- **H1 now:** Golf Clubs
+- **H1 proposed:** Golf Clubs for Sale in Australia
+- **Meta now:** Shop complete golf package sets, drivers, iron sets, wedges and putters at The Buggy Shop. (90)
+- **Meta proposed:** Golf clubs for sale in Australia: complete sets, drivers, iron sets, wedges and putters for men, women and juniors. Buy golf clubs online with delivery. (152)
+- **Definition hook (first 150 words):** Golf clubs are sold as complete sets or individually; we stock complete sets, drivers, irons, wedges and putters.
+- **Image alt formula:** "golf clubs for sale - [product name and key detail]"
+- **Stock behind it:** 7 products
+- **Internal links out:** /shop/complete-sets/, /shop/woods-and-irons/, /shop/wedges-and-putters/; **in:** /, /shop/
+- **FAQ schema:** Uses the shared FAQ block for its theme; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /shop/complete-sets/  (RETARGET, Sub-category)
+- **Why:** Club-set cluster: 36 keywords, 39,360 searches. "golf club packages" (320 searches, KD 6) is a hidden quick win. Note: "set of golf" 8,100 is a Semrush merge of "golf set" variants.
+- **Primary keyword:** golf club set (2,900/KD 20) T1, Informational
+- **Secondary:** golf sets for sale (1,900/KD 18); golf club packages (320/KD 6); golf sets australia (320/KD 22); complete golf sets (170/KD 7); golf club sets for sale (210/KD 22)
+- **LSI / supporting (16):** set of golf, golf bat set, golf stick set, men's set golf clubs, golf set packages, golf sets online, golf club package sets, complete golf club sets
+- **Title now:** Complete Golf Package Sets Australia | The Buggy Shop (53)
+- **Title proposed:** Golf Club Set Australia | Complete Golf Sets for Sale (53)
+- **H1 now:** Complete Golf Package Sets
+- **H1 proposed:** Golf Club Sets and Complete Golf Sets for Sale
+- **Meta now:** Beginner, junior and ladies complete package sets with bag. (59)
+- **Meta proposed:** Golf club sets and complete golf sets in Australia: a 12-piece beginner set, a ladies set and a junior set. Sets from $249, delivered Australia-wide. (149)
+- **Definition hook (first 150 words):** A golf club set is a complete package of driver, woods, irons, putter and bag; ours cover beginner, ladies and junior players.
+- **Image alt formula:** "golf club set - [product name and key detail]"
+- **Stock behind it:** 3 sets (beginner, ladies, junior)
+- **Internal links out:** /blog/best-golf-club-sets-for-beginners-australia/, /blog/junior-golf-clubs-kids-golf-sets-by-age/, /blog/ladies-golf-clubs-womens-golf-sets-guide/; **in:** /shop/golf-clubs/, /shop/bags/
+- **FAQ schema:** Yes: What golf clubs do you need as a beginner? / How much is a kids golf club set? / Do you sell a complete ladies golf club set?; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /shop/woods-and-irons/  (RETARGET, Sub-category)
+- **Why:** Driver (2,400, KD 20) and iron-set intent are close enough that one page owns both while stock is 1 driver and 1 iron set; split into two pages once each has 4+ products.
+- **Primary keyword:** golf driver (2,400/KD 20) T1, Commercial
+- **Secondary:** golf irons for sale (170/KD 15); golf iron sets for sale (90/KD 18); golf club iron sets for sale (90/KD 18); cheap golf club iron sets (70/KD 13)
+- **LSI / supporting (1):** golf iron 4
+- **Title now:** Golf Drivers, Fairways & Iron Sets Australia (44)
+- **Title proposed:** Golf Driver Australia | Fairway Woods & Iron Sets (49)
+- **H1 now:** Woods & Irons
+- **H1 proposed:** Golf Drivers and Iron Sets for Sale in Australia
+- **Meta now:** Drivers, fairway woods and iron sets for all handicap levels. (61)
+- **Meta proposed:** Golf driver and iron sets for sale in Australia: a driver from $449 and a mid-range iron set. Woods and irons for beginners and improvers, delivered. (149)
+- **Definition hook (first 150 words):** A golf driver is the longest club in the bag for tee shots; this page also lists iron sets.
+- **Image alt formula:** "golf driver - [product name and key detail]"
+- **Stock behind it:** 2 products (1 driver, 1 iron set)
+- **Internal links out:** /blog/how-to-choose-a-golf-driver/, /blog/how-to-choose-an-iron-set/, /shop/golf-clubs/; **in:** /shop/complete-sets/
+- **FAQ schema:** Uses the shared FAQ block for its theme; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /shop/wedges-and-putters/  (RETARGET, Sub-category)
+- **Why:** Putter (7,730 searches combined) and wedge (5,030) are two clusters on one page; merge is a stop-gap. Recommend splitting into /putters/ and /wedges/ at 3+ products each (decision #3).
+- **Primary keyword:** golf putter (1,600/KD 13) T1, Informational
+- **Secondary:** putter (2,400/KD 26); golf wedges (1,000/KD 19); putter buy (390/KD 21); golf wedge set (260/KD 10); cheapest putter (70/KD 21)
+- **LSI / supporting (7):** golf club wedge set, wedge golf club, golf pitching wedge, golf putters second hand, putter golf club, golf equipment putter, 009m putter
+- **Title now:** Golf Wedges & Putters Australia | The Buggy Shop (48)
+- **Title proposed:** Golf Putter Australia | Wedges & Putters for Sale (49)
+- **H1 now:** Wedges & Putters
+- **H1 proposed:** Golf Putters and Wedges for Sale in Australia
+- **Meta now:** Precision wedges and mallet/blade putters. (42)
+- **Meta proposed:** Golf putter and wedge range in Australia: a golf putter from $199 and a golf wedge from $199. Short-game clubs delivered Australia-wide. (136)
+- **Definition hook (first 150 words):** A golf putter is the club used on the green; this page also lists wedges for short-game shots.
+- **Image alt formula:** "golf putter - [product name and key detail]"
+- **Stock behind it:** 2 products (1 wedge, 1 putter)
+- **Internal links out:** /blog/golf-wedge-degrees-loft-guide/, /blog/best-golf-putters-types-guide-australia/, /shop/golf-clubs/; **in:** /shop/complete-sets/
+- **FAQ schema:** Yes: What degrees is a sand wedge?; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /shop/electric/  (RETARGET, Sub-category)
+- **Why:** Old target "kids electric buggy 48v" is not in the data; "kids electric utv" and "utv for kids" are (50 each, KD 3-6).
+- **Primary keyword:** kids electric utv (50/KD 3) T1, Informational
+- **Secondary:** utv for kids (50/KD 6)
+- **LSI / supporting (0):** none
+- **Title now:** Kids Electric Buggies for Sale Australia | 24V - 48V (52)
+- **Title proposed:** Kids Electric UTV | 24V - 48V Kids Electric Buggies (51)
+- **H1 now:** Electric Kids Buggies
+- **H1 proposed:** Kids Electric UTV and Buggies for Sale in Australia
+- **Meta now:** 24V, 36V and 48V kids electric off-road buggies with parental speed controls, roll bars and disc brakes. Australia-wide shipping. (129)
+- **Meta proposed:** Kids electric UTV and buggies in Australia: 24V to 48V electric 4x4 and RZR-style ride-ons from $1,290, quiet and easy to run. Delivered Australia-wide. (152)
+- **Definition hook (first 150 words):** A kids electric UTV is a battery-powered ride-on buggy for children; ours run on 24V to 48V.
+- **Image alt formula:** "kids electric utv - [product name and key detail]"
+- **Stock behind it:** 2 products
+- **Internal links out:** /blog/kids-off-road-buggy-buying-guide-electric-vs-petrol/, /shop/kids-buggies/, /shop/petrol/; **in:** /shop/kids-buggies/
+- **FAQ schema:** Uses the shared FAQ block for its theme; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /brands/qod-golf/  (RETARGET, Brand)
+- **Why:** "Qocart" is 1,900 searches at KD 15 (T1) and the current page title does not contain it.
+- **Primary keyword:** qocart (1,900/KD 15) T1, Informational
+- **Secondary:** none (owner of one cluster only)
+- **LSI / supporting (4):** qod golf cart, q golf, qod golf buggy, qod golf
+- **Title now:** QOD Golf Buggies Australia | Modular Push to Electric (53)
+- **Title proposed:** Qocart Golf Buggy Australia | QOD Push-to-Electric (50)
+- **H1 now:** QOD Golf Compact Buggies Australia
+- **H1 proposed:** Qocart and QOD Golf Buggies in Australia
+- **Meta now:** Australian designed and made QOD Compact golf buggies. The smallest folding full-size buggy in the world, upgradeable to electric and remote. (141)
+- **Meta proposed:** Qocart golf buggy and QOD golf buggies in Australia: the compact modular push buggy that converts to electric. Shop the QOD range at The Buggy Shop. (148)
+- **Definition hook (first 150 words):** Qocart is the QOD Golf modular push buggy that can be upgraded to electric.
+- **Image alt formula:** "qocart - [product name and key detail]"
+- **Stock behind it:** 1 product
+- **Internal links out:** /shop/push-pull-golf-buggies/, /shop/4-wheel/, /shop/conversion-kits/; **in:** /brands/, /shop/push-pull-golf-buggies/
+- **FAQ schema:** Uses the shared FAQ block for its theme; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+### /brands/ez-go/  (RETARGET, Brand)
+- **Why:** "ezgo golf cart" is 390 searches (KD 21), and the plural form adds 320 more: the page is written "E-Z-GO" while searchers type "ezgo".
+- **Primary keyword:** ezgo golf cart (390/KD 21) T1, Commercial
+- **Secondary:** none (owner of one cluster only)
+- **LSI / supporting (1):** msi ezgo
+- **Title now:** E-Z-GO Golf Carts Australia | RXV & TXT Reconditioned (53)
+- **Title proposed:** EZGO Golf Cart Australia | E-Z-GO RXV & TXT Ex-Fleet (52)
+- **H1 now:** E-Z-GO Golf Carts for Sale Australia
+- **H1 proposed:** EZGO (E-Z-GO) Golf Carts for Sale in Australia
+- **Meta now:** Reconditioned ex-fleet and private E-Z-GO RXV electric golf carts. Automatic parking brakes, AC motor efficiency and lithium conversion options. (144)
+- **Meta proposed:** EZGO golf cart and E-Z-GO RXV and TXT carts for sale in Australia, including refurbished ex-fleet lithium carts. Spelled EZGO, E-Z-GO or EZ-GO. (143)
+- **Definition hook (first 150 words):** EZGO golf carts, also written E-Z-GO or EZ-GO, are built in a range of petrol and electric models; we list refurbished ex-fleet RXV and TXT carts.
+- **Image alt formula:** "ezgo golf cart - [product name and key detail]"
+- **Stock behind it:** 2 products
+- **Internal links out:** /shop/used-golf-buggies/, /shop/luxury-golf-carts/, /shop/cart-sets/; **in:** /brands/, /blog/golf-cart-ac-vs-dc-motor-guide/
+- **FAQ schema:** Uses the shared FAQ block for its theme; **Speakable:** first answer on the page; **Schema:** CollectionPage + FAQPage
+- **Entity coverage:** Product yes, Brand yes, Category yes, Location not on this page (national)
+
+## 3. Pages confirmed unchanged by the new data
+| URL | Primary | Note |
+| --- | --- | --- |
+| /brands/mgi/ | mgi golf buggy | 14 MGI keywords (6,980 searches). Page keeps the brand terms; the MGI comparison post takes "mgi zip", "mgi electric golf buggy", "mgi remote golf buggy". |
+| /brands/motocaddy/ | motocaddy | 5 keywords, 990 searches. Title already leads with Motocaddy. |
+| /brands/powakaddy/ | powakaddy | 2 keywords, 350 searches. Title already leads with PowaKaddy. |
+| /brands/clicgear/ | clicgear | 6 keywords, 1,220 searches. Title already leads with Clicgear. |
+| /brands/big-max/ | big max golf buggy | 2 keywords, 200 searches. |
+| /brands/ecar/ | ecar golf carts | Retargeted in the last batch; confirmed by the new data (140, KD 8). |
+| /brands/yamaha/ | yamaha golf cart | 6 keywords, 790 searches. Title already carries it. |
+| /brands/club-car/ | club car | Only T3 head term (590, KD 40): used as support, not as a primary. Parts terms go to /shop/parts/. |
+| /brands/can-am/ | can-am australia | 9 keywords, 11,540 searches (head term "can am" 3,600 at KD 38). Title carries it. See flag: dealer wording. |
+| /brands/garmin/ | garmin golf watch | 8 keywords, 3,830 searches. Title already carries it. |
+| /brands/bushnell/ | bushnell rangefinder | 7 keywords, 2,540 searches. Title already carries it. |
+| /brands/shot-scope/ | shot scope | 4 keywords, 1,440 searches. Title already carries it. |
+| /shop/kids-buggies/ | kids buggy | 7 keywords. Page already targets "kids buggy" (720, KD 6). |
+| /shop/petrol/ | kids petrol buggy | Already matches "kids buggy petrol" (140, KD 2). |
+
+## 4. Demand against stock: where the keywords are reachable
+A keyword only helps if the page can rank for it and the stock can satisfy it. Tier shows how hard the term is; "stock" is what the catalogue holds today.
+
+| Page | Primary (vol/KD) | Searches owned | Stock | Realistic outcome |
+| --- | --- | --- | --- | --- |
+| /shop/batteries/ | golf buggy battery (260/7) | 260 | 22 products across lithium, cart sets and chargers | Good: T1, build and expect movement in 1 to 3 months |
+| /shop/lithium/ | golf buggy battery lithium (260/6) | 260 | 9 products | Good: T1, build and expect movement in 1 to 3 months |
+| /shop/cart-sets/ | golf cart batteries (880/14) | 1,580 | 8 products | Good: T1, build and expect movement in 1 to 3 months |
+| /shop/parts/ | golf buggy parts (210/7) | 860 | 17 products | Good: T1, build and expect movement in 1 to 3 months |
+| /shop/accessories/ | golf buggy accessories (390/4) | 1,000 | 23 products | Good: T1, build and expect movement in 1 to 3 months |
+| /shop/bags/ | golf bag (6,600/14) | 11,840 | 3 bags (+3 covers and travel bags) | Head term is large but stock is thin: expect the long-tail and brand terms to rank first |
+| /shop/rangefinders-gps/ | golf rangefinder (1,900/17) | 2,340 | 6 products (3 rangefinders, 3 watches) | Good: T1, build and expect movement in 1 to 3 months |
+| /shop/golf-balls/ | golf balls (6,600/22) | 6,650 | 3 SKUs | Head term is large but stock is thin: expect the long-tail and brand terms to rank first |
+| /shop/golf-clubs/ | golf clubs for sale (2,400/28) | 25,360 | 7 products | Reasonable: T2, 3 to 6 months with quality copy |
+| /shop/complete-sets/ | golf club set (2,900/20) | 17,990 | 3 sets (beginner, ladies, junior) | Head term is large but stock is thin: expect the long-tail and brand terms to rank first |
+| /shop/woods-and-irons/ | golf driver (2,400/20) | 2,990 | 2 products (1 driver, 1 iron set) | Head term is large but stock is thin: expect the long-tail and brand terms to rank first |
+| /shop/wedges-and-putters/ | golf putter (1,600/13) | 6,620 | 2 products (1 wedge, 1 putter) | Good: T1, build and expect movement in 1 to 3 months |
+| /shop/electric/ | kids electric utv (50/3) | 100 | 2 products | Good: T1, build and expect movement in 1 to 3 months |
+| /brands/qod-golf/ | qocart (1,900/15) | 2,340 | 1 product | Good: T1, build and expect movement in 1 to 3 months |
+| /brands/ez-go/ | ezgo golf cart (390/21) | 460 | 2 products | Good: T1, build and expect movement in 1 to 3 months |
+
+## 5. Flags: pages to noindex, remove or verify
+| URL | Action | Why |
+| --- | --- | --- |
+| /brands/brosnan/ | FLAG: noindex or unpublish | 0 products, and the 880-search term "brosnan golf clubs" is for Brosnan Golf / Golf World, a large Australian retailer and club maker, not a buggy brand. Listing it as one is a trademark and relevance risk. Moved to the competitor list. |
+| /brands/stinger-golf/ | FLAG: verify before targeting | "Stinger" is also a Brosnan Golf club-set brand. We stock a Stinger SG-4 Crossover remote buggy. Of 9 Stinger keywords, none can be safely assigned until you confirm what searchers want. |
+| /shop/golf-buggy-repairs/ | FLAG: empty page | Repair keywords (170 searches) are now claimed by a blog post. Delete this node or keep it noindexed until you confirm you offer repairs. |
+| /shop/2-seater-petrol/ | FLAG: empty page | Still 0 products; stays noindexed. |
+| /brands/triumph/ | FLAG: 0 products | Single keyword (70 searches). Stays noindexed. |
+| /brands/thomson/ | FLAG: 0 products | No keyword data. Stays noindexed. |
+
+## 6. Keywords moved from a v1 page to a new owner
+| Keyword | Searches | Was on | Now on | Reason |
+| --- | --- | --- | --- | --- |
+| battery golf buggies | 260 | /shop/electric-golf-buggies/ | /shop/batteries/ | Same words as "golf buggy battery" once spelling is normalised; the battery page owns it |
+| utv for kids | 50 | /shop/kids-buggies/ | /shop/electric/ | The kids electric sub-page now owns the "UTV" terms |
+| kids electric utv | 50 | /shop/kids-buggies/ | /shop/electric/ | The kids electric sub-page now owns the "UTV" terms |
+
+## 7. Competitor brands, ambiguous terms and not-offered terms
+### Competitor and not-stocked brand terms (comparison content only, never a product page target)
+| Keyword | Searches | KD | Who | Use |
+| --- | --- | --- | --- | --- |
+| brosnan golf clubs | 880 | 13 | Brosnan Golf / Golf World (retailer + club maker, not stocked) | Do not target: Brosnan Golf is a retailer and club maker |
+| aldi golf buggy | 390 | 28 | Aldi (retailer) | Comparison post (Aldi post is live) |
+| brosnan golf | 320 | 14 | Brosnan Golf / Golf World (retailer + club maker, not stocked) | Do not target: Brosnan Golf is a retailer and club maker |
+| hillside buggies | 210 | 28 | Hillside Buggies (brand, not stocked) | Brand gap or comparison only if you decide to stock |
+| aldi electric golf buggy | 210 | 25 | Aldi (retailer) | Comparison post (Aldi post is live) |
+| void putters | 170 | 21 | Void putters (brand, not stocked) | Brand gap or comparison only if you decide to stock |
+| shark golf set | 140 | 15 | Shark golf set (brand, not stocked) | Brand gap or comparison only if you decide to stock |
+| walkinshaw golf buggy | 110 | 11 | Walkinshaw (brand, not stocked) | Brand gap or comparison only if you decide to stock |
+| bunnings golf buggy | 90 | 22 | Bunnings (retailer) | Comparison post (Aldi post is live) |
+| axglo golf buggy | 70 | 5 | Axglo (brand, not stocked) | Brand gap or comparison only if you decide to stock |
+| golf buggies drummond | 70 | 18 | Drummond Golf (retailer) | Comparison post (Aldi post is live) |
+| gumtree golf cart | 70 | 16 | Gumtree (marketplace) | Comparison post (Aldi post is live) |
+| stix golf set | 70 | 10 | Stix Golf (brand, not stocked) | Brand gap or comparison only if you decide to stock |
+| l.a.b. putter australia | 70 | 6 | L.A.B. Golf (brand, not stocked) | Brand gap or comparison only if you decide to stock |
+| lab putter grips | 70 | 15 | L.A.B. Golf (brand, not stocked) | Brand gap or comparison only if you decide to stock |
+| putt lab perth | 70 | 16 | L.A.B. Golf (brand, not stocked) | Brand gap or comparison only if you decide to stock |
+| brosnan junior golf clubs | 50 | 7 | Brosnan Golf / Golf World (retailer + club maker, not stocked) | Do not target: Brosnan Golf is a retailer and club maker |
+| aldi electric golf buggy review | 50 | 26 | Aldi (retailer) | Comparison post (Aldi post is live) |
+| aldi golf buggy review | 50 | 24 | Aldi (retailer) | Comparison post (Aldi post is live) |
+| eagles & birdies classic premium golf buggy | 50 | 25 | Eagles & Birdies (brand, not stocked) | Brand gap or comparison only if you decide to stock |
+| stix 10 piece golf club set | 50 | 9 | Stix Golf (brand, not stocked) | Brand gap or comparison only if you decide to stock |
+| lab putter grip change | 50 | 17 | L.A.B. Golf (brand, not stocked) | Brand gap or comparison only if you decide to stock |
+| golfbox rangefinder | 50 | 17 | GolfBox (app) | Brand gap or comparison only if you decide to stock |
+
+### Ambiguous terms left untargeted
+| Keyword | Searches | KD | Why |
+| --- | --- | --- | --- |
+| buggy | 5400 | 18 | "buggy" alone mostly means prams and strollers |
+| stinger golf | 590 | 20 | Brand name shared with another product or maker: verify the SERP first |
+| esperia stinger | 590 | 26 | Brand name shared with another product or maker: verify the SERP first |
+| buggies for sale | 590 | 8 | "buggy" alone mostly means prams and strollers |
+| speed stinger | 210 | 25 | Brand name shared with another product or maker: verify the SERP first |
+| used buggy for sale | 210 | 13 | "buggy" alone mostly means prams and strollers |
+| cheap buggy | 140 | 9 | "buggy" alone mostly means prams and strollers |
+| buggies cars | 110 | 23 | Off-topic or not a product you sell |
+| powercart | 90 | 9 | Brand name shared with another product or maker: verify the SERP first |
+| buy a buggy | 90 | 9 | "buggy" alone mostly means prams and strollers |
+| stinger golf bag | 70 | 14 | Brand name shared with another product or maker: verify the SERP first |
+| buggy australia | 70 | 13 | "buggy" alone mostly means prams and strollers |
+| maxi golfers | 50 | 12 | Brand name shared with another product or maker: verify the SERP first |
+| stinger sg4 crossover | 50 | 14 | Brand name shared with another product or maker: verify the SERP first |
+| stingergolf | 50 | 18 | Brand name shared with another product or maker: verify the SERP first |
+| stinger sports | 50 | 22 | Brand name shared with another product or maker: verify the SERP first |
+
+### Terms you do not offer: leave out of copy
+"golf putters second hand" (70), "used golf bag" (50) and "golf cart auction" (170, handled as a buyer-advice post) imply services or stock you do not have. They stay assigned for completeness but must not appear as offers.
+
+## 8. Supporting pool (KD 41 to 55): never a primary
+| Keyword | Searches | KD | Used on |
+| --- | --- | --- | --- |
+| electric golf buggy | 1900 | 41 | /shop/electric-golf-buggies/ |
+| golf clubs australia | 590 | 51 | /shop/golf-clubs/ |
+| can am can | 480 | 43 | /brands/can-am/ |
+| buy golf clubs | 260 | 41 | /shop/golf-clubs/ |
+| best electric golf buggy australia | 140 | 41 | /blog/best-electric-golf-buggies-australia/ |
+| motorised golf cart | 140 | 43 | /blog/electric-golf-carts-australia-guide/ |
+| golf carts near me | 90 | 47 | /golf-buggies/ |
+| buy electric golf buggy | 50 | 41 | /shop/electric-golf-buggies/ |
+| automatic golf buggy | 50 | 41 | /shop/gps-follow-buggies/ |
+| can am off road | 50 | 43 | /brands/can-am/ |
+
+## 9. Revisit in 6 months (KD 41 to 55 and 2,000+ searches)
+None qualify. Closest: "can am" (3,600, KD 38, a T2 brand head term) and "club car" (590, KD 40, T3).
+
+## 10. Orphans
+None. Every pooled keyword matched a cluster (450 of 450). Single-keyword clusters: golf trolley (880), golf buggy charger (70), golf buggy battery lithium (260), triumph golf buggy accessories (70).
+
+## 11. Cannibalisation check
+Every pooled keyword has exactly one owner (450 keywords, 450 owners). No keyword is the primary of two URLs (86 primaries). Eleven primary-keyword pairs are 75% similar by word overlap; each was reviewed:
+
+| Pair | Verdict |
+| --- | --- |
+| mgi electric golf buggy (/blog/mgi-zip-vs-ai-navigator-which-mgi-buggy/) ~ mgi golf buggy (/brands/mgi/) = 0.75 | Modifier variant with different intent (guide or comparison vs category). Accept, keep the guide title free of the category keyword |
+| golf cart battery replacement (/blog/golf-cart-battery-replacement-cost-australia/) ~ golf cart batteries (/shop/cart-sets/) = 0.75 | Modifier variant with different intent (guide or comparison vs category). Accept, keep the guide title free of the category keyword |
+| golf buggy battery replacement (/blog/golf-buggy-battery-replacement-guide/) ~ golf buggy battery (/shop/batteries/) = 0.75 | Modifier variant with different intent (guide or comparison vs category). Accept, keep the guide title free of the category keyword |
+| kids off road buggy (/blog/kids-off-road-buggy-buying-guide-electric-vs-petrol/) ~ off road buggies (/shop/off-road-buggies/) = 0.75 | Modifier variant with different intent (guide or comparison vs category). Accept, keep the guide title free of the category keyword |
+| golf club set for beginners (/blog/best-golf-club-sets-for-beginners-australia/) ~ golf club set (/shop/complete-sets/) = 0.75 | Modifier variant with different intent (guide or comparison vs category). Accept, keep the guide title free of the category keyword |
+| kids golf club set (/blog/junior-golf-clubs-kids-golf-sets-by-age/) ~ golf club set (/shop/complete-sets/) = 0.75 | Modifier variant with different intent (guide or comparison vs category). Accept, keep the guide title free of the category keyword |
+| golf buggy battery (/shop/batteries/) ~ golf buggy battery lithium (/shop/lithium/) = 0.75 | Parent and child. Mitigated: parent title no longer says "lithium"; keep parent copy general |
+| golf buggy accessories (/shop/accessories/) ~ triumph golf buggy accessories (/brands/triumph/) = 0.75 | Brand page has 0 products and is noindexed |
+| golf buggy for sale (/shop/) ~ electric golf buggy for sale (/shop/electric-golf-buggies/) = 0.75 | Normal hub and modifier structure (same as v1) |
+| golf buggy for sale (/shop/) ~ used golf buggy for sale (/shop/used-golf-buggies/) = 0.75 | Normal hub and modifier structure (same as v1) |
+| golf buggy for sale (/shop/) ~ golf buggies for sale sydney (/golf-buggies/sydney/) = 0.75 | Normal hub and modifier structure (same as v1) |
+
+## 12. AI and GEO layer
+- **FAQ schema:** every retargeted page can carry the new FAQ answers (faq-bank.md) as a FAQPage block; the 17 new posts each carry 2 to 3.
+- **Speakable:** the first answer on each page and post gets the existing speakable class.
+- **Definition hooks:** written for all 15 retargeted pages (section 2) and all 17 new posts (blog-plan.md); each goes in the first 150 words.
+- **Entity gaps:** location entity is absent on all national category pages by design; city pages carry it. Brand pages for Brosnan, Stinger and Thomson need entity clean-up (section 5).
+- **llms.txt priority map:**
+  - P1: /, /shop/, /shop/electric-golf-buggies/, /shop/luxury-golf-carts/, /shop/golf-trolleys/, /brands/mgi/, /faq/
+  - P2: /shop/batteries/, /shop/cart-sets/, /shop/parts/, /shop/golf-clubs/, /shop/complete-sets/, /shop/rangefinders-gps/, /brands/ecar/, /brands/can-am/, the 8 live posts
+  - P3: the 17 new guides, other category and brand pages
+  - Exclude: /admin/, /order/, /checkout/, noindexed empty pages
+
+## Appendix A: every pooled keyword and its owner (450 rows)
+| Keyword | Vol | KD | Tier | Intent | Cluster | Owner URL | Role | New |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| golf clubs | 14800 | 30 | T2 | Informational | golf-clubs | /shop/golf-clubs/ | secondary | new |
+| set of golf | 8100 | 21 | T1 | Informational | club-set | /shop/complete-sets/ | lsi | new |
+| golf buggy | 6600 | 11 | T1 | Commercial | home | / | secondary |  |
+| golf bag | 6600 | 14 | T1 | Commercial | bag | /shop/bags/ | primary | new |
+| golf balls | 6600 | 22 | T1 | Informational | golf-balls | /shop/golf-balls/ | primary | new |
+| club golf equipment | 6600 | 18 | T1 | Commercial | golf-clubs | /shop/golf-clubs/ | lsi | new |
+| buggy | 5400 | 18 | T1 | Commercial | ambiguous | UNTARGETED | lsi |  |
+| golf cart | 5400 | 39 | T2 | Commercial | cart | /shop/luxury-golf-carts/ | primary | new |
+| can am | 3600 | 38 | T2 | Navigational | brand-canam | /brands/can-am/ | lsi | new |
+| golf club set | 2900 | 20 | T1 | Informational | club-set | /shop/complete-sets/ | primary | new |
+| golf clubs for sale | 2400 | 28 | T2 | Transactional | golf-clubs | /shop/golf-clubs/ | primary | new |
+| golf driver | 2400 | 20 | T1 | Commercial | driver | /shop/woods-and-irons/ | primary | new |
+| putter | 2400 | 26 | T2 | Commercial | putter | /shop/wedges-and-putters/ | secondary | new |
+| electric golf buggy | 1900 | 41 | T3 | Informational | electric | /shop/electric-golf-buggies/ | lsi |  |
+| golf buggy for sale | 1900 | 10 | T1 | Transactional | hub | /shop/ | secondary |  |
+| mgi golf buggy | 1900 | 12 | T1 | Transactional | brand-mgi | /brands/mgi/ | primary | new |
+| golf stand bag | 1900 | 19 | T1 | Informational | bag | /shop/bags/ | secondary | new |
+| golf rangefinder | 1900 | 17 | T1 | Informational | rangefinder | /shop/rangefinders-gps/ | primary | new |
+| golf sets for sale | 1900 | 18 | T1 | Transactional | club-set | /shop/complete-sets/ | secondary | new |
+| qocart | 1900 | 15 | T1 | Informational | brand-qod | /brands/qod-golf/ | primary | new |
+| mgi | 1600 | 32 | T2 | Informational | brand-mgi | /brands/mgi/ | lsi | new |
+| garmin golf watch | 1600 | 23 | T1 | Informational | brand-garmin | /brands/garmin/ | primary | new |
+| golf putter | 1600 | 13 | T1 | Informational | putter | /shop/wedges-and-putters/ | primary | new |
+| bushnell rangefinder | 1300 | 14 | T1 | Commercial | brand-bushnell | /brands/bushnell/ | primary | new |
+| golf bags for sale | 1300 | 11 | T1 | Transactional | bag | /shop/bags/ | secondary | new |
+| mgi golf | 1000 | 13 | T1 | Informational | brand-mgi | /brands/mgi/ | lsi | new |
+| golf bag and cart | 1000 | 11 | T1 | Commercial | bag | /blog/golf-bag-and-cart-how-to-choose-stand-cart-carry/ | primary | new |
+| canam australia | 1000 | 25 | T1 | Navigational | brand-canam | /brands/can-am/ | primary | new |
+| golf wedges | 1000 | 19 | T1 | Informational | wedge | /shop/wedges-and-putters/ | secondary | new |
+| ladies golf clubs | 1000 | 11 | T1 | Commercial | women-clubs | /blog/ladies-golf-clubs-womens-golf-sets-guide/ | primary | new |
+| golf trolley | 880 | 13 | T1 | Commercial | trolley | /shop/golf-trolleys/ | secondary |  |
+| golf cart batteries | 880 | 14 | T1 | Informational | battery-cart | /shop/cart-sets/ | primary | new |
+| golf bat set | 880 | 11 | T1 | Commercial | club-set | /shop/complete-sets/ | lsi | new |
+| brosnan golf clubs | 880 | 13 | T1 | Informational | competitor | COMPETITOR (held for comparison content) | lsi | new |
+| electric buggy | 720 | 6 | T1 | Informational | electric-buggy | /blog/electric-buggy-for-adults-australia/ | lsi |  |
+| kids buggy | 720 | 6 | T1 | Commercial | kids | /shop/kids-buggies/ | secondary | new |
+| golf bags australia | 720 | 18 | T1 | Commercial | bag | /shop/bags/ | secondary | new |
+| electric golf cart | 720 | 6 | T1 | Informational | electric-cart | /blog/electric-golf-carts-australia-guide/ | lsi |  |
+| golf stick set | 720 | 16 | T1 | Commercial | club-set | /shop/complete-sets/ | lsi | new |
+| men's set golf clubs | 720 | 20 | T1 | Commercial | club-set | /shop/complete-sets/ | lsi | new |
+| driver golf club | 720 | 23 | T1 | Commercial | driver | /blog/how-to-choose-a-golf-driver/ | primary | new |
+| set irons golf | 720 | 11 | T1 | Commercial | iron | /blog/how-to-choose-an-iron-set/ | secondary | new |
+| stinger golf | 590 | 20 | T1 | Navigational | ambiguous-brand | UNTARGETED | lsi | new |
+| esperia stinger | 590 | 26 | T2 | Informational | ambiguous-brand | UNTARGETED | lsi | new |
+| buggies for sale | 590 | 8 | T1 | Transactional | ambiguous | UNTARGETED | lsi |  |
+| off road buggies | 590 | 6 | T1 | Commercial | offroad | /shop/off-road-buggies/ | primary |  |
+| clicgear | 590 | 20 | T1 | Navigational | brand-clicgear | /brands/clicgear/ | primary | new |
+| club car | 590 | 40 | T2 | Navigational | brand-clubcar | /brands/club-car/ | primary | new |
+| golf clubs australia | 590 | 51 | T3 | Commercial | golf-clubs | /shop/golf-clubs/ | lsi | new |
+| golf set womens | 590 | 10 | T1 | Commercial | women-clubs | /blog/ladies-golf-clubs-womens-golf-sets-guide/ | secondary | new |
+| motocaddy | 590 | 10 | T1 | Informational | brand-motocaddy | /brands/motocaddy/ | primary | new |
+| shotscope | 590 | 14 | T1 | Informational | brand-shotscope | /brands/shot-scope/ | primary | new |
+| golf push buggy | 480 | 10 | T1 | Commercial | push | /shop/push-pull-golf-buggies/ | primary |  |
+| golf carry bag | 480 | 15 | T1 | Commercial | bag | /shop/bags/ | secondary | new |
+| remote control golf buggy | 480 | 12 | T1 | Commercial | remote | /shop/remote-control-golf-buggies/ | primary |  |
+| remote golf buggy | 480 | 24 | T1 | Commercial | remote | /shop/remote-control-golf-buggies/ | secondary |  |
+| can am can | 480 | 43 | T3 | Navigational | brand-canam | /brands/can-am/ | lsi | new |
+| kids golf club set | 480 | 14 | T1 | Commercial | kids-clubs | /blog/junior-golf-clubs-kids-golf-sets-by-age/ | primary | new |
+| set of irons | 480 | 18 | T1 | Commercial | iron | /blog/how-to-choose-an-iron-set/ | primary | new |
+| off road buggy for sale | 390 | 12 | T1 | Transactional | offroad | /shop/off-road-buggies/ | secondary |  |
+| electric golf buggy for sale | 390 | 27 | T2 | Transactional | electric | /shop/electric-golf-buggies/ | primary |  |
+| motorised golf buggy | 390 | 38 | T2 | Informational | electric | /shop/electric-golf-buggies/ | secondary |  |
+| mgi australia | 390 | 15 | T1 | Navigational | brand-mgi | /brands/mgi/ | lsi | new |
+| golf cart ac | 390 | 17 | T1 | Commercial | cart | /blog/golf-cart-ac-vs-dc-motor-guide/ | primary | new |
+| ezgo golf cart | 390 | 21 | T1 | Commercial | brand-ezgo | /brands/ez-go/ | primary | new |
+| golf buggy accessories | 390 | 4 | T1 | Commercial | accessories | /shop/accessories/ | primary |  |
+| golf cart accessories | 390 | 17 | T1 | Commercial | accessories | /shop/accessories/ | secondary | new |
+| yamaha golf cart | 390 | 19 | T1 | Navigational | brand-yamaha | /brands/yamaha/ | primary | new |
+| iron in golf | 390 | 28 | T2 | Informational | iron | /blog/golf-irons-explained-3-iron-to-9-iron/ | primary | new |
+| putter buy | 390 | 21 | T1 | Transactional | putter | /shop/wedges-and-putters/ | secondary | new |
+| aldi golf buggy | 390 | 28 | T2 | Informational | competitor | COMPETITOR (held for comparison content) | lsi |  |
+| golf buggy with seat | 320 | 9 | T1 | Commercial | cart | /shop/luxury-golf-carts/ | secondary |  |
+| golf club bag | 320 | 16 | T1 | Commercial | bag | /blog/golf-bag-and-cart-how-to-choose-stand-cart-carry/ | secondary | new |
+| used golf buggy for sale | 320 | 6 | T1 | Transactional | used | /shop/used-golf-buggies/ | primary |  |
+| electric golf buggy with remote | 320 | 17 | T1 | Commercial | remote | /shop/remote-control-golf-buggies/ | secondary |  |
+| lithium golf cart batteries | 320 | 4 | T1 | Informational | battery-cart | /shop/cart-sets/ | secondary | new |
+| golf club packages | 320 | 6 | T1 | Transactional | club-set | /shop/complete-sets/ | secondary | new |
+| full golf set | 320 | 20 | T1 | Commercial | club-set | /shop/complete-sets/ | lsi | new |
+| golf sets australia | 320 | 22 | T1 | Commercial | club-set | /shop/complete-sets/ | secondary | new |
+| golf clubs mens | 320 | 10 | T1 | Transactional | golf-clubs | /shop/golf-clubs/ | secondary | new |
+| golf sticks | 320 | 23 | T1 | Commercial | golf-clubs | /blog/golf-sticks-and-golf-bats-explained/ | primary | new |
+| golf club wedge set | 320 | 14 | T1 | Commercial | wedge | /shop/wedges-and-putters/ | lsi | new |
+| golf club iron sets | 320 | 17 | T1 | Commercial | iron | /blog/how-to-choose-an-iron-set/ | secondary | new |
+| brosnan golf | 320 | 14 | T1 | Navigational | competitor | COMPETITOR (held for comparison content) | lsi | new |
+| beach buggy for sale australia | 260 | 18 | T1 | Transactional | dune | /shop/dune-buggies/ | secondary |  |
+| dune bug | 260 | 22 | T1 | Informational | dune | /shop/dune-buggies/ | secondary |  |
+| golf buggy battery | 260 | 7 | T1 | Informational | battery | /shop/batteries/ | primary | new |
+| golf cart parts | 260 | 33 | T2 | Commercial | parts | /shop/parts/ | secondary | new |
+| electric golf trolley | 260 | 17 | T1 | Commercial | etrolley | /shop/walk-behind/ | primary |  |
+| golf buggy battery lithium | 260 | 6 | T1 | Commercial | battery-lithium | /shop/lithium/ | primary | new |
+| electric golf carts for sale | 260 | 6 | T1 | Transactional | cart | /shop/luxury-golf-carts/ | secondary |  |
+| golf cart sales | 260 | 8 | T1 | Transactional | cart | /shop/luxury-golf-carts/ | secondary |  |
+| golf bag affordable | 260 | 10 | T1 | Transactional | bag | /shop/bags/ | secondary | new |
+| remote control electric golf buggy | 260 | 5 | T1 | Informational | remote | /shop/remote-control-golf-buggies/ | secondary |  |
+| full set of golf clubs | 260 | 9 | T1 | Commercial | club-set | /blog/what-golf-clubs-do-you-need-full-set-explained/ | secondary | new |
+| mens golf set | 260 | 13 | T1 | Commercial | club-set | /blog/mens-golf-club-sets-guide/ | primary | new |
+| golf kit | 260 | 19 | T1 | Informational | club-set | /shop/complete-sets/ | lsi | new |
+| full set of clubs | 260 | 19 | T1 | Commercial | club-set | /blog/what-golf-clubs-do-you-need-full-set-explained/ | secondary | new |
+| buy golf clubs | 260 | 41 | T3 | Transactional | golf-clubs | /shop/golf-clubs/ | lsi | new |
+| golf wedge set | 260 | 10 | T1 | Commercial | wedge | /shop/wedges-and-putters/ | secondary | new |
+| degrees for pitching wedge | 260 | 14 | T1 | Informational | wedge | /blog/golf-wedge-degrees-loft-guide/ | primary | new |
+| ladies golf club set | 260 | 12 | T1 | Commercial | women-clubs | /blog/ladies-golf-clubs-womens-golf-sets-guide/ | secondary | new |
+| driver iron golf | 260 | 11 | T1 | Informational | driver | /blog/how-to-choose-a-golf-driver/ | secondary | new |
+| powakaddy | 260 | 30 | T2 | Navigational | brand-powakaddy | /brands/powakaddy/ | primary | new |
+| speed stinger | 210 | 25 | T1 | Informational | ambiguous-brand | UNTARGETED | lsi | new |
+| used buggy for sale | 210 | 13 | T1 | Transactional | ambiguous | UNTARGETED | lsi |  |
+| dune buggies for sale | 210 | 16 | T1 | Transactional | dune | /shop/dune-buggies/ | primary |  |
+| kids off road buggy | 210 | 2 | T1 | Commercial | kids | /blog/kids-off-road-buggy-buying-guide-electric-vs-petrol/ | primary | new |
+| golf buggy parts | 210 | 7 | T1 | Commercial | parts | /shop/parts/ | primary | new |
+| mgi buggy | 210 | 20 | T1 | Informational | brand-mgi | /brands/mgi/ | lsi | new |
+| mgi golf carts | 210 | 25 | T1 | Navigational | brand-mgi | /brands/mgi/ | lsi | new |
+| three wheel golf buggy | 210 | 7 | T1 | Commercial | 3wheel | /shop/3-wheel/ | primary |  |
+| 3 wheel golf buggy | 210 | 17 | T1 | Commercial | 3wheel | /shop/3-wheel/ | secondary |  |
+| bushnell golf rangefinder | 210 | 10 | T1 | Informational | brand-bushnell | /brands/bushnell/ | lsi | new |
+| bushnell golf | 210 | 22 | T1 | Navigational | brand-bushnell | /brands/bushnell/ | lsi | new |
+| buy golf cart | 210 | 15 | T1 | Transactional | cart | /shop/luxury-golf-carts/ | secondary |  |
+| golf car cart | 210 | 27 | T2 | Informational | cart | /shop/luxury-golf-carts/ | lsi |  |
+| golf cart australia | 210 | 28 | T2 | Informational | cart | /shop/luxury-golf-carts/ | lsi |  |
+| golf club carry bag | 210 | 9 | T1 | Commercial | bag | /shop/bags/ | lsi | new |
+| used golf buggies | 210 | 6 | T1 | Transactional | used | /shop/used-golf-buggies/ | secondary |  |
+| best rated golf watches | 210 | 25 | T1 | Commercial | golf-watch | /blog/golf-rangefinder-vs-gps-watch-which-to-buy/ | primary | new |
+| golf set packages | 210 | 10 | T1 | Transactional | club-set | /shop/complete-sets/ | lsi | new |
+| golf club sets for sale | 210 | 22 | T1 | Transactional | club-set | /shop/complete-sets/ | secondary | new |
+| junior golf club set | 210 | 17 | T1 | Commercial | kids-clubs | /blog/junior-golf-clubs-kids-golf-sets-by-age/ | secondary | new |
+| 3 iron golf club | 210 | 14 | T1 | Informational | iron | /blog/golf-irons-explained-3-iron-to-9-iron/ | secondary | new |
+| club irons | 210 | 17 | T1 | Informational | iron | /blog/golf-irons-explained-3-iron-to-9-iron/ | secondary | new |
+| hillside buggies | 210 | 28 | T2 | Navigational | competitor | COMPETITOR (held for comparison content) | lsi |  |
+| aldi electric golf buggy | 210 | 25 | T1 | Informational | competitor | COMPETITOR (held for comparison content) | lsi |  |
+| dirt buggy | 170 | 12 | T1 | Commercial | offroad | /shop/off-road-buggies/ | secondary |  |
+| electric buggy for adults | 170 | 4 | T1 | Commercial | electric-buggy | /blog/electric-buggy-for-adults-australia/ | lsi |  |
+| motorised golf buggy for sale | 170 | 25 | T1 | Transactional | electric | /shop/electric-golf-buggies/ | secondary |  |
+| mgi electric golf buggy | 170 | 17 | T1 | Informational | brand-mgi | /blog/mgi-zip-vs-ai-navigator-which-mgi-buggy/ | primary | new |
+| estate electric golf trolley | 170 | 19 | T1 | Informational | etrolley | /shop/walk-behind/ | secondary |  |
+| three wheel golf cart | 170 | 15 | T1 | Commercial | 3wheel | /shop/3-wheel/ | secondary |  |
+| 3 wheel golf cart | 170 | 17 | T1 | Informational | 3wheel | /shop/3-wheel/ | secondary |  |
+| 2 seater buggy for sale | 170 | 4 | T1 | Transactional | 2seater | /shop/2-seat/ | primary |  |
+| golf cart price | 170 | 8 | T1 | Transactional | cheap | /blog/cheap-golf-buggies-and-carts-australia/ | lsi |  |
+| second hand golf buggies for sale | 170 | 6 | T1 | Transactional | used | /shop/used-golf-buggies/ | secondary |  |
+| golf cart auction | 170 | 11 | T1 | Informational | used | /blog/used-golf-cart-auction-vs-dealer-australia/ | primary |  |
+| e car golf buggy | 170 | 16 | T1 | Navigational | brand-ecar | /brands/ecar/ | primary |  |
+| garmin watch for golfers | 170 | 26 | T2 | Informational | brand-garmin | /blog/garmin-approach-s12-vs-s42-golf-gps-watch/ | primary | new |
+| garmin golf wrist watch | 170 | 35 | T2 | Commercial | brand-garmin | /blog/garmin-approach-s12-vs-s42-golf-gps-watch/ | secondary | new |
+| laser golf range finder | 170 | 19 | T1 | Commercial | rangefinder | /shop/rangefinders-gps/ | secondary | new |
+| complete golf sets | 170 | 7 | T1 | Commercial | club-set | /shop/complete-sets/ | secondary | new |
+| buy golf set | 170 | 20 | T1 | Transactional | club-set | /shop/complete-sets/ | lsi | new |
+| premium golf sets | 170 | 19 | T1 | Commercial | club-set | /blog/best-golf-club-sets-for-beginners-australia/ | lsi | new |
+| golf clubs uses | 170 | 12 | T1 | Informational | golf-clubs | /blog/what-golf-clubs-do-you-need-full-set-explained/ | secondary | new |
+| complete golf club | 170 | 13 | T1 | Commercial | golf-clubs | /blog/what-golf-clubs-do-you-need-full-set-explained/ | secondary | new |
+| wedge golf club | 170 | 15 | T1 | Informational | wedge | /shop/wedges-and-putters/ | lsi | new |
+| wood golf club | 170 | 14 | T1 | Informational | driver | /blog/how-to-choose-a-golf-driver/ | secondary | new |
+| driver golf set | 170 | 21 | T1 | Commercial | driver | /blog/how-to-choose-a-golf-driver/ | secondary | new |
+| golf iron 4 | 170 | 9 | T1 | Commercial | iron | /shop/woods-and-irons/ | lsi | new |
+| golf irons for sale | 170 | 15 | T1 | Transactional | iron | /shop/woods-and-irons/ | secondary | new |
+| shot scope launch monitor | 170 | 19 | T1 | Commercial | brand-shotscope | /blog/shot-scope-g5-vs-g6-and-lm1-explained/ | primary | new |
+| void putters | 170 | 21 | T1 | Informational | competitor | COMPETITOR (held for comparison content) | lsi | new |
+| cheap buggy | 140 | 9 | T1 | Transactional | ambiguous | UNTARGETED | lsi |  |
+| off road buggy for sale australia | 140 | 4 | T1 | Transactional | offroad | /shop/off-road-buggies/ | secondary |  |
+| offroad buggy for sale | 140 | 10 | T1 | Transactional | offroad | /shop/off-road-buggies/ | secondary |  |
+| electric golf buggies australia | 140 | 40 | T2 | Commercial | electric | /shop/electric-golf-buggies/ | lsi |  |
+| golf pull buggy | 140 | 7 | T1 | Commercial | push | /shop/push-pull-golf-buggies/ | secondary |  |
+| kids buggy petrol | 140 | 2 | T1 | Commercial | kids | /shop/kids-buggies/ | secondary | new |
+| buggy spare parts | 140 | 6 | T1 | Commercial | parts | /shop/parts/ | secondary |  |
+| bushnell golf gps rangefinder | 140 | 3 | T1 | Informational | brand-bushnell | /blog/bushnell-hybrid-gps-rangefinders-explained/ | primary | new |
+| ride on golf buggy | 140 | 11 | T1 | Commercial | cart | /shop/luxury-golf-carts/ | lsi |  |
+| golf bag buggy | 140 | 11 | T1 | Commercial | bag | /shop/push-pull-golf-buggies/ | secondary | new |
+| womans golf bag | 140 | 13 | T1 | Commercial | bag | /blog/golf-bag-and-cart-how-to-choose-stand-cart-carry/ | secondary | new |
+| what is the best electric golf buggy australia | 140 | 30 | T2 | Question | best | /blog/best-electric-golf-buggies-australia/ | lsi |  |
+| best electric golf buggy australia | 140 | 41 | T3 | Commercial | best | /blog/best-electric-golf-buggies-australia/ | lsi |  |
+| ecar golf carts | 140 | 8 | T1 | Informational | brand-ecar | /brands/ecar/ | primary | new |
+| motorised golf cart | 140 | 43 | T3 | Informational | electric-cart | /blog/electric-golf-carts-australia-guide/ | lsi |  |
+| garmin golf gps devices | 140 | 19 | T1 | Informational | brand-garmin | /blog/garmin-approach-s12-vs-s42-golf-gps-watch/ | secondary | new |
+| complete golf club sets | 140 | 9 | T1 | Commercial | club-set | /shop/complete-sets/ | lsi | new |
+| golf club set for beginners | 140 | 16 | T1 | Commercial | club-set | /blog/best-golf-club-sets-for-beginners-australia/ | primary | new |
+| cheap golf club sets | 140 | 23 | T1 | Transactional | club-set | /blog/best-golf-club-sets-for-beginners-australia/ | secondary | new |
+| golf club settings | 140 | 23 | T1 | Informational | golf-clubs | /blog/adjustable-golf-club-settings-explained/ | primary | new |
+| degree on sand wedge | 140 | 12 | T1 | Informational | wedge | /blog/golf-wedge-degrees-loft-guide/ | secondary | new |
+| golf clubs junior | 140 | 15 | T1 | Commercial | kids-clubs | /blog/junior-golf-clubs-kids-golf-sets-by-age/ | secondary | new |
+| childrens putter | 140 | 17 | T1 | Commercial | putter | /blog/junior-golf-clubs-kids-golf-sets-by-age/ | secondary | new |
+| qod golf buggy | 140 | 13 | T1 | Commercial | brand-qod | /brands/qod-golf/ | lsi | new |
+| qod golf | 140 | 18 | T1 | Navigational | brand-qod | /brands/qod-golf/ | lsi | new |
+| shark golf set | 140 | 15 | T1 | Commercial | competitor | COMPETITOR (held for comparison content) | lsi | new |
+| big max golf buggy | 110 | 9 | T1 | Informational | brand-bigmax | /brands/big-max/ | primary | new |
+| golf buggy australia | 110 | 6 | T1 | Commercial | home | / | secondary |  |
+| pull buggy | 110 | 12 | T1 | Informational | push | /shop/push-pull-golf-buggies/ | secondary |  |
+| golf carts push | 110 | 14 | T1 | Commercial | push | /shop/push-pull-golf-buggies/ | lsi |  |
+| golf pram | 110 | 15 | T1 | Informational | push | /shop/push-pull-golf-buggies/ | lsi |  |
+| golf buggies for sale australia | 110 | 10 | T1 | Transactional | hub | /shop/ | secondary |  |
+| custom golf buggy | 110 | 3 | T1 | Informational | misc | /blog/custom-golf-buggy-upgrades-guide/ | primary |  |
+| buggies cars | 110 | 23 | T1 | Commercial | misc | UNTARGETED | lsi |  |
+| golf batteries | 110 | 7 | T1 | Commercial | battery | /blog/golf-buggy-battery-replacement-guide/ | secondary | new |
+| golf cart parts australia | 110 | 33 | T2 | Commercial | parts | /shop/parts/ | secondary | new |
+| mgi golf bag | 110 | 11 | T1 | Transactional | brand-mgi | /brands/mgi/ | lsi | new |
+| mgi zip | 110 | 20 | T1 | Informational | brand-mgi | /blog/mgi-zip-vs-ai-navigator-which-mgi-buggy/ | secondary | new |
+| golf buggy cart | 110 | 9 | T1 | Informational | cart | /shop/luxury-golf-carts/ | lsi |  |
+| australian golf carts | 110 | 18 | T1 | Commercial | cart | /shop/luxury-golf-carts/ | lsi | new |
+| golf carts for sale australia | 110 | 21 | T1 | Transactional | cart | /shop/luxury-golf-carts/ | lsi | new |
+| corporate golf bags | 110 | 5 | T1 | Informational | bag | /blog/corporate-golf-bags-bulk-orders-australia/ | primary | new |
+| black golf bag | 110 | 9 | T1 | Informational | bag | /blog/golf-bag-and-cart-how-to-choose-stand-cart-carry/ | secondary | new |
+| miniature golf bag | 110 | 16 | T1 | Informational | bag | /blog/small-lightweight-golf-bags-guide/ | primary | new |
+| foldable golf buggy | 110 | 7 | T1 | Commercial | foldable | /shop/4-wheel/ | primary |  |
+| kids golf buggy | 110 | 7 | T1 | Commercial | junior | /shop/kids-buggies/ | lsi |  |
+| junior golf buggy | 110 | 9 | T1 | Commercial | junior | /shop/kids-buggies/ | lsi |  |
+| can am dealer near me | 110 | 10 | T1 | Navigational | brand-canam | /brands/can-am/ | lsi | new |
+| clicgear 4.5 | 110 | 13 | T1 | Informational | brand-clicgear | /blog/clicgear-model-4-5-vs-4-0-vs-3-5/ | primary | new |
+| club car golf cart parts | 110 | 1 | T1 | Commercial | brand-clubcar | /brands/club-car/ | lsi | new |
+| garmin golf tracker | 110 | 17 | T1 | Transactional | brand-garmin | /blog/garmin-approach-s12-vs-s42-golf-gps-watch/ | secondary | new |
+| garmin golf gps | 110 | 18 | T1 | Informational | brand-garmin | /brands/garmin/ | lsi | new |
+| garmin golf watch australia | 110 | 19 | T1 | Informational | brand-garmin | /brands/garmin/ | lsi | new |
+| golf range finders australia | 110 | 15 | T1 | Informational | rangefinder | /shop/rangefinders-gps/ | secondary | new |
+| gps golf rangefinder | 110 | 17 | T1 | Informational | rangefinder | /shop/rangefinders-gps/ | secondary | new |
+| golf buggy accessories australia | 110 | 6 | T1 | Commercial | accessories | /shop/accessories/ | secondary |  |
+| golf cart accessories australia | 110 | 10 | T1 | Commercial | accessories | /shop/accessories/ | secondary | new |
+| yamaha golf cart accessories | 110 | 17 | T1 | Commercial | brand-yamaha | /brands/yamaha/ | lsi | new |
+| golf cart batteries australia | 110 | 8 | T1 | Commercial | battery-cart | /shop/cart-sets/ | secondary | new |
+| batteries for golf cars | 110 | 9 | T1 | Informational | battery-cart | /shop/cart-sets/ | secondary | new |
+| golf sets online | 110 | 7 | T1 | Transactional | club-set | /shop/complete-sets/ | lsi | new |
+| golf club sets australia | 110 | 17 | T1 | Commercial | club-set | /shop/complete-sets/ | lsi | new |
+| new golf set | 110 | 19 | T1 | Commercial | club-set | /blog/best-golf-club-sets-for-beginners-australia/ | lsi | new |
+| iron golf club | 110 | 17 | T1 | Informational | iron | /blog/golf-irons-explained-3-iron-to-9-iron/ | secondary | new |
+| best putters 2026 | 110 | 12 | T1 | Commercial | putter | /blog/best-golf-putters-types-guide-australia/ | primary | new |
+| putter golf club | 110 | 17 | T1 | Commercial | putter | /shop/wedges-and-putters/ | lsi | new |
+| qod golf cart | 110 | 6 | T1 | Commercial | brand-qod | /brands/qod-golf/ | lsi | new |
+| shotscope lm1 | 110 | 13 | T1 | Informational | brand-shotscope | /blog/shot-scope-g5-vs-g6-and-lm1-explained/ | secondary | new |
+| walkinshaw golf buggy | 110 | 11 | T1 | Informational | competitor | COMPETITOR (held for comparison content) | lsi |  |
+| big max golf cart | 90 | 16 | T1 | Informational | brand-bigmax | /brands/big-max/ | lsi | new |
+| powercart | 90 | 9 | T1 | Navigational | ambiguous-brand | UNTARGETED | lsi | new |
+| buy a buggy | 90 | 9 | T1 | Transactional | ambiguous | UNTARGETED | lsi |  |
+| atv buggy for sale | 90 | 16 | T1 | Transactional | offroad | /shop/off-road-buggies/ | secondary |  |
+| motorised buggy | 90 | 17 | T1 | Informational | electric-buggy | /blog/electric-buggy-for-adults-australia/ | lsi |  |
+| push golf buggy for sale | 90 | 8 | T1 | Transactional | push | /shop/push-pull-golf-buggies/ | secondary |  |
+| push buggy | 90 | 9 | T1 | Commercial | push | /shop/push-pull-golf-buggies/ | secondary |  |
+| new golf buggies | 90 | 4 | T1 | Commercial | hub | /shop/ | lsi |  |
+| buy golf buggy | 90 | 9 | T1 | Transactional | hub | /shop/ | secondary |  |
+| scooter golf | 90 | 2 | T1 | Informational | misc | /blog/golf-scooter-vs-golf-buggy/ | primary |  |
+| golf buggy battery replacement | 90 | 4 | T1 | Commercial | battery | /blog/golf-buggy-battery-replacement-guide/ | primary | new |
+| golf buggy parts australia | 90 | 6 | T1 | Commercial | parts | /shop/parts/ | secondary | new |
+| mgi golf buggy accessories | 90 | 12 | T1 | Informational | brand-mgi | /brands/mgi/ | lsi |  |
+| electric caddies | 90 | 26 | T2 | Commercial | etrolley | /shop/walk-behind/ | secondary |  |
+| cheap golf buggy | 90 | 6 | T1 | Transactional | cheap | /blog/cheap-golf-buggies-and-carts-australia/ | lsi |  |
+| golf carts near me | 90 | 47 | T3 | Transactional | local | /golf-buggies/ | secondary |  |
+| folding golf buggy | 90 | 6 | T1 | Commercial | foldable | /shop/4-wheel/ | secondary |  |
+| collapsible golf buggy | 90 | 11 | T1 | Commercial | foldable | /shop/4-wheel/ | secondary |  |
+| second hand electric golf buggy for sale | 90 | 10 | T1 | Transactional | used | /shop/used-golf-buggies/ | lsi |  |
+| electric golf cart with remote | 90 | 18 | T1 | Informational | remote | /shop/remote-control-golf-buggies/ | lsi |  |
+| can am toowoomba | 90 | 7 | T1 | Navigational | brand-canam | /brands/can-am/ | lsi | new |
+| club car golf buggy parts | 90 | 2 | T1 | Informational | brand-clubcar | /brands/club-car/ | lsi | new |
+| electric motorized golf cart | 90 | 32 | T2 | Informational | electric-cart | /blog/electric-golf-carts-australia-guide/ | lsi |  |
+| golf watches gps | 90 | 17 | T1 | Commercial | rangefinder | /blog/golf-rangefinder-vs-gps-watch-which-to-buy/ | lsi | new |
+| golf cart batteries and charger | 90 | 1 | T1 | Commercial | battery-cart | /shop/cart-sets/ | secondary | new |
+| golf club package sets | 90 | 8 | T1 | Transactional | club-set | /shop/complete-sets/ | lsi | new |
+| black golf set | 90 | 10 | T1 | Commercial | club-set | /shop/complete-sets/ | lsi | new |
+| club set | 90 | 12 | T1 | Commercial | club-set | /shop/complete-sets/ | lsi | new |
+| golf sets for sale australia | 90 | 19 | T1 | Transactional | club-set | /shop/complete-sets/ | lsi | new |
+| start golf club set | 90 | 17 | T1 | Commercial | club-set | /blog/best-golf-club-sets-for-beginners-australia/ | secondary | new |
+| top rated golf sets | 90 | 30 | T2 | Commercial | club-set | /blog/best-golf-club-sets-for-beginners-australia/ | secondary | new |
+| black golf clubs | 90 | 9 | T1 | Commercial | golf-clubs | /shop/golf-clubs/ | lsi | new |
+| golf clubs for sale au | 90 | 36 | T2 | Transactional | golf-clubs | /shop/golf-clubs/ | secondary | new |
+| golf wedge fitting | 90 | 12 | T1 | Informational | wedge | /blog/golf-wedge-degrees-loft-guide/ | lsi | new |
+| what degrees are sand wedges | 90 | 12 | T1 | Question | wedge | /blog/golf-wedge-degrees-loft-guide/ | secondary | new |
+| golf pitching wedge | 90 | 17 | T1 | Informational | wedge | /shop/wedges-and-putters/ | lsi | new |
+| 9 iron golf club | 90 | 10 | T1 | Informational | iron | /blog/golf-irons-explained-3-iron-to-9-iron/ | secondary | new |
+| golf club iron sets for sale | 90 | 18 | T1 | Transactional | iron | /shop/woods-and-irons/ | secondary | new |
+| golf iron sets for sale | 90 | 18 | T1 | Transactional | iron | /shop/woods-and-irons/ | secondary | new |
+| fitted for a putter | 90 | 11 | T1 | Informational | putter | /blog/putter-fitting-guide-length-lie-loft/ | primary | new |
+| golf equipment putter | 90 | 19 | T1 | Commercial | putter | /shop/wedges-and-putters/ | lsi | new |
+| bunnings golf buggy | 90 | 22 | T1 | Navigational | competitor | COMPETITOR (held for comparison content) | lsi |  |
+| stinger golf bag | 70 | 14 | T1 | Navigational | ambiguous-brand | UNTARGETED | lsi | new |
+| buggy australia | 70 | 13 | T1 | Commercial | ambiguous | UNTARGETED | lsi |  |
+| dune buggy kart | 70 | 3 | T1 | Commercial | dune | /shop/dune-buggies/ | secondary |  |
+| dune buggies for sale in australia | 70 | 5 | T1 | Transactional | dune | /shop/dune-buggies/ | secondary |  |
+| electric buggy for adults australia | 70 | 1 | T1 | Informational | electric-buggy | /blog/electric-buggy-for-adults-australia/ | lsi |  |
+| electric golf | 70 | 24 | T1 | Informational | electric | /shop/electric-golf-buggies/ | secondary |  |
+| electric golf push cart | 70 | 18 | T1 | Commercial | push | /shop/push-pull-golf-buggies/ | lsi |  |
+| golf buggy insurance | 70 | 8 | T1 | Informational | misc | /blog/golf-buggy-insurance-australia/ | primary |  |
+| 12v golf buggy battery | 70 | 15 | T1 | Commercial | battery | /blog/golf-buggy-battery-replacement-guide/ | secondary | new |
+| mgi golf buggy battery | 70 | 9 | T1 | Informational | brand-mgi | /brands/mgi/ | lsi | new |
+| mgi golf buggies australia | 70 | 18 | T1 | Navigational | brand-mgi | /brands/mgi/ | lsi | new |
+| battery trolley | 70 | 6 | T1 | Informational | etrolley | /shop/walk-behind/ | secondary |  |
+| smart golf trolley | 70 | 19 | T1 | Commercial | etrolley | /shop/walk-behind/ | secondary |  |
+| golf buggy charger | 70 | 18 | T1 | Commercial | chargers | /shop/chargers/ | primary |  |
+| side by side buggy for sale qld | 70 | 5 | T1 | Transactional | sbs | /shop/side-by-side/ | secondary |  |
+| inexpensive golf carts for sale | 70 | 5 | T1 | Transactional | cheap | /blog/cheap-golf-buggies-and-carts-australia/ | lsi |  |
+| golf buggies for sale sydney | 70 | 14 | T1 | Transactional | local | /golf-buggies/sydney/ | primary |  |
+| buy golf bag | 70 | 19 | T1 | Transactional | bag | /shop/bags/ | lsi | new |
+| second hand petrol golf carts for sale | 70 | 5 | T1 | Transactional | used | /shop/used-golf-buggies/ | secondary |  |
+| second hand golf buggy | 70 | 5 | T1 | Transactional | used | /shop/used-golf-buggies/ | secondary |  |
+| golf cart repairs | 70 | 5 | T1 | Commercial | repairs | /blog/golf-buggy-repairs-servicing-guide-australia/ | primary | new |
+| remote controlled golf buggy | 70 | 6 | T1 | Commercial | remote | /shop/remote-control-golf-buggies/ | secondary |  |
+| golf carts remote control | 70 | 12 | T1 | Commercial | remote | /shop/remote-control-golf-buggies/ | lsi |  |
+| canam sales | 70 | 18 | T1 | Transactional | brand-canam | /brands/can-am/ | lsi | new |
+| clicgear seat | 70 | 9 | T1 | Commercial | brand-clicgear | /blog/clicgear-model-4-5-vs-4-0-vs-3-5/ | secondary | new |
+| clicgear golf buggies | 70 | 15 | T1 | Commercial | brand-clicgear | /brands/clicgear/ | lsi | new |
+| lift kit for a club car golf cart | 70 | 14 | T1 | Commercial | brand-clubcar | /brands/club-car/ | lsi | new |
+| electric golf cars | 70 | 8 | T1 | Informational | electric-cart | /blog/electric-golf-carts-australia-guide/ | lsi |  |
+| electric golf carts australia | 70 | 13 | T1 | Informational | electric-cart | /blog/electric-golf-carts-australia-guide/ | lsi |  |
+| electric utility cart | 70 | 2 | T1 | Informational | utility | /shop/utility/ | primary |  |
+| msi ezgo | 70 | 15 | T1 | Commercial | brand-ezgo | /brands/ez-go/ | lsi | new |
+| rangefinder for golfers | 70 | 22 | T1 | Commercial | rangefinder | /blog/golf-rangefinder-vs-gps-watch-which-to-buy/ | secondary | new |
+| triumph golf buggy accessories | 70 | 6 | T1 | Commercial | brand-triumph | /brands/triumph/ | primary |  |
+| petrol yamaha golf cart | 70 | 1 | T1 | Informational | brand-yamaha | /brands/yamaha/ | lsi | new |
+| yamaha golf cart prices australia | 70 | 11 | T1 | Transactional | brand-yamaha | /brands/yamaha/ | lsi | new |
+| yamaha electric carts | 70 | 16 | T1 | Commercial | brand-yamaha | /brands/yamaha/ | lsi | new |
+| 48v golf cart battery | 70 | 5 | T1 | Informational | battery-cart | /shop/cart-sets/ | secondary | new |
+| golf set pictures | 70 | 26 | T2 | Informational | club-set | /shop/complete-sets/ | lsi | new |
+| cheapest golf clubs | 70 | 8 | T1 | Transactional | golf-clubs | /shop/golf-clubs/ | secondary | new |
+| where to buy golf clubs | 70 | 21 | T1 | Question | golf-clubs | /shop/golf-clubs/ | secondary | new |
+| best golf sticks | 70 | 26 | T2 | Commercial | golf-clubs | /blog/golf-sticks-and-golf-bats-explained/ | secondary | new |
+| types of golf sticks | 70 | 29 | T2 | Commercial | golf-clubs | /blog/golf-sticks-and-golf-bats-explained/ | secondary | new |
+| golf club purchase | 70 | 34 | T2 | Transactional | golf-clubs | /shop/golf-clubs/ | lsi | new |
+| degrees sand wedge | 70 | 8 | T1 | Informational | wedge | /blog/golf-wedge-degrees-loft-guide/ | lsi | new |
+| what is the loft of a pitching wedge | 70 | 11 | T1 | Question | wedge | /blog/golf-wedge-degrees-loft-guide/ | lsi | new |
+| what is loft in golf | 70 | 12 | T1 | Question | wedge | /blog/golf-wedge-degrees-loft-guide/ | secondary | new |
+| loft of approach wedge | 70 | 16 | T1 | Informational | wedge | /blog/golf-wedge-degrees-loft-guide/ | secondary | new |
+| teen golf clubs | 70 | 11 | T1 | Commercial | kids-clubs | /blog/junior-golf-clubs-kids-golf-sets-by-age/ | secondary | new |
+| cheap golf club iron sets | 70 | 13 | T1 | Transactional | iron | /shop/woods-and-irons/ | secondary | new |
+| 4 iron golf club | 70 | 15 | T1 | Informational | iron | /blog/golf-irons-explained-3-iron-to-9-iron/ | secondary | new |
+| golf putters second hand | 70 | 9 | T1 | Transactional | putter | /shop/wedges-and-putters/ | lsi | new |
+| cheapest putter | 70 | 21 | T1 | Transactional | putter | /shop/wedges-and-putters/ | secondary | new |
+| premium putters | 70 | 28 | T2 | Commercial | putter | /blog/best-golf-putters-types-guide-australia/ | secondary | new |
+| motocaddy electric cart | 70 | 4 | T1 | Informational | brand-motocaddy | /blog/motocaddy-s1-vs-m5-gps-vs-m7-remote/ | secondary | new |
+| motocaddy golf buggy | 70 | 4 | T1 | Informational | brand-motocaddy | /brands/motocaddy/ | lsi | new |
+| powakaddy ct6 | 70 | 9 | T1 | Informational | brand-powakaddy | /blog/powakaddy-ct6-vs-rx1-vs-fx7/ | primary | new |
+| axglo golf buggy | 70 | 5 | T1 | Informational | competitor | COMPETITOR (held for comparison content) | lsi |  |
+| golf buggies drummond | 70 | 18 | T1 | Informational | competitor | COMPETITOR (held for comparison content) | lsi |  |
+| gumtree golf cart | 70 | 16 | T1 | Navigational | competitor | /blog/used-golf-cart-auction-vs-dealer-australia/ | secondary |  |
+| stix golf set | 70 | 10 | T1 | Navigational | competitor | COMPETITOR (held for comparison content) | lsi | new |
+| l.a.b. putter australia | 70 | 6 | T1 | Commercial | competitor | COMPETITOR (held for comparison content) | lsi | new |
+| lab putter grips | 70 | 15 | T1 | Commercial | competitor | COMPETITOR (held for comparison content) | lsi | new |
+| putt lab perth | 70 | 16 | T1 | Navigational | competitor | COMPETITOR (held for comparison content) | lsi | new |
+| maxi golfers | 50 | 12 | T1 | Informational | ambiguous-brand | UNTARGETED | lsi | new |
+| stinger sg4 crossover | 50 | 14 | T1 | Informational | ambiguous-brand | UNTARGETED | lsi | new |
+| stingergolf | 50 | 18 | T1 | Navigational | ambiguous-brand | UNTARGETED | lsi | new |
+| stinger sports | 50 | 22 | T1 | Navigational | ambiguous-brand | UNTARGETED | lsi | new |
+| racing buggies | 50 | 6 | T1 | Informational | offroad | /shop/off-road-buggies/ | lsi |  |
+| motor buggy | 50 | 3 | T1 | Informational | electric-buggy | /blog/electric-buggy-for-adults-australia/ | lsi |  |
+| electric buggy australia | 50 | 26 | T2 | Informational | electric-buggy | /blog/electric-buggy-for-adults-australia/ | lsi |  |
+| estate electric golf buggy | 50 | 18 | T1 | Informational | electric | /shop/electric-golf-buggies/ | secondary |  |
+| motor golf buggy | 50 | 27 | T2 | Informational | electric | /shop/electric-golf-buggies/ | lsi |  |
+| buy electric golf buggy | 50 | 41 | T3 | Transactional | electric | /shop/electric-golf-buggies/ | lsi |  |
+| push pull golf buggy | 50 | 9 | T1 | Commercial | push | /shop/push-pull-golf-buggies/ | lsi |  |
+| kids atv buggy | 50 | 3 | T1 | Commercial | kids | /shop/kids-buggies/ | secondary |  |
+| kids electric utv | 50 | 3 | T1 | Informational | kids | /shop/electric/ | primary |  |
+| kids buggy for sale | 50 | 6 | T1 | Transactional | kids | /shop/kids-buggies/ | primary |  |
+| utv for kids | 50 | 6 | T1 | Informational | kids | /shop/electric/ | secondary |  |
+| petrol golf buggy | 50 | 3 | T1 | Commercial | misc | /blog/petrol-vs-electric-golf-buggy/ | primary |  |
+| problems with electric golf carts | 50 | 10 | T1 | Informational | misc | /blog/golf-buggy-repairs-servicing-guide-australia/ | secondary |  |
+| golf car parts | 50 | 12 | T1 | Commercial | parts | /shop/parts/ | secondary | new |
+| mgi golf buggy repairs near me | 50 | 5 | T1 | Transactional | brand-mgi | /blog/golf-buggy-repairs-servicing-guide-australia/ | secondary | new |
+| mgi remote golf buggy | 50 | 16 | T1 | Informational | brand-mgi | /blog/mgi-zip-vs-ai-navigator-which-mgi-buggy/ | secondary | new |
+| golf caddy electric | 50 | 19 | T1 | Commercial | etrolley | /shop/walk-behind/ | secondary |  |
+| golf three wheel trolley | 50 | 9 | T1 | Commercial | 3wheel | /shop/3-wheel/ | secondary |  |
+| 2 seater electric golf carts | 50 | 7 | T1 | Commercial | 2seater | /shop/2-seat/ | secondary |  |
+| 2 seater electric buggy | 50 | 17 | T1 | Informational | 2seater | /shop/2-seat/ | secondary |  |
+| side by side farm buggy | 50 | 5 | T1 | Informational | sbs | /shop/side-by-side/ | secondary |  |
+| side by side buggy for sale australia | 50 | 10 | T1 | Transactional | sbs | /shop/side-by-side/ | secondary |  |
+| bushnell trophy | 50 | 8 | T1 | Informational | brand-bushnell | /blog/bushnell-hybrid-gps-rangefinders-explained/ | secondary | new |
+| bushnells | 50 | 13 | T1 | Informational | brand-bushnell | /brands/bushnell/ | lsi | new |
+| bushnell hybrid rangefinder | 50 | 15 | T1 | Commercial | brand-bushnell | /blog/bushnell-hybrid-gps-rangefinders-explained/ | secondary | new |
+| bushnell v6 tour rangefinder | 50 | 15 | T1 | Informational | brand-bushnell | /blog/bushnell-hybrid-gps-rangefinders-explained/ | secondary | new |
+| cheap golf carts for sale | 50 | 5 | T1 | Transactional | cheap | /blog/cheap-golf-buggies-and-carts-australia/ | lsi |  |
+| cheap golf buggy for sale | 50 | 11 | T1 | Transactional | cheap | /blog/cheap-golf-buggies-and-carts-australia/ | lsi |  |
+| golf buggy clearance | 50 | 11 | T1 | Transactional | cheap | /blog/cheap-golf-buggies-and-carts-australia/ | lsi |  |
+| golf cart cheap | 50 | 11 | T1 | Transactional | cheap | /blog/cheap-golf-buggies-and-carts-australia/ | lsi |  |
+| second hand golf carts for sale qld under $5000 | 50 | 1 | T1 | Transactional | local | /golf-buggies/brisbane/ | secondary |  |
+| golf cart for sale qld | 50 | 11 | T1 | Transactional | local | /golf-buggies/brisbane/ | secondary |  |
+| golf carts for sale wa | 50 | 12 | T1 | Transactional | local | /golf-buggies/perth/ | secondary |  |
+| golf carts brisbane | 50 | 13 | T1 | Informational | local | /golf-buggies/brisbane/ | lsi | new |
+| golf buggies for sale near me | 50 | 16 | T1 | Transactional | local | /golf-buggies/ | primary |  |
+| golf buggies perth | 50 | 26 | T2 | Commercial | local | /golf-buggies/perth/ | primary |  |
+| electric ride on golf buggy | 50 | 1 | T1 | Informational | cart | /shop/luxury-golf-carts/ | secondary |  |
+| golf cart club cart | 50 | 2 | T1 | Commercial | cart | /shop/luxury-golf-carts/ | lsi | new |
+| ride on golf cart | 50 | 2 | T1 | Informational | cart | /shop/luxury-golf-carts/ | lsi |  |
+| golf cart brands | 50 | 5 | T1 | Informational | cart | /blog/golf-cart-brands-australia-compared/ | primary | new |
+| golf car australia | 50 | 10 | T1 | Commercial | cart | /shop/luxury-golf-carts/ | lsi | new |
+| golf cart buying | 50 | 14 | T1 | Transactional | cart | /shop/luxury-golf-carts/ | lsi |  |
+| new golf carts for sale australia | 50 | 20 | T1 | Transactional | cart | /shop/luxury-golf-carts/ | lsi | new |
+| new golf cart | 50 | 35 | T2 | Informational | cart | /shop/luxury-golf-carts/ | lsi |  |
+| golf caddy bag | 50 | 6 | T1 | Commercial | bag | /blog/small-lightweight-golf-bags-guide/ | secondary | new |
+| golf bag cheap | 50 | 8 | T1 | Transactional | bag | /shop/bags/ | lsi | new |
+| golf bag small | 50 | 8 | T1 | Transactional | bag | /blog/small-lightweight-golf-bags-guide/ | secondary | new |
+| golf bags discount | 50 | 8 | T1 | Transactional | bag | /shop/bags/ | lsi | new |
+| range golf bags | 50 | 8 | T1 | Informational | bag | /shop/bags/ | lsi | new |
+| golf bags online | 50 | 13 | T1 | Transactional | bag | /shop/bags/ | lsi | new |
+| golf carrying bag | 50 | 13 | T1 | Commercial | bag | /shop/bags/ | lsi | new |
+| mens golf bags | 50 | 14 | T1 | Commercial | bag | /blog/golf-bag-and-cart-how-to-choose-stand-cart-carry/ | secondary | new |
+| used golf bag | 50 | 21 | T1 | Transactional | bag | /shop/bags/ | lsi | new |
+| used electric golf buggy for sale | 50 | 6 | T1 | Transactional | used | /shop/used-golf-buggies/ | secondary |  |
+| follow me golf buggy | 50 | 17 | T1 | Informational | follow | /shop/gps-follow-buggies/ | primary |  |
+| automatic golf buggy | 50 | 41 | T3 | Commercial | follow | /shop/gps-follow-buggies/ | secondary |  |
+| best golf cart push | 50 | 12 | T1 | Commercial | best | /blog/best-electric-golf-buggies-australia/ | lsi | new |
+| best golf push buggy | 50 | 21 | T1 | Commercial | best | /blog/best-electric-golf-buggies-australia/ | lsi |  |
+| best electric golf buggies | 50 | 24 | T1 | Commercial | best | /blog/best-electric-golf-buggies-australia/ | lsi |  |
+| ecar compass 4s golf cart | 50 | 7 | T1 | Informational | brand-ecar | /brands/ecar/ | lsi | new |
+| electric farm buggy for sale australia | 50 | 2 | T1 | Transactional | farm | /shop/farm-buggies/ | secondary |  |
+| farm buggies for sale | 50 | 6 | T1 | Transactional | farm | /shop/farm-buggies/ | primary |  |
+| golf cart fix | 50 | 3 | T1 | Informational | repairs | /blog/golf-buggy-repairs-servicing-guide-australia/ | secondary | new |
+| golf buggy service | 50 | 4 | T1 | Commercial | repairs | /blog/golf-buggy-repairs-servicing-guide-australia/ | secondary |  |
+| remote control golf buggy for sale | 50 | 2 | T1 | Transactional | remote | /shop/remote-control-golf-buggies/ | secondary |  |
+| electric golf carts with remote control | 50 | 18 | T1 | Commercial | remote | /shop/remote-control-golf-buggies/ | lsi |  |
+| remote control golf trolley | 50 | 20 | T1 | Transactional | remote | /shop/remote-control-golf-buggies/ | lsi | new |
+| can am quad bikes | 50 | 14 | T1 | Navigational | brand-canam | /brands/can-am/ | lsi | new |
+| can-am australia price | 50 | 18 | T1 | Navigational | brand-canam | /brands/can-am/ | lsi | new |
+| can am off road | 50 | 43 | T3 | Navigational | brand-canam | /brands/can-am/ | lsi | new |
+| clicgear model 4.0 | 50 | 14 | T1 | Informational | brand-clicgear | /blog/clicgear-model-4-5-vs-4-0-vs-3-5/ | secondary | new |
+| clicgear 3.5 golf buggy | 50 | 15 | T1 | Informational | brand-clicgear | /blog/clicgear-model-4-5-vs-4-0-vs-3-5/ | secondary | new |
+| electric carts australia | 50 | 11 | T1 | Commercial | electric-cart | /blog/electric-golf-carts-australia-guide/ | lsi | new |
+| electric carts for adults | 50 | 12 | T1 | Commercial | electric-cart | /blog/electric-golf-carts-australia-guide/ | lsi |  |
+| electric commercial carts | 50 | 6 | T1 | Informational | utility | /shop/utility/ | secondary |  |
+| electric utility cart for sale | 50 | 8 | T1 | Transactional | utility | /shop/utility/ | secondary |  |
+| garmin approach watch | 50 | 10 | T1 | Commercial | brand-garmin | /blog/garmin-approach-s12-vs-s42-golf-gps-watch/ | secondary | new |
+| best golf watch australia | 50 | 21 | T1 | Commercial | golf-watch | /blog/golf-rangefinder-vs-gps-watch-which-to-buy/ | secondary | new |
+| gps golf | 50 | 10 | T1 | Commercial | rangefinder | /blog/golf-rangefinder-vs-gps-watch-which-to-buy/ | lsi | new |
+| golf finder | 50 | 13 | T1 | Commercial | rangefinder | /shop/rangefinders-gps/ | secondary | new |
+| best rangefinders | 50 | 16 | T1 | Commercial | rangefinder | /blog/golf-rangefinder-vs-gps-watch-which-to-buy/ | secondary | new |
+| handheld golf gps | 50 | 17 | T1 | Commercial | rangefinder | /blog/golf-rangefinder-vs-gps-watch-which-to-buy/ | secondary | new |
+| best golf rangefinders | 50 | 23 | T1 | Commercial | rangefinder | /blog/golf-rangefinder-vs-gps-watch-which-to-buy/ | secondary | new |
+| ball bag golf | 50 | 8 | T1 | Informational | golf-balls | /shop/golf-balls/ | lsi | new |
+| yamah golf carts | 50 | 21 | T1 | Navigational | brand-yamaha | /brands/yamaha/ | lsi | new |
+| golf cart batteries price | 50 | 6 | T1 | Transactional | battery-cart | /blog/golf-cart-battery-replacement-cost-australia/ | secondary | new |
+| golf cart battery replacement | 50 | 9 | T1 | Commercial | battery-cart | /blog/golf-cart-battery-replacement-cost-australia/ | primary | new |
+| mens golf clubs full set | 50 | 8 | T1 | Commercial | club-set | /blog/mens-golf-club-sets-guide/ | secondary | new |
+| budget golf set | 50 | 11 | T1 | Commercial | club-set | /blog/best-golf-club-sets-for-beginners-australia/ | secondary | new |
+| golf club set starter | 50 | 16 | T1 | Commercial | club-set | /blog/best-golf-club-sets-for-beginners-australia/ | secondary | new |
+| golf kits for men | 50 | 16 | T1 | Informational | club-set | /blog/mens-golf-club-sets-guide/ | secondary | new |
+| golf set deals | 50 | 17 | T1 | Commercial | club-set | /blog/best-golf-club-sets-for-beginners-australia/ | lsi | new |
+| what golf clubs do you need | 50 | 17 | T1 | Question | golf-clubs | /blog/what-golf-clubs-do-you-need-full-set-explained/ | primary | new |
+| how many degrees is sand wedge | 50 | 10 | T1 | Question | wedge | /blog/golf-wedge-degrees-loft-guide/ | lsi | new |
+| sand wedges loft | 50 | 10 | T1 | Informational | wedge | /blog/golf-wedge-degrees-loft-guide/ | secondary | new |
+| 62 degree wedge | 50 | 11 | T1 | Informational | wedge | /blog/golf-wedge-degrees-loft-guide/ | lsi | new |
+| 52 degree wedge golf | 50 | 15 | T1 | Informational | wedge | /blog/golf-wedge-degrees-loft-guide/ | lsi | new |
+| wedge loft | 50 | 20 | T1 | Informational | wedge | /blog/golf-wedge-degrees-loft-guide/ | lsi | new |
+| types of golf putters | 50 | 7 | T1 | Commercial | putter | /blog/best-golf-putters-types-guide-australia/ | secondary | new |
+| putter fitting near me | 50 | 13 | T1 | Transactional | putter | /blog/putter-fitting-guide-length-lie-loft/ | secondary | new |
+| best beginner putter | 50 | 12 | T1 | Commercial | putter | /blog/best-golf-putters-types-guide-australia/ | secondary | new |
+| junior putter | 50 | 14 | T1 | Commercial | putter | /blog/junior-golf-clubs-kids-golf-sets-by-age/ | secondary | new |
+| different putter types | 50 | 24 | T1 | Commercial | putter | /blog/best-golf-putters-types-guide-australia/ | lsi | new |
+| 009m putter | 50 | 27 | T2 | Informational | putter | /shop/wedges-and-putters/ | lsi | new |
+| good putters for golf | 50 | 28 | T2 | Commercial | putter | /blog/best-golf-putters-types-guide-australia/ | secondary | new |
+| best rated putter | 50 | 29 | T2 | Commercial | putter | /blog/best-golf-putters-types-guide-australia/ | secondary | new |
+| motocaddy golf carts | 50 | 7 | T1 | Informational | brand-motocaddy | /blog/motocaddy-s1-vs-m5-gps-vs-m7-remote/ | secondary | new |
+| motocaddy s1 | 50 | 9 | T1 | Commercial | brand-motocaddy | /blog/motocaddy-s1-vs-m5-gps-vs-m7-remote/ | primary | new |
+| q golf | 50 | 6 | T1 | Informational | brand-qod | /brands/qod-golf/ | lsi | new |
+| shot scope g6 | 50 | 9 | T1 | Informational | brand-shotscope | /blog/shot-scope-g5-vs-g6-and-lm1-explained/ | secondary | new |
+| brosnan junior golf clubs | 50 | 7 | T1 | Informational | competitor | COMPETITOR (held for comparison content) | lsi | new |
+| aldi electric golf buggy review | 50 | 26 | T2 | Commercial | competitor | COMPETITOR (held for comparison content) | lsi |  |
+| aldi golf buggy review | 50 | 24 | T1 | Commercial | competitor | COMPETITOR (held for comparison content) | lsi |  |
+| eagles & birdies classic premium golf buggy | 50 | 25 | T1 | Commercial | competitor | COMPETITOR (held for comparison content) | lsi |  |
+| stix 10 piece golf club set | 50 | 9 | T1 | Commercial | competitor | COMPETITOR (held for comparison content) | lsi | new |
+| lab putter grip change | 50 | 17 | T1 | Informational | competitor | COMPETITOR (held for comparison content) | lsi | new |
+| golfbox rangefinder | 50 | 17 | T1 | Navigational | competitor | COMPETITOR (held for comparison content) | lsi | new |

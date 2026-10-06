@@ -359,7 +359,7 @@ const { BRANDS } = await imp('src/config/brands.js');
 
   const { GUIDES } = await imp('src/config/guides.js');
   const guideSlugs = new Set(GUIDES.map((g) => g.slug));
-  const floors = { 'cheap-golf-buggies-and-carts-australia': 1200, 'best-electric-golf-buggies-australia': 1100, 'aldi-golf-buggy-vs-specialist-buggy': 700, 'electric-golf-carts-australia-guide': 1800, 'electric-buggy-for-adults-australia': 1400 };
+  const floors = { 'cheap-golf-buggies-and-carts-australia': 1200, 'best-electric-golf-buggies-australia': 1100, 'aldi-golf-buggy-vs-specialist-buggy': 700, 'electric-golf-carts-australia-guide': 1800, 'electric-buggy-for-adults-australia': 1400, 'golf-buggy-for-sale-buyers-guide-australia': 750, 'conditional-road-registration-guide-qld-nsw-vic': 700, 'lifepo4-vs-lead-acid-battery-lifespan-australian-climate': 750 };
   const problems = [];
   const toks = (s) => s.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter(Boolean).map((w) => ({ buggies: 'buggy', carts: 'cart' }[w] || w));
   for (const p of POSTS) {
@@ -381,6 +381,40 @@ const { BRANDS } = await imp('src/config/brands.js');
   bad.length ? fail('B17b', 'internal links to missing pages: ' + bad.slice(0, 5).join(' | ')) : pass('B17b', 'all related-page and FAQ links resolve to real pages');
   const noIndexInSitemap = POSTS.filter((p) => !fs.existsSync(path.join(ROOT, '.next/server/app/blog/' + p.slug + '.html')) && fs.existsSync(path.join(ROOT, '.next/server/app')));
   noIndexInSitemap.length ? fail('B17c', 'blog posts not built: ' + noIndexInSitemap.map((p) => p.slug).join(', ')) : pass('B17c', 'every blog post is built');
+}
+
+// ---------------------------------------------------------------- B18 keyword engine v2 guards
+{
+  const { POSTS } = await imp('src/config/posts.js');
+  const { PRODUCTS } = await imp('src/config/products.js');
+  const { BRANDS } = await imp('src/config/brands.js');
+  // lithium battery packs carry the confirmed 5-year warranty (owner, 6 Oct 2026)
+  const lith = PRODUCTS.filter((p) => p.category === 'batteries' && p.subcategory !== 'chargers' && /lithium|lifepo4/i.test(p.name) && !/lead-acid/i.test(p.name));
+  const badWarr = lith.filter((p) => !/^5-Year/.test(String(p.specs?.warranty || ''))).map((p) => p.slug);
+  badWarr.length ? fail('B18a', 'lithium battery products without the 5-year warranty: ' + badWarr.join(', ')) : pass('B18a', 'all ' + lith.length + ' lithium battery products list the 5-year warranty');
+  // one primary keyword per post
+  const kw = POSTS.map((p) => p.keyword.toLowerCase());
+  const dupKw = kw.filter((k, i) => kw.indexOf(k) !== i);
+  dupKw.length ? fail('B18b', 'two blog posts share a primary keyword: ' + dupKw.join(', ')) : pass('B18b', 'every blog post has its own primary keyword (' + POSTS.length + ' posts)');
+  // the removed repairs page redirects, and brand pages with no stock stay out of search
+  const cfg = fs.readFileSync(path.join(ROOT, 'next.config.ts'), 'utf8');
+  /\/shop\/golf-buggy-repairs\//.test(cfg) ? pass('B18c', 'removed repairs page redirects to /shop/parts/') : fail('B18c', 'missing redirect for /shop/golf-buggy-repairs/');
+  const out = path.join(ROOT, '.next/server/app');
+  if (fs.existsSync(out)) {
+    const empty = BRANDS.filter((b) => !PRODUCTS.some((p) => p.brand === b.slug)).map((b) => b.slug);
+    const leak = empty.filter((s) => { const file = path.join(out, 'brands/' + s + '.html'); return !fs.existsSync(file) || !/noindex/.test(fs.readFileSync(file, 'utf8')); });
+    const sm = fs.existsSync(path.join(ROOT, '.next/server/app/sitemap.xml.body')) ? fs.readFileSync(path.join(ROOT, '.next/server/app/sitemap.xml.body'), 'utf8') : '';
+    const inMap = empty.filter((s) => sm.includes('/brands/' + s + '/'));
+    leak.length || inMap.length ? fail('B18d', 'zero-product brand pages must be noindex and out of the sitemap: ' + [...leak, ...inMap].join(', ')) : pass('B18d', empty.length + ' zero-product brand pages are noindex and out of the sitemap (' + empty.join(', ') + ')');
+    // no raw markdown in built posts (a bold marker or link syntax that did not render)
+    const bad = [];
+    for (const p of POSTS) {
+      const file = path.join(out, 'blog/' + p.slug + '.html'); if (!fs.existsSync(file)) continue;
+      const body = (fs.readFileSync(file, 'utf8').match(/<article[\s\S]*?<\/article>/) || [''])[0].replace(/<script[\s\S]*?<\/script>/g, ' ').replace(/<[^>]*>/g, ' ');
+      if (/\]\(\/|\*\*[A-Za-z[]/.test(body)) bad.push(p.slug);
+    }
+    bad.length ? fail('B18e', 'blog posts show raw markdown: ' + bad.join(', ')) : pass('B18e', 'no blog post shows raw markdown (' + POSTS.length + ' posts)');
+  }
 }
 
 console.log('\n--- The Buggy Shop crosscheck ---');

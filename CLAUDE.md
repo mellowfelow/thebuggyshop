@@ -26,6 +26,9 @@ Never hand-edit generated files (`llms.txt`, `.well-known/*`, `vercel.json`) —
 - The home page owns "golf buggy"; /shop/ owns "golf buggy for sale". Parent and child categories must not share target keywords.
 - FAQ answers and blog numbers are computed from product data (`src/config/faq.js`, `src/config/posts.js`); never hand-type a price into them.
 - Never claim "free delivery": freight is a flat $495.
+- Blog guides live in `src/config/guides-*.js` (plus `guides-extra*.js`); every price comes from the product data. Never put a spec, weight or feature in a golf-gear guide unless the product record carries it.
+- Brand and category pages with no products are `noindex` and stay out of the sitemap until stock arrives (crosscheck B18d). No repair or servicing service is offered: do not build or claim one.
+- Lithium battery packs carry the 5-year Australian replacement warranty (crosscheck B18a). Brosnan Golf is a competitor retailer, not a brand to target.
 
 ## Live Placeholders
 - `SITE.domain`: `thebuggyshoppty.com.au` (Vercel production domain; www 308-redirects to it). `CROSSCHECK_PRODUCTION=1 npm run crosscheck` fails if a placeholder domain ever returns.

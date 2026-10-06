@@ -1,6 +1,6 @@
 // src/config/related.js
 // Internal-link plan from the keyword map (docs/keyword-map.md): which guides and sibling pages each category page links to.
-// Rendered by <RelatedLinks> at the bottom of category pages. Every href must resolve (crosscheck B17c).
+// Rendered by <RelatedLinks> at the bottom of category pages. Every href must resolve (crosscheck B17b).
 const G = {
   cheap: { href: '/blog/cheap-golf-buggies-and-carts-australia/', label: 'Cheap golf buggies and carts: what each budget buys' },
   best: { href: '/blog/best-electric-golf-buggies-australia/', label: 'Best electric golf buggies in Australia, compared' },
@@ -10,6 +10,24 @@ const G = {
   buyers: { href: '/blog/golf-buggy-for-sale-buyers-guide-australia/', label: "Golf buggy buyer's guide: new vs used" },
   rego: { href: '/blog/conditional-road-registration-guide-qld-nsw-vic/', label: 'Golf cart road registration in QLD, NSW and VIC' },
   battery: { href: '/blog/lifepo4-vs-lead-acid-battery-lifespan-australian-climate/', label: 'LiFePO4 vs lead-acid golf cart batteries' },
+  // keyword engine v2 guides
+  ac: { href: '/blog/golf-cart-ac-vs-dc-motor-guide/', label: 'Golf cart AC vs DC motors: what it means when you buy' },
+  usedAuction: { href: '/blog/used-golf-cart-auction-vs-dealer-australia/', label: 'Used golf carts: auction, Gumtree or dealer?' },
+  mgi: { href: '/blog/mgi-zip-vs-ai-navigator-which-mgi-buggy/', label: 'MGI Zip vs Ai Navigator: which MGI buggy to buy' },
+  cartBattery: { href: '/blog/golf-cart-battery-replacement-cost-australia/', label: 'Golf cart battery replacement cost (48V guide)' },
+  buggyBattery: { href: '/blog/golf-buggy-battery-replacement-guide/', label: 'Golf buggy battery replacement: 12V, 24V and lithium' },
+  repairs: { href: '/blog/golf-buggy-repairs-servicing-guide-australia/', label: 'Golf buggy repairs and servicing: common faults and fixes' },
+  kids: { href: '/blog/kids-off-road-buggy-buying-guide-electric-vs-petrol/', label: 'Kids off-road buggy guide: electric vs petrol' },
+  wedge: { href: '/blog/golf-wedge-degrees-loft-guide/', label: 'Golf wedge degrees explained: pitching, sand and lob' },
+  putters: { href: '/blog/best-golf-putters-types-guide-australia/', label: 'Best golf putters: types, fitting and beginner picks' },
+  clubsNeeded: { href: '/blog/what-golf-clubs-do-you-need-full-set-explained/', label: 'What golf clubs do you need? A full set explained' },
+  beginnerSets: { href: '/blog/best-golf-club-sets-for-beginners-australia/', label: 'Best golf club sets for beginners' },
+  junior: { href: '/blog/junior-golf-clubs-kids-golf-sets-by-age/', label: 'Junior golf clubs: sizing a kids golf set' },
+  ladies: { href: '/blog/ladies-golf-clubs-womens-golf-sets-guide/', label: "Ladies golf clubs and women's golf sets guide" },
+  bag: { href: '/blog/golf-bag-and-cart-how-to-choose-stand-cart-carry/', label: 'Golf bag and cart: stand, cart or carry bag?' },
+  rangefinder: { href: '/blog/golf-rangefinder-vs-gps-watch-which-to-buy/', label: 'Golf rangefinder vs GPS watch: which to buy' },
+  driver: { href: '/blog/how-to-choose-a-golf-driver/', label: 'How to choose a golf driver' },
+  irons: { href: '/blog/how-to-choose-an-iron-set/', label: 'How to choose an iron set' },
 };
 const S = {
   trolleys: { href: '/shop/golf-trolleys/', label: 'Golf trolleys: push and electric' },
@@ -24,26 +42,43 @@ const S = {
   parts: { href: '/shop/parts/', label: 'Spare parts and wheels' },
   electric: { href: '/shop/electric-golf-buggies/', label: 'Electric golf buggies' },
   offroad: { href: '/shop/off-road-buggies/', label: 'Off-road buggies' },
+  clubs: { href: '/shop/golf-clubs/', label: 'Golf clubs for sale' },
+  sets: { href: '/shop/complete-sets/', label: 'Golf club sets' },
+  bags: { href: '/shop/bags/', label: 'Golf bags' },
+  kids: { href: '/shop/kids-buggies/', label: 'Kids buggies' },
 };
 
 export const RELATED = {
   '/shop/': [G.cheap, G.best, G.cart, G.buyers],
   '/shop/electric-golf-buggies/': [G.best, G.buggy, G.aldi, G.cheap],
-  '/shop/remote-control-golf-buggies/': [G.best, G.cheap, S.walk],
-  '/shop/walk-behind/': [G.aldi, G.best, S.trolleys, G.cheap],
-  '/shop/gps-follow-buggies/': [G.best, S.remote],
-  '/shop/push-pull-golf-buggies/': [G.cheap, G.best, S.trolleys],
+  '/shop/remote-control-golf-buggies/': [G.best, G.mgi, G.cheap, S.walk],
+  '/shop/walk-behind/': [G.aldi, G.mgi, G.best, S.trolleys],
+  '/shop/gps-follow-buggies/': [G.best, G.mgi, S.remote],
+  '/shop/push-pull-golf-buggies/': [G.cheap, G.best, G.bag, S.trolleys],
   '/shop/golf-trolleys/': [G.cheap, G.best, S.push, S.walk],
-  '/shop/luxury-golf-carts/': [G.cart, G.cheap, G.rego, S.used],
-  '/shop/2-seat/': [G.cart, G.cheap],
+  '/shop/luxury-golf-carts/': [G.cart, G.ac, G.rego, G.usedAuction],
+  '/shop/2-seat/': [G.cart, G.ac, G.cheap],
   '/shop/utility/': [G.cart, G.buggy],
-  '/shop/used-golf-buggies/': [G.cheap, G.cart, S.carts],
-  '/shop/off-road-buggies/': [G.buggy],
+  '/shop/used-golf-buggies/': [G.usedAuction, G.cheap, G.cart, S.carts],
+  '/shop/off-road-buggies/': [G.buggy, G.kids],
   '/shop/farm-buggies/': [G.buggy],
-  '/shop/accessories/': [G.cheap, S.parts],
-  '/shop/chargers/': [G.battery, S.batteries],
-  '/shop/batteries/': [G.battery, G.cart, S.chargers],
-  '/shop/parts/': [G.aldi, S.accessories],
+  '/shop/kids-buggies/': [G.kids, G.buggy],
+  '/shop/electric/': [G.kids, S.kids],
+  '/shop/petrol/': [G.kids, S.kids],
+  '/shop/accessories/': [G.cheap, G.bag, S.parts],
+  '/shop/chargers/': [G.battery, G.buggyBattery, S.batteries],
+  '/shop/batteries/': [G.buggyBattery, G.cartBattery, G.battery, S.chargers],
+  '/shop/lithium/': [G.buggyBattery, G.battery, S.chargers],
+  '/shop/cart-sets/': [G.cartBattery, G.battery, G.cart],
+  '/shop/parts/': [G.repairs, G.aldi, S.accessories],
+  '/shop/wheels-tyres/': [G.repairs, S.parts],
+  '/shop/drive-electrical/': [G.repairs, S.parts],
+  '/shop/golf-clubs/': [G.clubsNeeded, G.beginnerSets, G.wedge],
+  '/shop/complete-sets/': [G.beginnerSets, G.junior, G.ladies, G.clubsNeeded],
+  '/shop/woods-and-irons/': [G.driver, G.irons, G.clubsNeeded],
+  '/shop/wedges-and-putters/': [G.wedge, G.putters, G.clubsNeeded],
+  '/shop/bags/': [G.bag, G.ladies, S.accessories],
+  '/shop/rangefinders-gps/': [G.rangefinder, S.clubs],
 };
 
 export const relatedFor = (url) => RELATED[url] || [];

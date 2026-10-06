@@ -6,6 +6,7 @@
 import { PRODUCTS } from './products.js';
 import { FACTS as F, money as $ } from './faq.js';
 import { GUIDES } from './guides.js';
+import { LIVE_EXTRA } from './guides-live-extra.js';
 
 const P = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p]));
 const need = (slug) => { if (!P[slug]) throw new Error(`posts.js references a missing product: ${slug}`); return P[slug]; };
@@ -578,6 +579,8 @@ New lithium golf buggies and carts from us carry a 5-year LiFePO4 battery guaran
 `;
 
 const wc = (s) => s.trim().split(/\s+/).length;
+// Expansion sections for the three short live posts go in before each post's closing section (guides-live-extra.js).
+const more = (slug, content) => { const extra = LIVE_EXTRA[slug]; if (!extra) return content; const at = content.lastIndexOf('\n## '); return content.slice(0, at) + '\n' + extra.trim() + '\n' + content.slice(at); };
 const mk = (o) => ({ ...o, content: o.content.trim(), readTime: `${Math.max(3, Math.round(wc(o.content) / 200))} min read`, words: wc(o.content), updated: TODAY });
 
 const BASE_POSTS = [
@@ -610,17 +613,17 @@ const BASE_POSTS = [
     excerpt: 'How to choose a golf buggy for sale in Australia: push, electric, remote control or ride-on cart, new or used, with prices and what to check.',
     metaDescription: 'How to choose a golf buggy for sale in Australia: push, electric, remote control or ride-on cart, new or used, with prices and what to check.',
     category: 'Buying Guides', date: '2026-02-28', image: '/images/products/mgi-zip-navigator-at-all-terrain-golf-buggy/main.webp', imageAlt: 'Golf buggy for sale in Australia: MGI Zip Navigator AT',
-    keyword: 'golf buggy for sale', faqIds: ['cost-buggy', 'used', 'delivery'], content: buyers }),
+    keyword: 'golf buggy for sale', faqIds: ['cost-buggy', 'used', 'delivery'], toc: true, content: more('golf-buggy-for-sale-buyers-guide-australia', buyers) }),
   mk({ slug: 'conditional-road-registration-guide-qld-nsw-vic', title: 'Conditional Road Registration for Golf Carts in QLD, NSW & VIC', titleTag: 'Golf Cart Road Registration in QLD, NSW & VIC',
     excerpt: 'How conditional road registration applies to golf carts in Queensland, NSW and Victoria, what we provide, and what to confirm with your state authority before you buy.',
     metaDescription: 'How conditional road registration applies to golf carts in Queensland, NSW and Victoria, what we provide, and what to confirm with your road authority.',
     category: 'Road Compliance', date: '2026-02-15', image: '/images/products/rippa-4-seat-electric-golf-cart/main.webp', imageAlt: 'Road compliant golf cart: Rippa 4-seat electric golf cart',
-    keyword: 'golf cart road registration', faqIds: ['road-legal', 'licence'], content: rego }),
+    keyword: 'golf cart road registration', faqIds: ['road-legal', 'licence'], toc: true, content: more('conditional-road-registration-guide-qld-nsw-vic', rego) }),
   mk({ slug: 'lifepo4-vs-lead-acid-battery-lifespan-australian-climate', title: 'LiFePO4 Lithium vs Lead-Acid Golf Cart Batteries in Australia', titleTag: 'LiFePO4 vs Lead-Acid Golf Cart Batteries',
     excerpt: 'LiFePO4 lithium versus lead-acid golf cart batteries: cost, weight, maintenance and life compared, with the battery options in our range.',
     metaDescription: 'LiFePO4 lithium versus lead-acid golf cart batteries in Australia: cost, weight, maintenance and life compared, with the options we stock and their prices.',
     category: 'Engineering & Tech', date: '2026-01-20', image: '/images/products/giant-48v-100ah-golf-cart-drop-in-lithium-battery/main.webp', imageAlt: 'LiFePO4 golf cart battery: GIANT 48V 100Ah drop-in lithium',
-    keyword: 'lithium battery golf buggy', faqIds: ['battery-life', 'charge'], content: lifepo4 }),
+    keyword: 'lithium battery golf buggy', faqIds: ['battery-life', 'charge'], toc: true, content: more('lifepo4-vs-lead-acid-battery-lifespan-australian-climate', lifepo4) }),
 ];
 
 // Keyword engine v2 guides (batteries, buggies, golf gear) live in guides-cart.js and guides-golf.js.
