@@ -12,5 +12,6 @@ Researched 6 Oct 2026 from public Australian listings. Re-check before changing:
 | CFMOTO ZFORCE | $34,490 | ZFORCE Z10 $34,490 ride away, Z10 4 $35,990 (cfmoto.com.au). Older ZFORCE 950 Sport ~$19,990. |
 | Yamaha Wolverine X2 850 / 1000 | $28,849 | Dealer RRP $28,849 (sale $26,349); 2025 ride away $29,849 (bikesales / farmmachinerysales). |
 | Yamaha Wolverine RMAX2 1000 | $32,999 | 2026 RMAX 2 1000 Sport $32,999 ride away; RMAX 2 (YXE1000PSE) $33,799-$36,799 (bikesales). |
+| GIANT 48V 100Ah drop-in lithium | $1,799 | VoltX 48V 100Ah drop-in $1,799 (outbax.com.au); RoyPow 48V 100Ah $1,999 on sale (18650batterystore.com/en-au); Epoch 48V 90Ah $2,399. Listing changed from 90Ah to 100Ah to match the supplied photo. Weight (38 kg) is carried over from the 90Ah listing and needs confirming. |
 
 Rule: the site shows one definitive price per product; never below the floors enforced by `npm run crosscheck`.

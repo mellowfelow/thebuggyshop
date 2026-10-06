@@ -1310,14 +1310,14 @@ export const PRODUCTS = [
     images: ['/images/products/mgi-24v-380wh-click-and-go-lithium-battery/main.webp']
   },
   {
-    slug: 'giant-48v-90ah-golf-cart-drop-in-lithium-battery',
+    slug: 'giant-48v-100ah-golf-cart-drop-in-lithium-battery',
     subcategory: 'cart-sets',
-    name: 'GIANT 48V 90Ah Drop-In Golf Cart LiFePO4 Lithium Battery',
+    name: 'GIANT 48V 100Ah Drop-In Golf Cart LiFePO4 Lithium Battery',
     brand: 'giant',
     brandName: 'GIANT Power',
     category: 'batteries',
     categoryPath: '/batteries/',
-    price: 1479,
+    price: 1799,
     condition: 'New',
     badge: 'Drop-In Cart Lithium',
     featured: false,
@@ -1331,17 +1331,17 @@ export const PRODUCTS = [
     foldSize: 'Standard',
     seats: 'Part',
     primaryKeyword: '48v drop in lithium golf cart battery australia',
-    shortDescription: 'Single-cased 48V 90Ah LiFePO4 lithium conversion unit replacing 6 or 8 heavy lead-acid batteries in Club Car, Yamaha, and E-Z-GO carts.',
-    description: 'Transform your heavy lead-acid golf cart. Shed 130+ kg of weight and gain 80+ km of single-charge range with this single drop-in 48V 90Ah LiFePO4 battery with Bluetooth battery status app.',
+    shortDescription: 'Single-cased 48V 100Ah LiFePO4 lithium conversion unit replacing 6 or 8 heavy lead-acid batteries in Club Car, Yamaha, and E-Z-GO carts.',
+    description: 'Transform your heavy lead-acid golf cart. Shed 130+ kg of weight and gain 80+ km of single-charge range with this single drop-in 48V 100Ah LiFePO4 battery with Bluetooth battery status app.',
     specs: {
       voltage: '48V Nominal (51.2V Actual)',
-      capacity: '90Ah (4.6 kWh Usable Power)',
+      capacity: '100Ah (5.1 kWh Usable Power)',
       cycleLife: '3,500+ Deep Discharge Cycles',
       weight: '38 kg (Saves 130kg+ over Lead Acid)',
       compatibility: 'Club Car, Yamaha, E-Z-GO, ECAR 48V Carts',
       warranty: '5-Year Australian Replacement Warranty'
     },
-    images: ['/images/products/giant-48v-90ah-golf-cart-drop-in-lithium-battery/main.webp']
+    images: ['/images/products/giant-48v-100ah-golf-cart-drop-in-lithium-battery/main.webp']
   },
 
   // ==========================================

@@ -439,9 +439,9 @@ export const BRANDS = [
     origin: 'Lithium golf cart batteries',
     h1: 'GIANT Power Lithium Golf Cart Batteries Australia',
     pageTitle: 'GIANT Power Lithium Golf Cart Batteries Australia',
-    metaDescription: 'GIANT Power 48V 90Ah drop-in LiFePO4 lithium battery for golf carts. Lithium upgrade from lead-acid, delivered Australia-wide from The Buggy Shop.',
-    introCopy: 'GIANT Power makes drop-in lithium batteries for golf carts. The 48V 90Ah LiFePO4 pack replaces a lead-acid set so you can upgrade without rebuilding the cart.',
-    popularModels: ['GIANT 48V 90Ah Drop-In Golf Cart LiFePO4 Lithium Battery'],
+    metaDescription: 'GIANT Power 48V 100Ah drop-in LiFePO4 lithium battery for golf carts. Lithium upgrade from lead-acid, delivered Australia-wide from The Buggy Shop.',
+    introCopy: 'GIANT Power makes drop-in lithium batteries for golf carts. The 48V 100Ah LiFePO4 pack replaces a lead-acid set so you can upgrade without rebuilding the cart.',
+    popularModels: ['GIANT 48V 100Ah Drop-In Golf Cart LiFePO4 Lithium Battery'],
   },
   {
     slug: 'lvtong',
