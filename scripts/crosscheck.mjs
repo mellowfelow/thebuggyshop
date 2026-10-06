@@ -256,6 +256,43 @@ const { BRANDS } = await imp('src/config/brands.js');
   /computeTotals\(/.test(api) && /PRODUCT_BY_SLUG/.test(api) ? pass('B13b', 'order API recomputes prices and totals server-side') : fail('B13b', 'order API must rebuild items from the catalogue and recompute totals');
 }
 
+// ---------------------------------------------------------------- B14 keyword targets and title hygiene (built pages)
+{
+  const out = path.join(ROOT, '.next/server/app');
+  const targetsFile = path.join(ROOT, 'docs/keyword-targets.json');
+  if (fs.existsSync(out)) {
+    const decode = (s) => s.replace(/&amp;/g, '&').replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"');
+    const strip = (h) => decode(h.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim());
+    const norm = (s) => s.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter(Boolean).map((w) => ({ buggies: 'buggy', buggys: 'buggy', buggie: 'buggy', carts: 'cart', trolleys: 'trolley', accessories: 'accessory', chargers: 'charger', wheels: 'wheel', three: '3', two: '2', four: '4' }[w] || w)).filter((w) => !['for', 'the', 'a', 'and', 'of', 'in', 'to', 's'].includes(w));
+    const hasAll = (text, phrase, skip = []) => { const T = new Set(norm(text)); return norm(phrase).filter((w) => !skip.includes(w)).every((w) => T.has(w)); };
+    const walk = (d, acc = []) => { for (const e of fs.readdirSync(d, { withFileTypes: true })) e.isDirectory() ? walk(path.join(d, e.name), acc) : /\.html$/.test(e.name) && acc.push(path.join(d, e.name)); return acc; };
+    // 1. no public title may end in an ellipsis (the title limiter cut it mid-phrase)
+    const cut = [];
+    for (const file of walk(out)) {
+      const rel = path.relative(out, file).replace(/\\/g, '/');
+      if (/^(admin|order|_not-found|_global-error|thank-you|404|500)/.test(rel)) continue;
+      const title = decode((fs.readFileSync(file, 'utf8').match(/<title>([^<]*)<\/title>/) || [])[1] || '');
+      if (/…$/.test(title)) cut.push(rel + ': ' + title);
+    }
+    cut.length ? fail('B14a', cut.length + ' built titles end in an ellipsis (write them to 60 characters or less): ' + cut.slice(0, 4).join(' | ')) : pass('B14a', 'no built title is cut off with an ellipsis');
+    // 2. every keyword target must be in its page title and H1
+    if (fs.existsSync(targetsFile)) {
+      const { pages } = JSON.parse(fs.readFileSync(targetsFile, 'utf8'));
+      const bad = [];
+      for (const row of pages) {
+        const file = path.join(out, row.url === '/' ? 'index.html' : row.url.replace(/^\/|\/$/g, '') + '.html');
+        if (!fs.existsSync(file)) { bad.push(row.url + ' (page not built)'); continue; }
+        const html = fs.readFileSync(file, 'utf8');
+        const title = decode((html.match(/<title>([^<]*)<\/title>/) || [])[1] || '');
+        const h1 = strip((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || '');
+        if (!hasAll(title, row.primary)) bad.push(row.url + ' title lacks "' + row.primary + '"');
+        else if (!hasAll(h1, row.primary, ['sale', 'buy', 'australia'])) bad.push(row.url + ' H1 lacks "' + row.primary + '"');
+      }
+      bad.length ? fail('B14b', bad.length + ' pages miss their primary keyword: ' + bad.slice(0, 5).join(' | ')) : pass('B14b', 'all ' + pages.length + ' keyword targets appear in their page title and H1');
+    }
+  }
+}
+
 console.log('\n--- The Buggy Shop crosscheck ---');
 ok.forEach((m) => console.log('  OK   ', m));
 warns.forEach((m) => console.log('  WARN ', m));

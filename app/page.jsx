@@ -27,13 +27,13 @@ import Image from 'next/image';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: { absolute: seoTitle('Golf Buggy for Sale Australia | Luxury, Remote & Off Road Buggies') },
-  description: seoDesc('Explore premium golf buggies for sale in Australia. From remote control golf buggies and off road buggies to luxury golf carts with seats and used golf buggies for sale with 5-year warranty.'),
+  title: { absolute: seoTitle('Golf Buggies Australia | Electric, Remote & Push Buggies') },
+  description: seoDesc('Shop golf buggies in Australia: electric, remote control and push models plus ride-on carts. Local warranty and tail-lift delivery. Browse the range today.'),
   alternates: {
     canonical: `https://${SITE.domain}/`,
   },
   openGraph: {
-    title: 'Golf Buggy for Sale Australia | The Buggy Shop',
+    title: 'Golf Buggies Australia | Electric, Remote & Push Buggies',
     description: 'Australia\'s premier destination for luxury golf buggies for sale, remote control golf buggies, off road buggies, and golf push buggies.',
     url: `https://${SITE.domain}/`,
     images: [{ url: 'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80' }]

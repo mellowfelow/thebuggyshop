@@ -6,10 +6,10 @@ import { SITE, BRAND, CONTACT } from '@/src/config/site';
 export const metadata: Metadata = {
   metadataBase: new URL(`https://${SITE.domain}`),
   title: {
-    default: `Golf Buggy for Sale Australia | ${SITE.name}`,
+    default: 'Golf Buggies Australia | Electric, Remote & Push Buggies',
     template: '%s'
   },
-  description: "Australia's premier destination for luxury golf buggies for sale, remote control golf buggies, off road buggies, push golf buggies with seats, and used golf buggies for sale.",
+  description: 'Shop golf buggies in Australia: electric, remote control and push models plus ride-on carts. Local warranty and tail-lift delivery. Browse the range today.',
   keywords: [
     'golf buggy for sale',
     'golf buggy',
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
     locale: 'en_AU',
     url: `https://${SITE.domain}/`,
     siteName: SITE.name,
-    title: `Golf Buggy for Sale Australia | ${SITE.name}`,
-    description: "Australia's premier destination for luxury golf buggies for sale, remote control golf buggies, off road buggies, push golf buggies with seats, and used golf buggies for sale.",
+    title: 'Golf Buggies Australia | Electric, Remote & Push Buggies',
+    description: 'Shop golf buggies in Australia: electric, remote control and push models plus ride-on carts. Local warranty and tail-lift delivery. Browse the range today.',
     images: [
       {
         url: '/images/hero/hero-1.webp',
@@ -66,8 +66,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `Golf Buggy for Sale Australia | ${SITE.name}`,
-    description: "Australia's premier destination for luxury golf buggies for sale, remote control golf buggies, and off road buggies.",
+    title: 'Golf Buggies Australia | Electric, Remote & Push Buggies',
+    description: 'Shop golf buggies in Australia: electric, remote control and push models plus ride-on carts. Local warranty and tail-lift delivery. Browse the range today.',
     images: ['/images/hero/hero-1.webp'],
   },
   robots: {

@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: { absolute: seoTitle('About The Buggy Shop | 20+ Years Australian Golf Buggy for Sale Heritage') },
+  title: { absolute: seoTitle('About The Buggy Shop | 20+ Years Selling Golf Buggies') },
   description: seoDesc('Founded in Queensland in 2004, The Buggy Shop is Australia\'s leading authority on luxury golf buggies for sale, remote control golf buggies, off road buggies, and golf push buggies.'),
   alternates: {
     canonical: `https://${SITE.domain}/about/`,

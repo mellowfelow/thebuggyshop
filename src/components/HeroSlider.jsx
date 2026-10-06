@@ -27,7 +27,7 @@ const SLIDES = [
     alt: 'Luxury Australian Golf Buggies for Sale - The Buggy Shop Queensland',
     eyebrow: 'AUSTRALIAN LUXURY GOLF BUGGIES • QUEENSLAND EST. 2004',
     titleMain: 'Premium ',
-    titleAccent: 'Golf Buggy for Sale',
+    titleAccent: 'Golf Buggies',
     titleSuffix: ' Across Australia.',
     subtitle: 'Turnkey Lithium Golf Carts, Remote Trolleys & Off Road Buggies',
     description: "Australia's leading destination for certified luxury golf buggies, motorized remote control golf buggies, 4x4 off road buggies, and verified used golf buggies for sale. Engineered with 5-year LiFePO4 lithium batteries, whisper-quiet AC motors, and nationwide hydraulic tail-lift delivery to your club, estate, or farm.",

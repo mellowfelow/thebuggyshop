@@ -1,0 +1,237 @@
+{
+  "generated": "2026-10-06",
+  "note": "url -> primary keyword. Read by scripts/crosscheck.mjs. Update after each keyword export.",
+  "pages": [
+    {
+      "url": "/",
+      "type": "Homepage",
+      "primary": "golf buggy",
+      "secondary": [
+        "golf buggies australia",
+        "buggy for golf"
+      ]
+    },
+    {
+      "url": "/shop/",
+      "type": "Category hub",
+      "primary": "golf buggy for sale",
+      "secondary": [
+        "golf buggy sales",
+        "golf buggy sale",
+        "golf buggies for sale australia",
+        "buy golf buggy"
+      ]
+    },
+    {
+      "url": "/shop/electric-golf-buggies/",
+      "type": "Category",
+      "primary": "electric golf buggy for sale",
+      "secondary": [
+        "battery golf buggies",
+        "motorised golf buggy for sale",
+        "estate electric golf buggy",
+        "motorised golf buggy",
+        "electric golf"
+      ]
+    },
+    {
+      "url": "/shop/remote-control-golf-buggies/",
+      "type": "Category",
+      "primary": "remote control golf buggy",
+      "secondary": [
+        "remote control electric golf buggy",
+        "remote control golf buggy for sale",
+        "remote golf buggy",
+        "electric golf buggy with remote",
+        "remote controlled golf buggy"
+      ]
+    },
+    {
+      "url": "/shop/gps-follow-buggies/",
+      "type": "Category",
+      "primary": "follow me golf buggy",
+      "secondary": [
+        "automatic golf buggy"
+      ]
+    },
+    {
+      "url": "/shop/push-pull-golf-buggies/",
+      "type": "Category",
+      "primary": "golf push buggy",
+      "secondary": [
+        "golf bag and buggy",
+        "push golf buggy for sale",
+        "golf pull buggy",
+        "push buggy",
+        "pull buggy"
+      ]
+    },
+    {
+      "url": "/shop/3-wheel/",
+      "type": "Sub-category",
+      "primary": "three wheel golf buggy",
+      "secondary": [
+        "3 wheel golf buggy",
+        "three wheel golf cart",
+        "3 wheel golf cart",
+        "golf three wheel trolley"
+      ]
+    },
+    {
+      "url": "/shop/4-wheel/",
+      "type": "Sub-category",
+      "primary": "foldable golf buggy",
+      "secondary": [
+        "folding golf buggy",
+        "collapsible golf buggy"
+      ]
+    },
+    {
+      "url": "/shop/golf-trolleys/",
+      "type": "Category",
+      "primary": "golf trolley",
+      "secondary": [
+        "golf troley"
+      ]
+    },
+    {
+      "url": "/shop/walk-behind/",
+      "type": "Sub-category",
+      "primary": "electric golf trolley",
+      "secondary": [
+        "battery trolley",
+        "estate electric golf trolley",
+        "golf caddy electric",
+        "electric caddies",
+        "smart golf trolley"
+      ]
+    },
+    {
+      "url": "/shop/luxury-golf-carts/",
+      "type": "Category",
+      "primary": "golf cart",
+      "secondary": [
+        "electric golf carts for sale",
+        "golf carts for sale",
+        "golf buggy with seat",
+        "electric ride on golf buggy",
+        "buy golf cart"
+      ]
+    },
+    {
+      "url": "/shop/2-seat/",
+      "type": "Sub-category",
+      "primary": "2 seater buggy for sale",
+      "secondary": [
+        "2 seater electric buggy",
+        "2 seater electric golf carts"
+      ]
+    },
+    {
+      "url": "/shop/utility/",
+      "type": "Sub-category",
+      "primary": "electric utility cart",
+      "secondary": [
+        "electric commercial carts",
+        "electric utility cart for sale"
+      ]
+    },
+    {
+      "url": "/shop/used-golf-buggies/",
+      "type": "Category",
+      "primary": "used golf buggy for sale",
+      "secondary": [
+        "used golf buggies",
+        "second hand golf buggies for sale",
+        "second hand petrol golf carts for sale",
+        "second hand golf buggies",
+        "used electric golf buggy for sale"
+      ]
+    },
+    {
+      "url": "/shop/off-road-buggies/",
+      "type": "Category",
+      "primary": "off road buggies",
+      "secondary": [
+        "off road buggy for sale",
+        "off road buggies for sale australia",
+        "offroad buggy for sale",
+        "dirt buggy",
+        "atv buggy for sale"
+      ]
+    },
+    {
+      "url": "/shop/dune-buggies/",
+      "type": "Sub-category",
+      "primary": "dune buggies for sale",
+      "secondary": [
+        "beach buggy for sale australia",
+        "dune buggy kart",
+        "dune buggies for sale in australia",
+        "buggy dune buggy"
+      ]
+    },
+    {
+      "url": "/shop/side-by-side/",
+      "type": "Sub-category",
+      "primary": "side by side buggy for sale",
+      "secondary": [
+        "side by side buggy for sale qld",
+        "side by side farm buggy",
+        "side by side buggy for sale australia"
+      ]
+    },
+    {
+      "url": "/shop/farm-buggies/",
+      "type": "Sub-category",
+      "primary": "farm buggies for sale",
+      "secondary": [
+        "electric farm buggy for sale australia"
+      ]
+    },
+    {
+      "url": "/shop/kids-buggies/",
+      "type": "Category",
+      "primary": "kids buggy for sale",
+      "secondary": [
+        "kids atv buggy",
+        "buggies for kids",
+        "children's petrol buggy",
+        "utv for kids",
+        "kids electric utv"
+      ]
+    },
+    {
+      "url": "/shop/accessories/",
+      "type": "Category",
+      "primary": "golf buggy accessories",
+      "secondary": [
+        "golf buggy accessories australia"
+      ]
+    },
+    {
+      "url": "/shop/chargers/",
+      "type": "Sub-category",
+      "primary": "golf buggy charger",
+      "secondary": []
+    },
+    {
+      "url": "/brands/mgi/",
+      "type": "Brand",
+      "primary": "mgi golf buggy",
+      "secondary": []
+    },
+    {
+      "url": "/brands/ecar/",
+      "type": "Brand",
+      "primary": "ecar golf buggy",
+      "secondary": []
+    },
+    {
+      "url": "/brands/triumph/",
+      "type": "Brand",
+      "primary": "triumph golf buggy accessories",
+      "secondary": []
+    }
+  ]
+}

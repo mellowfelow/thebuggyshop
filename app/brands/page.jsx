@@ -9,7 +9,7 @@ import { Award, ArrowRight } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: { absolute: seoTitle('Golf Buggy Brands Australia | MGI, Motocaddy, Club Car, ECAR & Clicgear') },
+  title: { absolute: seoTitle('Golf Buggy Brands Australia | MGI, Motocaddy & ECAR') },
   description: seoDesc('Explore Australia\'s top golf buggy and cart brands. Authorized sales, factory warranty backup, lithium upgrades, and genuine parts for MGI, Motocaddy, Club Car, ECAR and more.'),
   alternates: {
     canonical: `https://${SITE.domain}/brands/`,

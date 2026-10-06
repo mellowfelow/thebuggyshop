@@ -10,13 +10,13 @@ import { ShieldCheck, Truck, Sparkles, Scale, Calculator } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: { absolute: seoTitle('Golf Buggy for Sale Australia | Electric, Remote, Push & Golf Carts') },
-  description: seoDesc('Browse Australia\'s comprehensive range of golf buggies for sale. Electric, remote-control, manual push buggies, 2-seat to 6-seat resort carts, and 4x4 off-road UTVs.'),
+  title: { absolute: seoTitle('Golf Buggy for Sale Australia | Shop All Buggies') },
+  description: seoDesc('Golf buggy for sale in Australia. Compare electric, remote control, push and used golf buggies, with warranty and delivery. Find your buggy now.'),
   alternates: {
     canonical: `https://${SITE.domain}/shop/`,
   },
   openGraph: {
-    title: 'Golf Buggy for Sale Australia | The Buggy Shop',
+    title: 'Golf Buggy for Sale Australia | Shop All Buggies',
     description: 'Explore turnkey luxury golf buggies for sale, remote trolleys, and all-terrain buggies with 5-year LiFePO4 battery warranties.',
     url: `https://${SITE.domain}/shop/`,
   },
@@ -66,7 +66,7 @@ export default function ShopPage() {
               <span>Full Australian Fleet · Pricing Inc. GST</span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-serif">
-              Golf Buggy for Sale Australia
+              Golf Buggy for Sale in Australia
             </h1>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
               Explore our complete Australian fleet of remote-control motorized buggies, lightweight 3-wheel push buggies, 2-seat to 6-seat luxury estate carts, and heavy-duty 4x4 off-road UTVs. Flat-rate hydraulic tail-lift delivery across Australia.

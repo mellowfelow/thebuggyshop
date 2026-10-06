@@ -8,8 +8,8 @@ import { Truck, MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: { absolute: seoTitle('Golf Buggies for Sale by City & State | Australian Delivery & Service') },
-  description: seoDesc('Find electric golf buggies, push buggies and golf carts for sale across Australia with local delivery to Melbourne, Sydney, Brisbane, Gold Coast, Perth, Adelaide and regional clubs.'),
+  title: { absolute: seoTitle('Golf Buggies for Sale Near Me | By City & State') },
+  description: seoDesc('Find golf buggies for sale near you. Electric buggies, push buggies and golf carts with tail-lift delivery to Melbourne, Sydney, Brisbane, Perth, Adelaide and more.'),
   alternates: {
     canonical: `https://${SITE.domain}/golf-buggies/`,
   },
