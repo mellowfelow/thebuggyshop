@@ -1235,7 +1235,7 @@ export const PRODUCTS = [
       payloadCapacity: '85 kg',
       warranty: '12-Month Australian Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/electric-48v-kids-4x4-off-road-buggy/main.webp']
   },
   {
     slug: 'crossfire-90cc-twin-seat-kids-petrol-buggy',
@@ -1269,7 +1269,7 @@ export const PRODUCTS = [
       payloadCapacity: '95 kg',
       warranty: '12-Month Factory Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/crossfire-90cc-twin-seat-kids-petrol-buggy/main.webp']
   },
 
   // ==========================================
@@ -1307,7 +1307,7 @@ export const PRODUCTS = [
       compatibility: 'All MGI Zip & MGI Ai Series Buggies',
       warranty: '2-Year Australian Replacement Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/mgi-24v-380wh-click-and-go-lithium-battery/main.webp']
   },
   {
     slug: 'giant-48v-90ah-golf-cart-drop-in-lithium-battery',
@@ -1341,7 +1341,7 @@ export const PRODUCTS = [
       compatibility: 'Club Car, Yamaha, E-Z-GO, ECAR 48V Carts',
       warranty: '5-Year Australian Replacement Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/giant-48v-90ah-golf-cart-drop-in-lithium-battery/main.webp']
   },
 
   // ==========================================
@@ -2574,7 +2574,7 @@ export const PRODUCTS = [
       category: 'off-road-buggies',
       warranty: '1-Year Australian Manufacturer Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/can-am-defender-limited-side-by-side/main.webp']
   },
   {
     slug: 'cfmoto-uforce-u10-pro-side-by-side',
@@ -2878,9 +2878,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/licensed-rzr-style-4x4-kids-electric-ride-on-buggy-24-48v/main.webp']
   },
   {
     slug: 'kids-dune-buggy-petrol-90-125cc',
@@ -2906,9 +2904,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/kids-dune-buggy-petrol-90-125cc/main.webp']
   },
   {
     slug: 'hammerhead-torpedo-208cc-teen-buggy',
@@ -2934,9 +2930,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/hammerhead-torpedo-208cc-teen-buggy/main.webp']
   },
   {
     slug: 'mgi-lithium-24v-250wh-299wh-36-hole-battery',
@@ -2962,9 +2956,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mgi-lithium-24v-250wh-299wh-36-hole-battery/main.webp']
   },
   {
     slug: 'mgi-lithium-12v-20ah-299wh-18-hole-battery',
@@ -2990,9 +2982,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mgi-lithium-12v-20ah-299wh-18-hole-battery/main.webp']
   },
   {
     slug: 'mgi-lithium-24v-13ah-remote-series-battery',
@@ -3018,9 +3008,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mgi-lithium-24v-13ah-remote-series-battery/main.webp']
   },
   {
     slug: 'motocaddy-m-series-28v-lithium-battery-charger',
@@ -3046,9 +3034,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/motocaddy-m-series-28v-lithium-battery-charger/main.webp']
   },
   {
     slug: 'aftermarket-36-hole-lithium-battery-kit',
@@ -3074,9 +3060,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/aftermarket-36-hole-lithium-battery-kit/main.webp']
   },
   {
     slug: 'aftermarket-12v-18-25ah-lithium-battery-charger',
@@ -3102,9 +3086,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/aftermarket-12v-18-25ah-lithium-battery-charger/main.webp']
   },
   {
     slug: 'ultramax-22ah-12v-lithium-battery',
@@ -3130,9 +3112,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/ultramax-22ah-12v-lithium-battery/main.webp']
   },
   {
     slug: 'lead-acid-12v-24ah-buggy-battery',
@@ -3158,9 +3138,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/lead-acid-12v-24ah-buggy-battery/main.webp']
   },
   {
     slug: 'mgi-lithium-24v-smart-charger',
@@ -3186,9 +3164,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mgi-lithium-24v-smart-charger/main.webp']
   },
   {
     slug: 'mgi-lithium-12v-charger',
@@ -3214,9 +3190,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mgi-lithium-12v-charger/main.webp']
   },
   {
     slug: 'aftermarket-lithium-charger-12-18-24ah',
@@ -3242,9 +3216,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/aftermarket-lithium-charger-12-18-24ah/main.webp']
   },
   {
     slug: 'lead-acid-buggy-charger',
@@ -3270,9 +3242,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/lead-acid-buggy-charger/main.webp']
   },
   {
     slug: 'golf-buggy-battery-bag',
@@ -3298,9 +3268,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-buggy-battery-bag/main.webp']
   },
   {
     slug: 'trojan-t105-flooded-battery-set-48v-8-batteries',
@@ -3326,9 +3294,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/trojan-t105-flooded-battery-set-48v-8-batteries/main.webp']
   },
   {
     slug: 'trojan-t875-flooded-battery-set-48v',
@@ -3354,9 +3320,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/trojan-t875-flooded-battery-set-48v/main.webp']
   },
   {
     slug: 'trojan-t1275-12v-battery-set-48v',
@@ -3382,9 +3346,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/trojan-t1275-12v-battery-set-48v/main.webp']
   },
   {
     slug: 'century-golf-cart-battery-set-36v-48v',
@@ -3410,9 +3372,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/century-golf-cart-battery-set-36v-48v/main.webp']
   },
   {
     slug: 'trojan-agm-pro-maintenance-free-battery-set-48v',
@@ -3438,9 +3398,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/trojan-agm-pro-maintenance-free-battery-set-48v/main.webp']
   },
   {
     slug: 'trojan-gc2-lithium-battery-48v-24v',
@@ -3466,9 +3424,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/trojan-gc2-lithium-battery-48v-24v/main.webp']
   },
   {
     slug: 'voltrac-flex-lithium-conversion-kit-e-z-go-rxv-club-car-48v',
@@ -3494,9 +3450,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/voltrac-flex-lithium-conversion-kit-e-z-go-rxv-club-car-48v/main.webp']
   },
   {
     slug: 'clicgear-wheel-kit-4-0-8-0',
