@@ -1061,7 +1061,7 @@ export const PRODUCTS = [
       safety: 'Full Tubular Steel Roll Cage & 4-Point Harnesses',
       warranty: '12-Month Australian Parts Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/gmx-gkt150-dune-buggy/main.webp']
   },
   {
     slug: 'crossfire-blazer-200r-dune-buggy',
@@ -1163,7 +1163,7 @@ export const PRODUCTS = [
       towingCapacity: '550 kg Tow Rating',
       warranty: '2-Year Australian Commercial Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/crossfire-400gt-4x4-farm-utv/main.webp']
   },
   {
     slug: 'polaris-ranger-xp-1000-hd-utv',
@@ -2058,9 +2058,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/tomberlin-e-merge-beachcomber-4-and-6-seat-golf-cart/main.webp', '/images/products/tomberlin-e-merge-beachcomber-4-and-6-seat-golf-cart/gallery-2.webp']
   },
   {
     slug: 'tomberlin-e-merge-ghosthawk-4-and-6-seat-golf-cart',
