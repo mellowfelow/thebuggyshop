@@ -503,11 +503,11 @@ export default function HomePage() {
           </div>
 
           <div className="text-xs text-slate-400 pt-4 flex flex-wrap items-center justify-center gap-4">
-            <span>&check; Australian PayID Direct</span>
+            <span>✓ Australian PayID Direct</span>
             <span>&bull;</span>
-            <span>&check; Direct Bank Transfer (Osko / Fast EFT)</span>
+            <span>✓ Direct Bank Transfer (Osko / Fast EFT)</span>
             <span>&bull;</span>
-            <span className="text-[#C5A880] font-bold">&check; 10% Crypto Rebate (BTC/USDT)</span>
+            <span className="text-[#C5A880] font-bold">✓ 10% Crypto Rebate (BTC/USDT)</span>
           </div>
         </div>
       </section>

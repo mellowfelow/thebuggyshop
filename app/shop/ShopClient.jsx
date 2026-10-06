@@ -22,7 +22,7 @@ import {
 } from '@/lib/catalog';
 
 const chipClass = (on) =>
-  `px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all cursor-pointer border ${
+  `shrink-0 px-4 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all cursor-pointer border ${
     on ? 'bg-slate-900 text-[#C5A880] border-[#C5A880]/50 shadow-sm' : 'bg-white text-slate-700 hover:bg-slate-100 border-slate-200'
   }`;
 
@@ -90,6 +90,9 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
     [active, min, max]
   );
 
+  // nothing to filter on (e.g. a brand with one or two products): hide the panel and the mobile button
+  const showFilters = facets.length > 0 || activeCount > 0;
+
   const pills = useMemo(() => {
     const out = [];
     Object.entries(active).forEach(([key, values]) => {
@@ -136,7 +139,7 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
     <div className="space-y-6" ref={gridTop} style={{ scrollMarginTop: '6rem' }}>
       {/* 1. Category chips */}
       {chips.length > 0 && (
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" role="group" aria-label="Browse categories">
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 -mx-1 px-1" role="group" aria-label="Browse categories">
           <button type="button" onClick={() => pickChip(null)} className={chipClass(!chip)} aria-pressed={!chip}>
             {currentCategory ? `All ${currentCategory.navLabel}` : 'All products'} ({initialProducts.length})
           </button>
@@ -148,8 +151,8 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
         </div>
       )}
 
-      {/* 2. Toolbar: count, search, sort, view */}
-      <div className="flex flex-col gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-xs">
+      {/* 2. Toolbar: search, filters (mobile), sort, view, result count and active filters */}
+      <div className="flex flex-col gap-3 bg-white p-3 sm:p-4 rounded-2xl border border-slate-200 shadow-xs">
         <div className="flex flex-col lg:flex-row lg:items-center gap-3">
           <div className="relative flex-1 min-w-0">
             <Search className="w-4 h-4 text-[#8A7045] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
@@ -160,34 +163,38 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
               value={q}
               onChange={(e) => { setQ(e.target.value); setPage(1); }}
               placeholder={`Search ${scopeLabel ? scopeLabel.toLowerCase() : 'all products'}...`}
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#C5A880]/50"
+              className="w-full h-11 pl-10 pr-4 rounded-xl bg-slate-50 border border-slate-200 text-[15px] sm:text-sm text-slate-900 placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-[#C5A880]/50"
             />
           </div>
 
-          <div className="flex items-center gap-3 flex-wrap">
-            <button
+          <div className="flex items-center gap-2 sm:gap-3">
+            {showFilters && <button
               type="button"
               onClick={() => setDrawerOpen(true)}
-              className="lg:hidden flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-slate-900 text-[#C5A880] text-xs font-black uppercase tracking-wider cursor-pointer"
+              aria-haspopup="dialog"
+              className="lg:hidden shrink-0 h-11 flex items-center gap-2 px-4 rounded-xl bg-slate-900 text-[#E7D3AE] text-xs font-black uppercase tracking-wider cursor-pointer"
             >
-              <SlidersHorizontal className="w-4 h-4" />
-              <span>Filters{activeCount ? ` (${activeCount})` : ''}</span>
-            </button>
+              <SlidersHorizontal className="w-4 h-4 text-[#C5A880]" />
+              <span>Filters</span>
+              {activeCount > 0 && (
+                <span className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 rounded-full bg-[#C5A880] text-slate-950 text-[10px] font-black">{activeCount}</span>
+              )}
+            </button>}
 
-            <div className="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-xl border border-slate-200">
-              <ArrowUpDown className="w-4 h-4 text-[#8A7045]" />
-              <label htmlFor="shop-sort" className="text-xs font-bold text-slate-500">Sort</label>
+            <div className="flex-1 lg:flex-none min-w-0 h-11 flex items-center gap-2 bg-slate-50 px-3 rounded-xl border border-slate-200">
+              <ArrowUpDown className="w-4 h-4 text-[#8A7045] shrink-0" />
+              <label htmlFor="shop-sort" className="text-xs font-bold text-slate-500 shrink-0">Sort</label>
               <select
                 id="shop-sort"
                 value={sort}
                 onChange={(e) => { setSort(e.target.value); setPage(1); }}
-                className="text-xs font-bold bg-transparent text-slate-900 focus:outline-hidden cursor-pointer"
+                className="flex-1 min-w-0 text-[13px] sm:text-xs font-bold bg-transparent text-slate-900 focus:outline-hidden cursor-pointer"
               >
                 {SORTS.map((s) => <option key={s.value} value={s.value}>{s.label}</option>)}
               </select>
             </div>
 
-            <div className="flex items-center bg-slate-50 p-1 rounded-xl border border-slate-200" role="group" aria-label="View mode">
+            <div className="hidden sm:flex items-center bg-slate-50 p-1 rounded-xl border border-slate-200" role="group" aria-label="View mode">
               {[['grid', LayoutGrid, 'Grid view'], ['list', List, 'List view']].map(([m, Icon, label]) => (
                 <button
                   key={m}
@@ -195,7 +202,7 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
                   onClick={() => setView(m)}
                   aria-label={label}
                   aria-pressed={view === m}
-                  className={`p-1.5 rounded-lg transition-all cursor-pointer ${view === m ? 'bg-slate-900 text-[#C5A880]' : 'text-slate-500 hover:text-slate-900'}`}
+                  className={`p-2 rounded-lg transition-all cursor-pointer ${view === m ? 'bg-slate-900 text-[#C5A880]' : 'text-slate-500 hover:text-slate-900'}`}
                 >
                   <Icon className="w-4 h-4" />
                 </button>
@@ -204,27 +211,33 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 min-h-6" aria-live="polite">
-          <span className="text-xs font-bold text-slate-900">
-            {pg.total === 0 ? 'No products' : <>Showing <strong className="text-[#8A7045] font-black">{pg.from}–{pg.to}</strong> of {pg.total} {pg.total === 1 ? 'product' : 'products'}</>}
-          </span>
-          {pills.map((p) => (
-            <span key={`${p.key}-${p.value}`} className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-900 text-[#C5A880] text-[11px] font-bold">
-              {p.label}
-              <button
-                type="button"
-                aria-label={`Remove filter ${p.label}`}
-                onClick={() => (p.key === 'price-range' ? setPrice('', '') : toggleFacet(p.key, p.value))}
-                className="hover:text-white cursor-pointer"
-              >
-                <X className="w-3 h-3" />
-              </button>
+        <div className="flex flex-col gap-2" aria-live="polite">
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-xs font-bold text-slate-900">
+              {pg.total === 0 ? 'No products' : <>Showing <strong className="text-[#8A7045] font-black">{pg.from}–{pg.to}</strong> of {pg.total} {pg.total === 1 ? 'product' : 'products'}</>}
             </span>
-          ))}
-          {(activeCount > 0 || q) && (
-            <button type="button" onClick={clearAll} className="text-[11px] font-bold text-rose-600 hover:underline flex items-center gap-1 cursor-pointer">
-              <RotateCcw className="w-3 h-3" /> Reset
-            </button>
+            {(activeCount > 0 || q) && (
+              <button type="button" onClick={clearAll} className="shrink-0 text-[11px] font-bold text-rose-600 hover:underline flex items-center gap-1 cursor-pointer">
+                <RotateCcw className="w-3 h-3" /> Reset
+              </button>
+            )}
+          </div>
+          {pills.length > 0 && (
+            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar sm:flex-wrap sm:overflow-visible pb-0.5">
+              {pills.map((p) => (
+                <span key={`${p.key}-${p.value}`} className="shrink-0 inline-flex items-center gap-1 pl-3 pr-1.5 py-1 rounded-full bg-slate-900 text-[#E7D3AE] text-[11px] font-bold whitespace-nowrap">
+                  {p.label}
+                  <button
+                    type="button"
+                    aria-label={`Remove filter ${p.label}`}
+                    onClick={() => (p.key === 'price-range' ? setPrice('', '') : toggleFacet(p.key, p.value))}
+                    className="p-1 rounded-full hover:bg-slate-700 hover:text-white cursor-pointer"
+                  >
+                    <X className="w-3 h-3" />
+                  </button>
+                </span>
+              ))}
+            </div>
           )}
         </div>
       </div>
@@ -238,7 +251,7 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
 
       {/* 3. Filters + product grid */}
       <div className="flex gap-6 items-start">
-        <FacetFilter
+        {showFilters && <FacetFilter
           facets={facets}
           active={active}
           min={min}
@@ -251,7 +264,7 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
           resultCount={filtered.length}
           drawerOpen={drawerOpen}
           onCloseDrawer={() => setDrawerOpen(false)}
-        />
+        />}
 
         <div className="flex-1 min-w-0">
           {filtered.length === 0 ? (

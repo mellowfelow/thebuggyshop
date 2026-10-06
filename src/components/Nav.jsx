@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { SITE, CONTACT, ENTITY } from '@/src/config/site';
 import { getRootCategories } from '@/src/config/categories';
-import { BRANDS } from '@/src/config/brands';
+import { BRANDS, BRAND_GROUPS, getBrandKind } from '@/src/config/brands';
 import Logo from '@/src/components/Logo';
 import NavSearch from '@/src/components/NavSearch';
 
@@ -37,38 +37,6 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
 
   return (
     <header className="sticky top-0 z-40 bg-[#0B111E] text-white shadow-xl border-b border-slate-800" id="site-header">
-      {/* Top Luxury Utility Bar */}
-      <div className="bg-[#070B14] border-b border-slate-800/80 text-xs py-2 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-          <div className="flex items-center space-x-4 text-slate-300">
-            <span className="flex items-center gap-1.5 font-medium">
-              <Truck className="w-3.5 h-3.5 text-[#C5A880]" />
-              <span>Australia-Wide Hydraulic Tail-Lift Delivery to Your Property or Club</span>
-            </span>
-            <span className="hidden md:inline text-slate-700">|</span>
-            <span className="hidden md:flex items-center gap-1.5 text-slate-300">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#C5A880]" />
-              <span>5-Year LiFePO4 Lithium Guarantee &bull; Est. 2004</span>
-            </span>
-          </div>
-
-          <div className="flex items-center space-x-4 text-xs">
-            <a 
-              href={`tel:${CONTACT.phone.replace(/\s+/g, '')}`}
-              className="flex items-center gap-1.5 text-[#C5A880] hover:text-[#D4B27C] font-semibold transition-colors"
-              aria-label={`Call Queensland Sales Desk at ${CONTACT.phoneDisplay}`}
-            >
-              <Phone className="w-3.5 h-3.5" />
-              <span>Sales: {CONTACT.phoneDisplay}</span>
-            </a>
-            <span className="text-slate-700">|</span>
-            <span className="text-[#C5A880] font-semibold bg-slate-900 px-2.5 py-0.5 rounded-full border border-[#C5A880]/30">
-              10% Crypto Rebate
-            </span>
-          </div>
-        </div>
-      </div>
-
       {/* Main Nav Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between gap-4">
         {/* Brand Logo */}
@@ -151,29 +119,31 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
             </Link>
 
             {brandsDropdownOpen && (
-              <div className="absolute top-full left-0 w-80 bg-[#0F172A] border border-[#C5A880]/30 rounded-2xl shadow-2xl p-3.5 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                <div className="text-[10px] font-black text-[#C5A880] uppercase tracking-widest px-2 py-1 border-b border-slate-800">
-                  Featured Manufacturers
-                </div>
-                <div className="mt-2 grid grid-cols-2 gap-1">
-                  {BRANDS.map(b => (
-                    <Link
-                      key={b.slug}
-                      href={`/brands/${b.slug}/`}
-                      className="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-[#C5A880] text-xs font-medium transition-colors"
-                      onClick={closeMenus}
-                    >
-                      {b.name}
-                    </Link>
-                  ))}
-                </div>
-                <div className="border-t border-slate-800 pt-2 mt-2 px-2">
-                  <Link
-                    href="/brands/"
-                    className="block text-xs text-[#C5A880] hover:underline font-bold"
-                    onClick={closeMenus}
-                  >
-                    All 27 Partner Brands &rarr;
+              <div className="absolute top-full left-0 w-[26rem] max-h-[70vh] overflow-y-auto overscroll-contain bg-[#0F172A] border border-[#C5A880]/30 rounded-2xl shadow-2xl p-3.5 z-50">
+                {BRAND_GROUPS.map((g) => {
+                  const list = BRANDS.filter((x) => getBrandKind(x) === g.kind);
+                  if (!list.length) return null;
+                  return (
+                    <div key={g.kind} className="mb-2">
+                      <div className="text-[10px] font-black text-[#C5A880] uppercase tracking-widest px-2 py-1 border-b border-slate-800">{g.title}</div>
+                      <div className="mt-1.5 grid grid-cols-2 gap-1">
+                        {list.map((br) => (
+                          <Link
+                            key={br.slug}
+                            href={`/brands/${br.slug}/`}
+                            className="px-2.5 py-1.5 rounded-lg hover:bg-slate-800 text-slate-300 hover:text-[#C5A880] text-xs font-medium transition-colors truncate"
+                            onClick={closeMenus}
+                          >
+                            {br.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+                <div className="border-t border-slate-800 pt-2 mt-1 px-2 sticky bottom-0 bg-[#0F172A]">
+                  <Link href="/brands/" className="block text-xs text-[#C5A880] hover:underline font-bold" onClick={closeMenus}>
+                    All {BRANDS.length} brands &rarr;
                   </Link>
                 </div>
               </div>
@@ -261,10 +231,10 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
       </div>
 
       {/* Official ABN Credential & ABR Verification Bar under Nav */}
-      <div className="bg-slate-950 border-t border-b border-slate-800 text-[11px] py-1.5 px-4 sm:px-8 text-slate-300 shadow-inner" id="abn-verification-bar">
+      <div className="bg-slate-950 border-t border-b border-slate-800 text-[11px] py-1 sm:py-1.5 px-4 sm:px-8 text-[10px] sm:text-[11px] text-slate-300 shadow-inner" id="abn-verification-bar">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
           <div className="flex items-center flex-wrap gap-2 sm:gap-3">
-            <span className="font-extrabold text-[#C5A880] uppercase tracking-wider text-[10px] bg-slate-900 px-2 py-0.5 rounded border border-[#C5A880]/40">
+            <span className="hidden sm:inline font-extrabold text-[#C5A880] uppercase tracking-wider text-[10px] bg-slate-900 px-2 py-0.5 rounded border border-[#C5A880]/40">
               Corporate Entity
             </span>
             <span className="font-bold text-white font-serif">{ENTITY.legalName}</span>
@@ -281,14 +251,14 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
               id="nav-abn-verify-link"
             >
               <ShieldCheck className="w-3 h-3 text-slate-950" />
-              <span>Verify on ABR</span>
-              <span className="text-[10px] group-hover:translate-x-0.5 transition-transform">&nearr;</span>
+              <span>Verify<span className="hidden sm:inline"> on</span> ABR</span>
+              <span className="text-[10px] group-hover:translate-x-0.5 transition-transform">↗</span>
             </a>
           </div>
 
           <div className="hidden md:flex items-center gap-3 text-[11px] text-slate-400">
             <span className="flex items-center gap-1 text-[#C5A880]">
-              <span>&check; ASIC / ABR Registered</span>
+              <span>✓ ASIC / ABR Registered</span>
             </span>
             <span className="text-slate-700">&bull;</span>
             <span>Queensland Workshop &amp; Dispatch Hub</span>
@@ -325,7 +295,7 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
               onClick={closeMenus}
               className="block font-bold text-xs uppercase tracking-wider text-white hover:text-[#C5A880] py-2.5 border-b border-slate-800"
             >
-              🏆 GOLF BUGGY BRANDS (MGI, MOTOCADDY, CLUB CAR)
+              🏆 ALL {BRANDS.length} BRANDS
             </Link>
 
             <Link

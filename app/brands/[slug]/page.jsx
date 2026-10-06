@@ -3,12 +3,13 @@ import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { SITE } from '@/src/config/site';
-import { BRANDS, getBrandBySlug } from '@/src/config/brands';
+import { BRANDS, getBrandBySlug, getBrandKind } from '@/src/config/brands';
 import { PRODUCTS, getProductsByBrand } from '@/src/config/products';
 import { CATEGORY_TREE } from '@/src/config/categories';
 import JsonLd from '@/src/components/JsonLd';
 import ShopClient from '@/app/shop/ShopClient';
-import { ShieldCheck, Award, ArrowLeft, Sparkles, CheckCircle2, Wrench, PackageCheck } from 'lucide-react';
+import { ShieldCheck, Award, Wrench, PackageCheck, Truck, Wallet, PhoneCall } from 'lucide-react';
+import { CONTACT } from '@/src/config/site';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
 export async function generateStaticParams() {
@@ -75,12 +76,20 @@ export default async function BrandPage({ params }) {
     "name": brand.name,
     "description": brand.blurb || brand.introCopy,
     "url": `https://${SITE.domain}/brands/${brand.slug}/`,
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "48"
-    }
   };
+
+  const kind = getBrandKind(brand);
+  const highlights = kind === 'vehicle'
+    ? [
+        { icon: ShieldCheck, title: 'Australian warranty & service', text: 'Local support from The Buggy Shop sales desk' },
+        { icon: PackageCheck, title: 'Pre-delivery inspection', text: 'Checked and ready to ride on arrival' },
+        { icon: Truck, title: 'Australia-wide delivery', text: 'Hydraulic tail-lift delivery to your property' },
+      ]
+    : [
+        { icon: Truck, title: 'Australia-wide shipping', text: 'Delivered to your door or club' },
+        { icon: Wallet, title: 'Flexible payment', text: 'PayID, bank transfer or crypto (10% rebate)' },
+        { icon: PhoneCall, title: 'Ask the sales desk', text: `Call ${CONTACT.phoneDisplay} for fitment advice` },
+      ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-16 space-y-10">
@@ -100,12 +109,14 @@ export default async function BrandPage({ params }) {
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-[#DDE4DF] pb-8">
           <div className="space-y-3 max-w-3xl">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#123123] text-[#C5A265] text-xs font-black uppercase tracking-wider border border-[#C5A265]/30">
-                <Award className="w-3.5 h-3.5" />
-                <span>Country of Origin: {brand.country}</span>
-              </span>
+              {brand.country && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#123123] text-[#C5A265] text-xs font-black uppercase tracking-wider border border-[#C5A265]/30">
+                  <Award className="w-3.5 h-3.5" />
+                  <span>Country of Origin: {brand.country}</span>
+                </span>
+              )}
               <span className="text-xs font-bold text-[#4A5D53] bg-white px-2.5 py-1 rounded-full border border-[#CAD5CE]">
-                {brand.origin || 'Australian Authorized Retailer'}
+                {brand.origin || 'Stocked by The Buggy Shop'}
               </span>
             </div>
 
@@ -125,13 +136,15 @@ export default async function BrandPage({ params }) {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Link
-              href={`/shop/parts-accessories/`}
-              className="py-3 px-5 rounded-2xl bg-[#C5A265]/15 text-[#8A7045] font-black text-xs uppercase tracking-wider hover:bg-[#C5A265]/25 transition-colors border border-[#C5A265]/40 shadow-xs flex items-center gap-2"
-            >
-              <Wrench className="w-4 h-4 text-[#8A7045]" />
-              <span>{brand.name} Spare Parts</span>
-            </Link>
+            {brand.partsCategories?.length > 0 && (
+              <Link
+                href={`/shop/parts/?q=${encodeURIComponent(brand.name)}`}
+                className="py-3 px-5 rounded-2xl bg-[#C5A265]/15 text-[#8A7045] font-black text-xs uppercase tracking-wider hover:bg-[#C5A265]/25 transition-colors border border-[#C5A265]/40 shadow-xs flex items-center gap-2"
+              >
+                <Wrench className="w-4 h-4 text-[#8A7045]" />
+                <span>{brand.name} Spare Parts</span>
+              </Link>
+            )}
             <Link
               href="/brands/"
               className="py-3 px-5 rounded-2xl bg-white text-[#0E2A1E] font-black text-xs uppercase tracking-wider hover:bg-[#F0F5F2] transition-colors border border-[#CAD5CE] shadow-2xs"
@@ -143,27 +156,15 @@ export default async function BrandPage({ params }) {
 
         {/* Brand Highlights Bar */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 bg-gradient-to-b from-[#FCFDFB] to-[#F1F6F3] rounded-3xl border border-[#D5DFD9]">
-          <div className="flex items-center gap-3">
-            <ShieldCheck className="w-5 h-5 text-[#C5A265] shrink-0" />
-            <div>
-              <div className="text-xs font-black text-[#0E2A1E]">Genuine Australian Warranty</div>
-              <div className="text-[11px] text-[#4A5D53]">Full local factory service & repair support</div>
+          {highlights.map(({ icon: Icon, title, text }) => (
+            <div key={title} className="flex items-center gap-3">
+              <Icon className="w-5 h-5 text-[#C5A265] shrink-0" />
+              <div>
+                <div className="text-xs font-black text-[#0E2A1E]">{title}</div>
+                <div className="text-[11px] text-[#4A5D53]">{text}</div>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <Wrench className="w-5 h-5 text-[#C5A265] shrink-0" />
-            <div>
-              <div className="text-xs font-black text-[#0E2A1E]">Spare Parts & Lithium Upgrades</div>
-              <div className="text-[11px] text-[#4A5D53]">OEM fitment parts stocked in Australia</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <PackageCheck className="w-5 h-5 text-[#C5A265] shrink-0" />
-            <div>
-              <div className="text-xs font-black text-[#0E2A1E]">Pre-Delivery Inspection</div>
-              <div className="text-[11px] text-[#4A5D53]">Conditioned, calibrated & ready to ride</div>
-            </div>
-          </div>
+          ))}
         </div>
 
         {/* Spare Parts Quick Section */}
@@ -177,7 +178,7 @@ export default async function BrandPage({ params }) {
                 </h2>
               </div>
               <Link 
-                href="/shop/parts-accessories/"
+                href={`/shop/parts/?q=${encodeURIComponent(brand.name)}`}
                 className="text-xs font-bold text-[#8A7045] hover:underline"
               >
                 Browse all spare parts & accessories →
@@ -187,7 +188,7 @@ export default async function BrandPage({ params }) {
               {brand.partsCategories.map((part) => (
                 <Link
                   key={part}
-                  href={`/shop/parts-accessories/?q=${encodeURIComponent(brand.name)}`}
+                  href={`/shop/parts/?q=${encodeURIComponent(brand.name)}`}
                   className="text-xs bg-[#F7F9F8] hover:bg-[#E8F0EB] text-[#1E3A2B] px-3 py-1.5 rounded-xl border border-[#CAD5CE] font-semibold transition-colors"
                 >
                   {part}

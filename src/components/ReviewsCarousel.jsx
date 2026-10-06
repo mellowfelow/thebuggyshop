@@ -578,7 +578,7 @@ export default function ReviewsCarousel() {
                             </span>
                           </div>
                           <span className="text-[10px] font-bold text-[#00B67A] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
-                            &check; Verified Buyer
+                            ✓ Verified Buyer
                           </span>
                         </div>
                       </div>

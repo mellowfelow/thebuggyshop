@@ -126,7 +126,9 @@ const { BRANDS } = await imp('src/config/brands.js');
   below.length ? fail('B7h', `price floor violations: ${below.map((p) => `${p.slug} $${p.price}`).join(', ')}`) : pass('B7h', 'price floors respected');
   const badData = PRODUCTS.filter((p) => !(p.price > 0) || !p.shortDescription || !p.description || !p.specs || !Object.keys(p.specs).length || !p.images?.length);
   badData.length ? fail('B7i', `incomplete product data: ${badData.map((p) => p.slug).join(', ')}`) : pass('B7i', 'all products have price, copy, specs and images');
-  const unknownBrand = new Set(PRODUCTS.filter((p) => !BRANDS.some((b) => b.slug === p.brand)).map((p) => p.brand));
+  // 'generic' (aftermarket) and 'various' (mixed) are catch-all labels, not real brands
+  const NON_BRANDS = new Set(['generic', 'various']);
+  const unknownBrand = new Set(PRODUCTS.filter((p) => !NON_BRANDS.has(p.brand) && !BRANDS.some((b) => b.slug === p.brand)).map((p) => p.brand));
   unknownBrand.size ? warn('W7j', `${unknownBrand.size} product brands have no brand page (${[...unknownBrand].slice(0, 6).join(', ')}...)`) : pass('W7j', 'all brands have pages');
 
   // tiles in site.js must exist in the tree
@@ -194,13 +196,17 @@ const { BRANDS } = await imp('src/config/brands.js');
   const out = path.join(ROOT, '.next/server/app');
   if (fs.existsSync(out)) {
     const htmls = []; const w = (d) => fs.readdirSync(d, { withFileTypes: true }).forEach((e) => (e.isDirectory() ? w(path.join(d, e.name)) : /\.html$/.test(e.name) ? htmls.push(path.join(d, e.name)) : 0)); w(out);
-    let h1bad = [], ldbad = [], titleLong = 0, descLong = 0, checked = 0;
+    let h1bad = [], barBad = [], entityBad = [], ldbad = [], titleLong = 0, descLong = 0, checked = 0;
     for (const f of htmls) {
       const rel = path.relative(out, f).replace(/\\/g, '/');
       if (/^(admin|order|_not-found|_global-error|thank-you)/.test(rel) || /^(404|500)/.test(rel)) continue;
       const html = fs.readFileSync(f, 'utf8'); checked++;
       const h1 = (html.match(/<h1[\s>]/g) || []).length;
       if (h1 !== 1) h1bad.push(`${rel}(${h1})`);
+      const bars = (html.match(/id="announcement-bar"/g) || []).length;
+      if (bars !== 1) barBad.push(`${rel}(${bars})`);
+      const rawEntity = html.match(/&amp;(check|nearr|NEARR);/);
+      if (rawEntity) entityBad.push(rel);
       for (const m of html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) { try { JSON.parse(m[1]); } catch { ldbad.push(rel); } }
       const dec = (s) => s.replace(/&amp;/g, '&').replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"');
       const t = dec((html.match(/<title>([^<]*)<\/title>/) || [])[1] || '');
@@ -209,6 +215,8 @@ const { BRANDS } = await imp('src/config/brands.js');
       if (dm.length > 160) descLong++;
     }
     h1bad.length ? fail('B12a', `pages without exactly one <h1>: ${h1bad.slice(0, 8).join(', ')}`) : pass('B12a', `${checked} built pages have exactly one <h1>`);
+    barBad.length ? fail('B12b', `pages without exactly one announcement bar: ${barBad.slice(0, 6).join(', ')}`) : pass('B12b', 'every public page has exactly one announcement bar');
+    entityBad.length ? fail('B12c', `raw HTML entity text visible on: ${entityBad.slice(0, 6).join(', ')}`) : pass('B12c', 'no unsupported HTML entities rendered as text');
     ldbad.length ? fail('B12b', `invalid JSON-LD on: ${[...new Set(ldbad)].slice(0, 6).join(', ')}`) : pass('B12b', 'all JSON-LD blocks parse');
     titleLong ? warn('W12c', `${titleLong} built pages have <title> over 60 chars`) : pass('W12c', 'all built titles <= 60 chars');
     descLong ? warn('W12d', `${descLong} built pages have a meta description over 160 chars`) : pass('W12d', 'all built meta descriptions <= 160 chars');

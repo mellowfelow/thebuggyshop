@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, ShoppingCart, Mail, LogOut, ArrowLeft, Shield } from 'lucide-react';
+import { LayoutDashboard, ShoppingCart, Mail, Megaphone, LogOut, ArrowLeft, Shield } from 'lucide-react';
 import { useAdminPasscode } from './AdminPasscodeContext';
 import { SITE, REPLY } from '@/src/config/site';
 
@@ -13,6 +13,7 @@ export default function AdminNav() {
     { href: '/admin/', label: 'Dashboard', icon: LayoutDashboard, exact: true },
     { href: '/admin/orders/', label: 'Orders', icon: ShoppingCart },
     { href: '/admin/enquiries/', label: 'Enquiries', icon: Mail },
+    { href: '/admin/announcements/', label: 'Announcements', icon: Megaphone },
   ];
 
   const isActive = (link) => {
