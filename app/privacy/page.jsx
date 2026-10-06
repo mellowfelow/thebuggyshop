@@ -4,7 +4,7 @@ import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
   title: { absolute: seoTitle('Privacy Policy') },
-  description: seoDesc('How The Buggy Shop collects, uses and protects your personal information under the Australian Privacy Principles.'),
+  description: seoDesc('How The Buggy Shop collects, uses and protects your personal information under the Australian Privacy Principles, and how to contact us about it.'),
   alternates: { canonical: `https://${SITE.domain}/privacy/` },
 };
 

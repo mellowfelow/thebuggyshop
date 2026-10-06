@@ -217,7 +217,7 @@ export async function POST(request) {
           name: c.navLabel,
           pageTitle: c.pageTitle,
           productCount: PRODUCTS.filter((p) => inNode(p, c.slug)).length,
-          url: `https://${SITE.domain}/shop/${c.slug}/`,
+          url: c.slug === 'brands' ? `https://${SITE.domain}/brands/` : `https://${SITE.domain}/shop/${c.slug}/`,
         }));
 
         return NextResponse.json(

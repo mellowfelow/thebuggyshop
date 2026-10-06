@@ -21,7 +21,7 @@ export async function GET(request) {
       match: found.mode,
       products,
       totalProducts: found.results.length,
-      categories: found.categories.map((c) => ({ slug: c.slug, name: c.navLabel, url: `https://${SITE.domain}/shop/${c.slug}/` })),
+      categories: found.categories.map((c) => ({ slug: c.slug, name: c.navLabel, url: c.slug === 'brands' ? `https://${SITE.domain}/brands/` : `https://${SITE.domain}/shop/${c.slug}/` })),
       brands: found.brands.map((b) => ({ slug: b.slug, name: b.name, url: `https://${SITE.domain}/brands/${b.slug}/` })),
       posts,
       totalResults: found.results.length + posts.length,

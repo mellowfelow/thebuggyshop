@@ -7,7 +7,7 @@ export async function GET() {
     {
       catalog: CATEGORIES.map((c) => ({
         ...c,
-        url: `https://${SITE.domain}/shop/${c.slug}/`,
+        url: c.slug === 'brands' ? `https://${SITE.domain}/brands/` : `https://${SITE.domain}/shop/${c.slug}/`,
         products: PRODUCTS.filter((p) => inNode(p, c.slug)).map((p) => ({
           slug: p.slug,
           name: p.name,

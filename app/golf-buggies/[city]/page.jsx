@@ -10,6 +10,7 @@ import JsonLd from '@/src/components/JsonLd';
 import ShopClient from '@/app/shop/ShopClient';
 import { Truck, MapPin, ShieldCheck, Flag, CheckCircle2 } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import { ogImages } from '@/lib/og';
 
 export async function generateStaticParams() {
   return LOCATIONS.map((l) => ({ city: l.slug }));
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }) {
       title: location.title,
       description: location.metaDescription,
       url: `https://${SITE.domain}/golf-buggies/${location.slug}/`,
+      images: ogImages(),
     },
     other: {
       'og:updated_time': new Date().toISOString(),

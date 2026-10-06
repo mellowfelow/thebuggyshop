@@ -120,7 +120,7 @@ export const PRODUCTS = [
     foldSize: 'Compact / flat-fold',
     seats: 'Walk-behind',
     primaryKeyword: 'motocaddy m7 remote golf buggy',
-    shortDescription: 'Award-winning compact folding remote buggy with rechargeable ergonomic handset, dual 28.8V brushless motors, and anti-tip wheel.',
+    shortDescription: 'Compact folding remote buggy with rechargeable ergonomic handset, dual 28.8V brushless motors, and anti-tip wheel.',
     description: 'Winner of multiple MyGolfSpy "Most Wanted" awards, the Motocaddy M7 Remote provides ultra-responsive directional handling, automatic Downhill Control (DHC), emergency brake function, and an anti-glare LCD screen.',
     specs: {
       power: 'Rechargeable Ergonomic Remote Handset',

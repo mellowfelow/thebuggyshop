@@ -4,7 +4,7 @@ import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
   title: { absolute: seoTitle('Terms & Conditions of Sale') },
-  description: seoDesc('Terms and conditions for buying golf buggies, carts, batteries, parts and accessories from The Buggy Shop in Australia.'),
+  description: seoDesc('Terms and conditions for buying golf buggies, carts, batteries, parts and accessories from The Buggy Shop in Australia. Read them before you order.'),
   alternates: { canonical: `https://${SITE.domain}/terms/` },
 };
 

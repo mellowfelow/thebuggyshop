@@ -77,7 +77,7 @@ export default function NavSearch() {
               {sug.categories.length > 0 && (
                 <div className="flex flex-wrap gap-1.5 px-1 pb-2">
                   {sug.categories.map((c) => (
-                    <Link key={c.slug} href={`/shop/${c.slug}/`} onClick={() => setOpen(false)} className="px-2.5 py-1 rounded-lg bg-slate-900 text-[#C5A880] text-[11px] font-bold hover:bg-slate-800">
+                    <Link key={c.slug} href={c.slug === 'brands' ? '/brands/' : `/shop/${c.slug}/`} onClick={() => setOpen(false)} className="px-2.5 py-1 rounded-lg bg-slate-900 text-[#C5A880] text-[11px] font-bold hover:bg-slate-800">
                       {c.navLabel}
                     </Link>
                   ))}

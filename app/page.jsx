@@ -1,3 +1,4 @@
+import { ogImages } from '@/lib/og';
 import React from 'react';
 import Link from 'next/link';
 import { 
@@ -36,7 +37,7 @@ export const metadata = {
     title: 'Golf Buggies Australia | Electric, Remote & Push Buggies',
     description: 'Australia\'s premier destination for luxury golf buggies for sale, remote control golf buggies, off road buggies, and golf push buggies.',
     url: `https://${SITE.domain}/`,
-    images: [{ url: 'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80' }]
+    images: ogImages()
   },
   other: {
     'og:updated_time': new Date().toISOString(),
@@ -209,7 +210,7 @@ export default function HomePage() {
           {CATEGORIES.map((category) => (
             <Link
               key={category.slug}
-              href={`/shop/${category.slug}/`}
+              href={category.slug === 'brands' ? '/brands/' : `/shop/${category.slug}/`}
               className="group relative rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-xl hover:border-[#C5A880] hover:-translate-y-1.5 transition-all duration-300 flex flex-col"
             >
               <div className="product-frame relative overflow-hidden bg-slate-900">

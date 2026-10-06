@@ -14,6 +14,7 @@ No authentication required. All catalog, specification, and educational resource
 | Educational Blog | https://thebuggyshoppty.com.au/blog/ |
 | About & Heritage | https://thebuggyshoppty.com.au/about/ |
 | Contact & Support | https://thebuggyshoppty.com.au/contact/ |
+| FAQ | https://thebuggyshoppty.com.au/faq/ |
 
 ## Authentication
 

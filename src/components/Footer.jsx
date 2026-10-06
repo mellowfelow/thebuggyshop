@@ -63,7 +63,7 @@ export default function Footer() {
               </li>
               {rootCategories.map(cat => (
                 <li key={cat.slug}>
-                  <Link href={`/shop/${cat.slug}/`} className="hover:text-[#C5A880] transition-colors">
+                  <Link href={cat.slug === 'brands' ? '/brands/' : `/shop/${cat.slug}/`} className="hover:text-[#C5A880] transition-colors">
                     {cat.navLabel}
                   </Link>
                 </li>

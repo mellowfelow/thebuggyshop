@@ -30,7 +30,7 @@ Established in Queensland in 2004, The Buggy Shop is Australia's foremost destin
 ### Available Buggies
 - [MGI Zip Navigator AT Remote Control Electric Golf Buggy](https://thebuggyshoppty.com.au/shop/electric-golf-buggies/mgi-zip-navigator-at-remote-electric-golf-buggy/): $2,099 AUD — Australia's best-selling all-terrain remote control golf buggy with dual 230W motors, gyroscope straight-tracker, and 36-hole 24V lithium battery.
 - [MGI Ai 500 Remote Electric Golf Buggy](https://thebuggyshoppty.com.au/shop/electric-golf-buggies/mgi-ai-500-remote-electric-golf-buggy/): $1,870 AUD — Smart directional remote control golf buggy with ergonomic ergonomic chassis and 36-hole 24V lithium battery.
-- [Motocaddy M7 Remote Control Electric Golf Buggy](https://thebuggyshoppty.com.au/shop/electric-golf-buggies/motocaddy-m7-remote-electric-golf-buggy/): $1,615 AUD — Award-winning compact folding remote buggy with rechargeable ergonomic handset, dual 28.8V brushless motors, and anti-tip wheel.
+- [Motocaddy M7 Remote Control Electric Golf Buggy](https://thebuggyshoppty.com.au/shop/electric-golf-buggies/motocaddy-m7-remote-electric-golf-buggy/): $1,615 AUD — Compact folding remote buggy with rechargeable ergonomic handset, dual 28.8V brushless motors, and anti-tip wheel.
 - [Stinger Golf SG-4 Crossover Remote Electric Buggy](https://thebuggyshoppty.com.au/shop/electric-golf-buggies/stinger-golf-sg4-crossover-remote-electric-buggy/): $1,220 AUD — Australian-designed remote control golf buggy featuring wide-track stability, dual whisper-quiet motors, and 36-hole lithium pack.
 - [Alphard Cybercart Remote Control Electric Buggy](https://thebuggyshoppty.com.au/shop/electric-golf-buggies/alphard-cybercart-remote-electric-buggy/): $1,979 AUD — Futuristic aerospace aluminium chassis with integrated dual brushless motors, Bluetooth tracking, and 36-hole lithium pack.
 - [Explora R1 Remote Electric Golf Buggy](https://thebuggyshoppty.com.au/shop/electric-golf-buggies/explora-r1-remote-control-golf-buggy/): $1,379 AUD — Robust digital remote golf trolley with 36-hole lithium power, digital speedometer, and umbrella holder bundle.
@@ -219,6 +219,7 @@ Established in Queensland in 2004, The Buggy Shop is Australia's foremost destin
 - [Pay in 4 & Finance Calculator](https://thebuggyshoppty.com.au/finance/): Weekly and monthly payment breakdowns.
 - [About & Australian Heritage](https://thebuggyshoppty.com.au/about/): 20+ years of Queensland outback engineering.
 - [Contact & Dispatch Desk](https://thebuggyshoppty.com.au/contact/): Direct phone, WhatsApp, and email order assistance.
+- [Frequently Asked Questions](https://thebuggyshoppty.com.au/faq/): Answers on prices, delivery, warranty, batteries, golf gear and road rules.
 
 ## Optional Agent Resources
 - [API Catalog](https://thebuggyshoppty.com.au/.well-known/api-catalog): RFC 9727 linkset descriptor.

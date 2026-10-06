@@ -11,6 +11,7 @@ import ShopClient from '@/app/shop/ShopClient';
 import { ShieldCheck, Award, Wrench, PackageCheck, Truck, Wallet, PhoneCall } from 'lucide-react';
 import { CONTACT } from '@/src/config/site';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import { ogImages } from '@/lib/og';
 
 export async function generateStaticParams() {
   return BRANDS.map((b) => ({ slug: b.slug }));
@@ -33,6 +34,7 @@ export async function generateMetadata({ params }) {
       title: brand.pageTitle || `${brand.name} Golf Buggies Australia`,
       description: brand.metaDescription || brand.blurb,
       url: `https://${SITE.domain}/brands/${brand.slug}/`,
+      images: ogImages(getProductsByBrand(brand.slug)[0]?.images?.[0]),
     },
     other: {
       'og:updated_time': new Date().toISOString(),

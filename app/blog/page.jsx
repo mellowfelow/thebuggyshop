@@ -5,6 +5,7 @@ import JsonLd from '@/src/components/JsonLd';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import Image from 'next/image';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import { ogImages } from '@/lib/og';
 
 export const metadata = {
   title: { absolute: seoTitle('Golf Buggy Guides & Buying Advice | Australia') },
@@ -16,6 +17,7 @@ export const metadata = {
     title: 'Golf Buggy Insights & Technical Guides | The Buggy Shop',
     description: 'Technical advice, lithium battery guides, and golf buggy accessories for Australian owners.',
     url: `https://${SITE.domain}/blog/`,
+    images: ogImages(),
   },
   other: {
     'og:updated_time': new Date().toISOString(),

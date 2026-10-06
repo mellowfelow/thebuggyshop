@@ -71,7 +71,7 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
                   {rootCategories.map(cat => (
                     <Link
                       key={cat.slug}
-                      href={`/shop/${cat.slug}/`}
+                      href={cat.slug === 'brands' ? '/brands/' : `/shop/${cat.slug}/`}
                       className="flex items-center justify-between px-3 py-2 rounded-xl hover:bg-slate-800 text-slate-200 hover:text-[#C5A880] transition-colors"
                       onClick={closeMenus}
                     >
@@ -281,7 +281,7 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
               {rootCategories.map(cat => (
                 <Link
                   key={cat.slug}
-                  href={`/shop/${cat.slug}/`}
+                  href={cat.slug === 'brands' ? '/brands/' : `/shop/${cat.slug}/`}
                   onClick={closeMenus}
                   className="block text-slate-300 hover:text-[#C5A880] py-1"
                 >

@@ -5,6 +5,7 @@ import JsonLd from '@/src/components/JsonLd';
 import CompareClient from './CompareClient';
 import { Scale, BatteryCharging, Zap, ShieldCheck, Truck, Sparkles } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import { ogImages } from '@/lib/og';
 
 export const metadata = {
   title: { absolute: seoTitle('Compare Golf Buggy, Battery & Charger Specifications | The Buggy Shop Australia') },
@@ -16,6 +17,7 @@ export const metadata = {
     title: 'Compare Golf Buggy, Battery & Charger Specifications | The Buggy Shop',
     description: 'Side-by-side engineering comparison matrix for Australian golf buggies, lithium battery packs, and smart chargers.',
     url: `https://${SITE.domain}/compare/`,
+    images: ogImages(),
   },
   other: {
     'og:updated_time': new Date().toISOString(),

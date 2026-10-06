@@ -14,6 +14,7 @@ import JsonLd from '@/src/components/JsonLd';
 import ShopClient from '../ShopClient';
 import { ArrowRight, ChevronRight, Layers, Sparkles } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import { ogImages } from '@/lib/og';
 import FaqSection from '@/src/components/FaqSection';
 import RelatedLinks from '@/src/components/RelatedLinks';
 import { relatedFor } from '@/src/config/related';
@@ -42,6 +43,7 @@ export async function generateMetadata({ params }) {
       title: category.pageTitle,
       description: category.metaDescription,
       url: `https://${SITE.domain}/shop/${category.slug}/`,
+      images: ogImages(category.heroImage),
     },
     other: {
       'og:updated_time': new Date().toISOString(),

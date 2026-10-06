@@ -4,6 +4,7 @@ import { SITE, CONTACT } from '@/src/config/site';
 import JsonLd from '@/src/components/JsonLd';
 import FinanceCalculatorClient from './FinanceCalculatorClient';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import { ogImages } from '@/lib/og';
 
 export const metadata = {
   title: { absolute: seoTitle('Pay in 4 & Commercial Asset Finance | The Buggy Shop Australia') },
@@ -15,6 +16,7 @@ export const metadata = {
     title: 'Pay in 4 & Commercial Asset Finance | The Buggy Shop Australia',
     description: 'Calculate flexible Pay in 4 split payments or commercial equipment leasing.',
     url: `https://${SITE.domain}/finance/`,
+    images: ogImages(),
   },
   other: {
     'og:updated_time': new Date().toISOString(),

@@ -6,6 +6,7 @@ import { LOCATIONS } from '@/src/config/locations';
 import JsonLd from '@/src/components/JsonLd';
 import { Truck, MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import { ogImages } from '@/lib/og';
 import FaqSection from '@/src/components/FaqSection';
 import { faqsForPage } from '@/src/config/faq';
 
@@ -19,6 +20,7 @@ export const metadata = {
     title: 'Golf Buggies Australia by City | The Buggy Shop',
     description: 'Direct hydraulic tail-lift delivery across Melbourne, Sydney, Brisbane, Gold Coast, Perth, Adelaide and all Australian states.',
     url: `https://${SITE.domain}/golf-buggies/`,
+    images: ogImages(),
   },
   other: {
     'og:updated_time': new Date().toISOString(),

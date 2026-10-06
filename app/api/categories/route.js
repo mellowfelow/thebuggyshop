@@ -7,7 +7,7 @@ import { inNode } from '@/lib/catalog';
 export async function GET() {
   const categories = CATEGORY_TREE.filter((c) => !c.redirectTo).map((c) => ({
     ...c,
-    url: `https://${SITE.domain}/shop/${c.slug}/`,
+    url: c.slug === 'brands' ? `https://${SITE.domain}/brands/` : `https://${SITE.domain}/shop/${c.slug}/`,
     productCount: PRODUCTS.filter((p) => inNode(p, c.slug)).length,
   }));
 

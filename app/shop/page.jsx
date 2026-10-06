@@ -8,6 +8,7 @@ import JsonLd from '@/src/components/JsonLd';
 import ShopClient from './ShopClient';
 import { ShieldCheck, Truck, Sparkles, Scale, Calculator } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import { ogImages } from '@/lib/og';
 import FaqSection from '@/src/components/FaqSection';
 import RelatedLinks from '@/src/components/RelatedLinks';
 import { relatedFor } from '@/src/config/related';
@@ -23,6 +24,7 @@ export const metadata = {
     title: 'Golf Buggy for Sale Australia | Shop All Buggies',
     description: 'Explore turnkey luxury golf buggies for sale, remote trolleys, and all-terrain buggies with 5-year LiFePO4 battery warranties.',
     url: `https://${SITE.domain}/shop/`,
+    images: ogImages(),
   },
   other: {
     'og:updated_time': new Date().toISOString(),
@@ -100,7 +102,7 @@ export default function ShopPage() {
           {rootCategories.map(cat => (
             <Link
               key={cat.slug}
-              href={`/shop/${cat.slug}/`}
+              href={cat.slug === 'brands' ? '/brands/' : `/shop/${cat.slug}/`}
               className="p-3.5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-[#C5A880] text-center group transition-all shadow-xs"
             >
               <div className="text-xs font-black text-slate-900 group-hover:text-[#8A7045] transition-colors">

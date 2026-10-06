@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { SITE, BRAND, CONTACT, PRODUCTS, REVIEW_STATS } from '@/src/config/site';
 import JsonLd from '@/src/components/JsonLd';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import { ogImages } from '@/lib/og';
 import { 
   ShieldCheck, 
   Truck, 
@@ -28,6 +29,7 @@ export const metadata = {
     title: 'About The Buggy Shop | 20+ Years Australian Golf Buggy Heritage',
     description: 'Founded in Queensland in 2004, Australia\'s leading authority on turnkey golf buggies for sale and lithium golf carts.',
     url: `https://${SITE.domain}/about/`,
+    images: ogImages(),
   },
   other: {
     'og:updated_time': new Date().toISOString(),

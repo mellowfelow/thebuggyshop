@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import ContactFormClient from './ContactFormClient';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import { ogImages } from '@/lib/og';
 
 export const metadata = {
   title: { absolute: seoTitle('Contact Queensland Golf Buggy Sales & Quotes | The Buggy Shop') },
@@ -26,6 +27,7 @@ export const metadata = {
     title: 'Contact Queensland Golf Buggy Sales & Quotes | The Buggy Shop',
     description: 'Connect with The Buggy Shop for golf buggies for sale and freight quotes across Australia.',
     url: `https://${SITE.domain}/contact/`,
+    images: ogImages(),
   },
   other: {
     'og:updated_time': new Date().toISOString(),

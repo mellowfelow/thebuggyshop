@@ -90,7 +90,7 @@ export default function SearchClient() {
           {(found.categories.length > 0 || found.brands.length > 0) && (
             <div className="flex flex-wrap items-center gap-2">
               {found.categories.map((c) => (
-                <Link key={c.slug} href={`/shop/${c.slug}/`} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-[#C5A880] text-[11px] font-bold hover:bg-slate-800">
+                <Link key={c.slug} href={c.slug === 'brands' ? '/brands/' : `/shop/${c.slug}/`} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 text-[#C5A880] text-[11px] font-bold hover:bg-slate-800">
                   <Layers className="w-3 h-3" /> {c.navLabel}
                 </Link>
               ))}

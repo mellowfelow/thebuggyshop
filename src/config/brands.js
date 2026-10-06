@@ -321,7 +321,7 @@ export const BRANDS = [
     logo: 'Crossfire Motorcycles & Buggies',
     h1: 'Crossfire Off-Road Buggies & Farm UTVs Australia',
     pageTitle: 'Crossfire Buggies Australia | Blazer 200R, 400GT & E5',
-    metaDescription: 'Crossfire Australian designed petrol and electric off-road buggies, teenage dune buggies and silent 4WD farm UTVs.',
+    metaDescription: 'Crossfire Australian designed petrol and electric off-road buggies, teenage dune buggies and silent 4WD farm UTVs. Delivered Australia-wide.',
     introCopy: 'Crossfire is an Australian brand engineered to endure tough local tracks, offering everything from youth Blazer dune buggies to the silent Crossfire E5 4WD electric farm UTV.',
     popularModels: ['Crossfire Blazer 200R', 'Crossfire 400GT UTV', 'Crossfire E5 Electric Farm UTV'],
     partsCategories: ['Drive Chains & Sprockets', 'Brake Master Cylinders', 'Ignition Coils', 'Farm Utility Accessories']
@@ -349,7 +349,7 @@ export const BRANDS = [
     logo: 'Hammerhead Off-Road',
     h1: 'Hammerhead Kids & Teen Off-Road Buggies Australia',
     pageTitle: 'Hammerhead Buggies Australia | Torpedo 208cc',
-    metaDescription: 'Hammerhead Torpedo youth off-road buggies with parent speed limiters, dual disc brakes and robust roll cage frames.',
+    metaDescription: 'Hammerhead Torpedo youth off-road buggies with parent speed limiters, dual disc brakes and robust roll cage frames. Delivered Australia-wide.',
     introCopy: 'Hammerhead Off-Road is an international specialist in youth and teen recreational go-karts and buggies, engineered with robust safety cages and speed governors.',
     popularModels: ['Hammerhead Torpedo 208cc'],
     partsCategories: ['Drive Belts & Clutches', 'Safety Harnesses', 'Brake Cables & Discs', 'Steering Rods']

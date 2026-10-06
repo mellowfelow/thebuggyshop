@@ -120,6 +120,7 @@ ${POSTS.map(post => `- [${post.title}](${baseUrl}/blog/${post.slug}/): ${post.ex
 - [Pay in 4 & Finance Calculator](${baseUrl}/finance/): Weekly and monthly payment breakdowns.
 - [About & Australian Heritage](${baseUrl}/about/): 20+ years of Queensland outback engineering.
 - [Contact & Dispatch Desk](${baseUrl}/contact/): Direct phone, WhatsApp, and email order assistance.
+- [Frequently Asked Questions](${baseUrl}/faq/): Answers on prices, delivery, warranty, batteries, golf gear and road rules.
 
 ## Optional Agent Resources
 - [API Catalog](${baseUrl}/.well-known/api-catalog): RFC 9727 linkset descriptor.
@@ -146,6 +147,7 @@ No authentication required. All catalog, specification, and educational resource
 | Educational Blog | ${baseUrl}/blog/ |
 | About & Heritage | ${baseUrl}/about/ |
 | Contact & Support | ${baseUrl}/contact/ |
+| FAQ | ${baseUrl}/faq/ |
 
 ## Authentication
 

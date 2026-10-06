@@ -7,6 +7,7 @@ import { PRODUCTS } from '@/src/config/products';
 import JsonLd from '@/src/components/JsonLd';
 import { Award, ArrowRight } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import { ogImages } from '@/lib/og';
 
 export const metadata = {
   title: { absolute: seoTitle('Golf Buggy Brands Australia | MGI, Motocaddy & ECAR') },
@@ -18,6 +19,7 @@ export const metadata = {
     title: 'Golf Buggy Brands Australia | The Buggy Shop',
     description: 'Explore Australia\'s top golf buggy and cart brands with factory warranty backup and nationwide delivery.',
     url: `https://${SITE.domain}/brands/`,
+    images: ogImages(),
   },
   other: {
     'og:updated_time': new Date().toISOString(),
