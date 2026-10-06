@@ -1095,7 +1095,7 @@ export const PRODUCTS = [
       payloadCapacity: '180 kg (2-Passenger)',
       warranty: '12-Month Factory Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/crossfire-blazer-200r-dune-buggy/main.webp']
   },
   {
     slug: 'kayo-s350-side-by-side-utv',
@@ -1129,7 +1129,7 @@ export const PRODUCTS = [
       cargoBed: 'Rear Tilting Tipper Bed (150 kg Capacity)',
       warranty: '12-Month Parts & Labour Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/kayo-s350-side-by-side-utv/main.webp']
   },
   {
     slug: 'crossfire-400gt-4x4-farm-utv',
@@ -1197,7 +1197,7 @@ export const PRODUCTS = [
       groundClearance: '330 mm (13 in)',
       warranty: '2-Year Factory Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/polaris-ranger-xp-1000-hd-utv/main.webp']
   },
 
   // ==========================================
@@ -2372,9 +2372,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/gmx-gkt110-110cc-dune-buggy/main.webp']
   },
   {
     slug: 'mj-motor-forza-dune-buggy-163-300cc',
@@ -2400,9 +2398,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mj-motor-forza-dune-buggy-163-300cc/main.webp']
   },
   {
     slug: 'mxr-300cc-fuel-injected-dune-buggy',
@@ -2428,9 +2424,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mxr-300cc-fuel-injected-dune-buggy/main.webp']
   },
   {
     slug: 'kayo-s150-150cc-2-seat-buggy',
@@ -2456,9 +2450,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/kayo-s150-150cc-2-seat-buggy/main.webp']
   },
   {
     slug: 'hawk-razorback-4-seat-utv',
@@ -2484,9 +2476,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/hawk-razorback-4-seat-utv/main.webp']
   },
   {
     slug: 'trident-1000cc-side-by-side-utv',
@@ -2512,9 +2502,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/trident-1000cc-side-by-side-utv/main.webp']
   },
   {
     slug: 'can-am-maverick-commander-defender-limited-side-by-side',
@@ -2540,9 +2528,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/can-am-maverick-commander-defender-limited-side-by-side/main.webp', '/images/products/can-am-maverick-commander-defender-limited-side-by-side/gallery-2.webp']
   },
   {
     slug: 'cfmoto-uforce-u10-pro-zforce-side-by-side',
@@ -2568,9 +2554,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/cfmoto-uforce-u10-pro-zforce-side-by-side/main.webp', '/images/products/cfmoto-uforce-u10-pro-zforce-side-by-side/gallery-2.webp']
   },
   {
     slug: 'yamaha-wolverine-x2-850-rmax2-1000-side-by-side',
@@ -2596,9 +2580,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/yamaha-wolverine-x2-850-rmax2-1000-side-by-side/main.webp', '/images/products/yamaha-wolverine-x2-850-rmax2-1000-side-by-side/gallery-2.webp']
   },
   {
     slug: 'yamaha-yxz1000r-ss-xt-r-sport-side-by-side',
@@ -2624,9 +2606,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/yamaha-yxz1000r-ss-xt-r-sport-side-by-side/main.webp']
   },
   {
     slug: 'yamaha-rmax4-1000-xt-r-4-seat-side-by-side',
@@ -2652,9 +2632,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/yamaha-rmax4-1000-xt-r-4-seat-side-by-side/main.webp']
   },
   {
     slug: 'polaris-ranger-xd-1500-northstar-side-by-side',
@@ -2680,9 +2658,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/polaris-ranger-xd-1500-northstar-side-by-side/main.webp']
   },
   {
     slug: 'polaris-rzr-xpedition-adv-ultimate',
@@ -2708,9 +2684,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/polaris-rzr-xpedition-adv-ultimate/main.webp']
   },
   {
     slug: 'polaris-ranger-500-farm-utv',
@@ -2736,9 +2710,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/polaris-ranger-500-farm-utv/main.webp']
   },
   {
     slug: 'polaris-ranger-1000-premium-farm-utv',
@@ -2764,9 +2736,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/polaris-ranger-1000-premium-farm-utv/main.webp']
   },
   {
     slug: 'can-am-defender-hd7-hd9-farm-utv',
@@ -2792,9 +2762,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/can-am-defender-hd7-hd9-farm-utv/main.webp']
   },
   {
     slug: 'licensed-rzr-style-4x4-kids-electric-ride-on-buggy-24-48v',
