@@ -1,6 +1,6 @@
 # The Buggy Shop — Project Instructions
 
-React/Next.js luxury all-terrain & estate buggy ecommerce site, Vercel target, deployed via GitHub.
+React/Next.js golf buggy, golf cart and off-road buggy ecommerce site for Australia (golf buggies, electric trolleys, ride-on carts, batteries, parts, accessories), Vercel target, deployed via GitHub.
 
 ## Non-negotiable: Australian Vehicle & Safety Standards
 - Never fabricate speed claims exceeding state conditional registration parameters without noting road compliance context.
@@ -19,6 +19,13 @@ Never hand-edit generated files (`llms.txt`, `.well-known/*`, `vercel.json`) —
 - Emails entity-encoded (&#64;) everywhere, including in JSON-LD.
 - Never commit `node_modules/`, `.next/`, `out/`.
 - Framework Preset on Vercel must be "Next.js".
+
+## SEO and keywords
+- The keyword plan lives in `docs/keyword-map.md` (strategy), `docs/keyword-targets.json` (url -> primary keyword, read by the crosscheck), `docs/blog-plan.md`, `docs/faq-bank.md`, `docs/product-gaps.md` and `docs/keyword-cluster.txt`. Update them after every new keyword export. They stay in `docs/`, never in `public/`.
+- One primary keyword per page. Title <= 60 characters with the primary keyword first and NO ellipsis; meta description 130-155 characters; the keyword in the H1 and first 150 words; a plain-language definition sentence first.
+- The home page owns "golf buggy"; /shop/ owns "golf buggy for sale". Parent and child categories must not share target keywords.
+- FAQ answers and blog numbers are computed from product data (`src/config/faq.js`, `src/config/posts.js`); never hand-type a price into them.
+- Never claim "free delivery": freight is a flat $495.
 
 ## Live Placeholders
 - `SITE.domain`: `thebuggyshoppty.com.au` (Vercel production domain; www 308-redirects to it). `CROSSCHECK_PRODUCTION=1 npm run crosscheck` fails if a placeholder domain ever returns.

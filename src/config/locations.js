@@ -34,7 +34,7 @@ export const LOCATIONS = [
     title: 'Golf Buggies & Golf Carts for Sale Brisbane, QLD',
     h1: 'Golf Buggies for Sale Brisbane',
     metaDescription: 'Golf buggies and golf cart for sale in Brisbane and QLD, direct from our Queensland base. New and second hand carts with tail-lift delivery statewide.',
-    introCopy: 'Direct from our Queensland headquarters to your golf club or property. We supply Brisbane golfers, Moreton Bay estates, and Ipswich regional properties with commercial-grade electric buggies, remote-control walkers, and street-ready golf carts equipped for tropical climate longevity.',
+    introCopy: 'Direct from our Queensland headquarters to your golf club or property. We supply Brisbane golfers, Moreton Bay estates, and Ipswich regional properties with commercial-grade electric buggies, remote-control walkers, and street-ready golf carts equipped for tropical climate longevity. Looking for a golf cart for sale in QLD? We stock new carts and second hand golf carts for sale in QLD, delivered statewide.',
     popularClubs: ['Royal Queensland Golf Club', 'Brookwater Golf Course', 'The Brisbane Golf Club', 'Indooroopilly Golf Club', 'Keperra'],
     deliveryTime: '1 - 2 business days to Brisbane Metro & SEQ'
   },
@@ -58,7 +58,7 @@ export const LOCATIONS = [
     title: 'Golf Buggies Perth | Golf Carts for Sale WA',
     h1: 'Golf Buggies for Sale Perth',
     metaDescription: 'Golf buggies in Perth and golf carts for sale in WA. Electric and push buggies and ride-on carts with tail-lift delivery across Western Australia.',
-    introCopy: 'We ship premium electric golf buggies, push trolleys, and 4WD farm buggies directly to Perth, Fremantle, the Swan Valley, and regional Western Australia. Built with high-temperature LiFePO4 battery management systems engineered for WA summers.',
+    introCopy: 'We ship premium electric golf buggies, push trolleys, and 4WD farm buggies directly to Perth, Fremantle, the Swan Valley, and regional Western Australia. Built with high-temperature LiFePO4 battery management systems engineered for WA summers. Golf carts for sale in WA are delivered across the state from our Queensland base.',
     popularClubs: ['Lake Karrinyup Country Club', 'Joondalup Resort', 'The Western Australian Golf Club', 'Mount Lawley', 'Cottesloe Golf Club'],
     deliveryTime: '4 - 6 business days via insured express road freight'
   },

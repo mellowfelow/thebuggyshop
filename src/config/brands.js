@@ -154,7 +154,7 @@ export const BRANDS = [
     h1: 'ECAR Golf Buggies and Carts',
     pageTitle: 'ECAR Golf Buggy Australia | Lithium Carts & Utility',
     metaDescription: 'ECAR golf buggy range in Australia: A2, A4 lithium golf carts, utility carts and the Magnum 4LR lifted cart. Shop ECAR with warranty and delivery.',
-    introCopy: 'ECAR is Australia\'s leading supplier of new lithium golf course carts, luxury estate buggies, and commercial utility vehicles, powered by premium AC brushless motors.',
+    introCopy: 'ECAR (also written E Car) is Australia\'s leading supplier of new lithium golf course carts, luxury estate buggies, and commercial utility vehicles, powered by premium AC brushless motors.',
     popularModels: ['ECAR Lithium A2', 'ECAR Lithium A4', 'ECAR Compass 4S LFT', 'ECAR Compass 6S LFT', 'ECAR Lithium Magnum 4S', 'ECAR Lithium A2 Utility'],
     partsCategories: ['LiFePO4 Lithium Battery Packs', 'High-Output AC Motor Controllers', 'Lifted Suspension Kits', 'All-Terrain Turf Tyres', 'Windshields & Enclosures']
   },

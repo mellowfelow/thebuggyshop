@@ -66,7 +66,7 @@ export default function GolfBuggiesLocationsIndexPage() {
             Golf Buggies for Sale Across Australia
           </h1>
           <p className="text-sm sm:text-base text-[#4A5D53] leading-relaxed">
-            Select your city or region below to view local delivery timelines, nearby golf course fleet deliveries, and tailored buggies engineered for local climate and terrain.
+            Looking for golf buggies for sale near me? Select your city or region below to see local delivery times, nearby golf course deliveries and buggies suited to your climate and terrain.
           </p>
         </div>
       </div>

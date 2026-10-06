@@ -73,7 +73,7 @@ export default function ShopPage() {
               Golf Buggy for Sale in Australia
             </h1>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Explore our complete Australian fleet of remote-control motorized buggies, lightweight 3-wheel push buggies, 2-seat to 6-seat luxury estate carts, and heavy-duty 4x4 off-road UTVs. Flat-rate hydraulic tail-lift delivery across Australia.
+              Golf buggy sales across Australia: buy a golf buggy online from our complete fleet of remote-control motorised buggies, lightweight 3-wheel push buggies, 2-seat to 6-seat estate carts and heavy-duty 4x4 off-road UTVs. Every golf buggy sale ships by flat-rate hydraulic tail-lift delivery.
             </p>
           </div>
 

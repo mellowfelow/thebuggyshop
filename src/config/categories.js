@@ -150,7 +150,7 @@ export const CATEGORY_TREE = [
     metaDescription: 'Golf cart for sale in Australia. New and used 2, 4 and 6 seat electric golf carts with warranty and tail-lift delivery. Compare models and shop golf carts.',
     h1: 'Golf Carts for Sale in Australia',
     targetKeywords: ['golf cart', 'electric golf carts for sale', 'golf carts for sale', 'golf buggy with seat', 'electric ride on golf buggy', 'buy golf cart'],
-    introCopy: 'A golf cart is a small ride-on electric vehicle that carries two to six people, used on golf courses, estates and farms. Most run on a 48V battery. Sit-in electric carts for the course, the resort, the farm or the estate. From value 2-seaters to lifted 6-seat transporters and street-legal luxury carts, with finance and Australia-wide freight.',
+    introCopy: 'A golf cart is a small ride-on electric vehicle that carries two to six people, used on golf courses, estates and farms. Most run on a 48V battery. Browse electric golf carts for sale in 2, 4 and 6 seat layouts, new and used, and buy a golf cart online with delivery Australia-wide. Sit-in electric carts for the course, the resort, the farm or the estate. From value 2-seaters to lifted 6-seat transporters and street-legal luxury carts, with finance and Australia-wide freight.',
     heroImage: '/images/categories/luxury-golf-carts.webp',
     facets: ['seats', 'power', 'condition', 'price', 'brand']
   },
@@ -513,7 +513,7 @@ export const CATEGORY_TREE = [
     metaDescription: 'Used golf buggy for sale in Australia. Inspected ex-demo and second hand golf buggies and carts at lower prices, with warranty. See what is in stock.',
     h1: 'Used Golf Buggies for Sale',
     targetKeywords: ['used golf buggy for sale', 'used golf buggies', 'second hand golf buggies for sale', 'second hand petrol golf carts for sale', 'second hand golf buggies', 'used electric golf buggy for sale'],
-    introCopy: 'A used golf buggy is a second hand or ex-demo buggy or cart sold at a lower price than new. Ours are inspected before sale, with prices from $1,490. Ex-demo and trade-in electric buggies, fully tested with a fresh battery health report and a short warranty. Stock changes weekly.',
+    introCopy: 'A used golf buggy is a second hand or ex-demo buggy or cart sold at a lower price than new. Our used golf buggies are inspected before sale, with prices from $1,490. Ex-demo and trade-in electric buggies, fully tested with a fresh battery health report and a short warranty. Stock changes weekly.',
     heroImage: '/images/categories/used-golf-buggies.webp',
     facets: ['power', 'wheels', 'condition', 'price', 'brand']
   },
