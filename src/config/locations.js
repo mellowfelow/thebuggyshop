@@ -32,7 +32,7 @@ export const LOCATIONS = [
     state: 'QLD',
     postcode: '4000',
     title: 'Golf Buggies & Golf Carts for Sale Brisbane, QLD',
-    h1: 'Golf Buggies for Sale Brisbane',
+    h1: 'Golf Buggies & Golf Carts for Sale Brisbane, QLD',
     metaDescription: 'Golf buggies and golf cart for sale in Brisbane and QLD, direct from our Queensland base. New and second hand carts with tail-lift delivery statewide.',
     introCopy: 'Direct from our Queensland headquarters to your golf club or property. We supply Brisbane golfers, Moreton Bay estates, and Ipswich regional properties with commercial-grade electric buggies, remote-control walkers, and street-ready golf carts equipped for tropical climate longevity. Looking for a golf cart for sale in QLD? We stock new carts and second hand golf carts for sale in QLD, delivered statewide.',
     popularClubs: ['Royal Queensland Golf Club', 'Brookwater Golf Course', 'The Brisbane Golf Club', 'Indooroopilly Golf Club', 'Keperra'],

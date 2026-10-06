@@ -232,6 +232,37 @@
       "type": "Brand",
       "primary": "triumph golf buggy accessories",
       "secondary": []
+    },
+    {
+      "url": "/golf-buggies/",
+      "type": "Location hub",
+      "primary": "golf buggies for sale near me",
+      "secondary": [
+        "golf carts near me"
+      ]
+    },
+    {
+      "url": "/golf-buggies/sydney/",
+      "type": "Location",
+      "primary": "golf buggies for sale sydney",
+      "secondary": []
+    },
+    {
+      "url": "/golf-buggies/perth/",
+      "type": "Location",
+      "primary": "golf buggies perth",
+      "secondary": [
+        "golf carts for sale wa"
+      ]
+    },
+    {
+      "url": "/golf-buggies/brisbane/",
+      "type": "Location",
+      "primary": "golf buggies for sale brisbane",
+      "secondary": [
+        "golf cart for sale qld",
+        "second hand golf carts for sale qld under $5000"
+      ]
     }
   ]
 }

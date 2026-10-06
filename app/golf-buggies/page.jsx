@@ -11,7 +11,7 @@ import { faqsForPage } from '@/src/config/faq';
 
 export const metadata = {
   title: { absolute: seoTitle('Golf Buggies for Sale Near Me | By City & State') },
-  description: seoDesc('Find golf buggies for sale near you. Electric buggies, push buggies and golf carts with tail-lift delivery to Melbourne, Sydney, Brisbane, Perth, Adelaide and more.'),
+  description: seoDesc('Golf buggies for sale near me? Choose your city for electric buggies, push buggies and golf carts with tail-lift delivery to Melbourne, Sydney, Brisbane and Perth.'),
   alternates: {
     canonical: `https://${SITE.domain}/golf-buggies/`,
   },
@@ -63,7 +63,7 @@ export default function GolfBuggiesLocationsIndexPage() {
             <span>Australia-Wide Direct Hydraulic Delivery</span>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0E2A1E] tracking-tight font-serif">
-            Golf Buggies for Sale Across Australia
+            Golf Buggies for Sale Near Me: Choose Your City
           </h1>
           <p className="text-sm sm:text-base text-[#4A5D53] leading-relaxed">
             Looking for golf buggies for sale near me? Select your city or region below to see local delivery times, nearby golf course deliveries and buggies suited to your climate and terrain.

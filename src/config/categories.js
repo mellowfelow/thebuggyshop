@@ -13,7 +13,7 @@ export const CATEGORY_TREE = [
     metaDescription: 'Electric golf buggy for sale in Australia. Motorised walk-behind, remote and GPS lithium buggies from MGI, Motocaddy and PowaKaddy. Shop with warranty.',
     h1: 'Electric Golf Buggies for Sale',
     targetKeywords: ['electric golf buggy for sale', 'battery golf buggies', 'motorised golf buggy for sale', 'estate electric golf buggy', 'motorised golf buggy', 'electric golf'],
-    introCopy: 'Electric golf buggies are battery-powered golf trolleys that carry your clubs and drive themselves. Most are lithium powered, fold for the boot and cover 18 to 36 holes on one charge. Electric golf buggies do the carrying so you can focus on your round. Our range covers walk-behind lithium models, hands-free remote-control buggies and GPS follow buggies from the brands Australian golfers trust. Every buggy ships with an Australian warranty and local service support.',
+    introCopy: 'Electric golf buggies are battery-powered golf trolleys that carry your clubs and drive themselves. Most are lithium powered, fold for the boot and cover 18 to 36 holes on one charge. Electric golf buggies do the carrying so you can focus on your round. Our range covers walk-behind lithium models, hands-free remote-control buggies and GPS follow buggies from the brands Australian golfers trust. Every buggy ships with an Australian warranty and local service support. Every model here is a motorised golf buggy: shop a motorised golf buggy for sale in walk-behind, remote-control and GPS styles. Whether you call it an estate electric golf buggy or a motor golf buggy, every model here is battery powered.',
     heroImage: '/images/categories/electric-golf-buggies.webp',
     facets: ['power', 'wheels', 'batteryRange', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
@@ -28,7 +28,7 @@ export const CATEGORY_TREE = [
     metaDescription: 'Electric golf trolley in Australia. Walk-behind motorised buggies with lithium batteries, fold-flat frames and warranty. Compare models and shop now.',
     h1: 'Electric Golf Trolleys',
     targetKeywords: ['electric golf trolley', 'battery trolley', 'estate electric golf trolley', 'golf caddy electric', 'electric caddies', 'smart golf trolley'],
-    introCopy: 'An electric golf trolley is a walk-behind buggy with a battery motor that pulls your clubs for you. You steer by hand and the motor does the work uphill. Push-button simple: set the speed, walk beside it, let the buggy carry the bag. These are the lightest, best-value way into an electric buggy, folding down to fit any boot.',
+    introCopy: 'An electric golf trolley is a walk-behind buggy with a battery motor that pulls your clubs for you. You steer by hand and the motor does the work uphill. Push-button simple: set the speed, walk beside it, let the buggy carry the bag. These are the lightest, best-value way into an electric buggy, folding down to fit any boot. Also called an electric caddy or golf caddy electric, a walk-behind buggy is the simplest powered option. Browse an estate electric golf trolley, electric caddies and a smart golf trolley in one place.',
     heroImage: '/images/categories/electric-golf-buggies.webp',
     facets: ['power', 'wheels', 'batteryRange', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
@@ -43,7 +43,7 @@ export const CATEGORY_TREE = [
     metaDescription: 'Remote control golf buggy in Australia. Hands-free electric buggies with handset steering and lithium power. Compare models and order with delivery.',
     h1: 'Remote Control Golf Buggies',
     targetKeywords: ['remote control golf buggy', 'remote control electric golf buggy', 'remote control golf buggy for sale', 'remote golf buggy', 'electric golf buggy with remote', 'remote controlled golf buggy'],
-    introCopy: 'A remote control golf buggy is an electric golf buggy you steer with a handset, so it drives ahead of you down the fairway. You walk free of the buggy and it follows your commands. Steer the buggy with a handset while you walk ahead, line up your next shot or clear a bunker. Our remote-control range covers everything from first-time remote buggies to all-terrain dual-motor models built for hilly Australian courses.',
+    introCopy: 'A remote control golf buggy is an electric golf buggy you steer with a handset, so it drives ahead of you down the fairway. You walk free of the buggy and it follows your commands. Steer the buggy with a handset while you walk ahead, line up your next shot or clear a bunker. Our remote-control range covers everything from first-time remote buggies to all-terrain dual-motor models built for hilly Australian courses. A remote controlled golf buggy follows your handset, so you walk free of it.',
     heroImage: '/images/categories/remote-control-golf-buggies.webp',
     facets: ['power', 'wheels', 'batteryRange', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
@@ -89,7 +89,7 @@ export const CATEGORY_TREE = [
     metaDescription: 'Golf push buggy for sale in Australia. Lightweight 3-wheel and 4-wheel push and pull buggies from Clicgear, Big Max and QOD. Prices from $450.',
     h1: 'Golf Push Buggies for Sale',
     targetKeywords: ['golf push buggy', 'golf bag and buggy', 'push golf buggy for sale', 'golf pull buggy', 'push buggy', 'pull buggy'],
-    introCopy: 'A golf push buggy is a manual, wheeled cart you push or pull while you walk, carrying your golf bag on a frame. Push buggies fold flat for the boot and need no battery. No batteries, no fuss. A good push buggy rolls straight, folds in seconds and lasts for years. We stock the premium 3-wheel and 4-wheel models that hold their value, and skip the throwaway trolleys.',
+    introCopy: 'A golf push buggy is a manual, wheeled cart you push or pull while you walk, carrying your golf bag on a frame. Push buggies fold flat for the boot and need no battery. No batteries, no fuss. A good push buggy rolls straight, folds in seconds and lasts for years. We stock the premium 3-wheel and 4-wheel models that hold their value, and skip the throwaway trolleys. Some players still call a push buggy a golf pram.',
     heroImage: '/images/categories/push-pull-golf-buggies.webp',
     facets: ['power', 'wheels', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
@@ -104,7 +104,7 @@ export const CATEGORY_TREE = [
     metaDescription: '3 wheel golf buggy for sale in Australia. Easy-steering push buggies from Clicgear and others, with local support and delivery. Shop 3 wheel buggies.',
     h1: '3 Wheel Golf Buggies',
     targetKeywords: ['three wheel golf buggy', '3 wheel golf buggy', 'three wheel golf cart', '3 wheel golf cart', 'golf three wheel trolley'],
-    introCopy: 'A 3 wheel golf buggy is a push buggy with one front wheel and two rear wheels. It steers easily on tight turns and folds compactly for the boot. The classic setup: two wheels behind, one steering wheel in front for easy one-hand turns. Light, manoeuvrable and the quickest to fold.',
+    introCopy: 'A 3 wheel golf buggy is a push buggy with one front wheel and two rear wheels. It steers easily on tight turns and folds compactly for the boot. The classic setup: two wheels behind, one steering wheel in front for easy one-hand turns. Light, manoeuvrable and the quickest to fold. A golf three wheel trolley is the lightest style to push.',
     heroImage: '/images/categories/push-pull-golf-buggies.webp',
     facets: ['wheels', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
@@ -119,7 +119,7 @@ export const CATEGORY_TREE = [
     metaDescription: 'Foldable golf buggy for sale in Australia. Compact 4 wheel push buggies that fold flat for the boot. Compare folding golf buggies and order online.',
     h1: 'Foldable Golf Buggies',
     targetKeywords: ['foldable golf buggy', 'folding golf buggy', 'collapsible golf buggy'],
-    introCopy: 'A foldable golf buggy is a push buggy that collapses to a flat, compact size so it fits in a car boot. Four-wheel designs fold flatter and stand on their own. Four wheels track dead straight across slopes and never tip when you stop. Flat-fold models pack down thinner than a golf bag.',
+    introCopy: 'A foldable golf buggy is a push buggy that collapses to a flat, compact size so it fits in a car boot. Four-wheel designs fold flatter and stand on their own. Four wheels track dead straight across slopes and never tip when you stop. Flat-fold models pack down thinner than a golf bag. These folding golf buggies, also called collapsible golf buggies, flatten for the boot.',
     heroImage: '/images/categories/push-pull-golf-buggies.webp',
     facets: ['wheels', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
@@ -150,7 +150,7 @@ export const CATEGORY_TREE = [
     metaDescription: 'Golf cart for sale in Australia. New and used 2, 4 and 6 seat electric golf carts with warranty and tail-lift delivery. Compare models and shop golf carts.',
     h1: 'Golf Carts for Sale in Australia',
     targetKeywords: ['golf cart', 'electric golf carts for sale', 'golf carts for sale', 'golf buggy with seat', 'electric ride on golf buggy', 'buy golf cart'],
-    introCopy: 'A golf cart is a small ride-on electric vehicle that carries two to six people, used on golf courses, estates and farms. Most run on a 48V battery. Browse electric golf carts for sale in 2, 4 and 6 seat layouts, new and used, and buy a golf cart online with delivery Australia-wide. Sit-in electric carts for the course, the resort, the farm or the estate. From value 2-seaters to lifted 6-seat transporters and street-legal luxury carts, with finance and Australia-wide freight.',
+    introCopy: 'A golf cart is a small ride-on electric vehicle that carries two to six people, used on golf courses, estates and farms. Most run on a 48V battery. Browse electric golf carts for sale in 2, 4 and 6 seat layouts, new and used, and buy a golf cart online with delivery Australia-wide. Sit-in electric carts for the course, the resort, the farm or the estate. From value 2-seaters to lifted 6-seat transporters and street-legal luxury carts, with finance and Australia-wide freight. New to carts? Read our golf cart buying guide below before you choose.',
     heroImage: '/images/categories/luxury-golf-carts.webp',
     facets: ['seats', 'power', 'condition', 'price', 'brand']
   },
@@ -242,7 +242,7 @@ export const CATEGORY_TREE = [
     metaDescription: 'Off road buggies for sale in Australia. Dune buggies, side by sides, farm UTVs and kids buggies with local support and delivery. Shop off road buggies.',
     h1: 'Off Road Buggies for Sale in Australia',
     targetKeywords: ['off road buggies', 'off road buggy for sale', 'off road buggies for sale australia', 'offroad buggy for sale', 'dirt buggy', 'atv buggy for sale'],
-    introCopy: 'Off road buggies are rugged recreation and work vehicles built for sand, dirt and farm tracks. The range covers dune buggies, side-by-side UTVs and petrol or electric farm buggies. Buggies built for sand, dirt and paddocks. Petrol dune buggies, side-by-side UTVs, classic beach buggies and electric farm buggies, from kids models up to premium performance machines.',
+    introCopy: 'Off road buggies are rugged recreation and work vehicles built for sand, dirt and farm tracks. The range covers dune buggies, side-by-side UTVs and petrol or electric farm buggies. Buggies built for sand, dirt and paddocks. Petrol dune buggies, side-by-side UTVs, classic beach buggies and electric farm buggies, from kids models up to premium performance machines. Looking for an offroad buggy for sale? Choose from dune, side-by-side and farm models.',
     heroImage: '/images/categories/off-road-buggies.webp',
     facets: ['power', 'seats', 'condition', 'price', 'brand']
   },
@@ -257,7 +257,7 @@ export const CATEGORY_TREE = [
     metaDescription: 'Dune buggies for sale in Australia. Petrol dune and beach buggies for sand, dirt and tracks, with local support and delivery. Shop dune buggies today.',
     h1: 'Dune Buggies and Beach Buggies for Sale',
     targetKeywords: ['dune buggies for sale', 'beach buggy for sale australia', 'dune buggy kart', 'dune buggies for sale in australia', 'buggy dune buggy'],
-    introCopy: 'A dune buggy, also called a beach buggy, is a light off-road vehicle with big rear tyres built for sand and dirt. Petrol models range from 110cc to 300cc. Lightweight 150cc to 300cc petrol buggies with roll cages, built for sand dunes and fire trails.',
+    introCopy: 'A dune buggy, also called a beach buggy, is a light off-road vehicle with big rear tyres built for sand and dirt. Petrol models range from 110cc to 300cc. Lightweight 150cc to 300cc petrol buggies with roll cages, built for sand dunes and fire trails. Some shoppers search for a dune buggy kart; the same models are listed here.',
     heroImage: '/images/categories/off-road-buggies.webp',
     facets: ['power', 'price', 'condition', 'brand']
   },
