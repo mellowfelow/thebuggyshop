@@ -59,7 +59,7 @@ export const CATEGORY_TREE = [
     h1: 'GPS & Follow Golf Buggies',
     targetKeywords: ['follow me golf buggy', 'GPS golf buggy', 'smart golf buggy'],
     introCopy: 'The buggy tracks you with a smart handset or magnetic sensor and rolls along behind, hands free. Onboard GPS models add course distances without a second device.',
-    heroImage: '/images/categories/electric-golf-buggies.webp',
+    heroImage: '/images/categories/gps-follow-buggies.webp',
     facets: ['power', 'wheels', 'batteryRange', 'weight', 'price', 'foldSize', 'condition', 'brand']
   },
   // 2.5 - Electric Conversion Kits
@@ -392,7 +392,7 @@ export const CATEGORY_TREE = [
     h1: 'Buggy Lithium Batteries',
     targetKeywords: ['lithium battery golf buggy', '36 hole lithium battery', 'MGI lithium battery replacement'],
     introCopy: '12V and 24V lithium packs for MGI, Motocaddy, PowaKaddy and Hillbilly buggies, rated 18 to 36 holes.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/batteries.webp',
     facets: ['batteryRange', 'price', 'condition', 'brand']
   },
   // 2.27 - Buggy Chargers
@@ -407,7 +407,7 @@ export const CATEGORY_TREE = [
     h1: 'Chargers & Leads',
     targetKeywords: ['golf buggy charger', 'electric golf trolley battery charger'],
     introCopy: 'Smart lithium chargers and lead-acid chargers matched to your buggy.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/batteries.webp',
     facets: ['price', 'brand']
   },
   // 2.28 - Golf Cart Battery Sets
@@ -422,7 +422,7 @@ export const CATEGORY_TREE = [
     h1: 'Cart Battery Sets',
     targetKeywords: ['golf cart battery', '48v golf cart battery', 'trojan golf cart batteries'],
     introCopy: '36V and 48V flooded, AGM and lithium sets for ride-on carts, plus plug-and-play lithium conversion kits.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/batteries.webp',
     facets: ['price', 'brand']
   },
 
@@ -436,7 +436,7 @@ export const CATEGORY_TREE = [
     h1: 'Golf Buggy Parts & Spares',
     targetKeywords: ['golf buggy spare parts', 'golf buggy wheels', 'golf buggy parts australia'],
     introCopy: 'Wheels, tyres, motors, gearboxes, controllers and trim by brand and model. If you can name the buggy, we can fit it.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/parts.webp',
     facets: ['price', 'brand']
   },
   // 2.30 - Wheels & Tyres
@@ -451,7 +451,7 @@ export const CATEGORY_TREE = [
     h1: 'Wheels & Tyres',
     targetKeywords: ['golf buggy wheels', 'golf buggy tyres', 'golf cart tyres'],
     introCopy: 'Front and rear wheels, winter and all-terrain wheels for buggies, plus turf and DOT tyres for carts.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/parts.webp',
     facets: ['price', 'brand']
   },
   // 2.31 - Drive & Electrical Spares
@@ -466,7 +466,7 @@ export const CATEGORY_TREE = [
     h1: 'Drive & Electrical Spares',
     targetKeywords: ['golf buggy motor', 'golf buggy controller', 'golf buggy parts'],
     introCopy: 'Motors, gearboxes, controllers, handles and wiring for electric buggies.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/parts.webp',
     facets: ['price', 'brand']
   },
   // 2.32 - Repairs & Servicing (Bookable service page)
@@ -482,7 +482,7 @@ export const CATEGORY_TREE = [
     targetKeywords: ['golf buggy repairs', 'golf buggy service', 'golf buggy repairs near me'],
     introCopy: 'Book a service or repair for any make of buggy or cart. Battery health checks, motor and wheel replacement, controller diagnostics.',
     isBookableService: true,
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/parts.webp',
     facets: []
   },
 
@@ -496,7 +496,7 @@ export const CATEGORY_TREE = [
     h1: 'Golf Buggy Accessories',
     targetKeywords: ['golf buggy accessories', 'golf buggy accessories australia'],
     introCopy: 'Holders, seats, covers and upgrade kits to finish off your buggy. Most parts are brand-specific, so filter by your buggy.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/accessories.webp',
     facets: ['price', 'brand']
   },
 
@@ -544,7 +544,7 @@ export const CATEGORY_TREE = [
     h1: 'Golf Clubs',
     targetKeywords: ['golf clubs for sale australia', 'complete golf club set', 'golf driver'],
     introCopy: 'Quality golf club sets for juniors, beginners, ladies and experienced players.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/golf-clubs.webp',
     facets: ['price', 'brand']
   },
   // Subcategories for Accessories
@@ -559,7 +559,7 @@ export const CATEGORY_TREE = [
     h1: 'Golf Bags',
     targetKeywords: ['golf cart bag', 'golf stand bag', 'golf travel bag'],
     introCopy: '14-way cart bags, waterproof stand bags, and travel covers designed for golf buggies.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/accessories.webp',
     facets: ['price', 'brand']
   },
   {
@@ -573,7 +573,7 @@ export const CATEGORY_TREE = [
     h1: 'Golf Buggy Holders',
     targetKeywords: ['golf buggy umbrella holder','golf buggy drink holder','golf buggy accessories'],
     introCopy: 'Umbrella, drink, GPS and phone holders and scorecard consoles that fit most golf buggies and push carts.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/accessories.webp',
     facets: ['price', 'brand']
   },
   {
@@ -587,7 +587,7 @@ export const CATEGORY_TREE = [
     h1: 'Seats & Footboards',
     targetKeywords: ['golf buggy with seat','golf buggy seat','golf buggy footboard'],
     introCopy: 'Add-on seats and footboards for golfers who want somewhere to rest between shots without moving to a ride-on cart.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/accessories.webp',
     facets: ['price', 'brand']
   },
   {
@@ -601,7 +601,7 @@ export const CATEGORY_TREE = [
     h1: 'Covers & Wheel Bags',
     targetKeywords: ['golf buggy cover','golf buggy travel cover','golf buggy wheel bag'],
     introCopy: 'Travel and storage covers, wheel bags and rain covers that protect your buggy in the boot, the garage and on wet days.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/accessories.webp',
     facets: ['price', 'brand']
   },
   {
@@ -615,7 +615,7 @@ export const CATEGORY_TREE = [
     h1: 'Wheel Upgrades',
     targetKeywords: ['golf buggy winter wheels','all terrain golf buggy wheels','golf buggy sand tyres'],
     introCopy: 'Winter wheels, all-terrain upgrade kits and wet-weather or sand tyres for year-round play.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/accessories.webp',
     facets: ['price', 'brand']
   },
   {
@@ -629,7 +629,7 @@ export const CATEGORY_TREE = [
     h1: 'Golf Balls',
     targetKeywords: ['titleist pro v1', 'taylormade tp5', 'srixon z-star'],
     introCopy: 'Dozen packs of tour-tier and distance golf balls.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/accessories.webp',
     facets: ['price', 'brand']
   },
   {
@@ -643,7 +643,7 @@ export const CATEGORY_TREE = [
     h1: 'Rangefinders & GPS Watches',
     targetKeywords: ['golf rangefinder', 'garmin approach', 'bushnell tour v5'],
     introCopy: 'Accurate laser rangefinders and GPS golf watches for pin-point yardages.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/accessories.webp',
     facets: ['price', 'brand']
   },
   {
@@ -657,7 +657,7 @@ export const CATEGORY_TREE = [
     h1: 'Practice Aids',
     targetKeywords: ['golf putting mat', 'golf practice net', 'golf hitting mat'],
     introCopy: 'Home putting greens and hitting nets to practice your game anywhere.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/accessories.webp',
     facets: ['price', 'brand']
   },
   // Subcategories for Golf Clubs
@@ -672,7 +672,7 @@ export const CATEGORY_TREE = [
     h1: 'Complete Golf Package Sets',
     targetKeywords: ['complete golf club set', 'junior golf club set'],
     introCopy: 'All-in-one package sets including drivers, woods, irons, putter and cart bag.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/golf-clubs.webp',
     facets: ['price', 'brand']
   },
   {
@@ -686,7 +686,7 @@ export const CATEGORY_TREE = [
     h1: 'Woods & Irons',
     targetKeywords: ['golf driver', 'golf iron set'],
     introCopy: 'High-launch drivers and forged iron sets designed for distance and forgiveness.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/golf-clubs.webp',
     facets: ['price', 'brand']
   },
   {
@@ -700,7 +700,7 @@ export const CATEGORY_TREE = [
     h1: 'Wedges & Putters',
     targetKeywords: ['golf wedge', 'golf putter'],
     introCopy: 'Short game scoring clubs: high-spin wedges and precision alignment putters.',
-    heroImage: '/images/placeholder.webp',
+    heroImage: '/images/categories/golf-clubs.webp',
     facets: ['price', 'brand']
   }
 ];

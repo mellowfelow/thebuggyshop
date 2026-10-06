@@ -729,7 +729,7 @@ export const PRODUCTS = [
       brakes: 'Dual Footbrakes',
       warranty: '5-Year Manufacturer Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/big-max-blade-ip2-flat-fold-golf-buggy/main.webp', '/images/products/big-max-blade-ip2-flat-fold-golf-buggy/gallery-2.webp', '/images/products/big-max-blade-ip2-flat-fold-golf-buggy/gallery-3.webp', '/images/products/big-max-blade-ip2-flat-fold-golf-buggy/gallery-4.webp', '/images/products/big-max-blade-ip2-flat-fold-golf-buggy/gallery-5.webp']
   },
   {
     slug: 'clicgear-rovic-rv1s-swivel-push-golf-buggy',
@@ -808,7 +808,7 @@ export const PRODUCTS = [
       payloadCapacity: '360 kg Payload',
       warranty: '2-Year Comprehensive Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/cougar-2-seater-electric-golf-cart/main.webp']
   },
   {
     slug: 'ecar-lithium-a2-2-seater-golf-cart',
@@ -844,7 +844,7 @@ export const PRODUCTS = [
       payloadCapacity: '400 kg',
       warranty: '5-Year Battery / 3-Year Chassis Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/ecar-lithium-a2-2-seater-golf-cart/main.webp', '/images/products/ecar-lithium-a2-2-seater-golf-cart/gallery-2.webp', '/images/products/ecar-lithium-a2-2-seater-golf-cart/gallery-3.webp', '/images/products/ecar-lithium-a2-2-seater-golf-cart/gallery-4.webp', '/images/products/ecar-lithium-a2-2-seater-golf-cart/gallery-5.webp']
   },
   {
     slug: 'rippa-4-seat-electric-golf-cart',
@@ -880,7 +880,7 @@ export const PRODUCTS = [
       payloadCapacity: '450 kg',
       warranty: '3-Year Australian Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/rippa-4-seat-electric-golf-cart/main.webp']
   },
   {
     slug: 'ecar-lithium-a4-4-seater-golf-cart',
@@ -916,7 +916,7 @@ export const PRODUCTS = [
       payloadCapacity: '450 kg',
       warranty: '5-Year Lithium / 3-Year Vehicle Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/ecar-lithium-a4-4-seater-golf-cart/main.webp', '/images/products/ecar-lithium-a4-4-seater-golf-cart/gallery-2.webp', '/images/products/ecar-lithium-a4-4-seater-golf-cart/gallery-3.webp', '/images/products/ecar-lithium-a4-4-seater-golf-cart/gallery-4.webp', '/images/products/ecar-lithium-a4-4-seater-golf-cart/gallery-5.webp']
   },
   {
     slug: 'ecar-lithium-magnum-4lr-lifted-golf-cart',
@@ -952,7 +952,7 @@ export const PRODUCTS = [
       brakes: '4-Wheel Hydraulic Disc Brakes',
       warranty: '5-Year Battery / 3-Year Chassis'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/ecar-lithium-magnum-4lr-lifted-golf-cart/main.webp']
   },
   {
     slug: 'tomberlin-e-merge-ss-4-seat-saloon-cart',
@@ -987,7 +987,7 @@ export const PRODUCTS = [
       brakes: '4-Wheel Hydraulic Disc Brakes & Electric Power Steering',
       warranty: '5-Year Factory Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/tomberlin-e-merge-ss-4-seat-saloon-cart/main.webp']
   },
   {
     slug: 'garia-lithium-luxury-golf-cart',
@@ -1022,7 +1022,7 @@ export const PRODUCTS = [
       brakes: 'Dual Circuit Hydraulic Disc Brakes',
       warranty: '3-Year Bespoke Manufacturer Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/garia-lithium-luxury-golf-cart/main.webp']
   },
 
   // ==========================================
@@ -1413,7 +1413,7 @@ export const PRODUCTS = [
       brakes: 'Patented IntelliBrake Auto Park System',
       warranty: '12-Month Vehicle / 3-Year Battery Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/ex-fleet-ezgo-rxv-48v-lithium-2-seat-cart/main.webp']
   }
 ,
   {
@@ -1772,9 +1772,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/clicgear-rovic-swivel-2-0-compact-push-golf-buggy/main.webp', '/images/products/clicgear-rovic-swivel-2-0-compact-push-golf-buggy/gallery-2.webp']
   },
   {
     slug: 'qod-compact-push-golf-buggy',
@@ -1800,9 +1798,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/qod-compact-push-golf-buggy/main.webp', '/images/products/qod-compact-push-golf-buggy/gallery-2.webp']
   },
   {
     slug: 'tara-spirit-plus-spirit-pro-2-seater-golf-cart',
@@ -1828,9 +1824,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/tara-spirit-plus-spirit-pro-2-seater-golf-cart/main.webp']
   },
   {
     slug: 'lvtong-2-seater-fleet-golf-cart',
@@ -1856,9 +1850,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/lvtong-2-seater-fleet-golf-cart/main.webp']
   },
   {
     slug: 'tomberlin-e-merge-revenge-2-and-4-seat-golf-cart',
@@ -1884,9 +1876,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/tomberlin-e-merge-revenge-2-and-4-seat-golf-cart/main.webp']
   },
   {
     slug: 'evolution-d3-2-seater-electric-golf-cart',
@@ -1912,9 +1902,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/evolution-d3-2-seater-electric-golf-cart/main.webp']
   },
   {
     slug: 'shelby-2-seat-electric-golf-cart',
@@ -1940,9 +1928,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/shelby-2-seat-electric-golf-cart/main.webp']
   },
   {
     slug: 'club-car-tempo-onward-lithium-golf-cart-2-2-2-4-seat',
@@ -1968,9 +1954,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/club-car-tempo-onward-lithium-golf-cart-2-2-2-4-seat/main.webp']
   },
   {
     slug: 'yamaha-drive2-golf-cart-2-4-seat',
@@ -1996,9 +1980,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/yamaha-drive2-golf-cart-2-4-seat/main.webp']
   },
   {
     slug: 'tara-roadster-2-2-electric-golf-cart',
@@ -2024,9 +2006,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/tara-roadster-2-2-electric-golf-cart/main.webp']
   },
   {
     slug: 'evolution-d5-4-seater-electric-golf-cart',
@@ -2052,9 +2032,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/evolution-d5-4-seater-electric-golf-cart/main.webp']
   },
   {
     slug: 'tomberlin-e-merge-beachcomber-4-and-6-seat-golf-cart',
@@ -2108,9 +2086,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/tomberlin-e-merge-ghosthawk-4-and-6-seat-golf-cart/main.webp']
   },
   {
     slug: 'ecar-compass-4s-6s-lifted-all-terrain-golf-cart',
@@ -2136,9 +2112,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/ecar-compass-4s-6s-lifted-all-terrain-golf-cart/main.webp']
   },
   {
     slug: 'tomberlin-e-merge-defender-lifted-golf-cart-2-and-4-seat',
@@ -2164,9 +2138,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/tomberlin-e-merge-defender-lifted-golf-cart-2-and-4-seat/main.webp']
   },
   {
     slug: 'ecar-lithium-a2-utility-cart',
@@ -2192,9 +2164,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/ecar-lithium-a2-utility-cart/main.webp']
   },
   {
     slug: 'ecar-lithium-a4-utility-cart',
@@ -2220,9 +2190,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/ecar-lithium-a4-utility-cart/main.webp']
   },
   {
     slug: 'used-yamaha-g29-2-seat-ex-lease-golf-cart',
@@ -2248,9 +2216,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/used-yamaha-g29-2-seat-ex-lease-golf-cart/main.webp']
   },
   {
     slug: 'used-club-car-precedent-2-seat-ex-lease-golf-cart',
@@ -2276,9 +2242,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/used-club-car-precedent-2-seat-ex-lease-golf-cart/main.webp']
   },
   {
     slug: 'used-yamaha-drive-2-seat-ex-lease-golf-cart',
@@ -2304,9 +2268,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/used-yamaha-drive-2-seat-ex-lease-golf-cart/main.webp']
   },
   {
     slug: 'used-e-z-go-rxv-4-seat-ex-fleet-lithium-golf-cart',
@@ -2332,9 +2294,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/used-e-z-go-rxv-4-seat-ex-fleet-lithium-golf-cart/main.webp']
   },
   {
     slug: 'used-club-car-precedent-4-seat-ex-lease-golf-cart',
@@ -2360,9 +2320,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/used-club-car-precedent-4-seat-ex-lease-golf-cart/main.webp']
   },
   {
     slug: 'used-club-car-tempo-2-seat-lithium-ex-lease-golf-cart',
@@ -2388,9 +2346,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/used-club-car-tempo-2-seat-lithium-ex-lease-golf-cart/main.webp']
   },
   {
     slug: 'gmx-gkt110-110cc-dune-buggy',

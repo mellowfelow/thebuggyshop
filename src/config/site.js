@@ -206,19 +206,19 @@ const CATEGORY_TILES = [
     slug: 'parts',
     name: 'Parts & Spares',
     description: 'Golf buggy wheels, tyres, motors, controllers and spare parts for MGI, Clicgear, Motocaddy and ride-on carts.',
-    heroImage: '/images/placeholder.webp'
+    heroImage: '/images/categories/parts.webp'
   },
   {
     slug: 'accessories',
     name: 'Accessories',
     description: 'Golf buggy umbrella holders, drink holders, cart bags, golf balls, rangefinders and practice aids.',
-    heroImage: '/images/placeholder.webp'
+    heroImage: '/images/categories/accessories.webp'
   },
   {
     slug: 'golf-clubs',
     name: 'Golf Clubs',
     description: 'Complete golf club package sets, drivers, iron sets, wedges and putters.',
-    heroImage: '/images/placeholder.webp'
+    heroImage: '/images/categories/golf-clubs.webp'
   }
 ]
 

@@ -225,7 +225,7 @@ export default function HomePage() {
                 
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <span className="text-[10px] font-black uppercase tracking-widest text-[#C5A880] bg-slate-950/90 px-2.5 py-1 rounded-full border border-[#C5A880]/40 inline-block mb-1">
-                    {category.itemCount} Vehicles Available
+                    {category.itemCount} {['parts', 'accessories', 'golf-clubs', 'batteries'].includes(category.slug) ? 'Products' : 'Vehicles'} Available
                   </span>
                   <h3 className="font-extrabold text-lg sm:text-xl font-serif text-white group-hover:text-[#C5A880] transition-colors leading-tight">
                     {category.name}
