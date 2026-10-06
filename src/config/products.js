@@ -1305,7 +1305,7 @@ export const PRODUCTS = [
       chemistry: 'High-Density Lithium-Ion',
       weight: '2.8 kg',
       compatibility: 'All MGI Zip & MGI Ai Series Buggies',
-      warranty: '2-Year Australian Replacement Warranty'
+      warranty: '5-Year Australian Replacement Warranty'
     },
     images: ['/images/products/mgi-24v-380wh-click-and-go-lithium-battery/main.webp']
   },
@@ -2951,7 +2951,7 @@ export const PRODUCTS = [
       brand: 'MGI',
       condition: 'New',
       category: 'batteries',
-      warranty: '1-Year Australian Manufacturer Warranty'
+      warranty: '5-Year Australian Replacement Warranty'
     },
     // TODO: replace placeholder image
     images: ['/images/products/mgi-lithium-24v-250wh-299wh-36-hole-battery/main.webp']
@@ -2977,7 +2977,7 @@ export const PRODUCTS = [
       brand: 'MGI',
       condition: 'New',
       category: 'batteries',
-      warranty: '1-Year Australian Manufacturer Warranty'
+      warranty: '5-Year Australian Replacement Warranty'
     },
     // TODO: replace placeholder image
     images: ['/images/products/mgi-lithium-12v-20ah-299wh-18-hole-battery/main.webp']
@@ -3003,7 +3003,7 @@ export const PRODUCTS = [
       brand: 'MGI',
       condition: 'New',
       category: 'batteries',
-      warranty: '1-Year Australian Manufacturer Warranty'
+      warranty: '5-Year Australian Replacement Warranty'
     },
     // TODO: replace placeholder image
     images: ['/images/products/mgi-lithium-24v-13ah-remote-series-battery/main.webp']
@@ -3029,7 +3029,7 @@ export const PRODUCTS = [
       brand: 'Motocaddy',
       condition: 'New',
       category: 'batteries',
-      warranty: '1-Year Australian Manufacturer Warranty'
+      warranty: '5-Year Australian Replacement Warranty'
     },
     // TODO: replace placeholder image
     images: ['/images/products/motocaddy-m-series-28v-lithium-battery-charger/main.webp']
@@ -3055,7 +3055,7 @@ export const PRODUCTS = [
       brand: 'Generic',
       condition: 'New',
       category: 'batteries',
-      warranty: '1-Year Australian Manufacturer Warranty'
+      warranty: '5-Year Australian Replacement Warranty'
     },
     // TODO: replace placeholder image
     images: ['/images/products/aftermarket-36-hole-lithium-battery-kit/main.webp']
@@ -3081,7 +3081,7 @@ export const PRODUCTS = [
       brand: 'Generic',
       condition: 'New',
       category: 'batteries',
-      warranty: '1-Year Australian Manufacturer Warranty'
+      warranty: '5-Year Australian Replacement Warranty'
     },
     // TODO: replace placeholder image
     images: ['/images/products/aftermarket-12v-18-25ah-lithium-battery-charger/main.webp']
@@ -3107,7 +3107,7 @@ export const PRODUCTS = [
       brand: 'Ultramax',
       condition: 'New',
       category: 'batteries',
-      warranty: '1-Year Australian Manufacturer Warranty'
+      warranty: '5-Year Australian Replacement Warranty'
     },
     // TODO: replace placeholder image
     images: ['/images/products/ultramax-22ah-12v-lithium-battery/main.webp']
@@ -3419,7 +3419,7 @@ export const PRODUCTS = [
       brand: 'Trojan',
       condition: 'New',
       category: 'batteries',
-      warranty: '1-Year Australian Manufacturer Warranty'
+      warranty: '5-Year Australian Replacement Warranty'
     },
     // TODO: replace placeholder image
     images: ['/images/products/trojan-gc2-lithium-battery-48v-24v/main.webp']
@@ -3445,7 +3445,7 @@ export const PRODUCTS = [
       brand: 'Voltrac',
       condition: 'New',
       category: 'batteries',
-      warranty: '1-Year Australian Manufacturer Warranty'
+      warranty: '5-Year Australian Replacement Warranty'
     },
     // TODO: replace placeholder image
     images: ['/images/products/voltrac-flex-lithium-conversion-kit-e-z-go-rxv-club-car-48v/main.webp']

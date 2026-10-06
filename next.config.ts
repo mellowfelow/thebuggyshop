@@ -48,6 +48,7 @@ const nextConfig: NextConfig = {
   // Combined model listings were split into one product per model; keep the old URLs working.
   async redirects() {
     return [
+      { source: '/shop/golf-buggy-repairs/', destination: '/shop/parts/', permanent: true }, // no repair service; parts page is the nearest match
       { source: '/shop/beach-buggies/', destination: '/shop/dune-buggies/', permanent: true }, // same product as a dune buggy
       { source: '/shop/used/', destination: '/shop/used-golf-buggies/', permanent: true }, // one page owns every "used" keyword
       { source: '/shop/batteries/giant-48v-90ah-golf-cart-drop-in-lithium-battery/', destination: '/shop/batteries/giant-48v-100ah-golf-cart-drop-in-lithium-battery/', permanent: true },

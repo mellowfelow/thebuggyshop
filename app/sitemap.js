@@ -43,7 +43,7 @@ export default function sitemap() {
     ...(realImages(p).length ? { images: realImages(p).map(absUrl) } : {}),
   }));
 
-  const brandPages = BRANDS.map((b) => ({ url: `${base}/brands/${b.slug}/`, changeFrequency: 'weekly', priority: 0.75 }));
+  const brandPages = BRANDS.filter((b) => PRODUCTS.some((p) => p.brand === b.slug)).map((b) => ({ url: `${base}/brands/${b.slug}/`, changeFrequency: 'weekly', priority: 0.75 }));
   const locationPages = LOCATIONS.map((l) => ({ url: `${base}/golf-buggies/${l.slug}/`, changeFrequency: 'weekly', priority: 0.75 }));
 
   const blogPages = POSTS.map((post) => ({

@@ -1,6 +1,6 @@
 {
   "generated": "2026-10-06",
-  "note": "url -> primary keyword. Read by scripts/crosscheck.mjs. Update after each keyword export.",
+  "note": "url -> primary keyword. Read by scripts/crosscheck.mjs. Updated for keyword engine v2 (whole site).",
   "pages": [
     {
       "url": "/",
@@ -27,7 +27,6 @@
       "type": "Category",
       "primary": "electric golf buggy for sale",
       "secondary": [
-        "battery golf buggies",
         "motorised golf buggy for sale",
         "estate electric golf buggy",
         "motorised golf buggy",
@@ -196,9 +195,7 @@
       "secondary": [
         "kids atv buggy",
         "buggies for kids",
-        "children's petrol buggy",
-        "utv for kids",
-        "kids electric utv"
+        "children's petrol buggy"
       ]
     },
     {
@@ -206,7 +203,9 @@
       "type": "Category",
       "primary": "golf buggy accessories",
       "secondary": [
-        "golf buggy accessories australia"
+        "golf cart accessories",
+        "golf buggy accessories australia",
+        "golf cart accessories australia"
       ]
     },
     {
@@ -263,6 +262,138 @@
         "golf cart for sale qld",
         "second hand golf carts for sale qld under $5000"
       ]
+    },
+    {
+      "url": "/shop/batteries/",
+      "type": "Category",
+      "primary": "golf buggy battery",
+      "secondary": []
+    },
+    {
+      "url": "/shop/lithium/",
+      "type": "Sub-category",
+      "primary": "golf buggy battery lithium",
+      "secondary": []
+    },
+    {
+      "url": "/shop/cart-sets/",
+      "type": "Sub-category",
+      "primary": "golf cart batteries",
+      "secondary": [
+        "lithium golf cart batteries",
+        "golf cart batteries australia",
+        "48v golf cart battery",
+        "golf cart batteries and charger",
+        "batteries for golf cars"
+      ]
+    },
+    {
+      "url": "/shop/parts/",
+      "type": "Category",
+      "primary": "golf buggy parts",
+      "secondary": [
+        "golf cart parts",
+        "buggy spare parts",
+        "golf buggy parts australia",
+        "golf cart parts australia",
+        "golf car parts"
+      ]
+    },
+    {
+      "url": "/shop/bags/",
+      "type": "Sub-category",
+      "primary": "golf bag",
+      "secondary": [
+        "golf bags for sale",
+        "golf stand bag",
+        "golf bags australia",
+        "golf carry bag",
+        "golf bag affordable"
+      ]
+    },
+    {
+      "url": "/shop/rangefinders-gps/",
+      "type": "Sub-category",
+      "primary": "golf rangefinder",
+      "secondary": [
+        "golf rangefinder australia",
+        "laser golf range finder",
+        "gps golf rangefinder",
+        "golf finder"
+      ]
+    },
+    {
+      "url": "/shop/golf-balls/",
+      "type": "Sub-category",
+      "primary": "golf balls",
+      "secondary": []
+    },
+    {
+      "url": "/shop/golf-clubs/",
+      "type": "Category",
+      "primary": "golf clubs for sale",
+      "secondary": [
+        "golf clubs",
+        "golf clubs mens",
+        "cheapest golf clubs",
+        "golf clubs for sale au",
+        "where to buy golf clubs"
+      ]
+    },
+    {
+      "url": "/shop/complete-sets/",
+      "type": "Sub-category",
+      "primary": "golf club set",
+      "secondary": [
+        "golf sets for sale",
+        "golf club packages",
+        "golf sets australia",
+        "complete golf sets",
+        "golf club sets for sale"
+      ]
+    },
+    {
+      "url": "/shop/woods-and-irons/",
+      "type": "Sub-category",
+      "primary": "golf driver",
+      "secondary": [
+        "golf irons for sale",
+        "golf iron sets for sale",
+        "golf club iron sets for sale",
+        "cheap golf club iron sets"
+      ]
+    },
+    {
+      "url": "/shop/wedges-and-putters/",
+      "type": "Sub-category",
+      "primary": "golf putter",
+      "secondary": [
+        "putter",
+        "golf wedges",
+        "putter buy",
+        "golf wedge set",
+        "cheapest putter"
+      ]
+    },
+    {
+      "url": "/shop/electric/",
+      "type": "Sub-category",
+      "primary": "kids electric utv",
+      "secondary": [
+        "utv for kids"
+      ]
+    },
+    {
+      "url": "/brands/qod-golf/",
+      "type": "Brand",
+      "primary": "qocart",
+      "secondary": []
+    },
+    {
+      "url": "/brands/ez-go/",
+      "type": "Brand",
+      "primary": "ezgo golf cart",
+      "secondary": []
     }
   ]
 }

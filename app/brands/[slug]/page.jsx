@@ -20,10 +20,12 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const brand = getBrandBySlug(slug);
   if (!brand) return { title: 'Brand Not Found | The Buggy Shop Australia' };
+  const noStock = getProductsByBrand(brand.slug).length === 0; // no products: keep the page out of search until stock arrives
 
   return {
     title: { absolute: seoTitle(brand.pageTitle || `${brand.name} Golf Buggies & Carts Australia | The Buggy Shop`) },
     description: seoDesc(brand.metaDescription || brand.blurb || brand.introCopy),
+    ...(noStock ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical: `https://${SITE.domain}/brands/${brand.slug}/`,
     },

@@ -263,7 +263,7 @@ const { BRANDS } = await imp('src/config/brands.js');
   if (fs.existsSync(out)) {
     const decode = (s) => s.replace(/&amp;/g, '&').replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"');
     const strip = (h) => decode(h.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim());
-    const norm = (s) => s.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter(Boolean).map((w) => ({ buggies: 'buggy', buggys: 'buggy', buggie: 'buggy', carts: 'cart', trolleys: 'trolley', accessories: 'accessory', chargers: 'charger', wheels: 'wheel', three: '3', two: '2', four: '4' }[w] || w)).filter((w) => !['for', 'the', 'a', 'and', 'of', 'in', 'to', 's'].includes(w));
+    const norm = (s) => s.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter(Boolean).map((w) => ({ buggies: 'buggy', buggys: 'buggy', buggie: 'buggy', carts: 'cart', trolleys: 'trolley', accessories: 'accessory', chargers: 'charger', wheels: 'wheel', three: '3', two: '2', four: '4' }[w] || w)).map((w) => (w.length > 3 && w.endsWith('s') && !w.endsWith('ss') ? w.slice(0, -1) : w)).filter((w) => !['for', 'the', 'a', 'and', 'of', 'in', 'to', 's'].includes(w));
     const hasAll = (text, phrase, skip = []) => { const T = new Set(norm(text)); return norm(phrase).filter((w) => !skip.includes(w)).every((w) => T.has(w)); };
     const walk = (d, acc = []) => { for (const e of fs.readdirSync(d, { withFileTypes: true })) e.isDirectory() ? walk(path.join(d, e.name), acc) : /\.html$/.test(e.name) && acc.push(path.join(d, e.name)); return acc; };
     // 1. no public title may end in an ellipsis (the title limiter cut it mid-phrase)
