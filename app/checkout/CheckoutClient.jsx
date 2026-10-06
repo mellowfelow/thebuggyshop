@@ -21,9 +21,11 @@ import {
   Lock, 
   CreditCard, Sparkles } from 'lucide-react';
 import { useStore } from '@/src/components/ClientStoreProvider';
-import { SITE, CONTACT, SHOP, REPLY } from '@/src/config/site';
+import { SITE, CONTACT, REPLY } from '@/src/config/site';
 import { waOrderLink } from '@/lib/whatsapp';
 import { generateOrderRef, money } from '@/lib/order';
+import { computeTotals } from '@/lib/bundle';
+import { BundleNote } from '@/src/components/BundleOffer';
 import Image from 'next/image';
 
 const AUSTRALIAN_STATES = [
@@ -53,14 +55,11 @@ export default function CheckoutClient() {
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
-  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   const isCrypto = selectedPayment === 'crypto';
   const isPayIn4 = paymentPlan === 'pay-in-4';
-  const cryptoDiscountAmount = isCrypto ? Math.round(subtotal * (SHOP.cryptoDiscount / 100)) : 0;
-  
-  const isFreeShipping = SHOP.freeShippingThreshold > 0 && subtotal >= SHOP.freeShippingThreshold;
-  const shippingFee = subtotal > 0 ? (isFreeShipping ? 0 : SHOP.shippingFee) : 0;
-  const total = subtotal - cryptoDiscountAmount + shippingFee;
+  // one shared calculation (lib/bundle.js): bundle discount, then crypto rebate, then freight. The server repeats it.
+  const totals = computeTotals(cart, { isCrypto });
+  const { subtotal, bundleDiscount, cryptoDiscount: cryptoDiscountAmount, shipping: shippingFee, total } = totals;
 
   // Pay in 4 Smart Calculation (1st installment today, 3 remaining at month-end)
   const payIn4Installment = Math.round(total / 4);
@@ -130,6 +129,7 @@ export default function CheckoutClient() {
       subtotal,
       shipping: shippingFee,
       discount: cryptoDiscountAmount,
+      bundleDiscount,
       total,
       paymentMethod: paymentMethodLabel,
       paymentMethodId,
@@ -769,12 +769,21 @@ export default function CheckoutClient() {
               ))}
             </div>
 
+            <BundleNote totals={totals} />
+
             {/* Calculations Breakdown */}
             <div className="space-y-2.5 pt-4 border-t border-slate-100 text-xs">
               <div className="flex justify-between text-slate-600">
                 <span>Fleet Subtotal:</span>
                 <span className="font-bold text-slate-900">${subtotal.toLocaleString('en-AU')} AUD</span>
               </div>
+
+              {bundleDiscount > 0 && (
+                <div className="flex justify-between text-emerald-700 font-bold">
+                  <span>Bundle discount ({totals.percent}% off accessories &amp; parts):</span>
+                  <span>-${bundleDiscount.toLocaleString('en-AU')} AUD</span>
+                </div>
+              )}
 
               <div className="flex justify-between text-slate-600">
                 <span className="flex items-center gap-1">

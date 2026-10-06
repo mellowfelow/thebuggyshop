@@ -10,6 +10,10 @@ import {
   enquiryNotificationEmail,
 } from '@/utils/emailTemplates';
 import { CONTACT, FORMS, SITE } from '@/src/config/site';
+import { PRODUCTS } from '@/src/config/products';
+import { computeTotals } from '@/lib/bundle';
+
+const PRODUCT_BY_SLUG = new Map(PRODUCTS.map((p) => [p.slug, p]));
 
 function getRequestBaseUrl() {
   return getSiteBaseUrl();
@@ -55,10 +59,6 @@ export async function POST(request) {
       const {
         customer = {},
         items = [],
-        subtotal = 0,
-        shipping = 0,
-        discount = 0,
-        total = 0,
         paymentMethod = 'Direct Bank Transfer (Osko / Fast EFT)',
         channel = 'email', // 'email' | 'whatsapp'
         orderRef,
@@ -88,6 +88,20 @@ export async function POST(request) {
         );
       }
 
+      // Never trust prices or totals from the browser: rebuild every line from our catalogue and
+      // recompute the bundle discount, crypto rebate, freight and total here.
+      const cleanItems = [];
+      for (const raw of items) {
+        const p = PRODUCT_BY_SLUG.get(String(raw?.slug ?? ''));
+        if (!p) {
+          return NextResponse.json({ success: false, message: 'An item in your cart is no longer available. Please refresh your cart and try again.' }, { status: 400 });
+        }
+        const quantity = Math.min(99, Math.max(1, Math.floor(Number(raw?.quantity)) || 1));
+        cleanItems.push({ slug: p.slug, name: p.name, price: p.price, category: p.category, subcategory: p.subcategory, image: p.images?.[0] || '', quantity });
+      }
+      const isCrypto = /crypto/i.test(String(body.paymentRail || body.paymentMethodId || ''));
+      const totals = computeTotals(cleanItems, { isCrypto });
+
       const orderRecord = {
         id: orderNumber,
         orderNumber,
@@ -100,11 +114,12 @@ export async function POST(request) {
           postcode: clean(customer.postcode, 12),
           notes: clean(customer.notes, 1500),
         },
-        items,
-        subtotal,
-        shipping,
-        discount,
-        total,
+        items: cleanItems,
+        subtotal: totals.subtotal,
+        bundleDiscount: totals.bundleDiscount, // 5% off accessories and parts when the order has a buggy or cart
+        discount: totals.cryptoDiscount, // crypto rebate (kept under the original field name)
+        shipping: totals.shipping,
+        total: totals.total,
         paymentMethod,
         channel,
         status: 'pending',

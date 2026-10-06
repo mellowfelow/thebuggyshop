@@ -1,27 +1,39 @@
 // src/components/CartDrawer.jsx
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { X, Trash2, Plus, Minus, Truck, ArrowRight, ShieldCheck, ShoppingBag } from 'lucide-react';
-import { SITE, CONTACT, SHOP } from '@/src/config/site';
+import { SITE, CONTACT } from '@/src/config/site';
 import Image from 'next/image';
+import { computeTotals } from '@/lib/bundle';
+import { BundleOfferModal, BundleNote, offerSeen, markOfferSeen } from '@/src/components/BundleOffer';
 
 export default function CartDrawer({ isOpen, onClose, cart, updateQuantity, removeFromCart, clearCart }) {
   const router = useRouter();
+  const [offerOpen, setOfferOpen] = useState(false);
 
   if (!isOpen) return null;
 
-  const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const totals = computeTotals(cart);
+  const { subtotal, shipping: shippingFee, total, bundleDiscount } = totals;
   const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const isFreeShipping = SHOP.freeShippingThreshold > 0 && subtotal >= SHOP.freeShippingThreshold;
-  const shippingFee = subtotal > 0 ? (isFreeShipping ? 0 : SHOP.shippingFee) : 0;
-  const total = subtotal + shippingFee;
 
-  const handleProceedToCheckout = () => {
+  const goToCheckout = () => {
+    setOfferOpen(false);
     onClose();
     router.push('/checkout/');
+  };
+
+  // A buggy or cart in the order and no accessory or part yet: show the 5% offer once per session first
+  const handleProceedToCheckout = () => {
+    if (totals.state === 'offer' && !offerSeen()) {
+      markOfferSeen();
+      setOfferOpen(true);
+      return;
+    }
+    goToCheckout();
   };
 
   return (
@@ -84,6 +96,7 @@ export default function CartDrawer({ isOpen, onClose, cart, updateQuantity, remo
               </div>
             ) : (
               <div className="space-y-3">
+                <BundleNote totals={totals} onNavigate={onClose} />
                 {cart.map((item) => (
                   <div
                     key={item.slug}
@@ -159,6 +172,13 @@ export default function CartDrawer({ isOpen, onClose, cart, updateQuantity, remo
                   <span className="font-bold text-slate-900">${subtotal.toLocaleString('en-AU')} AUD</span>
                 </div>
 
+                {bundleDiscount > 0 && (
+                  <div className="flex items-center justify-between text-emerald-700 font-bold">
+                    <span>Bundle discount ({totals.percent}% off accessories &amp; parts):</span>
+                    <span>-${bundleDiscount.toLocaleString('en-AU')} AUD</span>
+                  </div>
+                )}
+
                 <div className="flex items-center justify-between text-slate-600">
                   <span className="flex items-center gap-1.5">
                     <Truck className="w-3.5 h-3.5 text-[#C5A880]" />
@@ -194,6 +214,8 @@ export default function CartDrawer({ isOpen, onClose, cart, updateQuantity, remo
 
         </div>
       </div>
+
+      <BundleOfferModal open={offerOpen} onClose={() => setOfferOpen(false)} onContinue={goToCheckout} totals={totals} />
     </div>
   );
 }

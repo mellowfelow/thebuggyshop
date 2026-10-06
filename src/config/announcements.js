@@ -14,6 +14,7 @@ export const ANNOUNCEMENT_LIMITS = {
 export const DEFAULT_ANNOUNCEMENTS = {
   seconds: 5,
   slides: [
+    { id: 'bundle', text: 'Buy any buggy or cart and take 5% off every accessory and part in your order', href: '/shop/accessories/', active: true },
     { id: 'crypto', text: '10% rebate when you pay with crypto (BTC / USDT) on golf buggy orders', href: '/finance/', active: true },
     { id: 'delivery', text: 'Australia-wide hydraulic tail-lift delivery to your property, club or farm', href: '/shipping/', active: true },
     { id: 'battery', text: '5-year LiFePO4 lithium guarantee on new golf and all-terrain buggies', href: '/shop/batteries/', active: true },

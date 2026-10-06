@@ -13,7 +13,7 @@ import {
   Minus,
   Scale
 } from 'lucide-react';
-import { SHOP } from '@/src/config/site';
+import { SHOP, BUNDLE } from '@/src/config/site';
 import Image from 'next/image';
 import { productImageAlt } from '@/lib/seo';
 
@@ -170,6 +170,12 @@ export default function ProductCard({
               Save ${savings}
             </span>
           </div>
+
+          {BUNDLE.addonCategories.includes(product.category) && (
+            <div className="text-[10px] sm:text-[11px] font-bold text-[#8A7045] bg-[#FAF8F5] border border-[#E8DDC4] rounded-lg px-2.5 py-1 text-center">
+              {BUNDLE.percent}% off when you buy a buggy or cart
+            </div>
+          )}
 
           {/* Action Row: Stepper + Add Button */}
           <div className="flex items-center gap-2 pt-1">

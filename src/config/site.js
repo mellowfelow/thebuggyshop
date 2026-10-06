@@ -57,6 +57,15 @@ export const SHOP = {
   taxRate: 0.10, // 10% Australian GST included in pricing
 }
 
+// Buggy / cart bundle: 5% off accessories and parts when the order also contains a buggy or cart.
+// Rule lives in lib/bundle.js; the server recomputes it on every order, so the browser cannot change it.
+export const BUNDLE = {
+  percent: 5,
+  vehicleCategories: ['electric-golf-buggies', 'push-pull-golf-buggies', 'luxury-golf-carts', 'off-road-buggies', 'kids-buggies', 'used-golf-buggies'],
+  vehicleExcludedSubcategories: ['conversion-kits'], // a conversion kit is not a buggy
+  addonCategories: ['accessories', 'parts'],
+}
+
 export const FORMS = {
   provider: 'smtp',               // 'smtp' (default) | 'resend' (opt-in, verified domain only)
   smtpFrom: 'sales@thebuggyshoppty.com.au', // fallback; SMTP_FROM env var overrides

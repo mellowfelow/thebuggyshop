@@ -185,6 +185,12 @@ export default function AdminOrderDetailPage({ params }) {
                   <span>{money(order.shipping)}</span>
                 </div>
               )}
+              {order.bundleDiscount > 0 && (
+                <div className="flex justify-between text-emerald-400 font-semibold">
+                  <span>Bundle Discount (5% off accessories &amp; parts):</span>
+                  <span>-{money(order.bundleDiscount)}</span>
+                </div>
+              )}
               {order.discount > 0 && (
                 <div className="flex justify-between text-emerald-400 font-semibold">
                   <span>Crypto Settlement Rebate (10%):</span>

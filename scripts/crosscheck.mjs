@@ -223,6 +223,39 @@ const { BRANDS } = await imp('src/config/brands.js');
   } else warn('W12', 'no .next build found - run `npm run build` first for built-page checks (H1 / JSON-LD)');
 }
 
+// ---------------------------------------------------------------- B13 buggy/cart bundle discount
+{
+  const { computeTotals } = await imp('lib/bundle.js');
+  const { PRODUCTS } = await imp('src/config/products.js');
+  const { BUNDLE, SHOP } = await imp('src/config/site.js');
+  const pick = (pred) => PRODUCTS.find(pred);
+  const line = (p, q = 1) => ({ slug: p.slug, price: p.price, quantity: q, category: p.category, subcategory: p.subcategory });
+  const cart = pick((p) => p.category === 'luxury-golf-carts');
+  const acc = pick((p) => p.category === 'accessories');
+  const part = pick((p) => p.category === 'parts');
+  const batt = pick((p) => p.category === 'batteries');
+  const kit = pick((p) => p.subcategory === 'conversion-kits');
+  const pct = BUNDLE.percent / 100;
+  const addons = acc.price + part.price * 2;
+  const checks = [];
+  const withCart = computeTotals([line(cart), line(acc), line(part, 2)]);
+  checks.push(['accessory and part discounted when a cart is in the order', withCart.bundleDiscount === Math.round(addons * pct)]);
+  checks.push(['the buggy or cart itself is never discounted', withCart.addonSubtotal === addons]);
+  checks.push(['no discount for accessories alone', computeTotals([line(acc), line(part)]).bundleDiscount === 0]);
+  checks.push(['batteries are not discounted', computeTotals([line(cart), line(batt)]).bundleDiscount === 0]);
+  checks.push(['a conversion kit does not unlock the discount', computeTotals([line(kit), line(acc)]).bundleDiscount === 0]);
+  const both = computeTotals([line(cart), line(acc)], { isCrypto: true });
+  checks.push(['crypto rebate applies after the bundle discount', both.cryptoDiscount === Math.round((both.subtotal - both.bundleDiscount) * (SHOP.cryptoDiscount / 100))]);
+  checks.push(['total = subtotal - discounts + freight', both.total === both.subtotal - both.bundleDiscount - both.cryptoDiscount + both.shipping]);
+  checks.push(['offer state: buggy or cart only', computeTotals([line(cart)]).state === 'offer']);
+  checks.push(['locked state: accessories only', computeTotals([line(acc)]).state === 'locked']);
+  const bad = checks.filter(([, good]) => !good).map(([n]) => n);
+  bad.length ? fail('B13', 'bundle discount rules broken: ' + bad.join('; ')) : pass('B13', 'bundle discount rules hold (' + checks.length + ' cases)');
+  // the server must recompute totals itself, not trust the browser
+  const api = fs.readFileSync(path.join(ROOT, 'app/api/contact/route.js'), 'utf8');
+  /computeTotals\(/.test(api) && /PRODUCT_BY_SLUG/.test(api) ? pass('B13b', 'order API recomputes prices and totals server-side') : fail('B13b', 'order API must rebuild items from the catalogue and recompute totals');
+}
+
 console.log('\n--- The Buggy Shop crosscheck ---');
 ok.forEach((m) => console.log('  OK   ', m));
 warns.forEach((m) => console.log('  WARN ', m));

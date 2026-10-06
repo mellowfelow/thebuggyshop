@@ -41,3 +41,10 @@ URLs: `/shop/<node-slug>/` for every node, `/shop/<root>/<product-slug>/` for pr
 - Real photos for 128 products (109 placeholder, 19 stock).
 - Review the drafted shipping / returns / privacy / terms wording.
 - Brand pages for 28 product brands that have none.
+
+## Buggy / cart bundle discount
+- 5% off every accessory and part when the order also contains a buggy or cart (config: BUNDLE in src/config/site.js, rule + maths: lib/bundle.js).
+- Buggy/cart = categories electric, push-pull, luxury carts, off-road, kids, used (conversion kits excluded). Accessory/part = categories accessories and parts only (batteries and golf clubs are not included).
+- Accessories or parts alone get nothing. Order of discounts: bundle, then the 10% crypto rebate on what is left, then freight.
+- The order API (app/api/contact/route.js) rebuilds every line from the catalogue and recomputes the totals; browser prices are ignored.
+- UI: announcement bar slide, popup once per session when a buggy/cart is in the cart and the client presses Proceed to checkout (src/components/BundleOffer.jsx), notes in the cart drawer and checkout, a hint on accessory and part cards, breakdown rows in order emails, WhatsApp text and the admin order page.

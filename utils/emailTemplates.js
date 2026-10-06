@@ -196,6 +196,24 @@ function button(href, text) {
 }
 
 /**
+ * Price breakdown rows (subtotal, bundle discount, crypto rebate, freight, total) for order emails
+ */
+function breakdownHtml(order) {
+  const row = (label, value, color = '#334155', bold = false) => `
+    <tr>
+      <td style="padding: 4px 0; font-size: 13px; color: ${color}; ${bold ? 'font-weight: 700;' : ''}">${label}</td>
+      <td align="right" style="padding: 4px 0; font-size: 13px; color: ${color}; ${bold ? 'font-weight: 700;' : ''}">${value}</td>
+    </tr>`;
+  const rows = [];
+  if (order.subtotal) rows.push(row('Subtotal', money(order.subtotal)));
+  if (order.bundleDiscount > 0) rows.push(row('Bundle discount (5% off accessories &amp; parts)', '-' + money(order.bundleDiscount), '#047857', true));
+  if (order.discount > 0) rows.push(row('Crypto settlement rebate', '-' + money(order.discount), '#047857', true));
+  if (order.shipping > 0) rows.push(row('Tail-lift freight', money(order.shipping)));
+  rows.push(row('Total', money(order.total || 0), '#0F172A', true));
+  return `<table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-top: 8px;">${rows.join('')}</table>`;
+}
+
+/**
  * 1. Order Notification Email to Admin Desk (Zoho Mail)
  */
 export function orderNotificationEmail(order, customBaseUrl) {
@@ -256,6 +274,7 @@ export function orderNotificationEmail(order, customBaseUrl) {
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
       ${itemsHtml}
     </table>
+    ${breakdownHtml(order)}
 
     ${divider()}
 
@@ -388,6 +407,7 @@ export function orderConfirmationEmail(order, customBaseUrl) {
     <ul style="padding-left: 20px; margin: 0 0 20px 0;">
       ${itemsList}
     </ul>
+    ${breakdownHtml(order)}
 
     ${divider()}
 

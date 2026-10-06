@@ -148,6 +148,7 @@ export default function ClientStoreProvider({ children }) {
           name: product.name,
           price: product.price,
           category: product.category,
+          subcategory: product.subcategory,
           image: product.images[0],
           quantity,
         },
