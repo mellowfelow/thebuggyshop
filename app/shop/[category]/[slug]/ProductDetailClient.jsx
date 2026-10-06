@@ -94,7 +94,7 @@ export default function ProductDetailClient({ product, relatedProducts }) {
             <div className="p-4 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] space-y-1 text-center shadow-[0_2px_10px_-2px_rgba(14,42,30,0.05)] hover:border-[#C5A265] transition-colors">
               <ShieldCheck className="w-5 h-5 text-[#8A7045] mx-auto" />
               <div className="font-black text-xs text-[#0E2A1E]">5-Yr LiFePO4 Warranty</div>
-              <div className="text-[10px] text-[#4A5D53]">Transferable battery pack</div>
+              <div className="text-[10px] text-[#4A5D53]">Domestic replacement</div>
             </div>
             <div className="p-4 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] space-y-1 text-center shadow-[0_2px_10px_-2px_rgba(14,42,30,0.05)] hover:border-[#C5A265] transition-colors">
               <Truck className="w-5 h-5 text-[#8A7045] mx-auto" />

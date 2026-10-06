@@ -172,7 +172,7 @@ export default function HomePage() {
             <div className="space-y-1">
               <h3 className="font-black text-sm text-slate-900 group-hover:text-[#C5A880] font-serif transition-colors">5-Year Lithium Guarantee</h3>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Full 5-year transferable LiFePO4 lithium battery guarantee tested specifically for the Australian summer climate.
+                Full 5-year domestic replacement LiFePO4 lithium battery warranty tested specifically for the Australian summer climate.
               </p>
             </div>
           </div>

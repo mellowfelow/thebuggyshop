@@ -137,7 +137,7 @@ export const BRAND = {
     { year: '2011', event: 'Launched luxury resort and country club golf buggy fleet solutions with whisper-quiet electric powertrains and custom seating.' },
     { year: '2014', event: 'Surpassed 1,000 verified Australian customer deliveries, beginning our long-standing verified customer satisfaction tracking programme (now 6,300+ reviews strong).' },
     { year: '2017', event: 'Introduced turnkey conditional road-registration lighting and safety packages for QLD Transport, TfNSW, and VicRoads.' },
-    { year: '2021', event: 'Standardised 72V and 48V automotive-grade LiFePO4 lithium batteries with 5-year transferable warranties across all buggy sales.' },
+    { year: '2021', event: 'Standardised 72V and 48V automotive-grade LiFePO4 lithium batteries with 5-year domestic replacement warranties across all buggy sales.' },
     { year: '2024', event: 'Expanded dedicated motorized remote control golf buggy, golf push buggy, and off road buggies for sale with Australia-wide delivery.' }
   ],
   differentiation: [

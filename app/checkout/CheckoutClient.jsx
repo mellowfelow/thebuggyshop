@@ -868,7 +868,7 @@ export default function CheckoutClient() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#C5A880] shrink-0" />
-                <span>5-Year Transferable LiFePO4 Lithium Guarantee</span>
+                <span>5-Year LiFePO4 Domestic Replacement Warranty</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#C5A880] shrink-0" />
