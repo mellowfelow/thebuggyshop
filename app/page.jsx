@@ -385,14 +385,15 @@ export default function HomePage() {
             Frequently Asked Questions
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif">
-            Golf Buggy Sales, Freight &amp; Lithium Tech FAQ
+            Golf Buggy Prices, Delivery &amp; Warranty FAQ
           </h2>
           <p className="text-sm text-slate-600">
-            Answers to common questions regarding conditional road permits, remote gyroscope control, lithium warranties, and nationwide delivery.
+            Straight answers on golf buggy and golf cart prices, delivery, payment, warranty and used buggies.
           </p>
         </div>
 
-        <CollapsibleFaq faqs={HOMEPAGE_FAQS} />
+        <JsonLd schema={{ '@context': 'https://schema.org', '@type': 'WebPage', url: `https://${SITE.domain}/`, speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.faq-answer-speakable'] } }} />
+        <CollapsibleFaq faqs={HOMEPAGE_FAQS} idPrefix="home-faq" />
       </section>
 
       {/* SECTION 8: LATEST BUYING GUIDES & TECH ARTICLES */}

@@ -8,6 +8,8 @@ import JsonLd from '@/src/components/JsonLd';
 import ShopClient from './ShopClient';
 import { ShieldCheck, Truck, Sparkles, Scale, Calculator } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import FaqSection from '@/src/components/FaqSection';
+import { faqsForPage } from '@/src/config/faq';
 
 export const metadata = {
   title: { absolute: seoTitle('Golf Buggy for Sale Australia | Shop All Buggies') },
@@ -112,6 +114,8 @@ export default function ShopPage() {
 
       {/* Interactive Catalog Component with Facet Filtering */}
       <ShopClient initialProducts={PRODUCTS} categories={CATEGORY_TREE} />
+
+      <FaqSection faqs={faqsForPage('/shop/')} url="/shop/" heading="Golf buggy prices: your questions answered" id="shop-faq" />
     </div>
   );
 }

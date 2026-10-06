@@ -14,6 +14,8 @@ import JsonLd from '@/src/components/JsonLd';
 import ShopClient from '../ShopClient';
 import { ArrowRight, ChevronRight, Layers, Sparkles } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import FaqSection from '@/src/components/FaqSection';
+import { faqsForPage } from '@/src/config/faq';
 
 export async function generateStaticParams() {
   return CATEGORY_TREE.filter(isPage).map((c) => ({ category: c.slug }));
@@ -196,6 +198,8 @@ export default async function CategoryPage({ params }) {
         categories={CATEGORY_TREE}
         currentCategory={category}
       />
+
+      <FaqSection faqs={faqsForPage(`/shop/${category.slug}/`)} url={`/shop/${category.slug}/`} heading={`${category.navLabel}: your questions answered`} id="category-faq" />
     </div>
   );
 }

@@ -314,6 +314,33 @@ const { BRANDS } = await imp('src/config/brands.js');
   }
 }
 
+// ---------------------------------------------------------------- B16 FAQ bank
+{
+  const { FAQ_BANK, faqWords } = await imp('src/config/faq.js');
+  const badLen = FAQ_BANK.filter((f) => { const n = faqWords(f.answer); return f.home ? n < 40 || n > 55 : n < 40 || n > 65; }).map((f) => f.id + ':' + faqWords(f.answer));
+  badLen.length ? fail('B16a', 'FAQ answers outside the word limits (home 40-55, others 40-65): ' + badLen.join(', ')) : pass('B16a', 'all ' + FAQ_BANK.length + ' FAQ answers are within the word limits');
+  const noLink = FAQ_BANK.filter((f) => !f.cta?.href || /it depends/i.test(f.answer)).map((f) => f.id);
+  noLink.length ? fail('B16b', 'FAQ answers without a link, or that say "it depends": ' + noLink.join(', ')) : pass('B16b', 'every FAQ answer has a link and a concrete answer');
+  // every page that should carry FAQ schema does, and the schema matches the bank
+  const out = path.join(ROOT, '.next/server/app');
+  if (fs.existsSync(out)) {
+    const urls = [...new Set(FAQ_BANK.flatMap((f) => f.pages))];
+    const miss = [];
+    for (const u of urls) {
+      const file = path.join(out, u === '/' ? 'index.html' : u.replace(/^\/|\/$/g, '') + '.html');
+      if (!fs.existsSync(file)) { miss.push(u + ' (not built)'); continue; }
+      const html = fs.readFileSync(file, 'utf8');
+      const want = FAQ_BANK.filter((f) => f.pages.includes(u) || (u === '/faq/' && f.home)).length;
+      const parsed = [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map((x) => { try { return JSON.parse(x[1]); } catch { return null; } }).filter(Boolean);
+      const flat = parsed.flatMap((j) => (j['@graph'] ? j['@graph'] : [j]));
+      const faq = flat.find((j) => j['@type'] === 'FAQPage');
+      if (!faq) miss.push(u + ' (no FAQPage)'); else if (faq.mainEntity.length < want) miss.push(u + ' (' + faq.mainEntity.length + ' of ' + want + ' questions)');
+      if (!/faq-answer-speakable/.test(html)) miss.push(u + ' (no speakable target)');
+    }
+    miss.length ? fail('B16c', 'FAQ schema problems: ' + miss.join('; ')) : pass('B16c', 'FAQPage schema and speakable markup present on all ' + urls.length + ' FAQ pages');
+  }
+}
+
 console.log('\n--- The Buggy Shop crosscheck ---');
 ok.forEach((m) => console.log('  OK   ', m));
 warns.forEach((m) => console.log('  WARN ', m));

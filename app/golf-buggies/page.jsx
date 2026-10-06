@@ -6,6 +6,8 @@ import { LOCATIONS } from '@/src/config/locations';
 import JsonLd from '@/src/components/JsonLd';
 import { Truck, MapPin, ArrowRight, ShieldCheck } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
+import FaqSection from '@/src/components/FaqSection';
+import { faqsForPage } from '@/src/config/faq';
 
 export const metadata = {
   title: { absolute: seoTitle('Golf Buggies for Sale Near Me | By City & State') },
@@ -101,6 +103,8 @@ export default function GolfBuggiesLocationsIndexPage() {
           </Link>
         ))}
       </div>
+
+      <FaqSection faqs={faqsForPage('/golf-buggies/')} url="/golf-buggies/" heading="Delivery: your questions answered" id="delivery-faq" />
     </div>
   );
 }
