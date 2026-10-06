@@ -2505,9 +2505,9 @@ export const PRODUCTS = [
     images: ['/images/products/trident-1000cc-side-by-side-utv/main.webp']
   },
   {
-    slug: 'can-am-maverick-commander-defender-limited-side-by-side',
+    slug: 'can-am-maverick-side-by-side',
     subcategory: 'side-by-side',
-    name: 'Can-Am Maverick / Commander / Defender Limited Side-by-Side',
+    name: 'Can-Am Maverick Side-by-Side',
     brand: 'can-am',
     brandName: 'Can-Am',
     category: 'off-road-buggies',
@@ -2517,23 +2517,69 @@ export const PRODUCTS = [
     featured: false,
     rating: 0,
     reviewCount: 0,
-    primaryKeyword: 'can-am maverick / commander / defender limited side-by-side',
-    shortDescription: 'Can-Am Maverick / Commander / Defender Limited Side-by-Side available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
-    description: 'The Can-Am Maverick / Commander / Defender Limited Side-by-Side provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    primaryKeyword: 'can-am maverick side-by-side',
+    shortDescription: 'Can-Am Maverick Side-by-Side available at The Buggy Shop Australia with Australian warranty and nationwide delivery.',
+    description: 'The Can-Am Maverick Side-by-Side is available from The Buggy Shop with local Australian support and nationwide tail-lift delivery to your property. Contact our sales desk for current stock, specifications and delivery to your area.',
     specs: {
-      power: 'Manual / Accessory',
       brand: 'Can-Am',
       condition: 'New',
       category: 'off-road-buggies',
       warranty: '1-Year Australian Manufacturer Warranty'
     },
-    // TODO: replace placeholder image
-    images: ['/images/products/can-am-maverick-commander-defender-limited-side-by-side/main.webp', '/images/products/can-am-maverick-commander-defender-limited-side-by-side/gallery-2.webp']
+    images: ['/images/products/can-am-maverick-side-by-side/main.webp']
   },
   {
-    slug: 'cfmoto-uforce-u10-pro-zforce-side-by-side',
+    slug: 'can-am-commander-limited-side-by-side',
     subcategory: 'side-by-side',
-    name: 'CFMOTO UForce U10 Pro / ZFORCE Side-by-Side',
+    name: 'Can-Am Commander Limited Side-by-Side',
+    brand: 'can-am',
+    brandName: 'Can-Am',
+    category: 'off-road-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 24999,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'can-am commander limited side-by-side',
+    shortDescription: 'Can-Am Commander Limited Side-by-Side available at The Buggy Shop Australia with Australian warranty and nationwide delivery.',
+    description: 'The Can-Am Commander Limited Side-by-Side is available from The Buggy Shop with local Australian support and nationwide tail-lift delivery to your property. Contact our sales desk for current stock, specifications and delivery to your area.',
+    specs: {
+      brand: 'Can-Am',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    images: ['/images/products/can-am-commander-limited-side-by-side/main.webp']
+  },
+  {
+    slug: 'can-am-defender-limited-side-by-side',
+    subcategory: 'side-by-side',
+    name: 'Can-Am Defender Limited Side-by-Side',
+    brand: 'can-am',
+    brandName: 'Can-Am',
+    category: 'off-road-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 24999,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'can-am defender limited side-by-side',
+    shortDescription: 'Can-Am Defender Limited Side-by-Side available at The Buggy Shop Australia with Australian warranty and nationwide delivery.',
+    description: 'The Can-Am Defender Limited Side-by-Side is available from The Buggy Shop with local Australian support and nationwide tail-lift delivery to your property. Contact our sales desk for current stock, specifications and delivery to your area.',
+    specs: {
+      brand: 'Can-Am',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    images: ['/images/placeholder.webp']
+  },
+  {
+    slug: 'cfmoto-uforce-u10-pro-side-by-side',
+    subcategory: 'side-by-side',
+    name: 'CFMOTO UForce U10 Pro Side-by-Side',
     brand: 'cfmoto',
     brandName: 'CFMOTO',
     category: 'off-road-buggies',
@@ -2543,23 +2589,45 @@ export const PRODUCTS = [
     featured: false,
     rating: 0,
     reviewCount: 0,
-    primaryKeyword: 'cfmoto uforce u10 pro / zforce side-by-side',
-    shortDescription: 'CFMOTO UForce U10 Pro / ZFORCE Side-by-Side available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
-    description: 'The CFMOTO UForce U10 Pro / ZFORCE Side-by-Side provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    primaryKeyword: 'cfmoto uforce u10 pro side-by-side',
+    shortDescription: 'CFMOTO UForce U10 Pro Side-by-Side available at The Buggy Shop Australia with Australian warranty and nationwide delivery.',
+    description: 'The CFMOTO UForce U10 Pro Side-by-Side is available from The Buggy Shop with local Australian support and nationwide tail-lift delivery to your property. Contact our sales desk for current stock, specifications and delivery to your area.',
     specs: {
-      power: 'Manual / Accessory',
       brand: 'CFMOTO',
       condition: 'New',
       category: 'off-road-buggies',
       warranty: '1-Year Australian Manufacturer Warranty'
     },
-    // TODO: replace placeholder image
-    images: ['/images/products/cfmoto-uforce-u10-pro-zforce-side-by-side/main.webp', '/images/products/cfmoto-uforce-u10-pro-zforce-side-by-side/gallery-2.webp']
+    images: ['/images/products/cfmoto-uforce-u10-pro-side-by-side/main.webp']
   },
   {
-    slug: 'yamaha-wolverine-x2-850-rmax2-1000-side-by-side',
+    slug: 'cfmoto-zforce-side-by-side',
     subcategory: 'side-by-side',
-    name: 'Yamaha Wolverine X2 850 / RMAX2 1000 Side-by-Side',
+    name: 'CFMOTO ZFORCE Side-by-Side',
+    brand: 'cfmoto',
+    brandName: 'CFMOTO',
+    category: 'off-road-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 28990,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'cfmoto zforce side-by-side',
+    shortDescription: 'CFMOTO ZFORCE Side-by-Side available at The Buggy Shop Australia with Australian warranty and nationwide delivery.',
+    description: 'The CFMOTO ZFORCE Side-by-Side is available from The Buggy Shop with local Australian support and nationwide tail-lift delivery to your property. Contact our sales desk for current stock, specifications and delivery to your area.',
+    specs: {
+      brand: 'CFMOTO',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    images: ['/images/products/cfmoto-zforce-side-by-side/main.webp']
+  },
+  {
+    slug: 'yamaha-wolverine-x2-850-1000-side-by-side',
+    subcategory: 'side-by-side',
+    name: 'Yamaha Wolverine X2 850 / 1000 Side-by-Side',
     brand: 'yamaha',
     brandName: 'Yamaha',
     category: 'off-road-buggies',
@@ -2569,18 +2637,40 @@ export const PRODUCTS = [
     featured: false,
     rating: 0,
     reviewCount: 0,
-    primaryKeyword: 'yamaha wolverine x2 850 / rmax2 1000 side-by-side',
-    shortDescription: 'Yamaha Wolverine X2 850 / RMAX2 1000 Side-by-Side available at The Buggy Shop Australia with Australian warranty and fast nationwide shipping.',
-    description: 'The Yamaha Wolverine X2 850 / RMAX2 1000 Side-by-Side provides high quality performance for Australian golfers and property owners. Built with durable materials and supported by local Australian technical service.',
+    primaryKeyword: 'yamaha wolverine x2 850 / 1000 side-by-side',
+    shortDescription: 'Yamaha Wolverine X2 850 / 1000 Side-by-Side available at The Buggy Shop Australia with Australian warranty and nationwide delivery.',
+    description: 'The Yamaha Wolverine X2 850 / 1000 Side-by-Side is available from The Buggy Shop with local Australian support and nationwide tail-lift delivery to your property. Contact our sales desk for current stock, specifications and delivery to your area.',
     specs: {
-      power: 'Manual / Accessory',
       brand: 'Yamaha',
       condition: 'New',
       category: 'off-road-buggies',
       warranty: '1-Year Australian Manufacturer Warranty'
     },
-    // TODO: replace placeholder image
-    images: ['/images/products/yamaha-wolverine-x2-850-rmax2-1000-side-by-side/main.webp', '/images/products/yamaha-wolverine-x2-850-rmax2-1000-side-by-side/gallery-2.webp']
+    images: ['/images/products/yamaha-wolverine-x2-850-1000-side-by-side/main.webp']
+  },
+  {
+    slug: 'yamaha-wolverine-rmax2-1000-side-by-side',
+    subcategory: 'side-by-side',
+    name: 'Yamaha Wolverine RMAX2 1000 Side-by-Side',
+    brand: 'yamaha',
+    brandName: 'Yamaha',
+    category: 'off-road-buggies',
+    categoryPath: '/off-road-buggies/',
+    price: 27000,
+    condition: 'New',
+    featured: false,
+    rating: 0,
+    reviewCount: 0,
+    primaryKeyword: 'yamaha wolverine rmax2 1000 side-by-side',
+    shortDescription: 'Yamaha Wolverine RMAX2 1000 Side-by-Side available at The Buggy Shop Australia with Australian warranty and nationwide delivery.',
+    description: 'The Yamaha Wolverine RMAX2 1000 Side-by-Side is available from The Buggy Shop with local Australian support and nationwide tail-lift delivery to your property. Contact our sales desk for current stock, specifications and delivery to your area.',
+    specs: {
+      brand: 'Yamaha',
+      condition: 'New',
+      category: 'off-road-buggies',
+      warranty: '1-Year Australian Manufacturer Warranty'
+    },
+    images: ['/images/products/yamaha-wolverine-rmax2-1000-side-by-side/main.webp']
   },
   {
     slug: 'yamaha-yxz1000r-ss-xt-r-sport-side-by-side',
