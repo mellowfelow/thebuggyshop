@@ -357,12 +357,14 @@ const { BRANDS } = await imp('src/config/brands.js');
   BRANDS.forEach((b) => valid.add('/brands/' + b.slug + '/'));
   LOCATIONS.forEach((l) => valid.add('/golf-buggies/' + l.slug + '/'));
 
+  const { GUIDES } = await imp('src/config/guides.js');
+  const guideSlugs = new Set(GUIDES.map((g) => g.slug));
   const floors = { 'cheap-golf-buggies-and-carts-australia': 1200, 'best-electric-golf-buggies-australia': 1100, 'aldi-golf-buggy-vs-specialist-buggy': 700, 'electric-golf-carts-australia-guide': 1800, 'electric-buggy-for-adults-australia': 1400 };
   const problems = [];
   const toks = (s) => s.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter(Boolean).map((w) => ({ buggies: 'buggy', carts: 'cart' }[w] || w));
   for (const p of POSTS) {
     const words = p.content.split(/\s+/).length;
-    if (words < (floors[p.slug] || 250)) problems.push(p.slug + ' has ' + words + ' words, below ' + (floors[p.slug] || 250));
+    if (words < (floors[p.slug] || (guideSlugs.has(p.slug) ? 700 : 250))) problems.push(p.slug + ' has ' + words + ' words, below ' + (floors[p.slug] || (guideSlugs.has(p.slug) ? 700 : 250)));
     if (p.titleTag.length > 60) problems.push(p.slug + ' title tag ' + p.titleTag.length);
     if (p.metaDescription.length < 130 || p.metaDescription.length > 155) problems.push(p.slug + ' meta ' + p.metaDescription.length);
     const first = new Set(toks(p.content.split(/\s+/).slice(0, 150).join(' ')));

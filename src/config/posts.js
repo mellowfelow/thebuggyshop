@@ -5,6 +5,7 @@
 // Rules: no invented statistics, awards or named clients. Road-rule text stays general and points to the state authority.
 import { PRODUCTS } from './products.js';
 import { FACTS as F, money as $ } from './faq.js';
+import { GUIDES } from './guides.js';
 
 const P = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p]));
 const need = (slug) => { if (!P[slug]) throw new Error(`posts.js references a missing product: ${slug}`); return P[slug]; };
@@ -579,7 +580,7 @@ New lithium golf buggies and carts from us carry a 5-year LiFePO4 battery guaran
 const wc = (s) => s.trim().split(/\s+/).length;
 const mk = (o) => ({ ...o, content: o.content.trim(), readTime: `${Math.max(3, Math.round(wc(o.content) / 200))} min read`, words: wc(o.content), updated: TODAY });
 
-export const POSTS = [
+const BASE_POSTS = [
   mk({ slug: 'cheap-golf-buggies-and-carts-australia', title: 'Cheap Golf Buggies & Carts in Australia: What Each Budget Buys', titleTag: 'Cheap Golf Buggies in Australia: Prices by Budget',
     excerpt: `Cheap golf buggy options in Australia, from ${$(F.push.min)} push buggies to used buggies and electric models. See what each budget buys and how to save.`,
     metaDescription: `Cheap golf buggy options in Australia, from ${$(F.push.min)} push buggies to used buggies and electric models. See what each budget buys and how to save.`,
@@ -621,5 +622,8 @@ export const POSTS = [
     category: 'Engineering & Tech', date: '2026-01-20', image: '/images/products/giant-48v-100ah-golf-cart-drop-in-lithium-battery/main.webp', imageAlt: 'LiFePO4 golf cart battery: GIANT 48V 100Ah drop-in lithium',
     keyword: 'lithium battery golf buggy', faqIds: ['battery-life', 'charge'], content: lifepo4 }),
 ];
+
+// Keyword engine v2 guides (batteries, buggies, golf gear) live in guides-cart.js and guides-golf.js.
+export const POSTS = [...BASE_POSTS, ...GUIDES];
 
 export const POST_UPDATED_LABEL = when(TODAY);
