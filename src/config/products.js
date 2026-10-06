@@ -3476,9 +3476,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/clicgear-wheel-kit-4-0-8-0/main.webp']
   },
   {
     slug: 'hedgehog-solid-wheels-clicgear-2-0-8-0',
@@ -3504,9 +3502,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/hedgehog-solid-wheels-clicgear-2-0-8-0/main.webp']
   },
   {
     slug: 'mgi-rear-wheels-pair-zip-ai',
@@ -3532,9 +3528,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mgi-rear-wheels-pair-zip-ai/main.webp']
   },
   {
     slug: 'mgi-zip-navigator-at-rear-wheel-single',
@@ -3560,9 +3554,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mgi-zip-navigator-at-rear-wheel-single/main.webp']
   },
   {
     slug: 'mgi-winter-wheel-single',
@@ -3588,9 +3580,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mgi-winter-wheel-single/main.webp']
   },
   {
     slug: 'mgi-quad-5th-anti-tip-wheel',
@@ -3616,9 +3606,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mgi-quad-5th-anti-tip-wheel/main.webp']
   },
   {
     slug: 'stinger-sg-4-front-wheel-assembly-rear-wheel',
@@ -3644,9 +3632,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/stinger-sg-4-front-wheel-assembly-rear-wheel/main.webp']
   },
   {
     slug: 'generic-buggy-front-wheel',
@@ -3672,9 +3658,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/generic-buggy-front-wheel/main.webp']
   },
   {
     slug: 'generic-buggy-rear-wheel-complete',
@@ -3700,9 +3684,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/generic-buggy-rear-wheel-complete/main.webp']
   },
   {
     slug: 'replacement-tyre-rubber-10-inch-universal',
@@ -3728,9 +3710,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/replacement-tyre-rubber-10-inch-universal/main.webp']
   },
   {
     slug: 'pneumatic-wheel-rim-18x8-5-8-4-stud',
@@ -3756,9 +3736,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/pneumatic-wheel-rim-18x8-5-8-4-stud/main.webp']
   },
   {
     slug: 'golf-cart-turf-tyres',
@@ -3784,9 +3762,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-cart-turf-tyres/main.webp']
   },
   {
     slug: 'mgi-zip-navigator-motor-controller',
@@ -3812,9 +3788,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mgi-zip-navigator-motor-controller/main.webp']
   },
   {
     slug: 'mgi-gps-front-wheel-assembly',
@@ -3840,9 +3814,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mgi-gps-front-wheel-assembly/main.webp']
   },
   {
     slug: 'electric-buggy-motor-gearbox-aftermarket',
@@ -3868,9 +3840,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/electric-buggy-motor-gearbox-aftermarket/main.webp']
   },
   {
     slug: 'clicgear-secondary-strut-mgi-bag-rest-spacer',
@@ -3896,9 +3866,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/clicgear-secondary-strut-mgi-bag-rest-spacer/main.webp']
   },
   {
     slug: 'mgi-accessory-station-port-cover-and-trim-parts',
@@ -3924,9 +3892,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mgi-accessory-station-port-cover-and-trim-parts/main.webp']
   },
   {
     slug: 'golf-buggy-umbrella-holder',
