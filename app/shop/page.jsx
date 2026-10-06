@@ -9,6 +9,8 @@ import ShopClient from './ShopClient';
 import { ShieldCheck, Truck, Sparkles, Scale, Calculator } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
 import FaqSection from '@/src/components/FaqSection';
+import RelatedLinks from '@/src/components/RelatedLinks';
+import { relatedFor } from '@/src/config/related';
 import { faqsForPage } from '@/src/config/faq';
 
 export const metadata = {
@@ -116,6 +118,8 @@ export default function ShopPage() {
       <ShopClient initialProducts={PRODUCTS} categories={CATEGORY_TREE} />
 
       <FaqSection faqs={faqsForPage('/shop/')} url="/shop/" heading="Golf buggy prices: your questions answered" id="shop-faq" />
+
+      <RelatedLinks links={relatedFor('/shop/')} />
     </div>
   );
 }

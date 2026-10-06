@@ -242,60 +242,9 @@ const countFor = (slug) =>
 export const CATEGORIES = CATEGORY_TILES.map((c) => ({ ...c, itemCount: countFor(c.slug) }));
 
 
-export const POSTS = [
-  {
-    slug: 'golf-buggy-for-sale-buyers-guide-australia',
-    title: 'Golf Buggy for Sale: The Complete Australian Buyer\'s Guide (New vs Used, Lithium & 4x4)',
-    excerpt: 'Everything you need to know before buying a golf buggy for sale in Australia: motor kilowatt specs, LiFePO4 battery life, conditional road registration, and key accessories.',
-    category: 'Buying Guides',
-    date: '2026-02-28',
-    readTime: '7 min read',
-    image: 'https://images.unsplash.com/photo-1594495894542-a46cc73e081a?auto=format&fit=crop&w=1200&q=80',
-    content: `Looking for a **golf buggy for sale** in Australia? Whether you need a 2-seat luxury golf cart with a seat for weekend rounds at your local country club, an extended 4-seat or 6-seat estate cruiser, or a heavy-duty 4x4 off road buggy for regional property management, choosing the right model makes all the difference.
-
-In this comprehensive Australian buyer's guide, our Queensland workshop technicians break down the most vital considerations when navigating golf buggy sales:
-
-### 1. New vs Used Golf Buggy for Sale: What Offers Better Value?
-- **New Golf Buggies:** Offer the latest 72V high-efficiency brushless AC motors, factory 5-year LiFePO4 lithium warranties, Bluetooth sound systems, and pre-fitted road compliance lights for state conditional registration.
-- **Used Golf Buggy for Sale:** A certified pre-owned cart (such as a re-conditioned Club Car Tempo or Yamaha Drive2) retrofitted with a brand-new lithium battery pack can save you thousands while delivering 10+ years of dependable fairway performance.
-
-### 2. Remote Control Golf Buggy vs Push Golf Buggy
-If you love walking the course without carrying a heavy bag, motorized **remote control golf buggies** (such as the Titan Caddy Pro with gyroscope straight-line tracking) and lightweight **push golf buggies with seat** provide effortless maneuverability across all 18 holes. Look for models compatible with **MGI golf buggy** accessories and umbrella holders.
-
-### 3. Off Road Buggies for Sale vs Standard Golf Carts
-For steep acreage, cattle properties, and hobby farms, standard turf carts lack ground clearance and low-end torque. Our **off road buggies for sale** feature dual 4x4 motors, 280mm+ ground clearance, hydraulic tipping dump trays, and 3,500lb winches.
-
-### 4. Nationwide Delivery
-At The Buggy Shop, every golf buggy for sale is shipped via flat-rate hydraulic tail-lift delivery directly to your property gate, ready to drive away.`
-  },
-  {
-    slug: 'conditional-road-registration-guide-qld-nsw-vic',
-    title: 'Conditional Road Registration for Golf Buggies in QLD, NSW & VIC: The Complete 2026 Guide',
-    excerpt: 'How to legally drive your golf buggy between properties, cross roads, and access golf communities with turnkey state-approved lighting and permits.',
-    category: 'Road Compliance & Law',
-    date: '2026-02-15',
-    readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
-    content: `For Australian golf community residents and acreage owners, having the freedom to drive your golf buggy between holes, cross local roads, or travel between non-contiguous property boundaries is essential.
-
-At The Buggy Shop, all road-capable buggies for sale come pre-fitted with compliant LED turn signals, horn, dual rear-view mirrors, hazard lights, and pre-filled conditional registration paperwork for QLD TMR, Transport for NSW, and VicRoads.`
-  },
-  {
-    slug: 'lifepo4-vs-lead-acid-battery-lifespan-australian-climate',
-    title: 'LiFePO4 Lithium vs Lead-Acid in Australian Extreme Heat: Why Lithium Wins Every Time',
-    excerpt: 'Why traditional lead-acid and AGM batteries fail prematurely in 40°C+ Australian outback heat, and how 72V LiFePO4 chemistry delivers 3,500+ charge cycles.',
-    category: 'Engineering & Tech',
-    date: '2026-01-20',
-    readTime: '5 min read',
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80',
-    content: `Australian summers place extraordinary demands on golf buggy batteries. Ambient temperatures in regional Queensland, inland NSW, and rural Victoria routinely exceed 38°C, which rapidly degrades conventional lead-acid batteries.
-
-### Why LiFePO4 Lithium Is Superior for Golf Buggies:
-1. **3,500+ Deep Discharge Cycles:** Easily lasts 10 to 12+ years of daily golf and estate use.
-2. **70% Weight Reduction:** Saves 130kg to 180kg over lead-acid, preserving turf quality and extending range by 40%.
-3. **Zero Maintenance:** No water topping, zero terminal corrosion, and zero toxic fumes.`
-  }
-]
+// Blog posts live in posts.js (computed from the product data)
+import { POSTS as BLOG_POSTS } from './posts.js';
+export const POSTS = BLOG_POSTS;
 
 export const REVIEW_STATS = {
   averageRating: 4.9,

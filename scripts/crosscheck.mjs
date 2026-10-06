@@ -341,6 +341,46 @@ const { BRANDS } = await imp('src/config/brands.js');
   }
 }
 
+// ---------------------------------------------------------------- B17 blog posts and internal links
+{
+  const { POSTS } = await imp('src/config/posts.js');
+  const { FAQ_BANK } = await imp('src/config/faq.js');
+  const { RELATED } = await imp('src/config/related.js');
+  const { PRODUCTS } = await imp('src/config/products.js');
+  const { CATEGORY_TREE, isPage } = await imp('src/config/categories.js');
+  const { BRANDS } = await imp('src/config/brands.js');
+  const { LOCATIONS } = await imp('src/config/locations.js');
+  const valid = new Set(['/', '/shop/', '/blog/', '/faq/', '/about/', '/contact/', '/finance/', '/brands/', '/golf-buggies/', '/compare/', '/shipping/', '/returns/', '/wholesale/', '/search/', '/checkout/']);
+  CATEGORY_TREE.filter(isPage).forEach((c) => valid.add('/shop/' + c.slug + '/'));
+  PRODUCTS.forEach((p) => valid.add('/shop/' + p.category + '/' + p.slug + '/'));
+  POSTS.forEach((p) => valid.add('/blog/' + p.slug + '/'));
+  BRANDS.forEach((b) => valid.add('/brands/' + b.slug + '/'));
+  LOCATIONS.forEach((l) => valid.add('/golf-buggies/' + l.slug + '/'));
+
+  const floors = { 'cheap-golf-buggies-and-carts-australia': 1200, 'best-electric-golf-buggies-australia': 1100, 'aldi-golf-buggy-vs-specialist-buggy': 700, 'electric-golf-carts-australia-guide': 1800, 'electric-buggy-for-adults-australia': 1400 };
+  const problems = [];
+  const toks = (s) => s.toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter(Boolean).map((w) => ({ buggies: 'buggy', carts: 'cart' }[w] || w));
+  for (const p of POSTS) {
+    const words = p.content.split(/\s+/).length;
+    if (words < (floors[p.slug] || 250)) problems.push(p.slug + ' has ' + words + ' words, below ' + (floors[p.slug] || 250));
+    if (p.titleTag.length > 60) problems.push(p.slug + ' title tag ' + p.titleTag.length);
+    if (p.metaDescription.length < 130 || p.metaDescription.length > 155) problems.push(p.slug + ' meta ' + p.metaDescription.length);
+    const first = new Set(toks(p.content.split(/\s+/).slice(0, 150).join(' ')));
+    if (!toks(p.keyword).every((w) => first.has(w))) problems.push(p.slug + ' lacks "' + p.keyword + '" in the first 150 words');
+    if (/^(cheap|best|electric-golf-carts)/.test(p.slug) && !/\n\| --- \|/.test(p.content)) problems.push(p.slug + ' needs a comparison table');
+    for (const id of p.faqIds || []) if (!FAQ_BANK.some((q) => q.id === id)) problems.push(p.slug + ' uses unknown FAQ ' + id);
+    for (const m of p.content.matchAll(/\]\((\/[^)\s]*)\)/g)) if (!valid.has(m[1])) problems.push(p.slug + ' links to a missing page ' + m[1]);
+    if (!fs.existsSync(path.join(ROOT, 'public' + p.image))) problems.push(p.slug + ' image missing ' + p.image);
+  }
+  problems.length ? fail('B17a', problems.length + ' blog problems: ' + problems.slice(0, 5).join(' | ')) : pass('B17a', 'all ' + POSTS.length + ' blog posts meet length, title, meta, keyword and link rules');
+  const bad = [];
+  for (const [page, links] of Object.entries(RELATED)) { if (!valid.has(page)) bad.push('page ' + page); for (const l of links) if (!valid.has(l.href)) bad.push(page + ' -> ' + l.href); }
+  for (const q of FAQ_BANK) if (!valid.has(q.cta.href)) bad.push('FAQ ' + q.id + ' -> ' + q.cta.href);
+  bad.length ? fail('B17b', 'internal links to missing pages: ' + bad.slice(0, 5).join(' | ')) : pass('B17b', 'all related-page and FAQ links resolve to real pages');
+  const noIndexInSitemap = POSTS.filter((p) => !fs.existsSync(path.join(ROOT, '.next/server/app/blog/' + p.slug + '.html')) && fs.existsSync(path.join(ROOT, '.next/server/app')));
+  noIndexInSitemap.length ? fail('B17c', 'blog posts not built: ' + noIndexInSitemap.map((p) => p.slug).join(', ')) : pass('B17c', 'every blog post is built');
+}
+
 console.log('\n--- The Buggy Shop crosscheck ---');
 ok.forEach((m) => console.log('  OK   ', m));
 warns.forEach((m) => console.log('  WARN ', m));

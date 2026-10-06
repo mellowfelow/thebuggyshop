@@ -27,6 +27,10 @@ const d = {
   range: { min: Math.min(...ranges), max: Math.max(...ranges) },
 };
 
+/** Shared facts so blog posts and FAQs always quote the same numbers. */
+export const FACTS = { ...d, ship: SHIP };
+export { money };
+
 export const FAQ_THEMES = ['Buying & prices', 'Delivery, payment & warranty', 'Speed, range & charging', 'Road rules & licences', 'Off-road buggies'];
 
 export const FAQ_BANK = [

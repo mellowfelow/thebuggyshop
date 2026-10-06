@@ -7,8 +7,8 @@ import Image from 'next/image';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = {
-  title: { absolute: seoTitle('Golf Buggy Insights & Technical Guides | The Buggy Shop Australia') },
-  description: seoDesc('Technical advice, lithium battery maintenance, golf buggy accessories, and road registration guides for Australian golf buggy buyers.'),
+  title: { absolute: seoTitle('Golf Buggy Guides & Buying Advice | Australia') },
+  description: seoDesc('Golf buggy and golf cart buying guides for Australia: prices, electric buggy comparisons, lithium batteries and road registration, from The Buggy Shop.'),
   alternates: {
     canonical: `https://${SITE.domain}/blog/`,
   },
@@ -81,7 +81,7 @@ export default function BlogIndexPage() {
                   width={800}
                   height={450}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
+                  className="w-full h-full object-contain bg-white p-3 group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
               </Link>
               <div className="absolute top-4 left-4 bg-[#0E2A1E] text-[#C5A265] text-[10px] font-black uppercase px-3 py-1 rounded-full border border-[#C5A265] tracking-wider shadow-sm pointer-events-none">

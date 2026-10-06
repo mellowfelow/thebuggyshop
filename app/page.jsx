@@ -430,7 +430,7 @@ export default function HomePage() {
                   width={800}
                   height={450}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-95 ease-out"
+                  className="w-full h-full object-contain bg-white p-3 group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute top-3 left-3 bg-slate-950/90 backdrop-blur-xs text-[#C5A880] text-[10px] font-black uppercase px-2.5 py-1 rounded-full border border-[#C5A880]/40">
                   {post.category}
