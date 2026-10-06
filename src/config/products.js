@@ -1379,7 +1379,7 @@ export const PRODUCTS = [
       brakes: 'Downhill Speed Regulation',
       warranty: '12-Month Australian Warranty'
     },
-    images: ['/images/placeholder.webp']
+    images: ['/images/products/ex-demo-mgi-zip-navigator-at-remote-buggy/main.webp']
   },
   {
     slug: 'ex-fleet-ezgo-rxv-48v-lithium-2-seat-cart',
@@ -3918,9 +3918,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-buggy-umbrella-holder/main.webp']
   },
   {
     slug: 'golf-buggy-drink-holder-gps-and-phone-holder',
@@ -3946,9 +3944,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-buggy-drink-holder-gps-and-phone-holder/main.webp']
   },
   {
     slug: 'golf-buggy-scorecard-accessory-console',
@@ -3974,9 +3970,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-buggy-scorecard-accessory-console/main.webp']
   },
   {
     slug: 'golf-buggy-add-on-seat-footboard',
@@ -4002,9 +3996,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-buggy-add-on-seat-footboard/main.webp']
   },
   {
     slug: 'golf-buggy-travel-storage-cover-and-wheel-bags',
@@ -4030,9 +4022,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-buggy-travel-storage-cover-and-wheel-bags/main.webp']
   },
   {
     slug: 'winter-all-terrain-wheel-upgrade-kit',
@@ -4058,9 +4048,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/winter-all-terrain-wheel-upgrade-kit/main.webp']
   },
   {
     slug: 'sand-wet-weather-tyres-and-bag-rain-cover',
@@ -4086,9 +4074,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/sand-wet-weather-tyres-and-bag-rain-cover/main.webp']
   },
   {
     slug: 'golf-cart-bag-14-way-divider',
@@ -4114,9 +4100,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-cart-bag-14-way-divider/main.webp']
   },
   {
     slug: 'big-max-dri-lite-premium-cart-bag',
@@ -4142,9 +4126,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/big-max-dri-lite-premium-cart-bag/main.webp']
   },
   {
     slug: 'lightweight-golf-stand-bag',
@@ -4170,9 +4152,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/lightweight-golf-stand-bag/main.webp']
   },
   {
     slug: 'soft-golf-travel-bag',
@@ -4198,9 +4178,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/soft-golf-travel-bag/main.webp']
   },
   {
     slug: 'titleist-pro-v1-golf-balls-dozen',
@@ -4226,9 +4204,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/titleist-pro-v1-golf-balls-dozen/main.webp']
   },
   {
     slug: 'taylormade-tp5-golf-balls-dozen',
@@ -4254,9 +4230,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/taylormade-tp5-golf-balls-dozen/main.webp']
   },
   {
     slug: 'srixon-z-star-golf-balls-dozen',
@@ -4282,9 +4256,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/srixon-z-star-golf-balls-dozen/main.webp']
   },
   {
     slug: 'precision-pro-nx7-golf-rangefinder',
@@ -4310,9 +4282,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/precision-pro-nx7-golf-rangefinder/main.webp']
   },
   {
     slug: 'bushnell-tour-v5-golf-rangefinder',
@@ -4338,9 +4308,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/bushnell-tour-v5-golf-rangefinder/main.webp']
   },
   {
     slug: 'bushnell-pro-x3-golf-rangefinder',
@@ -4366,9 +4334,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/bushnell-pro-x3-golf-rangefinder/main.webp']
   },
   {
     slug: 'shot-scope-g5-gps-golf-watch',
@@ -4394,9 +4360,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/shot-scope-g5-gps-golf-watch/main.webp']
   },
   {
     slug: 'garmin-approach-s12-gps-golf-watch',
@@ -4422,9 +4386,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/garmin-approach-s12-gps-golf-watch/main.webp']
   },
   {
     slug: 'garmin-approach-s42-gps-golf-watch',
@@ -4450,9 +4412,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/garmin-approach-s42-gps-golf-watch/main.webp']
   },
   {
     slug: 'golf-putting-mat',
@@ -4478,9 +4438,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-putting-mat/main.webp']
   },
   {
     slug: 'golf-practice-hitting-net',
@@ -4506,9 +4464,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-practice-hitting-net/main.webp']
   },
   {
     slug: 'golf-hitting-mat',
@@ -4534,9 +4490,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-hitting-mat/main.webp']
   },
   {
     slug: 'junior-golf-club-set',
@@ -4562,9 +4516,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/junior-golf-club-set/main.webp']
   },
   {
     slug: 'beginner-complete-golf-club-set-12-piece',
@@ -4590,9 +4542,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/beginner-complete-golf-club-set-12-piece/main.webp']
   },
   {
     slug: 'ladies-complete-golf-club-set',
@@ -4618,9 +4568,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/ladies-complete-golf-club-set/main.webp']
   },
   {
     slug: 'golf-driver',
@@ -4646,9 +4594,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-driver/main.webp']
   },
   {
     slug: 'mid-range-golf-iron-set',
@@ -4674,9 +4620,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/mid-range-golf-iron-set/main.webp']
   },
   {
     slug: 'golf-wedge',
@@ -4702,9 +4646,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-wedge/main.webp']
   },
   {
     slug: 'golf-putter',
@@ -4730,9 +4672,7 @@ export const PRODUCTS = [
       warranty: '1-Year Australian Manufacturer Warranty'
     },
     // TODO: replace placeholder image
-    images: [
-      '/images/placeholder.webp'
-    ]
+    images: ['/images/products/golf-putter/main.webp']
   }
 ];
 
