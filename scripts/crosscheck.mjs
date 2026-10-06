@@ -293,6 +293,27 @@ const { BRANDS } = await imp('src/config/brands.js');
   }
 }
 
+// ---------------------------------------------------------------- B15 structure: collections, merges, thin pages
+{
+  const { PRODUCTS, getProductsByCategory } = await imp('src/config/products.js');
+  const { CATEGORY_TREE, isPage } = await imp('src/config/categories.js');
+  const trolleys = getProductsByCategory('golf-trolleys').length;
+  const expected = PRODUCTS.filter((p) => p.category === 'push-pull-golf-buggies' || p.subcategory === 'walk-behind').length;
+  trolleys > 0 && trolleys === expected ? pass('B15a', '/shop/golf-trolleys/ lists all ' + trolleys + ' push and walk-behind buggies') : fail('B15a', 'golf-trolleys should list ' + expected + ' products, lists ' + trolleys);
+  const cfg = fs.readFileSync(path.join(ROOT, 'next.config.ts'), 'utf8');
+  /\/shop\/beach-buggies\//.test(cfg) && /\/shop\/used\//.test(cfg) ? pass('B15b', 'beach-buggies and used pages redirect to their merged page') : fail('B15b', 'missing redirects for /shop/beach-buggies/ and /shop/used/');
+  const empties = CATEGORY_TREE.filter((c) => isPage(c) && getProductsByCategory(c.slug).length === 0).map((c) => c.slug);
+  const body = path.join(ROOT, '.next/server/app/sitemap.xml.body');
+  if (fs.existsSync(body)) {
+    const sm = fs.readFileSync(body, 'utf8');
+    const leaked = empties.filter((s) => sm.includes('/shop/' + s + '/'));
+    const folded = CATEGORY_TREE.filter((c) => c.redirectTo).map((c) => c.slug).filter((s) => sm.includes('/shop/' + s + '/'));
+    leaked.length || folded.length ? fail('B15c', 'sitemap lists empty or folded pages: ' + [...leaked, ...folded].join(', ')) : pass('B15c', 'sitemap has no empty or folded category pages (' + (empties.length ? empties.join(', ') + ' held back' : 'none empty') + ')');
+    const notNoindex = empties.filter((s) => { const h = path.join(ROOT, '.next/server/app/shop/' + s + '.html'); return fs.existsSync(h) && !/noindex/.test(fs.readFileSync(h, 'utf8')); });
+    notNoindex.length ? fail('B15d', 'empty category pages are indexable: ' + notNoindex.join(', ')) : pass('B15d', 'empty category pages are set to noindex');
+  }
+}
+
 console.log('\n--- The Buggy Shop crosscheck ---');
 ok.forEach((m) => console.log('  OK   ', m));
 warns.forEach((m) => console.log('  WARN ', m));

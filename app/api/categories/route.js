@@ -5,7 +5,7 @@ import { PRODUCTS } from '@/src/config/products';
 import { inNode } from '@/lib/catalog';
 
 export async function GET() {
-  const categories = CATEGORY_TREE.map((c) => ({
+  const categories = CATEGORY_TREE.filter((c) => !c.redirectTo).map((c) => ({
     ...c,
     url: `https://${SITE.domain}/shop/${c.slug}/`,
     productCount: PRODUCTS.filter((p) => inNode(p, c.slug)).length,

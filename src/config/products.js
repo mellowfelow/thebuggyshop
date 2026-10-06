@@ -4693,6 +4693,8 @@ export function getProductsByCategory(categorySlug) {
   return PRODUCTS.filter((p) => {
     if (p.category === clean || p.subcategory === clean) return true;
     if (clean === 'used-golf-buggies') return p.condition === 'Used' || p.condition === 'Ex-Demo';
+    // "golf trolley" is the same product as a push buggy or a walk-behind electric buggy
+    if (clean === 'golf-trolleys') return p.category === 'push-pull-golf-buggies' || p.subcategory === 'walk-behind';
     return false;
   });
 }

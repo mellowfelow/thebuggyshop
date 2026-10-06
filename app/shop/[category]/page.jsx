@@ -6,7 +6,8 @@ import { SITE } from '@/src/config/site';
 import { 
   CATEGORY_TREE, 
   getCategoryBySlug, 
-  getSubcategories 
+  getSubcategories,
+  isPage
 } from '@/src/config/categories';
 import { PRODUCTS, getProductsByCategory } from '@/src/config/products';
 import JsonLd from '@/src/components/JsonLd';
@@ -15,7 +16,7 @@ import { ArrowRight, ChevronRight, Layers, Sparkles } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
 export async function generateStaticParams() {
-  return CATEGORY_TREE.filter((c) => c.id !== 'brands').map((c) => ({ category: c.slug }));
+  return CATEGORY_TREE.filter(isPage).map((c) => ({ category: c.slug }));
 }
 
 export async function generateMetadata({ params }) {
@@ -23,7 +24,11 @@ export async function generateMetadata({ params }) {
   const category = getCategoryBySlug(catSlug);
   if (!category) return { title: 'Category Not Found | The Buggy Shop' };
 
+  // A category with nothing to sell is a thin page: keep it out of Google until it has stock
+  const empty = getProductsByCategory(category.slug).length === 0;
+
   return {
+    ...(empty ? { robots: { index: false, follow: true } } : {}),
     title: { absolute: seoTitle(category.pageTitle || `${category.navLabel} | The Buggy Shop`) },
     description: seoDesc(category.metaDescription || category.introCopy),
     alternates: {
@@ -45,10 +50,11 @@ export default async function CategoryPage({ params }) {
   const category = getCategoryBySlug(catSlug);
   if (!category) notFound();
   if (category.id === 'brands') permanentRedirect('/brands/');
+  if (category.redirectTo) permanentRedirect(`/shop/${category.redirectTo}/`);
   // Old/alternate paths (id or spec path) resolve to the one canonical /shop/<slug>/
   if (category.slug !== catSlug) permanentRedirect(`/shop/${category.slug}/`);
 
-  const subcategories = getSubcategories(category.slug);
+  const subcategories = getSubcategories(category.slug).filter((s) => getProductsByCategory(s.slug).length > 0);
   const categoryProducts = getProductsByCategory(category.slug);
 
   // Build parent breadcrumb if nested

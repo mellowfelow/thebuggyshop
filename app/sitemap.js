@@ -2,8 +2,8 @@
 // One sitemap is well within protocol limits (a few hundred URLs); no index needed yet.
 // lastModified is only emitted where we have a real date (blog posts) - never a fake "now".
 import { SITE, POSTS } from '@/src/config/site';
-import { CATEGORY_TREE } from '@/src/config/categories';
-import { PRODUCTS } from '@/src/config/products';
+import { CATEGORY_TREE, isPage } from '@/src/config/categories';
+import { PRODUCTS, getProductsByCategory } from '@/src/config/products';
 import { BRANDS } from '@/src/config/brands';
 import { LOCATIONS } from '@/src/config/locations';
 import { absUrl, realImages } from '@/lib/seo';
@@ -30,7 +30,7 @@ export default function sitemap() {
   ].map(([p, priority, changeFrequency]) => ({ url: `${base}${p}`, changeFrequency, priority }));
 
   // Category + subcategory nodes. The "brands" node is a navigation entry served by /brands/.
-  const categoryPages = CATEGORY_TREE.filter((c) => c.id !== 'brands').map((c) => ({
+  const categoryPages = CATEGORY_TREE.filter((c) => isPage(c) && getProductsByCategory(c.slug).length > 0).map((c) => ({
     url: `${base}/shop/${c.slug}/`,
     changeFrequency: 'weekly',
     priority: c.parent ? 0.7 : 0.8,

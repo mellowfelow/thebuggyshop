@@ -48,6 +48,8 @@ const nextConfig: NextConfig = {
   // Combined model listings were split into one product per model; keep the old URLs working.
   async redirects() {
     return [
+      { source: '/shop/beach-buggies/', destination: '/shop/dune-buggies/', permanent: true }, // same product as a dune buggy
+      { source: '/shop/used/', destination: '/shop/used-golf-buggies/', permanent: true }, // one page owns every "used" keyword
       { source: '/shop/batteries/giant-48v-90ah-golf-cart-drop-in-lithium-battery/', destination: '/shop/batteries/giant-48v-100ah-golf-cart-drop-in-lithium-battery/', permanent: true },
       { source: '/shop/off-road-buggies/can-am-maverick-commander-defender-limited-side-by-side/', destination: '/shop/off-road-buggies/can-am-maverick-side-by-side/', permanent: true },
       { source: '/shop/off-road-buggies/cfmoto-uforce-u10-pro-zforce-side-by-side/', destination: '/shop/off-road-buggies/cfmoto-uforce-u10-pro-side-by-side/', permanent: true },

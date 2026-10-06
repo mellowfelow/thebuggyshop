@@ -219,6 +219,7 @@ export const CATEGORY_TREE = [
     id: 'carts-used',
     parent: 'luxury-golf-carts',
     slug: 'used',
+    redirectTo: 'used-golf-buggies', // one page owns every "used" keyword
     path: '/golf-carts/used/',
     navLabel: 'Used & Ex-Fleet',
     pageTitle: 'Used & Ex-Fleet Golf Carts for Sale Australia',
@@ -274,21 +275,6 @@ export const CATEGORY_TREE = [
     introCopy: 'A side by side buggy, or UTV, is a four-wheel off-road vehicle with two seats side by side, used for farm work and recreation. It carries more and goes further than a quad. Two to four seats side by side, cargo bed, roll-over protection. Recreational models through to 1000cc performance UTVs.',
     heroImage: '/images/categories/off-road-buggies.webp',
     facets: ['power', 'seats', 'price', 'condition', 'brand']
-  },
-  // 2.19 - Beach Buggies
-  {
-    id: 'beach-buggies',
-    parent: 'off-road-buggies',
-    slug: 'beach-buggies',
-    path: '/off-road-buggies/beach-buggies/',
-    navLabel: 'Beach Buggies',
-    pageTitle: 'Beach Buggies for Sale Australia',
-    metaDescription: 'Classic VW-based beach buggies and modern beach-ready off-road buggies for sale in Australia. Registered cars, body kits and all-terrain models. The Buggy Shop.',
-    h1: 'Beach Buggies',
-    targetKeywords: ['beach buggy', 'beach buggies for sale australia'],
-    introCopy: 'From registered classic VW-based beach buggies to modern all-terrain buggies with sand tyres. Complete road-registered cars, restoration projects and fibreglass body kits.',
-    heroImage: '/images/categories/off-road-buggies.webp',
-    facets: ['power', 'price', 'condition', 'brand']
   },
   // 2.20 - Farm & Utility Buggies
   {
@@ -713,7 +699,12 @@ export function getCategoryBySlug(slug) {
 }
 
 export function getSubcategories(parentId) {
-  return CATEGORY_TREE.filter(c => c.parent === parentId);
+  return CATEGORY_TREE.filter(c => c.parent === parentId && !c.redirectTo);
+}
+
+/** A node that has its own page (the brands node and folded nodes do not). */
+export function isPage(node) {
+  return !!node && node.id !== 'brands' && !node.redirectTo;
 }
 
 export function getRootCategories() {

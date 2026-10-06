@@ -212,7 +212,7 @@ export async function POST(request) {
       }
 
       if (name === 'list_categories') {
-        const cats = CATEGORY_TREE.map((c) => ({
+        const cats = CATEGORY_TREE.filter((c) => !c.redirectTo).map((c) => ({
           slug: c.slug,
           name: c.navLabel,
           pageTitle: c.pageTitle,
