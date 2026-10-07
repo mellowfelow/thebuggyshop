@@ -19,7 +19,7 @@ export const SITE = {
   lightGold: '#FAF8F5',           // Soft Champagne Tint
   darkText: '#0B111E',            // Rich Midnight Charcoal
   bgLight: '#F8F9FA',             // Crisp Porcelain Linen
-  gscVerification: 'pending',
+  gscVerification: 'KlWeGpNv9-wuMIEFgIVANpj8RPV-5Hzlxg6Skc87Uj8',
   bingVerification: 'pending',
   indexNowKey: 'buggy-shop-au-indexnow-key',
   cartKey: 'mm-cart',
