@@ -69,18 +69,17 @@ const vercelConfig = {
 fs.writeFileSync(path.join(rootDir, 'vercel.json'), JSON.stringify(vercelConfig, null, 2));
 
 // 2. public/robots.txt  (single source: app/robots.js was removed - it conflicted with this file)
-const PRIVATE_PATHS = ['/admin/', '/order/', '/thank-you-contact/', '/thank-you-order/', '/thank-you-wholesale/'];
+const PRIVATE_PATHS = ['/admin/', '/order/', '/checkout/', '/thank-you-contact/', '/thank-you-order/', '/thank-you-wholesale/'];
 const AI_BOTS = ['GPTBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-Web', 'PerplexityBot', 'Applebot', 'Amazonbot', 'Bytespider', 'CCBot', 'Google-Extended', 'Meta-ExternalAgent', 'cohere-ai'];
 const disallowBlock = PRIVATE_PATHS.map((p) => `Disallow: ${p}`).join('\n');
 const robotsTxt = `User-agent: *
-Content-Signal: search=yes, ai-input=yes, ai-train=no
-Allow: /
 ${disallowBlock}
-
-# AI crawlers - welcome on product and content pages (private paths stay blocked)
-${AI_BOTS.map((b) => `User-agent: ${b}\nAllow: /\n${disallowBlock}`).join('\n\n')}
-
 Sitemap: ${baseUrl}/sitemap.xml
+
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+# AI crawlers — welcome to index product and content pages
+${AI_BOTS.map((b) => `User-agent: ${b}\nAllow: /`).join('\n\n')}
 
 # Agent-readable resources
 # llms.txt: ${baseUrl}/llms.txt

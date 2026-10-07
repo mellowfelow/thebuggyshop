@@ -1,110 +1,50 @@
 User-agent: *
-Content-Signal: search=yes, ai-input=yes, ai-train=no
-Allow: /
 Disallow: /admin/
 Disallow: /order/
+Disallow: /checkout/
 Disallow: /thank-you-contact/
 Disallow: /thank-you-order/
 Disallow: /thank-you-wholesale/
+Sitemap: https://thebuggyshoppty.com.au/sitemap.xml
 
-# AI crawlers - welcome on product and content pages (private paths stay blocked)
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+# AI crawlers — welcome to index product and content pages
 User-agent: GPTBot
 Allow: /
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
 
 User-agent: ChatGPT-User
 Allow: /
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
 
 User-agent: ClaudeBot
 Allow: /
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
 
 User-agent: Claude-Web
 Allow: /
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
 
 User-agent: PerplexityBot
 Allow: /
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
 
 User-agent: Applebot
 Allow: /
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
 
 User-agent: Amazonbot
 Allow: /
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
 
 User-agent: Bytespider
 Allow: /
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
 
 User-agent: CCBot
 Allow: /
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
 
 User-agent: Google-Extended
 Allow: /
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
 
 User-agent: Meta-ExternalAgent
 Allow: /
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
 
 User-agent: cohere-ai
 Allow: /
-Disallow: /admin/
-Disallow: /order/
-Disallow: /thank-you-contact/
-Disallow: /thank-you-order/
-Disallow: /thank-you-wholesale/
-
-Sitemap: https://thebuggyshoppty.com.au/sitemap.xml
 
 # Agent-readable resources
 # llms.txt: https://thebuggyshoppty.com.au/llms.txt
