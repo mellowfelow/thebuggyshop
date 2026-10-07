@@ -12,7 +12,7 @@
   },
   "transport": {
     "type": "streamable-http",
-    "endpoint": "https://thebuggyshoppty.com.au/api/mcp"
+    "endpoint": "https://thebuggyshoppty.com.au/api/mcp/"
   },
   "capabilities": {
     "tools": [

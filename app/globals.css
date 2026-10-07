@@ -80,3 +80,6 @@
 @media (prefers-reduced-motion: reduce) {
   .tbs-sheet, .tbs-fade { animation: none; }
 }
+
+/* Below-the-fold sections: skip layout and paint until near the viewport (smaller initial render cost). */
+.cv-auto { content-visibility: auto; contain-intrinsic-size: auto 720px; }

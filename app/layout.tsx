@@ -38,6 +38,10 @@ export const metadata: Metadata = {
     address: true,
     telephone: true,
   },
+  verification: {
+    ...(SITE.gscVerification && SITE.gscVerification !== 'pending' ? { google: SITE.gscVerification } : {}),
+    ...(SITE.bingVerification && SITE.bingVerification !== 'pending' ? { other: { 'msvalidate.01': SITE.bingVerification } } : {}),
+  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },

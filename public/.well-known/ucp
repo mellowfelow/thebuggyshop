@@ -16,7 +16,7 @@
     {
       "id": "mcp-server",
       "type": "mcp",
-      "url": "https://thebuggyshoppty.com.au/api/mcp",
+      "url": "https://thebuggyshoppty.com.au/api/mcp/",
       "description": "MCP Streamable HTTP server for AI agents"
     },
     {
@@ -42,7 +42,7 @@
     "mcp"
   ],
   "endpoints": {
-    "mcp": "https://thebuggyshoppty.com.au/api/mcp",
+    "mcp": "https://thebuggyshoppty.com.au/api/mcp/",
     "catalog": "https://thebuggyshoppty.com.au/shop/",
     "contact": "https://thebuggyshoppty.com.au/contact/",
     "agent_skills": "https://thebuggyshoppty.com.au/.well-known/agent-skills/index.json",

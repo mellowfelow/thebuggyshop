@@ -91,7 +91,7 @@ export default function CompareClient({ allProducts = [] }) {
           label: '10% Instant Crypto Price', 
           render: (p) => (
             <div className="flex items-center gap-1.5">
-              <span className="text-xs font-black text-[#8A7045] font-serif bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200">
+              <span className="text-xs font-black text-[#7A5C22] font-serif bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200">
                 ${Math.round(p.price * 0.9).toLocaleString('en-AU')} AUD
               </span>
               <span className="text-[10px] text-emerald-700 font-bold">Save ${(p.price * 0.1).toFixed(0)}</span>
@@ -225,7 +225,7 @@ export default function CompareClient({ allProducts = [] }) {
       <div className="p-5 bg-white rounded-3xl border border-slate-200 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
           <div className="flex items-center gap-2">
-            <SlidersHorizontal className="w-4 h-4 text-[#8A7045]" />
+            <SlidersHorizontal className="w-4 h-4 text-[#7A5C22]" />
             <h2 className="text-xs font-black text-slate-900 uppercase tracking-wider">
               Select Items to Compare ({activeProducts.length} Selected · Max 4):
             </h2>
@@ -391,7 +391,7 @@ export default function CompareClient({ allProducts = [] }) {
                       colSpan={activeProducts.length + 1} 
                       className="py-3 px-4 sm:px-6 font-black text-xs uppercase tracking-wider text-slate-900 flex items-center gap-2"
                     >
-                      <GroupIcon className="w-4 h-4 text-[#8A7045]" />
+                      <GroupIcon className="w-4 h-4 text-[#7A5C22]" />
                       <span>{group.groupTitle}</span>
                     </td>
                   </tr>

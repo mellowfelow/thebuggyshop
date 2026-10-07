@@ -65,7 +65,7 @@ export default function CollapsibleFaq({ faqs = HOMEPAGE_FAQS, idPrefix = 'faq',
             >
               <p className={index === 0 ? 'faq-answer-speakable' : undefined}>{faq.answer}</p>
               {faq.cta && (
-                <Link href={faq.cta.href} className="mt-3 inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#8A7045] hover:text-slate-900">
+                <Link href={faq.cta.href} className="mt-3 inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#7A5C22] hover:text-slate-900">
                   <span>{faq.cta.label}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>

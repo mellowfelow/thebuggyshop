@@ -95,18 +95,18 @@ export default function BlogIndexPage() {
               <div className="space-y-2.5">
                 <div className="flex items-center gap-3 text-[11px] text-[#4A5D53]">
                   <span className="flex items-center gap-1 font-bold">
-                    <Calendar className="w-3.5 h-3.5 text-[#8A7045]" />
+                    <Calendar className="w-3.5 h-3.5 text-[#7A5C22]" />
                     {post.date}
                   </span>
                   <span>•</span>
                   <span className="flex items-center gap-1 font-bold">
-                    <Clock className="w-3.5 h-3.5 text-[#8A7045]" />
+                    <Clock className="w-3.5 h-3.5 text-[#7A5C22]" />
                     {post.readTime}
                   </span>
                 </div>
 
                 <Link href={`/blog/${post.slug}/`}>
-                  <h2 className="font-black text-lg text-[#0E2A1E] group-hover:text-[#8A7045] transition-colors leading-snug line-clamp-2 font-serif">
+                  <h2 className="font-black text-lg text-[#0E2A1E] group-hover:text-[#7A5C22] transition-colors leading-snug line-clamp-2 font-serif">
                     {post.title}
                   </h2>
                 </Link>
@@ -118,7 +118,7 @@ export default function BlogIndexPage() {
 
               <Link
                 href={`/blog/${post.slug}/`}
-                className="text-xs font-black text-[#0E2A1E] group-hover:text-[#8A7045] transition-colors inline-flex items-center justify-between pt-3 border-t border-[#D5DFD9] group-hover:border-[#E5D2A8] uppercase tracking-wider"
+                className="text-xs font-black text-[#0E2A1E] group-hover:text-[#7A5C22] transition-colors inline-flex items-center justify-between pt-3 border-t border-[#D5DFD9] group-hover:border-[#E5D2A8] uppercase tracking-wider"
               >
                 <span>Read Full Technical Guide</span>
                 <span className="w-6 h-6 rounded-full bg-[#EBF1ED] group-hover:bg-[#C5A265] group-hover:text-[#0E2A1E] flex items-center justify-center transition-all font-black">→</span>

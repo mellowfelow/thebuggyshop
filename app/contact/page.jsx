@@ -86,7 +86,7 @@ export default function ContactPage() {
                 <MessageCircle className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-extrabold text-sm text-[#0E2A1E] font-serif">Instant WhatsApp Priority</h3>
+                <h2 className="font-extrabold text-sm text-[#0E2A1E] font-serif">Instant WhatsApp Priority</h2>
                 <span className="text-xs text-[#3A5244] font-medium">Average response under 15 minutes</span>
               </div>
             </div>
@@ -109,13 +109,13 @@ export default function ContactPage() {
 
           {/* Contact Details Card */}
           <div className="p-6 sm:p-7 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-3xl border border-[#D5DFD9] shadow-md space-y-5">
-            <h3 className="font-black text-xs uppercase tracking-widest text-[#8A7045]">
+            <h2 className="font-black text-xs uppercase tracking-widest text-[#7A5C22]">
               Direct Contact Channels
-            </h3>
+            </h2>
 
             <div className="space-y-4 text-xs text-[#0E2A1E]">
               <div className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-[#8A7045] shrink-0 mt-0.5" />
+                <Phone className="w-4 h-4 text-[#7A5C22] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-[#0E2A1E]">Telephone Desk:</strong>
                   <a href={`tel:${CONTACT.phone.replace(/\s+/g, '')}`} className="text-[#0E2A1E] hover:underline font-bold">
@@ -125,7 +125,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-[#8A7045] shrink-0 mt-0.5" />
+                <Mail className="w-4 h-4 text-[#7A5C22] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-[#0E2A1E]">Email Sales & Quotes:</strong>
                   <span className="text-[#4A5D53]">
@@ -135,7 +135,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-[#8A7045] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#7A5C22] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-[#0E2A1E]">Queensland Headquarters:</strong>
                   <span className="text-[#4A5D53]">{CONTACT.hq}, Australia</span>
@@ -143,7 +143,7 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-3">
-                <Clock className="w-4 h-4 text-[#8A7045] shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-[#7A5C22] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-[#0E2A1E]">Trading Hours:</strong>
                   <span className="text-[#4A5D53]">Mon - Fri: 7:30am - 5:30pm AEST</span>

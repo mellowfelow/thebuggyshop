@@ -23,7 +23,7 @@ import HomeClientProducts from './HomeClientProducts';
 import ReviewsCarousel from '@/src/components/ReviewsCarousel';
 import HeroSlider from '@/src/components/HeroSlider';
 import CollapsibleFaq from '@/src/components/CollapsibleFaq';
-import { HOMEPAGE_FAQS } from '@/src/config/faq';
+import { HOMEPAGE_FAQS, FACTS as F, money } from '@/src/config/faq';
 import Image from 'next/image';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
@@ -147,9 +147,9 @@ export default function HomePage() {
               <Truck className="w-5 h-5 text-[#C5A880]" />
             </div>
             <div className="space-y-1">
-              <h3 className="font-black text-sm text-slate-900 group-hover:text-[#C5A880] font-serif transition-colors">Hydraulic Tail-Lift Freight</h3>
+              <p className="font-black text-sm text-slate-900 group-hover:text-[#7A5C22] font-serif transition-colors">Hydraulic Tail-Lift Freight</p>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Direct to your door, golf club pro-shop, or rural property across regional QLD, NSW, VIC, SA &amp; WA.
+                Flat-rate {money(F.ship)} delivery by hydraulic tail-lift truck to your property gate, club or depot, Australia-wide.
               </p>
             </div>
           </div>
@@ -159,9 +159,9 @@ export default function HomePage() {
               <FileCheck2 className="w-5 h-5 text-[#C5A880]" />
             </div>
             <div className="space-y-1">
-              <h3 className="font-black text-sm text-slate-900 group-hover:text-[#C5A880] font-serif transition-colors">Turnkey Road Rego</h3>
+              <p className="font-black text-sm text-slate-900 group-hover:text-[#7A5C22] font-serif transition-colors">Road Compliance Support</p>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Pre-fitted state-certified LED lighting, safety mirrors, amber beacon, and pre-filled QLD/NSW/VIC registration forms.
+                Conditional registration compliance support for QLD, NSW and VIC on models marked road compliant.
               </p>
             </div>
           </div>
@@ -171,9 +171,9 @@ export default function HomePage() {
               <BatteryCharging className="w-5 h-5 text-[#C5A880]" />
             </div>
             <div className="space-y-1">
-              <h3 className="font-black text-sm text-slate-900 group-hover:text-[#C5A880] font-serif transition-colors">5-Year Lithium Guarantee</h3>
+              <p className="font-black text-sm text-slate-900 group-hover:text-[#7A5C22] font-serif transition-colors">5-Year Lithium Guarantee</p>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Full 5-year domestic replacement LiFePO4 lithium battery warranty tested specifically for the Australian summer climate.
+                Lithium battery packs carry a 5-year Australian replacement warranty, listed on each product page.
               </p>
             </div>
           </div>
@@ -183,9 +183,9 @@ export default function HomePage() {
               <Wrench className="w-5 h-5 text-[#C5A880]" />
             </div>
             <div className="space-y-1">
-              <h3 className="font-black text-sm text-slate-900 group-hover:text-[#C5A880] font-serif transition-colors">48-Hour Parts Dispatch</h3>
+              <p className="font-black text-sm text-slate-900 group-hover:text-[#7A5C22] font-serif transition-colors">Parts &amp; Accessories</p>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Comprehensive golf buggy accessories, tyres, windscreens, chargers, and controllers dispatched from Queensland.
+                Wheels, tyres, motors, controllers, chargers and accessories for MGI, Clicgear and more, dispatched from Queensland. Accessories are 5% off with a buggy.
               </p>
             </div>
           </div>
@@ -193,9 +193,9 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 3: CATEGORY EXPLORER */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+      <section className="cv-auto max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-black uppercase tracking-wider text-[#C5A880] bg-[#FAF8F5] px-3 py-1 rounded-full border border-[#C5A880]/30 inline-block">
+          <span className="text-xs font-black uppercase tracking-wider text-[#7A5C22] bg-[#FAF8F5] px-3 py-1 rounded-full border border-[#C5A880]/30 inline-block">
             Complete Australian Buggy Inventory
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif">
@@ -251,11 +251,11 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 4: FEATURED VEHICLES GRID (4/4 LAYOUT) */}
-      <section className="bg-slate-100/70 py-16 sm:py-20 border-y border-slate-200">
+      <section className="cv-auto bg-slate-100/70 py-16 sm:py-20 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div className="space-y-1">
-              <span className="text-xs font-black uppercase tracking-wider text-[#C5A880] bg-white px-3 py-1 rounded-full border border-slate-200 inline-block shadow-2xs">
+              <span className="text-xs font-black uppercase tracking-wider text-[#7A5C22] bg-white px-3 py-1 rounded-full border border-slate-200 inline-block shadow-2xs">
                 In Stock &amp; Ready for Immediate Dispatch
               </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif">
@@ -277,7 +277,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 5: TURNKEY STATE ROAD REGISTRATION SHOWCASE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+      <section className="cv-auto max-w-7xl mx-auto px-4 sm:px-8">
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-5">
@@ -353,11 +353,11 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 6: AUSTRALIAN CUSTOMER REVIEWS (REAL VERIFIED EXPERIENCES) */}
-      <section className="bg-slate-100/70 py-16 sm:py-20 border-y border-slate-200 overflow-hidden">
+      <section className="cv-auto bg-slate-100/70 py-16 sm:py-20 border-y border-slate-200 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div className="space-y-1">
-              <span className="text-xs font-black uppercase tracking-wider text-[#C5A880] bg-white px-3 py-1 rounded-full border border-slate-200 inline-block shadow-2xs">
+              <span className="text-xs font-black uppercase tracking-wider text-[#7A5C22] bg-white px-3 py-1 rounded-full border border-slate-200 inline-block shadow-2xs">
                 Real Australian Golfers &amp; Property Owners
               </span>
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif">
@@ -380,9 +380,9 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 7: INTERACTIVE COLLAPSIBLE FAQ ACCORDION */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8" id="faq">
+      <section className="cv-auto max-w-7xl mx-auto px-4 sm:px-8 space-y-8" id="faq">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-black uppercase tracking-wider text-[#C5A880] bg-[#FAF8F5] px-3 py-1 rounded-full border border-[#C5A880]/30 inline-block">
+          <span className="text-xs font-black uppercase tracking-wider text-[#7A5C22] bg-[#FAF8F5] px-3 py-1 rounded-full border border-[#C5A880]/30 inline-block">
             Frequently Asked Questions
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight font-serif">
@@ -398,10 +398,10 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 8: LATEST BUYING GUIDES & TECH ARTICLES */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+      <section className="cv-auto max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 pb-4">
           <div className="space-y-1">
-            <span className="text-xs font-black uppercase tracking-wider text-[#C5A880] bg-[#FAF8F5] px-3 py-1 rounded-full border border-[#C5A880]/30 inline-block">
+            <span className="text-xs font-black uppercase tracking-wider text-[#7A5C22] bg-[#FAF8F5] px-3 py-1 rounded-full border border-[#C5A880]/30 inline-block">
               Australian Golf Buggy Guides
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-serif">
@@ -469,7 +469,7 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 9: INSTANT DISPATCH & WHATSAPP SETTLEMENT CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+      <section className="cv-auto max-w-7xl mx-auto px-4 sm:px-8">
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-14 border border-slate-800 shadow-2xl text-center space-y-6 relative overflow-hidden">
           <div className="max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-black uppercase tracking-widest text-[#C5A880] block bg-slate-950 px-4 py-1.5 rounded-full border border-slate-800 inline-block shadow-sm">

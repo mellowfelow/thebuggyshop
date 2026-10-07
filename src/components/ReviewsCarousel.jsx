@@ -51,6 +51,9 @@ export default function ReviewsCarousel() {
   }, [searchQuery, selectedState, selectedRating]);
 
   const safeIndex = currentIndex >= filteredReviews.length ? 0 : currentIndex;
+  // Only the visible slide and its neighbours are rendered (wrap-around included); the rest are same-width placeholders so the
+  // translateX maths is unchanged. This keeps ~40 review cards out of the page markup.
+  const isNearSlide = (idx) => { const n = filteredReviews.length; const d = Math.abs(idx - safeIndex); return d <= 1 || d >= n - 1; };
 
   const handleStateFilterChange = (st) => {
     setSelectedState(st);
@@ -118,7 +121,7 @@ export default function ReviewsCarousel() {
 
   return (
     <section 
-      className="py-16 bg-slate-50 border-y border-slate-200 relative overflow-hidden" 
+      className="cv-auto py-16 bg-slate-50 border-y border-slate-200 relative overflow-hidden" 
       id="customer-reviews-section"
       aria-label="Verified Customer Reviews"
     >
@@ -370,6 +373,9 @@ export default function ReviewsCarousel() {
               }}
             >
               {filteredReviews.map((rev, idx) => (
+                !isNearSlide(idx) ? (
+                  <div key={`carousel-rev-${rev.id}-${idx}`} className="w-full shrink-0 px-1" aria-hidden="true" />
+                ) : (
                 <div
                   key={`carousel-rev-${rev.id}-${idx}`}
                   className="w-full shrink-0 px-1"
@@ -397,7 +403,7 @@ export default function ReviewsCarousel() {
                         </div>
 
                         <div className="flex items-center gap-2">
-                          <span className="inline-flex items-center gap-1 text-xs font-bold text-[#00B67A] bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                          <span className="inline-flex items-center gap-1 text-xs font-bold text-[#047857] bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
                             <CheckCircle2 className="w-3.5 h-3.5" />
                             <span>Verified Buyer</span>
                           </span>
@@ -421,9 +427,9 @@ export default function ReviewsCarousel() {
                           {rev.name.split(' ').map(n => n[0]).join('').substring(0, 2).replace(/[^A-Z]/gi, '') || 'AU'}
                         </div>
                         <div>
-                          <h4 className="font-extrabold text-sm sm:text-base text-slate-900 font-serif">
+                          <p className="font-extrabold text-sm sm:text-base text-slate-900 font-serif">
                             {rev.name}
-                          </h4>
+                          </p>
                           <div className="flex items-center gap-1.5 text-xs text-slate-500">
                             <MapPin className="w-3.5 h-3.5 text-[#C5A880]" />
                             <span>{rev.location}</span>
@@ -442,6 +448,7 @@ export default function ReviewsCarousel() {
                     </div>
                   </div>
                 </div>
+                )
               ))}
             </div>
           )}
@@ -577,7 +584,7 @@ export default function ReviewsCarousel() {
                               {rev.location}
                             </span>
                           </div>
-                          <span className="text-[10px] font-bold text-[#00B67A] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+                          <span className="text-[10px] font-bold text-[#047857] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
                             ✓ Verified Buyer
                           </span>
                         </div>

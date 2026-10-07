@@ -143,9 +143,9 @@ export default async function BrandPage({ params }) {
             {brand.partsCategories?.length > 0 && (
               <Link
                 href={`/shop/parts/?q=${encodeURIComponent(brand.name)}`}
-                className="py-3 px-5 rounded-2xl bg-[#C5A265]/15 text-[#8A7045] font-black text-xs uppercase tracking-wider hover:bg-[#C5A265]/25 transition-colors border border-[#C5A265]/40 shadow-xs flex items-center gap-2"
+                className="py-3 px-5 rounded-2xl bg-[#C5A265]/15 text-[#7A5C22] font-black text-xs uppercase tracking-wider hover:bg-[#C5A265]/25 transition-colors border border-[#C5A265]/40 shadow-xs flex items-center gap-2"
               >
-                <Wrench className="w-4 h-4 text-[#8A7045]" />
+                <Wrench className="w-4 h-4 text-[#7A5C22]" />
                 <span>{brand.name} Spare Parts</span>
               </Link>
             )}
@@ -176,14 +176,14 @@ export default async function BrandPage({ params }) {
           <div className="p-5 bg-white rounded-3xl border border-[#D5DFD9] space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#E8ECE9] pb-3">
               <div className="flex items-center gap-2">
-                <Wrench className="w-4 h-4 text-[#8A7045]" />
+                <Wrench className="w-4 h-4 text-[#7A5C22]" />
                 <h2 className="text-sm font-black text-[#0E2A1E] uppercase tracking-wider">
                   {brand.name} Genuine Spare Parts & Upgrades
                 </h2>
               </div>
               <Link 
                 href={`/shop/parts/?q=${encodeURIComponent(brand.name)}`}
-                className="text-xs font-bold text-[#8A7045] hover:underline"
+                className="text-xs font-bold text-[#7A5C22] hover:underline"
               >
                 Browse all spare parts & accessories →
               </Link>

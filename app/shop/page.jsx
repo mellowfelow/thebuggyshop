@@ -105,7 +105,7 @@ export default function ShopPage() {
               href={cat.slug === 'brands' ? '/brands/' : `/shop/${cat.slug}/`}
               className="p-3.5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 hover:border-[#C5A880] text-center group transition-all shadow-xs"
             >
-              <div className="text-xs font-black text-slate-900 group-hover:text-[#8A7045] transition-colors">
+              <div className="text-xs font-black text-slate-900 group-hover:text-[#7A5C22] transition-colors">
                 {cat.navLabel}
               </div>
               <div className="text-[10px] text-slate-500 mt-1 line-clamp-1">

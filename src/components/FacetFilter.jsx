@@ -30,7 +30,7 @@ function OptionChip({ facetKey, option, checked, onToggle }) {
     >
       {checked && <Check className="w-3.5 h-3.5 shrink-0" strokeWidth={3} />}
       <span>{option.label}</span>
-      <span className={`text-[11px] tabular-nums ${checked ? 'text-[#C5A880]' : 'text-slate-400'}`}>{option.count}</span>
+      <span className={`text-[11px] tabular-nums ${checked ? 'text-[#7A5C22]' : 'text-slate-500'}`}>{option.count}</span>
     </button>
   );
 }
@@ -63,7 +63,7 @@ function OptionRow({ facetKey, option, checked, onToggle }) {
           {checked && <Check className="w-3 h-3" strokeWidth={3.5} />}
         </span>
         <span className={`flex-1 min-w-0 truncate ${checked ? 'font-bold text-slate-900' : 'font-medium text-slate-700'}`}>{option.label}</span>
-        <span className="text-[11px] font-bold text-slate-400 tabular-nums">{option.count}</span>
+        <span className="text-[11px] font-bold text-slate-500 tabular-nums">{option.count}</span>
       </label>
     </li>
   );
@@ -102,7 +102,7 @@ function FacetSection({ facet, selected, onToggle, onClear, defaultOpen }) {
           <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
         </button>
         {selected.length > 0 && (
-          <button type="button" onClick={onClear} className="ml-2 px-2 py-1 text-[11px] font-bold text-[#8A7045] hover:underline cursor-pointer">
+          <button type="button" onClick={onClear} className="ml-2 px-2 py-1 text-[11px] font-bold text-[#7A5C22] hover:underline cursor-pointer">
             Clear
           </button>
         )}
@@ -133,7 +133,7 @@ function FacetSection({ facet, selected, onToggle, onClear, defaultOpen }) {
               </ul>
               {visible.length === 0 && <p className="text-xs text-slate-500 px-1">No match.</p>}
               {!term.trim() && matches.length > LIST_LIMIT && (
-                <button type="button" onClick={() => setShowAll((s) => !s)} className="mt-1 px-2 py-1 text-[12px] font-bold text-[#8A7045] hover:underline cursor-pointer">
+                <button type="button" onClick={() => setShowAll((s) => !s)} className="mt-1 px-2 py-1 text-[12px] font-bold text-[#7A5C22] hover:underline cursor-pointer">
                   {showAll ? 'Show fewer' : `Show ${hidden} more`}
                 </button>
               )}
@@ -271,7 +271,7 @@ export default function FacetFilter({
               <div className="mx-auto w-10 h-1 rounded-full bg-slate-300" aria-hidden="true" />
               <div className="flex items-center justify-between pt-3 pb-3 border-b border-slate-200">
                 <div className="flex items-center gap-2 text-base font-black text-slate-900">
-                  <SlidersHorizontal className="w-4 h-4 text-[#8A7045]" />
+                  <SlidersHorizontal className="w-4 h-4 text-[#7A5C22]" />
                   <span>Filters</span>
                   {activeCount > 0 && (
                     <span className="inline-flex items-center justify-center min-w-5 h-5 px-1.5 rounded-full bg-[#C5A880] text-slate-950 text-[10px] font-black">{activeCount}</span>

@@ -6,3 +6,5 @@ coverage/
 .env*
 !.env.example
 *.tsbuildinfo
+# markdown twins for agents, regenerated on every build (scripts/gen-markdown.mjs)
+public/md/

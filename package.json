@@ -11,8 +11,8 @@
     "start": "next start",
     "lint": "eslint .",
     "crosscheck": "node scripts/crosscheck.mjs",
-    "gen": "node scripts/gen-agent-files.mjs",
-    "prebuild": "node scripts/gen-agent-files.mjs",
+    "gen": "node scripts/gen-agent-files.mjs && node scripts/gen-lastmod.mjs && node scripts/gen-markdown.mjs",
+    "prebuild": "node scripts/gen-agent-files.mjs && node scripts/gen-lastmod.mjs && node scripts/gen-markdown.mjs",
     "clean": "next clean"
   },
   "dependencies": {
@@ -37,5 +37,11 @@
     "eslint-config-next": "16.0.8",
     "tailwindcss": "4.1.11",
     "typescript": "5.9.3"
-  }
+  },
+  "browserslist": [
+    "chrome >= 111",
+    "edge >= 111",
+    "firefox >= 111",
+    "safari >= 16.4"
+  ]
 }

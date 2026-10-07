@@ -128,8 +128,10 @@ export default function AnnouncementBar() {
                   aria-selected={i === index}
                   aria-label={`Show announcement ${i + 1}`}
                   onClick={() => go(i)}
-                  className={`h-1.5 rounded-full transition-all cursor-pointer ${i === index ? 'w-4 bg-[#C5A880]' : 'w-1.5 bg-[#C5A880]/35 hover:bg-[#C5A880]/70'}`}
-                />
+                  className="group flex h-6 min-w-6 cursor-pointer items-center justify-center"
+                >
+                  <span className={`block h-1.5 rounded-full transition-all ${i === index ? 'w-4 bg-[#C5A880]' : 'w-1.5 bg-[#C5A880]/50 group-hover:bg-[#C5A880]/80'}`} />
+                </button>
               ))}
             </div>
             <button

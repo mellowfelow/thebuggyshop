@@ -21,8 +21,8 @@ function Inline({ text }) {
     if (link) {
       const [, label, href] = link;
       return /^https?:\/\//i.test(href)
-        ? <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#8A7045] underline underline-offset-2 hover:text-[#0E2A1E]">{label}</a>
-        : <Link key={i} href={href} className="font-semibold text-[#8A7045] underline underline-offset-2 hover:text-[#0E2A1E]">{label}</Link>;
+        ? <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#7A5C22] underline underline-offset-2 hover:text-[#0E2A1E]">{label}</a>
+        : <Link key={i} href={href} className="font-semibold text-[#7A5C22] underline underline-offset-2 hover:text-[#0E2A1E]">{label}</Link>;
     }
     return <React.Fragment key={i}>{part}</React.Fragment>;
   });
@@ -53,10 +53,10 @@ export default function ArticleBody({ content }) {
       const head = cells(rows[0]);
       const body = rows.slice(2).map(cells);
       out.push(
-        <div key={k++} className="overflow-x-auto rounded-2xl border border-[#D5DFD9] bg-white shadow-xs">
+        <div key={k++} role="region" aria-label={`Comparison table ${k} (scrolls sideways on small screens)`} tabIndex={0} className="overflow-x-auto rounded-2xl border border-[#D5DFD9] bg-white shadow-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7A5C22]">
           <table className="w-full min-w-[34rem] text-left text-xs sm:text-sm">
             <thead className="bg-[#0E2A1E] text-[#E7D3AE]">
-              <tr>{head.map((h, j) => <th key={j} scope="col" className="px-3 py-2.5 font-black uppercase tracking-wider text-[10px] sm:text-xs whitespace-nowrap"><Inline text={h} /></th>)}</tr>
+              <tr>{head.map((h, j) => <th key={j} scope="col" className="px-3 py-2.5 font-black uppercase tracking-wider text-[10px] sm:text-xs whitespace-nowrap">{h.trim() ? <Inline text={h} /> : <span className="sr-only">Feature</span>}</th>)}</tr>
             </thead>
             <tbody>
               {body.map((r, ri) => (

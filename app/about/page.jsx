@@ -220,7 +220,7 @@ export default function AboutPage() {
       {/* SECTION 2: HISTORICAL MILESTONES TIMELINE */}
       <div className="space-y-8 pt-8 border-t border-[#D5DFD9]">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-black uppercase tracking-wider text-[#8A7045] bg-[#EBF1ED] px-3 py-1 rounded-full border border-[#D5DFD9] inline-block">
+          <span className="text-xs font-black uppercase tracking-wider text-[#7A5C22] bg-[#EBF1ED] px-3 py-1 rounded-full border border-[#D5DFD9] inline-block">
             Continuous Innovation
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-[#0E2A1E] tracking-tight font-serif">
@@ -231,7 +231,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {BRAND.milestones.map((m, idx) => (
             <div key={`about-milestone-${m.year}-${idx}`} className="p-6 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] shadow-[0_4px_16px_-4px_rgba(14,42,30,0.06)] hover:border-[#C5A265] hover:shadow-md transition-all space-y-3">
-              <span className="text-2xl font-black text-[#8A7045] block font-serif">
+              <span className="text-2xl font-black text-[#7A5C22] block font-serif">
                 {m.year}
               </span>
               <p className="text-xs text-[#3A5244] leading-relaxed font-medium">
@@ -245,7 +245,7 @@ export default function AboutPage() {
       {/* SECTION 3: 8 PILLARS OF DIFFERENTIATION */}
       <div className="space-y-8 pt-8 border-t border-[#D5DFD9]">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-black uppercase tracking-wider text-[#8A7045] bg-[#EBF1ED] px-3 py-1 rounded-full border border-[#D5DFD9] inline-block">
+          <span className="text-xs font-black uppercase tracking-wider text-[#7A5C22] bg-[#EBF1ED] px-3 py-1 rounded-full border border-[#D5DFD9] inline-block">
             The Buggy Shop Standard
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-[#0E2A1E] tracking-tight font-serif">

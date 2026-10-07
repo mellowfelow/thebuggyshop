@@ -4,6 +4,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   devIndicators: false,
+  experimental: {
+    // Inline the (small) stylesheet into the HTML: removes the render-blocking CSS request from every page.
+    inlineCss: true,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },

@@ -79,7 +79,7 @@ export default function BrandsIndexPage() {
         return (
           <section key={group.kind} className="space-y-5" aria-labelledby={`grp-${group.kind}`}>
             <h2 id={`grp-${group.kind}`} className="text-xl sm:text-2xl font-black text-[#0E2A1E] font-serif">
-              {group.title} <span className="text-sm font-bold text-[#6B7E74]">({list.length})</span>
+              {group.title} <span className="text-sm font-bold text-[#52635A]">({list.length})</span>
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {list.map((brand) => {
@@ -95,9 +95,9 @@ export default function BrandsIndexPage() {
                         {brand.country ? (
                           <span className="text-xs font-black text-[#C5A265] uppercase tracking-wider bg-[#0E2A1E] px-3 py-1 rounded-xl">{brand.country}</span>
                         ) : <span />}
-                        <span className="text-[11px] font-bold text-[#6B7E74] text-right">{count} {count === 1 ? 'product' : 'products'}</span>
+                        <span className="text-[11px] font-bold text-[#52635A] text-right">{count} {count === 1 ? 'product' : 'products'}</span>
                       </div>
-                      <h3 className="text-xl font-black text-[#0E2A1E] font-serif group-hover:text-[#8A7045] transition-colors">{brand.name}</h3>
+                      <h3 className="text-xl font-black text-[#0E2A1E] font-serif group-hover:text-[#7A5C22] transition-colors">{brand.name}</h3>
                       <p className="text-xs text-[#4A5D53] line-clamp-3 leading-relaxed">{brand.introCopy}</p>
                       {brand.popularModels?.length > 0 && (
                         <div className="flex flex-wrap gap-1.5 pt-1">
@@ -107,7 +107,7 @@ export default function BrandsIndexPage() {
                         </div>
                       )}
                     </div>
-                    <span className="mt-5 pt-4 border-t border-[#E8ECE9] text-xs font-black uppercase tracking-wider text-[#0E2A1E] group-hover:text-[#8A7045] flex items-center justify-between">
+                    <span className="mt-5 pt-4 border-t border-[#E8ECE9] text-xs font-black uppercase tracking-wider text-[#0E2A1E] group-hover:text-[#7A5C22] flex items-center justify-between">
                       <span>Explore {brand.name}</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </span>

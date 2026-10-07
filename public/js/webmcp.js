@@ -11,7 +11,7 @@
           if (query) params.set('q', query);
           if (category) params.set('category', category);
           if (max_price) params.set('max_price', max_price);
-          const res = await fetch(`https://thebuggyshoppty.com.au/api/search?${params}`);
+          const res = await fetch(`https://thebuggyshoppty.com.au/api/search/?${params}`);
           return res.json();
         }
       },

@@ -53,7 +53,7 @@ export default function NavSearch() {
       {open && (
         <div className="fixed sm:absolute left-3 right-3 sm:left-auto sm:right-0 top-20 sm:top-full sm:mt-2 sm:w-[28rem] z-[60] bg-white rounded-2xl border border-slate-200 shadow-2xl p-3">
           <form role="search" onSubmit={go} className="relative">
-            <Search className="w-4 h-4 text-[#8A7045] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-[#7A5C22] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <label htmlFor="nav-search-input" className="sr-only">Search the shop</label>
             <input
               ref={input}

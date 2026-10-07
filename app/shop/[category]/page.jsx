@@ -181,10 +181,10 @@ export default async function CategoryPage({ params }) {
                   className="p-4 rounded-2xl bg-white hover:bg-[#F3F7F4] border border-[#D5DFD9] group transition-all shadow-2xs flex items-center justify-between"
                 >
                   <div>
-                    <div className="text-xs font-black text-[#0E2A1E] group-hover:text-[#8A7045] transition-colors">
+                    <div className="text-xs font-black text-[#0E2A1E] group-hover:text-[#7A5C22] transition-colors">
                       {sub.navLabel}
                     </div>
-                    <div className="text-[11px] text-[#6B7E74] mt-0.5 line-clamp-1">
+                    <div className="text-[11px] text-[#52635A] mt-0.5 line-clamp-1">
                       {sub.targetKeywords?.[0] || 'View Products'}
                     </div>
                   </div>

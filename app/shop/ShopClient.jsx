@@ -155,7 +155,7 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
       <div className="flex flex-col gap-3 bg-white p-3 sm:p-4 rounded-2xl border border-slate-200 shadow-xs">
         <div className="flex flex-col lg:flex-row lg:items-center gap-3">
           <div className="relative flex-1 min-w-0">
-            <Search className="w-4 h-4 text-[#8A7045] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-[#7A5C22] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <label htmlFor="shop-search" className="sr-only">Search these products</label>
             <input
               id="shop-search"
@@ -182,7 +182,7 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
             </button>}
 
             <div className="flex-1 lg:flex-none min-w-0 h-11 flex items-center gap-2 bg-slate-50 px-3 rounded-xl border border-slate-200">
-              <ArrowUpDown className="w-4 h-4 text-[#8A7045] shrink-0" />
+              <ArrowUpDown className="w-4 h-4 text-[#7A5C22] shrink-0" />
               <label htmlFor="shop-sort" className="text-xs font-bold text-slate-500 shrink-0">Sort</label>
               <select
                 id="shop-sort"
@@ -214,7 +214,7 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
         <div className="flex flex-col gap-2" aria-live="polite">
           <div className="flex items-center justify-between gap-3">
             <span className="text-xs font-bold text-slate-900">
-              {pg.total === 0 ? 'No products' : <>Showing <strong className="text-[#8A7045] font-black">{pg.from}–{pg.to}</strong> of {pg.total} {pg.total === 1 ? 'product' : 'products'}</>}
+              {pg.total === 0 ? 'No products' : <>Showing <strong className="text-[#7A5C22] font-black">{pg.from}–{pg.to}</strong> of {pg.total} {pg.total === 1 ? 'product' : 'products'}</>}
             </span>
             {(activeCount > 0 || q) && (
               <button type="button" onClick={clearAll} className="shrink-0 text-[11px] font-bold text-rose-600 hover:underline flex items-center gap-1 cursor-pointer">
@@ -244,7 +244,7 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
 
       {q.trim() && searched.mode !== 'exact' && searched.mode !== 'all' && filtered.length > 0 && (
         <div className="flex items-start gap-2 text-xs text-[#4A5D53] bg-[#EBF1ED] border border-[#D5DFD9] rounded-xl px-4 py-2.5">
-          <Info className="w-4 h-4 mt-0.5 shrink-0 text-[#8A7045]" />
+          <Info className="w-4 h-4 mt-0.5 shrink-0 text-[#7A5C22]" />
           <span>No exact matches for &ldquo;{q}&rdquo;, showing the closest {searched.mode === 'partial' ? 'partial matches' : 'related products'}.</span>
         </div>
       )}
@@ -267,6 +267,7 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
         />}
 
         <div className="flex-1 min-w-0">
+          <h2 className="sr-only">Products</h2>
           {filtered.length === 0 ? (
             <div className="text-center py-16 bg-white rounded-3xl border-2 border-dashed border-slate-200 p-8 space-y-4">
               <div className="w-14 h-14 rounded-2xl bg-slate-900 text-[#C5A880] flex items-center justify-center mx-auto shadow-md">
@@ -307,13 +308,13 @@ export default function ShopClient({ initialProducts = [], currentCategory = nul
                     </Link>
                     <div className="flex-1 min-w-0 space-y-1.5 w-full">
                       <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">{product.brandName || product.brand} • {product.condition}</div>
-                      <h3 className="font-serif font-black text-base text-slate-900 group-hover:text-[#8A7045] transition-colors">
+                      <h3 className="font-serif font-black text-base text-slate-900 group-hover:text-[#7A5C22] transition-colors">
                         <Link href={`/shop/${product.category}/${product.slug}/`}>{product.name}</Link>
                       </h3>
                       <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">{product.shortDescription || product.description}</p>
                     </div>
                     <div className="w-full sm:w-44 shrink-0 flex sm:flex-col items-center sm:items-end justify-between gap-2">
-                      <span className="text-xl font-black text-slate-900 font-serif">${product.price.toLocaleString('en-AU')} <span className="text-xs font-bold text-[#8A7045]">AUD</span></span>
+                      <span className="text-xl font-black text-slate-900 font-serif">${product.price.toLocaleString('en-AU')} <span className="text-xs font-bold text-[#7A5C22]">AUD</span></span>
                       <div className="flex sm:flex-col gap-1.5 sm:w-full">
                         <button type="button" onClick={() => addToCart(product)} className="px-4 py-2 rounded-xl bg-slate-900 text-[#C5A880] text-xs font-black uppercase tracking-wider hover:bg-slate-800 cursor-pointer">Add to cart</button>
                         <button

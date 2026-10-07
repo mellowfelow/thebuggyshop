@@ -305,7 +305,16 @@ const { BRANDS } = await imp('src/config/brands.js');
   const empties = CATEGORY_TREE.filter((c) => isPage(c) && getProductsByCategory(c.slug).length === 0).map((c) => c.slug);
   const body = path.join(ROOT, '.next/server/app/sitemap.xml.body');
   if (fs.existsSync(body)) {
-    const sm = fs.readFileSync(body, 'utf8');
+    const idx = fs.readFileSync(body, 'utf8');
+    const kids = [...idx.matchAll(/<loc>[^<]*\/(sitemap-[a-z]+\.xml)<\/loc>/g)].map((m) => m[1]);
+    const sm = kids.map((k) => { const p = path.join(ROOT, '.next/server/app/' + k + '.body'); return fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : ''; }).join('\n');
+    /<sitemapindex/.test(idx) && kids.length >= 5 && kids.every((k) => fs.existsSync(path.join(ROOT, '.next/server/app/' + k + '.body'))) ? pass('B15e', 'sitemap.xml is an index of ' + kids.length + ' child sitemaps, all built') : fail('B15e', 'sitemap index missing or child sitemaps not built');
+    const urlBlocks = [...sm.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => m[1]);
+    const noLm = urlBlocks.filter((b) => !/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/.test(b));
+    urlBlocks.length > 200 && !noLm.length ? pass('B15f', 'every one of the ' + urlBlocks.length + ' sitemap URLs carries a lastmod date') : fail('B15f', noLm.length + ' of ' + urlBlocks.length + ' sitemap URLs lack a lastmod date');
+    const locs = urlBlocks.map((b) => (b.match(/<loc>([^<]+)/) || [])[1]);
+    new Set(locs).size === locs.length ? pass('B15g', 'no URL appears in two child sitemaps') : fail('B15g', 'duplicate URLs across child sitemaps');
+    sm.includes('<image:image>') ? pass('B15h', 'product sitemap carries image entries') : fail('B15h', 'no image entries in the sitemaps');
     const leaked = empties.filter((s) => sm.includes('/shop/' + s + '/'));
     const folded = CATEGORY_TREE.filter((c) => c.redirectTo).map((c) => c.slug).filter((s) => sm.includes('/shop/' + s + '/'));
     leaked.length || folded.length ? fail('B15c', 'sitemap lists empty or folded pages: ' + [...leaked, ...folded].join(', ')) : pass('B15c', 'sitemap has no empty or folded category pages (' + (empties.length ? empties.join(', ') + ' held back' : 'none empty') + ')');
@@ -403,7 +412,7 @@ const { BRANDS } = await imp('src/config/brands.js');
   if (fs.existsSync(out)) {
     const empty = BRANDS.filter((b) => !PRODUCTS.some((p) => p.brand === b.slug)).map((b) => b.slug);
     const leak = empty.filter((s) => { const file = path.join(out, 'brands/' + s + '.html'); return !fs.existsSync(file) || !/noindex/.test(fs.readFileSync(file, 'utf8')); });
-    const sm = fs.existsSync(path.join(ROOT, '.next/server/app/sitemap.xml.body')) ? fs.readFileSync(path.join(ROOT, '.next/server/app/sitemap.xml.body'), 'utf8') : '';
+    const sm = fs.readdirSync(path.join(ROOT, '.next/server/app')).filter((n) => /^sitemap-[a-z]+\.xml\.body$/.test(n)).map((n) => fs.readFileSync(path.join(ROOT, '.next/server/app/' + n), 'utf8')).join('\n');
     const inMap = empty.filter((s) => sm.includes('/brands/' + s + '/'));
     leak.length || inMap.length ? fail('B18d', 'zero-product brand pages must be noindex and out of the sitemap: ' + [...leak, ...inMap].join(', ')) : pass('B18d', empty.length + ' zero-product brand pages are noindex and out of the sitemap (' + empty.join(', ') + ')');
     // no raw markdown in built posts (a bold marker or link syntax that did not render)
@@ -415,6 +424,26 @@ const { BRANDS } = await imp('src/config/brands.js');
     }
     bad.length ? fail('B18e', 'blog posts show raw markdown: ' + bad.join(', ')) : pass('B18e', 'no blog post shows raw markdown (' + POSTS.length + ' posts)');
   }
+}
+
+// ---------------------------------------------------------------- B19 agent + security guards (technical audit)
+{
+  const vj = JSON.parse(fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8'));
+  const allHdr = vj.headers.find((h) => h.source === '/(.*)');
+  const csp = (allHdr?.headers || []).find((h) => h.key === 'Content-Security-Policy')?.value || '';
+  /default-src 'self'/.test(csp) && /frame-ancestors/.test(csp) && /object-src 'none'/.test(csp) ? pass('B19a', 'vercel.json sets a Content-Security-Policy on every page') : fail('B19a', 'vercel.json has no usable Content-Security-Policy');
+  const md = path.join(ROOT, 'public/md');
+  const mdCount = fs.existsSync(md) ? fs.readdirSync(md, { recursive: true }).filter((n) => String(n).endsWith('index.md')).length : 0;
+  mdCount >= 250 && fs.existsSync(path.join(md, 'index.md')) ? pass('B19b', mdCount + ' markdown twins generated for agents (home, categories, products, brands, posts, FAQ)') : fail('B19b', 'markdown twins missing (' + mdCount + ')');
+  const mw = fs.existsSync(path.join(ROOT, 'middleware.js')) ? fs.readFileSync(path.join(ROOT, 'middleware.js'), 'utf8') : '';
+  /prefersMarkdownOverHtml/.test(mw) && /q=/.test(mw) && !/accept\.includes\('text\/markdown'\)\s*\)?\s*return/.test(mw) ? pass('B19c', 'middleware negotiates markdown by q-value, never a bare substring check') : fail('B19c', 'markdown negotiation middleware missing or uses a substring check');
+  const gen = ['.well-known/mcp/server-card.json', '.well-known/api-catalog', '.well-known/acp.json', '.well-known/ucp'].map((p) => fs.readFileSync(path.join(ROOT, 'public/' + p), 'utf8')).join('\n');
+  const bare = (gen.match(/\/api\/(mcp|products|categories|search)(?![\/a-zA-Z])/g) || []);
+  bare.length === 0 ? pass('B19d', 'agent endpoints are advertised in trailing-slash form (no 308 hop)') : fail('B19d', bare.length + ' agent endpoints lack the trailing slash');
+  const pj = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
+  Array.isArray(pj.browserslist) && pj.browserslist.length ? pass('B19e', 'browserslist targets modern browsers (no legacy polyfills)') : fail('B19e', 'no browserslist in package.json');
+  const lm = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/config/lastmod.json'), 'utf8'));
+  Object.keys(lm).length >= 290 ? pass('B19f', 'lastmod ledger covers ' + Object.keys(lm).length + ' URLs') : fail('B19f', 'lastmod ledger incomplete');
 }
 
 console.log('\n--- The Buggy Shop crosscheck ---');

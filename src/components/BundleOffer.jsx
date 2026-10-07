@@ -144,12 +144,12 @@ export function BundleNote({ totals, onNavigate, className = '' }) {
   if (state === 'offer') {
     return (
       <div className={`${base} bg-[#FAF8F5] border-[#E8DDC4] text-slate-800 ${className}`}>
-        <Tag className="w-4 h-4 mt-0.5 shrink-0 text-[#8A7045]" />
+        <Tag className="w-4 h-4 mt-0.5 shrink-0 text-[#7A5C22]" />
         <span>
           <strong>Save {percent}% on accessories &amp; parts</strong> when you add them to this order.{' '}
-          <Link href="/shop/accessories/" onClick={onNavigate} className="font-black text-[#8A7045] underline">Accessories</Link>
+          <Link href="/shop/accessories/" onClick={onNavigate} className="font-black text-[#7A5C22] underline">Accessories</Link>
           {' · '}
-          <Link href="/shop/parts/" onClick={onNavigate} className="font-black text-[#8A7045] underline">Parts</Link>
+          <Link href="/shop/parts/" onClick={onNavigate} className="font-black text-[#7A5C22] underline">Parts</Link>
         </span>
       </div>
     );
@@ -158,7 +158,7 @@ export function BundleNote({ totals, onNavigate, className = '' }) {
     <div className={`${base} bg-slate-50 border-slate-200 text-slate-700 ${className}`}>
       <Tag className="w-4 h-4 mt-0.5 shrink-0 text-slate-500" />
       <span>Add a <strong>buggy or cart</strong> to this order and these accessories and parts are {percent}% off.{' '}
-        <Link href="/shop/" onClick={onNavigate} className="font-black text-[#8A7045] underline">Browse buggies &amp; carts</Link>
+        <Link href="/shop/" onClick={onNavigate} className="font-black text-[#7A5C22] underline">Browse buggies &amp; carts</Link>
       </span>
     </div>
   );

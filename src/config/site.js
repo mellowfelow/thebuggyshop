@@ -21,6 +21,7 @@ export const SITE = {
   darkText: '#0B111E',            // Rich Midnight Charcoal
   bgLight: '#F8F9FA',             // Crisp Porcelain Linen
   gscVerification: 'pending',
+  bingVerification: 'pending',
   indexNowKey: 'buggy-shop-au-indexnow-key',
   cartKey: 'mm-cart',
 }

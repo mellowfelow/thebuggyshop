@@ -83,7 +83,7 @@ export default function ChatHub() {
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2.5 py-3 px-4 sm:px-5 rounded-full bg-slate-950 text-[#C5A880] font-black text-xs uppercase tracking-wider shadow-2xl hover:shadow-[#C5A880]/20 transition-all duration-200 hover:scale-105 active:scale-95 border border-[#C5A880] cursor-pointer group"
-        aria-label="Open Queensland WhatsApp live chat"
+        aria-label="WhatsApp Dispatch: open live chat"
         id="chat-hub-toggle"
       >
         <div className="relative">

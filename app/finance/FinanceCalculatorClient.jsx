@@ -85,7 +85,7 @@ export default function FinanceCalculatorClient() {
           <div className="space-y-2 bg-white p-4 rounded-2xl border border-[#D5DFD9] shadow-2xs">
             <div className="flex justify-between items-center text-xs">
               <span className="font-bold text-[#0E2A1E]">Vehicle Value (inc. GST):</span>
-              <span className="font-black text-base text-[#8A7045] font-serif">
+              <span className="font-black text-base text-[#7A5C22] font-serif">
                 ${vehiclePrice.toLocaleString('en-AU')} AUD
               </span>
             </div>
@@ -106,7 +106,7 @@ export default function FinanceCalculatorClient() {
             <div className="space-y-2 bg-white p-4 rounded-2xl border border-[#D5DFD9] shadow-2xs">
               <div className="flex justify-between items-center text-xs">
                 <span className="font-bold text-[#0E2A1E]">Deposit:</span>
-                <span className="font-black text-[#8A7045]">${depositAmount.toLocaleString('en-AU')}</span>
+                <span className="font-black text-[#7A5C22]">${depositAmount.toLocaleString('en-AU')}</span>
               </div>
               <input
                 type="range"

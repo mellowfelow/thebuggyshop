@@ -14,7 +14,7 @@ export const metadata = {
 export default function NotFound() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-20 text-center space-y-6">
-      <div className="w-16 h-16 bg-[#F0F3F1] text-[#8A7045] rounded-full flex items-center justify-center mx-auto border border-[#DDE4DF]">
+      <div className="w-16 h-16 bg-[#F0F3F1] text-[#7A5C22] rounded-full flex items-center justify-center mx-auto border border-[#DDE4DF]">
         <AlertTriangle className="w-8 h-8" />
       </div>
 

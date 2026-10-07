@@ -89,7 +89,7 @@ export default function GolfBuggiesLocationsIndexPage() {
                 <MapPin className="w-4 h-4 text-[#C5A265]" />
               </div>
 
-              <h2 className="text-lg font-black text-[#0E2A1E] font-serif group-hover:text-[#8A7045] transition-colors">
+              <h2 className="text-lg font-black text-[#0E2A1E] font-serif group-hover:text-[#7A5C22] transition-colors">
                 {loc.name}
               </h2>
 
@@ -98,7 +98,7 @@ export default function GolfBuggiesLocationsIndexPage() {
               </p>
             </div>
 
-            <div className="pt-4 mt-4 border-t border-[#E8ECE9] flex items-center justify-between text-xs font-bold text-[#0E2A1E] group-hover:text-[#8A7045]">
+            <div className="pt-4 mt-4 border-t border-[#E8ECE9] flex items-center justify-between text-xs font-bold text-[#0E2A1E] group-hover:text-[#7A5C22]">
               <span>View {loc.name} Hub</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </div>

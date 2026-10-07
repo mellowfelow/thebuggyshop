@@ -84,10 +84,10 @@ export default async function BlogPostPage({ params }) {
         </div>
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0E2A1E] tracking-tight leading-tight font-serif">{post.title}</h1>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#4A5D53] pt-1">
-          <span className="flex items-center gap-1.5 font-medium"><Calendar className="w-4 h-4 text-[#8A7045]" /> Published {when(post.date)}</span>
-          <span className="flex items-center gap-1.5 font-medium"><RefreshCw className="w-4 h-4 text-[#8A7045]" /> Last updated {when(post.updated)}</span>
-          <span className="flex items-center gap-1.5 font-medium"><Clock className="w-4 h-4 text-[#8A7045]" /> {post.readTime}</span>
-          <span className="flex items-center gap-1.5 font-medium"><User className="w-4 h-4 text-[#8A7045]" /> The Buggy Shop team, Queensland</span>
+          <span className="flex items-center gap-1.5 font-medium"><Calendar className="w-4 h-4 text-[#7A5C22]" /> Published {when(post.date)}</span>
+          <span className="flex items-center gap-1.5 font-medium"><RefreshCw className="w-4 h-4 text-[#7A5C22]" /> Last updated {when(post.updated)}</span>
+          <span className="flex items-center gap-1.5 font-medium"><Clock className="w-4 h-4 text-[#7A5C22]" /> {post.readTime}</span>
+          <span className="flex items-center gap-1.5 font-medium"><User className="w-4 h-4 text-[#7A5C22]" /> The Buggy Shop team, Queensland</span>
         </div>
       </header>
 
@@ -105,7 +105,7 @@ export default async function BlogPostPage({ params }) {
 
       {toc.length >= 5 && (
         <nav aria-label="In this guide" className="rounded-2xl border border-[#D5DFD9] bg-[#FAF8F5] p-5">
-          <div className="text-xs font-black uppercase tracking-wider text-[#8A7045] mb-2">In this guide</div>
+          <div className="text-xs font-black uppercase tracking-wider text-[#7A5C22] mb-2">In this guide</div>
           <ol className="list-decimal pl-5 space-y-1 text-sm text-[#1E3A2B] columns-1 sm:columns-2">
             {toc.map((h) => <li key={h.id}><a href={`#${h.id}`} className="hover:underline">{h.text}</a></li>)}
           </ol>
@@ -137,7 +137,7 @@ export default async function BlogPostPage({ params }) {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {more.map((p) => (
             <Link key={p.slug} href={`/blog/${p.slug}/`} className="rounded-2xl border border-[#D5DFD9] bg-white p-4 hover:border-[#C5A265] hover:shadow-md transition-all space-y-2">
-              <span className="text-[10px] font-black uppercase tracking-wider text-[#8A7045]">{p.category}</span>
+              <span className="text-[10px] font-black uppercase tracking-wider text-[#7A5C22]">{p.category}</span>
               <div className="font-bold text-sm text-[#0E2A1E] leading-snug">{p.title}</div>
             </Link>
           ))}
@@ -145,10 +145,10 @@ export default async function BlogPostPage({ params }) {
       </section>
 
       <div className="pt-6 border-t border-[#DDE4DF] flex justify-between items-center">
-        <Link href="/blog/" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#0E2A1E] hover:text-[#8A7045]">
+        <Link href="/blog/" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#0E2A1E] hover:text-[#7A5C22]">
           <ArrowLeft className="w-4 h-4" /> All guides
         </Link>
-        <Link href="/shop/" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#0E2A1E] hover:text-[#8A7045]">
+        <Link href="/shop/" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#0E2A1E] hover:text-[#7A5C22]">
           Shop golf buggies <ArrowRight className="w-4 h-4" />
         </Link>
       </div>

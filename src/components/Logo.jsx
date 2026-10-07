@@ -129,7 +129,6 @@ export default function Logo({
         href={href} 
         onClick={onClick}
         className="inline-flex items-center focus:outline-hidden rounded-xl"
-        aria-label="The Buggy Shop - Return to Homepage"
       >
         {logoContent}
       </Link>

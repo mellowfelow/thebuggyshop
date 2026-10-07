@@ -92,17 +92,17 @@ export default function ProductDetailClient({ product, relatedProducts }) {
           {/* Trust Guarantee Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4">
             <div className="p-4 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] space-y-1 text-center shadow-[0_2px_10px_-2px_rgba(14,42,30,0.05)] hover:border-[#C5A265] transition-colors">
-              <ShieldCheck className="w-5 h-5 text-[#8A7045] mx-auto" />
+              <ShieldCheck className="w-5 h-5 text-[#7A5C22] mx-auto" />
               <div className="font-black text-xs text-[#0E2A1E]">5-Yr LiFePO4 Warranty</div>
               <div className="text-[10px] text-[#4A5D53]">Domestic replacement</div>
             </div>
             <div className="p-4 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] space-y-1 text-center shadow-[0_2px_10px_-2px_rgba(14,42,30,0.05)] hover:border-[#C5A265] transition-colors">
-              <Truck className="w-5 h-5 text-[#8A7045] mx-auto" />
+              <Truck className="w-5 h-5 text-[#7A5C22] mx-auto" />
               <div className="font-black text-xs text-[#0E2A1E]">Tail-Lift Freight</div>
               <div className="text-[10px] text-[#4A5D53]">Direct to your property across AU</div>
             </div>
             <div className="p-4 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] space-y-1 text-center shadow-[0_2px_10px_-2px_rgba(14,42,30,0.05)] hover:border-[#C5A265] transition-colors">
-              <FileCheck2 className="w-5 h-5 text-[#8A7045] mx-auto" />
+              <FileCheck2 className="w-5 h-5 text-[#7A5C22] mx-auto" />
               <div className="font-black text-xs text-[#0E2A1E]">State Road Legal Kit</div>
               <div className="text-[10px] text-[#4A5D53]">QLD / NSW / VIC pre-filled</div>
             </div>
@@ -113,7 +113,7 @@ export default function ProductDetailClient({ product, relatedProducts }) {
         <div className="lg:col-span-5 space-y-6">
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-[11px] font-black uppercase tracking-wider text-[#8A7045] bg-[#EBF1ED] px-3 py-1 rounded-full border border-[#D5DFD9]">
+              <span className="text-[11px] font-black uppercase tracking-wider text-[#7A5C22] bg-[#EBF1ED] px-3 py-1 rounded-full border border-[#D5DFD9]">
                 {product.category.replace(/-/g, ' ')}
               </span>
               <button
@@ -172,7 +172,7 @@ export default function ProductDetailClient({ product, relatedProducts }) {
 
               <div className="flex items-center justify-between p-3 rounded-xl bg-white text-[#4A5D53] border border-[#CAD5CE]">
                 <span className="flex items-center gap-1.5 font-medium text-xs">
-                  <Calculator className="w-3.5 h-3.5 text-[#8A7045]" /> Or 4 commercial instalments of:
+                  <Calculator className="w-3.5 h-3.5 text-[#7A5C22]" /> Or 4 commercial instalments of:
                 </span>
                 <span className="font-black text-[#0E2A1E] text-xs">
                   ${payIn4Amount.toLocaleString('en-AU')} AUD
@@ -205,8 +205,8 @@ export default function ProductDetailClient({ product, relatedProducts }) {
 
           {/* Quick Specifications Highlights */}
           <div className="p-5 bg-gradient-to-b from-[#FAFBF9] to-[#EBF1ED] rounded-2xl border border-[#D5DFD9] space-y-2.5 text-xs text-[#0E2A1E] shadow-xs">
-            <div className="font-black uppercase tracking-wider text-[#8A7045] text-[11px] flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-[#8A7045]" />
+            <div className="font-black uppercase tracking-wider text-[#7A5C22] text-[11px] flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5 text-[#7A5C22]" />
               <span>Key Australian Highlights:</span>
             </div>
             <div className="grid grid-cols-2 gap-2.5 text-[11px]">
@@ -224,7 +224,7 @@ export default function ProductDetailClient({ product, relatedProducts }) {
       {/* SECTION 2: FULL ENGINEERING SPECIFICATIONS & COMPLIANCE TABLE */}
       <div className="bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-3xl p-6 sm:p-10 border border-[#D5DFD9] shadow-lg space-y-8">
         <div className="border-b border-[#D5DFD9] pb-5">
-          <span className="text-xs font-black uppercase tracking-wider text-[#8A7045] bg-[#EBF1ED] px-3 py-1 rounded-full border border-[#D5DFD9] inline-block">
+          <span className="text-xs font-black uppercase tracking-wider text-[#7A5C22] bg-[#EBF1ED] px-3 py-1 rounded-full border border-[#D5DFD9] inline-block">
             Full Engineering Transparency
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-[#0E2A1E] tracking-tight font-serif mt-2">
@@ -271,14 +271,14 @@ export default function ProductDetailClient({ product, relatedProducts }) {
         <div className="space-y-6 pt-6">
           <div className="flex items-center justify-between border-b border-[#D5DFD9] pb-4">
             <div>
-              <span className="text-xs font-black uppercase tracking-wider text-[#8A7045]">
+              <span className="text-xs font-black uppercase tracking-wider text-[#7A5C22]">
                 Compare Alternatives
               </span>
               <h3 className="text-xl sm:text-2xl font-black text-[#0E2A1E] tracking-tight font-serif">
                 Similar Golf Buggies & Carts for Sale
               </h3>
             </div>
-            <Link href={`/shop/${product.category}/`} className="text-xs font-black text-[#0E2A1E] hover:text-[#8A7045] uppercase tracking-wider bg-white px-3.5 py-1.5 rounded-xl border border-[#D5DFD9]">
+            <Link href={`/shop/${product.category}/`} className="text-xs font-black text-[#0E2A1E] hover:text-[#7A5C22] uppercase tracking-wider bg-white px-3.5 py-1.5 rounded-xl border border-[#D5DFD9]">
               View Category →
             </Link>
           </div>

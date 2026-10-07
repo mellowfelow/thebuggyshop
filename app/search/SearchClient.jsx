@@ -41,7 +41,7 @@ export default function SearchClient() {
     <div className="space-y-8" ref={top} style={{ scrollMarginTop: '6rem' }}>
       {/* Search box */}
       <form role="search" onSubmit={(e) => e.preventDefault()} className="relative max-w-2xl">
-        <SearchIcon className="w-5 h-5 text-[#8A7045] absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+        <SearchIcon className="w-5 h-5 text-[#7A5C22] absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
         <label htmlFor="site-search" className="sr-only">Search golf buggies, carts, batteries, parts and accessories</label>
         <input
           id="site-search"
@@ -82,7 +82,7 @@ export default function SearchClient() {
 
           {found.mode !== 'exact' && found.results.length > 0 && (
             <div className="flex items-start gap-2 text-xs text-[#4A5D53] bg-[#FAF8F5] border border-[#E8E2D5] rounded-xl px-4 py-2.5 max-w-3xl">
-              <Info className="w-4 h-4 mt-0.5 shrink-0 text-[#8A7045]" />
+              <Info className="w-4 h-4 mt-0.5 shrink-0 text-[#7A5C22]" />
               <span>No exact matches, so these are the closest {found.mode === 'partial' ? 'partial matches' : 'related products'}.</span>
             </div>
           )}
@@ -96,7 +96,7 @@ export default function SearchClient() {
               ))}
               {found.brands.map((b) => (
                 <Link key={b.slug} href={`/brands/${b.slug}/`} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#D5DFD9] text-[#0E2A1E] text-[11px] font-bold hover:border-[#C5A265]">
-                  <Tag className="w-3 h-3 text-[#8A7045]" /> {b.name}
+                  <Tag className="w-3 h-3 text-[#7A5C22]" /> {b.name}
                 </Link>
               ))}
             </div>
@@ -107,7 +107,7 @@ export default function SearchClient() {
               <h2 className="text-xl font-black text-[#0E2A1E] tracking-tight font-serif">
                 Products {pg.total > 0 && <span className="text-sm font-bold text-[#4A5D53]">({pg.from}–{pg.to} of {pg.total})</span>}
               </h2>
-              <Link href="/shop/" className="text-xs font-black text-[#0E2A1E] hover:text-[#8A7045] uppercase tracking-wider">View all in shop →</Link>
+              <Link href="/shop/" className="text-xs font-black text-[#0E2A1E] hover:text-[#7A5C22] uppercase tracking-wider">View all in shop →</Link>
             </div>
 
             {pg.total === 0 ? (
@@ -148,10 +148,10 @@ export default function SearchClient() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {found.posts.map((post) => (
                   <Link key={post.slug} href={`/blog/${post.slug}/`} className="p-6 bg-gradient-to-b from-[#FCFDFB] to-[#F1F6F3] rounded-3xl border border-[#D5DFD9] shadow-sm hover:shadow-lg hover:border-[#C5A265] transition-all space-y-3 block group">
-                    <span className="text-[10px] font-black uppercase text-[#8A7045] bg-white px-2.5 py-1 rounded-md border border-[#D5DFD9] inline-block">{post.category}</span>
-                    <h3 className="font-extrabold text-sm text-[#0E2A1E] group-hover:text-[#8A7045] transition-colors leading-snug line-clamp-2 font-serif">{post.title}</h3>
+                    <span className="text-[10px] font-black uppercase text-[#7A5C22] bg-white px-2.5 py-1 rounded-md border border-[#D5DFD9] inline-block">{post.category}</span>
+                    <h3 className="font-extrabold text-sm text-[#0E2A1E] group-hover:text-[#7A5C22] transition-colors leading-snug line-clamp-2 font-serif">{post.title}</h3>
                     <p className="text-xs text-[#4A5D53] line-clamp-2 leading-relaxed">{post.excerpt}</p>
-                    <div className="text-xs font-black text-[#0E2A1E] group-hover:text-[#8A7045] pt-2 flex items-center gap-1 uppercase tracking-wider">
+                    <div className="text-xs font-black text-[#0E2A1E] group-hover:text-[#7A5C22] pt-2 flex items-center gap-1 uppercase tracking-wider">
                       <span>Read article</span>
                       <ArrowRight className="w-3.5 h-3.5 text-[#C5A265] group-hover:translate-x-1 transition-transform" />
                     </div>

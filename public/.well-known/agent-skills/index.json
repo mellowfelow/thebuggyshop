@@ -8,7 +8,7 @@
       "name": "search-products",
       "type": "commerce",
       "description": "Search Australian luxury all-terrain & farm utility buggies by keyword, category, or price",
-      "url": "https://thebuggyshoppty.com.au/api/mcp",
+      "url": "https://thebuggyshoppty.com.au/api/mcp/",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
@@ -22,7 +22,7 @@
       "name": "order-draft",
       "type": "commerce",
       "description": "Create a prefilled order draft URL. Human customer completes transaction via WhatsApp.",
-      "url": "https://thebuggyshoppty.com.au/api/mcp",
+      "url": "https://thebuggyshoppty.com.au/api/mcp/",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {

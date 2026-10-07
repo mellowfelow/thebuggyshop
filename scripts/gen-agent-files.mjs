@@ -48,6 +48,7 @@ const vercelConfig = {
         { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self'; media-src 'self'; frame-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests" },
         { "key": "Link", "value": `</.well-known/api-catalog>; rel="api-catalog", </.well-known/agent-skills/index.json>; rel="describedby", </llms.txt>; rel="describedby", </.well-known/mcp/server-card.json>; rel="service-desc", </auth.md>; rel="auth", </.well-known/openid-configuration>; rel="openid-configuration"` }
       ]
     },
@@ -175,10 +176,10 @@ const apiCatalog = {
     { "anchor": `${baseUrl}/shop/`, "type": "text/html", "title": `${SITE.name} Product Catalog` },
     { "anchor": `${baseUrl}/compare/`, "type": "text/html", "title": `${SITE.name} Compare Matrix` },
     { "anchor": `${baseUrl}/finance/`, "type": "text/html", "title": `${SITE.name} Finance Calculator` },
-    { "anchor": `${baseUrl}/api/products`, "type": "application/json", "title": `${SITE.name} Products API` },
-    { "anchor": `${baseUrl}/api/categories`, "type": "application/json", "title": `${SITE.name} Categories API` },
-    { "anchor": `${baseUrl}/api/search`, "type": "application/json", "title": `${SITE.name} Search API` },
-    { "anchor": `${baseUrl}/api/mcp`, "type": "application/json", "https://www.iana.org/assignments/link-relations/service-desc": [{ "href": `${baseUrl}/.well-known/mcp/server-card.json` }], "title": `${SITE.name} MCP Server` }
+    { "anchor": `${baseUrl}/api/products/`, "type": "application/json", "title": `${SITE.name} Products API` },
+    { "anchor": `${baseUrl}/api/categories/`, "type": "application/json", "title": `${SITE.name} Categories API` },
+    { "anchor": `${baseUrl}/api/search/`, "type": "application/json", "title": `${SITE.name} Search API` },
+    { "anchor": `${baseUrl}/api/mcp/`, "type": "application/json", "https://www.iana.org/assignments/link-relations/service-desc": [{ "href": `${baseUrl}/.well-known/mcp/server-card.json` }], "title": `${SITE.name} MCP Server` }
   ]
 };
 fs.writeFileSync(path.join(wellKnownDir, 'api-catalog'), JSON.stringify(apiCatalog, null, 2));
@@ -190,9 +191,9 @@ const agentSkills = {
   "url": baseUrl,
   "description": SITE.tagline,
   "skills": [
-    { "name": "search-products", "type": "commerce", "description": "Search Australian luxury all-terrain & farm utility buggies by keyword, category, or price", "url": `${baseUrl}/api/mcp`, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" },
+    { "name": "search-products", "type": "commerce", "description": "Search Australian luxury all-terrain & farm utility buggies by keyword, category, or price", "url": `${baseUrl}/api/mcp/`, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" },
     { "name": "browse-catalog", "type": "navigation", "description": "Browse the complete electric buggy catalog with LiFePO4 battery specifications", "url": `${baseUrl}/shop/`, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" },
-    { "name": "order-draft", "type": "commerce", "description": "Create a prefilled order draft URL. Human customer completes transaction via WhatsApp.", "url": `${baseUrl}/api/mcp`, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" },
+    { "name": "order-draft", "type": "commerce", "description": "Create a prefilled order draft URL. Human customer completes transaction via WhatsApp.", "url": `${baseUrl}/api/mcp/`, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" },
     { "name": "compare-models", "type": "commerce", "description": "Compare engineering specifications, payload capacities, and terrain ratings", "url": `${baseUrl}/compare/`, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" },
     { "name": "product-education", "type": "content", "description": "Educational articles on QLD/NSW/VIC conditional road rego and LiFePO4 battery care", "url": `${baseUrl}/blog/`, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" },
     { "name": "contact", "type": "support", "description": "Contact The Buggy Shop Queensland dispatch and sales desk", "url": `${baseUrl}/contact/`, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" }
@@ -210,7 +211,7 @@ const mcpServerCard = {
     "homepage": baseUrl,
     "contact": { "email": CONTACT.email, "whatsapp": CONTACT.phone }
   },
-  "transport": { "type": "streamable-http", "endpoint": `${baseUrl}/api/mcp` },
+  "transport": { "type": "streamable-http", "endpoint": `${baseUrl}/api/mcp/` },
   "capabilities": {
     "tools": [
       {
@@ -384,13 +385,13 @@ const ucpJson = {
   "description": SITE.tagline,
   "services": [
     { "id": "product-catalog", "type": "catalog", "url": `${baseUrl}/shop/`, "description": "Full Australian electric buggy catalog" },
-    { "id": "mcp-server", "type": "mcp", "url": `${baseUrl}/api/mcp`, "description": "MCP Streamable HTTP server for AI agents" },
+    { "id": "mcp-server", "type": "mcp", "url": `${baseUrl}/api/mcp/`, "description": "MCP Streamable HTTP server for AI agents" },
     { "id": "order", "type": "commerce", "url": `https://wa.me/${CONTACT.whatsapp.replace('+', '')}`, "description": "Place orders or request custom freight quotes via WhatsApp" },
     { "id": "compare", "type": "b2b", "url": `${baseUrl}/compare/`, "description": "Technical comparison matrix" }
   ],
   "capabilities": ["browse", "search", "inquiry", "compare", "finance", "content", "mcp"],
   "endpoints": {
-    "mcp": `${baseUrl}/api/mcp`,
+    "mcp": `${baseUrl}/api/mcp/`,
     "catalog": `${baseUrl}/shop/`,
     "contact": `${baseUrl}/contact/`,
     "agent_skills": `${baseUrl}/.well-known/agent-skills/index.json`,
@@ -422,7 +423,7 @@ const webmcpJs = `(function () {
           if (query) params.set('q', query);
           if (category) params.set('category', category);
           if (max_price) params.set('max_price', max_price);
-          const res = await fetch(\`${baseUrl}/api/search?\${params}\`);
+          const res = await fetch(\`${baseUrl}/api/search/?\${params}\`);
           return res.json();
         }
       },

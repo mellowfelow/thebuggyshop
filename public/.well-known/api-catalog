@@ -25,22 +25,22 @@
       "title": "The Buggy Shop Finance Calculator"
     },
     {
-      "anchor": "https://thebuggyshoppty.com.au/api/products",
+      "anchor": "https://thebuggyshoppty.com.au/api/products/",
       "type": "application/json",
       "title": "The Buggy Shop Products API"
     },
     {
-      "anchor": "https://thebuggyshoppty.com.au/api/categories",
+      "anchor": "https://thebuggyshoppty.com.au/api/categories/",
       "type": "application/json",
       "title": "The Buggy Shop Categories API"
     },
     {
-      "anchor": "https://thebuggyshoppty.com.au/api/search",
+      "anchor": "https://thebuggyshoppty.com.au/api/search/",
       "type": "application/json",
       "title": "The Buggy Shop Search API"
     },
     {
-      "anchor": "https://thebuggyshoppty.com.au/api/mcp",
+      "anchor": "https://thebuggyshoppty.com.au/api/mcp/",
       "type": "application/json",
       "https://www.iana.org/assignments/link-relations/service-desc": [
         {

@@ -487,9 +487,9 @@ export default function CheckoutClient() {
               <div className="flex items-center gap-2.5">
                 <CreditCard className="w-4 h-4 text-[#C5A880]" />
                 <div>
-                  <h3 className="text-sm font-black text-slate-900 uppercase tracking-wider">
+                  <h2 className="text-sm font-black text-slate-900 uppercase tracking-wider">
                     Choose Payment Schedule
-                  </h3>
+                  </h2>
                   <p className="text-xs text-slate-500">
                     Settle 100% upfront or split into 4 equal monthly payments (0% interest):
                   </p>
@@ -711,9 +711,9 @@ export default function CheckoutClient() {
           
           <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm space-y-6">
             <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-              <h3 className="font-black text-slate-900 font-serif text-base">
+              <h2 className="font-black text-slate-900 font-serif text-base">
                 Order Summary ({cart.reduce((sum, item) => sum + item.quantity, 0)} Items)
-              </h3>
+              </h2>
               <span className="text-xs text-slate-500 font-bold">Australian Fleet</span>
             </div>
 
@@ -725,7 +725,7 @@ export default function CheckoutClient() {
                     <Image src={item.image} alt={item.name} width={128} height={128} sizes="64px" className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-bold text-xs text-slate-900 truncate font-serif">{item.name}</h4>
+                    <p className="font-bold text-xs text-slate-900 truncate font-serif">{item.name}</p>
                     <span className="text-xs font-bold text-[#C5A880] block mt-0.5">
                       ${item.price.toLocaleString('en-AU')} AUD
                     </span>

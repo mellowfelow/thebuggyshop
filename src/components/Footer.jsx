@@ -13,7 +13,7 @@ export default function Footer() {
   const rootCategories = getRootCategories();
 
   return (
-    <footer className="bg-[#070B14] text-slate-300 border-t border-slate-800 pt-16 pb-12" id="site-footer">
+    <footer className="cv-auto bg-[#070B14] text-slate-300 border-t border-slate-800 pt-16 pb-12" id="site-footer">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-slate-800">
@@ -52,9 +52,9 @@ export default function Footer() {
 
           {/* Column 2: Vehicle Categories */}
           <div className="space-y-3.5">
-            <h3 className="text-xs font-black uppercase tracking-wider text-[#C5A880]">
+            <h2 className="text-xs font-black uppercase tracking-wider text-[#C5A880]">
               Golf Buggy Categories
-            </h3>
+            </h2>
             <ul className="space-y-2 text-sm text-slate-300">
               <li>
                 <Link href="/shop/" className="hover:text-[#C5A880] transition-colors font-medium">
@@ -83,9 +83,9 @@ export default function Footer() {
 
           {/* Column 3: Partner Brands */}
           <div className="space-y-3.5">
-            <h3 className="text-xs font-black uppercase tracking-wider text-[#C5A880]">
+            <h2 className="text-xs font-black uppercase tracking-wider text-[#C5A880]">
               Partner Brands (27)
-            </h3>
+            </h2>
             <ul className="space-y-2 text-sm text-slate-300">
               <li>
                 <Link href="/brands/" className="hover:text-[#C5A880] transition-colors font-medium text-[#C5A880]">
@@ -132,9 +132,9 @@ export default function Footer() {
 
           {/* Column 4: Guarantees & Freight */}
           <div className="space-y-3.5">
-            <h3 className="text-xs font-black uppercase tracking-wider text-[#C5A880]">
+            <h2 className="text-xs font-black uppercase tracking-wider text-[#C5A880]">
               Freight &amp; Guarantees
-            </h3>
+            </h2>
             <div className="space-y-2.5 text-xs">
               <div className="p-3.5 rounded-xl bg-slate-900 border border-slate-800 space-y-1">
                 <div className="font-bold text-white flex items-center gap-1.5">
@@ -163,10 +163,10 @@ export default function Footer() {
         <div className="py-8 border-b border-slate-800">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
             <div>
-              <h3 className="text-xs font-black uppercase tracking-wider text-[#C5A880] flex items-center gap-2">
+              <h2 className="text-xs font-black uppercase tracking-wider text-[#C5A880] flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-[#C5A880]" />
                 <span>Australian State &amp; City Delivery Hubs</span>
-              </h3>
+              </h2>
               <p className="text-xs text-slate-400 mt-0.5">
                 Specialist golf buggy freight, pre-delivery setup, and factory warranty backup across major metro &amp; regional centres:
               </p>
@@ -187,14 +187,14 @@ export default function Footer() {
                 className="p-2.5 rounded-lg bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-[#C5A880]/40 text-slate-300 hover:text-[#C5A880] transition-colors block"
               >
                 <div className="font-semibold">{loc.name}</div>
-                <div className="text-[10px] text-slate-500 font-mono mt-0.5">{loc.state} Hub</div>
+                <div className="text-[10px] text-slate-400 font-mono mt-0.5">{loc.state} Hub</div>
               </Link>
             ))}
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex flex-wrap items-center gap-2">
             <span>&copy; {currentYear} {SITE.name} ({ENTITY.legalName}).</span>
             <span>ABN: <strong className="text-slate-300 font-mono">{ENTITY.abn}</strong></span>

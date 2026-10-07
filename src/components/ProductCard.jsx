@@ -105,7 +105,7 @@ export default function ProductCard({
         <div className="space-y-1.5">
           {/* Category & Seating Tag */}
           <div className="flex items-center justify-between gap-1 text-[9px] sm:text-[10px]">
-            <span className="uppercase tracking-wider font-bold text-[#C5A880] truncate">
+            <span className="uppercase tracking-wider font-bold text-[#7A5C22] truncate">
               {product.category.replace(/-/g, ' ')}
             </span>
             {tagText && (
@@ -151,7 +151,7 @@ export default function ProductCard({
               </span>
               <span className="text-[10px] font-bold text-slate-500">AUD</span>
             </div>
-            <span className="text-[9px] font-semibold text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded">
+            <span className="text-[9px] font-semibold text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded">
               Inc. GST
             </span>
           </div>
@@ -166,13 +166,13 @@ export default function ProductCard({
                 Pay <strong className="text-emerald-800 font-mono font-black">${cryptoPrice.toLocaleString('en-AU')}</strong> with Crypto
               </span>
             </div>
-            <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-tight bg-emerald-600 text-white px-1.5 py-0.5 rounded shrink-0 shadow-2xs">
+            <span className="text-[9px] sm:text-[10px] font-black uppercase tracking-tight bg-emerald-700 text-white px-1.5 py-0.5 rounded shrink-0 shadow-2xs">
               Save ${savings}
             </span>
           </div>
 
           {BUNDLE.addonCategories.includes(product.category) && (
-            <div className="text-[10px] sm:text-[11px] font-bold text-[#8A7045] bg-[#FAF8F5] border border-[#E8DDC4] rounded-lg px-2.5 py-1 text-center">
+            <div className="text-[10px] sm:text-[11px] font-bold text-[#7A5C22] bg-[#FAF8F5] border border-[#E8DDC4] rounded-lg px-2.5 py-1 text-center">
               {BUNDLE.percent}% off when you buy a buggy or cart
             </div>
           )}

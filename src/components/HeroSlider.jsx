@@ -18,6 +18,12 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import { SITE, CONTACT } from '@/src/config/site';
+import { PRODUCTS } from '@/src/config/products';
+import { FACTS as F, money } from '@/src/config/faq';
+
+const offroad = PRODUCTS.filter((p) => p.category === 'off-road-buggies').map((p) => p.price);
+const offroadFrom = money(Math.min(...offroad));
+const towKg = Math.max(...PRODUCTS.map((p) => parseInt(String(p.specs?.towingCapacity || '').replace(/,/g, '').match(/(\d+)\s*kg/i)?.[1], 10)).filter(Number.isFinite));
 
 const SLIDES = [
   {
@@ -30,7 +36,7 @@ const SLIDES = [
     titleAccent: 'Golf Buggies',
     titleSuffix: ' Across Australia.',
     subtitle: 'Turnkey Lithium Golf Carts, Remote Trolleys & Off Road Buggies',
-    description: "Australia's leading destination for certified luxury golf buggies, motorized remote control golf buggies, 4x4 off road buggies, and verified used golf buggies for sale. Engineered with 5-year LiFePO4 lithium batteries, whisper-quiet AC motors, and nationwide hydraulic tail-lift delivery to your club, estate, or farm.",
+    description: `Australia's specialist for golf buggies, remote control golf buggies, ride-on golf carts, off-road buggies and used buggies. Lithium batteries carry a 5-year warranty, and every order ships by hydraulic tail-lift truck to your club, estate or farm for a flat ${money(F.ship)}.`,
     primaryCta: { label: 'Explore Golf Buggies for Sale', href: '/shop/' },
     secondaryCta: { label: 'Compare Specifications', href: '/compare/', icon: Scale },
     extraCta: { label: 'Finance & 10% Crypto Rebate →', href: '/finance/' },
@@ -41,14 +47,14 @@ const SLIDES = [
     isH1: false,
     image: '/images/hero/hero-2.webp',
     alt: 'Remote Control Golf Buggies Australia - Active Gyro Stabilization',
-    eyebrow: 'INTELLIGENT GYRO-STABILIZATION & DUAL 230W MOTORS',
+    eyebrow: 'REMOTE CONTROL & GPS FOLLOW GOLF BUGGIES',
     titleMain: 'Next-Gen ',
     titleAccent: 'Remote Control Golf Buggies',
     titleSuffix: ' with Downhill Braking.',
-    subtitle: 'Whisper-Quiet 36-Hole Range with True Hands-Free Follow Technology',
-    description: 'Master the undulating fairways with digital remote control precision. Features dual whisper-quiet 230W motors, auto-tracking downhill electronic brake system, quick-fold aerospace alloy frame, and luxury scorecard console with integrated seat.',
-    primaryCta: { label: 'Shop Remote Buggies', href: '/shop/remote-golf-buggies/' },
-    secondaryCta: { label: 'Remote Control Guide', href: '/golf-buggies/remote-control/', icon: Radio },
+    subtitle: 'Walk free of the buggy with a handset, or let it follow you',
+    description: `Remote control golf buggies start at ${money(F.remote.min)}, from brands such as MGI, Motocaddy and Stinger. Several models have downhill speed control so the buggy holds its pace on slopes, and GPS follow buggies track you around the course.`,
+    primaryCta: { label: 'Shop Remote Buggies', href: '/shop/remote-control-golf-buggies/' },
+    secondaryCta: { label: 'GPS Follow Buggies', href: '/shop/gps-follow-buggies/', icon: Radio },
     extraCta: { label: 'View Electric Accessories →', href: '/shop/accessories/' },
     badge: 'Autonomous & Remote Series',
   },
@@ -57,15 +63,15 @@ const SLIDES = [
     isH1: false,
     image: '/images/hero/hero-3.webp',
     alt: 'Heavy-Duty 4x4 Off Road Buggies for Sale Australia Acreage & Farm Carts',
-    eyebrow: 'HEAVY-DUTY DUAL MOTOR 4X4 • TOW RATED TO 1,200 KG',
+    eyebrow: `OFF-ROAD 4X4 BUGGIES • TOW RATINGS TO ${towKg.toLocaleString('en-AU')} KG`,
     titleMain: 'Rugged ',
     titleAccent: 'Off Road Buggies for Sale',
     titleSuffix: ' for Acreage & Estates.',
-    subtitle: 'High Ground Clearance, Heavy Duty Suspension & Conditional Road Compliance',
-    description: 'Conquer tough terrain, rural paddocks, and steep homestead tracks. Equipped with heavy-duty independent double A-arm suspension, hydraulic disc brakes on all four wheels, 14-inch beadlock wheels, and steel front nudge bar with heavy winch.',
+    subtitle: 'Dune buggies, side-by-sides and farm buggies for acreage and estates',
+    description: `Off-road buggies start at ${offroadFrom}, including side-by-sides from Polaris, Can-Am, Yamaha and CFMOTO. Each product page lists its engine, towing capacity and warranty, and road-compliant models are marked.`,
     primaryCta: { label: 'Explore Off Road 4x4 Carts', href: '/shop/off-road-buggies/' },
     secondaryCta: { label: 'Fleet & Ag Enquiries', href: '/wholesale/', icon: SlidersHorizontal },
-    extraCta: { label: 'Conditional Rego Kit Included →', href: '/contact/' },
+    extraCta: { label: 'Ask About Road Compliance →', href: '/blog/conditional-road-registration-guide-qld-nsw-vic/' },
     badge: 'All-Terrain 4x4 Utility',
   },
   {
@@ -73,12 +79,12 @@ const SLIDES = [
     isH1: false,
     image: '/images/hero/hero-4.webp',
     alt: 'Luxury Resort Multi-Passenger Golf Carts Australia',
-    eyebrow: '5-YEAR LIFEPO4 BATTERY • 95 KM SINGLE-CHARGE RANGE',
+    eyebrow: 'LITHIUM GOLF CARTS • RANGES UP TO 95+ KM',
     titleMain: 'Luxury ',
     titleAccent: 'Golf Carts for Sale',
     titleSuffix: ' & Resort Cruisers.',
-    subtitle: '4-Seat & 6-Seat Forward-Facing Luxury Cruisers with Custom Gold Trim',
-    description: 'Premium personal transport for gated golf communities, luxury resorts, and sporting complexes. Features automotive double-stitched diamond marine upholstery, 10.1-inch multimedia touchscreen with reverse camera, and Bluetooth sound system.',
+    subtitle: '2, 4 and 6 seat electric carts for estates, resorts and farms',
+    description: `New golf carts start at ${money(F.cart.min)} and 4 to 6 seat carts at ${money(F.cart46.min)}, from ECAR, Tomberlin, Evolution, Tara and more. Each product page lists motor, battery, range and top speed.`,
     primaryCta: { label: 'Explore Resort Carts', href: '/shop/luxury-golf-carts/' },
     secondaryCta: { label: 'Speak with Specialist', href: '/contact/', icon: Compass },
     extraCta: { label: 'Nationwide Tail-Lift Delivery →', href: '/about/' },
@@ -89,23 +95,23 @@ const SLIDES = [
     isH1: false,
     image: '/images/hero/hero-5.webp',
     alt: 'Certified Used Golf Buggies for Sale Australia - 5-Year Lithium Retrofits',
-    eyebrow: 'WORKSHOP-CERTIFIED PRE-OWNED • COMPREHENSIVE WARRANTY',
+    eyebrow: 'USED & EX-DEMO BUGGIES AND CARTS',
     titleMain: 'Certified ',
     titleAccent: 'Used Golf Buggies',
     titleSuffix: ' & Ex-Demo Fleet.',
-    subtitle: 'Workshop Inspected, Battery Conditioned & Road-Ready with Nationwide Delivery',
-    description: 'Save thousands on premium refurbished golf carts and ex-demo motorized buggies. Every pre-owned vehicle undergoes a rigorous 42-point electrical and mechanical safety inspection, retrofitted with automotive-grade LiFePO4 lithium batteries and full Australian warranty.',
+    subtitle: 'Ex-lease carts and tested ex-demo buggies, each with a stated warranty',
+    description: `Used and ex-demo buggies and carts start at ${money(F.usedAll.min)}, including MGI ex-demo buggies and ex-fleet E-Z-GO, Club Car and Yamaha carts. Each listing states its warranty, and delivery is a flat ${money(F.ship)} Australia-wide.`,
     primaryCta: { label: 'Browse Used Buggies', href: '/shop/used-golf-buggies/' },
-    secondaryCta: { label: 'Speak with Workshop', href: '/contact/', icon: Sparkles },
-    extraCta: { label: 'View Certified Inventory →', href: '/shop/' },
-    badge: 'Certified Pre-Owned',
+    secondaryCta: { label: 'Speak with Our Team', href: '/contact/', icon: Sparkles },
+    extraCta: { label: 'Used Golf Buggy Buying Guide →', href: '/blog/used-golf-cart-auction-vs-dealer-australia/' },
+    badge: 'Used & Ex-Demo',
   },
 ];
 
 export default function HeroSlider() {
   // currentSlide + the set of slides whose image has been mounted. Only the active and the next
   // slide are mounted, so first paint downloads ONE hero image instead of all five.
-  const [{ currentSlide, seen }, setHero] = useState({ currentSlide: 0, seen: new Set([0, 1]) });
+  const [{ currentSlide, seen }, setHero] = useState({ currentSlide: 0, seen: new Set([0]) });
   const setCurrentSlide = useCallback((value) => {
     setHero((prev) => {
       const next = typeof value === 'function' ? value(prev.currentSlide) : value;
@@ -116,6 +122,12 @@ export default function HeroSlider() {
     });
   }, []);
   const [isPaused, setIsPaused] = useState(false);
+
+  // Pre-mount slide 2 a couple of seconds after load so the first (LCP) image is not competing with it for bandwidth.
+  useEffect(() => {
+    const id = setTimeout(() => setHero((prev) => ({ ...prev, seen: new Set([...prev.seen, 1]) })), 2500);
+    return () => clearTimeout(id);
+  }, []);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
@@ -162,6 +174,7 @@ export default function HeroSlider() {
                 fill
                 sizes="100vw"
                 priority={idx === 0}
+                fetchPriority={idx === 0 ? 'high' : 'auto'}
                 quality={72}
                 className={`object-cover object-center transform transition-transform duration-10000 ease-out brightness-[1.06] contrast-[1.02] ${
                   isActive ? 'scale-105' : 'scale-100'
@@ -308,19 +321,22 @@ export default function HeroSlider() {
         <span className="text-[11px] font-bold text-[#C5A880] font-mono">
           0{currentSlide + 1}
         </span>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-0">
           {SLIDES.map((s, idx) => (
             <button
               key={`hero-bullet-nav-${s.id}`}
               type="button"
               onClick={() => setCurrentSlide(idx)}
               aria-label={`Go to slide ${idx + 1}: ${s.titleAccent}`}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                idx === currentSlide
-                  ? 'w-8 bg-[#C5A880]'
-                  : 'w-2 bg-slate-600 hover:bg-slate-400'
-              }`}
-            />
+              aria-current={idx === currentSlide ? 'true' : undefined}
+              className="group flex h-6 min-w-6 items-center justify-center"
+            >
+              <span
+                className={`block h-2 rounded-full transition-all duration-300 ${
+                  idx === currentSlide ? 'w-8 bg-[#C5A880]' : 'w-2 bg-slate-500 group-hover:bg-slate-300'
+                }`}
+              />
+            </button>
           ))}
         </div>
         <span className="text-[11px] font-medium text-slate-400 font-mono">
