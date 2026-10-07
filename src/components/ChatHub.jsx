@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 import { MessageCircle, Phone, X, ShieldCheck, Clock } from 'lucide-react';
-import { SITE, CONTACT } from '@/src/config/site';
+import { SITE, CONTACT } from '@/src/config/core';
 
 export default function ChatHub() {
   const [isOpen, setIsOpen] = useState(false);

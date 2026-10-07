@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 import React from 'react';
 import Link from 'next/link';
-import { SITE, CONTACT, BRAND, ENTITY } from '@/src/config/site';
+import { SITE, CONTACT, BRAND, ENTITY } from '@/src/config/core';
 import { getRootCategories } from '@/src/config/categories';
 import { BRANDS } from '@/src/config/brands';
 import { LOCATIONS } from '@/src/config/locations';

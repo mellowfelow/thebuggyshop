@@ -21,7 +21,7 @@ import {
   Lock, 
   CreditCard, Sparkles } from 'lucide-react';
 import { useStore } from '@/src/components/ClientStoreProvider';
-import { SITE, CONTACT, REPLY } from '@/src/config/site';
+import { SITE, CONTACT, REPLY } from '@/src/config/core';
 import { waOrderLink } from '@/lib/whatsapp';
 import { generateOrderRef, money } from '@/lib/order';
 import { computeTotals } from '@/lib/bundle';

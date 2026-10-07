@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useMemo, useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { 
   ArrowRight, 
@@ -17,15 +17,16 @@ import {
   SlidersHorizontal
 } from 'lucide-react';
 import Image from 'next/image';
-import { SITE, CONTACT } from '@/src/config/site';
-import { PRODUCTS } from '@/src/config/products';
-import { FACTS as F, money } from '@/src/config/faq';
+import { SITE, CONTACT } from '@/src/config/core';
+const money = (n) => '$' + Math.round(n).toLocaleString('en-AU');
 
-const offroad = PRODUCTS.filter((p) => p.category === 'off-road-buggies').map((p) => p.price);
-const offroadFrom = money(Math.min(...offroad));
-const towKg = Math.max(...PRODUCTS.map((p) => parseInt(String(p.specs?.towingCapacity || '').replace(/,/g, '').match(/(\d+)\s*kg/i)?.[1], 10)).filter(Number.isFinite));
 
-const SLIDES = [
+// Catalogue-backed numbers arrive as props from the server page so the product data never ships in the client bundle.
+const buildSlides = (facts) => {
+  const F = { remote: { min: facts.remoteMin }, cart: { min: facts.cartMin }, cart46: { min: facts.cart46Min }, usedAll: { min: facts.usedMin } };
+  const offroadFrom = money(facts.offroadMin);
+  const towKg = facts.towKg;
+  return [
   {
     id: 1,
     isH1: true,
@@ -106,9 +107,11 @@ const SLIDES = [
     extraCta: { label: 'Used Golf Buggy Buying Guide →', href: '/blog/used-golf-cart-auction-vs-dealer-australia/' },
     badge: 'Used & Ex-Demo',
   },
-];
+  ];
+};
 
-export default function HeroSlider() {
+export default function HeroSlider({ facts }) {
+  const SLIDES = useMemo(() => buildSlides(facts), [facts]);
   // currentSlide + the set of slides whose image has been mounted. Only the active and the next
   // slide are mounted, so first paint downloads ONE hero image instead of all five.
   const [{ currentSlide, seen }, setHero] = useState({ currentSlide: 0, seen: new Set([0]) });

@@ -19,7 +19,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { useStore } from '@/src/components/ClientStoreProvider';
-import { SITE, CONTACT, SHOP } from '@/src/config/site';
+import { SITE, CONTACT, SHOP } from '@/src/config/core';
 import ProductCard from '@/src/components/ProductCard';
 import Image from 'next/image';
 import { productImageAlt } from '@/lib/seo';

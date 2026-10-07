@@ -13,7 +13,7 @@ import {
   Search, 
   X
 } from 'lucide-react';
-import { REVIEWS, REVIEW_STATS } from '@/src/config/site';
+import { REVIEWS, REVIEW_STATS } from '@/src/config/reviews';
 
 export default function ReviewsCarousel() {
   const [selectedState, setSelectedState] = useState('ALL');

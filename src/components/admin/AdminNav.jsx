@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LayoutDashboard, ShoppingCart, Mail, Megaphone, LogOut, ArrowLeft, Shield } from 'lucide-react';
 import { useAdminPasscode } from './AdminPasscodeContext';
-import { SITE, REPLY } from '@/src/config/site';
+import { SITE, REPLY } from '@/src/config/core';
 
 export default function AdminNav() {
   const pathname = usePathname();

@@ -8,7 +8,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { Search, X, ArrowRight } from 'lucide-react';
-import { suggest } from '@/lib/search';
 import { productImageAlt } from '@/lib/seo';
 
 export default function NavSearch() {
@@ -18,7 +17,15 @@ export default function NavSearch() {
   const box = useRef(null);
   const input = useRef(null);
 
-  const sug = useMemo(() => (q.trim().length >= 2 ? suggest(q, 6) : { products: [], categories: [] }), [q]);
+  // the search index (catalogue + brands + posts) is fetched on first use, so it is not part of every page's JavaScript
+  const [searchLib, setSearchLib] = useState(null);
+  useEffect(() => {
+    if (searchLib || q.trim().length < 2) return;
+    let live = true;
+    import('@/lib/search').then((m) => { if (live) setSearchLib({ suggest: m.suggest }); });
+    return () => { live = false; };
+  }, [q, searchLib]);
+  const sug = useMemo(() => (searchLib && q.trim().length >= 2 ? searchLib.suggest(q, 6) : { products: [], categories: [] }), [q, searchLib]);
 
   useEffect(() => {
     if (!open) return;

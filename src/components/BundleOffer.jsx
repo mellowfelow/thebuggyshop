@@ -5,11 +5,11 @@
 //  - <BundleNote>        small inline note used in the cart drawer and on the checkout page
 'use client';
 
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { X, Tag, ArrowRight, Check, Plus } from 'lucide-react';
-import { BUNDLE, PRODUCTS } from '@/src/config/site';
+import { BUNDLE } from '@/src/config/core';
 import { useStore } from '@/src/components/ClientStoreProvider';
 
 const SESSION_KEY = 'tbs-bundle-offer-seen';
@@ -18,7 +18,7 @@ export const markOfferSeen = () => { try { sessionStorage.setItem(SESSION_KEY, '
 
 // popular add-ons to tempt with: one big-ticket, one mid, one impulse (falls back to the cheapest if one is renamed)
 const PICKS = ['bushnell-tour-v5-golf-rangefinder', 'golf-cart-bag-14-way-divider', 'golf-buggy-umbrella-holder'];
-function suggestions() {
+function suggestions(PRODUCTS) {
   const ok = (p) => BUNDLE.addonCategories.includes(p.category) && p.images?.[0] && !/placeholder/.test(p.images[0]);
   const picked = PICKS.map((s) => PRODUCTS.find((p) => p.slug === s)).filter(Boolean).filter(ok);
   if (picked.length >= 3) return picked;
@@ -30,7 +30,13 @@ const dollars = (n) => `$${Math.round(n).toLocaleString('en-AU')}`;
 
 export function BundleOfferModal({ open, onClose, onContinue, totals }) {
   const { cart, addToCart } = useStore();
-  const items = useMemo(suggestions, []);
+  // product data is loaded on demand: the cart drawer and checkout bundle note must not carry the catalogue
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    let live = true;
+    import('@/src/config/products').then((m) => { if (live) setItems(suggestions(m.PRODUCTS)); });
+    return () => { live = false; };
+  }, []);
   const sheet = useRef(null);
   const first = useRef(null);
 

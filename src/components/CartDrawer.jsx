@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { X, Trash2, Plus, Minus, Truck, ArrowRight, ShieldCheck, ShoppingBag } from 'lucide-react';
-import { SITE, CONTACT } from '@/src/config/site';
+import { SITE, CONTACT } from '@/src/config/core';
 import Image from 'next/image';
 import { computeTotals } from '@/lib/bundle';
 import { BundleOfferModal, BundleNote, offerSeen, markOfferSeen } from '@/src/components/BundleOffer';

@@ -3,15 +3,14 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown, HelpCircle, MessageCircle, Phone, ArrowRight } from 'lucide-react';
-import { SITE, CONTACT } from '@/src/config/site';
-import { HOMEPAGE_FAQS } from '@/src/config/faq';
+import { SITE, CONTACT } from '@/src/config/core';
 
 /**
  * Accordion of FAQs. Every answer stays in the page HTML (hidden when closed) so search engines and
  * AI assistants can read it. The first answer carries `faq-answer-speakable` for voice assistants.
  * Props: faqs, idPrefix (unique per accordion on a page), support (show the contact strip).
  */
-export default function CollapsibleFaq({ faqs = HOMEPAGE_FAQS, idPrefix = 'faq', support = true }) {
+export default function CollapsibleFaq({ faqs = [], idPrefix = 'faq', support = true }) {
   const [openIndex, setOpenIndex] = useState(0); // first item open by default
 
   const toggleFaq = (index) => {

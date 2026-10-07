@@ -8,7 +8,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight, Pause, Play, Phone } from 'lucide-react';
 import { DEFAULT_ANNOUNCEMENTS } from '@/src/config/announcements';
-import { CONTACT } from '@/src/config/site';
+import { CONTACT } from '@/src/config/core';
 
 function Message({ slide }) {
   const cls = 'text-center text-[12px] sm:text-[13px] font-semibold leading-snug';

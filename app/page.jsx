@@ -27,6 +27,10 @@ import { HOMEPAGE_FAQS, FACTS as F, money } from '@/src/config/faq';
 import Image from 'next/image';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
+const offroad = PRODUCTS.filter((p) => p.category === 'off-road-buggies').map((p) => p.price);
+const towKg = Math.max(...PRODUCTS.map((p) => parseInt(String(p.specs?.towingCapacity || '').replace(/,/g, '').match(/(\d+)\s*kg/i)?.[1], 10)).filter(Number.isFinite));
+const heroFacts = { remoteMin: F.remote.min, cartMin: F.cart.min, cart46Min: F.cart46.min, usedMin: F.usedAll.min, offroadMin: Math.min(...offroad), towKg };
+
 export const metadata = {
   title: { absolute: seoTitle('Golf Buggies Australia | Electric, Remote & Push Buggies') },
   description: seoDesc('Shop golf buggies in Australia: electric, remote control and push models plus ride-on carts. Local warranty and tail-lift delivery. Browse the range today.'),
@@ -137,7 +141,7 @@ export default function HomePage() {
       <JsonLd schema={homeSchema} />
 
       {/* SECTION 1: FULL-WIDTH 4-SLIDE HERO REVOLUTION SLIDER */}
-      <HeroSlider />
+      <HeroSlider facts={heroFacts} />
 
       {/* SECTION 2: TRUST BAR (4 PILLARS) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -490,7 +494,7 @@ export default function HomePage() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="py-4 px-8 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 active:scale-[0.98]"
+              className="py-4 px-8 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-black text-sm uppercase tracking-wider transition-all shadow-lg flex items-center gap-2 active:scale-[0.98]"
             >
               <span>Instant WhatsApp ({CONTACT.phoneDisplay})</span>
             </a>

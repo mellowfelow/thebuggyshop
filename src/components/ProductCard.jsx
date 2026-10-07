@@ -13,7 +13,7 @@ import {
   Minus,
   Scale
 } from 'lucide-react';
-import { SHOP, BUNDLE } from '@/src/config/site';
+import { SHOP, BUNDLE } from '@/src/config/core';
 import Image from 'next/image';
 import { productImageAlt } from '@/lib/seo';
 
@@ -159,7 +159,7 @@ export default function ProductCard({
           {/* Eye-Catching Green Crypto Pill */}
           <div className="bg-emerald-50/90 border border-emerald-500/60 px-2.5 py-1.5 rounded-lg flex items-center justify-between gap-1 text-[10px] sm:text-xs shadow-2xs">
             <div className="flex items-center gap-1.5 min-w-0 truncate">
-              <span className="w-4 h-4 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-[9px] shrink-0 shadow-xs">
+              <span className="w-4 h-4 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-[9px] shrink-0 shadow-xs">
                 ₿
               </span>
               <span className="font-semibold text-emerald-950 truncate">

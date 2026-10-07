@@ -16,7 +16,7 @@ import {
   ChevronDown,
   Award
 } from 'lucide-react';
-import { SITE, CONTACT, ENTITY } from '@/src/config/site';
+import { SITE, CONTACT, ENTITY } from '@/src/config/core';
 import { getRootCategories } from '@/src/config/categories';
 import { BRANDS, BRAND_GROUPS, getBrandKind } from '@/src/config/brands';
 import Logo from '@/src/components/Logo';

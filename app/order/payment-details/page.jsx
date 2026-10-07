@@ -72,7 +72,7 @@ function PaymentDetailsContent() {
           </Link>
           <a
             href={`https://wa.me/${CONTACT.whatsapp.replace('+', '')}`}
-            className="px-5 py-2.5 bg-emerald-600 text-white text-sm font-semibold rounded-xl hover:bg-emerald-500 transition-colors inline-flex items-center gap-2"
+            className="px-5 py-2.5 bg-emerald-700 text-white text-sm font-semibold rounded-xl hover:bg-emerald-600 transition-colors inline-flex items-center gap-2"
           >
             <MessageSquare className="w-4 h-4" />
             <span>Contact WhatsApp Desk</span>

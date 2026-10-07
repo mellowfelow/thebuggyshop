@@ -6,7 +6,7 @@ import Footer from './Footer';
 import AnnouncementBar from './AnnouncementBar';
 import CartDrawer from './CartDrawer';
 import ChatHub from './ChatHub';
-import { SITE } from '@/src/config/site';
+import { SITE } from '@/src/config/core';
 
 const StoreContext = createContext(null);
 

@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Lock, ShieldAlert, KeyRound, Loader2, ArrowRight } from 'lucide-react';
 import { useAdminPasscode } from './AdminPasscodeContext';
-import { SITE } from '@/src/config/site';
+import { SITE } from '@/src/config/core';
 
 export default function PasscodeGate({ children }) {
   const { passcode, setPasscode, isLoaded } = useAdminPasscode();

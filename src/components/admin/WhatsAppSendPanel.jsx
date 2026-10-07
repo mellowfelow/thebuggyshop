@@ -51,7 +51,7 @@ export default function WhatsAppSendPanel({ phone, messageText, customerName = '
             href={waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-semibold rounded-lg transition-colors shadow-sm"
+            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-emerald-700 hover:bg-emerald-600 text-white text-sm font-semibold rounded-lg transition-colors shadow-sm"
           >
             <MessageSquare className="w-4 h-4" />
             <span>Open in WhatsApp</span>
