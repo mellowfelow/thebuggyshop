@@ -28,3 +28,16 @@ Facts added to brand pages and the ten November 2026 guides were researched on t
 ## Compliance note for the owner
 
 The official NSW golf buggy concession is limited to a two-seater, a medical need and 20 km/h. Marketing copy that describes four-seat carts as road registrable in NSW should be checked against that sheet.
+
+## Product facts added 17 Nov 2026 (src/config/product-facts.js)
+
+Ten products now carry manufacturer facts with a source link shown on the product page: Titleist Pro V1, TaylorMade TP5, Srixon Z-Star, Bushnell Tour V5 and Pro X3, Garmin Approach S12 and S42, Shot Scope G5, Trojan T-105 and T-875. Only attributes that stay true across model years are used, worded as "the manufacturer describes".
+
+Left out on purpose because sources disagreed or the model could not be pinned down:
+- **Srixon Z-Star compression** (88, 90 and 92 appear on different manufacturer pages) and **TaylorMade TP5** numeric cover specs (not published).
+- **Bushnell Tour V5 lens size** (24 mm in the manual, 21 mm on the product page). Bushnell's own page also marks the **Tour V5 as discontinued**, so confirm your stock before relying on it.
+- **Shot Scope G5 battery life and course count** (the official spec and the support pages differ) and its warranty (the manufacturer page lists 2 years; the shop's record says 1 year).
+- **Precision Pro NX7** (the shop listing does not say whether it is the slope or non-slope model; only 6x magnification was found).
+- **Trojan T-1275** (the 150 Ah figure belongs to the T-1275 Plus), the **AGM PRO** and **GC2 lithium** sets.
+- **Hedgehog wheels.** Retailers describe Hedgehog as studded rubber winter wheel covers that clip onto Clicgear wheels, which does not match the shop's "Hedgehog Solid Wheels" name. The generated copy no longer calls it a replacement wheel or tyre. Confirm what the product actually is.
+- **Carts, side-by-sides and parts (about 90 products):** official specs vary by model year and variant, and the shop's product names do not identify the variant. These keep the generated copy until supplier spec sheets are supplied.

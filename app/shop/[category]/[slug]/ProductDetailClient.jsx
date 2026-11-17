@@ -259,6 +259,14 @@ export default function ProductDetailClient({ product, relatedProducts, brandHre
         {/* Narrative Description */}
         <div className="prose max-w-none text-xs sm:text-sm text-[#2A4D3B] leading-relaxed space-y-3 bg-white p-5 rounded-2xl border border-[#D5DFD9]">
           <p>{product.description}</p>
+          {product.factSources?.length > 0 && (
+            <p className="text-xs text-[#4A5D53]">
+              Manufacturer information:{' '}
+              {product.factSources.map((s, i) => (
+                <span key={s.url}>{i > 0 && ', '}<a href={s.url} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#7A5C22] underline underline-offset-2">{s.label}</a></span>
+              ))}
+            </p>
+          )}
         </div>
 
         {/* Technical Specs Table */}

@@ -6,6 +6,7 @@
 // When a real spec sheet arrives, write the description and specs on the product record: this module then leaves it alone.
 import { SHOP, BUNDLE } from './core.js';
 import { hasLithiumWarranty, LITHIUM_WARRANTY_LABEL } from '../../lib/warranty.js';
+import { PRODUCT_FACTS } from './product-facts.js';
 
 const STUB_SHORT = /available at The Buggy Shop Australia with Australian warranty/i;
 const STUB_LONG = /provides high quality performance for Australian golfers and property owners/i;
@@ -59,16 +60,21 @@ export function withHonestCopy(p) {
   const vehicle = isVehicle(p);
   const freight = money(SHOP.shippingFee);
 
-  const sameAsName = p.name.toLowerCase().replace(/^(the|a|an)s+/, '') === type;
-  const shortDescription = sameAsName
+  const sameAsName = p.name.toLowerCase().replace(/^(the|a|an)\s+/, '') === type;
+  const facts = PRODUCT_FACTS[p.slug];
+  const firstSentence = facts ? (facts.lead.match(/^.*?\.(?=\s|$)/) || [facts.lead])[0] : '';
+  const shortDescription = facts
+    ? firstSentence
+    : sameAsName
     ? `${purpose} ${money(p.price)} inc. GST, delivered Australia-wide.`
     : vehicle
     ? `${p.name}: ${an(type)} ${type}${by}, delivered Australia-wide by tail-lift truck for a flat ${freight}.`
     : `${p.name}: ${an(type)} ${type}${by}, ${money(p.price)} inc. GST, delivered Australia-wide.`;
 
   const parts = [
-    sameAsName ? '' : `The ${p.name} is ${an(type)} ${type}${by}${p.condition && p.condition !== 'New' && !type.includes('ex-lease') ? `, sold as ${p.condition.toLowerCase()}` : ''}.`,
-    purpose,
+    facts ? facts.lead : '',
+    facts ? '' : sameAsName ? '' : `The ${p.name} is ${an(type)} ${type}${by}${p.condition && p.condition !== 'New' && !type.includes('ex-lease') ? `, sold as ${p.condition.toLowerCase()}` : ''}.`,
+    facts ? '' : purpose,
     `It is ${money(p.price)} including GST.`,
     vehicle
       ? `Delivery is by hydraulic tail-lift truck to your property gate or clubhouse for a flat ${freight}, anywhere in Australia.`
@@ -85,8 +91,9 @@ export function withHonestCopy(p) {
   delete specs.category;
   if (specs.power === 'Manual / Accessory') delete specs.power; // import placeholder, not a spec
   if (isLithiumPack(p)) specs.warranty = LITHIUM_WARRANTY_LABEL;
+  if (facts) Object.assign(specs, facts.specs);
 
   // A product named exactly like a search term ("Golf Driver") must not fight its category page for that term.
   const generic = p.name.split(/\s+/).length <= 3 && !branded;
-  return { ...p, shortDescription, description: parts.join(' '), specs, ...(generic ? { titleTag: `Buy ${p.name} Online | ${money(p.price)} inc. GST` } : {}) };
+  return { ...p, shortDescription, description: parts.join(' '), specs, ...(facts ? { factSources: facts.sources } : {}), ...(generic ? { titleTag: `Buy ${p.name} Online | ${money(p.price)} inc. GST` } : {}) };
 }
