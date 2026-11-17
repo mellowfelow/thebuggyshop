@@ -16,6 +16,13 @@ export async function generateStaticParams() {
   return PRODUCTS.map((p) => ({ category: p.category, slug: p.slug }));
 }
 
+// Title: the product name plus its price when it fits in 60 characters (a price in the snippet lifts click-through).
+// Always read from the product data, so it updates with the price.
+function productTitle(product) {
+  const price = `$${product.price.toLocaleString('en-AU')}`;
+  return [`${product.name} | ${price} inc. GST`, `${product.name} | ${price}`].find((t) => t.length <= 60) || product.name;
+}
+
 // Meta description in the 130-155 band: the product's own sentence, the price once, then payment/delivery facts until it is long enough.
 function productMetaDescription(product, price) {
   let d = product.shortDescription.replace(/s+$/, '');
@@ -33,7 +40,7 @@ export async function generateMetadata({ params }) {
   const price = `$${product.price.toLocaleString('en-AU')}`;
   return pageMeta({
     path: `/shop/${product.category}/${product.slug}/`,
-    title: product.titleTag || product.name,
+    title: product.titleTag || productTitle(product),
     description: productMetaDescription(product, price),
     image: realImages(product)[0],
   });

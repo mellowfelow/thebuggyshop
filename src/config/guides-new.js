@@ -309,7 +309,7 @@ ${table(['', 'Manual (push)', 'Electric walk-behind'], [
 
 ${table(['Push trolley', 'Price', 'Weight', 'Folded size', 'Brakes'], push.filter((p) => p.specs?.weight).map((p) => [pl(p.slug), $(p.price), kg(p), fold(p), spec(p, 'brakes')]))}
 
-See the full range of [push golf buggies](/shop/push-pull-golf-buggies/), including [3 wheel](/shop/3-wheel/) and [4 wheel](/shop/4-wheel/) models.
+See the full range of [push golf buggies](/shop/push-pull-golf-buggies/), including [3 wheel](/shop/3-wheel/) and [4 wheel](/shop/4-wheel/) models, or every [golf trolley](/shop/golf-trolleys/) in one place.
 
 ## Which electric golf trolleys do we sell?
 

@@ -12,6 +12,8 @@ import ShopClient from '@/app/shop/ShopClient';
 import { Truck, MapPin, ShieldCheck, Flag, CheckCircle2 } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
 import { ogImages } from '@/lib/og';
+import FaqSection from '@/src/components/FaqSection';
+import { faqsForPage } from '@/src/config/faq';
 
 export async function generateStaticParams() {
   return LOCATIONS.map((l) => ({ city: l.slug }));
@@ -141,6 +143,8 @@ export default async function LocationCityPage({ params }) {
         categories={CATEGORY_TREE}
         currentLocation={location}
       />
+
+      <FaqSection faqs={faqsForPage(`/golf-buggies/${location.slug}/`)} url={`/golf-buggies/${location.slug}/`} heading={`Golf buggies in ${location.name}: your questions answered`} id="city-faq" />
     </div>
   );
 }

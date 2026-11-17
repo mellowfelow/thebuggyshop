@@ -4,6 +4,7 @@
 // Rules (keyword engine): answers 40-55 words on the homepage, 40-65 elsewhere, concrete (never "it depends"), one link each.
 // Road-rule answers are written cautiously: have them reviewed before changing them.
 import { PRODUCTS } from './products.js';
+import { LOCATIONS } from './locations.js';
 
 const money = (n) => '$' + Math.round(n).toLocaleString('en-AU');
 const range = (f) => { const l = PRODUCTS.filter(f).map((p) => p.price); return { min: Math.min(...l), max: Math.max(...l) }; };
@@ -47,6 +48,16 @@ const elecCount = PRODUCTS.filter((p) => p.category === 'electric-golf-buggies' 
 const foldVol = (p) => { const m = String(p.specs?.foldSize || '').match(/([\d.]+)\s*cm\s*x\s*([\d.]+)\s*cm\s*x\s*([\d.]+)\s*cm/i); return m ? m[1] * m[2] * m[3] : Infinity; };
 const smallestElec = [...PRODUCTS.filter((p) => p.category === 'electric-golf-buggies')].sort((a, b) => foldVol(a) - foldVol(b))[0];
 const smallestFold = String(smallestElec.specs.foldSize).replace(/\s*\(.*$/, '');
+
+// One delivery and one price answer per city page, from each city's own data (locations.js) and the shop facts.
+const cityFaqs = LOCATIONS.flatMap((l) => [
+  { id: `delivery-${l.slug}`, theme: 'Delivery, payment & warranty', pages: [`/golf-buggies/${l.slug}/`], question: `How long does golf buggy delivery to ${l.name} take?`,
+    answer: `Estimated delivery is ${l.deliveryTime}. We ship from Queensland by hydraulic tail-lift truck for a flat ${money(SHIP)} per order, direct to your clubhouse, garage or property gate in ${l.state}. Timing is confirmed when your order is dispatched.`,
+    cta: { href: '/shipping/', label: 'Read the shipping details' } },
+  { id: `price-${l.slug}`, theme: 'Buying & prices', pages: [`/golf-buggies/${l.slug}/`], question: `How much does a golf buggy cost in ${l.name}?`,
+    answer: `Prices are the same Australia-wide and include GST. Push golf buggies start at ${money(d.push.min)}, electric walk-behind buggies at ${money(d.walk.min)} and new ride-on carts at ${money(d.cart.min)}, plus a flat ${money(SHIP)} delivery to ${l.name}. Accessories and parts are 5% off when your order includes a buggy or cart, so compare models before you order.`,
+    cta: { href: '/shop/', label: 'Browse golf buggies for sale' } },
+]);
 
 export const FAQ_BANK = [
   // ---------------- homepage set
@@ -231,6 +242,8 @@ export const FAQ_BANK = [
   { id: 'iron-cavity', theme: 'Golf clubs & gear', pages: ['/blog/how-to-choose-an-iron-set/'], question: "Are cavity back irons better for beginners?",
     answer: `Yes. Cavity-back irons spread weight to the edges, making off-centre hits straighter and longer, so they are the best choice for beginners and mid-handicappers. Blades suit skilled players who want shot-shaping control. Most modern game-improvement iron sets use this design today.`,
     cta: { href: '/shop/woods-and-irons/', label: "Browse golf irons for sale" } },
+
+  ...cityFaqs,
 
   // ---------------- answers for the November 2026 guides (each appears on its own blog post)
   { id: 'nsw-rego-needed', theme: 'Road rules & licences', pages: ['/blog/golf-cart-registration-nsw-guide/'], question: 'Do you need to register a golf cart in NSW?',
