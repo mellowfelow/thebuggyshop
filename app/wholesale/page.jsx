@@ -5,6 +5,8 @@ import { SITE, CONTACT } from '@/src/config/site';
 import { PRODUCTS } from '@/src/config/products';
 import { SHOP } from '@/src/config/core';
 import WholesaleFormClient from './WholesaleFormClient';
+import FaqSection from '@/src/components/FaqSection';
+import { faqsForPage } from '@/src/config/faq';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
 export const metadata = pageMeta({
@@ -77,6 +79,8 @@ export default function WholesalePage() {
           <li>Pay by bank transfer, PayID or commercial invoice, or take {SHOP.cryptoDiscount}% off with Bitcoin or USDT. Delivery for multi-vehicle orders is quoted with your fleet pricing.</li>
         </ol>
       </section>
+
+      <FaqSection faqs={faqsForPage('/wholesale/')} url="/wholesale/" heading="Fleet orders: delivery, payment and warranty" id="wholesale-faq" />
     </div>
   );
 }

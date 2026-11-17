@@ -6,6 +6,7 @@
 import { PRODUCTS } from './products.js';
 import { FACTS as F, money as $ } from './faq.js';
 import { GUIDES } from './guides.js';
+import { GUIDES_NEW } from './guides-new.js';
 import { LIVE_EXTRA } from './guides-live-extra.js';
 
 const P = Object.fromEntries(PRODUCTS.map((p) => [p.slug, p]));
@@ -627,6 +628,6 @@ const BASE_POSTS = [
 ];
 
 // Keyword engine v2 guides (batteries, buggies, golf gear) live in guides-cart.js and guides-golf.js.
-export const POSTS = [...BASE_POSTS, ...GUIDES];
+export const POSTS = [...BASE_POSTS, ...GUIDES, ...GUIDES_NEW];
 
 export const POST_UPDATED_LABEL = when(TODAY);

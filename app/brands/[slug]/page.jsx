@@ -7,6 +7,7 @@ import { SITE } from '@/src/config/site';
 import { BRANDS, getBrandBySlug, getBrandKind } from '@/src/config/brands';
 import { PRODUCTS, getProductsByBrand } from '@/src/config/products';
 import CatalogFacts from '@/src/components/CatalogFacts';
+import BrandNotes from '@/src/components/BrandNotes';
 import { CATEGORY_TREE } from '@/src/config/categories';
 import JsonLd from '@/src/components/JsonLd';
 import ShopClient from '@/app/shop/ShopClient';
@@ -202,7 +203,9 @@ export default async function BrandPage({ params }) {
         currentBrand={brand}
       />
 
-      <CatalogFacts label={brand.name} products={brandProducts} />
+      <CatalogFacts label={brand.name} products={brandProducts} showSpecs />
+
+      <BrandNotes brand={brand} products={brandProducts} />
     </div>
   );
 }

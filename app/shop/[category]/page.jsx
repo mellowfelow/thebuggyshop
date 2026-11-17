@@ -195,7 +195,7 @@ export default async function CategoryPage({ params }) {
         currentCategory={category}
       />
 
-      {categoryProducts.length <= 12 && <CatalogFacts label={category.navLabel} products={categoryProducts} showBrand />}
+      {categoryProducts.length <= 12 && <CatalogFacts label={category.navLabel} products={categoryProducts} showBrand showSpecs showDescriptions={categoryProducts.length <= 2} />}
 
       <FaqSection faqs={faqsForPage(`/shop/${category.slug}/`)} url={`/shop/${category.slug}/`} heading={`${category.navLabel}: your questions answered`} id="category-faq" />
 

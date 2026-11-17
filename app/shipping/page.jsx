@@ -1,5 +1,7 @@
 import { pageMeta } from '@/lib/pageMeta';
 import LegalPage from '@/src/components/LegalPage';
+import FaqSection from '@/src/components/FaqSection';
+import { faqsForPage } from '@/src/config/faq';
 import { SITE, SHOP, CONTACT } from '@/src/config/site';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
@@ -14,6 +16,7 @@ export const metadata = pageMeta({
 // remote-area surcharges before this page is relied on.
 export default function ShippingPage() {
   return (
+    <>
     <LegalPage
       title="Shipping & Delivery"
       path="/shipping/"
@@ -48,5 +51,9 @@ export default function ShippingPage() {
         },
       ]}
     />
+    <div className="max-w-3xl mx-auto px-4 sm:px-8 pb-16">
+      <FaqSection faqs={faqsForPage('/shipping/')} url="/shipping/" heading="Delivery and payment: your questions answered" id="shipping-faq" />
+    </div>
+    </>
   );
 }

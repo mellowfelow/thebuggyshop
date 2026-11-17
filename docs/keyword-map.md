@@ -1009,3 +1009,8 @@ Every pooled keyword has exactly one owner (450 keywords, 450 owners). No keywor
 - **Retargeted to match what the page says:** /shop/holders/ (golf buggy holder), /shop/wheel-upgrades/ (golf buggy wheel upgrade), /shop/practice-aids/ (golf practice aids), the LiFePO4 vs lead-acid post (lifepo4 vs lead acid), the repairs post (golf buggy repairs), the rangefinder post (golf rangefinder vs gps watch), the driver post (how to choose a golf driver).
 - **H1s lengthened to carry their keyword:** conversion kits, 4 and 6 seat carts, lifted carts, drive and electrical spares, seats and footboards, covers and wheel bags.
 - **No servicing is offered:** the repairs guide is now titled "Repairs and Maintenance" (it is advice, not a service).
+
+## Changes 17 Nov 2026 (ten new guides)
+- **docs/keyword-targets.json covers 92 URLs.** The ten new guides each own one primary keyword (see docs/blog-plan.md), none of which is used by another page.
+- **The three state registration guides** each own one state phrase ("golf cart registration nsw", "... qld", "... victoria"); the overview guide keeps "golf cart road registration".
+- **New internal links:** each guide is linked from the matching category pages through src/config/related.js, and from the other guides in its set.

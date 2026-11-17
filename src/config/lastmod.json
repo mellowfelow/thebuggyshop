@@ -35,6 +35,14 @@
   "h": "38afa719707d",
   "d": "2026-11-17"
  },
+ "/blog/downhill-control-golf-buggy-guide/": {
+  "h": "597169c6f10b",
+  "d": "2026-11-17"
+ },
+ "/blog/dune-buggy-vs-side-by-side-australia/": {
+  "h": "a4a1ed6f764b",
+  "d": "2026-11-17"
+ },
  "/blog/electric-buggy-for-adults-australia/": {
   "h": "b7d83504d5e8",
   "d": "2026-10-06"
@@ -42,6 +50,10 @@
  "/blog/electric-golf-carts-australia-guide/": {
   "h": "6a9a0f5afe32",
   "d": "2026-10-06"
+ },
+ "/blog/electric-vs-manual-golf-trolley-australia/": {
+  "h": "eeef7d239d85",
+  "d": "2026-11-17"
  },
  "/blog/golf-bag-and-cart-how-to-choose-stand-cart-carry/": {
   "h": "1856c06d1cb0",
@@ -59,6 +71,10 @@
   "h": "c5c847349e75",
   "d": "2026-11-17"
  },
+ "/blog/golf-buggy-vs-golf-cart-difference/": {
+  "h": "f92bf0af86f6",
+  "d": "2026-11-17"
+ },
  "/blog/golf-cart-ac-vs-dc-motor-guide/": {
   "h": "e03283bfa9c7",
   "d": "2026-10-06"
@@ -66,6 +82,18 @@
  "/blog/golf-cart-battery-replacement-cost-australia/": {
   "h": "bb623879e204",
   "d": "2026-10-06"
+ },
+ "/blog/golf-cart-registration-nsw-guide/": {
+  "h": "57426f6ddc4c",
+  "d": "2026-11-17"
+ },
+ "/blog/golf-cart-registration-qld-guide/": {
+  "h": "b7baeb3072d1",
+  "d": "2026-11-17"
+ },
+ "/blog/golf-cart-registration-victoria-guide/": {
+  "h": "0fa05c4aebf8",
+  "d": "2026-11-17"
  },
  "/blog/golf-rangefinder-vs-gps-watch-which-to-buy/": {
   "h": "cd2f0d1e3fd7",
@@ -103,6 +131,14 @@
   "h": "65070b28b208",
   "d": "2026-10-06"
  },
+ "/blog/remote-control-vs-follow-me-golf-buggy/": {
+  "h": "0ec4d7f45c18",
+  "d": "2026-11-17"
+ },
+ "/blog/side-by-side-vs-quad-bike-australia/": {
+  "h": "f357176b430d",
+  "d": "2026-11-17"
+ },
  "/blog/used-golf-cart-auction-vs-dealer-australia/": {
   "h": "438f1825cea4",
   "d": "2026-10-06"
@@ -111,208 +147,212 @@
   "h": "ff5cda84d3d0",
   "d": "2026-10-06"
  },
+ "/blog/will-a-golf-buggy-fit-in-my-car/": {
+  "h": "6363dfb37cf2",
+  "d": "2026-11-17"
+ },
  "/brands/": {
   "h": "9c695b662e14",
   "d": "2026-11-17"
  },
  "/brands/alphard/": {
-  "h": "69ab73455521",
+  "h": "aca683877dcd",
   "d": "2026-11-17"
  },
  "/brands/big-max/": {
-  "h": "a9f3b4b131f3",
+  "h": "781f2ea3d307",
   "d": "2026-11-17"
  },
  "/brands/brosnan/": {
-  "h": "ef6f56c13a19",
+  "h": "36fe71b9bf89",
   "d": "2026-11-17"
  },
  "/brands/buggy-shop-junior/": {
-  "h": "2cd34c718d41",
+  "h": "ec559fcc38e9",
   "d": "2026-11-17"
  },
  "/brands/bushnell/": {
-  "h": "4d05be4843b5",
+  "h": "241ab09f0c89",
   "d": "2026-11-17"
  },
  "/brands/can-am/": {
-  "h": "79cc952a67f3",
+  "h": "3d859fc96c8a",
   "d": "2026-11-17"
  },
  "/brands/century/": {
-  "h": "6f171a333904",
+  "h": "989abd104cae",
   "d": "2026-11-17"
  },
  "/brands/cfmoto/": {
-  "h": "5245923eb072",
+  "h": "a63e67b7740e",
   "d": "2026-11-17"
  },
  "/brands/clicgear/": {
-  "h": "cf8629ce2363",
+  "h": "72a9bde0853f",
   "d": "2026-11-17"
  },
  "/brands/club-car/": {
-  "h": "68cfb660ba21",
+  "h": "e94bf6f851f1",
   "d": "2026-11-17"
  },
  "/brands/cougar/": {
-  "h": "dd0958c97e17",
+  "h": "6f25372b9a36",
   "d": "2026-11-17"
  },
  "/brands/crossfire/": {
-  "h": "4b5a0f38addc",
+  "h": "5461de47fd45",
   "d": "2026-11-17"
  },
  "/brands/ecar/": {
-  "h": "0bdffb67e4f9",
+  "h": "f5f57fdcf356",
   "d": "2026-11-17"
  },
  "/brands/evolution/": {
-  "h": "8004b10f249c",
+  "h": "2e90f22c09d4",
   "d": "2026-11-17"
  },
  "/brands/explora/": {
-  "h": "9eacf9a5b868",
+  "h": "008d71e25aba",
   "d": "2026-11-17"
  },
  "/brands/ez-go/": {
-  "h": "aec1dfa7a78f",
+  "h": "64282bd14e4b",
   "d": "2026-11-17"
  },
  "/brands/garia/": {
-  "h": "3953c4e6e563",
+  "h": "f3c43ba39437",
   "d": "2026-11-17"
  },
  "/brands/garmin/": {
-  "h": "d74e618e5f3f",
+  "h": "23ba4f70fc68",
   "d": "2026-11-17"
  },
  "/brands/giant/": {
-  "h": "4cdba7ea87b1",
+  "h": "1bd7aaae18f4",
   "d": "2026-11-17"
  },
  "/brands/gmx/": {
-  "h": "5f209d9e24d1",
+  "h": "f123a28f4434",
   "d": "2026-11-17"
  },
  "/brands/hammerhead/": {
-  "h": "08c6896cf688",
+  "h": "569ab23079a4",
   "d": "2026-11-17"
  },
  "/brands/hawk-carts/": {
-  "h": "ae0e32b05aa3",
+  "h": "616e8c380b74",
   "d": "2026-11-17"
  },
  "/brands/hedgehog/": {
-  "h": "0bd0dd30d165",
+  "h": "00bcfedd49af",
   "d": "2026-11-17"
  },
  "/brands/kayo/": {
-  "h": "a827d309735e",
+  "h": "80824ff03974",
   "d": "2026-11-17"
  },
  "/brands/lvtong/": {
-  "h": "79ae4c9a46ba",
+  "h": "8d2a821d97cd",
   "d": "2026-11-17"
  },
  "/brands/mgi/": {
-  "h": "e3e87ef36cec",
+  "h": "0eb464bf962c",
   "d": "2026-11-17"
  },
  "/brands/mj-motor/": {
-  "h": "d831176e6ee5",
+  "h": "5ab6e0af23a7",
   "d": "2026-11-17"
  },
  "/brands/motocaddy/": {
-  "h": "ab088f5b23e9",
+  "h": "2399c5cc5104",
   "d": "2026-11-17"
  },
  "/brands/mxr-motorsports/": {
-  "h": "8cfe3999fc36",
+  "h": "9d89ea20ca45",
   "d": "2026-11-17"
  },
  "/brands/polaris/": {
-  "h": "6db8602ccb66",
+  "h": "399a0b0d5834",
   "d": "2026-11-17"
  },
  "/brands/powakaddy/": {
-  "h": "98d75ec7e417",
+  "h": "b51f91dde4e4",
   "d": "2026-11-17"
  },
  "/brands/precision-pro/": {
-  "h": "adeb8091e4dc",
+  "h": "c9893dabe856",
   "d": "2026-11-17"
  },
  "/brands/qod-golf/": {
-  "h": "f1882c45b517",
+  "h": "846a6e611a6c",
   "d": "2026-11-17"
  },
  "/brands/rippa/": {
-  "h": "f2570dbf9bce",
+  "h": "6d4a384d3a2d",
   "d": "2026-11-17"
  },
  "/brands/shelby/": {
-  "h": "af3a5c3f701b",
+  "h": "f0d2e458a152",
   "d": "2026-11-17"
  },
  "/brands/shot-scope/": {
-  "h": "0dd1d5da0930",
+  "h": "d7dddfc4fc5b",
   "d": "2026-11-17"
  },
  "/brands/srixon/": {
-  "h": "408e458f34d1",
+  "h": "fdbc9bc0b125",
   "d": "2026-11-17"
  },
  "/brands/stewart-golf/": {
-  "h": "5e4317e1d625",
+  "h": "bee849e6ae97",
   "d": "2026-11-17"
  },
  "/brands/stinger-golf/": {
-  "h": "342bc6052aad",
+  "h": "f4e9ce259213",
   "d": "2026-11-17"
  },
  "/brands/tara/": {
-  "h": "b02db4b3b481",
+  "h": "68ffe25ae066",
   "d": "2026-11-17"
  },
  "/brands/taylormade/": {
-  "h": "08dbc3837cc2",
+  "h": "5ffedb4c1871",
   "d": "2026-11-17"
  },
  "/brands/thomson/": {
-  "h": "dfbcbbedb403",
+  "h": "3568cc3855ef",
   "d": "2026-11-17"
  },
  "/brands/titleist/": {
-  "h": "6a7a5b5f53e8",
+  "h": "3349b0e0e452",
   "d": "2026-11-17"
  },
  "/brands/tomberlin/": {
-  "h": "c7f241d2213e",
+  "h": "da10dddb2f76",
   "d": "2026-11-17"
  },
  "/brands/trident/": {
-  "h": "30941e3f5515",
+  "h": "a7d3eb96f55b",
   "d": "2026-11-17"
  },
  "/brands/triumph/": {
-  "h": "e18cc5f8cc3e",
+  "h": "f107ed20d5d9",
   "d": "2026-11-17"
  },
  "/brands/trojan/": {
-  "h": "71395907c2e1",
+  "h": "557ee7f25848",
   "d": "2026-11-17"
  },
  "/brands/ultramax/": {
-  "h": "4f8539e9ddf1",
+  "h": "4e4605a8c3cc",
   "d": "2026-11-17"
  },
  "/brands/voltrac/": {
-  "h": "afad04891975",
+  "h": "eac527899d5b",
   "d": "2026-11-17"
  },
  "/brands/yamaha/": {
-  "h": "fa74d850697e",
+  "h": "c6272fbc2852",
   "d": "2026-11-17"
  },
  "/compare/": {
@@ -324,7 +364,7 @@
   "d": "2026-11-17"
  },
  "/faq/": {
-  "h": "b957c5c8ab1e",
+  "h": "2e886a33d136",
   "d": "2026-11-17"
  },
  "/finance/": {
@@ -376,7 +416,7 @@
   "d": "2026-11-17"
  },
  "/shipping/": {
-  "h": "ebeb7e2f89a3",
+  "h": "93b0c7954bb8",
   "d": "2026-11-17"
  },
  "/shop/": {
@@ -384,27 +424,27 @@
   "d": "2026-11-17"
  },
  "/shop/2-seat/": {
-  "h": "6087baf6fac9",
+  "h": "85ba84c3bb3e",
   "d": "2026-11-17"
  },
  "/shop/2-seater-petrol/": {
-  "h": "2025d6f9734d",
+  "h": "b8c2a8c94884",
   "d": "2026-11-17"
  },
  "/shop/3-wheel/": {
-  "h": "ebd224c0c4ea",
+  "h": "757e917b4d0a",
   "d": "2026-11-17"
  },
  "/shop/4-6-seat/": {
-  "h": "50b093667572",
+  "h": "ab0113410d17",
   "d": "2026-11-17"
  },
  "/shop/4-wheel/": {
-  "h": "f34bdf96ca7f",
+  "h": "7bce5613d58f",
   "d": "2026-11-17"
  },
  "/shop/accessories/": {
-  "h": "e1f3022d15e8",
+  "h": "93f1fbfebc3c",
   "d": "2026-11-17"
  },
  "/shop/accessories/big-max-dri-lite-premium-cart-bag/": {
@@ -500,11 +540,11 @@
   "d": "2026-11-17"
  },
  "/shop/bags/": {
-  "h": "f7f9fb2bbcef",
+  "h": "c49f2248b29c",
   "d": "2026-11-17"
  },
  "/shop/batteries/": {
-  "h": "9c6084abf87b",
+  "h": "393a2290a6f7",
   "d": "2026-11-17"
  },
  "/shop/batteries/aftermarket-12v-18-25ah-lithium-battery-charger/": {
@@ -596,35 +636,35 @@
   "d": "2026-11-17"
  },
  "/shop/cart-sets/": {
-  "h": "93fdb348ebe5",
+  "h": "bb2025a28496",
   "d": "2026-11-17"
  },
  "/shop/chargers/": {
-  "h": "01d1aa55057f",
+  "h": "f4a6a2618858",
   "d": "2026-11-17"
  },
  "/shop/complete-sets/": {
-  "h": "f05534eae92c",
+  "h": "98f90eab32fc",
   "d": "2026-11-17"
  },
  "/shop/conversion-kits/": {
-  "h": "60f5c5592059",
+  "h": "0023c8896c94",
   "d": "2026-11-17"
  },
  "/shop/covers-and-bags/": {
-  "h": "089a907112ac",
+  "h": "b75dcf6269eb",
   "d": "2026-11-17"
  },
  "/shop/drive-electrical/": {
-  "h": "85e5375ce498",
+  "h": "60ddc774da93",
   "d": "2026-11-17"
  },
  "/shop/dune-buggies/": {
-  "h": "375dc3fcccde",
+  "h": "e8607dc56ada",
   "d": "2026-11-17"
  },
  "/shop/electric-golf-buggies/": {
-  "h": "9331207f4543",
+  "h": "cf47511d873e",
   "d": "2026-11-17"
  },
  "/shop/electric-golf-buggies/alphard-club-booster-v2-pro-conversion-kit/": {
@@ -716,19 +756,19 @@
   "d": "2026-11-17"
  },
  "/shop/electric/": {
-  "h": "44000cec3a79",
+  "h": "a0c0913effa2",
   "d": "2026-11-17"
  },
  "/shop/farm-buggies/": {
-  "h": "4cd8b3aec038",
+  "h": "1e5e070e95b5",
   "d": "2026-11-17"
  },
  "/shop/golf-balls/": {
-  "h": "ab3f1e3c2235",
+  "h": "4d9e300e2931",
   "d": "2026-11-17"
  },
  "/shop/golf-clubs/": {
-  "h": "f17261f22436",
+  "h": "341fb2a50bd9",
   "d": "2026-11-17"
  },
  "/shop/golf-clubs/beginner-complete-golf-club-set-12-piece/": {
@@ -760,19 +800,19 @@
   "d": "2026-11-17"
  },
  "/shop/golf-trolleys/": {
-  "h": "4e4a0e7f01ca",
+  "h": "34692d0146c8",
   "d": "2026-11-17"
  },
  "/shop/gps-follow-buggies/": {
-  "h": "6a84d23f9e5e",
+  "h": "5877d76ad31e",
   "d": "2026-11-17"
  },
  "/shop/holders/": {
-  "h": "303561d38d38",
+  "h": "aed124535142",
   "d": "2026-11-17"
  },
  "/shop/kids-buggies/": {
-  "h": "11e2dd5afd72",
+  "h": "5167d376029c",
   "d": "2026-11-17"
  },
  "/shop/kids-buggies/crossfire-90cc-twin-seat-kids-petrol-buggy/": {
@@ -796,15 +836,15 @@
   "d": "2026-11-17"
  },
  "/shop/lifted-all-terrain/": {
-  "h": "25e5f7738397",
+  "h": "30f6ac9eb339",
   "d": "2026-11-17"
  },
  "/shop/lithium/": {
-  "h": "a53f8ed8fafb",
+  "h": "78adac8fe5cd",
   "d": "2026-11-17"
  },
  "/shop/luxury-golf-carts/": {
-  "h": "4e622fa1a354",
+  "h": "3e5c915e2f02",
   "d": "2026-11-17"
  },
  "/shop/luxury-golf-carts/club-car-tempo-onward-lithium-golf-cart-2-2-2-4-seat/": {
@@ -924,7 +964,7 @@
   "d": "2026-11-17"
  },
  "/shop/off-road-buggies/": {
-  "h": "c301667c127f",
+  "h": "81e03bba3cca",
   "d": "2026-11-17"
  },
  "/shop/off-road-buggies/can-am-commander-limited-side-by-side/": {
@@ -1028,7 +1068,7 @@
   "d": "2026-11-17"
  },
  "/shop/parts/": {
-  "h": "83b2ba468343",
+  "h": "7f868c255f4e",
   "d": "2026-11-17"
  },
  "/shop/parts/clicgear-secondary-strut-mgi-bag-rest-spacer/": {
@@ -1100,15 +1140,15 @@
   "d": "2026-11-17"
  },
  "/shop/petrol/": {
-  "h": "139cd8b8afbc",
+  "h": "89d370a97970",
   "d": "2026-11-17"
  },
  "/shop/practice-aids/": {
-  "h": "015810ae0ce7",
+  "h": "3570cc528ea0",
   "d": "2026-11-17"
  },
  "/shop/push-pull-golf-buggies/": {
-  "h": "6225e410baa1",
+  "h": "6fa07d490cae",
   "d": "2026-11-17"
  },
  "/shop/push-pull-golf-buggies/big-max-blade-ip2-flat-fold-golf-buggy/": {
@@ -1136,23 +1176,23 @@
   "d": "2026-11-17"
  },
  "/shop/rangefinders-gps/": {
-  "h": "83c40e1947f3",
+  "h": "3217ef24dc66",
   "d": "2026-11-17"
  },
  "/shop/remote-control-golf-buggies/": {
-  "h": "16719c0ea0bb",
+  "h": "b3438438efce",
   "d": "2026-11-17"
  },
  "/shop/seats-footboards/": {
-  "h": "f446cb144bc6",
+  "h": "09ae28e970f9",
   "d": "2026-11-17"
  },
  "/shop/side-by-side/": {
-  "h": "718c6a55de34",
+  "h": "e7420971e883",
   "d": "2026-11-17"
  },
  "/shop/used-golf-buggies/": {
-  "h": "8692bd511338",
+  "h": "8e481c992f60",
   "d": "2026-11-17"
  },
  "/shop/used-golf-buggies/ex-demo-mgi-zip-navigator-at-remote-buggy/": {
@@ -1160,27 +1200,27 @@
   "d": "2026-11-17"
  },
  "/shop/utility/": {
-  "h": "022f4807e69b",
+  "h": "87d0d3e86516",
   "d": "2026-11-17"
  },
  "/shop/walk-behind/": {
-  "h": "64d9011a397f",
+  "h": "5092c8f4b1a6",
   "d": "2026-11-17"
  },
  "/shop/wedges-and-putters/": {
-  "h": "6ea0f81f5a0f",
+  "h": "16c96877f796",
   "d": "2026-11-17"
  },
  "/shop/wheel-upgrades/": {
-  "h": "8e3c011e7e4f",
+  "h": "d18efd8a0f77",
   "d": "2026-11-17"
  },
  "/shop/wheels-tyres/": {
-  "h": "c23368db475f",
+  "h": "eab164a9d488",
   "d": "2026-11-17"
  },
  "/shop/woods-and-irons/": {
-  "h": "52b23cc83026",
+  "h": "56b9d77f6487",
   "d": "2026-11-17"
  },
  "/terms/": {
@@ -1188,7 +1228,7 @@
   "d": "2026-11-17"
  },
  "/wholesale/": {
-  "h": "b355801f650a",
+  "h": "bc9c246d8e0c",
   "d": "2026-11-17"
  }
 }

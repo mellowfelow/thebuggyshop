@@ -37,6 +37,17 @@ export { money };
 
 export const FAQ_THEMES = ['Buying & prices', 'Delivery, payment & warranty', 'Speed, range & charging', 'Batteries & chargers', 'Parts & troubleshooting', 'Golf clubs & gear', 'Kids buggies', 'Road rules & licences', 'Off-road buggies'];
 
+// Extra groups used by the answers written for the November 2026 guides (all computed from the product data).
+const ssvR = range((p) => ['side-by-side', 'farm-buggies'].includes(p.subcategory));
+const followList = PRODUCTS.filter((p) => /follow/i.test(p.name) && p.category === 'electric-golf-buggies');
+const followR = { min: Math.min(...followList.map((p) => p.price)), max: Math.max(...followList.map((p) => p.price)) };
+const followNames = followList.map((p) => p.name.replace(/ (Autonomous )?(Electric )?Buggy$/i, '')).slice(0, 2).join(' and ');
+const dhList = PRODUCTS.filter((p) => p.category === 'electric-golf-buggies' && /downhill|slope|dhc|descent/i.test(p.specs?.brakes || ''));
+const elecCount = PRODUCTS.filter((p) => p.category === 'electric-golf-buggies' && p.subcategory !== 'conversion-kits').length;
+const foldVol = (p) => { const m = String(p.specs?.foldSize || '').match(/([\d.]+)\s*cm\s*x\s*([\d.]+)\s*cm\s*x\s*([\d.]+)\s*cm/i); return m ? m[1] * m[2] * m[3] : Infinity; };
+const smallestElec = [...PRODUCTS.filter((p) => p.category === 'electric-golf-buggies')].sort((a, b) => foldVol(a) - foldVol(b))[0];
+const smallestFold = String(smallestElec.specs.foldSize).replace(/\s*\(.*$/, '');
+
 export const FAQ_BANK = [
   // ---------------- homepage set
   { id: 'cost-buggy', home: true, theme: 'Buying & prices', pages: ['/', '/shop/'], question: 'How much does a golf buggy cost in Australia?',
@@ -48,13 +59,13 @@ export const FAQ_BANK = [
   { id: 'best-electric', home: true, theme: 'Buying & prices', pages: ['/', '/shop/electric-golf-buggies/'], question: 'What is the best electric golf buggy in Australia?',
     answer: `For most golfers, a lithium remote-control or walk-behind buggy from MGI, Motocaddy, PowaKaddy or Stewart Golf is the right pick. Our electric range runs from ${money(d.elec.min)} to ${money(d.elec.max)}. Choose remote control for hands-free, or walk-behind to save money. Compare them in our electric golf buggy range.`,
     cta: { href: '/shop/electric-golf-buggies/', label: 'Compare electric golf buggies' } },
-  { id: 'delivery', home: true, theme: 'Delivery, payment & warranty', pages: ['/', '/golf-buggies/'], question: 'Do you deliver golf buggies Australia-wide?',
+  { id: 'delivery', home: true, theme: 'Delivery, payment & warranty', pages: ['/', '/golf-buggies/', '/shipping/', '/wholesale/'], question: 'Do you deliver golf buggies Australia-wide?',
     answer: `Yes. We deliver nationwide by hydraulic tail-lift truck to your property gate or clubhouse for a flat ${money(SHIP)} per order. We are based in Queensland and ship to every state. Call 0480 811 308 or check delivery times for your city.`,
     cta: { href: '/golf-buggies/', label: 'Delivery by city' } },
-  { id: 'payment', home: true, theme: 'Delivery, payment & warranty', pages: ['/'], question: 'What payment options do you offer?',
+  { id: 'payment', home: true, theme: 'Delivery, payment & warranty', pages: ['/', '/shipping/', '/wholesale/'], question: 'What payment options do you offer?',
     answer: 'Pay by bank transfer (Osko or EFT), PayID, or split the cost into four equal payments at 0% interest. Pay with Bitcoin or USDT and take 10% off. All prices include GST. You choose at checkout and we email payment details with your order reference. See our finance options.',
     cta: { href: '/finance/', label: 'Pay in 4 and finance options' } },
-  { id: 'warranty', home: true, theme: 'Delivery, payment & warranty', pages: ['/', '/shop/electric-golf-buggies/'], question: 'Is there a warranty on new golf buggies?',
+  { id: 'warranty', home: true, theme: 'Delivery, payment & warranty', pages: ['/', '/shop/electric-golf-buggies/', '/wholesale/'], question: 'Is there a warranty on new golf buggies?',
     answer: 'New lithium golf buggies include a 5-year LiFePO4 battery guarantee, and each product page lists the warranty that applies to that model. We support what we sell from our Queensland base. Ask which warranty applies before you order, or call 0480 811 308.',
     cta: { href: '/shop/electric-golf-buggies/', label: 'See electric golf buggies' } },
   { id: 'used', home: true, theme: 'Buying & prices', pages: ['/', '/shop/used-golf-buggies/'], question: 'Can I buy a used golf buggy?',
@@ -220,6 +231,68 @@ export const FAQ_BANK = [
   { id: 'iron-cavity', theme: 'Golf clubs & gear', pages: ['/blog/how-to-choose-an-iron-set/'], question: "Are cavity back irons better for beginners?",
     answer: `Yes. Cavity-back irons spread weight to the edges, making off-centre hits straighter and longer, so they are the best choice for beginners and mid-handicappers. Blades suit skilled players who want shot-shaping control. Most modern game-improvement iron sets use this design today.`,
     cta: { href: '/shop/woods-and-irons/', label: "Browse golf irons for sale" } },
+
+  // ---------------- answers for the November 2026 guides (each appears on its own blog post)
+  { id: 'nsw-rego-needed', theme: 'Road rules & licences', pages: ['/blog/golf-cart-registration-nsw-guide/'], question: 'Do you need to register a golf cart in NSW?',
+    answer: 'Not on a golf course. Transport for NSW says golf buggies used in a game of golf, or travelling to a car park or storage building separated from the course by a road, are not subject to registration or licensing. Public roads need conditional registration, which is a narrow medical concession for a two-seater.',
+    cta: { href: '/blog/golf-cart-registration-nsw-guide/', label: 'Read the NSW golf cart guide' } },
+  { id: 'nsw-rego-speed', theme: 'Road rules & licences', pages: ['/blog/golf-cart-registration-nsw-guide/'], question: 'What is the speed limit for a golf buggy on NSW roads?',
+    answer: 'The Transport for NSW golf buggy sheet limits a conditionally registered buggy to 20 km/h, with approved routes only on local roads near the course. It must be a two-seater with a flashing amber beacon, and the owner needs a Class C car licence.',
+    cta: { href: '/blog/golf-cart-registration-nsw-guide/', label: 'See the NSW equipment list' } },
+  { id: 'qld-rego-roads', theme: 'Road rules & licences', pages: ['/blog/golf-cart-registration-qld-guide/'], question: 'Can you drive a golf cart on the road in Queensland?',
+    answer: 'Only if it is conditionally registered and the road owner agrees. A golf buggy can be registered under codes LO3, LO6(A) or LO7, and LO6(A) also needs a Queensland Police Service permit. Check council rules for local roads and confirm the current conditions with TMR before you buy.',
+    cta: { href: '/blog/golf-cart-registration-qld-guide/', label: 'Read the Queensland golf cart guide' } },
+  { id: 'qld-rego-course', theme: 'Road rules & licences', pages: ['/blog/golf-cart-registration-qld-guide/'], question: 'Does a golf buggy need registration in Queensland?',
+    answer: 'Queensland exempts a motorised golf buggy used on a golf course or its car park, or used to cross a road that divides the course. Driving it on other roads needs conditional registration through TMR, plus permission from the road owner, so confirm your route first.',
+    cta: { href: '/blog/golf-cart-registration-qld-guide/', label: 'See the Queensland rules' } },
+  { id: 'vic-rego-exempt', theme: 'Road rules & licences', pages: ['/blog/golf-cart-registration-victoria-guide/'], question: 'Do golf carts need to be registered in Victoria?',
+    answer: 'Transport Victoria says golf cars need no registration if they are designed mainly for use outside the road system, used only for that purpose, and not driven on a highway for more than two kilometres at a time in one direction. Otherwise they are treated like any motor vehicle.',
+    cta: { href: '/blog/golf-cart-registration-victoria-guide/', label: 'Read the Victorian golf cart guide' } },
+  { id: 'vic-rego-permit', theme: 'Road rules & licences', pages: ['/blog/golf-cart-registration-victoria-guide/'], question: 'Can you drive an unregistered golf cart on a Victorian road?',
+    answer: 'Only with an unregistered vehicle permit for a one-off trip that starts in Victoria, and a permit is not a substitute for full registration. A golf cart that does not meet the exemption can also fall outside TAC cover, so check your insurance before you drive it on the road.',
+    cta: { href: '/blog/golf-cart-registration-victoria-guide/', label: 'See the Victorian permit rules' } },
+  { id: 'ssv-standard', theme: 'Road rules & licences', pages: ['/blog/side-by-side-vs-quad-bike-australia/'], question: 'Do side-by-sides have a mandatory safety standard in Australia?',
+    answer: 'No. Quad bikes have a mandatory standard, including operator protection devices on general-use models from 11 October 2021, but Product Safety Australia says side-by-side vehicles do not. Follow the manufacturer\'s warnings, and always wear a seatbelt and helmet in a side-by-side.',
+    cta: { href: '/blog/side-by-side-vs-quad-bike-australia/', label: 'Read the side-by-side safety guide' } },
+  { id: 'ssv-children', theme: 'Kids buggies', pages: ['/blog/side-by-side-vs-quad-bike-australia/'], question: 'Can children drive a side-by-side?',
+    answer: 'No. Product Safety Australia advises that children should never drive side-by-sides, and to check the manufacturer\'s advice before letting them ride as passengers. Kids\' buggies are different machines built with parental speed limits, so see our kids range for supervised use.',
+    cta: { href: '/shop/kids-buggies/', label: 'See kids buggies' } },
+  { id: 'dune-vs-ssv-price', theme: 'Buying & prices', pages: ['/blog/dune-buggy-vs-side-by-side-australia/'], question: 'How much does a dune buggy cost compared with a side-by-side?',
+    answer: `Dune buggies in our range run from ${money(d.dune.min)} to ${money(d.dune.max)}, while side-by-sides run from ${money(ssvR.min)} to ${money(ssvR.max)}. Dune buggies suit recreation on private land. Side-by-sides add a steering wheel, more seating and farm-work capability, so compare both before you decide.`,
+    cta: { href: '/shop/dune-buggies/', label: 'Compare dune buggies' } },
+  { id: 'dune-private-land', theme: 'Road rules & licences', pages: ['/blog/dune-buggy-vs-side-by-side-australia/'], question: 'Are dune buggies road legal in Australia?',
+    answer: 'Dune and off-road buggies are sold for use on private land, farms and recreation areas, not public roads. Road rules are set by each state, so confirm with your road authority before driving any buggy off your property. Browse our dune buggies for the specifications of each model.',
+    cta: { href: '/shop/dune-buggies/', label: 'See dune buggies' } },
+  { id: 'trolley-cost', theme: 'Buying & prices', pages: ['/blog/electric-vs-manual-golf-trolley-australia/'], question: 'How much does an electric golf trolley cost compared with a push trolley?',
+    answer: `Push golf trolleys in our range cost ${money(d.push.min)} to ${money(d.push.max)}. Electric walk-behind trolleys cost ${money(d.walk.min)} to ${money(d.walk.max)} and add a lithium battery and motor that pull the bag for you. Choose electric for hills and long rounds, and push for the lowest cost and weight.`,
+    cta: { href: '/shop/walk-behind/', label: 'See electric golf trolleys' } },
+  { id: 'trolley-battery-holes', theme: 'Speed, range & charging', pages: ['/blog/electric-vs-manual-golf-trolley-australia/'], question: 'How many holes does an electric golf trolley battery last?',
+    answer: 'The electric walk-behind trolleys we sell list lithium batteries sized for 18 or 36 holes, and each product page states the capacity for that model. Charge the battery after every round with the charger made for it, and match the capacity to how much you play.',
+    cta: { href: '/shop/walk-behind/', label: 'Compare battery sizes' } },
+  { id: 'remote-vs-follow-price', theme: 'Buying & prices', pages: ['/blog/remote-control-vs-follow-me-golf-buggy/'], question: 'How much do remote-control and follow-me golf buggies cost?',
+    answer: `Remote-control golf buggies in our range cost ${money(d.remote.min)} to ${money(d.remote.max)}, and follow-me models cost ${money(followR.min)} to ${money(followR.max)}. A remote buggy is steered with a handset, while a follow buggy tracks you on its own. Compare both in our GPS and follow range.`,
+    cta: { href: '/shop/gps-follow-buggies/', label: 'See follow-me golf buggies' } },
+  { id: 'follow-me-meaning', theme: 'Buying & prices', pages: ['/blog/remote-control-vs-follow-me-golf-buggy/'], question: 'What is a follow-me golf buggy?',
+    answer: `A follow-me golf buggy tracks you automatically, so you do not steer it with a handset. In our range the ${followNames} are the follow models, while remote-control buggies such as the MGI Zip Navigator AT are steered by remote. Each product page lists the battery and braking system.`,
+    cta: { href: '/shop/gps-follow-buggies/', label: 'Browse follow-me buggies' } },
+  { id: 'cart-vs-buggy-cost', theme: 'Buying & prices', pages: ['/blog/golf-buggy-vs-golf-cart-difference/'], question: 'How much more does a golf cart cost than a golf buggy?',
+    answer: `New ride-on golf carts start at ${money(d.cart.min)}, while push buggies start at ${money(d.push.min)} and electric buggies at ${money(d.elec.min)}. A cart carries two to six people and a buggy carries your clubs, so choose by how you play rather than by price alone.`,
+    cta: { href: '/shop/luxury-golf-carts/', label: 'See golf carts for sale' } },
+  { id: 'buggy-carry-person', theme: 'Buying & prices', pages: ['/blog/golf-buggy-vs-golf-cart-difference/'], question: 'Can a golf buggy carry a person?',
+    answer: 'No. A golf buggy is a wheeled trolley that carries your clubs while you walk beside it, push it, or steer it by remote. A golf cart is a ride-on vehicle with seats for two to six people, so choose a cart if you need to ride between shots.',
+    cta: { href: '/shop/luxury-golf-carts/', label: 'Browse ride-on golf carts' } },
+  { id: 'dhc-meaning', theme: 'Speed, range & charging', pages: ['/blog/downhill-control-golf-buggy-guide/'], question: 'What is downhill control on a golf buggy?',
+    answer: 'Downhill control is a braking feature that regulates a buggy\'s speed on slopes so it does not run ahead of you. The models in our range list their braking system on the product page, from Motocaddy\'s automatic downhill brake to MGI\'s downhill speed regulation.',
+    cta: { href: '/shop/electric-golf-buggies/', label: 'Compare electric golf buggies' } },
+  { id: 'dhc-count', theme: 'Speed, range & charging', pages: ['/blog/downhill-control-golf-buggy-guide/'], question: 'Which electric golf buggies have downhill braking?',
+    answer: `${dhList.length} of our ${elecCount} electric golf buggies list a downhill or slope braking feature in their specifications, including Motocaddy, MGI, Stewart Golf and Explora models. Check the braking line on each product page, and ask us if you play a particularly hilly course.`,
+    cta: { href: '/shop/electric-golf-buggies/', label: 'See electric golf buggies' } },
+  { id: 'fold-smallest', theme: 'Buying & prices', pages: ['/blog/will-a-golf-buggy-fit-in-my-car/'], question: 'How small does an electric golf buggy fold?',
+    answer: `The most compact folded electric buggy in our range is the ${smallestElec.name.replace(/ Electric Golf Buggy$/i, '')} at ${smallestFold}. Push buggies such as the Big Max Blade IP 2 fold to just 12.5cm deep. Measure your boot and compare it with the folded size on each product page.`,
+    cta: { href: '/shop/electric-golf-buggies/', label: 'Compare folded sizes' } },
+  { id: 'fold-measure', theme: 'Buying & prices', pages: ['/blog/will-a-golf-buggy-fit-in-my-car/'], question: 'How do I know if a golf buggy will fit my car?',
+    answer: 'Measure your boot length, width and height, then compare them with the folded size on the product page, which also shows weight. Allow room for the battery and your bag, and check the product details for how the buggy folds before you order.',
+    cta: { href: '/blog/will-a-golf-buggy-fit-in-my-car/', label: 'Read the boot-fit guide' } },
 ];
 
 // Backwards-compatible export used by the homepage and the FAQ component

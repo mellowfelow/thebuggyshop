@@ -10,8 +10,12 @@ const money = (n) => `$${Number(n).toLocaleString('en-AU')}`;
 const list = (a) => (a.length <= 1 ? a.join('') : `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}`);
 const isVehicle = (p) => BUNDLE.vehicleCategories.includes(p.category) && !BUNDLE.vehicleExcludedSubcategories.includes(p.subcategory);
 
-/** @param {{ label: string, products: object[], showBrand?: boolean }} props */
-export default function CatalogFacts({ label, products, showBrand = false }) {
+const SKIP_SPECS = new Set(['brand', 'condition', 'category', 'power']);
+const labelOf = (k) => k.replace(/([A-Z])/g, ' $1').replace(/^./, (c) => c.toUpperCase());
+const specRows = (p) => Object.entries(p.specs || {}).filter(([k, v]) => !SKIP_SPECS.has(k) && v).slice(0, 8);
+
+/** @param {{ label: string, products: object[], showBrand?: boolean, showSpecs?: boolean, showDescriptions?: boolean }} props */
+export default function CatalogFacts({ label, products, showBrand = false, showSpecs = false, showDescriptions = false }) {
   if (!products?.length) return null;
   const sorted = [...products].sort((a, b) => a.price - b.price);
   const low = sorted[0];
@@ -68,6 +72,38 @@ export default function CatalogFacts({ label, products, showBrand = false }) {
           </tbody>
         </table>
       </div>
+
+      {showDescriptions && (
+        <div className="space-y-3 max-w-3xl">
+          {sorted.map((p) => (
+            <div key={p.slug}>
+              <h3 className="text-sm font-black text-[#0E2A1E]">{p.name}</h3>
+              <p className="text-sm text-[#2F4439] leading-relaxed">{p.description}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {showSpecs && sorted.some((p) => specRows(p).length >= 3) && (
+        <div className="space-y-4">
+          <h3 className="text-lg font-black text-[#0E2A1E] font-serif">Specifications as supplied</h3>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {sorted.filter((p) => specRows(p).length >= 3).map((p) => (
+              <div key={p.slug} className="bg-white rounded-2xl border border-[#D5DFD9] p-4">
+                <div className="text-sm font-bold text-[#0E2A1E] mb-2">{p.name}</div>
+                <dl className="text-xs text-[#2F4439] space-y-1">
+                  {specRows(p).map(([k, v]) => (
+                    <div key={k} className="grid grid-cols-[7.5rem_1fr] gap-2">
+                      <dt className="font-semibold text-[#4A5D53]">{labelOf(k)}</dt>
+                      <dd>{String(v)}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

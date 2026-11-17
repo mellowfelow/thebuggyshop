@@ -738,3 +738,19 @@ Ready posts first (bottom of funnel, then middle, then top); posts that need fac
 | /blog/golf-buggy-for-sale-buyers-guide-australia/ (buyer hub, live) | MGI comparison, used cart auction, AC vs DC, kids guide | /shop/, /brands/mgi/, /shop/used-golf-buggies/ |
 | /blog/golf-bag-and-cart-how-to-choose-stand-cart-carry/ | ladies guide, beginner sets | /shop/bags/, /shop/accessories/ |
 | /blog/golf-rangefinder-vs-gps-watch-which-to-buy/ | planned: Bushnell, Garmin, Shot Scope | /shop/rangefinders-gps/, /brands/bushnell/, /brands/garmin/ |
+## Added 17 Nov 2026: ten new guides (all LIVE)
+
+| Status | Post | URL | Primary keyword | Why |
+| --- | --- | --- | --- | --- |
+| LIVE | Golf Cart Registration in NSW: What Transport for NSW Allows | /blog/golf-cart-registration-nsw-guide/ | golf cart registration nsw | Search Console showed impressions at position 8; summarises the official October 2025 sheet |
+| LIVE | Golf Cart Registration in QLD: Conditional Rego Explained | /blog/golf-cart-registration-qld-guide/ | golf cart registration qld | Queries for QLD golf cart and golf buggy registration, position 8 to 12 |
+| LIVE | Golf Cart Registration in Victoria: When You Need It | /blog/golf-cart-registration-victoria-guide/ | golf cart registration victoria | Completes the three-state set; links to the overview guide |
+| LIVE | Side by Side vs Quad Bike: Safety, Cost and Use in Australia | /blog/side-by-side-vs-quad-bike-australia/ | side by side vs quad bike | "side by side" had 174 impressions at position 10.7 |
+| LIVE | Dune Buggy vs Side by Side: Which One Suits You? | /blog/dune-buggy-vs-side-by-side-australia/ | dune buggy vs side by side | Dune and side-by-side categories earn the most clicks |
+| LIVE | Electric vs Manual Golf Trolley | /blog/electric-vs-manual-golf-trolley-australia/ | electric vs manual golf trolley | "estate electric golf trolley" ranks near page one |
+| LIVE | Remote Control vs Follow Me Golf Buggy | /blog/remote-control-vs-follow-me-golf-buggy/ | remote control vs follow me golf buggy | Links the remote and follow categories |
+| LIVE | Golf Buggy vs Golf Cart | /blog/golf-buggy-vs-golf-cart-difference/ | golf buggy vs golf cart | The FAQ existed, the guide did not |
+| LIVE | Downhill Control Golf Buggy | /blog/downhill-control-golf-buggy-guide/ | downhill control golf buggy | Feature guide computed from the braking specs |
+| LIVE | Will a Golf Buggy Fit in My Car? | /blog/will-a-golf-buggy-fit-in-my-car/ | fit a golf buggy in a car | Folded sizes and weights from the product data |
+
+Sources and anything that could not be confirmed: docs/research-sources.md.
