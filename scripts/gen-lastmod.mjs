@@ -26,11 +26,15 @@ const today = new Date().toISOString().slice(0, 10);
 const hashes = {};
 const STATIC = { '/': ['app/page.jsx', 'src/components/HeroSlider.jsx'], '/shop/': ['app/shop/page.jsx'], '/brands/': ['app/brands/page.jsx'], '/golf-buggies/': ['app/golf-buggies/page.jsx'], '/about/': ['app/about/page.jsx'], '/blog/': ['app/blog/page.jsx'], '/compare/': ['app/compare/page.jsx'], '/finance/': ['app/finance/page.jsx'], '/faq/': ['app/faq/page.jsx'], '/wholesale/': ['app/wholesale/page.jsx'], '/contact/': ['app/contact/page.jsx'], '/shipping/': ['app/shipping/page.jsx'], '/returns/': ['app/returns/page.jsx'], '/privacy/': ['app/privacy/page.jsx'], '/terms/': ['app/terms/page.jsx'] };
 for (const [u, files] of Object.entries(STATIC)) hashes[u] = h(files.map(file).join('\n') + (u === '/faq/' ? JSON.stringify(FAQ_BANK) : '') + (u === '/' ? JSON.stringify(PRODUCTS.filter((p) => p.featured).map((p) => [p.slug, p.price])) : '') + (u === '/shop/' || u === '/brands/' ? PRODUCTS.length : ''));
-for (const c of CATEGORY_TREE.filter((n) => isPage(n))) hashes[`/shop/${c.slug}/`] = h(JSON.stringify(c) + JSON.stringify(getProductsByCategory(c.slug).map((p) => [p.slug, p.price, p.name])));
+// Category, brand and city pages render product cards and shared components, so their date must move when the card text
+// (name, price, description, condition) or the page template changes, not only when the product list or price does.
+const listTemplate = file('app/shop/[category]/page.jsx') + file('app/shop/ShopClient.jsx') + file('src/components/CatalogFacts.jsx') + file('src/components/ProductCard.jsx');
+const card = (p) => [p.slug, p.price, p.name, p.shortDescription, p.condition, p.badge];
+for (const c of CATEGORY_TREE.filter((n) => isPage(n))) hashes[`/shop/${c.slug}/`] = h(JSON.stringify(c) + JSON.stringify(getProductsByCategory(c.slug).map(card)) + listTemplate);
 const productTemplate = file('app/shop/[category]/[slug]/ProductDetailClient.jsx') + file('app/shop/[category]/[slug]/page.jsx') + file('src/config/product-copy.js');
 for (const p of PRODUCTS) hashes[`/shop/${p.category}/${p.slug}/`] = h(JSON.stringify(p) + productTemplate);
-for (const b of BRANDS) hashes[`/brands/${b.slug}/`] = h(JSON.stringify(b) + JSON.stringify(PRODUCTS.filter((p) => p.brand === b.slug).map((p) => [p.slug, p.price])));
-for (const l of LOCATIONS) hashes[`/golf-buggies/${l.slug}/`] = h(JSON.stringify(l));
+for (const b of BRANDS) hashes[`/brands/${b.slug}/`] = h(JSON.stringify(b) + JSON.stringify(PRODUCTS.filter((p) => p.brand === b.slug).map(card)) + file('app/brands/[slug]/page.jsx') + listTemplate);
+for (const l of LOCATIONS) hashes[`/golf-buggies/${l.slug}/`] = h(JSON.stringify(l) + file('app/golf-buggies/[city]/page.jsx'));
 for (const post of POSTS) hashes[`/blog/${post.slug}/`] = h(JSON.stringify([post.title, post.titleTag, post.metaDescription, post.content, post.image, post.faqIds]));
 
 const prev = fs.existsSync(outFile) ? JSON.parse(fs.readFileSync(outFile, 'utf8')) : {};
