@@ -1,5 +1,6 @@
 // app/golf-buggies/[city]/page.jsx
 import { pageMeta } from '@/lib/pageMeta';
+import { slimProducts } from '@/lib/catalog';
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -139,7 +140,7 @@ export default async function LocationCityPage({ params }) {
 
       {/* Product Catalog for this Location */}
       <ShopClient 
-        initialProducts={PRODUCTS}
+        initialProducts={slimProducts(PRODUCTS)}
         categories={CATEGORY_TREE}
         currentLocation={location}
       />

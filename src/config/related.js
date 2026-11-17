@@ -78,7 +78,7 @@ export const RELATED = {
   '/shop/kids-buggies/': [G.kids, G.buggy],
   '/shop/electric/': [G.kids, S.kids],
   '/shop/petrol/': [G.kids, S.kids],
-  '/shop/accessories/': [G.cheap, G.bag, S.parts],
+  '/shop/accessories/': [G.cheap, G.bag, S.parts, G.rangefinder],
   '/shop/chargers/': [G.battery, G.buggyBattery, S.batteries],
   '/shop/batteries/': [G.buggyBattery, G.cartBattery, G.battery, S.chargers],
   '/shop/lithium/': [G.buggyBattery, G.battery, S.chargers],

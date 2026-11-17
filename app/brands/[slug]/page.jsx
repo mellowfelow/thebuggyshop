@@ -1,5 +1,6 @@
 // app/brands/[slug]/page.jsx
 import { pageMeta } from '@/lib/pageMeta';
+import { slimProducts } from '@/lib/catalog';
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -198,7 +199,7 @@ export default async function BrandPage({ params }) {
 
       {/* Brand Product Listing with Facet Filters */}
       <ShopClient 
-        initialProducts={brandProducts}
+        initialProducts={slimProducts(brandProducts)}
         categories={CATEGORY_TREE}
         currentBrand={brand}
       />

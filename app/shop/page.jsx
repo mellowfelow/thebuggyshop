@@ -1,5 +1,6 @@
 // app/shop/page.jsx
 import { pageMeta } from '@/lib/pageMeta';
+import { slimProducts } from '@/lib/catalog';
 import React from 'react';
 import Link from 'next/link';
 import { SITE } from '@/src/config/site';
@@ -107,7 +108,7 @@ export default function ShopPage() {
       </div>
 
       {/* Interactive Catalog Component with Facet Filtering */}
-      <ShopClient initialProducts={PRODUCTS} categories={CATEGORY_TREE} />
+      <ShopClient initialProducts={slimProducts(PRODUCTS)} categories={CATEGORY_TREE} />
 
       <FaqSection faqs={faqsForPage('/shop/')} url="/shop/" heading="Golf buggy prices: your questions answered" id="shop-faq" />
 

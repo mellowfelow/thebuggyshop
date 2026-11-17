@@ -1,5 +1,8 @@
 // app/shop/[category]/page.jsx
 import { pageMeta } from '@/lib/pageMeta';
+import { slimProducts } from '@/lib/catalog';
+import CategoryLinks from '@/src/components/CategoryLinks';
+import { getBrandBySlug } from '@/src/config/brands';
 import React from 'react';
 import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
@@ -190,7 +193,7 @@ export default async function CategoryPage({ params }) {
 
       {/* Interactive Catalog Component with Facet Filtering */}
       <ShopClient 
-        initialProducts={categoryProducts} 
+        initialProducts={slimProducts(categoryProducts)} 
         categories={CATEGORY_TREE}
         currentCategory={category}
       />
@@ -198,6 +201,12 @@ export default async function CategoryPage({ params }) {
       {categoryProducts.length <= 12 && <CatalogFacts label={category.navLabel} products={categoryProducts} showBrand showSpecs showDescriptions={categoryProducts.length <= 2} />}
 
       <FaqSection faqs={faqsForPage(`/shop/${category.slug}/`)} url={`/shop/${category.slug}/`} heading={`${category.navLabel}: your questions answered`} id="category-faq" />
+
+      <CategoryLinks
+        parentLabel={category.parent ? getCategoryBySlug(category.parent)?.navLabel : ''}
+        siblings={category.parent ? getSubcategories(category.parent).filter((s) => s.slug !== category.slug && getProductsByCategory(s.slug).length > 0) : []}
+        brands={[...new Set(categoryProducts.map((p) => p.brand))].map((b) => getBrandBySlug(b)).filter(Boolean).map((b) => ({ slug: b.slug, name: b.name }))}
+      />
 
       <RelatedLinks links={relatedFor(`/shop/${category.slug}/`)} />
     </div>
