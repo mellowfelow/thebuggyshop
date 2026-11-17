@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/pageMeta';
 import React from 'react';
 import Link from 'next/link';
 import { SITE, CONTACT } from '@/src/config/site';
@@ -6,22 +7,11 @@ import FinanceCalculatorClient from './FinanceCalculatorClient';
 import { seoTitle, seoDesc } from '@/lib/seo';
 import { ogImages } from '@/lib/og';
 
-export const metadata = {
-  title: { absolute: seoTitle('Pay in 4 & Commercial Asset Finance | The Buggy Shop Australia') },
-  description: seoDesc('Calculate flexible Pay in 4 split payments or primary producer commercial equipment leasing for Australian all-terrain buggies with instant calculations.'),
-  alternates: {
-    canonical: `https://${SITE.domain}/finance/`,
-  },
-  openGraph: {
-    title: 'Pay in 4 & Commercial Asset Finance | The Buggy Shop Australia',
-    description: 'Calculate flexible Pay in 4 split payments or commercial equipment leasing.',
-    url: `https://${SITE.domain}/finance/`,
-    images: ogImages(),
-  },
-  other: {
-    'og:updated_time': new Date().toISOString(),
-  }
-};
+export const metadata = pageMeta({
+  path: '/finance/',
+  title: 'Pay in 4 & Commercial Asset Finance | The Buggy Shop Australia',
+  description: 'Calculate flexible Pay in 4 split payments or primary producer commercial equipment leasing for Australian all-terrain buggies with instant calculations.',
+});
 
 export default function FinancePage() {
   const breadcrumbSchema = {

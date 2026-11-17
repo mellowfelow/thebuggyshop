@@ -149,7 +149,7 @@ function PaymentDetailsContent() {
           ))
         ) : (
           <div className="p-6 bg-white rounded-xl border border-slate-200 text-center text-sm text-slate-500">
-            Payment details are being prepared by the workshop. You will receive an updated email shortly.
+            Payment details are being prepared by our sales desk. You will receive an updated email shortly.
           </div>
         )}
       </div>

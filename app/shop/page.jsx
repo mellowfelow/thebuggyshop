@@ -1,4 +1,5 @@
 // app/shop/page.jsx
+import { pageMeta } from '@/lib/pageMeta';
 import React from 'react';
 import Link from 'next/link';
 import { SITE } from '@/src/config/site';
@@ -14,22 +15,11 @@ import RelatedLinks from '@/src/components/RelatedLinks';
 import { relatedFor } from '@/src/config/related';
 import { faqsForPage } from '@/src/config/faq';
 
-export const metadata = {
-  title: { absolute: seoTitle('Golf Buggy for Sale Australia | Shop All Buggies') },
-  description: seoDesc('Golf buggy for sale in Australia. Compare electric, remote control, push and used golf buggies, with warranty and delivery. Find your buggy now.'),
-  alternates: {
-    canonical: `https://${SITE.domain}/shop/`,
-  },
-  openGraph: {
-    title: 'Golf Buggy for Sale Australia | Shop All Buggies',
-    description: 'Explore turnkey luxury golf buggies for sale, remote trolleys, and all-terrain buggies with 5-year LiFePO4 battery warranties.',
-    url: `https://${SITE.domain}/shop/`,
-    images: ogImages(),
-  },
-  other: {
-    'og:updated_time': new Date().toISOString(),
-  }
-};
+export const metadata = pageMeta({
+  path: '/shop/',
+  title: 'Golf Buggy for Sale Australia | Shop All Buggies',
+  description: 'Golf buggy for sale in Australia. Compare electric, remote control, push and used golf buggies, with warranty and delivery. Find your buggy now.',
+});
 
 export default function ShopPage() {
   const rootCategories = getRootCategories();

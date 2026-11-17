@@ -1,8 +1,10 @@
 // app/shop/[category]/[slug]/page.jsx
+import { pageMeta } from '@/lib/pageMeta';
 import React from 'react';
 import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
-import { SITE, CONTACT, SHOP } from '@/src/config/site';
+import { SITE, CONTACT, SHOP, BUNDLE } from '@/src/config/core';
+import { modifiedDate } from '@/lib/pageMeta';
 import { getCategoryBySlug } from '@/src/config/categories';
 import { PRODUCTS, getProductBySlug } from '@/src/config/products';
 import JsonLd from '@/src/components/JsonLd';
@@ -13,33 +15,27 @@ export async function generateStaticParams() {
   return PRODUCTS.map((p) => ({ category: p.category, slug: p.slug }));
 }
 
+// Meta description in the 130-155 band: the product's own sentence, the price once, then payment/delivery facts until it is long enough.
+function productMetaDescription(product, price) {
+  let d = product.shortDescription.replace(/s+$/, '');
+  if (!d.includes(price)) d += ` ${price} inc. GST.`;
+  const fillers = ['Pay by PayID, bank transfer or crypto.', 'Delivered Australia-wide.', 'Ask us on WhatsApp for stock and timing.'];
+  for (const x of fillers) { if (d.length >= 132) break; if (!d.includes(x.slice(0, 12))) d += ` ${x}`; }
+  return d;
+}
+
 export async function generateMetadata({ params }) {
   const { slug: prodSlug } = await params;
   const product = getProductBySlug(prodSlug) || PRODUCTS.find((p) => p.slug === prodSlug);
   if (!product) return { title: 'Product Not Found | The Buggy Shop Australia' };
 
-  const url = `https://${SITE.domain}/shop/${product.category}/${product.slug}/`;
   const price = `$${product.price.toLocaleString('en-AU')}`;
-  const title = clampTitle(product.name);
-  const description = clampDesc(`${product.shortDescription} ${price} AUD inc. GST.`);
-  const image = absUrl(realImages(product)[0] || '/images/hero/hero-1.webp');
-
-  return {
-    title: { absolute: title },
-    description,
-    alternates: { canonical: url },
-    openGraph: {
-      title,
-      description,
-      url,
-      type: 'website',
-      images: [{ url: image, alt: product.name }],
-    },
-    twitter: { card: 'summary_large_image', title, description, images: [image] },
-    other: {
-      'og:updated_time': new Date().toISOString(),
-    },
-  };
+  return pageMeta({
+    path: `/shop/${product.category}/${product.slug}/`,
+    title: product.titleTag || product.name,
+    description: productMetaDescription(product, price),
+    image: realImages(product)[0],
+  });
 }
 
 export default async function ProductPage({ params }) {
@@ -51,6 +47,7 @@ export default async function ProductPage({ params }) {
   }
 
   const category = getCategoryBySlug(product.category);
+  const isVehicleProduct = BUNDLE.vehicleCategories.includes(product.category) && !BUNDLE.vehicleExcludedSubcategories.includes(product.subcategory);
   const relatedProducts = PRODUCTS.filter((p) => p.category === product.category && p.slug !== product.slug);
 
   const productSchema = {
@@ -73,6 +70,9 @@ export default async function ProductPage({ params }) {
           "priceCurrency": SITE.currency,
           "price": product.price,
           "priceValidUntil": `${new Date().getFullYear() + 1}-12-31`,
+          ...(modifiedDate(`/shop/${product.category}/${product.slug}/`) ? { "validFrom": modifiedDate(`/shop/${product.category}/${product.slug}/`) } : {}),
+          ...(isVehicleProduct ? { "shippingDetails": { "@type": "OfferShippingDetails", "shippingRate": { "@type": "MonetaryAmount", "value": SHOP.shippingFee, "currency": SITE.currency }, "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "AU" } } } : {}),
+          "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "applicableCountry": "AU", "returnPolicyCategory": "https://schema.org/MerchantReturnUnspecified", "url": `https://${SITE.domain}/returns/` },
           "availability": "https://schema.org/InStock",
           "itemCondition": product.condition === 'Used' || product.condition === 'Ex-Demo' ? "https://schema.org/UsedCondition" : "https://schema.org/NewCondition",
           "seller": {

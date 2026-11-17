@@ -112,8 +112,8 @@ const { BRANDS } = await imp('src/config/brands.js');
   badCat.length ? fail('B7c', `${badCat.length} products use a category that is not a tree root: ${[...new Set(badCat.map((p) => p.category))].join(', ')}`) : pass('B7c', 'every product category is a tree root');
   const badSub = PRODUCTS.filter((p) => { const kids = childrenOf(p.category); return kids.size ? !kids.has(p.subcategory) : false; });
   badSub.length ? fail('B7d', `${badSub.length} products have a subcategory that is not a child of their category: ${badSub.slice(0, 4).map((p) => `${p.slug}(${p.category}>${p.subcategory})`).join(', ')}`) : pass('B7d', 'every subcategory belongs to its category');
-  const badPath = PRODUCTS.filter((p) => p.categoryPath !== `/${p.category}/`);
-  badPath.length ? fail('B7e', `${badPath.length} products have categoryPath != /<category>/`) : pass('B7e', 'categoryPath consistent');
+  const badPath = PRODUCTS.filter((p) => p.categoryPath !== undefined); // the internal categoryPath field is stripped: it leaked non-URL paths into the public API
+  badPath.length ? fail('B7e', `${badPath.length} products still expose categoryPath`) : pass('B7e', 'no product exposes categoryPath');
 
   const u = new Set(); const dupSlug = PRODUCTS.filter((p) => (u.has(p.slug) ? true : (u.add(p.slug), false)));
   dupSlug.length ? fail('B7f', `duplicate product slugs: ${dupSlug.map((p) => p.slug).join(', ')}`) : pass('B7f', `${PRODUCTS.length} unique product slugs`);

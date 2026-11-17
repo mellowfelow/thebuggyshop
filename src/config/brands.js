@@ -364,7 +364,7 @@ export const BRANDS = [
     h1: 'THOMSON Golf Buggy Spare Parts & Batteries Australia',
     pageTitle: 'THOMSON Buggy Spares Australia | Batteries & Motors',
     metaDescription: 'Replacement lithium batteries, chargers, motors and wheels for THOMSON electric golf buggies in Australia.',
-    introCopy: 'We provide comprehensive spare parts, replacement lithium battery upgrades, and technical service support for THOMSON electric golf buggies across Australia.',
+    introCopy: 'We supply spare parts and replacement lithium battery upgrades for THOMSON electric golf buggies across Australia.',
     popularModels: ['THOMSON Electric Buggy Spares', 'THOMSON Lithium Battery Upgrade'],
     partsCategories: ['24V Lithium Replacement Packs', 'Smart Chargers', 'Axle Assemblies', 'Potentiometers & Speed Dials']
   },

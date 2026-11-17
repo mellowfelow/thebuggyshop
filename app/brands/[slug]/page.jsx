@@ -1,4 +1,5 @@
 // app/brands/[slug]/page.jsx
+import { pageMeta } from '@/lib/pageMeta';
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -23,23 +24,13 @@ export async function generateMetadata({ params }) {
   if (!brand) return { title: 'Brand Not Found | The Buggy Shop Australia' };
   const noStock = getProductsByBrand(brand.slug).length === 0; // no products: keep the page out of search until stock arrives
 
-  return {
-    title: { absolute: seoTitle(brand.pageTitle || `${brand.name} Golf Buggies & Carts Australia | The Buggy Shop`) },
-    description: seoDesc(brand.metaDescription || brand.blurb || brand.introCopy),
-    ...(noStock ? { robots: { index: false, follow: true } } : {}),
-    alternates: {
-      canonical: `https://${SITE.domain}/brands/${brand.slug}/`,
-    },
-    openGraph: {
-      title: brand.pageTitle || `${brand.name} Golf Buggies Australia`,
-      description: brand.metaDescription || brand.blurb,
-      url: `https://${SITE.domain}/brands/${brand.slug}/`,
-      images: ogImages(getProductsByBrand(brand.slug)[0]?.images?.[0]),
-    },
-    other: {
-      'og:updated_time': new Date().toISOString(),
-    },
-  };
+  return pageMeta({
+    path: `/brands/${brand.slug}/`,
+    title: brand.pageTitle || `${brand.name} Golf Buggies & Carts Australia | The Buggy Shop`,
+    description: brand.metaDescription || brand.blurb || brand.introCopy,
+    image: getProductsByBrand(brand.slug)[0]?.images?.[0],
+    noindex: noStock,
+  });
 }
 
 export default async function BrandPage({ params }) {
@@ -85,7 +76,7 @@ export default async function BrandPage({ params }) {
   const kind = getBrandKind(brand);
   const highlights = kind === 'vehicle'
     ? [
-        { icon: ShieldCheck, title: 'Australian warranty & service', text: 'Local support from The Buggy Shop sales desk' },
+        { icon: ShieldCheck, title: 'Australian warranty', text: 'Local support from The Buggy Shop sales desk' },
         { icon: PackageCheck, title: 'Pre-delivery inspection', text: 'Checked and ready to ride on arrival' },
         { icon: Truck, title: 'Australia-wide delivery', text: 'Hydraulic tail-lift delivery to your property' },
       ]
@@ -142,7 +133,7 @@ export default async function BrandPage({ params }) {
           <div className="flex flex-wrap gap-3">
             {brand.partsCategories?.length > 0 && (
               <Link
-                href={`/shop/parts/?q=${encodeURIComponent(brand.name)}`}
+                rel="nofollow" href={`/shop/parts/?q=${encodeURIComponent(brand.name)}`}
                 className="py-3 px-5 rounded-2xl bg-[#C5A265]/15 text-[#7A5C22] font-black text-xs uppercase tracking-wider hover:bg-[#C5A265]/25 transition-colors border border-[#C5A265]/40 shadow-xs flex items-center gap-2"
               >
                 <Wrench className="w-4 h-4 text-[#7A5C22]" />
@@ -182,7 +173,7 @@ export default async function BrandPage({ params }) {
                 </h2>
               </div>
               <Link 
-                href={`/shop/parts/?q=${encodeURIComponent(brand.name)}`}
+                rel="nofollow" href={`/shop/parts/?q=${encodeURIComponent(brand.name)}`}
                 className="text-xs font-bold text-[#7A5C22] hover:underline"
               >
                 Browse all spare parts & accessories →
@@ -192,7 +183,7 @@ export default async function BrandPage({ params }) {
               {brand.partsCategories.map((part) => (
                 <Link
                   key={part}
-                  href={`/shop/parts/?q=${encodeURIComponent(brand.name)}`}
+                  rel="nofollow" href={`/shop/parts/?q=${encodeURIComponent(brand.name)}`}
                   className="text-xs bg-[#F7F9F8] hover:bg-[#E8F0EB] text-[#1E3A2B] px-3 py-1.5 rounded-xl border border-[#CAD5CE] font-semibold transition-colors"
                 >
                   {part}

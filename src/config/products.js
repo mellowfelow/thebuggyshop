@@ -3,7 +3,9 @@
 // Adheres strictly to floor pricing: Electric >= $1,000 | Manual Push >= $450 | Kids >= $850 | Inc. GST | Australian English
 // Real Market Competitor Pricing based on Google AU SERP Analysis (Drummond, GolfBox, Carts'n'Parts, Golf Cars Australia)
 
-export const PRODUCTS = [
+import { withHonestCopy } from './product-copy.js';
+
+const RAW_PRODUCTS = [
   // ==========================================
   // 1. ELECTRIC GOLF BUGGIES - REMOTE CONTROL
   // ==========================================
@@ -1370,7 +1372,7 @@ export const PRODUCTS = [
     seats: 'Walk-behind',
     primaryKeyword: 'used mgi zip navigator for sale australia',
     shortDescription: 'Factory-inspected ex-showroom demonstration unit with tested 36-hole 24V lithium battery, remote handset, and 12-month warranty.',
-    description: 'Save $600+ AUD on Australia\'s favourite remote buggy. Certified ex-demonstration unit thoroughly workshop-tested with brand-new tyres, fully health-tested 24V lithium battery, and 12-month dealer warranty.',
+    description: 'Save $600+ AUD on Australia\'s favourite remote buggy. Certified ex-demonstration unit thoroughly tested with brand-new tyres, fully health-tested 24V lithium battery, and 12-month dealer warranty.',
     specs: {
       condition: 'Grade A+ Ex-Showroom Demonstration',
       motor: 'Twin 230W Calibrated Motors',
@@ -1404,9 +1406,9 @@ export const PRODUCTS = [
     seats: '2-Passenger Seating',
     primaryKeyword: 'used ezgo rxv golf cart for sale melbourne brisbane',
     shortDescription: 'Ex-resort lease return with brand-new 48V lithium battery conversion, automatic park brake, and split windscreen.',
-    description: 'Premium ex-lease resort cart rebuilt by our Queensland technical workshop. Fitted with a brand-new 48V drop-in lithium battery pack, automatic IntelliBrake park brake, split windscreen, and charger.',
+    description: 'Premium ex-lease resort cart refurbished and tested before sale. Fitted with a brand-new 48V drop-in lithium battery pack, automatic IntelliBrake park brake, split windscreen, and charger.',
     specs: {
-      condition: 'Workshop Refurbished & Tested',
+      condition: 'Refurbished & Tested',
       motor: '48V AC Induction Motor',
       battery: 'Brand-New 48V Drop-In Lithium Pack',
       range: '70+ km Per Charge',
@@ -4674,6 +4676,10 @@ export const PRODUCTS = [
   }
 ];
 
+
+// Records imported without supplier copy get an honest generated description (see product-copy.js).
+// categoryPath was an internal path that is not a real URL (/electric-golf-buggies/ 404s); it leaked into the public API and Google crawled it.
+export const PRODUCTS = RAW_PRODUCTS.map(({ categoryPath, ...p }) => withHonestCopy(p));
 
 export function getProductBySlug(slug) {
   return PRODUCTS.find((p) => p.slug === slug);

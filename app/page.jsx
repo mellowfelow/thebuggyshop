@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/pageMeta';
 import { ogImages } from '@/lib/og';
 import React from 'react';
 import Link from 'next/link';
@@ -31,22 +32,11 @@ const offroad = PRODUCTS.filter((p) => p.category === 'off-road-buggies').map((p
 const towKg = Math.max(...PRODUCTS.map((p) => parseInt(String(p.specs?.towingCapacity || '').replace(/,/g, '').match(/(\d+)\s*kg/i)?.[1], 10)).filter(Number.isFinite));
 const heroFacts = { remoteMin: F.remote.min, cartMin: F.cart.min, cart46Min: F.cart46.min, usedMin: F.usedAll.min, offroadMin: Math.min(...offroad), towKg };
 
-export const metadata = {
-  title: { absolute: seoTitle('Golf Buggies Australia | Electric, Remote & Push Buggies') },
-  description: seoDesc('Shop golf buggies in Australia: electric, remote control and push models plus ride-on carts. Local warranty and tail-lift delivery. Browse the range today.'),
-  alternates: {
-    canonical: `https://${SITE.domain}/`,
-  },
-  openGraph: {
-    title: 'Golf Buggies Australia | Electric, Remote & Push Buggies',
-    description: 'Australia\'s premier destination for luxury golf buggies for sale, remote control golf buggies, off road buggies, and golf push buggies.',
-    url: `https://${SITE.domain}/`,
-    images: ogImages()
-  },
-  other: {
-    'og:updated_time': new Date().toISOString(),
-  }
-};
+export const metadata = pageMeta({
+  path: '/',
+  title: 'Golf Buggies Australia | Electric, Remote & Push Buggies',
+  description: 'Shop golf buggies in Australia: electric, remote control and push models plus ride-on carts. Local warranty and tail-lift delivery. Browse the range today.',
+});
 
 export default function HomePage() {
   // Select top 8 featured products (2 neat rows of 4 cards = 4/4 grid)
@@ -77,7 +67,6 @@ export default function HomePage() {
         },
         "url": `https://${SITE.domain}/`,
         "telephone": CONTACT.phone,
-        "email": CONTACT.email,
         "priceRange": "$$$$",
         "areaServed": ["Australia", "Queensland", "New South Wales", "Victoria", "Western Australia", "South Australia", "Tasmania", "Northern Territory"],
         "numberOfItems": PRODUCTS.length,

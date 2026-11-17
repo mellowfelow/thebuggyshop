@@ -1,12 +1,13 @@
+import { pageMeta } from '@/lib/pageMeta';
 import LegalPage from '@/src/components/LegalPage';
 import { SITE, ENTITY, SHOP, COMPLIANCE } from '@/src/config/site';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
-export const metadata = {
-  title: { absolute: seoTitle('Terms & Conditions of Sale') },
-  description: seoDesc('Terms and conditions for buying golf buggies, carts, batteries, parts and accessories from The Buggy Shop in Australia. Read them before you order.'),
-  alternates: { canonical: `https://${SITE.domain}/terms/` },
-};
+export const metadata = pageMeta({
+  path: '/terms/',
+  title: 'Terms & Conditions of Sale',
+  description: 'Terms and conditions for buying golf buggies, carts, batteries, parts and accessories from The Buggy Shop in Australia. Read them before you order.',
+});
 
 // NOTE: draft assembled from published site facts. Governing-law, title/risk and any
 // cancellation-fee terms must be confirmed by the business owner or their adviser.

@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/pageMeta';
 import Link from 'next/link';
 import JsonLd from '@/src/components/JsonLd';
 import CollapsibleFaq from '@/src/components/CollapsibleFaq';
@@ -5,11 +6,11 @@ import { SITE } from '@/src/config/site';
 import { FAQ_BANK, FAQ_THEMES } from '@/src/config/faq';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
-export const metadata = {
-  title: { absolute: seoTitle('Golf Buggy FAQ Australia | Prices, Delivery & Rules') },
-  description: seoDesc('Answers on golf buggy and golf cart prices, delivery, payment, speed, range, batteries and road rules from The Buggy Shop in Queensland.'),
-  alternates: { canonical: `https://${SITE.domain}/faq/` },
-};
+export const metadata = pageMeta({
+  path: '/faq/',
+  title: 'Golf Buggy FAQ Australia | Prices, Delivery & Rules',
+  description: 'Answers on golf buggy and golf cart prices, delivery, payment, speed, range, batteries and road rules from The Buggy Shop in Queensland.',
+});
 
 export default function FaqPage() {
   const faqs = FAQ_BANK.filter((f) => f.pages.includes('/faq/') || f.home);

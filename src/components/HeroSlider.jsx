@@ -17,7 +17,7 @@ import {
   SlidersHorizontal
 } from 'lucide-react';
 import Image from 'next/image';
-import { SITE, CONTACT } from '@/src/config/core';
+import { SITE, CONTACT, SHOP } from '@/src/config/core';
 const money = (n) => '$' + Math.round(n).toLocaleString('en-AU');
 
 
@@ -37,7 +37,7 @@ const buildSlides = (facts) => {
     titleAccent: 'Golf Buggies',
     titleSuffix: ' Across Australia.',
     subtitle: 'Turnkey Lithium Golf Carts, Remote Trolleys & Off Road Buggies',
-    description: `Australia's specialist for golf buggies, remote control golf buggies, ride-on golf carts, off-road buggies and used buggies. Lithium batteries carry a 5-year warranty, and every order ships by hydraulic tail-lift truck to your club, estate or farm for a flat ${money(F.ship)}.`,
+    description: `Australia's specialist for golf buggies, remote control golf buggies, ride-on golf carts, off-road buggies and used buggies. Lithium batteries carry a 5-year warranty, and every order ships by hydraulic tail-lift truck to your club, estate or farm for a flat ${money(SHOP.shippingFee)}.`,
     primaryCta: { label: 'Explore Golf Buggies for Sale', href: '/shop/' },
     secondaryCta: { label: 'Compare Specifications', href: '/compare/', icon: Scale },
     extraCta: { label: 'Finance & 10% Crypto Rebate →', href: '/finance/' },

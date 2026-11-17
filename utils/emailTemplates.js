@@ -125,10 +125,10 @@ function shell({ eyebrow, title, meta, body }) {
                 ${escapeHtml(SITE.legalName || SITE.name)} &bull; ABN: ${escapeHtml(SITE.abn || '65 108 218 471')}
               </p>
               <p style="margin: 0 0 6px 0;">
-                Gold Coast &amp; Brisbane Technical Workshop &bull; Dispatching Australia-Wide
+                Queensland &bull; Dispatching Australia-Wide
               </p>
               <p style="margin: 0; color: #94A3B8;">
-                Phone: ${escapeHtml(CONTACT.phoneDisplay || '0480 811 308')} &bull; Email: ${escapeHtml(CONTACT.email || 'sales@thebuggyshop.com.au')}
+                Phone: ${escapeHtml(CONTACT.phoneDisplay || '0480 811 308')} &bull; Email: ${escapeHtml(CONTACT.email || 'sales@thebuggyshoppty.com.au')}
               </p>
               <p style="margin: 8px 0 0 0; font-size: 11px; color: #CBD5E1;">
                 &copy; ${currentYear} ${escapeHtml(SITE.name)}. All rights reserved.
@@ -368,7 +368,7 @@ export function orderConfirmationEmail(order, customBaseUrl) {
       <div style="background-color: #ECFDF5; border: 1px solid #A7F3D0; padding: 12px 14px; border-radius: 8px; margin-top: 10px; margin-bottom: 12px;">
         <strong style="color: #065F46; font-size: 13px; display: block; margin-bottom: 4px;">Commercial Pay in 4 Schedule Activated:</strong>
         <p style="color: #047857; margin: 0; font-size: 12px; line-height: 1.5;">
-          • <strong>1st Installment Due Today:</strong> ${firstSplit} to lock in machinery reservation and trigger pre-delivery workshop inspection.<br />
+          • <strong>1st Installment Due Today:</strong> ${firstSplit} to lock in machinery reservation and schedule dispatch.<br />
           • <strong>Remaining 3 Installments:</strong> 3 equal monthly installments billed at each month end via your chosen settlement method.
         </p>
       </div>

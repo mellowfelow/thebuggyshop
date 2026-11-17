@@ -204,8 +204,8 @@ export default function CompareClient({ allProducts = [] }) {
             </span>
           ) 
         },
-        { label: 'Chassis & Electronics Coverage', render: (p) => '3-Year Australian Fleet Protection' },
-        { label: 'Nationwide Service & Technical Support', render: (p) => 'Queensland Central Workshop + Nationwide Mobile Technicians' }
+        { label: 'Warranty', render: (p) => p.specs?.warranty || 'See product page' },
+        { label: 'Delivery', render: (p) => 'Flat-rate tail-lift delivery Australia-wide' }
       ]
     }
   ];

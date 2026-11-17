@@ -1,14 +1,15 @@
+import { pageMeta } from '@/lib/pageMeta';
 import Link from 'next/link';
 import JsonLd from '@/src/components/JsonLd';
 import { SITE, CONTACT } from '@/src/config/site';
 import WholesaleFormClient from './WholesaleFormClient';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
-export const metadata = {
-  title: { absolute: seoTitle('Fleet & Wholesale Golf Buggies') },
-  description: seoDesc('Fleet, club, resort and farm pricing on golf buggies, ride-on carts and utility vehicles. Apply for wholesale terms with The Buggy Shop.'),
-  alternates: { canonical: `https://${SITE.domain}/wholesale/` },
-};
+export const metadata = pageMeta({
+  path: '/wholesale/',
+  title: 'Fleet & Wholesale Golf Buggies',
+  description: 'Fleet, club, resort and farm pricing on golf buggies, ride-on carts and utility vehicles. Apply for wholesale terms with The Buggy Shop.',
+});
 
 export default function WholesalePage() {
   const schema = {

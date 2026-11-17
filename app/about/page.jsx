@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/pageMeta';
 import React from 'react';
 import Link from 'next/link';
 import { SITE, BRAND, CONTACT, PRODUCTS, REVIEW_STATS } from '@/src/config/site';
@@ -19,22 +20,11 @@ import {
   Star
 } from 'lucide-react';
 
-export const metadata = {
-  title: { absolute: seoTitle('About The Buggy Shop | 20+ Years Selling Golf Buggies') },
-  description: seoDesc('Founded in Queensland in 2004, The Buggy Shop is Australia\'s leading authority on luxury golf buggies for sale, remote control golf buggies, off road buggies, and golf push buggies.'),
-  alternates: {
-    canonical: `https://${SITE.domain}/about/`,
-  },
-  openGraph: {
-    title: 'About The Buggy Shop | 20+ Years Australian Golf Buggy Heritage',
-    description: 'Founded in Queensland in 2004, Australia\'s leading authority on turnkey golf buggies for sale and lithium golf carts.',
-    url: `https://${SITE.domain}/about/`,
-    images: ogImages(),
-  },
-  other: {
-    'og:updated_time': new Date().toISOString(),
-  }
-};
+export const metadata = pageMeta({
+  path: '/about/',
+  title: 'About The Buggy Shop | 20+ Years Selling Golf Buggies',
+  description: 'Founded in Queensland in 2004, The Buggy Shop is Australia\'s leading authority on luxury golf buggies for sale, remote control golf buggies, off road buggies, and golf push buggies.',
+});
 
 export default function AboutPage() {
   const aboutSchema = {
@@ -60,7 +50,6 @@ export default function AboutPage() {
             "addressRegion": "QLD"
           },
           "telephone": CONTACT.phone,
-          "email": CONTACT.email,
           "url": `https://${SITE.domain}/`
         }
       },
@@ -123,7 +112,7 @@ export default function AboutPage() {
             Australia’s harsh climate—combining intense UV radiation, corrosive coastal air, red outback dust, and prolonged summer heatwaves exceeding 42°C—destroys conventional lead-acid battery packs and brittle plastic chassis within seasons. We set out to engineer and distribute a new class of golf buggies: machines combining automotive-grade structural steel chassis, whisper-quiet high-torque AC motors, and ultra-durable Lithium Iron Phosphate (LiFePO4) chemistry.
           </p>
           <p>
-            Over the past twenty years, our workshop team has refined every vehicle in our fleet to ensure turnkey Australian road-legal compliance. Unlike gray-import distributors who leave registration compliance to the buyer, every vehicle that departs our Queensland facility is pre-fitted with certified LED lighting systems, dual rear-view mirrors, audible reversing alarms, and magnetic amber roof beacons, accompanied by pre-filled conditional registration paperwork for Queensland (TMR), New South Wales (Transport for NSW), and Victoria (VicRoads).
+            Over the past twenty years, our team has refined every vehicle in our fleet to ensure turnkey Australian road-legal compliance. Unlike gray-import distributors who leave registration compliance to the buyer, every vehicle that departs our Queensland facility is pre-fitted with certified LED lighting systems, dual rear-view mirrors, audible reversing alarms, and magnetic amber roof beacons, accompanied by pre-filled conditional registration paperwork for Queensland (TMR), New South Wales (Transport for NSW), and Victoria (VicRoads).
           </p>
 
           <h2 className="text-2xl font-black text-[#0E2A1E] pt-4 tracking-tight font-serif">
@@ -211,7 +200,7 @@ export default function AboutPage() {
               href="/contact/"
               className="w-full py-3.5 px-4 rounded-xl bg-[#C5A265] hover:bg-[#D4B27C] text-[#0E2A1E] font-black text-xs uppercase tracking-wider block text-center transition-all shadow-md active:scale-[0.98]"
             >
-              Contact Sales & Workshop Desk
+              Contact the Sales Desk
             </Link>
           </div>
         </div>
@@ -249,7 +238,7 @@ export default function AboutPage() {
             The Buggy Shop Standard
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-[#0E2A1E] tracking-tight font-serif">
-            8 Pillars of Engineering & Service Superiority
+            8 Reasons Buyers Choose The Buggy Shop
           </h2>
         </div>
 

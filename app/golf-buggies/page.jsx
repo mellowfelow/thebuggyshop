@@ -1,4 +1,5 @@
 // app/golf-buggies/page.jsx
+import { pageMeta } from '@/lib/pageMeta';
 import React from 'react';
 import Link from 'next/link';
 import { SITE } from '@/src/config/site';
@@ -10,22 +11,11 @@ import { ogImages } from '@/lib/og';
 import FaqSection from '@/src/components/FaqSection';
 import { faqsForPage } from '@/src/config/faq';
 
-export const metadata = {
-  title: { absolute: seoTitle('Golf Buggies for Sale Near Me | By City & State') },
-  description: seoDesc('Golf buggies for sale near me? Choose your city for electric buggies, push buggies and golf carts with tail-lift delivery to Melbourne, Sydney, Brisbane and Perth.'),
-  alternates: {
-    canonical: `https://${SITE.domain}/golf-buggies/`,
-  },
-  openGraph: {
-    title: 'Golf Buggies Australia by City | The Buggy Shop',
-    description: 'Direct hydraulic tail-lift delivery across Melbourne, Sydney, Brisbane, Gold Coast, Perth, Adelaide and all Australian states.',
-    url: `https://${SITE.domain}/golf-buggies/`,
-    images: ogImages(),
-  },
-  other: {
-    'og:updated_time': new Date().toISOString(),
-  }
-};
+export const metadata = pageMeta({
+  path: '/golf-buggies/',
+  title: 'Golf Buggies for Sale Near Me | By City & State',
+  description: 'Golf buggies for sale near me? Choose your city for electric buggies, push buggies and golf carts with tail-lift delivery to Melbourne, Sydney, Brisbane and Perth.',
+});
 
 export default function GolfBuggiesLocationsIndexPage() {
   const breadcrumbSchema = {

@@ -1,4 +1,5 @@
 // app/golf-buggies/[city]/page.jsx
+import { pageMeta } from '@/lib/pageMeta';
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -21,22 +22,11 @@ export async function generateMetadata({ params }) {
   const location = getLocationBySlug(city);
   if (!location) return { title: 'Location Not Found | The Buggy Shop Australia' };
 
-  return {
-    title: { absolute: seoTitle(`${location.title} | The Buggy Shop`) },
-    description: seoDesc(location.metaDescription),
-    alternates: {
-      canonical: `https://${SITE.domain}/golf-buggies/${location.slug}/`,
-    },
-    openGraph: {
-      title: location.title,
-      description: location.metaDescription,
-      url: `https://${SITE.domain}/golf-buggies/${location.slug}/`,
-      images: ogImages(),
-    },
-    other: {
-      'og:updated_time': new Date().toISOString(),
-    },
-  };
+  return pageMeta({
+    path: `/golf-buggies/${location.slug}/`,
+    title: `${location.title} | The Buggy Shop`,
+    description: location.metaDescription,
+  });
 }
 
 export default async function LocationCityPage({ params }) {
@@ -87,7 +77,7 @@ export default async function LocationCityPage({ params }) {
           <div className="space-y-3 max-w-3xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#123123] text-[#C5A265] text-xs font-black uppercase tracking-wider border border-[#C5A265]/30">
               <MapPin className="w-3.5 h-3.5" />
-              <span>{location.name}, {location.state} Delivery & Technical Service</span>
+              <span>{location.name}, {location.state} Delivery</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0E2A1E] tracking-tight font-serif">

@@ -1,4 +1,5 @@
 // app/shop/[category]/page.jsx
+import { pageMeta } from '@/lib/pageMeta';
 import React from 'react';
 import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
@@ -32,23 +33,13 @@ export async function generateMetadata({ params }) {
   // A category with nothing to sell is a thin page: keep it out of Google until it has stock
   const empty = getProductsByCategory(category.slug).length === 0;
 
-  return {
-    ...(empty ? { robots: { index: false, follow: true } } : {}),
-    title: { absolute: seoTitle(category.pageTitle || `${category.navLabel} | The Buggy Shop`) },
-    description: seoDesc(category.metaDescription || category.introCopy),
-    alternates: {
-      canonical: `https://${SITE.domain}/shop/${category.slug}/`,
-    },
-    openGraph: {
-      title: category.pageTitle,
-      description: category.metaDescription,
-      url: `https://${SITE.domain}/shop/${category.slug}/`,
-      images: ogImages(category.heroImage),
-    },
-    other: {
-      'og:updated_time': new Date().toISOString(),
-    },
-  };
+  return pageMeta({
+    path: `/shop/${category.slug}/`,
+    title: category.pageTitle || `${category.navLabel} | The Buggy Shop`,
+    description: category.metaDescription || category.introCopy,
+    image: category.heroImage,
+    noindex: empty,
+  });
 }
 
 export default async function CategoryPage({ params }) {

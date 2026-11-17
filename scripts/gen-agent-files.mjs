@@ -70,16 +70,25 @@ fs.writeFileSync(path.join(rootDir, 'vercel.json'), JSON.stringify(vercelConfig,
 
 // 2. public/robots.txt  (single source: app/robots.js was removed - it conflicted with this file)
 const PRIVATE_PATHS = ['/admin/', '/order/', '/checkout/', '/thank-you-contact/', '/thank-you-order/', '/thank-you-wholesale/'];
-const AI_BOTS = ['GPTBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-Web', 'PerplexityBot', 'Applebot', 'Amazonbot', 'Bytespider', 'CCBot', 'Google-Extended', 'Meta-ExternalAgent', 'cohere-ai'];
-const disallowBlock = PRIVATE_PATHS.map((p) => `Disallow: ${p}`).join('\n');
+// A crawler obeys ONLY its most specific group (RFC 9309). So the AI group must repeat the private-path rules:
+// a bare "Allow: /" group would exempt those bots from every Disallow in the * group.
+const AI_BOTS = ['GPTBot', 'ChatGPT-User', 'OAI-SearchBot', 'ClaudeBot', 'Claude-User', 'Claude-SearchBot', 'PerplexityBot', 'Perplexity-User', 'MistralAI-User', 'MistralAI-Index', 'Applebot', 'Amazonbot', 'Bytespider', 'CCBot', 'Google-Extended', 'Meta-ExternalAgent', 'Meta-WebIndexer', 'cohere-ai'];
+// Next.js data requests (?_rsc=) are not pages; keeping crawlers off them leaves crawl budget for HTML.
+const CRAWL_WASTE = ['/*?_rsc=', '/*&_rsc='];
+const disallowBlock = [...PRIVATE_PATHS, ...CRAWL_WASTE].map((p) => `Disallow: ${p}`).join('\n');
+const CONTENT_SIGNAL = 'Content-Signal: search=yes, ai-input=yes, ai-train=no';
 const robotsTxt = `User-agent: *
+${CONTENT_SIGNAL}
+Allow: /
 ${disallowBlock}
+
+# AI crawlers: welcome on product and content pages, same private paths as everyone else
+${AI_BOTS.map((b) => `User-agent: ${b}`).join('\n')}
+${CONTENT_SIGNAL}
+Allow: /
+${disallowBlock}
+
 Sitemap: ${baseUrl}/sitemap.xml
-
-Content-Signal: search=yes, ai-input=yes, ai-train=no
-
-# AI crawlers — welcome to index product and content pages
-${AI_BOTS.map((b) => `User-agent: ${b}\nAllow: /`).join('\n\n')}
 
 # Agent-readable resources
 # llms.txt: ${baseUrl}/llms.txt
@@ -102,7 +111,7 @@ ${BRAND.description}
 - **Currency**: ${SITE.currency} (All prices include 10% Australian GST)
 - **Nationwide Freight**: Flat-rate hydraulic tail-lift delivery to property gates and regional depots across Australia ($${SHOP.shippingFee} AUD).
 - **Payment Methods**: Direct Bank Wire, Australian PayID, and Crypto (Bitcoin BTC / Tether USDT with an instant ${SHOP.cryptoDiscount}% discount).
-- **Warranty**: 5-Year Domestic LiFePO4 Lithium Battery Replacement Warranty + 3-Year Chassis & Powertrain Warranty.
+- **Warranty**: 5-year Australian replacement warranty on LiFePO4 lithium battery packs. Other warranties are listed on each product page.
 - **Road Compliance**: Pre-fitted state-compliant lighting, dual mirrors, horn, beacons, and pre-filled conditional registration paperwork for QLD TMR, Transport for NSW, and VicRoads.
 
 ## Product Categories & Models

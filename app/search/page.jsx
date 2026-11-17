@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/pageMeta';
 import React, { Suspense } from 'react';
 import Link from 'next/link';
 import { SITE, PRODUCTS, POSTS, CATEGORIES } from '@/src/config/site';
@@ -5,16 +6,12 @@ import JsonLd from '@/src/components/JsonLd';
 import SearchClient from './SearchClient';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
-export const metadata = {
-  title: { absolute: seoTitle('Search Golf Buggies For Sale | The Buggy Shop Australia') },
-  description: seoDesc('Search our range of premium golf buggies for sale, remote control buggies, push buggies, and golf accessories across Australia.'),
-  alternates: {
-    canonical: `https://${SITE.domain}/search/`,
-  },
-  other: {
-    'og:updated_time': new Date().toISOString(),
-  }
-};
+export const metadata = pageMeta({
+  path: '/search/',
+  title: 'Search Golf Buggies For Sale | The Buggy Shop Australia',
+  description: 'Search our range of premium golf buggies for sale, remote control buggies, push buggies, and golf accessories across Australia.',
+  noindex: true,
+});
 
 export default function SearchPage() {
   const breadcrumbSchema = {

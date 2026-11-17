@@ -85,9 +85,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  other: {
-    'og:updated_time': new Date().toISOString(),
-  },
 };
 
 export const viewport: Viewport = {

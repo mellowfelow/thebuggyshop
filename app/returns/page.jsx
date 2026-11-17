@@ -1,12 +1,13 @@
+import { pageMeta } from '@/lib/pageMeta';
 import LegalPage from '@/src/components/LegalPage';
 import { SITE, CONTACT } from '@/src/config/site';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
-export const metadata = {
-  title: { absolute: seoTitle('Returns, Refunds & Warranty') },
-  description: seoDesc('Returns, refunds and warranty at The Buggy Shop, including your rights under the Australian Consumer Law and our 5-year LiFePO4 battery warranty.'),
-  alternates: { canonical: `https://${SITE.domain}/returns/` },
-};
+export const metadata = pageMeta({
+  path: '/returns/',
+  title: 'Returns, Refunds & Warranty',
+  description: 'Returns, refunds and warranty at The Buggy Shop, including your rights under the Australian Consumer Law and our 5-year LiFePO4 battery warranty.',
+});
 
 // NOTE: draft. The Australian Consumer Law wording below is standard and cannot be excluded.
 // The business owner must confirm any additional change-of-mind terms before publishing.

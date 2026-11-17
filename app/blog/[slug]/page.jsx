@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/pageMeta';
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -20,13 +21,14 @@ export async function generateMetadata({ params }) {
   const { slug } = await params;
   const post = POSTS.find((p) => p.slug === slug);
   if (!post) return { title: 'Article Not Found' };
-  const url = `https://${SITE.domain}/blog/${post.slug}/`;
-  return {
-    title: { absolute: seoTitle(post.titleTag || post.title) },
-    description: seoDesc(post.metaDescription || post.excerpt),
-    alternates: { canonical: url },
-    openGraph: { type: 'article', title: post.title, description: post.excerpt, url, images: [{ url: absUrl(post.image) }], publishedTime: post.date, modifiedTime: post.updated },
-  };
+  return pageMeta({
+    path: `/blog/${post.slug}/`,
+    title: post.titleTag || post.title,
+    description: post.metaDescription || post.excerpt,
+    image: post.image,
+    type: 'article',
+    publishedTime: post.date,
+  });
 }
 
 export default async function BlogPostPage({ params }) {
@@ -52,7 +54,7 @@ export default async function BlogPostPage({ params }) {
         dateModified: post.updated,
         wordCount: post.words,
         author: { '@type': 'Organization', name: SITE.name, url: `https://${SITE.domain}/` },
-        publisher: { '@type': 'Organization', name: SITE.name, logo: { '@type': 'ImageObject', url: `https://${SITE.domain}/images/logo.png` } },
+        publisher: { '@type': 'Organization', name: SITE.name, logo: { '@type': 'ImageObject', url: `https://${SITE.domain}/apple-touch-icon.png` } },
         mainEntityOfPage: { '@type': 'WebPage', '@id': url },
       },
       {

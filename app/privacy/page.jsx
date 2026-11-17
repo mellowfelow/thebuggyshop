@@ -1,12 +1,13 @@
+import { pageMeta } from '@/lib/pageMeta';
 import LegalPage from '@/src/components/LegalPage';
 import { SITE, ENTITY, CONTACT } from '@/src/config/site';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
-export const metadata = {
-  title: { absolute: seoTitle('Privacy Policy') },
-  description: seoDesc('How The Buggy Shop collects, uses and protects your personal information under the Australian Privacy Principles, and how to contact us about it.'),
-  alternates: { canonical: `https://${SITE.domain}/privacy/` },
-};
+export const metadata = pageMeta({
+  path: '/privacy/',
+  title: 'Privacy Policy',
+  description: 'How The Buggy Shop collects, uses and protects your personal information under the Australian Privacy Principles, and how to contact us about it.',
+});
 
 // NOTE: draft describing what the site actually does today (enquiry/checkout forms, order store,
 // email, cart in browser storage; no analytics or advertising trackers are installed).

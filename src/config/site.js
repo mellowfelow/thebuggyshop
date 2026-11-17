@@ -58,7 +58,7 @@ const CATEGORY_TILES = [
   {
     slug: 'used-golf-buggies',
     name: 'Certified Used & Ex-Demo Buggies',
-    description: 'Workshop-inspected ex-demo MGI buggies and refurbished 48V lithium carts with comprehensive warranties.',
+    description: 'Inspected ex-demo MGI buggies and refurbished 48V lithium carts with comprehensive warranties.',
     heroImage: '/images/categories/used-golf-buggies.webp'
   },
   {

@@ -1,12 +1,13 @@
+import { pageMeta } from '@/lib/pageMeta';
 import LegalPage from '@/src/components/LegalPage';
 import { SITE, SHOP, CONTACT } from '@/src/config/site';
 import { seoTitle, seoDesc } from '@/lib/seo';
 
-export const metadata = {
-  title: { absolute: seoTitle('Shipping & Delivery Australia') },
-  description: seoDesc('Nationwide hydraulic tail-lift delivery for golf buggies and carts from The Buggy Shop. Flat-rate freight to your property gate or clubhouse across Australia.'),
-  alternates: { canonical: `https://${SITE.domain}/shipping/` },
-};
+export const metadata = pageMeta({
+  path: '/shipping/',
+  title: 'Shipping & Delivery Australia',
+  description: 'Nationwide hydraulic tail-lift delivery for golf buggies and carts from The Buggy Shop. Flat-rate freight to your property gate or clubhouse across Australia.',
+});
 
 // NOTE: draft built only from facts already published on the site (flat freight fee, tail-lift
 // carriers, pre-delivery inspection). The business owner must confirm transit times and any

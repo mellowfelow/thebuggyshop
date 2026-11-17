@@ -40,7 +40,7 @@ export const CONTACT = {
   phoneDisplay: '0480 811 308',
   whatsapp: '+61480811308',
   whatsappDisplay: '+61 480 811 308',
-  address: 'Queensland Distribution Center & Technical Workshop',
+  address: 'Queensland Distribution Centre',
   hq: 'Queensland, Australia',
   country: 'Australia',
   state: 'QLD',
@@ -124,7 +124,7 @@ export const CHAT = {
   channels: [
     { type: 'whatsapp', value: '+61480811308', label: 'WhatsApp Dispatch & Sales' },
     { type: 'phone', value: '+61480811308', label: 'Call 0480 811 308' },
-    { type: 'email', value: 'sales&#64;thebuggyshop.com.au', label: 'Email Order Desk' }
+    { type: 'email', value: 'sales&#64;thebuggyshoppty.com.au', label: 'Email Order Desk' }
   ]
 }
 
@@ -145,9 +145,9 @@ export const BRAND = {
     'Australia-wide flat-rate hydraulic tail-lift delivery directly to your home, golf clubhouse, or rural property gate with zero hidden fees.',
     'Every golf buggy for sale is delivered 95%+ pre-assembled — pre-tested, battery-conditioned, and drive-away ready.',
     'Extensive selection: New & used golf buggies for sale, 4x4 off road buggies, remote control golf trolleys, push buggies with seat, and MGI compatible accessories.',
-    'Over 20 years of Australian cart sales and service heritage (Est. 2004) with certified technicians and Queensland spare parts inventory.',
+    'Over 20 years of Australian golf buggy and cart sales (Est. 2004) with a Queensland spare parts inventory.',
     'Turnkey conditional road compliance lighting, seatbelts, dual mirrors, horn, and pre-completed state registration paperwork included.',
-    '5-Year LiFePO4 lithium battery guarantee with Australian service backup and rapid spare parts dispatch.',
+    '5-Year LiFePO4 lithium battery guarantee with Australian replacement cover and rapid spare parts dispatch.',
     '10% Instant crypto discount for Bitcoin (BTC) and Tether (USDT) payments, alongside standard Australian PayID and direct bank wire transfers.'
   ],
   sameAs: [],

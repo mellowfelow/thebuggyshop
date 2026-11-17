@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/pageMeta';
 import React from 'react';
 import Link from 'next/link';
 import { SITE, CONTACT, FORMS, SHOP } from '@/src/config/site';
@@ -17,22 +18,11 @@ import ContactFormClient from './ContactFormClient';
 import { seoTitle, seoDesc } from '@/lib/seo';
 import { ogImages } from '@/lib/og';
 
-export const metadata = {
-  title: { absolute: seoTitle('Contact Queensland Golf Buggy Sales & Quotes | The Buggy Shop') },
-  description: seoDesc('Connect with The Buggy Shop Queensland for golf buggy for sale availability, tail-lift freight quotes, commercial invoices, and conditional road registration guidance.'),
-  alternates: {
-    canonical: `https://${SITE.domain}/contact/`,
-  },
-  openGraph: {
-    title: 'Contact Queensland Golf Buggy Sales & Quotes | The Buggy Shop',
-    description: 'Connect with The Buggy Shop for golf buggies for sale and freight quotes across Australia.',
-    url: `https://${SITE.domain}/contact/`,
-    images: ogImages(),
-  },
-  other: {
-    'og:updated_time': new Date().toISOString(),
-  }
-};
+export const metadata = pageMeta({
+  path: '/contact/',
+  title: 'Contact Queensland Golf Buggy Sales & Quotes | The Buggy Shop',
+  description: 'Connect with The Buggy Shop Queensland for golf buggy for sale availability, tail-lift freight quotes, commercial invoices, and conditional road registration guidance.',
+});
 
 export default function ContactPage() {
   const breadcrumbSchema = {
@@ -68,7 +58,7 @@ export default function ContactPage() {
 
         <div className="space-y-2 border-b border-[#D5DFD9] pb-6">
           <h1 className="text-3xl sm:text-4xl font-black text-[#0E2A1E] tracking-tight font-serif">
-            Queensland Golf Buggy Sales & Technical Workshop Desk
+            Queensland Golf Buggy Sales Desk
           </h1>
           <p className="text-sm text-[#4A5D53] max-w-2xl leading-relaxed">
             Get in touch for stock availability, tail-lift freight estimates to your property or club, commercial finance invoices, or state registration assistance.

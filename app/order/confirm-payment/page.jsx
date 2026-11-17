@@ -116,7 +116,7 @@ function ConfirmPaymentContent() {
           Payment Receipt Uploaded!
         </h1>
         <p className="text-slate-600 mb-6 max-w-md mx-auto text-sm leading-relaxed">
-          Thank you. Our Queensland finance and dispatch workshop have received your payment verification for order{' '}
+          Thank you. Our Queensland sales and dispatch team has received your payment verification for order{' '}
           <strong className="text-slate-900 font-mono font-bold">{orderId}</strong>. We will reconcile settlement and schedule your vehicle for hydraulic tail-lift freight.
         </p>
 

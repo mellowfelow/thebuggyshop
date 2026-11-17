@@ -1,50 +1,46 @@
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
 Disallow: /admin/
 Disallow: /order/
 Disallow: /checkout/
 Disallow: /thank-you-contact/
 Disallow: /thank-you-order/
 Disallow: /thank-you-wholesale/
-Sitemap: https://thebuggyshoppty.com.au/sitemap.xml
+Disallow: /*?_rsc=
+Disallow: /*&_rsc=
 
-Content-Signal: search=yes, ai-input=yes, ai-train=no
-
-# AI crawlers — welcome to index product and content pages
+# AI crawlers: welcome on product and content pages, same private paths as everyone else
 User-agent: GPTBot
-Allow: /
-
 User-agent: ChatGPT-User
-Allow: /
-
+User-agent: OAI-SearchBot
 User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
+User-agent: Claude-User
+User-agent: Claude-SearchBot
 User-agent: PerplexityBot
-Allow: /
-
+User-agent: Perplexity-User
+User-agent: MistralAI-User
+User-agent: MistralAI-Index
 User-agent: Applebot
-Allow: /
-
 User-agent: Amazonbot
-Allow: /
-
 User-agent: Bytespider
-Allow: /
-
 User-agent: CCBot
-Allow: /
-
 User-agent: Google-Extended
-Allow: /
-
 User-agent: Meta-ExternalAgent
-Allow: /
-
+User-agent: Meta-WebIndexer
 User-agent: cohere-ai
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
+Disallow: /admin/
+Disallow: /order/
+Disallow: /checkout/
+Disallow: /thank-you-contact/
+Disallow: /thank-you-order/
+Disallow: /thank-you-wholesale/
+Disallow: /*?_rsc=
+Disallow: /*&_rsc=
+
+Sitemap: https://thebuggyshoppty.com.au/sitemap.xml
 
 # Agent-readable resources
 # llms.txt: https://thebuggyshoppty.com.au/llms.txt

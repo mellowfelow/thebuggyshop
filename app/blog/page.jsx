@@ -1,3 +1,4 @@
+import { pageMeta } from '@/lib/pageMeta';
 import React from 'react';
 import Link from 'next/link';
 import { SITE, POSTS } from '@/src/config/site';
@@ -7,22 +8,11 @@ import Image from 'next/image';
 import { seoTitle, seoDesc } from '@/lib/seo';
 import { ogImages } from '@/lib/og';
 
-export const metadata = {
-  title: { absolute: seoTitle('Golf Buggy Guides & Buying Advice | Australia') },
-  description: seoDesc('Golf buggy and golf cart buying guides for Australia: prices, electric buggy comparisons, lithium batteries and road registration, from The Buggy Shop.'),
-  alternates: {
-    canonical: `https://${SITE.domain}/blog/`,
-  },
-  openGraph: {
-    title: 'Golf Buggy Insights & Technical Guides | The Buggy Shop',
-    description: 'Technical advice, lithium battery guides, and golf buggy accessories for Australian owners.',
-    url: `https://${SITE.domain}/blog/`,
-    images: ogImages(),
-  },
-  other: {
-    'og:updated_time': new Date().toISOString(),
-  }
-};
+export const metadata = pageMeta({
+  path: '/blog/',
+  title: 'Golf Buggy Guides & Buying Advice | Australia',
+  description: 'Golf buggy and golf cart buying guides for Australia: prices, electric buggy comparisons, lithium batteries and road registration, from The Buggy Shop.',
+});
 
 export default function BlogIndexPage() {
   const breadcrumbSchema = {

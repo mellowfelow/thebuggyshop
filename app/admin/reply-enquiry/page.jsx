@@ -225,7 +225,7 @@ function ReplyEnquiryContent() {
                   Re: {enquiry.subject || 'Your Enquiry'}
                 </div>
                 <div className="text-[11px] text-slate-400 mt-0.5">
-                  Queensland Technical Workshop &amp; Sales Desk
+                  Queensland Sales Desk
                 </div>
               </div>
 

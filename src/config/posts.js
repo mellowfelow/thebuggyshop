@@ -479,7 +479,7 @@ Start with the [full shop](/shop/), or call 0480 811 308 and tell us how you pla
 
 // ------------------------------------------------------------------ 6-8. existing posts, rewritten with verified facts
 const buyers = `
-A golf buggy for sale in Australia can be a push buggy, an electric walk-behind buggy, a remote-control buggy or a ride-on golf cart. Prices start at ${$(F.push.min)} for a push buggy and ${$(F.cart.min)} for a new ride-on cart. This guide explains how to choose between them, and between new and used.
+How to buy a golf buggy in Australia comes down to choosing the type first: a push buggy, an electric walk-behind buggy, a remote-control buggy or a ride-on golf cart. Prices start at ${$(F.push.min)} for a push buggy and ${$(F.cart.min)} for a new ride-on cart. This guide explains how to choose between them, and between new and used.
 
 ## Which type of golf buggy do you need?
 
@@ -609,14 +609,14 @@ const BASE_POSTS = [
     metaDescription: 'Electric buggies for adults in Australia: golf buggies, ride-on carts, utility carts and off-road options explained, with prices and how to choose.',
     category: 'Buying Guides', date: '2026-10-06', image: '/images/products/ecar-lithium-a2-utility-cart/main.webp', imageAlt: 'Electric buggy for adults: ECAR Lithium A2 utility cart',
     keyword: 'electric buggy', faqIds: ['buggy-vs-cart', 'cost-buggy', 'licence', 'road-legal', 'electric-or-gas'], toc: true, content: electricBuggy }),
-  mk({ slug: 'golf-buggy-for-sale-buyers-guide-australia', title: "Golf Buggy for Sale: The Australian Buyer's Guide (New vs Used)", titleTag: "Golf Buggy for Sale: The Australian Buyer's Guide",
+  mk({ slug: 'golf-buggy-for-sale-buyers-guide-australia', title: "How to Buy a Golf Buggy in Australia: New vs Used Buyer's Guide", titleTag: "How to Buy a Golf Buggy in Australia: New vs Used",
     excerpt: 'How to choose a golf buggy for sale in Australia: push, electric, remote control or ride-on cart, new or used, with prices and what to check.',
     metaDescription: 'How to choose a golf buggy for sale in Australia: push, electric, remote control or ride-on cart, new or used, with prices and what to check.',
     category: 'Buying Guides', date: '2026-02-28', image: '/images/products/mgi-zip-navigator-at-all-terrain-golf-buggy/main.webp', imageAlt: 'Golf buggy for sale in Australia: MGI Zip Navigator AT',
-    keyword: 'golf buggy for sale', faqIds: ['cost-buggy', 'used', 'delivery'], toc: true, content: more('golf-buggy-for-sale-buyers-guide-australia', buyers) }),
-  mk({ slug: 'conditional-road-registration-guide-qld-nsw-vic', title: 'Conditional Road Registration for Golf Carts in QLD, NSW & VIC', titleTag: 'Golf Cart Road Registration in QLD, NSW & VIC',
+    keyword: 'how to buy a golf buggy', faqIds: ['cost-buggy', 'used', 'delivery'], toc: true, content: more('golf-buggy-for-sale-buyers-guide-australia', buyers) }),
+  mk({ slug: 'conditional-road-registration-guide-qld-nsw-vic', title: 'Conditional Road Registration for Golf Carts in QLD, NSW & VIC', titleTag: 'Golf Cart Registration QLD, NSW & VIC: Road Rules Guide',
     excerpt: 'How conditional road registration applies to golf carts in Queensland, NSW and Victoria, what we provide, and what to confirm with your state authority before you buy.',
-    metaDescription: 'How conditional road registration applies to golf carts in Queensland, NSW and Victoria, what we provide, and what to confirm with your road authority.',
+    metaDescription: 'Can you drive a golf cart on the road? See how conditional registration works in Queensland, NSW and Victoria and what to confirm with the authority.',
     category: 'Road Compliance', date: '2026-02-15', image: '/images/products/rippa-4-seat-electric-golf-cart/main.webp', imageAlt: 'Road compliant golf cart: Rippa 4-seat electric golf cart',
     keyword: 'golf cart road registration', faqIds: ['road-legal', 'licence'], toc: true, content: more('conditional-road-registration-guide-qld-nsw-vic', rego) }),
   mk({ slug: 'lifepo4-vs-lead-acid-battery-lifespan-australian-climate', title: 'LiFePO4 Lithium vs Lead-Acid Golf Cart Batteries in Australia', titleTag: 'LiFePO4 vs Lead-Acid Golf Cart Batteries',

@@ -19,7 +19,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { useStore } from '@/src/components/ClientStoreProvider';
-import { SITE, CONTACT, SHOP } from '@/src/config/core';
+import { SITE, CONTACT, SHOP, BUNDLE } from '@/src/config/core';
 import ProductCard from '@/src/components/ProductCard';
 import Image from 'next/image';
 import { productImageAlt } from '@/lib/seo';
@@ -34,15 +34,42 @@ export default function ProductDetailClient({ product, relatedProducts }) {
   const cryptoPrice = Math.round(product.price * (1 - SHOP.cryptoDiscount / 100));
 
   const waQuoteUrl = `https://wa.me/${CONTACT.whatsapp.replace('+', '')}?text=${encodeURIComponent(
-    `G'day! I would like to check stock, freight timing, and conditional registration paperwork for *${product.name}* ($${product.price.toLocaleString('en-AU')} AUD).`
+    `G'day! I would like to check stock, and freight timing for *${product.name}* ($${product.price.toLocaleString('en-AU')} AUD).`
   )}`;
 
-  const motorDisplay = product.specs?.motor ? product.specs.motor.split('(')[0] : (product.specs?.makeModel || product.specs?.frame || 'High Output AC Electric');
-  const batteryDisplay = product.specs?.battery ? product.specs.battery.split('(')[0] : (product.specs?.batteryUpgrade || product.specs?.material || 'LiFePO4 Lithium');
-  const rangeDisplay = product.specs?.range || 'Full 36+ Holes Range';
-  const speedDisplay = product.specs?.topSpeed || 'Regulated Course Speed';
-  const payloadDisplay = product.specs?.payloadCapacity || product.specs?.weight || '350kg+';
-  const clearanceDisplay = product.specs?.groundClearance || 'Course Turf Spec';
+  // Only facts the product record carries are shown. No fallback specs: a golf club has no motor, a part has no range.
+  const specs = product.specs || {};
+  const short = (v) => String(v).split('(')[0].trim();
+  const highlights = [
+    ['Drive', specs.motor || specs.engine],
+    ['Battery', specs.battery || specs.chemistry],
+    ['Range', specs.range],
+    ['Top speed', specs.topSpeed || specs.speedLimit],
+    ['Capacity', specs.payloadCapacity || specs.seating],
+    ['Weight', specs.weight],
+    ['Warranty', specs.warranty],
+  ].filter(([, v]) => v).map(([k, v]) => [k, short(v)]).slice(0, 6);
+
+  // Trust cards must be true for THIS product: the 5-year warranty covers lithium packs only, road registration help applies to ride-on carts only.
+  const isVehicle = BUNDLE.vehicleCategories.includes(product.category) && !BUNDLE.vehicleExcludedSubcategories.includes(product.subcategory);
+  // The 5-year cover applies to lithium PACKS only: a lithium battery product, or a vehicle whose own spec says the standard battery is lithium.
+  // "Lithium upgrade available" on a lead-acid cart does not count, and neither does a charger.
+  const isLithium = !/lead[- ]acid|flooded|agm|charger(?!.*battery)/i.test(product.name) && (product.category === 'batteries'
+    ? /lithium|lifepo4/i.test(product.name) && /battery|pack|conversion/i.test(product.name)
+    : /lithium|lifepo4/i.test(specs.battery || '') && !/upgrade|optional|available/i.test(specs.battery || ''));
+  const isRideOnCart = product.category === 'luxury-golf-carts';
+  const freight = `$${SHOP.shippingFee.toLocaleString('en-AU')}`;
+  const trustCards = [
+    isLithium
+      ? { Icon: ShieldCheck, title: '5-Year Lithium Battery Warranty', text: 'Australian replacement cover' }
+      : { Icon: ShieldCheck, title: 'GST Included', text: 'Tax invoice with every order' },
+    isVehicle
+      ? { Icon: Truck, title: 'Tail-Lift Delivery', text: `Flat ${freight} Australia-wide` }
+      : { Icon: Truck, title: 'Australia-Wide Delivery', text: 'Freight confirmed before you pay' },
+    isRideOnCart
+      ? { Icon: FileCheck2, title: 'Road Registration Help', text: 'Conditional rego: QLD, NSW, VIC' }
+      : { Icon: FileCheck2, title: 'Secure Payment', text: 'PayID, bank transfer or crypto' },
+  ];
 
   return (
     <div className="space-y-16">
@@ -91,21 +118,13 @@ export default function ProductDetailClient({ product, relatedProducts }) {
 
           {/* Trust Guarantee Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4">
-            <div className="p-4 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] space-y-1 text-center shadow-[0_2px_10px_-2px_rgba(14,42,30,0.05)] hover:border-[#C5A265] transition-colors">
-              <ShieldCheck className="w-5 h-5 text-[#7A5C22] mx-auto" />
-              <div className="font-black text-xs text-[#0E2A1E]">5-Yr LiFePO4 Warranty</div>
-              <div className="text-[10px] text-[#4A5D53]">Domestic replacement</div>
-            </div>
-            <div className="p-4 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] space-y-1 text-center shadow-[0_2px_10px_-2px_rgba(14,42,30,0.05)] hover:border-[#C5A265] transition-colors">
-              <Truck className="w-5 h-5 text-[#7A5C22] mx-auto" />
-              <div className="font-black text-xs text-[#0E2A1E]">Tail-Lift Freight</div>
-              <div className="text-[10px] text-[#4A5D53]">Direct to your property across AU</div>
-            </div>
-            <div className="p-4 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] space-y-1 text-center shadow-[0_2px_10px_-2px_rgba(14,42,30,0.05)] hover:border-[#C5A265] transition-colors">
-              <FileCheck2 className="w-5 h-5 text-[#7A5C22] mx-auto" />
-              <div className="font-black text-xs text-[#0E2A1E]">State Road Legal Kit</div>
-              <div className="text-[10px] text-[#4A5D53]">QLD / NSW / VIC pre-filled</div>
-            </div>
+            {trustCards.map(({ Icon, title, text }) => (
+              <div key={title} className="p-4 bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-2xl border border-[#D5DFD9] space-y-1 text-center shadow-[0_2px_10px_-2px_rgba(14,42,30,0.05)] hover:border-[#C5A265] transition-colors">
+                <Icon className="w-5 h-5 text-[#7A5C22] mx-auto" aria-hidden="true" />
+                <div className="font-black text-xs text-[#0E2A1E]">{title}</div>
+                <div className="text-[10px] text-[#4A5D53]">{text}</div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -204,20 +223,19 @@ export default function ProductDetailClient({ product, relatedProducts }) {
           </div>
 
           {/* Quick Specifications Highlights */}
-          <div className="p-5 bg-gradient-to-b from-[#FAFBF9] to-[#EBF1ED] rounded-2xl border border-[#D5DFD9] space-y-2.5 text-xs text-[#0E2A1E] shadow-xs">
-            <div className="font-black uppercase tracking-wider text-[#7A5C22] text-[11px] flex items-center gap-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-[#7A5C22]" />
-              <span>Key Australian Highlights:</span>
+          {highlights.length > 0 && (
+            <div className="p-5 bg-gradient-to-b from-[#FAFBF9] to-[#EBF1ED] rounded-2xl border border-[#D5DFD9] space-y-2.5 text-xs text-[#0E2A1E] shadow-xs">
+              <div className="font-black uppercase tracking-wider text-[#7A5C22] text-[11px] flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#7A5C22]" aria-hidden="true" />
+                <span>Key details</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-[11px]">
+                {highlights.map(([k, v]) => (
+                  <div key={k}>• <strong>{k}:</strong> {v}</div>
+                ))}
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-2.5 text-[11px]">
-              <div>• <strong>Drive:</strong> {motorDisplay}</div>
-              <div>• <strong>Battery / Power:</strong> {batteryDisplay}</div>
-              <div>• <strong>Max Range:</strong> {rangeDisplay}</div>
-              <div>• <strong>Top Speed:</strong> {speedDisplay}</div>
-              <div>• <strong>Capacity:</strong> {payloadDisplay}</div>
-              <div>• <strong>Clearance:</strong> {clearanceDisplay}</div>
-            </div>
-          </div>
+          )}
         </div>
       </div>
 
@@ -225,13 +243,13 @@ export default function ProductDetailClient({ product, relatedProducts }) {
       <div className="bg-gradient-to-b from-[#FCFDFB] to-[#F2F6F3] rounded-3xl p-6 sm:p-10 border border-[#D5DFD9] shadow-lg space-y-8">
         <div className="border-b border-[#D5DFD9] pb-5">
           <span className="text-xs font-black uppercase tracking-wider text-[#7A5C22] bg-[#EBF1ED] px-3 py-1 rounded-full border border-[#D5DFD9] inline-block">
-            Full Engineering Transparency
+            Product details
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-[#0E2A1E] tracking-tight font-serif mt-2">
-            Detailed Machine Specifications
+            {product.name}: Description and Specifications
           </h2>
           <p className="text-xs text-[#4A5D53] mt-1">
-            We publish continuous controller ratings, certified cycle life, and chassis specs competitors omit.
+            Specifications are as supplied by the manufacturer. Message us on WhatsApp if you need a detail that is not listed.
           </p>
         </div>
 
@@ -245,8 +263,8 @@ export default function ProductDetailClient({ product, relatedProducts }) {
           <table className="w-full text-left text-xs border-collapse">
             <thead>
               <tr className="bg-[#0E2A1E] text-white">
-                <th className="py-3.5 px-5 font-bold uppercase tracking-wider w-1/3 text-[#C5A265]">Component</th>
-                <th className="py-3.5 px-5 font-bold uppercase tracking-wider text-[#D3DFD8]">Manufacturer Rating & Spec</th>
+                <th className="py-3.5 px-5 font-bold uppercase tracking-wider w-1/3 text-[#C5A265]">Detail</th>
+                <th className="py-3.5 px-5 font-bold uppercase tracking-wider text-[#D3DFD8]">Specification</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#D5DFD9]">
@@ -275,7 +293,7 @@ export default function ProductDetailClient({ product, relatedProducts }) {
                 Compare Alternatives
               </span>
               <h3 className="text-xl sm:text-2xl font-black text-[#0E2A1E] tracking-tight font-serif">
-                Similar Golf Buggies & Carts for Sale
+                {isVehicle ? 'Similar Buggies and Carts' : 'Similar Products'}
               </h3>
             </div>
             <Link href={`/shop/${product.category}/`} className="text-xs font-black text-[#0E2A1E] hover:text-[#7A5C22] uppercase tracking-wider bg-white px-3.5 py-1.5 rounded-xl border border-[#D5DFD9]">

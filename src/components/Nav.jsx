@@ -261,7 +261,7 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
               <span>✓ ASIC / ABR Registered</span>
             </span>
             <span className="text-slate-700">&bull;</span>
-            <span>Queensland Workshop &amp; Dispatch Hub</span>
+            <span>Queensland Dispatch Hub</span>
           </div>
         </div>
       </div>
@@ -337,7 +337,7 @@ export default function Nav({ cartCount = 0, onOpenCart, compareCount = 0 }) {
           </div>
 
           <div className="pt-4 border-t border-slate-800 space-y-3 text-xs text-slate-300">
-            <div>📍 Queensland Distribution &amp; Workshop: {CONTACT.hq}</div>
+            <div>📍 Queensland Distribution: {CONTACT.hq}</div>
             <div>⚡ Direct Dispatch: {CONTACT.phoneDisplay}</div>
             <a 
               href={`https://wa.me/${CONTACT.whatsapp.replace('+', '')}?text=${encodeURIComponent(`Hi ${SITE.name}, I would like to inquire about golf buggy models for sale, stock availability, and nationwide tail-lift freight.`)}`}
