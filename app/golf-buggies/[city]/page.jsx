@@ -121,7 +121,7 @@ export default async function LocationCityPage({ params }) {
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-xs font-black text-[#0E2A1E] uppercase tracking-wider">
                 <Flag className="w-4 h-4 text-[#C5A265]" />
-                <span>Popular Course Deliveries in {location.name}</span>
+                <span>Well-known courses in the {location.name} area</span>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {location.popularClubs.map((club, cIdx) => (

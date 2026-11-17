@@ -10,6 +10,7 @@ import { PRODUCTS, getProductBySlug } from '@/src/config/products';
 import JsonLd from '@/src/components/JsonLd';
 import { absUrl, clampTitle, clampDesc, productSku, hasRealRating, realImages } from '@/lib/seo';
 import ProductDetailClient from './ProductDetailClient';
+import { getBrandBySlug } from '@/src/config/brands';
 
 export async function generateStaticParams() {
   return PRODUCTS.map((p) => ({ category: p.category, slug: p.slug }));
@@ -48,7 +49,10 @@ export default async function ProductPage({ params }) {
 
   const category = getCategoryBySlug(product.category);
   const isVehicleProduct = BUNDLE.vehicleCategories.includes(product.category) && !BUNDLE.vehicleExcludedSubcategories.includes(product.subcategory);
-  const relatedProducts = PRODUCTS.filter((p) => p.category === product.category && p.slug !== product.slug);
+  const subcategory = getCategoryBySlug(product.subcategory);
+  // Six similar products, same subcategory first. Rendering every product in the category (up to 28 cards) bloated the HTML, DOM and hydration cost.
+  const sameCategory = PRODUCTS.filter((p) => p.category === product.category && p.slug !== product.slug);
+  const relatedProducts = [...sameCategory.filter((p) => p.subcategory === product.subcategory), ...sameCategory.filter((p) => p.subcategory !== product.subcategory)].slice(0, 6);
 
   const productSchema = {
     "@context": "https://schema.org",
@@ -60,10 +64,7 @@ export default async function ProductPage({ params }) {
         "description": product.description,
         ...(realImages(product).length ? { "image": realImages(product).map(absUrl) } : {}),
         "sku": productSku(product.slug),
-        "brand": {
-          "@type": "Brand",
-          "name": product.brandName || SITE.name
-        },
+        ...(product.brandName && !/^(various|generic)$/i.test(product.brandName) ? { "brand": { "@type": "Brand", "name": product.brandName } } : {}),
         "offers": {
           "@type": "Offer",
           "url": `https://${SITE.domain}/shop/${product.category}/${product.slug}/`,
@@ -140,7 +141,7 @@ export default async function ProductPage({ params }) {
       </nav>
 
       {/* Main Interactive Product Workspace */}
-      <ProductDetailClient product={product} relatedProducts={relatedProducts} />
+      <ProductDetailClient product={product} relatedProducts={relatedProducts} brandHref={getBrandBySlug(product.brand) ? `/brands/${product.brand}/` : null} subcategory={subcategory && subcategory.slug !== product.category ? { href: `/shop/${subcategory.slug}/`, label: subcategory.navLabel } : null} />
     </div>
   );
 }

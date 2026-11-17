@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import JsonLd from '@/src/components/JsonLd';
 import { SITE } from '@/src/config/site';
+import { encodeEmails } from '@/lib/obfuscate';
 
 /**
  * Shared layout for policy-style pages (shipping, returns, privacy, terms).
@@ -39,12 +40,12 @@ export default function LegalPage({ title, path, intro, sections, updated }) {
           {s.body.map((b, i) =>
             Array.isArray(b) ? (
               <ul key={i} className="list-disc pl-5 space-y-1.5 text-sm text-[#2F4439] leading-relaxed">
-                {b.map((li) => (
-                  <li key={li}>{li}</li>
+                {b.map((li, j) => (
+                  <li key={j} dangerouslySetInnerHTML={{ __html: encodeEmails(li) }} />
                 ))}
               </ul>
             ) : (
-              <p key={i} className="text-sm text-[#2F4439] leading-relaxed">{b}</p>
+              <p key={i} className="text-sm text-[#2F4439] leading-relaxed" dangerouslySetInnerHTML={{ __html: encodeEmails(b) }} />
             )
           )}
         </section>

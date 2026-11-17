@@ -23,8 +23,9 @@ import { SITE, CONTACT, SHOP, BUNDLE } from '@/src/config/core';
 import ProductCard from '@/src/components/ProductCard';
 import Image from 'next/image';
 import { productImageAlt } from '@/lib/seo';
+import { hasLithiumWarranty } from '@/lib/warranty';
 
-export default function ProductDetailClient({ product, relatedProducts }) {
+export default function ProductDetailClient({ product, relatedProducts, brandHref, subcategory }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [selectedQty, setSelectedQty] = useState(1);
   const { addToCart, toggleCompare, comparedProducts } = useStore();
@@ -52,11 +53,7 @@ export default function ProductDetailClient({ product, relatedProducts }) {
 
   // Trust cards must be true for THIS product: the 5-year warranty covers lithium packs only, road registration help applies to ride-on carts only.
   const isVehicle = BUNDLE.vehicleCategories.includes(product.category) && !BUNDLE.vehicleExcludedSubcategories.includes(product.subcategory);
-  // The 5-year cover applies to lithium PACKS only: a lithium battery product, or a vehicle whose own spec says the standard battery is lithium.
-  // "Lithium upgrade available" on a lead-acid cart does not count, and neither does a charger.
-  const isLithium = !/lead[- ]acid|flooded|agm|charger(?!.*battery)/i.test(product.name) && (product.category === 'batteries'
-    ? /lithium|lifepo4/i.test(product.name) && /battery|pack|conversion/i.test(product.name)
-    : /lithium|lifepo4/i.test(specs.battery || '') && !/upgrade|optional|available/i.test(specs.battery || ''));
+  const isLithium = hasLithiumWarranty(product);
   const isRideOnCart = product.category === 'luxury-golf-carts';
   const freight = `$${SHOP.shippingFee.toLocaleString('en-AU')}`;
   const trustCards = [
@@ -152,6 +149,12 @@ export default function ProductDetailClient({ product, relatedProducts }) {
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#0E2A1E] tracking-tight leading-tight font-serif pt-1">
               {product.name}
             </h1>
+            {(brandHref || subcategory) && (
+              <p className="text-xs text-[#4A5D53] flex flex-wrap gap-x-4 gap-y-1">
+                {brandHref && <span>More from <Link href={brandHref} className="font-bold text-[#7A5C22] underline underline-offset-2">{product.brandName}</Link></span>}
+                {subcategory && <span>Browse all <Link href={subcategory.href} className="font-bold text-[#7A5C22] underline underline-offset-2">{subcategory.label}</Link></span>}
+              </p>
+            )}
 
             <p className="text-sm text-[#4A5D53] leading-relaxed">
               {product.shortDescription}
@@ -269,7 +272,7 @@ export default function ProductDetailClient({ product, relatedProducts }) {
             </thead>
             <tbody className="divide-y divide-[#D5DFD9]">
               {Object.entries(product.specs || {}).map(([key, value], idx) => {
-                const label = key
+                const label = key === 'warranty' ? 'Product warranty' : key
                   .replace(/([A-Z])/g, ' $1')
                   .replace(/^./, (str) => str.toUpperCase());
                 return (

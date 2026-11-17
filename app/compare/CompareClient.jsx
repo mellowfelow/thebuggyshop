@@ -21,6 +21,7 @@ import {
 import { useStore } from '@/src/components/ClientStoreProvider';
 import Image from 'next/image';
 import { productImageAlt } from '@/lib/seo';
+import { hasLithiumWarranty, LITHIUM_WARRANTY_LABEL } from '@/lib/warranty';
 
 export default function CompareClient({ allProducts = [] }) {
   const { comparedProducts, toggleCompare, addToCart } = useStore();
@@ -197,14 +198,13 @@ export default function CompareClient({ allProducts = [] }) {
       icon: ShieldCheck,
       rows: [
         { 
-          label: 'Battery Warranty & Life Guarantee', 
-          render: (p) => (
-            <span className="font-bold text-slate-900">
-              {p.specs?.warranty?.includes('LiFePO4') ? '5-Year Full Replacement LiFePO4 Guarantee' : p.specs?.warranty || '3 to 5-Year Australian Manufacturer Warranty'}
-            </span>
-          ) 
+          label: 'Product warranty',
+          render: (p) => p.specs?.warranty || 'See product page'
         },
-        { label: 'Warranty', render: (p) => p.specs?.warranty || 'See product page' },
+        {
+          label: 'Lithium battery warranty',
+          render: (p) => (hasLithiumWarranty(p) ? <span className="font-bold text-slate-900">{LITHIUM_WARRANTY_LABEL}</span> : 'Not a lithium pack')
+        },
         { label: 'Delivery', render: (p) => 'Flat-rate tail-lift delivery Australia-wide' }
       ]
     }

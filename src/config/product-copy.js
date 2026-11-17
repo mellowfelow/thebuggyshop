@@ -5,6 +5,7 @@
 // from core.js (freight, GST, payment, bundle discount). It never invents a spec, weight, range, speed or feature.
 // When a real spec sheet arrives, write the description and specs on the product record: this module then leaves it alone.
 import { SHOP, BUNDLE } from './core.js';
+import { hasLithiumWarranty, LITHIUM_WARRANTY_LABEL } from '../../lib/warranty.js';
 
 const STUB_SHORT = /available at The Buggy Shop Australia with Australian warranty/i;
 const STUB_LONG = /provides high quality performance for Australian golfers and property owners/i;
@@ -43,7 +44,7 @@ const TYPES = {
 };
 
 const isVehicle = (p) => BUNDLE.vehicleCategories.includes(p.category) && !BUNDLE.vehicleExcludedSubcategories.includes(p.subcategory);
-const isLithiumPack = (p) => p.category === 'batteries' && /lithium/i.test(p.name) && !/^(?!.*battery).*charger/i.test(p.name) && !/lead[- ]acid/i.test(p.name);
+const isLithiumPack = (p) => p.category === 'batteries' && hasLithiumWarranty(p);
 
 export function isStubCopy(p) {
   return STUB_SHORT.test(p.shortDescription || '') || STUB_LONG.test(p.description || '');
@@ -83,7 +84,7 @@ export function withHonestCopy(p) {
   const specs = { ...(p.specs || {}) };
   delete specs.category;
   if (specs.power === 'Manual / Accessory') delete specs.power; // import placeholder, not a spec
-  if (isLithiumPack(p)) specs.warranty = '5-Year Australian Replacement Warranty';
+  if (isLithiumPack(p)) specs.warranty = LITHIUM_WARRANTY_LABEL;
 
   // A product named exactly like a search term ("Golf Driver") must not fight its category page for that term.
   const generic = p.name.split(/\s+/).length <= 3 && !branded;
