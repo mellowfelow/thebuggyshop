@@ -25,7 +25,7 @@ import Image from 'next/image';
 import { productImageAlt } from '@/lib/seo';
 import { hasLithiumWarranty } from '@/lib/warranty';
 
-export default function ProductDetailClient({ product, relatedProducts, brandHref, subcategory }) {
+export default function ProductDetailClient({ product, relatedProducts, brandHref, subcategory, newEquivalent }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [selectedQty, setSelectedQty] = useState(1);
   const { addToCart, toggleCompare, comparedProducts } = useStore();
@@ -286,6 +286,16 @@ export default function ProductDetailClient({ product, relatedProducts, brandHre
           </table>
         </div>
       </div>
+
+      {newEquivalent && (
+        <section className="space-y-2 max-w-3xl" aria-labelledby="vs-new-h">
+          <h2 id="vs-new-h" className="text-xl sm:text-2xl font-black text-[#0E2A1E] tracking-tight font-serif">How this compares with buying new</h2>
+          <p className="text-sm text-[#2F4439] leading-relaxed">
+            The new <Link href={newEquivalent.href} className="font-semibold text-[#7A5C22] underline underline-offset-2">{newEquivalent.name}</Link> is ${newEquivalent.price.toLocaleString('en-AU')}.
+            This {String(product.condition).toLowerCase()} unit is ${product.price.toLocaleString('en-AU')}, which is ${(newEquivalent.price - product.price).toLocaleString('en-AU')} ({Math.round(((newEquivalent.price - product.price) / newEquivalent.price) * 100)}%) less. The condition, battery and warranty for this unit are listed in the specification table above, so you can compare them with the new model before you decide.
+          </p>
+        </section>
+      )}
 
       {/* SECTION 3: RELATED BUGGY MODELS */}
       {relatedProducts.length > 0 && (

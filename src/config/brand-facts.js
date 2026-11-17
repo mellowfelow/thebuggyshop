@@ -62,6 +62,14 @@ export const BRAND_FACTS = {
     ],
     sources: [{ label: 'Century Batteries: our history', url: 'https://www.centurybatteries.com.au/about-us/our-history' }],
   },
+  ultramax: {
+    facts: [
+      'According to its UK business directory listing, UltraMax Batteries Ltd makes lithium iron phosphate (LiFePO4) batteries for golf trolleys, mobility scooters and leisure use.',
+    ],
+    sources: [
+      { label: 'UltraMax Batteries Ltd on FreeIndex', url: 'https://www.freeindex.co.uk/profile(ultramax-batteries-ltd)_854089.htm' },
+    ],
+  },
   lvtong: {
     facts: [
       'LVTONG is a Guangdong, China-based manufacturer of electric golf carts and electric utility vehicles, registered as Guangdong Lvtong New Energy Electric Vehicle Technology Co., Ltd.',

@@ -18,6 +18,26 @@ export async function generateStaticParams() {
 
 // Title: the product name plus its price when it fits in 60 characters (a price in the snippet lifts click-through).
 // Always read from the product data, so it updates with the price.
+// A used or ex-demo product is compared with the new product it matches (same brand, same model words), from the data.
+const GENERIC = new Set(['ex', 'demo', 'certified', 'used', 'lease', 'fleet', 'buggy', 'golf', 'electric', 'remote', 'control', 'cart', 'the']);
+const tokens = (name) => String(name).toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').split(/\s+/).filter(Boolean);
+function newEquivalent(product) {
+  if (product.condition === 'New') return null;
+  const mine = new Set(tokens(product.name));
+  const key = [...mine].filter((t) => !GENERIC.has(t));
+  let best = null; let bestScore = 0;
+  for (const p of PRODUCTS) {
+    if (p.condition !== 'New' || p.brand !== product.brand || p.slug === product.slug) continue;
+    const theirs = new Set(tokens(p.name));
+    if (!key.every((t) => theirs.has(t))) continue;
+    const inter = [...mine].filter((t) => theirs.has(t)).length;
+    const score = inter / (mine.size + theirs.size - inter);
+    if (score > bestScore) { best = p; bestScore = score; }
+  }
+  // A listing that covers several variants at one price (for example "2 / 2+2 / 4 Seat") is not a like-for-like comparison.
+  return bestScore >= 0.45 && !/ \/ /.test(best.name) && best.price > product.price ? { name: best.name, href: `/shop/${best.category}/${best.slug}/`, price: best.price } : null;
+}
+
 function productTitle(product) {
   const price = `$${product.price.toLocaleString('en-AU')}`;
   return [`${product.name} | ${price} inc. GST`, `${product.name} | ${price}`].find((t) => t.length <= 60) || product.name;
@@ -148,7 +168,7 @@ export default async function ProductPage({ params }) {
       </nav>
 
       {/* Main Interactive Product Workspace */}
-      <ProductDetailClient product={product} relatedProducts={relatedProducts} brandHref={getBrandBySlug(product.brand) ? `/brands/${product.brand}/` : null} subcategory={subcategory && subcategory.slug !== product.category ? { href: `/shop/${subcategory.slug}/`, label: subcategory.navLabel } : null} />
+      <ProductDetailClient product={product} newEquivalent={newEquivalent(product)} relatedProducts={relatedProducts} brandHref={getBrandBySlug(product.brand) ? `/brands/${product.brand}/` : null} subcategory={subcategory && subcategory.slug !== product.category ? { href: `/shop/${subcategory.slug}/`, label: subcategory.navLabel } : null} />
     </div>
   );
 }
