@@ -21,6 +21,7 @@ import { ArrowRight, ChevronRight, Layers, Sparkles } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
 import { ogImages } from '@/lib/og';
 import FaqSection from '@/src/components/FaqSection';
+import BuyerGuide from '@/src/components/BuyerGuide';
 import RelatedLinks from '@/src/components/RelatedLinks';
 import { relatedFor } from '@/src/config/related';
 import { faqsForPage } from '@/src/config/faq';
@@ -199,6 +200,8 @@ export default async function CategoryPage({ params }) {
       />
 
       {categoryProducts.length <= 12 && <CatalogFacts label={category.navLabel} products={categoryProducts} showBrand showSpecs showDescriptions={categoryProducts.length <= 2} />}
+
+      <BuyerGuide path={`/shop/${category.slug}/`} />
 
       <FaqSection faqs={faqsForPage(`/shop/${category.slug}/`)} url={`/shop/${category.slug}/`} heading={`${category.navLabel}: your questions answered`} id="category-faq" />
 

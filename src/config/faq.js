@@ -49,6 +49,16 @@ const foldVol = (p) => { const m = String(p.specs?.foldSize || '').match(/([\d.]
 const smallestElec = [...PRODUCTS.filter((p) => p.category === 'electric-golf-buggies')].sort((a, b) => foldVol(a) - foldVol(b))[0];
 const smallestFold = String(smallestElec.specs.foldSize).replace(/\s*\(.*$/, '');
 
+// Buying-intent groups (Nov 2026): the phrases people search before they buy, answered from the product data.
+const grp = (f) => { const l = PRODUCTS.filter(f); const pr2 = l.map((p) => p.price); return { n: l.length, min: Math.min(...pr2), max: Math.max(...pr2) }; };
+const g = {
+  dune: grp((p) => p.subcategory === 'dune-buggies'),
+  ssv: grp((p) => p.subcategory === 'side-by-side'),
+  farm: grp((p) => p.subcategory === 'farm-buggies'),
+  off: grp((p) => p.category === 'off-road-buggies'),
+  kids: grp((p) => p.category === 'kids-buggies'),
+};
+
 // One delivery and one price answer per city page, from each city's own data (locations.js) and the shop facts.
 const cityFaqs = LOCATIONS.flatMap((l) => [
   { id: `delivery-${l.slug}`, theme: 'Delivery, payment & warranty', pages: [`/golf-buggies/${l.slug}/`], question: `How long does golf buggy delivery to ${l.name} take?`,
@@ -306,6 +316,44 @@ export const FAQ_BANK = [
   { id: 'fold-measure', theme: 'Buying & prices', pages: ['/blog/will-a-golf-buggy-fit-in-my-car/'], question: 'How do I know if a golf buggy will fit my car?',
     answer: 'Measure your boot length, width and height, then compare them with the folded size on the product page, which also shows weight. Allow room for the battery and your bag, and check the product details for how the buggy folds before you order.',
     cta: { href: '/blog/will-a-golf-buggy-fit-in-my-car/', label: 'Read the boot-fit guide' } },
+
+  // ---------------- buying-intent answers (Nov 2026), written from the searches people make before they buy
+  { id: 'buy-dune', theme: 'Off-road buggies', pages: ['/faq/', '/shop/dune-buggies/'], question: 'Where can I buy a dune buggy in Australia?',
+    answer: `You can buy a dune buggy online from The Buggy Shop and have it delivered to NSW, Queensland, Victoria, Western Australia or any other state for a flat ${money(SHIP)}. We list ${g.dune.n} dune buggies from ${money(g.dune.min)} to ${money(g.dune.max)}, including GMX, Crossfire, MJ Motor and MXR models. Message us on WhatsApp to check stock before you order.`,
+    cta: { href: '/shop/dune-buggies/', label: 'Buy a dune buggy' } },
+  { id: 'cheap-dune', theme: 'Off-road buggies', pages: ['/shop/dune-buggies/'], question: 'How much does a dune buggy cost?',
+    answer: `Dune buggies on our range cost from ${money(g.dune.min)} to ${money(g.dune.max)} including GST, with the price rising with engine size and features such as fuel injection. Delivery is a flat ${money(SHIP)} Australia-wide. They are sold for private land, beaches where permitted and recreation use, so check local rules for where you plan to ride.`,
+    cta: { href: '/shop/dune-buggies/', label: 'Compare dune buggy prices' } },
+  { id: 'second-hand', theme: 'Buying & prices', pages: ['/faq/', '/shop/used-golf-buggies/'], question: 'Where can I buy a second hand golf buggy or cart?',
+    answer: `Our used range covers second hand golf buggies and carts, from ${money(d.usedAll.min)} up to ${money(d.usedCart.max)}. Stock includes ex-demo buggies and ex-lease or ex-fleet E-Z-GO, Club Car and Yamaha carts, each checked before sale. Stock changes often, so message us on WhatsApp for what has just arrived, then we deliver Australia-wide for a flat ${money(SHIP)}.`,
+    cta: { href: '/shop/used-golf-buggies/', label: 'See second hand golf buggies' } },
+  { id: 'used-cart-price', theme: 'Buying & prices', pages: ['/shop/used-golf-buggies/', '/shop/luxury-golf-carts/'], question: 'How much does a used golf cart cost in Australia?',
+    answer: `Used golf carts on our range cost from ${money(d.usedCart.min)} to ${money(d.usedCart.max)}, depending on age, seats and battery type. Entry-level ex-lease 2-seat carts sit at the low end, while lithium ex-fleet and 4-seat carts cost more. Prices include GST, plus a flat ${money(SHIP)} delivery. Ask us for the latest used stock.`,
+    cta: { href: '/shop/used-golf-buggies/', label: 'See used golf carts' } },
+  { id: 'cheapest-cart', theme: 'Buying & prices', pages: ['/shop/luxury-golf-carts/'], question: 'What is the cheapest golf cart for sale in Australia?',
+    answer: `The lowest-priced golf cart in our range is a used ex-lease 2-seater from ${money(d.usedCart.min)}. The cheapest new ride-on cart starts at ${money(d.cart.min)}, and new 4 to 6 seat carts start at ${money(d.cart46.min)}. Compare price, seats and battery type before you choose. Delivery is a flat ${money(SHIP)} Australia-wide and prices include GST.`,
+    cta: { href: '/shop/luxury-golf-carts/', label: 'Compare golf carts for sale' } },
+  { id: 'offroad-range', theme: 'Off-road buggies', pages: ['/faq/', '/shop/off-road-buggies/'], question: 'What off road buggies are for sale in Australia?',
+    answer: `We list ${g.off.n} off road buggies for sale across dune buggies, side by side buggies and farm buggies, from ${money(g.off.min)} to ${money(g.off.max)}. Dune buggies suit sand and tracks, side by sides seat more people, and farm buggies cover property work. Prices include GST, with flat ${money(SHIP)} delivery to every state.`,
+    cta: { href: '/shop/off-road-buggies/', label: 'See off road buggies' } },
+  { id: 'buy-farm', theme: 'Off-road buggies', pages: ['/shop/farm-buggies/'], question: 'Where can I buy a farm buggy in Australia?',
+    answer: `We list ${g.farm.n} farm buggies for sale from ${money(g.farm.min)} to ${money(g.farm.max)}, in electric and petrol models for paddocks, tracks and property work. Delivery is a flat ${money(SHIP)} to farms in Queensland, NSW, Victoria and every other state. Each product page lists its specifications, or call 0480 811 308 to match one to your property.`,
+    cta: { href: '/shop/farm-buggies/', label: 'See farm buggies' } },
+  { id: 'buy-ssv', theme: 'Off-road buggies', pages: ['/shop/side-by-side/'], question: 'Where can I buy a side by side buggy in Australia?',
+    answer: `We list ${g.ssv.n} side by side buggies from ${money(g.ssv.min)} to ${money(g.ssv.max)}, delivered Australia-wide for a flat ${money(SHIP)}, including to Queensland, NSW and Victoria. Side by sides are sold for farms, stations and recreation on private land. Each product page lists engine, drive and seating, or message us on WhatsApp to compare models.`,
+    cta: { href: '/shop/side-by-side/', label: 'See side by side buggies' } },
+  { id: 'buy-trolley', theme: 'Buying & prices', pages: ['/shop/golf-trolleys/'], question: 'Where can I buy a golf trolley in Australia?',
+    answer: `You can buy golf trolleys online from The Buggy Shop: push golf buggies from ${money(d.push.min)} and electric walk-behind trolleys from ${money(d.walk.min)}. Delivery is a flat ${money(SHIP)} per order Australia-wide, and prices include GST. Compare folded size, weight and battery type on each product page before you buy.`,
+    cta: { href: '/shop/golf-trolleys/', label: 'Buy a golf trolley' } },
+  { id: 'buggy-types', theme: 'Buying & prices', pages: ['/buggies-for-sale/'], question: 'What types of buggy can I buy in Australia?',
+    answer: `We sell golf buggies and carts, used and ex-demo buggies, dune buggies, side by side and farm buggies, and kids buggies. Golf buggies start at ${money(d.push.min)}, golf carts at ${money(d.cart.min)}, dune buggies at ${money(g.dune.min)} and kids buggies at ${money(g.kids.min)}. Choose by the job you need it for, then compare models.`,
+    cta: { href: '/shop/', label: 'Browse all buggies' } },
+  { id: 'cheap-buggy', theme: 'Buying & prices', pages: ['/buggies-for-sale/'], question: 'Where can I buy a cheap buggy in Australia?',
+    answer: `The lowest-priced buggy for sale here is a push golf buggy from ${money(d.push.min)}. To ride, a used ex-lease golf cart starts at ${money(d.usedCart.min)}, a dune buggy at ${money(g.dune.min)} and a kids buggy at ${money(g.kids.min)}. Prices include GST, plus a flat ${money(SHIP)} delivery per order.`,
+    cta: { href: '/shop/used-golf-buggies/', label: 'See used buggies for sale' } },
+  { id: 'how-to-order-buggy', theme: 'Buying & prices', pages: ['/buggies-for-sale/'], question: 'How do I buy a buggy from The Buggy Shop?',
+    answer: `Choose your buggy, add it to the cart and check out. We email payment details with your order reference, and you pay by PayID, bank transfer or crypto. We then deliver Australia-wide by hydraulic tail-lift truck for a flat ${money(SHIP)}. Message us on WhatsApp first if you want to confirm stock or timing.`,
+    cta: { href: '/finance/', label: 'See payment options' } },
 ];
 
 // Backwards-compatible export used by the homepage and the FAQ component

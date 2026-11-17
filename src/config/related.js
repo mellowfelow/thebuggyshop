@@ -70,6 +70,7 @@ export const RELATED = {
   '/shop/luxury-golf-carts/': [G.cart, G.ac, G.rego, G.usedAuction, G.nsw, G.qld, G.vic, G.buggyCart],
   '/shop/2-seat/': [G.cart, G.ac, G.cheap, G.nsw, G.qld],
   '/shop/utility/': [G.cart, G.buggy],
+  '/buggies-for-sale/': [G.buggy, G.cheap, G.ssvQuad, G.duneSsv],
   '/shop/side-by-side/': [G.ssvQuad, G.duneSsv, G.buggy],
   '/shop/dune-buggies/': [G.duneSsv, G.ssvQuad, G.kids],
   '/shop/used-golf-buggies/': [G.usedAuction, G.cheap, G.cart, S.carts],

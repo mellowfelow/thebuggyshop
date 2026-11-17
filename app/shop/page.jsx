@@ -12,6 +12,7 @@ import { ShieldCheck, Truck, Sparkles, Scale, Calculator } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
 import { ogImages } from '@/lib/og';
 import FaqSection from '@/src/components/FaqSection';
+import BuyerGuide from '@/src/components/BuyerGuide';
 import RelatedLinks from '@/src/components/RelatedLinks';
 import { relatedFor } from '@/src/config/related';
 import { faqsForPage } from '@/src/config/faq';
@@ -109,6 +110,8 @@ export default function ShopPage() {
 
       {/* Interactive Catalog Component with Facet Filtering */}
       <ShopClient initialProducts={slimProducts(PRODUCTS)} categories={CATEGORY_TREE} />
+
+      <BuyerGuide path="/shop/" />
 
       <FaqSection faqs={faqsForPage('/shop/')} url="/shop/" heading="Golf buggy prices: your questions answered" id="shop-faq" />
 

@@ -23,6 +23,18 @@
       ]
     },
     {
+      "url": "/buggies-for-sale/",
+      "type": "Landing",
+      "primary": "buggies for sale",
+      "secondary": [
+        "buggy for sale",
+        "buy a buggy",
+        "cheap buggy",
+        "used buggy for sale",
+        "buggies for sale australia"
+      ]
+    },
+    {
       "url": "/shop/electric-golf-buggies/",
       "type": "Category",
       "primary": "electric golf buggy for sale",
@@ -90,7 +102,9 @@
       "type": "Category",
       "primary": "golf trolley",
       "secondary": [
-        "golf troley"
+        "golf troley",
+        "buy golf trolley",
+        "golf trolleys for sale"
       ]
     },
     {
@@ -114,7 +128,8 @@
         "golf carts for sale",
         "golf buggy with seat",
         "electric ride on golf buggy",
-        "buy golf cart"
+        "buy golf cart",
+        "cheap golf carts"
       ]
     },
     {
@@ -144,7 +159,10 @@
         "second hand golf buggies for sale",
         "second hand petrol golf carts for sale",
         "second hand golf buggies",
-        "used electric golf buggy for sale"
+        "used electric golf buggy for sale",
+        "used golf buggies for sale",
+        "second hand golf buggy for sale",
+        "used golf carts for sale australia"
       ]
     },
     {
@@ -167,7 +185,9 @@
         "beach buggy for sale australia",
         "dune buggy kart",
         "dune buggies for sale in australia",
-        "buggy dune buggy"
+        "buggy dune buggy",
+        "buy dune buggies australia",
+        "buy dune buggy nsw"
       ]
     },
     {
@@ -185,7 +205,8 @@
       "type": "Sub-category",
       "primary": "farm buggies for sale",
       "secondary": [
-        "electric farm buggy for sale australia"
+        "electric farm buggy for sale australia",
+        "farm buggy for sale"
       ]
     },
     {

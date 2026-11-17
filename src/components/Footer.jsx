@@ -61,6 +61,11 @@ export default function Footer() {
                   All Golf Buggies for Sale
                 </Link>
               </li>
+              <li>
+                <Link href="/buggies-for-sale/" className="hover:text-[#C5A880] transition-colors">
+                  Buggies for Sale
+                </Link>
+              </li>
               {rootCategories.map(cat => (
                 <li key={cat.slug}>
                   <Link href={cat.slug === 'brands' ? '/brands/' : `/shop/${cat.slug}/`} className="hover:text-[#C5A880] transition-colors">
