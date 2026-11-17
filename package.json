@@ -11,6 +11,7 @@
     "start": "next start",
     "lint": "eslint .",
     "crosscheck": "node scripts/crosscheck.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
     "gen": "node scripts/gen-agent-files.mjs && node scripts/gen-lastmod.mjs && node scripts/gen-markdown.mjs",
     "prebuild": "node scripts/gen-agent-files.mjs && node scripts/gen-lastmod.mjs && node scripts/gen-markdown.mjs",
     "clean": "next clean"

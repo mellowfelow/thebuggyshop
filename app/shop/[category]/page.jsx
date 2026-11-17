@@ -13,6 +13,7 @@ import {
 import { PRODUCTS, getProductsByCategory } from '@/src/config/products';
 import JsonLd from '@/src/components/JsonLd';
 import ShopClient from '../ShopClient';
+import CatalogFacts from '@/src/components/CatalogFacts';
 import { ArrowRight, ChevronRight, Layers, Sparkles } from 'lucide-react';
 import { seoTitle, seoDesc } from '@/lib/seo';
 import { ogImages } from '@/lib/og';
@@ -193,6 +194,8 @@ export default async function CategoryPage({ params }) {
         categories={CATEGORY_TREE}
         currentCategory={category}
       />
+
+      {categoryProducts.length <= 12 && <CatalogFacts label={category.navLabel} products={categoryProducts} showBrand />}
 
       <FaqSection faqs={faqsForPage(`/shop/${category.slug}/`)} url={`/shop/${category.slug}/`} heading={`${category.navLabel}: your questions answered`} id="category-faq" />
 

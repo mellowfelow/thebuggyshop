@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-06",
-  "note": "url -> primary keyword. Read by scripts/crosscheck.mjs. Updated for keyword engine v2 (whole site).",
+  "generated": "2026-11-17",
+  "note": "url -> primary keyword. Read by scripts/crosscheck.mjs (B14b: the primary keyword must appear in the page title and H1). Covers every indexable category, city and blog post. Brand and product pages are keyed by their own name and are not listed.",
   "pages": [
     {
       "url": "/",
@@ -387,6 +387,282 @@
       "url": "/brands/ez-go/",
       "type": "Brand",
       "primary": "ezgo golf cart",
+      "secondary": []
+    },
+    {
+      "url": "/shop/conversion-kits/",
+      "type": "Sub-category",
+      "primary": "golf buggy conversion kit",
+      "secondary": [
+        "make push buggy electric",
+        "Alphard Club Booster"
+      ]
+    },
+    {
+      "url": "/shop/4-6-seat/",
+      "type": "Sub-category",
+      "primary": "4 seater golf cart",
+      "secondary": [
+        "6 seat golf cart",
+        "family golf cart"
+      ]
+    },
+    {
+      "url": "/shop/lifted-all-terrain/",
+      "type": "Sub-category",
+      "primary": "lifted golf cart",
+      "secondary": [
+        "all terrain golf cart",
+        "off road golf cart"
+      ]
+    },
+    {
+      "url": "/shop/petrol/",
+      "type": "Sub-category",
+      "primary": "kids petrol buggy",
+      "secondary": [
+        "teen buggy"
+      ]
+    },
+    {
+      "url": "/shop/wheels-tyres/",
+      "type": "Sub-category",
+      "primary": "golf buggy wheels",
+      "secondary": [
+        "golf buggy tyres",
+        "golf cart tyres"
+      ]
+    },
+    {
+      "url": "/shop/drive-electrical/",
+      "type": "Sub-category",
+      "primary": "golf buggy motor",
+      "secondary": [
+        "golf buggy controller",
+        "golf buggy parts"
+      ]
+    },
+    {
+      "url": "/shop/holders/",
+      "type": "Sub-category",
+      "primary": "golf buggy holder",
+      "secondary": [
+        "golf buggy drink holder"
+      ]
+    },
+    {
+      "url": "/shop/seats-footboards/",
+      "type": "Sub-category",
+      "primary": "golf buggy seat",
+      "secondary": [
+        "golf buggy footboard"
+      ]
+    },
+    {
+      "url": "/shop/covers-and-bags/",
+      "type": "Sub-category",
+      "primary": "golf buggy cover",
+      "secondary": [
+        "golf buggy travel cover",
+        "golf buggy wheel bag"
+      ]
+    },
+    {
+      "url": "/shop/wheel-upgrades/",
+      "type": "Sub-category",
+      "primary": "golf buggy wheel upgrade",
+      "secondary": [
+        "all terrain golf buggy wheels",
+        "golf buggy sand tyres"
+      ]
+    },
+    {
+      "url": "/shop/practice-aids/",
+      "type": "Sub-category",
+      "primary": "golf practice aids",
+      "secondary": [
+        "golf practice net",
+        "golf hitting mat"
+      ]
+    },
+    {
+      "url": "/golf-buggies/melbourne/",
+      "type": "Location",
+      "primary": "golf buggies for sale melbourne",
+      "secondary": []
+    },
+    {
+      "url": "/golf-buggies/gold-coast/",
+      "type": "Location",
+      "primary": "golf buggies for sale gold coast",
+      "secondary": []
+    },
+    {
+      "url": "/golf-buggies/adelaide/",
+      "type": "Location",
+      "primary": "golf buggies for sale adelaide",
+      "secondary": []
+    },
+    {
+      "url": "/golf-buggies/cairns/",
+      "type": "Location",
+      "primary": "golf buggies for sale cairns",
+      "secondary": []
+    },
+    {
+      "url": "/golf-buggies/sunshine-coast/",
+      "type": "Location",
+      "primary": "golf buggies for sale sunshine coast",
+      "secondary": []
+    },
+    {
+      "url": "/blog/cheap-golf-buggies-and-carts-australia/",
+      "type": "Blog",
+      "primary": "cheap golf buggy",
+      "secondary": []
+    },
+    {
+      "url": "/blog/best-electric-golf-buggies-australia/",
+      "type": "Blog",
+      "primary": "best electric golf buggies",
+      "secondary": []
+    },
+    {
+      "url": "/blog/aldi-golf-buggy-vs-specialist-buggy/",
+      "type": "Blog",
+      "primary": "aldi golf buggy",
+      "secondary": []
+    },
+    {
+      "url": "/blog/electric-golf-carts-australia-guide/",
+      "type": "Blog",
+      "primary": "electric golf cart",
+      "secondary": []
+    },
+    {
+      "url": "/blog/electric-buggy-for-adults-australia/",
+      "type": "Blog",
+      "primary": "electric buggy",
+      "secondary": []
+    },
+    {
+      "url": "/blog/golf-buggy-for-sale-buyers-guide-australia/",
+      "type": "Blog",
+      "primary": "how to buy a golf buggy",
+      "secondary": []
+    },
+    {
+      "url": "/blog/conditional-road-registration-guide-qld-nsw-vic/",
+      "type": "Blog",
+      "primary": "golf cart road registration",
+      "secondary": []
+    },
+    {
+      "url": "/blog/lifepo4-vs-lead-acid-battery-lifespan-australian-climate/",
+      "type": "Blog",
+      "primary": "lifepo4 vs lead acid",
+      "secondary": []
+    },
+    {
+      "url": "/blog/golf-cart-ac-vs-dc-motor-guide/",
+      "type": "Blog",
+      "primary": "golf cart ac",
+      "secondary": []
+    },
+    {
+      "url": "/blog/used-golf-cart-auction-vs-dealer-australia/",
+      "type": "Blog",
+      "primary": "golf cart auction",
+      "secondary": []
+    },
+    {
+      "url": "/blog/mgi-zip-vs-ai-navigator-which-mgi-buggy/",
+      "type": "Blog",
+      "primary": "mgi electric golf buggy",
+      "secondary": []
+    },
+    {
+      "url": "/blog/golf-cart-battery-replacement-cost-australia/",
+      "type": "Blog",
+      "primary": "golf cart battery replacement",
+      "secondary": []
+    },
+    {
+      "url": "/blog/golf-buggy-battery-replacement-guide/",
+      "type": "Blog",
+      "primary": "golf buggy battery replacement",
+      "secondary": []
+    },
+    {
+      "url": "/blog/golf-buggy-repairs-servicing-guide-australia/",
+      "type": "Blog",
+      "primary": "golf buggy repairs",
+      "secondary": []
+    },
+    {
+      "url": "/blog/kids-off-road-buggy-buying-guide-electric-vs-petrol/",
+      "type": "Blog",
+      "primary": "kids off road buggy",
+      "secondary": []
+    },
+    {
+      "url": "/blog/golf-wedge-degrees-loft-guide/",
+      "type": "Blog",
+      "primary": "degrees for pitching wedge",
+      "secondary": []
+    },
+    {
+      "url": "/blog/best-golf-putters-types-guide-australia/",
+      "type": "Blog",
+      "primary": "best putters",
+      "secondary": []
+    },
+    {
+      "url": "/blog/what-golf-clubs-do-you-need-full-set-explained/",
+      "type": "Blog",
+      "primary": "what golf clubs do you need",
+      "secondary": []
+    },
+    {
+      "url": "/blog/best-golf-club-sets-for-beginners-australia/",
+      "type": "Blog",
+      "primary": "golf club set for beginners",
+      "secondary": []
+    },
+    {
+      "url": "/blog/junior-golf-clubs-kids-golf-sets-by-age/",
+      "type": "Blog",
+      "primary": "kids golf club set",
+      "secondary": []
+    },
+    {
+      "url": "/blog/ladies-golf-clubs-womens-golf-sets-guide/",
+      "type": "Blog",
+      "primary": "ladies golf clubs",
+      "secondary": []
+    },
+    {
+      "url": "/blog/golf-bag-and-cart-how-to-choose-stand-cart-carry/",
+      "type": "Blog",
+      "primary": "golf bag and cart",
+      "secondary": []
+    },
+    {
+      "url": "/blog/golf-rangefinder-vs-gps-watch-which-to-buy/",
+      "type": "Blog",
+      "primary": "golf rangefinder vs gps watch",
+      "secondary": []
+    },
+    {
+      "url": "/blog/how-to-choose-a-golf-driver/",
+      "type": "Blog",
+      "primary": "how to choose a golf driver",
+      "secondary": []
+    },
+    {
+      "url": "/blog/how-to-choose-an-iron-set/",
+      "type": "Blog",
+      "primary": "set of irons",
       "secondary": []
     }
   ]

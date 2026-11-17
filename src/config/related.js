@@ -16,7 +16,7 @@ const G = {
   mgi: { href: '/blog/mgi-zip-vs-ai-navigator-which-mgi-buggy/', label: 'MGI Zip vs Ai Navigator: which MGI buggy to buy' },
   cartBattery: { href: '/blog/golf-cart-battery-replacement-cost-australia/', label: 'Golf cart battery replacement cost (48V guide)' },
   buggyBattery: { href: '/blog/golf-buggy-battery-replacement-guide/', label: 'Golf buggy battery replacement: 12V, 24V and lithium' },
-  repairs: { href: '/blog/golf-buggy-repairs-servicing-guide-australia/', label: 'Golf buggy repairs and servicing: common faults and fixes' },
+  repairs: { href: '/blog/golf-buggy-repairs-servicing-guide-australia/', label: 'Golf buggy repairs and maintenance: common faults and fixes' },
   kids: { href: '/blog/kids-off-road-buggy-buying-guide-electric-vs-petrol/', label: 'Kids off-road buggy guide: electric vs petrol' },
   wedge: { href: '/blog/golf-wedge-degrees-loft-guide/', label: 'Golf wedge degrees explained: pitching, sand and lob' },
   putters: { href: '/blog/best-golf-putters-types-guide-australia/', label: 'Best golf putters: types, fitting and beginner picks' },

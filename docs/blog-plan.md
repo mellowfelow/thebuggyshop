@@ -15,7 +15,7 @@
 | LIVE | Aldi Golf Buggy vs a Specialist Electric Buggy: What to Check | /blog/aldi-golf-buggy-vs-specialist-buggy/ | aldi golf buggy | 390 / 28 / T2 | 797 |
 | LIVE | Electric Golf Carts in Australia: Prices, Range & Rego Guide | /blog/electric-golf-carts-australia-guide/ | electric golf cart | 720 / 6 / T1 | 1,931 |
 | LIVE | Electric Buggies for Adults in Australia: Golf, Farm & Off-Road | /blog/electric-buggy-for-adults-australia/ | electric buggy | 720 / 6 / T1 | 1,601 |
-| LIVE | Golf Buggy for Sale: The Australian Buyer's Guide (New vs Used) | /blog/golf-buggy-for-sale-buyers-guide-australia/ | golf buggy for sale | 1,900 / 10 / T1 | 443 (THIN) |
+| LIVE | How to Buy a Golf Buggy in Australia: New vs Used Buyer's Guide (retitled 17 Nov 2026 so it stops competing with /shop/ for "golf buggy for sale") | /blog/golf-buggy-for-sale-buyers-guide-australia/ | how to buy a golf buggy | 1,900 / 10 / T1 | 443 (THIN) |
 | LIVE | Conditional Road Registration for Golf Carts in QLD, NSW & VIC | /blog/conditional-road-registration-guide-qld-nsw-vic/ | golf cart road registration | not in pool | 283 (THIN) |
 | LIVE | LiFePO4 Lithium vs Lead-Acid Golf Cart Batteries in Australia | /blog/lifepo4-vs-lead-acid-battery-lifespan-australian-climate/ | lithium battery golf buggy | 260 / 6 / T1 | 317 (THIN) |
 | NEW | Golf Cart AC vs DC Motors: What It Means When You Buy | /blog/golf-cart-ac-vs-dc-motor-guide/ | golf cart ac | 390 / 17 / T1 | 1,200 (rule: 800 to 1,200) |

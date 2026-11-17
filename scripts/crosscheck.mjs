@@ -288,7 +288,7 @@ const { BRANDS } = await imp('src/config/brands.js');
         if (!hasAll(title, row.primary)) bad.push(row.url + ' title lacks "' + row.primary + '"');
         else if (!hasAll(h1, row.primary, ['sale', 'buy', 'australia'])) bad.push(row.url + ' H1 lacks "' + row.primary + '"');
       }
-      bad.length ? fail('B14b', bad.length + ' pages miss their primary keyword: ' + bad.slice(0, 5).join(' | ')) : pass('B14b', 'all ' + pages.length + ' keyword targets appear in their page title and H1');
+      bad.length ? fail('B14b', bad.length + ' pages miss their primary keyword: ' + bad.join(' | ')) : pass('B14b', 'all ' + pages.length + ' keyword targets appear in their page title and H1');
     }
   }
 }

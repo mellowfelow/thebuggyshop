@@ -28,6 +28,9 @@ npm run gen
 # Run pre-ship validation crosscheck
 npm run crosscheck
 
+# After a deploy is live: tell Bing and other IndexNow engines which URLs changed (lastmod = today)
+npm run indexnow
+
 # Start local Next.js dev server
 npm run dev
 

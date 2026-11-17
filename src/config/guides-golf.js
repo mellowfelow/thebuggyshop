@@ -429,7 +429,7 @@ export const GUIDES_GOLF = [
     metaDescription: 'Golf bag and cart guide: stand, cart and carry bags compared, plus the best bag for a golf buggy or trolley. Bags from $215 at The Buggy Shop.',
     category: 'Golf Gear', image: img('golf-cart-bag-14-way-divider'), imageAlt: 'Golf bag and cart: 14-way divider cart bag',
     keyword: 'golf bag and cart', faqIds: ['bag-for-buggy', 'bag-stand-on-buggy'], toc: true, content: bag }),
-  mk({ slug: 'golf-rangefinder-vs-gps-watch-which-to-buy', title: 'Golf Rangefinder vs GPS Watch: Which Should You Buy?', titleTag: 'Best Rated Golf Watches vs Rangefinders in Australia',
+  mk({ slug: 'golf-rangefinder-vs-gps-watch-which-to-buy', title: 'Golf Rangefinder vs GPS Watch: Which Should You Buy?', titleTag: 'Golf Rangefinder vs GPS Watch: Which to Buy in Australia',
     excerpt: 'Best rated golf watches vs golf rangefinders: how each works, accuracy, battery, price and who should buy which. Rangefinders from $479, watches from $239.',
     metaDescription: 'Best rated golf watches vs golf rangefinders: how each works, accuracy, battery, price and who should buy which. Rangefinders from $479, watches from $239.',
     category: 'Golf Gear', image: img('bushnell-tour-v5-golf-rangefinder'), imageAlt: 'Golf rangefinder vs GPS watch: Bushnell Tour V5 rangefinder',

@@ -1002,3 +1002,10 @@ Every pooled keyword has exactly one owner (450 keywords, 450 owners). No keywor
 | stix 10 piece golf club set | 50 | 9 | T1 | Commercial | competitor | COMPETITOR (held for comparison content) | lsi | new |
 | lab putter grip change | 50 | 17 | T1 | Informational | competitor | COMPETITOR (held for comparison content) | lsi | new |
 | golfbox rangefinder | 50 | 17 | T1 | Navigational | competitor | COMPETITOR (held for comparison content) | lsi | new |
+
+## Changes 17 Nov 2026 (audit fixes)
+- **/shop/ owns "golf buggy for sale"** alone. The buyers guide now targets "how to buy a golf buggy", and the Melbourne, Brisbane and Perth city pages were retitled so they no longer lead with the same phrase.
+- **docs/keyword-targets.json now covers 82 URLs** (every indexable category, city and blog post that has a target), up from 41. The crosscheck (B14b) requires each primary keyword in that page's title and H1. Brand and product pages are keyed by their own name and are not listed.
+- **Retargeted to match what the page says:** /shop/holders/ (golf buggy holder), /shop/wheel-upgrades/ (golf buggy wheel upgrade), /shop/practice-aids/ (golf practice aids), the LiFePO4 vs lead-acid post (lifepo4 vs lead acid), the repairs post (golf buggy repairs), the rangefinder post (golf rangefinder vs gps watch), the driver post (how to choose a golf driver).
+- **H1s lengthened to carry their keyword:** conversion kits, 4 and 6 seat carts, lifted carts, drive and electrical spares, seats and footboards, covers and wheel bags.
+- **No servicing is offered:** the repairs guide is now titled "Repairs and Maintenance" (it is advice, not a service).

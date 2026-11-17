@@ -41,7 +41,7 @@ export const BRANDS = [
     logo: 'PowaKaddy',
     h1: 'PowaKaddy Electric Golf Buggies & Parts Australia',
     pageTitle: 'PowaKaddy Golf Buggies Australia | RX1 GPS & FX7',
-    metaDescription: 'Explore PowaKaddy electric golf buggies with Plug \'n\' Play lithium batteries, 1-Click folding and widescreen GPS course mapping.',
+    metaDescription: 'Explore PowaKaddy electric golf buggies with Plug \'n\' Play lithium batteries, 1-Click folding and widescreen GPS course mapping. Delivered Australia-wide.',
     introCopy: 'PowaKaddy combines heritage golf trolley craftsmanship with modern Plug \'n\' Play ultra-thin lithium technology and high-definition colour touchscreens.',
     popularModels: ['PowaKaddy RX1 GPS Remote', 'PowaKaddy FX7 GPS', 'PowaKaddy CT', 'PowaKaddy DLX'],
     partsCategories: ['Plug \'n\' Play Lithium Batteries', 'Winter Wheels', 'Electronic Braking Spares', 'Seats & Scorecard Holders']
@@ -139,7 +139,7 @@ export const BRANDS = [
     logo: 'Brosnan Golf',
     h1: 'Brosnan Golf Buggies & Accessories Australia',
     pageTitle: 'Brosnan Golf Buggies Australia | Zodiac 3 & Parts',
-    metaDescription: 'Brosnan 3-wheel and 4-wheel push buggies with adjustable handles, scorecard consoles and reliable Australian club warranty.',
+    metaDescription: 'Brosnan 3-wheel and 4-wheel push buggies with adjustable handles, scorecard consoles and reliable Australian club warranty. Delivered Australia-wide.',
     introCopy: 'Brosnan Golf has been a household name across Australian club fairways for decades, delivering durable, practical 3-wheel push buggies at exceptional value.',
     popularModels: ['Brosnan Zodiac 3', 'Brosnan Compact 4-Wheel'],
     partsCategories: ['Front Swivel Wheels', 'Scorecard Consoles', 'Brake Assemblies', 'Storage Nets']
@@ -195,7 +195,7 @@ export const BRANDS = [
     logo: 'Yamaha Golf-Car',
     h1: 'Yamaha Golf Carts & Side-by-Side UTVs Australia',
     pageTitle: 'Yamaha Golf Carts & SxS Australia | Drive2, Wolverine & RMAX',
-    metaDescription: 'Yamaha Drive2 AC electric golf carts, Wolverine X2, YXZ1000R and RMAX 1000 side-by-sides with legendary Japanese reliability.',
+    metaDescription: 'Yamaha Drive2 AC electric golf carts, Wolverine X2, YXZ1000R and RMAX 1000 side-by-sides with legendary Japanese reliability. Delivered Australia-wide.',
     introCopy: 'Yamaha Golf-Car and Powersports delivers unmatched Japanese reliability, independent rear suspension, and class-leading recreational and farm side-by-sides.',
     popularModels: ['Yamaha Drive2 Lithium / Petrol', 'Yamaha Drive / G29 (Used)', 'Yamaha Wolverine X2 850', 'Yamaha RMAX2 1000', 'Yamaha YXZ1000R SS XT-R'],
     partsCategories: ['Yamaha Clutch Belts & Bushings', 'OEM Brake Drums & Shoes', 'Turf & Off-Road Tyres', 'Heavy-Duty Springs']
@@ -237,7 +237,7 @@ export const BRANDS = [
     logo: 'Tara Golf Carts',
     h1: 'Tara Electric Golf Carts Australia',
     pageTitle: 'Tara Golf Carts Australia | Spirit Plus & Roadster 2+2',
-    metaDescription: 'Tara Spirit Plus, Spirit Pro and Roadster 2+2 electric golf carts with aluminium frames, lithium batteries and modern styling.',
+    metaDescription: 'Tara Spirit Plus, Spirit Pro and Roadster 2+2 electric golf carts with aluminium frames, lithium batteries and modern styling. Delivered Australia-wide.',
     introCopy: 'Tara manufactures modern electric golf carts and personal transport vehicles with lightweight aluminium chassis, smart touchscreens, and efficient lithium drivetrains.',
     popularModels: ['Tara Spirit Plus 2-Seat', 'Tara Spirit Pro 2-Seat', 'Tara Roadster 2+2'],
     partsCategories: ['Alloy Wheels & Tyres', 'LED Lighting Kits', 'Lithium Packs', 'Custom Enclosures']
@@ -307,7 +307,7 @@ export const BRANDS = [
     logo: 'Kayo Buggies',
     h1: 'Kayo Off-Road Dune Buggies & Side-by-Sides Australia',
     pageTitle: 'Kayo Dune Buggies Australia | S150 & S350 SxS',
-    metaDescription: 'Kayo S150 and S350 petrol 2-seat dune buggies and recreational side-by-sides with CVT automatic transmissions and roll cages.',
+    metaDescription: 'Kayo S150 and S350 petrol 2-seat dune buggies and recreational side-by-sides with CVT automatic transmissions and roll cages. Delivered Australia-wide.',
     introCopy: 'Kayo builds accessible, reliable petrol-powered off-road buggies and side-by-sides with full steel roll cages, safety harnesses, and automatic transmissions.',
     popularModels: ['Kayo S150 2-Seat Buggy', 'Kayo S350 2-Seat UTV'],
     partsCategories: ['CVT Belts & Clutches', 'Brake Pads & Discs', 'Carburettor & EFI Spares', 'Throttle Cables']
@@ -363,7 +363,7 @@ export const BRANDS = [
     logo: 'THOMSON Golf Buggy Parts',
     h1: 'THOMSON Golf Buggy Spare Parts & Batteries Australia',
     pageTitle: 'THOMSON Buggy Spares Australia | Batteries & Motors',
-    metaDescription: 'Replacement lithium batteries, chargers, motors and wheels for THOMSON electric golf buggies in Australia.',
+    metaDescription: 'Replacement lithium batteries, chargers, motors and wheels for THOMSON electric golf buggies in Australia. Delivered Australia-wide.',
     introCopy: 'We supply spare parts and replacement lithium battery upgrades for THOMSON electric golf buggies across Australia.',
     popularModels: ['THOMSON Electric Buggy Spares', 'THOMSON Lithium Battery Upgrade'],
     partsCategories: ['24V Lithium Replacement Packs', 'Smart Chargers', 'Axle Assemblies', 'Potentiometers & Speed Dials']
@@ -573,7 +573,7 @@ export const BRANDS = [
     origin: 'Push buggy wheel upgrades',
     h1: 'Hedgehog Solid Wheels Australia',
     pageTitle: 'Hedgehog Solid Wheels Australia | Clicgear Upgrade',
-    metaDescription: 'Hedgehog solid wheels for Clicgear 2.0-8.0 push buggies. Puncture-free wheel upgrade delivered Australia-wide by The Buggy Shop.',
+    metaDescription: 'Hedgehog solid wheels for Clicgear 2.0-8.0 push buggies. Puncture-free wheel upgrade delivered Australia-wide by The Buggy Shop. Delivered Australia-wide.',
     introCopy: 'Hedgehog makes solid replacement wheels. The Hedgehog Solid Wheels fit Clicgear 2.0 to 8.0 push buggies and remove the need to pump tyres.',
     popularModels: ['Hedgehog Solid Wheels (Clicgear 2.0-8.0)'],
   },
@@ -650,7 +650,7 @@ export const BRANDS = [
     origin: 'Golf GPS watches',
     h1: 'Shot Scope GPS Golf Watch Australia',
     pageTitle: 'Shot Scope GPS Golf Watch Australia | G5',
-    metaDescription: 'Shot Scope G5 GPS golf watch for sale in Australia. Course distances on your wrist, shipped nationwide by The Buggy Shop.',
+    metaDescription: 'Shot Scope G5 GPS golf watch for sale in Australia. Course distances on your wrist, shipped nationwide by The Buggy Shop. Delivered Australia-wide.',
     introCopy: 'Shot Scope makes GPS golf watches and performance trackers. We stock the Shot Scope G5 GPS Golf Watch and ship it across Australia.',
     popularModels: ['Shot Scope G5 GPS Golf Watch'],
   },

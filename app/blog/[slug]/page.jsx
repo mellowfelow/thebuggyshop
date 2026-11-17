@@ -1,4 +1,4 @@
-import { pageMeta } from '@/lib/pageMeta';
+import { pageMeta, modifiedDate } from '@/lib/pageMeta';
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -51,7 +51,7 @@ export default async function BlogPostPage({ params }) {
         description: post.excerpt,
         image: [absUrl(post.image)],
         datePublished: post.date,
-        dateModified: post.updated,
+        dateModified: modifiedDate(`/blog/${post.slug}/`) || post.updated,
         wordCount: post.words,
         author: { '@type': 'Organization', name: SITE.name, url: `https://${SITE.domain}/` },
         publisher: { '@type': 'Organization', name: SITE.name, logo: { '@type': 'ImageObject', url: `https://${SITE.domain}/apple-touch-icon.png` } },
@@ -87,7 +87,7 @@ export default async function BlogPostPage({ params }) {
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0E2A1E] tracking-tight leading-tight font-serif">{post.title}</h1>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#4A5D53] pt-1">
           <span className="flex items-center gap-1.5 font-medium"><Calendar className="w-4 h-4 text-[#7A5C22]" /> Published {when(post.date)}</span>
-          <span className="flex items-center gap-1.5 font-medium"><RefreshCw className="w-4 h-4 text-[#7A5C22]" /> Last updated {when(post.updated)}</span>
+          <span className="flex items-center gap-1.5 font-medium"><RefreshCw className="w-4 h-4 text-[#7A5C22]" /> Last updated {when(modifiedDate(`/blog/${post.slug}/`) || post.updated)}</span>
           <span className="flex items-center gap-1.5 font-medium"><Clock className="w-4 h-4 text-[#7A5C22]" /> {post.readTime}</span>
           <span className="flex items-center gap-1.5 font-medium"><User className="w-4 h-4 text-[#7A5C22]" /> The Buggy Shop team, Queensland</span>
         </div>

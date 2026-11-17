@@ -373,7 +373,7 @@ export const GUIDES_CART = [
     metaDescription: 'Golf buggy battery replacement made simple: 12V 18-hole and 24V 36-hole lithium packs, lead-acid options, chargers and how to match your buggy.',
     category: 'Engineering & Tech', image: img('mgi-lithium-12v-20ah-299wh-18-hole-battery'), imageAlt: 'Golf buggy battery replacement: MGI lithium 12V 18-hole battery',
     keyword: 'golf buggy battery replacement', faqIds: faq(['battery-size', 'battery-lithium-swap', 'battery-cost-buggy']), toc: true, content: buggyBattery }),
-  mk({ slug: 'golf-buggy-repairs-servicing-guide-australia', title: 'Golf Buggy Repairs and Servicing: Common Faults and Fixes', titleTag: 'Golf Cart Repairs: Common Faults, Fixes & Servicing',
+  mk({ slug: 'golf-buggy-repairs-servicing-guide-australia', title: 'Golf Buggy Repairs and Maintenance: Common Faults and Fixes', titleTag: 'Golf Buggy Repairs: Common Faults, Fixes & Maintenance',
     excerpt: 'Golf cart repairs explained: no power, slow speed, charger faults and worn wheels. What you can fix yourself, which parts to buy and when to get help.',
     metaDescription: 'Golf cart repairs explained: no power, slow speed, charger faults and worn wheels. What you can fix yourself, which parts to buy and when to get help.',
     category: 'Engineering & Tech', image: img('mgi-zip-navigator-motor-controller'), imageAlt: 'Golf cart repairs: MGI Zip Navigator motor controller',
