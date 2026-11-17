@@ -16,6 +16,8 @@ const { LOCATIONS } = await imp('src/config/locations.js');
 const { POSTS } = await imp('src/config/posts.js');
 const { FAQ_BANK, HOMEPAGE_FAQS, FACTS, money } = await imp('src/config/faq.js');
 
+// Same dates as the sitemap and the article schema: the lastmod ledger, not the build date.
+const LASTMOD = JSON.parse(fs.readFileSync(path.join(root, 'src/config/lastmod.json'), 'utf8'));
 const base = `https://${SITE.domain}`;
 const out = path.join(root, 'public/md');
 fs.rmSync(out, { recursive: true, force: true });
@@ -64,7 +66,7 @@ put('/golf-buggies/', `# Golf buggies for sale near you: choose your city\n\n${L
 put('/blog/', `# Golf buggy and golf gear guides\n\n${POSTS.map((p) => `- [${p.title}](${abs(`/blog/${p.slug}/`)}): ${plain(p.metaDescription)}`).join('\n')}\n\nSource: ${abs('/blog/')}`);
 for (const p of POSTS) {
   const faqs = (p.faqIds || []).map((id) => FAQ_BANK.find((f) => f.id === id)).filter(Boolean);
-  put(`/blog/${p.slug}/`, `# ${p.title}\n\n> ${plain(p.metaDescription)}\n\nUpdated ${p.updated}.\n\n${absLinks(p.content)}\n\n${faqs.length ? `## FAQ\n\n${qa(faqs)}\n\n` : ''}Source: ${abs(`/blog/${p.slug}/`)}`);
+  put(`/blog/${p.slug}/`, `# ${p.title}\n\n> ${plain(p.metaDescription)}\n\nUpdated ${LASTMOD[`/blog/${p.slug}/`]?.d || p.updated}.\n\n${absLinks(p.content)}\n\n${faqs.length ? `## FAQ\n\n${qa(faqs)}\n\n` : ''}Source: ${abs(`/blog/${p.slug}/`)}`);
 }
 
 // faq page
