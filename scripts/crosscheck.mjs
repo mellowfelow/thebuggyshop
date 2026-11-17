@@ -126,8 +126,9 @@ const { BRANDS } = await imp('src/config/brands.js');
   below.length ? fail('B7h', `price floor violations: ${below.map((p) => `${p.slug} $${p.price}`).join(', ')}`) : pass('B7h', 'price floors respected');
   const badData = PRODUCTS.filter((p) => !(p.price > 0) || !p.shortDescription || !p.description || !p.specs || !Object.keys(p.specs).length || !p.images?.length);
   badData.length ? fail('B7i', `incomplete product data: ${badData.map((p) => p.slug).join(', ')}`) : pass('B7i', 'all products have price, copy, specs and images');
-  // 'generic' (aftermarket) and 'various' (mixed) are catch-all labels, not real brands
-  const NON_BRANDS = new Set(['generic', 'various']);
+  // 'generic' (aftermarket) and 'various' (mixed) are catch-all labels, not real brands.
+  // 'hedgehog' had a one-product brand page that was removed on request (the URL redirects to /shop/wheels-tyres/).
+  const NON_BRANDS = new Set(['generic', 'various', 'hedgehog']);
   const unknownBrand = new Set(PRODUCTS.filter((p) => !NON_BRANDS.has(p.brand) && !BRANDS.some((b) => b.slug === p.brand)).map((p) => p.brand));
   unknownBrand.size ? warn('W7j', `${unknownBrand.size} product brands have no brand page (${[...unknownBrand].slice(0, 6).join(', ')}...)`) : pass('W7j', 'all brands have pages');
 

@@ -168,7 +168,7 @@ export default async function ProductPage({ params }) {
       </nav>
 
       {/* Main Interactive Product Workspace */}
-      <ProductDetailClient product={product} newEquivalent={newEquivalent(product)} relatedProducts={relatedProducts} brandHref={getBrandBySlug(product.brand) ? `/brands/${product.brand}/` : null} subcategory={subcategory && subcategory.slug !== product.category ? { href: `/shop/${subcategory.slug}/`, label: subcategory.navLabel } : null} />
+      <ProductDetailClient product={product} newEquivalent={newEquivalent(product)} relatedProducts={relatedProducts} brandHref={getBrandBySlug(product.brand) ? `/brands/${product.brand}/` : null} subcategory={subcategory && subcategory.slug !== product.category ? { href: `/shop/${subcategory.slug === 'used' ? 'used-golf-buggies' : subcategory.slug}/`, label: subcategory.slug === 'used' ? 'Used golf buggies and carts' : subcategory.navLabel } : null} />
     </div>
   );
 }

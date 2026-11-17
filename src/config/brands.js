@@ -566,18 +566,6 @@ export const BRANDS = [
     popularModels: ['Voltrac Flex Lithium Conversion Kit (E-Z-GO RXV / Club Car 48V)'],
   },
   {
-    slug: 'hedgehog',
-    name: 'Hedgehog',
-    kind: 'accessory',
-    blurb: 'Solid wheels for Clicgear push buggies.',
-    origin: 'Push buggy wheel upgrades',
-    h1: 'Hedgehog Solid Wheels Australia',
-    pageTitle: 'Hedgehog Solid Wheels Australia | Clicgear Upgrade',
-    metaDescription: 'Hedgehog solid wheels for Clicgear 2.0-8.0 push buggies. Puncture-free wheel upgrade delivered Australia-wide by The Buggy Shop. Delivered Australia-wide.',
-    introCopy: 'Hedgehog makes solid replacement wheels. The Hedgehog Solid Wheels fit Clicgear 2.0 to 8.0 push buggies and remove the need to pump tyres.',
-    popularModels: ['Hedgehog Solid Wheels (Clicgear 2.0-8.0)'],
-  },
-  {
     slug: 'titleist',
     name: 'Titleist',
     country: 'USA',

@@ -204,7 +204,7 @@ export default async function CategoryPage({ params }) {
 
       <CategoryLinks
         parentLabel={category.parent ? getCategoryBySlug(category.parent)?.navLabel : ''}
-        siblings={category.parent ? getSubcategories(category.parent).filter((s) => s.slug !== category.slug && getProductsByCategory(s.slug).length > 0) : []}
+        siblings={category.parent ? getSubcategories(category.parent).filter((s) => s.slug !== category.slug && s.slug !== 'used' /* /shop/used/ redirects to /shop/used-golf-buggies/ */ && getProductsByCategory(s.slug).length > 0) : []}
         brands={[...new Set(categoryProducts.map((p) => p.brand))].map((b) => getBrandBySlug(b)).filter(Boolean).map((b) => ({ slug: b.slug, name: b.name }))}
       />
 
